@@ -1,0 +1,98 @@
+{
+ "unadi": {
+  "count": 748,
+  "per_pada": {
+   "1": 157,
+   "2": 123,
+   "3": 160,
+   "4": 238,
+   "5": 70
+  },
+  "pratyaya_not_a_word_of_sutra": 548,
+  "in_sk_text_verbatim": 14
+ },
+ "dhatu": {
+  "ganasutras": 30,
+  "antargana_marks": 539,
+  "engine_marks": 538,
+  "differences_engine_vs_source": [
+   {
+    "id": "06.0174",
+    "root": "फुलँ",
+    "engine": [],
+    "source": [
+     "कुटादिः"
+    ]
+   }
+  ],
+  "source_stray_marks_not_taken": [
+   "06.0174"
+  ],
+  "bounds": {
+   "कुटादिः": {
+    "n": 46,
+    "first": "कुटँ 06.0093",
+    "last": "फुलँ 06.0174"
+   },
+   "द्युतादिः": {
+    "n": 24,
+    "first": "द्युतँ 01.0842",
+    "last": "कृपूँ 01.0866"
+   },
+   "पुषादिः": {
+    "n": 82,
+    "first": "पुषँ 04.0079",
+    "last": "गृधुँ 04.0161"
+   },
+   "जक्षित्यादिः": {
+    "n": 7,
+    "first": "जक्षँ 02.0066",
+    "last": "वेवीङ् 02.0072"
+   },
+   "रधादिः": {
+    "n": 8,
+    "first": "रधँ 04.0090",
+    "last": "ष्णिहँ 04.0097"
+   }
+  }
+ },
+ "ganapatha_overlay": {
+  "akrti_flags": 27,
+  "expansions": {
+   "sarvAdiH": {
+    "pUrvaparAvaradakziRottarAparADarARivyavasTAyAmasaMjYAyAm": 7,
+    "svamajYAtiDanAKyAyAm": 1,
+    "antaraMbahiryogopasaMvyAnayoH": 1
+   }
+  },
+  "gaNas_with_notes": 60,
+  "log": {
+   "corrections": [
+    {
+     "gana": "pAraskarAdiH",
+     "brain": "रथस्या",
+     "kashika": "रथस्पा"
+    }
+   ],
+   "unverified_notes": 18,
+   "akrti_unresolved": [
+    "2.1.59 ['SreRyAdiH', 'kftAdiH']",
+    "2.1.59 ['SreRyAdiH', 'kftAdiH']",
+    "3.1.134 ['nandyAdiH', 'grahyAdiH', 'pacAdiH']",
+    "3.1.134 ['nandyAdiH', 'grahyAdiH', 'pacAdiH']",
+    "3.1.134 ['nandyAdiH', 'grahyAdiH', 'pacAdiH']",
+    "5.1.124 ['brAhmaRAdiH', 'caturvedAdiH']",
+    "5.1.124 ['brAhmaRAdiH', 'caturvedAdiH']"
+   ]
+  }
+ },
+ "samkhya": {
+  "sutra_named": [
+   "bahu",
+   "gaRa",
+   "vatu",
+   "qati"
+  ],
+  "laukika_numerals": "source-needed"
+ }
+}

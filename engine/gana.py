@@ -27,3 +27,12 @@ def in_gana(name: str, stem_slp1: str) -> bool:
 def in_gana_of_sutra(sutra_id: str, stem_slp1: str) -> bool:
     """Is the stem in a gaṇa that the Gaṇapāṭha attaches to this sūtra (``gargādibhyaḥ`` → the gaṇa filed under 4.1.105)?"""
     return any(stem_slp1 in g["members"] for g in _all().values() if g.get("sutra") == sutra_id)
+
+
+def authority(name: str, stem_slp1: str) -> dict | None:
+    """The authority record of a pāṭha fact (docs/REFERENCE_PATHAS_AUTHORITY.md): which gaṇa, which entry, under which sūtra — or None when the stem is not a member.
+    A verdict that rests on gaṇa membership carries this record; ``in_gana`` stays the plain boolean."""
+    g = _all().get(name)
+    if g is None or stem_slp1 not in g["members"]:
+        return None
+    return {"pATha": "gaRapAWa", "entry": f"{name}/{stem_slp1}", "sutra": g.get("sutra"), "source": "ashtadhyayi-ai ganapath", "edition": "ganapatha_full.json"}

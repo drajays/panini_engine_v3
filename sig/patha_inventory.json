@@ -1,0 +1,2840 @@
+{
+ "rows": [
+  {
+   "pATha": "DhAtupAWa",
+   "file": "dhatupatha_upadesha.json",
+   "entries": 2240,
+   "expected": 2000,
+   "note": "tradition: ~2000 roots in 10 gaṇas (Kṣīrataraṅgiṇī / Mādhavīya count varies)",
+   "fields": [
+    "artha_dev",
+    "artha_en",
+    "artha_hi",
+    "artha_slp1",
+    "citation_dhatu_dev",
+    "citation_dhatu_slp1",
+    "dhatupatha_id",
+    "flags",
+    "gana",
+    "gana_label_dev",
+    "gana_number",
+    "id",
+    "it_class_label_dev",
+    "it_markers",
+    "karmatva_label_dev",
+    "mula_dhatu_dev",
+    "notes",
+    "pada_label_dev",
+    "raw_dhatu_after_it_lopa_dev",
+    "raw_dhatu_after_it_lopa_slp1",
+    "serial_in_gana",
+    "sutra_ref",
+    "tier",
+    "upadesha_dev",
+    "upadesha_slp1"
+   ]
+  },
+  {
+   "pATha": "uRAdi-sUtra",
+   "file": "unadi_patha.json",
+   "entries": 748,
+   "expected": 748,
+   "note": "loaded by tools/intake_patha.py from the brain (Siddhānta-kaumudī edition, 5 pādas: 157/123/160/238/70)",
+   "fields": []
+  },
+  {
+   "pATha": "dhAtupAWa gaRasUtra",
+   "file": "dhatupatha_ganasutras.json",
+   "entries": 30,
+   "expected": 30,
+   "note": "ghaṭādayo mitaḥ, svādayaḥ oditaḥ … (rows of the pāṭha that are not roots)",
+   "fields": []
+  },
+  {
+   "pATha": "gaRapAWa (full)",
+   "file": "ganapatha_full.json",
+   "entries": 266,
+   "expected": null,
+   "note": "5693 members in 266 gaṇas; 27 flagged ākṛtigaṇa (open); 0 gaṇas with no sūtra link",
+   "fields": [
+    "members",
+    "sutra",
+    "akrti"
+   ]
+  },
+  {
+   "pATha": "gaRapAWa (legacy small)",
+   "file": "ganapatha.json",
+   "entries": 27,
+   "expected": null,
+   "note": "older, smaller file; superseded by ganapatha_full (duplicate to retire)",
+   "fields": []
+  },
+  {
+   "pATha": "sarvAdi",
+   "file": "sarvadi_slp1.json",
+   "entries": 36,
+   "expected": null,
+   "note": "duplicate of ganapatha_full['sarvAdiH'] (35 members)",
+   "fields": []
+  },
+  {
+   "pATha": "tyadAdi",
+   "file": "tyadadi_slp1.json",
+   "entries": 7,
+   "expected": null,
+   "note": "no ganapatha_full counterpart; tyadādi is the first seven of sarvādi (1.1.27 gaṇa)",
+   "fields": []
+  },
+  {
+   "pATha": "ajAdi",
+   "file": "ajadi_gana_slp1.json",
+   "entries": 19,
+   "expected": null,
+   "note": "duplicate of ganapatha_full['ajAdiH'] (23 members)",
+   "fields": []
+  },
+  {
+   "pATha": "liNgAnuSAsana",
+   "file": "linga_anushasana.json",
+   "entries": 14,
+   "expected": null,
+   "note": "STUB (14 stems); not Pāṇini's — Vyāḍi/Kātyāyana/Hemacandra tradition; a lexical, not rule, source",
+   "fields": []
+  },
+  {
+   "pATha": "kft-pratyaya list",
+   "file": "krit_pratyaya.json",
+   "entries": 53,
+   "expected": null,
+   "note": "",
+   "fields": []
+  },
+  {
+   "pATha": "taddhita-pratyaya list",
+   "file": "taddhita_pratyaya.json",
+   "entries": 4,
+   "expected": null,
+   "note": "STUB: the pratyaya set is also taught by the sūtras themselves",
+   "fields": []
+  },
+  {
+   "pATha": "tiN",
+   "file": "tin_upadesha.json",
+   "entries": 199,
+   "expected": null,
+   "note": "",
+   "fields": []
+  },
+  {
+   "pATha": "sup",
+   "file": "sup_upadesha.json",
+   "entries": 26,
+   "expected": null,
+   "note": "",
+   "fields": []
+  },
+  {
+   "pATha": "lexicon (prAtipadika analyses)",
+   "file": "subanta_lexicon.json",
+   "entries": 137,
+   "expected": null,
+   "note": "NOT a Pāṇinian pāṭha: caller-side lexical facts; each entry carries `source`",
+   "fields": [
+    "stem",
+    "linga",
+    "components",
+    "source"
+   ]
+  }
+ ],
+ "xref": [
+  {
+   "sutra": "1.1.27",
+   "list": "sarvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "1.1.37",
+   "list": "svarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.4.57",
+   "list": "cAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.4.58",
+   "list": "prAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.4.61",
+   "list": "UryAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.4.74",
+   "list": "sAkzAtpraBftiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.17",
+   "list": "tizWadgupraBftiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "2.1.40",
+   "list": "SORqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.48",
+   "list": "pAtresamitAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.56",
+   "list": "vyAGrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.59",
+   "list": "SreRyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.59",
+   "list": "kftAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.60",
+   "list": "SAkapArTivAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.1.70",
+   "list": "SramaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "2.1.72",
+   "list": "mayUravyaMsakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.2.9",
+   "list": "yAjakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.2.31",
+   "list": "rAjadantAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.2.37",
+   "list": "AhitAgnyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.2.38",
+   "list": "kaqArAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.3.17",
+   "list": "nAvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.3.18",
+   "list": "prakftyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.3.43",
+   "list": "pratyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.11",
+   "list": "gavASvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.14",
+   "list": "daDipayasyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.31",
+   "list": "arDarcAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.59",
+   "list": "pElAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.61",
+   "list": "tOlvalyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.63",
+   "list": "yaskAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.67",
+   "list": "gopavanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.68",
+   "list": "tikakitavAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "2.4.69",
+   "list": "upakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.12",
+   "list": "BfSAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.13",
+   "list": "lohitAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.18",
+   "list": "suKAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.27",
+   "list": "kaRqvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.134",
+   "list": "nandyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.134",
+   "list": "grahyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.1.134",
+   "list": "pacAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.2.5",
+   "list": "mUlaviBujAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.2.15",
+   "list": "pArSvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.3.3",
+   "list": "gamyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.3.104",
+   "list": "BidAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.3.108",
+   "list": "saMpadAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "3.4.74",
+   "list": "BImAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.4",
+   "list": "ajAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.10",
+   "list": "svasrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.35",
+   "list": "samAnAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.41",
+   "list": "gOrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.45",
+   "list": "bahvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.56",
+   "list": "kroqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.73",
+   "list": "SArNgaravAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.80",
+   "list": "krOqyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.84",
+   "list": "aSvapatyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.86",
+   "list": "utsAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.96",
+   "list": "bAhvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.98",
+   "list": "kuYjAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.99",
+   "list": "naqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.100",
+   "list": "haritAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.104",
+   "list": "bidAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.105",
+   "list": "gargAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.110",
+   "list": "aSvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.112",
+   "list": "SivAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.123",
+   "list": "SuBrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.126",
+   "list": "kalyARyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.136",
+   "list": "gfzwyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.146",
+   "list": "revatyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.151",
+   "list": "kurvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.154",
+   "list": "tikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.158",
+   "list": "vAkinAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.175",
+   "list": "kambojAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.178",
+   "list": "BargAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.1.178",
+   "list": "yODeyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.38",
+   "list": "BikzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.2.45",
+   "list": "KaRqikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.49",
+   "list": "pASAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.51",
+   "list": "KalAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.53",
+   "list": "rAjanyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.54",
+   "list": "BOrikyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.54",
+   "list": "EzukAryAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.60",
+   "list": "ukTAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.61",
+   "list": "kramAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.63",
+   "list": "vasantAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.75",
+   "list": "saMkalAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.77",
+   "list": "suvAstvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "arIhaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "kfSASvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "fSyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "kumudAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "kASAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "tfRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "prekzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "aSmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "saKyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "saMkASAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "balAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "pakzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "karRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "sutaNgamAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "pragadyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "varAhAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.80",
+   "list": "kumudAdiH#4.2.80",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.82",
+   "list": "varaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.86",
+   "list": "maDvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.90",
+   "list": "utkarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.91",
+   "list": "naqAdiH#4.2.91",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.95",
+   "list": "kattryAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.97",
+   "list": "nadyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.110",
+   "list": "paladyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.111",
+   "list": "kaRvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.2.116",
+   "list": "kASyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.127",
+   "list": "DUmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.133",
+   "list": "kacCAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.2.138",
+   "list": "gahAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.16",
+   "list": "saMDivelAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.54",
+   "list": "digAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.59",
+   "list": "parimuKAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.60",
+   "list": "aDyAtmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.73",
+   "list": "fgayanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.76",
+   "list": "SuRqikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.92",
+   "list": "SaRqikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.93",
+   "list": "sinDvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.93",
+   "list": "takzaSilAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.106",
+   "list": "SOnakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.118",
+   "list": "kulAlAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.131",
+   "list": "rEvatikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.3.136",
+   "list": "bilvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.141",
+   "list": "palASAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.144",
+   "list": "SarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.152",
+   "list": "tAlAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.154",
+   "list": "rajatAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.164",
+   "list": "plakzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.3.167",
+   "list": "harItakyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.1",
+   "list": "mASabdAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.4.1",
+   "list": "praBftAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.4.1",
+   "list": "susnAtAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.4.1",
+   "list": "paradArAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "4.4.10",
+   "list": "parpAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.12",
+   "list": "vetanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.15",
+   "list": "utsaNgAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.16",
+   "list": "BastrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.19",
+   "list": "akzadyUtAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.48",
+   "list": "mahizyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.53",
+   "list": "kisarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.62",
+   "list": "CatrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.99",
+   "list": "pratijanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.102",
+   "list": "kaTAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.4.103",
+   "list": "guqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "5.1.2",
+   "list": "ugavAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "5.1.4",
+   "list": "apUpAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "5.1.20",
+   "list": "nizkAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "5.1.39",
+   "list": "aSvAdiH#5.1.39",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.50",
+   "list": "vaMSAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.64",
+   "list": "CedAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.66",
+   "list": "daRqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.94",
+   "list": "mahAnAmnyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.94",
+   "list": "avAntaradIkzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.97",
+   "list": "vyuzwAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.97",
+   "list": "agnipadAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.101",
+   "list": "saMtApAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.105",
+   "list": "upavastrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.111",
+   "list": "anupravacanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.111",
+   "list": "svargAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.111",
+   "list": "puRyAhavAcanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.122",
+   "list": "pfTvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.123",
+   "list": "varRadfQAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.124",
+   "list": "brAhmaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.124",
+   "list": "caturvedAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.128",
+   "list": "purohitAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.129",
+   "list": "udgAtrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.130",
+   "list": "yuvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.1.133",
+   "list": "manojYAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.24",
+   "list": "pIlvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.24",
+   "list": "karRAdiH#5.2.24",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.36",
+   "list": "tArakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.61",
+   "list": "vimuktAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.62",
+   "list": "gozadAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.64",
+   "list": "AkarzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.88",
+   "list": "izwAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.95",
+   "list": "rasAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.97",
+   "list": "siDmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.100",
+   "list": "lomAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.100",
+   "list": "pAmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.100",
+   "list": "picCAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.103",
+   "list": "jyotsnAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.116",
+   "list": "vrIhyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.117",
+   "list": "tundAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.127",
+   "list": "arSaAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.131",
+   "list": "suKAdiH#5.2.131",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.135",
+   "list": "puzkarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.2.136",
+   "list": "balAdiH#5.2.136",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.14",
+   "list": "BavadAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.100",
+   "list": "devapaTAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.103",
+   "list": "SAKAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.107",
+   "list": "SarkarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.108",
+   "list": "aNgulyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.116",
+   "list": "dAmanyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.117",
+   "list": "parSvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.3.117",
+   "list": "yODeyAdiH#5.3.117",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.3",
+   "list": "sTUlAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.29",
+   "list": "yAvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.34",
+   "list": "vinayAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.38",
+   "list": "prajYAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.44",
+   "list": "AdyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.107",
+   "list": "SaradAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.128",
+   "list": "dvidaRqyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.138",
+   "list": "hastyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.139",
+   "list": "kumBapadyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "5.4.151",
+   "list": "uraHpraBftayaH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.1.94",
+   "list": "SakanDvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.1.157",
+   "list": "pAraskarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "6.1.160",
+   "list": "uYCAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.1.203",
+   "list": "vfzAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.24",
+   "list": "vispazwAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.37",
+   "list": "kArtakOjapAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.42",
+   "list": "kurugArhapatAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.81",
+   "list": "yuktArohyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.85",
+   "list": "GozAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.86",
+   "list": "CAtryAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.87",
+   "list": "karkyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.88",
+   "list": "mAlAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.118",
+   "list": "kratvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.125",
+   "list": "cihaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.129",
+   "list": "tricakrAdi",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.131",
+   "list": "vargyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "6.2.134",
+   "list": "cUrRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.135",
+   "list": "kARqAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.140",
+   "list": "vanaspatyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.146",
+   "list": "AcitAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.147",
+   "list": "pravfdDAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.160",
+   "list": "cArvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.176",
+   "list": "guRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.184",
+   "list": "nirudakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.193",
+   "list": "aMSvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.2.194",
+   "list": "gOrAdiH#6.2.194",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.34",
+   "list": "priyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.35",
+   "list": "tasilAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.42",
+   "list": "kukkuwyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.109",
+   "list": "pfzodarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.117",
+   "list": "kowarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.117",
+   "list": "kiMSulukAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.119",
+   "list": "ajirAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.120",
+   "list": "SarAdiH#6.3.120",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.3.121",
+   "list": "pIlvAdiH#6.3.121",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "6.4.153",
+   "list": "bilvakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.1.16",
+   "list": "pUrvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "7.1.25",
+   "list": "qatarAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "7.1.49",
+   "list": "snAtvyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.3.4",
+   "list": "dvArAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.3.7",
+   "list": "svAgatAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.3.20",
+   "list": "anuSatikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.3.45",
+   "list": "kzipakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.3.53",
+   "list": "nyaNkvAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "7.4.3",
+   "list": "kaRAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.1.27",
+   "list": "gotrAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.1.67",
+   "list": "kAzWAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.2.9",
+   "list": "yavAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "8.2.18",
+   "list": "kapilakAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.2.70",
+   "list": "aharAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.2.70",
+   "list": "patyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.3.48",
+   "list": "kaskAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.3.98",
+   "list": "suzAmAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.3.110",
+   "list": "savanAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.4.6",
+   "list": "irikAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.4.10",
+   "list": "girinadyAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.4.11",
+   "list": "yuvAdiH#8.4.11",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "8.4.39",
+   "list": "kzuBnAdiH",
+   "kind": "gaRa",
+   "file": "ganapatha_full.json",
+   "loader": "engine.gana",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.1.69",
+   "list": "akzarasamAmnAya (14 Siva-sUtras)",
+   "kind": "in-sutra/pATha",
+   "file": "maheshvara_sutras.json",
+   "loader": "maheshvara_sutras",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.1.71",
+   "list": "pratyAhAra table (from the 14 sUtras)",
+   "kind": "in-sutra/pATha",
+   "file": "maheshvara_sutras.json",
+   "loader": "maheshvara_sutras",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.3.1",
+   "list": "DAtupAWa (BUvAdi … curAdi)",
+   "kind": "in-sutra/pATha",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.3.1",
+   "list": "uRAdi-sUtra",
+   "kind": "in-sutra/pATha",
+   "file": "unadi_patha.json",
+   "loader": "unadi_patha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "1.1.23",
+   "list": "saMKyA words (eka … , bahu, gaRa, vatu, qati)",
+   "kind": "in-sutra/pATha",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "1.2.72",
+   "list": "tyadAdi",
+   "kind": "in-sutra/pATha",
+   "file": "tyadadi_slp1.json",
+   "loader": "tyadadi_slp1",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "4.1.2",
+   "list": "sup (21 pratyayas)",
+   "kind": "in-sutra/pATha",
+   "file": "sup_upadesha.json",
+   "loader": "sup_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.4.78",
+   "list": "tiN (18 pratyayas)",
+   "kind": "in-sutra/pATha",
+   "file": "tin_upadesha.json",
+   "loader": "tin_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.91",
+   "list": "kft pratyayas",
+   "kind": "in-sutra/pATha",
+   "file": "krit_pratyaya.json",
+   "loader": "krit_pratyaya",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.4.77",
+   "list": "lakAra list",
+   "kind": "in-sutra/pATha",
+   "file": "lakara_metadata.json",
+   "loader": "lakara_metadata",
+   "status": "present-unused"
+  },
+  {
+   "sutra": "1.1.64",
+   "list": "acontyAdi",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'aco 'ntyadi ti': positional adi (first of the final vowel-sound), not a list"
+  },
+  {
+   "sutra": "1.2.1",
+   "list": "gANkuwAdiByoYRinNit",
+   "kind": "dhAtu-sub-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "classified-present",
+   "why": "kutadi = dhatupatha antargana (46 marks incl. one stray; kut 06.0093 … kun/kuun 06.0137); sutras/…/sutra_1_2_1.py reads meta['antarganas']"
+  },
+  {
+   "sutra": "1.2.21",
+   "list": "udupaDAdBAvAdikarmaRoranyatarasyAm",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'bhavadikarmanoh': the word adi-karman, not a list"
+  },
+  {
+   "sutra": "1.4.13",
+   "list": "pratyayaviDistadAdi",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "2.2.18",
+   "list": "kugatiprAdayaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-alias",
+   "why": "prAdi = gana 1.4.58 (stored); gati by 1.4.60 ff (derived); ku is the avyaya (Kasika 2.2.18)"
+  },
+  {
+   "sutra": "2.3.29",
+   "list": "anyArAditarartedikCabdAYcUttarapadAjAhiyukte",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the words are listed in the sutra itself (anya, arat, itara, rte, dik-sabda, anc-uttarapada, ac, ahi)"
+  },
+  {
+   "sutra": "2.4.75",
+   "list": "juhotyAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "2.4.79",
+   "list": "tanAdiByastaTAsoH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.7",
+   "list": "samAnakartfkAdicCAyAM",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'samanakartrkad icchayam': the word iccha"
+  },
+  {
+   "sutra": "3.1.25",
+   "list": "satyApapASarUpavIRAtUlaSlokasenAlomatvacavarmavarRacUrRacurAdiByo",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.55",
+   "list": "puzAdidyutAdyxditaH",
+   "kind": "dhAtu-sub-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "classified-present",
+   "why": "pusadi / dyutadi = dhatupatha antarganas (stored per root, read by sutra_3_1_55); ldit is derived from the root's it-marker by 1.3.2"
+  },
+  {
+   "sutra": "3.1.69",
+   "list": "divAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.77",
+   "list": "tudAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.78",
+   "list": "ruDAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.79",
+   "list": "tanAdikfYBya",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.1.81",
+   "list": "kryAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.2.21",
+   "list": "divAviBAniSApraBABAskArAntAnantAdibahunAndIkimlipilibibaliBaktikartfcitrakzetrasaMKyAjaNGAbAhvaharyattatDanuraruzzu",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the words are listed in the sutra itself"
+  },
+  {
+   "sutra": "3.2.60",
+   "list": "tyadAdizu",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "3.2.146",
+   "list": "nindahiMsakliSaKAdavinASaparikzipaparirawaparivAdivyABAzAsUYo",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the roots are listed in the sutra itself"
+  },
+  {
+   "sutra": "3.4.46",
+   "list": "kazAdizu",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-derived",
+   "why": "kasadi = the upapadas of the namul sutras from 3.4.34 (nimulasamulayoh kasah) on: read off the Astadhyayi text (Kasika 3.4.46: '3.4.34 ity etad arabhya kasadayah')"
+  },
+  {
+   "sutra": "3.4.58",
+   "list": "nAmnyAdiSigrahoH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'namny adisigrahoh': adi-si-graha"
+  },
+  {
+   "sutra": "3.4.75",
+   "list": "tAByAmanyatroRAdayaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-present",
+   "why": "unadayah = the unadi-patha (data/inputs/unadi_patha.json, 748 sutras)"
+  },
+  {
+   "sutra": "3.4.84",
+   "list": "paYcAnAmAdita",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'paYcanam adita': the first of five"
+  },
+  {
+   "sutra": "4.1.18",
+   "list": "lohitAdikatanteByaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-alias",
+   "why": "lohitadi up to kata = the gana of 3.1.13 (stored), read as far as kata (Kasika 4.1.18)"
+  },
+  {
+   "sutra": "4.1.85",
+   "list": "dityadityAdityapatyuttarapadARRyaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the stems are listed in the sutra itself (diti, aditi, aditya, pati-uttarapada)"
+  },
+  {
+   "sutra": "4.1.172",
+   "list": "kurunAdiByo",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-derived",
+   "why": "kuru + na-kara-adi: the janapada-ksatriya names that begin with n (naisadhya, naipathya) — a letter-positional class, no list (Kasika 4.1.172)"
+  },
+  {
+   "sutra": "4.1.173",
+   "list": "sAlvAvayavapratyagraTakalakUwASmakAdiY",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the stems are listed in the sutra itself (pratyagratha, kalakuta, asmaka …)"
+  },
+  {
+   "sutra": "4.2.11",
+   "list": "pARqukambalAdiniH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'pandukambalad inih': one stem"
+  },
+  {
+   "sutra": "4.2.55",
+   "list": "sosyAdiriti",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'sosyadiriti': the word adi"
+  },
+  {
+   "sutra": "4.2.62",
+   "list": "anubrAhmaRAdiniH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'anubrahmanad inih': one stem"
+  },
+  {
+   "sutra": "4.3.88",
+   "list": "SiSukrandayamasaBadvandvendrajananAdiByaSCaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "4.3.111",
+   "list": "karmandakfSASvAdiniH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'karmandakrsasvad inih': two stems in the sutra"
+  },
+  {
+   "sutra": "4.4.23",
+   "list": "cUrRAdiniH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'curnad inih': one stem"
+  },
+  {
+   "sutra": "5.1.99",
+   "list": "sampAdini",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'sampadini': a sense word"
+  },
+  {
+   "sutra": "5.2.56",
+   "list": "viMSatyAdiByastamaqanyatarasyAm",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "5.2.57",
+   "list": "SatAdimAsArDamAsasaMvatsarAcca",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "5.2.99",
+   "list": "PenAdilac",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'phenad ilac': one stem"
+  },
+  {
+   "sutra": "5.2.128",
+   "list": "prARisTAdiniH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'pranisthad ini': one stem"
+  },
+  {
+   "sutra": "5.3.2",
+   "list": "kiMsarvanAmabahuByodvyAdiByaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "5.4.13",
+   "list": "anugAdinazWak",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'anugadin': the word anugadin"
+  },
+  {
+   "sutra": "6.1.3",
+   "list": "saMyogAdayaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'na ndrah samyogadayah': positional adi"
+  },
+  {
+   "sutra": "6.1.6",
+   "list": "jakzityAdayaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-present",
+   "why": "jaksityadi = dhatupatha antargana (jaks + six = 7, Kasika 6.1.6); read by sutra_6_1_6"
+  },
+  {
+   "sutra": "6.1.188",
+   "list": "svapAdihiMsAmacyaniwi",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "missing"
+  },
+  {
+   "sutra": "6.1.197",
+   "list": "YnityAdirnityam",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'Yn-ityadir nityam': ñit / nit and adi (first vowel)"
+  },
+  {
+   "sutra": "6.2.41",
+   "list": "sAdasAdisAraTizu",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'sadasadisarathisu': stems in the sutra"
+  },
+  {
+   "sutra": "6.2.151",
+   "list": "manktinvyAKyAnaSayanAsanasTAnayAjakAdikrItAH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-alias",
+   "why": "yajakadi = the gana of 2.2.9 (Kasika 6.2.151)"
+  },
+  {
+   "sutra": "6.2.170",
+   "list": "jAtikAlasuKAdiByonAcCAdanAt",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-alias",
+   "why": "sukhadi = the gana of 3.1.18 (Kasika 6.2.170: 'sukhadayas trtiye 3.1.18 pathyante')"
+  },
+  {
+   "sutra": "6.2.190",
+   "list": "puruzaScAnvAdizwaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'purusas can anvadistah': the word adista"
+  },
+  {
+   "sutra": "6.3.2",
+   "list": "stokAdiByaH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "stokadi = stoka, antika-artha, dura-artha, krcchra: spelled by the sutra itself, the two middle ones by meaning (vivaksa), not a list"
+  },
+  {
+   "sutra": "6.4.126",
+   "list": "SasadadavAdiguRAnAm",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'sasadadavadigunanam': va-adi (initial va)"
+  },
+  {
+   "sutra": "7.2.17",
+   "list": "BAvAdikarmaRoH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-false-positive",
+   "why": "'bhavadikarmanoh': the word adi-karman"
+  },
+  {
+   "sutra": "7.2.45",
+   "list": "raDAdiByaSca",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-present",
+   "why": "radhadi = dhatupatha antargana (8 roots, Kasika 7.2.45 'astabhyah'); stored per root"
+  },
+  {
+   "sutra": "7.2.76",
+   "list": "rudAdiByaH",
+   "kind": "dhAtu-gaRa",
+   "file": "dhatupatha_upadesha.json",
+   "loader": "dhatupatha_upadesha",
+   "status": "present-wired"
+  },
+  {
+   "sutra": "7.3.1",
+   "list": "devikASiMSapAdityavAqdIrGasatraSreyasAmAt",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-in-sutra",
+   "why": "the stems are listed in the sutra itself (devika, simsapa, ditya-vah, dirghasatra, sreyas)"
+  },
+  {
+   "sutra": "8.1.57",
+   "list": "canacidivagotrAditadDitAmreqitezvagateH",
+   "kind": "gaRa-name-in-sutra (heuristic)",
+   "file": null,
+   "loader": null,
+   "status": "classified-alias",
+   "why": "gotradi = the gana of 8.1.27 (Kasika 8.1.57: 'gotradayah kutsanabhiksnyayoh 8.1.27')"
+  }
+ ]
+}

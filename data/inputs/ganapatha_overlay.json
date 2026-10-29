@@ -1,0 +1,1246 @@
+{
+ "_doc": "tools/intake_patha.py — intake of Pāṇini's own pāṭhas from the reference brain (data-master), reproducible, nothing typed by hand.",
+ "source": "tools/intake_patha.py (brain db ganapath + Kāśikā cross-check)",
+ "sutra_fix": {
+  "SramaRAdiH": {
+   "was": "3.1.70",
+   "sutra": "2.1.70",
+   "evidence": "Kāśikā 2.1.70 lists श्रमण…"
+  }
+ },
+ "akrti": {
+  "pAtresamitAdiH": "Kāśikā 2.1.48: ākṛtigaṇa",
+  "vyAGrAdiH": "Kāśikā 2.1.56: ākṛtigaṇa",
+  "AhitAgnyAdiH": "Kāśikā 2.2.37: ākṛtigaṇa",
+  "pElAdiH": "Kāśikā 2.4.59: ākṛtigaṇa",
+  "lohitAdiH": "Kāśikā 3.1.13: ākṛtigaṇa",
+  "kroqAdiH": "Kāśikā 4.1.56: ākṛtigaṇa",
+  "bAhvAdiH": "Kāśikā 4.1.96: ākṛtigaṇa",
+  "bidAdiH": "Kāśikā 4.1.104: ākṛtigaṇa",
+  "SuBrAdiH": "Kāśikā 4.1.123: ākṛtigaṇa",
+  "KalAdiH": "Kāśikā 4.2.51: ākṛtigaṇa",
+  "rAjanyAdiH": "Kāśikā 4.2.53: ākṛtigaṇa",
+  "varaRAdiH": "Kāśikā 4.2.82: ākṛtigaṇa",
+  "gahAdiH": "Kāśikā 4.2.138: ākṛtigaṇa",
+  "aDyAtmAdiH": "Kāśikā 4.3.60: ākṛtigaṇa",
+  "tArakAdiH": "Kāśikā 5.2.36: ākṛtigaṇa",
+  "arSaAdiH": "Kāśikā 5.2.127: ākṛtigaṇa",
+  "devapaTAdiH": "Kāśikā 5.3.100: ākṛtigaṇa",
+  "AdyAdiH": "Kāśikā 5.4.44: ākṛtigaṇa",
+  "pAraskarAdiH": "Kāśikā 6.1.157: ākṛtigaṇa",
+  "vfzAdiH": "Kāśikā 6.1.203: ākṛtigaṇa",
+  "kurugArhapatAdiH": "Kāśikā 6.2.42: ākṛtigaṇa",
+  "pravfdDAdiH": "Kāśikā 6.2.147: ākṛtigaṇa",
+  "guRAdiH": "Kāśikā 6.2.176: ākṛtigaṇa",
+  "nirudakAdiH": "Kāśikā 6.2.184: ākṛtigaṇa",
+  "anuSatikAdiH": "Kāśikā 7.3.20: ākṛtigaṇa",
+  "yavAdiH": "Kāśikā 8.2.9: ākṛtigaṇa",
+  "kzuBnAdiH": "Kāśikā 8.4.39: ākṛtigaṇa"
+ },
+ "expansions": {
+  "sarvAdiH": {
+   "pUrvaparAvaradakziRottarAparADarARivyavasTAyAmasaMjYAyAm": [
+    "pUrva",
+    "para",
+    "avara",
+    "dakziRa",
+    "uttara",
+    "apara",
+    "aDara"
+   ],
+   "svamajYAtiDanAKyAyAm": [
+    "sva"
+   ],
+   "antaraMbahiryogopasaMvyAnayoH": [
+    "antara"
+   ]
+  }
+ },
+ "extra": {
+  "sarvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "पूर्वपरावरदक्षिणोत्तरापराधराणिव्यवस्थायामसंज्ञायाम्",
+     "slp1": "pUrvaparAvaradakziRottarAparADarARivyavasTAyAmasaMjYAyAm"
+    },
+    {
+     "dev": "स्वमज्ञातिधनाख्यायाम्",
+     "slp1": "svamajYAtiDanAKyAyAm"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "antaraM",
+     "surface_dev": "अन्तरं",
+     "gloss_dev": "बहिर्योगोपसंव्यानयोः",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "svarAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "वत्",
+     "slp1": "vat"
+    },
+    {
+     "dev": "क्तवातोसुन्कसुनः",
+     "slp1": "ktavAtosunkasunaH"
+    },
+    {
+     "dev": "कृन्मकारसन्ध्यक्षरान्तोऽव्ययीभावश्च",
+     "slp1": "kfnmakArasanDyakzarAntovyayIBAvaSca"
+    },
+    {
+     "dev": "च्व्यर्थाश्च",
+     "slp1": "cvyarTASca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "tasilAdayastadDita",
+     "surface_dev": "तसिलादयस्तद्धित",
+     "gloss_dev": "एधाच्चपर्यन्ताः",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "tasilAdaya",
+     "surface_dev": "तसिलादयः",
+     "gloss_dev": "प्राक्पाशपाः",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "SaspraBftaya",
+     "surface_dev": "शस्प्रभृतयः",
+     "gloss_dev": "प्राक्समासान्तेभ्यः",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "mAnta",
+     "surface_dev": "मान्तः",
+     "gloss_dev": "कृत्वोर्थः",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "cAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "upasargaviBaktisvarapratirUpakASca",
+     "surface_dev": "उपसर्गविभक्तिस्वरप्रतिरूपकाश्च",
+     "gloss_dev": "निपाताः",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "tizWadgupraBftiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "itpratyaya",
+     "surface_dev": "इत्प्रत्ययः",
+     "gloss_dev": "समासान्तः",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "mayUravyaMsakAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "छन्दसि हस्तेगृह्य",
+     "slp1": "Candasi hastegfhya"
+    },
+    {
+     "dev": "एहीडादयोऽन्यपदार्थे",
+     "slp1": "ehIqAdayonyapadArTe"
+    },
+    {
+     "dev": "जहि कर्मणा बहुलमाभीक्ष्ण्ये कर्तारं चाभिदधाति",
+     "slp1": "jahi karmaRA bahulamABIkzRye kartAraM cABidaDAti"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "ehivARijA",
+     "surface_dev": "एहिवाणिजा",
+     "gloss_dev": "क्रिया",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "AKyAtamAKyAtena",
+     "surface_dev": "आख्यातमाख्यातेन",
+     "gloss_dev": "क्रियासातत्ये",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "nandyAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "nandivASimadidUzisADivarDiSoBirociBya",
+     "surface_dev": "नन्दिवाशिमदिदूषिसाधिवर्धिशोभिरोचिभ्यो",
+     "gloss_dev": "ण्यन्तेभ्यः संज्ञायाम्",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "sahitapidame",
+     "surface_dev": "सहितपिदमेः",
+     "gloss_dev": "संज्ञायाम्",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "grahyAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "rakzaSruvasavapaSAM",
+     "surface_dev": "रक्षश्रुवसवपशां",
+     "gloss_dev": "नौ",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "yAcfvyAhfsaMvyAhfvrajavadavasAM",
+     "surface_dev": "याचृव्याहृसंव्याहृव्रजवदवसां",
+     "gloss_dev": "प्रतिषिद्धानाम्",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "acAmacittakartfkARAM",
+     "surface_dev": "अचामचित्तकर्तृकाणां",
+     "gloss_dev": "प्रतिषिद्धानाम्",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "viSayI",
+     "surface_dev": "विशयी",
+     "gloss_dev": "विषयी देशे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "aBiBAvI",
+     "surface_dev": "अभिभावी",
+     "gloss_dev": "भूते",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "BidAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "क्रपेः संप्रसारणं च",
+     "slp1": "krapeH saMprasAraRaM ca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "BidA",
+     "surface_dev": "भिदा",
+     "gloss_dev": "विदारणे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "CidA",
+     "surface_dev": "छिदा",
+     "gloss_dev": "द्वेधीकरणे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "guhA",
+     "surface_dev": "गुहा",
+     "gloss_dev": "गिर्योषध्योः",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "ArA",
+     "surface_dev": "आरा",
+     "gloss_dev": "शस्त्र्याम्",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "kArA",
+     "surface_dev": "कारा",
+     "gloss_dev": "बन्धने",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "tArA",
+     "surface_dev": "तारा",
+     "gloss_dev": "ज्योतिषि",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "DArA",
+     "surface_dev": "धारा",
+     "gloss_dev": "प्रपातने",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "ajAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "संभस्त्राजिनशणपिण्डेभ्यः फलात्",
+     "slp1": "saMBastrAjinaSaRapiRqeByaH PalAt"
+    },
+    {
+     "dev": "सदच्काण्डप्रान्तशतैकेभ्यः पुष्पात्",
+     "slp1": "sadackARqaprAntaSatEkeByaH puzpAt"
+    },
+    {
+     "dev": "मूलान्नञः",
+     "slp1": "mUlAnnaYaH"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "SUdrA",
+     "surface_dev": "शूद्रा",
+     "gloss_dev": "चामहत्पूर्वा जातिः",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "samAnAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "दासाच्छन्दसि",
+     "slp1": "dAsAcCandasi"
+    }
+   ],
+   "members_restricted": []
+  },
+  "gOrAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "सुमङ्गलात्संज्ञायाम्",
+     "slp1": "sumaNgalAtsaMjYAyAm"
+    },
+    {
+     "dev": "कटाच्छ्रोणिवचने",
+     "slp1": "kawAcCroRivacane"
+    },
+    {
+     "dev": "पिप्पल्यादयश्च",
+     "slp1": "pippalyAdayaSca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "ezaRa",
+     "surface_dev": "एषणः",
+     "gloss_dev": "करणे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "rohiRI",
+     "surface_dev": "रोहिणी",
+     "gloss_dev": "नक्षत्रे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "revatI",
+     "surface_dev": "रेवती",
+     "gloss_dev": "नक्षत्रे",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "bahvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "कृदिकारादक्तिनः",
+     "slp1": "kfdikArAdaktinaH"
+    },
+    {
+     "dev": "सर्वतोऽक्तिन्नर्थादित्येके",
+     "slp1": "sarvatoktinnarTAdityeke"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "ita",
+     "surface_dev": "इतः",
+     "gloss_dev": "प्राण्यङ्गात्",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "SArNgaravAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "भोगवद्गौरिमतोः संज्ञायां घादिषु ([[6.3.43]]) नित्यं ह्रस्वार्थम्",
+     "slp1": "BogavadgOrimatoH saMjYAyAM GAdizu  nityaM hrasvArTam"
+    },
+    {
+     "dev": "मृमरयोर्वृद्धिश्च",
+     "slp1": "mfmarayorvfdDiSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "utsAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "बष्कयासे",
+     "slp1": "bazkayAse"
+    },
+    {
+     "dev": "ग्रीष्मादच्छन्दसि",
+     "slp1": "grIzmAdacCandasi"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "udasTAna",
+     "surface_dev": "उदस्थान",
+     "gloss_dev": "देशे",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "bAhvAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "amitOjasa",
+     "surface_dev": "अमितौजसः",
+     "gloss_dev": "सलोपश्च",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "udaka",
+     "surface_dev": "उदकः",
+     "gloss_dev": "संज्ञायाम्",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "saMBUyomBaso",
+     "surface_dev": "संभूयोम्भसोः",
+     "gloss_dev": "सलोपश्च",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "naqAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "शलङ्कु शलङ्कं च",
+     "slp1": "SalaNku SalaNkaM ca"
+    },
+    {
+     "dev": "अग्निशर्मन्वृशगणे",
+     "slp1": "agniSarmanvfSagaRe"
+    },
+    {
+     "dev": "क्रोष्टु क्रोष्टं च",
+     "slp1": "krozwu krozwaM ca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "kfzRaraRO",
+     "surface_dev": "कृष्णरणौ",
+     "gloss_dev": "ब्राह्मणवासिष्ठे",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "bidAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "परस्त्री परशुं च",
+     "slp1": "parastrI paraSuM ca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "aSvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "पुंसि जाते",
+     "slp1": "puMsi jAte"
+    }
+   ],
+   "members_restricted": []
+  },
+  "SivAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "त्रिवेणी त्रिवणं च",
+     "slp1": "triveRI trivaRaM ca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "dvyaca",
+     "surface_dev": "द्व्यचो",
+     "gloss_dev": "नद्याः",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "kurvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "विनाच्छन्दसि",
+     "slp1": "vinAcCandasi"
+    },
+    {
+     "dev": "वामरथस्य कण्वादिवत्स्वरवर्जम्",
+     "slp1": "vAmaraTasya kaRvAdivatsvaravarjam"
+    }
+   ],
+   "members_restricted": []
+  },
+  "vAkinAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "चर्मिवर्मिणोर्नलोपश्च",
+     "slp1": "carmivarmiRornalopaSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "KaRqikAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "kzudrakaqAlavAt",
+     "surface_dev": "क्षुद्रकडालवात्",
+     "gloss_dev": "सेनासंज्ञायाम्",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "kzudrakamAlavAt",
+     "surface_dev": "क्षुद्रकमालवात्",
+     "gloss_dev": "सेनासंज्ञायाम्",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "saMkASAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "सुपथिन्पन्थ च",
+     "slp1": "supaTinpanTa ca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "pakzAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "सुपथिन्पन्थ च",
+     "slp1": "supaTinpanTa ca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "naqAdiH#4.2.91": {
+   "gaNasUtra": [
+    {
+     "dev": "क्रुञ्चा ह्रस्वत्वं च",
+     "slp1": "kruYcA hrasvatvaM ca"
+    },
+    {
+     "dev": "तक्षन्नलोपश्च",
+     "slp1": "takzannalopaSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "kASyAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "आपदादिपूर्वपदात्कालान्तात्",
+     "slp1": "ApadAdipUrvapadAtkAlAntAt"
+    }
+   ],
+   "members_restricted": []
+  },
+  "DUmAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "कूलात्सौवीरेषु",
+     "slp1": "kUlAtsOvIrezu"
+    },
+    {
+     "dev": "समुदान्नावि मनुष्ये च",
+     "slp1": "samudAnnAvi manuzye ca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "gahAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "मुखपार्श्वतसोर्लोपः",
+     "slp1": "muKapArSvatasorlopaH"
+    },
+    {
+     "dev": "जनपरयोः कुक्च देवस्य च",
+     "slp1": "janaparayoH kukca devasya ca"
+    },
+    {
+     "dev": "वेणुकादिभ्यश्छण्",
+     "slp1": "veRukAdiByaSCaR"
+    }
+   ],
+   "members_restricted": []
+  },
+  "saMDivelAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "संवत्सरात्फलपर्वणोः",
+     "slp1": "saMvatsarAtPalaparvaRoH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "digAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "उदकात्संज्ञयाम्",
+     "slp1": "udakAtsaMjYayAm"
+    }
+   ],
+   "members_restricted": []
+  },
+  "ugavAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "नाभि नभं च",
+     "slp1": "nABi naBaM ca"
+    },
+    {
+     "dev": "शुनः संप्रसारणं वा च दीर्घत्वं, तत्संनियोगेन चान्तोदात्तत्वम्",
+     "slp1": "SunaH saMprasAraRaM vA ca dIrGatvaM tatsaMniyogena cAntodAttatvam"
+    },
+    {
+     "dev": "ऊधसोऽनङ् च",
+     "slp1": "UDasonaN ca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "apUpAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "अन्नविकारेभ्यश्च",
+     "slp1": "annavikAreByaSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "saMtApAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "मांसौदनाद्विगृहीतादपि",
+     "slp1": "mAMsOdanAdvigfhItAdapi"
+    }
+   ],
+   "members_restricted": []
+  },
+  "varRadfQAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "वेर्यातलातमतिमनःशारदानाम् समो मतिमनसोः",
+     "slp1": "veryAtalAtamatimanaHSAradAnAm samo matimanasoH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "brAhmaRAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "अर्हतो नुम् च",
+     "slp1": "arhato num ca"
+    },
+    {
+     "dev": "सर्ववेदादिभ्यः स्वार्थे",
+     "slp1": "sarvavedAdiByaH svArTe"
+    },
+    {
+     "dev": "चतुर्वेदस्योभयपदवृद्धिश्च",
+     "slp1": "caturvedasyoBayapadavfdDiSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "purohitAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "राजासे",
+     "slp1": "rAjAse"
+    }
+   ],
+   "members_restricted": []
+  },
+  "yuvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "श्रोत्रियस्य यलोपश्च",
+     "slp1": "Srotriyasya yalopaSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "tArakAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "गर्भादप्राणिनि",
+     "slp1": "garBAdaprARini"
+    }
+   ],
+   "members_restricted": []
+  },
+  "gozadAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "कृष्णोऽस्याख्यरेष्टः",
+     "slp1": "kfzRosyAKyarezwaH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "siDmAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "पार्ष्णिधमन्योर्दीर्घश्च",
+     "slp1": "pArzRiDamanyordIrGaSca"
+    },
+    {
+     "dev": "वातदन्तबलललाटानामूङ् च",
+     "slp1": "vAtadantabalalalAwAnAmUN ca"
+    },
+    {
+     "dev": "क्षुद्रजन्तूपतापयोश्च",
+     "slp1": "kzudrajantUpatApayoSca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "jawAGawAkawAkAlA",
+     "surface_dev": "जटाघटाकटाकालाः",
+     "gloss_dev": "क्षेपे",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "pAmAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "अङ्गात्कल्याणे",
+     "slp1": "aNgAtkalyARe"
+    },
+    {
+     "dev": "शाकीपलालीदद्रूणां ह्रस्वत्वं च",
+     "slp1": "SAkIpalAlIdadrURAM hrasvatvaM ca"
+    },
+    {
+     "dev": "विष्वगित्युत्तरपदलोपश्चाकृतसंधेः",
+     "slp1": "vizvagityuttarapadalopaScAkftasaMDeH"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "lakzmyA",
+     "surface_dev": "लक्ष्म्या",
+     "gloss_dev": "अच्च",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "picCAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "jawAGawAkAlA",
+     "surface_dev": "जटाघटाकालाः",
+     "gloss_dev": "क्षेपे",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "vrIhyAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "शीर्षान्नञः",
+     "slp1": "SIrzAnnaYaH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "tundAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "स्वाङ्गाद्विवृद्धौ",
+     "slp1": "svANgAdvivfdDO"
+    }
+   ],
+   "members_restricted": []
+  },
+  "arSaAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "स्वाङ्गाद्धीनात्",
+     "slp1": "svANgAdDInAt"
+    }
+   ],
+   "members_restricted": []
+  },
+  "sTUlAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "पाद्यकालावदातसुरायाम्",
+     "slp1": "pAdyakAlAvadAtasurAyAm"
+    },
+    {
+     "dev": "जीर्णशालिषु",
+     "slp1": "jIrRaSAlizu"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "kfzRa",
+     "surface_dev": "कृष्ण",
+     "gloss_dev": "तिलेषु",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "yava",
+     "surface_dev": "यव",
+     "gloss_dev": "व्रीहिषु",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "gomUtra",
+     "surface_dev": "गोमूत्र",
+     "gloss_dev": "आच्छादने",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "surAyA",
+     "surface_dev": "सुराया",
+     "gloss_dev": "अहौ",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "patramUla",
+     "surface_dev": "पत्रमूल",
+     "gloss_dev": "समस्तव्यस्ते",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "yAvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "ईयसश्च",
+     "slp1": "IyasaSca"
+    },
+    {
+     "dev": "कुमारीक्रीडनकानि च",
+     "slp1": "kumArIkrIqanakAni ca"
+    },
+    {
+     "dev": "कुमारक्रीडनकानि च",
+     "slp1": "kumArakrIqanakAni ca"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "ftA",
+     "surface_dev": "ऋता",
+     "gloss_dev": "उष्णशीते",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "paSO",
+     "surface_dev": "पशौ",
+     "gloss_dev": "लूनविपाते",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "aRu",
+     "surface_dev": "अणु",
+     "gloss_dev": "निपुणे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "putra",
+     "surface_dev": "पुत्र",
+     "gloss_dev": "कृत्रिमे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "snAta",
+     "surface_dev": "स्नात",
+     "gloss_dev": "वेदसमाप्तौ",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "SUnya",
+     "surface_dev": "शून्य",
+     "gloss_dev": "रिक्ते",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "dAna",
+     "surface_dev": "दान",
+     "gloss_dev": "कुत्सिते",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "tanu",
+     "surface_dev": "तनु",
+     "gloss_dev": "सूत्रे",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "SaradAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "जराया जरस् च",
+     "slp1": "jarAyA jaras ca"
+    },
+    {
+     "dev": "प्रतिपरसमनुभ्योऽक्ष्णः",
+     "slp1": "pratiparasamanuByokzRaH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "pAraskarAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "तद्बृहतोः करपत्योश्चोरदेवतयोः सुट् तलोपश्च",
+     "slp1": "tadbfhatoH karapatyoScoradevatayoH suw talopaSca"
+    },
+    {
+     "dev": "प्रात्तुम्पतौ गवि कर्तरि",
+     "slp1": "prAttumpatO gavi kartari"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "pAraskara",
+     "surface_dev": "पारस्करो",
+     "gloss_dev": "देशः",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "kAraskara",
+     "surface_dev": "कारस्करो",
+     "gloss_dev": "वृक्षः",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "raTaspA",
+     "surface_dev": "रथस्या",
+     "gloss_dev": "नदी",
+     "verified_in_kashika": true,
+     "repaired_from": "रथस्या"
+    },
+    {
+     "member": "rayasTA",
+     "surface_dev": "रयस्था",
+     "gloss_dev": "नदी",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "kizku",
+     "surface_dev": "किष्कुः",
+     "gloss_dev": "प्रमाणम्",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "kizkinDA",
+     "surface_dev": "किष्किन्धा",
+     "gloss_dev": "गुहा",
+     "verified_in_kashika": true
+    }
+   ],
+   "members": [
+    "pAraskara",
+    "kAraskara",
+    "raTaspA",
+    "kizku",
+    "kizkinDA"
+   ],
+   "akrti_evidence": "Kāśikā 6.1.157 pāraskaraprabhṛtir ākṛtigaṇaḥ"
+  },
+  "uYCAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "युग कालविशेषे रथायद्युपकरणे च",
+     "slp1": "yuga kAlaviSeze raTAyadyupakaraRe ca"
+    },
+    {
+     "dev": "स्तुथुद्रुवश्छन्दसि",
+     "slp1": "stuTudruvaSCandasi"
+    },
+    {
+     "dev": "वर्तनि स्तोत्रे",
+     "slp1": "vartani stotre"
+    },
+    {
+     "dev": "श्वभ्रे दरः",
+     "slp1": "SvaBre daraH"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "gara",
+     "surface_dev": "गरो",
+     "gloss_dev": "दूष्ये",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "gara",
+     "surface_dev": "गरो",
+     "gloss_dev": "डूष्ये",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "abanta",
+     "surface_dev": "अबन्तः",
+     "gloss_dev": "वेदवेगवेष्टबन्धाः करणे",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "sAmbatApa",
+     "surface_dev": "साम्बतापो",
+     "gloss_dev": "भावगर्हायाम्",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "uttamaSaSvattamO",
+     "surface_dev": "उत्तमशश्वत्तमौ",
+     "gloss_dev": "सर्वत्र",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "BakzamanTaBogamanTA",
+     "surface_dev": "भक्षमन्थभोगमन्थाः",
+     "gloss_dev": "देहाः",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "vfzAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "SamaraRO",
+     "surface_dev": "शमरणौ",
+     "gloss_dev": "संज्ञायां संमतौ भावकर्मणोः",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "avihitalakzaRamAdyudAttatvaM",
+     "surface_dev": "अविहितलक्षणमाद्युदात्तत्वं",
+     "gloss_dev": "वृषादिषु ज्ञेयम्",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "yuktArohyAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "पात्रेसमितादयश्च",
+     "slp1": "pAtresamitAdayaSca"
+    }
+   ],
+   "members_restricted": []
+  },
+  "vargyAdiH": {
+   "derived": {
+    "from_gaNa": "digAdiH",
+    "from_member": "varga",
+    "to": "end",
+    "pratyaya": "yat",
+    "sutra": "4.3.54",
+    "evidence": "Kāśikā 6.2.131 vargyādayaḥ … dig-ādiṣu varga pūga gaṇa pakṣa ity evamādayo ye paṭhitāḥ, ta eva yat-pratyayāntāḥ"
+   }
+  },
+  "pravfdDAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "आकर्षे अवहितः",
+     "slp1": "Akarze avahitaH"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "pravfdDaM",
+     "surface_dev": "प्रवृद्धं",
+     "gloss_dev": "यानम्",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "pravfdDa",
+     "surface_dev": "प्रवृद्धो",
+     "gloss_dev": "वृषलः",
+     "verified_in_kashika": true
+    },
+    {
+     "member": "prayutA",
+     "surface_dev": "प्रयुता",
+     "gloss_dev": "सष्णवः",
+     "verified_in_kashika": false
+    },
+    {
+     "member": "avahita",
+     "surface_dev": "अवहितो",
+     "gloss_dev": "भोगेषु",
+     "verified_in_kashika": false
+    }
+   ]
+  },
+  "cArvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "विकारसदृशे व्यस्तसमस्ते",
+     "slp1": "vikArasadfSe vyastasamaste"
+    },
+    {
+     "dev": "राजाह्नोश्छन्दसि",
+     "slp1": "rAjAhnoSCandasi"
+    }
+   ],
+   "members_restricted": [
+    {
+     "member": "vartamAnavarDamAnatvaramARaDriyamARakriyamARarocamAnaSoBamAnA",
+     "surface_dev": "वर्तमानवर्धमानत्वरमाणध्रियमाणक्रियमाणरोचमानशोभमानाः",
+     "gloss_dev": "संज्ञायाम्",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "anuSatikAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "राजपुरुषात्ष्यञि",
+     "slp1": "rAjapuruzAtzyaYi"
+    }
+   ],
+   "members_restricted": []
+  },
+  "nyaNkvAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "मेघनिदाघावदाघार्घाः",
+     "slp1": "meGanidAGAvadAGArGAH"
+    }
+   ],
+   "members_restricted": []
+  },
+  "suzAmAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "एति संज्ञायामगात्",
+     "slp1": "eti saMjYAyAmagAt"
+    },
+    {
+     "dev": "नक्षत्राद्वा",
+     "slp1": "nakzatrAdvA"
+    }
+   ],
+   "members_restricted": []
+  },
+  "savanAdiH": {
+   "gaNasUtra": [],
+   "members_restricted": [
+    {
+     "member": "saMjYAyAM",
+     "surface_dev": "संज्ञायां",
+     "gloss_dev": "बृहस्पतिसवः",
+     "verified_in_kashika": true
+    }
+   ]
+  },
+  "kzuBnAdiH": {
+   "gaNasUtra": [
+    {
+     "dev": "क्षुभ्ना-तृप्नु-नृगमन-नन्दिन्-नन्दन-नगर-एतान्युत्तरपदानि संज्ञायां प्रयोजयन्ति",
+     "slp1": "kzuBnAtfpnunfgamananandinnandananagaraetAnyuttarapadAni saMjYAyAM prayojayanti"
+    },
+    {
+     "dev": "नृतिर्यङि प्रयोजयन्ति",
+     "slp1": "nftiryaNi prayojayanti"
+    },
+    {
+     "dev": "नर्तन-गहन-नन्दन-निवेश-निवास-अग्नि-अनूप-एतान्युत्तरपदानि प्रयोजयन्ति",
+     "slp1": "nartanagahananandananiveSanivAsaagnianUpaetAnyuttarapadAni prayojayanti"
+    },
+    {
+     "dev": "आचार्यादणत्वं च",
+     "slp1": "AcAryAdaRatvaM ca"
+    },
+    {
+     "dev": "इरिकादीनि वनोत्तरपदानि संज्ञायाम्",
+     "slp1": "irikAdIni vanottarapadAni saMjYAyAm"
+    }
+   ],
+   "members_restricted": []
+  }
+ },
+ "sub_ganas": {
+  "haritAdiH": {
+   "sutra": "4.1.100",
+   "of": "bidAdiH",
+   "from": "harita",
+   "size": null,
+   "evidence": "Kāśikā 4.1.100 haritādir bidādyantargaṇaḥ (the stretch from harita to the end of bidādi)"
+  },
+  "kaRvAdiH": {
+   "sutra": "4.2.111",
+   "of": "gargAdiH",
+   "from": "kaRva",
+   "size": null,
+   "evidence": "Kaumudī 4.2.111 'kaṇvo gargādiḥ': kaṇva is a member of gargādi, kaṇvādi is the stretch from kaṇva to its end (kurvādi's gaṇasūtra: kaṇvādivat)"
+  },
+  "pUrvAdiH": {
+   "sutra": "7.1.16",
+   "of": "sarvAdiH",
+   "from": "pUrva",
+   "size": 9,
+   "evidence": "Kāśikā 7.1.16 pūrvādibhyo navabhyaḥ: the nine from pūrva in sarvādi's order"
+  },
+  "qatarAdiH": {
+   "sutra": "7.1.25",
+   "of": "sarvAdiH",
+   "from": "qatara",
+   "size": 5,
+   "evidence": "Kāśikā 7.1.25 ḍatarādibhyaḥ pañcabhyaḥ: ḍatara ḍatama anya anyatara itara (sarvādi's five)"
+  }
+ },
+ "open_not_in_patha": {
+  "indrajananAdiH": {
+   "sutra": "4.3.88",
+   "evidence": "Kāśikā 4.3.88 indrajananādir ākṛtigaṇaḥ prayogato 'nusartavyaḥ, prātipadikeṣu na paṭhyate: usage-attested, not in the pāṭha; admitted only through a reviewed extension row"
+  }
+ },
+ "sutra_aliases": {
+  "2.2.18": [
+   "prAdiH"
+  ],
+  "4.1.18": [
+   "lohitAdiH"
+  ],
+  "6.2.151": [
+   "yAjakAdiH"
+  ],
+  "6.2.170": [
+   "suKAdiH"
+  ],
+  "8.1.57": [
+   "gotrAdiH"
+  ]
+ }
+}

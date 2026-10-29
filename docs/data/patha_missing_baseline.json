@@ -1,0 +1,11 @@
+{
+ "_doc": "Lists a sutra names that have no data entry and no engine derivation (tools/patha_inventory.py xref, after docs/data/patha_xref_classified.json). Ratchet: may only shrink; tests/unit/test_patha_inventory.py fails on any new entry.",
+ "missing": [
+  "1.1.23|saMKyA words (eka … , bahu, gaRa, vatu, qati)",
+  "4.3.88|SiSukrandayamasaBadvandvendrajananAdiByaSCaH",
+  "5.2.56|viMSatyAdiByastamaqanyatarasyAm",
+  "5.2.57|SatAdimAsArDamAsasaMvatsarAcca",
+  "5.3.2|kiMsarvanAmabahuByodvyAdiByaH",
+  "6.1.188|svapAdihiMsAmacyaniwi"
+ ]
+}

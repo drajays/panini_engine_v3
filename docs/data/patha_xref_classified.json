@@ -1,0 +1,233 @@
+{
+ "_doc": "Decision per sutra-names-a-list entry that tools/patha_inventory.py first reported missing. class: present (stored/wired) | alias (reads another gana) | derived (the engine derives it) | in-sutra (listed in the sutra) | false-positive (heuristic hit on a word with 'adi') | source-needed / laukika-numerals / open-akrti (still missing: they form docs/data/patha_missing_baseline.json). Written by hand with the Kasika evidence; checked by tests/unit/test_patha_inventory.py.",
+ "entries": {
+  "1.1.23|saMKyA words (eka … , bahu, gaRa, vatu, qati)": {
+   "class": "laukika-numerals",
+   "why": "bahu, gaRa, vatu, qati are named by the sutra (stored: data/inputs/samkhya_patha.json); -vatup / -qati words are tagged by the pratyaya at run time (5.2.39, 5.2.41); the primitive numerals (eka … sahasra …) are 'laukika' (Kasika 5.2.56) — a source of numeral stems is still needed"
+  },
+  "1.1.64|acontyAdi": {
+   "class": "false-positive",
+   "why": "'aco 'ntyadi ti': positional adi (first of the final vowel-sound), not a list"
+  },
+  "1.2.1|gANkuwAdiByoYRinNit": {
+   "class": "present",
+   "why": "kutadi = dhatupatha antargana (46 marks incl. one stray; kut 06.0093 … kun/kuun 06.0137); sutras/…/sutra_1_2_1.py reads meta['antarganas']"
+  },
+  "1.2.21|udupaDAdBAvAdikarmaRoranyatarasyAm": {
+   "class": "false-positive",
+   "why": "'bhavadikarmanoh': the word adi-karman, not a list"
+  },
+  "2.1.70|SramaRAdiBiH": {
+   "class": "present",
+   "why": "gana SramaRAdiH exists; the brain filed it under 3.1.70, the overlay corrects it to 2.1.70 (Kasika 2.1.70 lists SramaRa …)"
+  },
+  "2.2.18|kugatiprAdayaH": {
+   "class": "alias",
+   "why": "prAdi = gana 1.4.58 (stored); gati by 1.4.60 ff (derived); ku is the avyaya (Kasika 2.2.18)",
+   "gana": [
+    "prAdiH"
+   ],
+   "kashika_word": "प्रादयः"
+  },
+  "2.3.29|anyArAditarartedikCabdAYcUttarapadAjAhiyukte": {
+   "class": "in-sutra",
+   "why": "the words are listed in the sutra itself (anya, arat, itara, rte, dik-sabda, anc-uttarapada, ac, ahi)"
+  },
+  "3.1.55|puzAdidyutAdyxditaH": {
+   "class": "present",
+   "why": "pusadi / dyutadi = dhatupatha antarganas (stored per root, read by sutra_3_1_55); ldit is derived from the root's it-marker by 1.3.2"
+  },
+  "3.1.7|samAnakartfkAdicCAyAM": {
+   "class": "false-positive",
+   "why": "'samanakartrkad icchayam': the word iccha"
+  },
+  "3.2.146|nindahiMsakliSaKAdavinASaparikzipaparirawaparivAdivyABAzAsUYo": {
+   "class": "in-sutra",
+   "why": "the roots are listed in the sutra itself"
+  },
+  "3.2.21|divAviBAniSApraBABAskArAntAnantAdibahunAndIkimlipilibibaliBaktikartfcitrakzetrasaMKyAjaNGAbAhvaharyattatDanuraruzzu": {
+   "class": "in-sutra",
+   "why": "the words are listed in the sutra itself"
+  },
+  "3.4.46|kazAdizu": {
+   "class": "derived",
+   "why": "kasadi = the upapadas of the namul sutras from 3.4.34 (nimulasamulayoh kasah) on: read off the Astadhyayi text (Kasika 3.4.46: '3.4.34 ity etad arabhya kasadayah')"
+  },
+  "3.4.58|nAmnyAdiSigrahoH": {
+   "class": "false-positive",
+   "why": "'namny adisigrahoh': adi-si-graha"
+  },
+  "3.4.75|tAByAmanyatroRAdayaH": {
+   "class": "present",
+   "why": "unadayah = the unadi-patha (data/inputs/unadi_patha.json, 748 sutras)"
+  },
+  "3.4.84|paYcAnAmAdita": {
+   "class": "false-positive",
+   "why": "'paYcanam adita': the first of five"
+  },
+  "4.1.100|haritAdiByoYaH": {
+   "class": "present",
+   "why": "haritadi = the stretch of bidadi from harita to its end (Kasika: bidadyantarganah); overlay sub_ganas"
+  },
+  "4.1.172|kurunAdiByo": {
+   "class": "derived",
+   "why": "kuru + na-kara-adi: the janapada-ksatriya names that begin with n (naisadhya, naipathya) — a letter-positional class, no list (Kasika 4.1.172)"
+  },
+  "4.1.173|sAlvAvayavapratyagraTakalakUwASmakAdiY": {
+   "class": "in-sutra",
+   "why": "the stems are listed in the sutra itself (pratyagratha, kalakuta, asmaka …)"
+  },
+  "4.1.18|lohitAdikatanteByaH": {
+   "class": "alias",
+   "why": "lohitadi up to kata = the gana of 3.1.13 (stored), read as far as kata (Kasika 4.1.18)",
+   "gana": [
+    "lohitAdiH"
+   ],
+   "kashika_word": "लोहितादिभ्यः"
+  },
+  "4.1.85|dityadityAdityapatyuttarapadARRyaH": {
+   "class": "in-sutra",
+   "why": "the stems are listed in the sutra itself (diti, aditi, aditya, pati-uttarapada)"
+  },
+  "4.2.111|kaRvAdiByo": {
+   "class": "present",
+   "why": "kanvadi = the stretch of gargadi from kanva to its end ('kanvo gargadih', Kaumudi 4.2.111); overlay sub_ganas"
+  },
+  "4.2.11|pARqukambalAdiniH": {
+   "class": "false-positive",
+   "why": "'pandukambalad inih': one stem"
+  },
+  "4.2.55|sosyAdiriti": {
+   "class": "false-positive",
+   "why": "'sosyadiriti': the word adi"
+  },
+  "4.2.62|anubrAhmaRAdiniH": {
+   "class": "false-positive",
+   "why": "'anubrahmanad inih': one stem"
+  },
+  "4.3.111|karmandakfSASvAdiniH": {
+   "class": "false-positive",
+   "why": "'karmandakrsasvad inih': two stems in the sutra"
+  },
+  "4.3.88|SiSukrandayamasaBadvandvendrajananAdiByaSCaH": {
+   "class": "open-akrti",
+   "why": "indrajananadi is an akrtigana 'prayogato 'nusartavyah, pratipadikesu na pathyate' (Kasika 4.3.88): usage-attested, not in the pathas; admitted only by a reviewed extension row (gana_extensions.json, to be added)"
+  },
+  "4.4.23|cUrRAdiniH": {
+   "class": "false-positive",
+   "why": "'curnad inih': one stem"
+  },
+  "5.1.99|sampAdini": {
+   "class": "false-positive",
+   "why": "'sampadini': a sense word"
+  },
+  "5.2.128|prARisTAdiniH": {
+   "class": "false-positive",
+   "why": "'pranisthad ini': one stem"
+  },
+  "5.2.56|viMSatyAdiByastamaqanyatarasyAm": {
+   "class": "laukika-numerals",
+   "why": "vimsatyadi = laukika numeral words (Kasika 5.2.56), not a pathas list: needs the numeral source of 1.1.23"
+  },
+  "5.2.57|SatAdimAsArDamAsasaMvatsarAcca": {
+   "class": "laukika-numerals",
+   "why": "satadi = laukika numeral words (Kasika 5.2.57): needs the numeral source of 1.1.23"
+  },
+  "5.2.99|PenAdilac": {
+   "class": "false-positive",
+   "why": "'phenad ilac': one stem"
+  },
+  "5.3.2|kiMsarvanAmabahuByodvyAdiByaH": {
+   "class": "laukika-numerals",
+   "why": "dvyadi = dvi, tri … (laukika numeral words): needs the numeral source of 1.1.23"
+  },
+  "5.4.13|anugAdinazWak": {
+   "class": "false-positive",
+   "why": "'anugadin': the word anugadin"
+  },
+  "6.1.157|pAraskarAdiH": {
+   "class": "present",
+   "why": "pAraskarAdi: members from the brain's notes, verified in the Kasika (pAraskara kAraskara raTaspA kizku kizkinDA), gaNasutras 163/164 stored; akrtigana (Kasika 6.1.157)"
+  },
+  "6.1.188|svapAdihiMsAmacyaniwi": {
+   "class": "source-needed",
+   "why": "svapadi = an adadyantargana (Kaumudi 6.1.188): its first and last root are not in the sources; needs the dhatupatha's antargana mark"
+  },
+  "6.1.197|YnityAdirnityam": {
+   "class": "false-positive",
+   "why": "'Yn-ityadir nityam': ñit / nit and adi (first vowel)"
+  },
+  "6.1.3|saMyogAdayaH": {
+   "class": "false-positive",
+   "why": "'na ndrah samyogadayah': positional adi"
+  },
+  "6.1.6|jakzityAdayaH": {
+   "class": "present",
+   "why": "jaksityadi = dhatupatha antargana (jaks + six = 7, Kasika 6.1.6); read by sutra_6_1_6"
+  },
+  "6.2.131|vargyAdiH": {
+   "class": "derived",
+   "why": "vargyadi = the yat-forms of digadi's stretch from varga to its end (Kasika 6.2.131); the engine derives yat (4.3.54); overlay extra.derived"
+  },
+  "6.2.151|manktinvyAKyAnaSayanAsanasTAnayAjakAdikrItAH": {
+   "class": "alias",
+   "why": "yajakadi = the gana of 2.2.9 (Kasika 6.2.151)",
+   "gana": [
+    "yAjakAdiH"
+   ],
+   "kashika_word": "याजकादयो"
+  },
+  "6.2.170|jAtikAlasuKAdiByonAcCAdanAt": {
+   "class": "alias",
+   "why": "sukhadi = the gana of 3.1.18 (Kasika 6.2.170: 'sukhadayas trtiye 3.1.18 pathyante')",
+   "gana": [
+    "suKAdiH"
+   ],
+   "kashika_word": "सुखादयस्तृतीये"
+  },
+  "6.2.190|puruzaScAnvAdizwaH": {
+   "class": "false-positive",
+   "why": "'purusas can anvadistah': the word adista"
+  },
+  "6.2.41|sAdasAdisAraTizu": {
+   "class": "false-positive",
+   "why": "'sadasadisarathisu': stems in the sutra"
+  },
+  "6.3.2|stokAdiByaH": {
+   "class": "in-sutra",
+   "why": "stokadi = stoka, antika-artha, dura-artha, krcchra: spelled by the sutra itself, the two middle ones by meaning (vivaksa), not a list"
+  },
+  "6.4.126|SasadadavAdiguRAnAm": {
+   "class": "false-positive",
+   "why": "'sasadadavadigunanam': va-adi (initial va)"
+  },
+  "7.1.16|pUrvAdiByo": {
+   "class": "present",
+   "why": "purvadi = nine of sarvadi from purva (sva, antara included); overlay sub_ganas (Kasika 7.1.16 'navabhyah')"
+  },
+  "7.1.25|qatarAdiByaH": {
+   "class": "present",
+   "why": "qatarAdi = five of sarvadi from qatara (qatara qatama anya anyatara itara); overlay sub_ganas (Kasika 7.1.25 'paYcabhyah')"
+  },
+  "7.2.17|BAvAdikarmaRoH": {
+   "class": "false-positive",
+   "why": "'bhavadikarmanoh': the word adi-karman"
+  },
+  "7.2.45|raDAdiByaSca": {
+   "class": "present",
+   "why": "radhadi = dhatupatha antargana (8 roots, Kasika 7.2.45 'astabhyah'); stored per root"
+  },
+  "7.3.1|devikASiMSapAdityavAqdIrGasatraSreyasAmAt": {
+   "class": "in-sutra",
+   "why": "the stems are listed in the sutra itself (devika, simsapa, ditya-vah, dirghasatra, sreyas)"
+  },
+  "8.1.57|canacidivagotrAditadDitAmreqitezvagateH": {
+   "class": "alias",
+   "why": "gotradi = the gana of 8.1.27 (Kasika 8.1.57: 'gotradayah kutsanabhiksnyayoh 8.1.27')",
+   "gana": [
+    "gotrAdiH"
+   ],
+   "kashika_word": "गोत्रादयः"
+  }
+ }
+}
