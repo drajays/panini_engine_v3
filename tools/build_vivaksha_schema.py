@@ -85,14 +85,18 @@ VOCABULARY = {
         "kAma": ["kAme"], "prasita": ["prasite"], "parijAta": ["parijAtaH"], "aMSaMhArI": ["hArI"], "acirApahfta": ["apahfte"], "kAriRi": ["kAriRi"],
         "anvicCati": ["anvicCati", "daRqAjinAByAmanvicCati"], "grahaRa": ["grahaRam"], "grAmaRI": ["grAmaRIH"], "bandhana": ["banDanamasya"],
         "annaprAya": ["prAye"], "SrAddhaBukta": ["Buktam"], "anena": ["anena"],
+        # 5.4.68: the samāsānta frame (the speaker forms a compound)
+        "samAsAnta": ["samAsAntAH"],
         # 5.2.94 – 140 (agent C)
         "astyasya": ["astIti"]},
-    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA", "saMjYayoH"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
                       "manTa": ["manTa"], "daRqa": ["daRqayoH"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH"],
-                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"]},
+                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO", "jAti"], "brahmacAri": ["brahmacAriRi"],
+                      # 5.4.104 – 157 (samāsānta)
+                      "jAnapadAKyA": ["jAnapadAKyAyAm"], "dAru": ["dAruRi"], "karmavyatihAra": ["karmavyatihAre"], "vandita": ["vandite"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},
     # 7.3.16: the sense is not the future (bhāvī): the speaker says so
