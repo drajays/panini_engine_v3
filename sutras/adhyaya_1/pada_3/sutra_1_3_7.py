@@ -35,11 +35,15 @@ from engine.state  import State
 _CU_TU = frozenset({"c", "C", "j", "J", "Y", "w", "W", "q", "Q", "R"})
 # छ् ढ् (7.1.2), झ् (7.1.3), ठ् (7.3.50).
 _STHANIN_OF_LATER_ADESHA = frozenset({"C", "Q", "J", "W"})
+# Kāśikā 1.3.7 / 5.2.24, 26, 31 / 5.3.53, 69: the pratyayas whose initial cu / ṭu stays (anityatva of 1.3.7), by upadeśa name.
+_ANITYA = frozenset({"cuYcup", "caRap", "wIwac", "nAwac", "Brawac", "jAhac", "caraw", "jAtIyar"})
 
 
 def term_candidates(state: State, ti: int) -> list[int]:
     t = state.terms[ti]
     if not is_pratyaya_upadesha(t) or it_lopa_already_done(t) or not t.varnas:
+        return []
+    if t.meta.get("upadesha_slp1") in _ANITYA:
         return []
     v = t.varnas[0]
     if v.slp1 not in _CU_TU or v.slp1 in _STHANIN_OF_LATER_ADESHA:

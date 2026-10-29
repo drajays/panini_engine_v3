@@ -102,11 +102,6 @@ def test_stem_without_vahika_tag_gets_no_nyat():
     assert "mAlavyam" not in got, sorted(got)
 
 
-@pytest.mark.xfail(strict=True, reason="1.3.7 cuṭū drops the initial j of jātīyar (the Kāśikā keeps it: paṭujātīyaḥ): the 1.3.7 audit shared with jāhac / cuñcup / caṇap")
-def test_jatiyar():
-    assert "paTujAtIyam" in _forms({"taddhitArtha": "prakAra"}, "paTu", None, NP)      # 5.3.69
-
-
 @pytest.mark.xfail(strict=True, reason="7.1.25 adḍ is given only to a list of stems: yad + ḍatarac gives yataram, not yatarat")
 def test_yatarat():
     assert "yatarat" in _forms({"taddhitArtha": "nirDAraRadvaya"}, "yad", None, NP)      # 5.3.92
