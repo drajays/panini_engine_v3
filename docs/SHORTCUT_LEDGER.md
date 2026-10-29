@@ -51,3 +51,16 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S46 | 5.2.94 – 140 | prāṇistha, samāsa, pūraṇa are caller `lex:` tags; stem lists are inline; man-stems of 5.2.137 wait for S21 | Lexicon tables; S21 | open |
 | S58 | 5.4.56, 58 – 67 | the yoga with kṛ / bhū / as and the samartha-vibhakti are not checked; the sense (kṛṣi, yāpanā …) is a vivakṣā value | S16 (samartha-vibhakti) plus the verb context | open |
 | S59 | 5.4.1 – 67 | `lex:saMKyAdi`, `lex:ktAnta`, `lex:jAtyanta` are caller tags; the stems of 5.4.6, 16, 25, 26, 30 – 33, 35 – 37, 40, 56, 59 – 67 are inline sets; the sense restrictions (anitya, ajāti, aviprakṛṣṭakāla, vīpsā, daṇḍa / vyavasarga) are vivakṣā values; 5.4.2 pairs daṇḍa and vyavasarga as two values | Lexicon tables (S14) | open |
+| S50 | 5.3.3 – 57 | the kim / sarvanāma / bahu stems of 5.3.2 are inline sets in each sūtra | one engine helper reading 1.1.27 up to eka | open |
+| S51 | 5.3.3 – 57 | each 5.3 sūtra adds the 5.3.1 vibhakti tag `samjna_5_3_1_vibhakti` and the asarva-vibhakti meta itself | 5.3.1 as a saṃjñā sūtra | open |
+| S52 | 5.3.16/18, 34 – 39, 51 | two sūtras teach a pratyaya for one stem in one sense with no bādhā; the loop picks one without exploring both (etarhi is missing) | let the scheduler explore the vikalpa between competing sūtras | open |
+| S53 | 5.3 | `lex:saMKyA`, `lex:dikSabda` are caller tags | Lexicon tables (S14) | open |
+| S54 | 5.3.55, 57 | only tamap / tarap are generated; iṣṭhan / īyasun are withheld | 6.4.154 – 159, then iṣṭhan / īyasun (guṇavacana only) | open |
+| S66 | 5.3.66 – 118 | the sense-connected stems are `lex:anukampAyukta`, `lex:manuzyanAman`; the uttarapada ajina is read off the letters (5.3.82) | Lexicon tables; a samāsa as a pair of Terms | open |
+| S55 | 5.3.112 – 118 | the tadrāja stems take the caller's `lex:pUga`, `lex:vrAta`, `lex:AyuDajIvisaNGa`, `lex:vAhIka` tags, no vivakṣā; cphañ-anta stems and astriyām (5.3.113) are not modelled; the aṇ-anta stems of 5.3.118 are listed by form | Lexicon tables | open |
+| S56 | 5.3.83 – 84 | ghan is counted as ajādi because its iya (7.1.2) comes in a later phase | order the phases so 7.1.2 precedes | open |
+| S57 | 5.3.66 – 76, 85 | only prātipadikas are covered; the tiṅaś ca part is not modelled | tiṅanta bases | open |
+| S62 | 5.4.81 – 159 | a compound is one Term; its kind is a `lex:` tag and its last member is read off the letters, so sandhi (mahā + anas → mahAnas) needs hand-written regexes | a samāsa as a pair of Terms (S30, S36) | open |
+| S63 | 5.4.68 – 160 | 5.4.68 opens in every taddhita loop, so the gate-only legacy halves of 5.4.69 – 160 fire as noise (they change no tape) | a vivakṣā-gated opener once the samāsa machine exists | open |
+| S64 | 5.4.81 – 159 | the vā readings `-` leave the compound with no pratyaya; the samāsa kinds (tatpuruza, dvigu, bahuvrIhi, avyayIBAva …) are caller tags | Lexicon tables (S14) | open |
+| S65 | 5.4.155 – 159 | the barring sūtras are a `kap_barred` meta flag, not a real na | model the niṣedha as a bādhā | open |
