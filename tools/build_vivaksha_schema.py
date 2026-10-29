@@ -66,8 +66,16 @@ VOCABULARY = {
         # 5.1.38 – 63 (the other senses of the ārhīya group)
         "nimitta": ["nimittam", "nimittaM"], "Izvara": ["ISvaraH"], "vidita": ["viditaH"], "vApa": ["vApaH"], "vfdDyAdi": ["upadAH"],
         "bhArahAra": ["Avahati"], "samBavati": ["samBavati"], "avaharati": ["avaharati"], "pacati": ["pacati"],
-        "aMSavasnaBfti": ["aMSa", "vasna", "BftayaH"], "tadasyaparimARam": ["parimARam"], "arhati": ["arhati"]},
-    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"]},
+        "aMSavasnaBfti": ["aMSa", "vasna", "BftayaH"], "tadasyaparimARam": ["parimARam"], "arhati": ["arhati"],
+        # 5.1.72 – 94 (the ṭhañ group: what he does, where he goes, and the kāla senses)
+        "vartayati": ["vartayati"], "saMSayApanna": ["saMSayamApannaH"], "yojanagacCati": ["yojanam"], "gacCati": ["gacCati"], "uttarapaTa": ["Ahftam"],
+        "kAlanirvftta": ["nirvfttam"], "kAlAdhIzwa": ["tamaDIzwaH"], "kAlaBfta": ["BftaH"], "kAlaBUta": ["BUtaH"], "kAlaBAvI": ["BAvI"],
+        "kAlaparijayya": ["parijayya"], "kAlalaBya": ["laBya"], "kAlakArya": ["kArya"], "kAlasukara": ["sukaram"], "kAlabrahmacarya": ["brahmacaryam"]},
+    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"]},
+    # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
+    "nityatA": {"nitya": ["nityam", "nityamarhati"]},
+    # 7.3.16: the sense is not the future (bhāvī): the speaker says so
+    "bhavizyat": {"aBavizyat": ["aBavizyati"]},
     # 4.3.3: the yuṣmad / asmad that speaks of one person
     "ekavacana": {"ekavacana": ["ekavacane"]},
     # inside the vikāra group (4.3.134 – 168): which vikāra the speaker means
