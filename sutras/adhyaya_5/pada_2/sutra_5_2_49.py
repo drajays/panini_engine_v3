@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_49_nAntAdasaM_49"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.49", state, "4.1.82"):
@@ -27,10 +27,42 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.49"
+    return state
+
+
+# SHORTCUT S43: saṃkhyā / saṃkhyādi are lex: tags from the caller (S33)
+from engine.taddhita_attach import taddhita_site
+from engine.luk import live_taddhita
+from engine.state import Term
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+from phonology.varna import parse_slp1_upadesha_sequence
+
+
+def _site(state: State):
+    i = live_taddhita(state, only_from=("5.2.48",), upadesha=("qaw",))
+    if i is None or i == 0 or state.meta.get("done:5.2.49") or not vivaksita(state, "taddhitArtha", "tasyapUraRa"):
+        return None
+    t = state.terms[i - 1]
+    flat = "".join(v.slp1 for v in t.varnas)
+    return i if "lex:saMKyA" in t.tags and "lex:saMKyAdi" not in t.tags and flat.endswith("n") else None
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    i = _site(state)
+    if i is None:
+        return _legacy_act(state)
+    state.meta["done:5.2.49"] = True
+    state.terms[i - 1].tags.discard("bha")           # SHORTCUT S41: 1.4.18 was given before maṭ stood before the pratyaya; the pratyaya now begins with m, so the stem is pada (1.4.17), not bha
+    state.terms.insert(i, Term(kind="agama", varnas=list(parse_slp1_upadesha_sequence("maw")), tags={"agama", "upadesha"}, meta={"upadesha_slp1": "maw"}))
     return state
 
 

@@ -23,10 +23,17 @@ from engine.samjna_sup_prakriti import (
 _REGISTRY = "1.4.17_pada_anga_indices"
 
 
+def _wit_agama_of_taddhita(state: State, i: int) -> bool:
+    """A ṭit āgama is the first part of the pratyaya it stands before (1.1.46): maṭ of ḍaṭ (5.2.49) makes pañcan pada before the m."""
+    pr = state.terms[i + 1]
+    return ("agama" in pr.tags and "it:wit" in pr.tags and bool(pr.varnas) and i + 2 < len(state.terms)
+            and {"taddhita", "pratyaya"} <= state.terms[i + 2].tags)
+
+
 def _eligible(state: State):
     for i in range(len(state.terms) - 1):
         anga, pr = state.terms[i], state.terms[i + 1]
-        if not is_asarvanamasthana_svadi_sup(pr, anga):
+        if not (is_asarvanamasthana_svadi_sup(pr, anga) or ("anga" in anga.tags and _wit_agama_of_taddhita(state, i))):
             continue
         if "pada_1_4_17" in anga.tags:
             continue

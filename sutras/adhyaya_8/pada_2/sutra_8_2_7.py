@@ -44,7 +44,8 @@ def _target_premerge(state: State):
             continue
         if not stem.varnas or stem.varnas[-1].slp1 != "n":
             continue
-        if not ({"sup"} <= pratyaya.tags or {"taddhita", "pratyaya"} <= pratyaya.tags) or not pratyaya.varnas:
+        wit = "agama" in pratyaya.tags and "it:wit" in pratyaya.tags and i + 2 < len(state.terms) and {"taddhita", "pratyaya"} <= state.terms[i + 2].tags      # maṭ of ḍaṭ (5.2.49): first part of the pratyaya (1.1.46)
+        if not ({"sup"} <= pratyaya.tags or {"taddhita", "pratyaya"} <= pratyaya.tags or wit) or not pratyaya.varnas:
             continue
         if pratyaya.varnas[0].slp1 not in HAL:
             continue
