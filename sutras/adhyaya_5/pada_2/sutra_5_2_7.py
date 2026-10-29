@@ -43,7 +43,7 @@ _TAILS = ("paTin", "aNga", "karman", "patra", "pAtra")
 
 
 def _sarvadi_final(f: str) -> bool:      # SHORTCUT S36: the compound is one lex:samAsa Term; the sarvādi pūrvapada is read off its letters
-    return any(f.endswith(x) and gana.in_gana("sarvAdiH", f[:-len(x)]) for x in _TAILS)
+    return any(f.endswith(x) and gana.in_gana("sarvAdiH", f[:-len(x)]) for x in _TAILS) or (f.endswith("ANga") and gana.in_gana("sarvAdiH", f[:-4] + "a"))      # sarva + aṅga = sarvāṅga
 
 
 _RULES = (      # (the senses the sūtra names itself, what it says of the stem, the pratyaya or its readings)

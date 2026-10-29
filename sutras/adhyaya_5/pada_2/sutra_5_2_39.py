@@ -39,7 +39,7 @@ from engine.vikalpa import policy_pick
 from engine.vivaksha import vivaksita
 
 _RULES = (      # (the senses the sūtra names itself, what it says of the stem, the pratyaya or its readings)
-    (('parimARa',), dict(stems=frozenset({"yad", "tad", "etad"})), 'vatup'),
+    (('parimARa',), dict(stems=frozenset({"yad", "tad", "etad"})), 'vatu~p'),
 )
 
 

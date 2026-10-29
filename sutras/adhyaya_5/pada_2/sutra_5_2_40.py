@@ -37,10 +37,10 @@ def _legacy_act(state: State) -> State:
 from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vikalpa import policy_pick
 from engine.vivaksha import vivaksita
-# SHORTCUT S36: the ādeśa of the va of vatup by gha (5.2.40) is folded into the pratyaya's name Gatup (also in 5.2.41); a sthāna-ādeśa on the pratyaya's own varṇa is to come.
+# SHORTCUT S36: the ādeśa of the va of vatup by gha (5.2.40) is folded into the pratyaya's name Gatu~p (also in 5.2.41); a sthāna-ādeśa on the pratyaya's own varṇa is to come.
 
 _RULES = (      # (the senses the sūtra names itself, what it says of the stem, the pratyaya or its readings)
-    (('parimARa',), dict(stems=frozenset({"kim", "idam"})), 'Gatup'),
+    (('parimARa',), dict(stems=frozenset({"kim", "idam"})), 'Gatu~p'),
 )
 
 
