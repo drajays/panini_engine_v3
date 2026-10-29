@@ -1,6 +1,6 @@
 # Sūtras the engine does confidently (generated — do not edit)
 
-Generated 2026-10-28 by `python3 -m tools.sutra_class`. **300 of 3983** are confident.
+Generated 2026-10-29 by `python3 -m tools.sutra_class`. **300 of 3983** are confident.
 
 *Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + named in tests ≥5×. *(S)* = structural/definitional class: invoked + cited + tested + real cond (class proof pending, plan §1).
 
