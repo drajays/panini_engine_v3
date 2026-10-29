@@ -95,14 +95,22 @@ VOCABULARY = {
         "pAkaviSaya": ["pAke"], "aSapaTa": ["aSapaTe"], "parivApaRa": ["parivApaRe"],
         # 5.3.1 – 60 (agent E)
         "paYcamIvib": ["paYcamyAH"], "saptamIvib": ["saptamyAH"], "kAle": ["kAle"],
-        "viDArTa": ["viDArTe"], "aDikaraRavicAla": ["aDikaraRavicAle"], "yApya": ["yApye"], "BAga": ["BAge"], "asahAya": ["asahAye"], "atiSAyana": ["atiSAyane"], "dik": ["dig"]},
-    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+        "viDArTa": ["viDArTe"], "aDikaraRavicAla": ["aDikaraRavicAle"], "yApya": ["yApye"], "BAga": ["BAge"], "asahAya": ["asahAye"], "atiSAyana": ["atiSAyane"], "dik": ["dig"],
+        # 5.3.61 – 110 (agent F)
+        "praSaMsA": ["praSaMsAyAm"], "IzadasamApti": ["asamAptO"], "prakAra": ["prakAravacane"], "ajYAta": ["ajYAte"], "kutsita": ["kutsite"],
+        "anukampA": ["anukampAyAm"], "nIti": ["nItO"], "alpa": ["alpe"], "hrasva": ["hrasve"], "nirDAraRadvaya": ["dvayoH"], "nirDAraRabahu": ["bahUnAm"],
+        "avakzepaRa": ["avakzepaRe"], "iva": ["ive"]},
+    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA", "saMjYAyAM"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
                       "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],
                       "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"],
-                      "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"]},
+                      "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"],
+                      "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},
+    # 5.3.98 – 99: who or what is meant when the kan is taken away (lup)
+    "abhiDeya": {"manuzya": ["manuzye"], "apaRya": ["apaRye"]},
+    "jIvikArTa": {"jIvikArTa": ["jIvikArTe"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},
     # 7.3.16: the sense is not the future (bhāvī): the speaker says so

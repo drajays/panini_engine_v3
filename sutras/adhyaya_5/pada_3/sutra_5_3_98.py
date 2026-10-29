@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_3_98_lummanuzye_98"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.3.98", state, "4.1.76"):
@@ -27,11 +27,41 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.3.98"
     return state
+
+
+from engine.taddhita_attach import sense_in
+from engine.luk import live_taddhita, take_away
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    i = live_taddhita(state, only_from=("5.3.96", "5.3.97"))
+    return i if i is not None and i > 0 and vivaksita(state, "taddhitArtha", "iva") else None
+
+
+def _ok(state: State) -> bool:
+    i = _site(state)
+    return i is not None and vivaksita(state, "abhiDeya", "manuzya") and vivaksita(state, "arthaViSeSa", "saMjYA")
+
+
+def _new_cond(state: State) -> bool:
+    return _ok(state) and not state.meta.get("done:5.3.98")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if not _new_cond(state):
+        return _legacy_act(state)
+    state.meta["done:5.3.98"] = True
+    return take_away(state, _site(state), "lup")      # the kan of a name, when a human is meant
 
 
 SUTRA = SutraRecord(
