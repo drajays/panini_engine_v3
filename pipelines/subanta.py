@@ -394,6 +394,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.103",
     "1.4.13",
     "1.4.14",
+    "2.4.82",  # अव्ययादाप्सुपः — the sup after an avyaya (a taddhitānta 1.1.38 gave the saṃjñā: tatra, kutaḥ) is luk'd
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
     "7.1.84",  # दिव औत् — div + su: v → au (द्यौः)

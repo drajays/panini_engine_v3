@@ -79,6 +79,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "गोष्ठात् खञ् भूतपूर्वे",
     why_dev               = "(सूत्रम् 5.2.18) गोष्ठात् खञ् भूतपूर्वे।",
     anuvritti_from        = ('4.1.82',),
+    apavada_of     = ('5.3.53',),      # the special for goṣṭha in the bhūtapūrva sense over the general caraṭ
     cond                  = cond,
     act                   = act,
 )

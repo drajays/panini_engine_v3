@@ -92,9 +92,12 @@ VOCABULARY = {
         "matsya": ["matsye"], "kriyAaByAvftti": ["aByAvfttigaRane"], "prakfta": ["prakftavacane"], "tAdarTya": ["tAdarTye", "tAdaraTye"], "maRi": ["maRO"],
         "varRa": ["varRe"], "vyAhftArTA": ["arTAyAm"], "dvitIyAsaptamI": ["saptamyoH"], "kfzi": ["kfzO"],
         "yApanA": ["yApanAyAm"], "ativyaTana": ["ativyaTane"], "nizkozaRa": ["nizkozaRe"], "Anulomya": ["Anulomye"], "prAtilomya": ["prAtilomye"],
-        "pAkaviSaya": ["pAke"], "aSapaTa": ["aSapaTe"], "parivApaRa": ["parivApaRe"]},
+        "pAkaviSaya": ["pAke"], "aSapaTa": ["aSapaTe"], "parivApaRa": ["parivApaRe"],
+        # 5.3.1 – 60 (agent E)
+        "paYcamIvib": ["paYcamyAH"], "saptamIvib": ["saptamyAH"], "kAle": ["kAle"],
+        "viDArTa": ["viDArTe"], "aDikaraRavicAla": ["aDikaraRavicAle"], "yApya": ["yApye"], "BAga": ["BAge"], "asahAya": ["asahAye"], "atiSAyana": ["atiSAyane"], "dik": ["dig"]},
     "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
-                      "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"],
+                      "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],

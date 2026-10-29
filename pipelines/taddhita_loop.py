@@ -32,6 +32,8 @@ def derive_taddhita_stem(stem_slp1: str, origin_tags: set[str] | None = None, st
     st.tripadi_zone = False
     tags = set(origin.record_from_terms(st.terms))
     tags |= {x for t in st.terms for x in t.tags if x.startswith("yuktavad_linga:") and x != "yuktavad_linga:"}      # 1.2.51 lupi yuktavad vyaktivacane
+    if any("avyaya" in t.tags for t in st.terms):
+        tags.add("avyaya")      # 1.1.38 gave the taddhitānta the saṃjñā: the subanta phase lets 2.4.82 take the sup away
     return "".join(v.slp1 for t in st.terms for v in t.varnas), tags, dict(st.meta.get("vikalpa_multi") or {})
 
 

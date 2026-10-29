@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_3_52_ekAdAkinic_52"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.3.52", state, "4.1.76"):
@@ -27,10 +27,50 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.3.52"
+    return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+_RULES = (
+    ({'stems': ['eka']}, ('Akinic', 'kan')),
+)      # (the stems the sūtra names, the pratyaya or its readings)
+
+
+def _attach(state: State):
+    ok = vivaksita(state, "taddhitArtha", "asahAya")
+    if not ok:
+        return None
+    for kw, up in _RULES:
+        if taddhita_site(state, None, ok=True, **{k: (frozenset(v) if k == "stems" else v) for k, v in kw.items()}) is not None:
+            return up
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.3.52")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.3.52", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside and the general pratyaya stays
+        state.meta["declined:5.3.52"] = True
+        return state
+    state = attach_taddhita(state, up)
     return state
 
 
