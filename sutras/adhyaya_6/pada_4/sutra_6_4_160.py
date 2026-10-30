@@ -16,14 +16,61 @@ from engine.krt_eligibility import samhita_gate_eligible
 _GATE_KEY: str = "6_4_160_jyAdAdIyas_160"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return samhita_gate_eligible(state, "6.4.160", gate_key=_GATE_KEY)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["anga_kind"]             = "6.4.160"
+    return state
+
+
+from engine.it_samjna import META_LOPA_DONE
+from engine.state import State, Term
+from phonology import mk
+
+_PR = ("izWan", "imanic", "Iyasu~n")      # iṣṭhan, imanic, īyasun
+_FAM = "6_4_155_family_done"                # the ṭi of this aṅga has been dealt with by one of 6.4.154 – 159 / 5.3.61 – 64
+_AC = frozenset("aAiIuUfFxXeEoO")
+_DONE = {_FAM: True, "6_4_143_dit_done": True, "6_4_148_lopa_done": True}      # the aṅga's ṭi is dealt with: the existing guards of 6.4.148 / 6.4.134 keep them from acting on it again
+
+
+def _flat(t: Term) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+
+def _ti_site(state: State, prs=_PR):
+    """The bha aṅga Term standing before iṣṭhan / imanic / īyasun (its pratyaya Term follows it), not yet dealt with by the ṭi-lopa family."""
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if {"anga", "bha"} <= t.tags and not t.meta.get(_FAM) and "taddhita" in pr.tags and any(f"origin_pratyaya:{u}" in pr.tags for u in prs):
+            return i
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if _flat(t) == "jya" and "taddhita" in pr.tags and "origin_pratyaya:Iyasu~n" in pr.tags and pr.varnas and pr.varnas[0].slp1 == "I":
+            return True
+    return False
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if not _new_cond(state):
+        return _legacy_act(state)
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if _flat(t) == "jya" and "taddhita" in pr.tags and "origin_pratyaya:Iyasu~n" in pr.tags and pr.varnas and pr.varnas[0].slp1 == "I":
+            pr.varnas[0] = mk("A")
+            pr.meta[META_LOPA_DONE] = ((pr.meta.get("upadesha_slp1") or "").strip(), "".join(v.slp1 for v in pr.varnas))      # the residue after this lopa / ādeśa is not aupadeśika: 1.3.2 – 1.3.8 do not name its letters it again
+            return state
     return state
 
 
