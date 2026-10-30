@@ -193,6 +193,34 @@ def _subkind(db: sqlite3.Connection, sid: str) -> str:
     return c.most_common(1)[0][0] if c else ""
 
 
+@lru_cache(maxsize=None)
+def _form_index(db_path: str = str(DB)) -> dict:
+    """SECOND example source: surface (SLP1) → [(deriv, spec, expected)] over every runnable subanta/tiṅanta derivation in the DB."""
+    idx: dict[str, list] = collections.defaultdict(list)
+    for d, lab, src, kind, res in _db().execute("select id,label,source,kind,result_slp1 from derivations where kind in ('subanta','tinanta')"):
+        first = (_db().execute("select state_slp1 from steps where deriv_id=? order by step_no limit 1", (d,)).fetchone() or ("",))[0]
+        spec, expected, _ = _spec(lab, src, kind, first, res)
+        if spec:
+            idx[_norm(expected)].append((d, spec, expected))
+    return idx
+
+
+def prose_examples(db: sqlite3.Connection, sid: str) -> list:
+    """Kāśikā + Laghukaumudī prose words for `sid` that the DB can turn into an engine call (the word must equal an attested derivation's final form)."""
+    idx, out, seen = _form_index(), [], set()
+    for (txt,) in db.execute("select content from texts where sutra_id=? and source in ('kashika','laghukaumudi') order by source", (sid,)):
+        txt = re.sub(r"<<.*?>>|\[\[.*?\]\]|\{.*?\}|<\{.*?\}>", " ", txt)
+        for w in re.findall(r"[\u0900-\u097f]+", txt):
+            w = re.sub(r"[\u0964\u0965]", "", w)
+            if len(w) < 2:
+                continue
+            f = _norm(_slp1(w))
+            if f not in seen:
+                seen.add(f)
+                out += idx.get(f, [])[:1]
+    return out
+
+
 def audit(filters: list[str]) -> dict:
     import sutras  # noqa: F401
     from engine import SUTRA_REGISTRY
@@ -219,6 +247,10 @@ def audit(filters: list[str]) -> dict:
                     row["reasons"].append(why)
                 continue
             runnable.append((d, spec, expected))
+        if not runnable:                       # second source: Kāśikā / Laghukaumudī prose words
+            runnable = prose_examples(db, sid)
+            if runnable:
+                row["reasons"].append("examples from Kāśikā/Laghukaumudī prose")
         # spread the examples over distinct stems / dhātus before trying
         seen_keys, pick = set(), []
         for d, spec, expected in runnable:

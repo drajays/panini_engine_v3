@@ -1,25 +1,23 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 105,
-   "NO_EXAMPLE": 215,
+   "FAIL": 316,
+   "NO_EXAMPLE": 4,
    "DONE": 1
   },
   "by_type": {
    "NIYAMA": {
-    "FAIL": 2,
-    "NO_EXAMPLE": 6
+    "FAIL": 8
    },
    "ATIDESHA": {
-    "FAIL": 3,
-    "NO_EXAMPLE": 5
+    "FAIL": 8
    },
    "VIBHASHA": {
     "FAIL": 3
    },
    "VIDHI": {
-    "NO_EXAMPLE": 204,
-    "FAIL": 97,
+    "FAIL": 297,
+    "NO_EXAMPLE": 4,
     "DONE": 1
    }
   },
@@ -44,13 +42,17 @@
    "id": "1.1.59",
    "type": "NIYAMA",
    "subkind": "<<गमहनजनखनघसां लोपः क्ङित्यनङि>> [[6.4.9",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 1.1.59 did not fire (trace status absent): another path made it",
+    "form kim is right but 1.1.59 did not fire (trace status absent): another path made it",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "1.2.2": {
@@ -86,104 +88,145 @@
    "id": "1.2.26",
    "type": "NIYAMA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "form yasya is right but 1.2.26 did not fire (trace status absent): another path made it",
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "form kim is right but 1.2.26 did not fire (trace status absent): another path made it",
     "sanādi: no generic entry point",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "1.2.62": {
    "id": "1.2.62",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.2.64": {
    "id": "1.2.64",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.2.64 did not fire (trace status absent): another path made it",
+    "form payaH is right but 1.2.64 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.2.70": {
    "id": "1.2.70",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form mAtrA is right but 1.2.70 did not fire (trace status absent): another path made it",
+    "readings ['mAd', 'mAdd', 'mAdt', 'mAt'] ≠ expected mAtA",
+    "readings ['pid', 'pidd', 'pidt', 'pit'] ≠ expected pitA",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.14": {
    "id": "1.3.14",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.3.14 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.15": {
    "id": "1.3.15",
    "type": "NIYAMA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['rAjAnasaH'] ≠ expected rAjAnaH",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.18": {
    "id": "1.3.18",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.22": {
    "id": "1.3.22",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.32": {
    "id": "1.3.32",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tezu is right but 1.3.32 did not fire (trace status absent): another path made it",
+    "form kim is right but 1.3.32 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.45": {
    "id": "1.3.45",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['jAnAti'] ≠ expected jAnIte",
+    "form kim is right but 1.3.45 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.47": {
    "id": "1.3.47",
@@ -203,31 +246,45 @@
    "id": "1.3.53",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.3.53 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.54": {
    "id": "1.3.54",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tayA is right but 1.3.54 did not fire (trace status absent): another path made it",
+    "form kim is right but 1.3.54 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.55": {
    "id": "1.3.55",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['taH'] ≠ expected sA",
+    "form tftIyA is right but 1.3.55 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.60": {
    "id": "1.3.60",
@@ -261,22 +318,31 @@
    "id": "1.3.62",
    "type": "ATIDESHA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form yena is right but 1.3.62 did not fire (trace status absent): another path made it",
+    "form Aste is right but 1.3.62 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.63": {
    "id": "1.3.63",
    "type": "VIDHI",
    "subkind": "<<कृञ्चानुप्रयुज्यते लिटि>> [[3.1.40]] इ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['yAd', 'yAdd', 'yAdt', 'yAt'] ≠ expected yasmAt",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.3.63 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "1.3.66": {
@@ -313,41 +379,57 @@
    "id": "1.3.79",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form Pale is right but 1.3.79 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.82": {
    "id": "1.3.82",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.3.82 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.83": {
    "id": "1.3.83",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.3.83 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.84": {
    "id": "1.3.84",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['taH'] ≠ expected sA",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.3.91": {
    "id": "1.3.91",
@@ -397,237 +479,316 @@
    "id": "1.4.8",
    "type": "NIYAMA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.4.8 did not fire (trace status absent): another path made it",
+    "form patyA is right but 1.4.8 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "1.4.15": {
    "id": "1.4.15",
    "type": "NIYAMA",
    "subkind": "<<सुपो धातुप्रातिपदिकयोः>> [[2.4.71]] इत",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 1.4.15 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "1.4.21": {
    "id": "1.4.21",
    "type": "NIYAMA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.4.105": {
    "id": "1.4.105",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "1.4.107": {
    "id": "1.4.107",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.14": {
    "id": "2.1.14",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.14 did not fire (trace status absent): another path made it",
+    "form gAvaH is right but 2.1.14 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.20": {
    "id": "2.1.20",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.24": {
    "id": "2.1.24",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tasya is right but 2.1.24 did not fire (trace status absent): another path made it",
+    "form dvitIyA is right but 2.1.24 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.30": {
    "id": "2.1.30",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tasya is right but 2.1.30 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.30 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.32": {
    "id": "2.1.32",
    "type": "VIDHI",
    "subkind": "<<कर्तृकरणे कृता बहुलम्>> [[2.1.32]] इति",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "form tftIyA is right but 2.1.32 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.32 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.1.40": {
    "id": "2.1.40",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.50": {
    "id": "2.1.50",
    "type": "VIDHI",
    "subkind": "<<दिक्संख्ये संज्ञायाम्>> [[2.1.50]] इति",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.50 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.1.52": {
    "id": "2.1.52",
    "type": "VIDHI",
    "subkind": "<<संख्यापूर्वो द्विगुः>> [[2.1.52]] इति ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "form yaH is right but 2.1.52 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 2.1.52 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.1.55": {
    "id": "2.1.55",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.55 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.1.57": {
    "id": "2.1.57",
    "type": "VIDHI",
    "subkind": "<<विशेषणं विशेष्येण बहुलम्>> [[2.1.57]] ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.1.57 did not fire (trace status absent): another path made it",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.2.1": {
    "id": "2.2.1",
    "type": "VIDHI",
    "subkind": "<<उपपदमतिङ्>> [[2.2.19]] इति उपपदसमासः ।",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.2.1 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.2": {
    "id": "2.2.2",
    "type": "VIDHI",
    "subkind": "<<अनेकमन्यपदार्थे>> [[2.2.24]] इति बहुव्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.2.2 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.4": {
    "id": "2.2.4",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.8": {
    "id": "2.2.8",
    "type": "VIDHI",
    "subkind": "<<षष्ठी>> [[2.2.8]] इति षष्ठीतत्पुरुषः",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['rAjaH'] ≠ expected rAjYaH",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.2.31": {
    "id": "2.2.31",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form rAjA is right but 2.2.31 did not fire (trace status absent): another path made it",
+    "form ezu is right but 2.2.31 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.32": {
    "id": "2.2.32",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form kim is right but 2.2.32 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.33": {
    "id": "2.2.33",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form kim is right but 2.2.33 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.2.35": {
    "id": "2.2.35",
@@ -653,51 +814,75 @@
    "id": "2.3.2",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form dvitIyA is right but 2.3.2 did not fire (trace status absent): another path made it",
+    "readings ['trizuzu', 'trrizuzu'] ≠ expected trizu",
+    "form hariH is right but 2.3.2 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.3.13": {
    "id": "2.3.13",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['karpate'] ≠ expected kalpate",
+    "readings ['janyate'] ≠ expected jAyate",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.3.16": {
    "id": "2.3.16",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form deveByaH is right but 2.3.16 did not fire (trace status absent): another path made it",
+    "readings ['pitfByoByaH', 'pitfbByyobByyaH'] ≠ expected pitfByaH",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.3.18": {
    "id": "2.3.18",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tftIyA is right but 2.3.18 did not fire (trace status absent): another path made it",
+    "form Cinatti is right but 2.3.18 did not fire (trace status absent): another path made it",
+    "readings ['sarati'] ≠ expected DAvati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.3.28": {
    "id": "2.3.28",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavAd', 'BavAdd', 'BavAdt', 'BavAt'] ≠ expected BavAn",
+    "form catvAri is right but 2.3.28 did not fire (trace status absent): another path made it",
+    "form caturzu is right but 2.3.28 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.3.47": {
    "id": "2.3.47",
@@ -713,65 +898,86 @@
    "id": "2.4.1",
    "type": "ATIDESHA",
    "subkind": "<<स नपुंसकम्>> [[2.4.17]] इत्यत्र निर्दि",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.4.2": {
    "id": "2.4.2",
    "type": "VIDHI",
    "subkind": "<<द्वन्द्वश्च प्राणितूर्यसेनाङ्गानाम्>> ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.4.17": {
    "id": "2.4.17",
    "type": "VIDHI",
    "subkind": "<<स नपुंसकम्>> [[2.4.17]] इत्यत्र निर्दि",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form striyAm is right but 2.4.17 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "2.4.26": {
    "id": "2.4.26",
    "type": "ATIDESHA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tad is right but 2.4.26 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form etayoH is right but 2.4.26 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.4.29": {
    "id": "2.4.29",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['puMsO'] ≠ expected puMsi",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.4.31": {
    "id": "2.4.31",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['puMsO'] ≠ expected puMsi",
+    "form tAni is right but 2.4.31 did not fire (trace status absent): another path made it",
+    "form maDu is right but 2.4.31 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.4.49": {
    "id": "2.4.49",
@@ -790,11 +996,16 @@
    "id": "2.4.62",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tasya is right but 2.4.62 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 2.4.62 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "2.4.78": {
    "id": "2.4.78",
@@ -829,87 +1040,116 @@
    "id": "2.4.84",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form pUrveRa is right but 2.4.84 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.8": {
    "id": "3.1.8",
    "type": "VIDHI",
    "subkind": "<<सुप आत्मनः क्यच्>> [[3.1.8]] इति क्यच्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 3.1.8 did not fire (trace status absent): another path made it",
+    "readings ['rAjaH'] ≠ expected rAjYaH",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.1.9": {
    "id": "3.1.9",
    "type": "VIDHI",
    "subkind": "<<तव्यत्तव्यानीयरः>> [[3.1.96]] इति अनीय",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form icCati is right but 3.1.9 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.1.10": {
    "id": "3.1.10",
    "type": "VIDHI",
    "subkind": "<<एतिस्तुशास्वृदृजुषः क्यप्>> [[3.1.109]",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.14": {
    "id": "3.1.14",
    "type": "VIDHI",
    "subkind": "<<शिल्पिनि ष्वुन्>> [[3.1.145]] इति ष्वु",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 3.1.14 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.17": {
    "id": "3.1.17",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form eByaH is right but 3.1.17 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.23": {
    "id": "3.1.23",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['krAmati'] ≠ expected kramyate",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.27": {
    "id": "3.1.27",
    "type": "VIDHI",
    "subkind": "<<कण्ड्वादिभ्यो यक्>> [[3.1.27]] इति स्व",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['DAtaH'] ≠ expected DAtuH",
+    "form kasya is right but 3.1.27 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.1.28": {
@@ -1018,11 +1258,16 @@
    "id": "3.1.65",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['idAd', 'idAdd', 'idAdt', 'idAt'] ≠ expected asmAt",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 3.1.65 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.70": {
    "id": "3.1.70",
@@ -1058,230 +1303,296 @@
    "id": "3.1.87",
    "type": "ATIDESHA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['ye'] ≠ expected yasmin",
+    "form dvitIyA is right but 3.1.87 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.136": {
    "id": "3.1.136",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.1.144": {
    "id": "3.1.144",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kaH is right but 3.1.144 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.58": {
    "id": "3.2.58",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form Gftaspfk is right but 3.2.58 did not fire (trace status absent): another path made it",
+    "form kim is right but 3.2.58 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.59": {
    "id": "3.2.59",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "form ftvik is right but 3.2.59 did not fire (trace status absent): another path made it",
+    "readings ['daDfq', 'daDfqq', 'daDfqw', 'daDfw'] ≠ expected daDfk",
+    "form dik is right but 3.2.59 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.60": {
    "id": "3.2.60",
    "type": "VIDHI",
    "subkind": "<<त्यदादिषु दृशोऽनालोचने कञ् च>> [[3.2.6",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['tAdfSasaH'] ≠ expected tAdfSaH",
+    "readings ['tAdfS', 'tAdfSS'] ≠ expected tAdfk",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.75": {
    "id": "3.2.75",
    "type": "VIDHI",
    "subkind": "<<अन्येभ्योऽपि दृश्यन्ते>> [[3.2.75]] इत",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['etAH'] ≠ expected ete",
     "several forms in one example",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.99": {
    "id": "3.2.99",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.2.107": {
    "id": "3.2.107",
    "type": "VIDHI",
    "subkind": "<<क्वसुश्च>> [[3.2.107]] इति लिट्-इत्यस्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "label shape not recognised",
     "several forms in one example",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.112": {
    "id": "3.2.112",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.2.177": {
    "id": "3.2.177",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['UH'] ≠ expected Urk",
+    "readings ['UrjasaH', 'UrjjasaH', 'UrjjjasaH'] ≠ expected UrjaH",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.182": {
    "id": "3.2.182",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 3.2.182 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.2.185": {
    "id": "3.2.185",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.1": {
    "id": "3.3.1",
    "type": "VIDHI",
    "subkind": "<<लोट् च>> [[3.3.162]] इति लोट्-लकारः",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['tAnAm', 'tAnAmm'] ≠ expected tezAm",
+    "readings ['etAH'] ≠ expected ete",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.14": {
    "id": "3.3.14",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "form tena is right but 3.3.14 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.41": {
    "id": "3.3.41",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['mahaH'] ≠ expected mahAn",
+    "form kim is right but 3.3.41 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.46": {
    "id": "3.3.46",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 3.3.46 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.56": {
    "id": "3.3.56",
    "type": "VIDHI",
    "subkind": "<<एरच्>> [[3.3.56]] इति अच्-प्रत्ययः",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.92": {
    "id": "3.3.92",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.97": {
    "id": "3.3.97",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['etAH'] ≠ expected ete",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.101": {
@@ -1300,133 +1611,180 @@
    "id": "3.3.103",
    "type": "VIDHI",
    "subkind": "अयम् हलन्तः धातुः, तथा च अस्मिन् धातौ वि",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 3.3.103 did not fire (trace status absent): another path made it",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.107": {
    "id": "3.3.107",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 3.3.107 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.113": {
    "id": "3.3.113",
    "type": "VIDHI",
    "subkind": "<<कृत्यल्युटो बहुलम्>> [[3.3.113]] इति अ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.121": {
    "id": "3.3.121",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['puMsO'] ≠ expected puMsi",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form rAmaH is right but 3.3.121 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.3.128": {
    "id": "3.3.128",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form BavatA is right but 3.3.128 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.131": {
    "id": "3.3.131",
    "type": "ATIDESHA",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['tAH'] ≠ expected te",
+    "form vidDi is right but 3.3.131 did not fire (trace status absent): another path made it",
+    "form yena is right but 3.3.131 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.156": {
    "id": "3.3.156",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form Palam is right but 3.3.156 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 3.3.156 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.3.167": {
    "id": "3.3.167",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['kAd', 'kAdd', 'kAdt', 'kAt'] ≠ expected kasmAd",
+    "readings ['pacatO'] ≠ expected pacati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.4.18": {
    "id": "3.4.18",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 3.4.18 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.4.22": {
    "id": "3.4.22",
    "type": "VIDHI",
    "subkind": "<<आभीक्ष्ण्ये णमुल् च>> [[3.4.22]] इति ण",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form vrajati is right but 3.4.22 did not fire (trace status absent): another path made it",
     "several forms in one example",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "3.4.27": {
    "id": "3.4.27",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['Bunakti'] ≠ expected BuNkte",
+    "form kim is right but 3.4.27 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.4.70": {
    "id": "3.4.70",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form BavatA is right but 3.4.70 did not fire (trace status absent): another path made it",
+    "readings ['etAH'] ≠ expected ete",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "3.4.109": {
    "id": "3.4.109",
@@ -1476,57 +1834,73 @@
    "id": "4.1.16",
    "type": "VIDHI",
    "subkind": "<<गर्गादिभ्यो यञ्>> [[4.1.105]] इति यञ् ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.17": {
    "id": "4.1.17",
    "type": "VIDHI",
    "subkind": "<<गर्गादिभ्यो यञ्>> [[4.1.105]] इति यञ् ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.20": {
    "id": "4.1.20",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form praTame is right but 4.1.20 did not fire (trace status absent): another path made it",
+    "form yat is right but 4.1.20 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.21": {
    "id": "4.1.21",
    "type": "VIDHI",
    "subkind": "स्त्रीत्वं द्योतयितुम् <<द्विगोः>> [[4.1",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.39": {
    "id": "4.1.39",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form veti is right but 4.1.39 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.39 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.41": {
    "id": "4.1.41",
@@ -1548,11 +1922,15 @@
    "id": "4.1.44",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.44 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.45": {
    "id": "4.1.45",
@@ -1572,585 +1950,812 @@
    "id": "4.1.48",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form puMsA is right but 4.1.48 did not fire (trace status absent): another path made it",
+    "readings ['tAd', 'tAdd', 'tAdt', 'tAt'] ≠ expected tasmAd",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.49": {
    "id": "4.1.49",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['strIH', 'sttrrIH'] ≠ expected strI",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.54": {
    "id": "4.1.54",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.54 did not fire (trace status absent): another path made it",
+    "form tasya is right but 4.1.54 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.58": {
    "id": "4.1.58",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.58 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.63": {
    "id": "4.1.63",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form yat is right but 4.1.63 did not fire (trace status absent): another path made it",
+    "readings ['tAd', 'tAdd', 'tAdt', 'tAt'] ≠ expected tasmAt",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.65": {
    "id": "4.1.65",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.65 did not fire (trace status absent): another path made it",
+    "form viw is right but 4.1.65 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.66": {
    "id": "4.1.66",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.66 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.68": {
    "id": "4.1.68",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.70": {
    "id": "4.1.70",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.73": {
    "id": "4.1.73",
    "type": "VIDHI",
    "subkind": "स्त्रीत्वस्य विवक्षायाम् <<शार्ङ्गरवाद्य",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 4.1.73 did not fire (trace status absent): another path made it",
+    "readings ['strIH', 'sttrrIH'] ≠ expected strI",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.87": {
    "id": "4.1.87",
    "type": "VIDHI",
    "subkind": "<<स्त्रीपुंसाभ्यां नञ्स्नञौ भवनात्>> [[4",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "form tasya is right but 4.1.87 did not fire (trace status absent): another path made it",
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "form strIzu is right but 4.1.87 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.93": {
    "id": "4.1.93",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['te'] ≠ expected tasmin",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form sarvasmin is right but 4.1.93 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.94": {
    "id": "4.1.94",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form yuvA is right but 4.1.94 did not fire (trace status absent): another path made it",
+    "form kim is right but 4.1.94 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.114": {
    "id": "4.1.114",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tezu is right but 4.1.114 did not fire (trace status absent): another path made it",
+    "readings ['yAH'] ≠ expected ye",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.115": {
    "id": "4.1.115",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 4.1.115 did not fire (trace status absent): another path made it",
+    "form kim is right but 4.1.115 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.116": {
    "id": "4.1.116",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.120": {
    "id": "4.1.120",
    "type": "VIDHI",
    "subkind": "<<स्त्रीभ्यो ढक्>> [[4.1.120]] इति ढक्, ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.137": {
    "id": "4.1.137",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form yat is right but 4.1.137 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.1.168": {
    "id": "4.1.168",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "form yaH is right but 4.1.168 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.1.168 did not fire (trace status absent): another path made it",
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.172": {
    "id": "4.1.172",
    "type": "VIDHI",
    "subkind": "<<कुरुनादिभ्यो ण्यः>> [[4.1.172]] इति ण्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 4.1.172 did not fire (trace status absent): another path made it",
+    "form rAjA is right but 4.1.172 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.1.175": {
    "id": "4.1.175",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 4.1.175 did not fire (trace status absent): another path made it",
+    "form rAjA is right but 4.1.175 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.4": {
    "id": "4.2.4",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form pUrveRa is right but 4.2.4 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.2.4 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.16": {
    "id": "4.2.16",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form yat is right but 4.2.16 did not fire (trace status absent): another path made it",
+    "readings ['tAH'] ≠ expected te",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.36": {
    "id": "4.2.36",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['piti'] ≠ expected pitari",
+    "readings ['mAti'] ≠ expected mAtari",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.38": {
    "id": "4.2.38",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 4.2.38 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.61": {
    "id": "4.2.61",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.68": {
    "id": "4.2.68",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tftIyA is right but 4.2.68 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.2.81": {
    "id": "4.2.81",
    "type": "VIDHI",
    "subkind": "<<जनपदे लुप्>> [[4.2.81]] इत्यनेन अण्-प्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 4.2.81 did not fire (trace status absent): another path made it",
+    "readings ['kAd', 'kAdd', 'kAdt', 'kAt'] ≠ expected kasmAd",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "4.2.107": {
    "id": "4.2.107",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 4.2.107 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.3.82": {
    "id": "4.3.82",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.3.89": {
    "id": "4.3.89",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form yat is right but 4.3.89 did not fire (trace status absent): another path made it",
+    "readings ['brUyate'] ≠ expected ucyate",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "4.4.41": {
    "id": "4.4.41",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.115": {
    "id": "5.1.115",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form yat is right but 5.1.115 did not fire (trace status absent): another path made it",
+    "readings ['taH'] ≠ expected sA",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.116": {
    "id": "5.1.116",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form gAvaH is right but 5.1.116 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.119": {
    "id": "5.1.119",
    "type": "VIDHI",
    "subkind": "<<तस्य भावस्त्वतलौ>> [[5.1.119]] इति सूत",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatasaH'] ≠ expected BavataH",
     "label shape not recognised",
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "5.1.123": {
    "id": "5.1.123",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 5.1.123 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.124": {
    "id": "5.1.124",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.126": {
    "id": "5.1.126",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form yaH is right but 5.1.126 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.128": {
    "id": "5.1.128",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.1.131": {
    "id": "5.1.131",
    "type": "VIDHI",
    "subkind": "<<इगन्ताच्च लघुपूर्वात्>> [[5.1.131]] इत",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form pUrvaH is right but 5.1.131 did not fire (trace status absent): another path made it",
+    "form tena is right but 5.1.131 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "5.2.23": {
    "id": "5.2.23",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tasya is right but 5.2.23 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.9": {
    "id": "5.3.9",
    "type": "VIDHI",
    "subkind": "<<तदस्यास्त्यस्मिन्निति मतुप्>> [[5.3.94",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.14": {
    "id": "5.3.14",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tena is right but 5.3.14 did not fire (trace status absent): another path made it",
+    "readings ['kAH'] ≠ expected ke",
+    "readings ['BavAd', 'BavAdd', 'BavAdt', 'BavAt'] ≠ expected BavAn",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.16": {
    "id": "5.3.16",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['ide'] ≠ expected asmin",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.56": {
    "id": "5.3.56",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['idAH'] ≠ expected ime",
+    "readings ['pacatO'] ≠ expected pacati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.60": {
    "id": "5.3.60",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['idAH'] ≠ expected ime",
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "readings ['assyassya', 'asyasya'] ≠ expected asya",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.3.68": {
    "id": "5.3.68",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 5.3.68 did not fire (trace status absent): another path made it",
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "5.4.11": {
    "id": "5.4.11",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 5.4.11 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.38": {
    "id": "5.4.38",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['strIH', 'sttrrIH'] ≠ expected strI",
+    "readings ['taH'] ≠ expected sA",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.42": {
    "id": "5.4.42",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form gfhyate is right but 5.4.42 did not fire (trace status absent): another path made it",
+    "form kim is right but 5.4.42 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.50": {
    "id": "5.4.50",
    "type": "VIDHI",
    "subkind": "<<अभूततद्भावे कृभ्वस्तियोगे सम्पद्यकर्तर",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 5.4.50 did not fire (trace status absent): another path made it",
+    "readings ['janyate'] ≠ expected jAyate",
     "several forms in one example",
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "5.4.74": {
    "id": "5.4.74",
    "type": "VIDHI",
    "subkind": "<<ऋक्पूरब्धूःपथामानक्षे>> [[5.4.74]] इत्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 5.4.74 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "5.4.107": {
    "id": "5.4.107",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form kim is right but 5.4.107 did not fire (trace status absent): another path made it",
+    "form yad is right but 5.4.107 did not fire (trace status absent): another path made it",
+    "form tad is right but 5.4.107 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.138": {
    "id": "5.4.138",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 5.4.138 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.148": {
    "id": "5.4.148",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "5.4.150": {
    "id": "5.4.150",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form kim is right but 5.4.150 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "6.1.89": {
    "id": "6.1.89",
@@ -2173,13 +2778,16 @@
    "id": "6.1.113",
    "type": "VIDHI",
    "subkind": "<<अतो रोरप्लुतादप्लुते>> [[6.1.113]] इति",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 6.1.113 did not fire (trace status absent): another path made it",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "6.4.62": {
@@ -2342,12 +2950,16 @@
    "id": "7.1.36",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form vidvAn is right but 7.1.36 did not fire (trace status absent): another path made it",
+    "form vidvAMsO is right but 7.1.36 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.1.60": {
@@ -2385,12 +2997,16 @@
    "id": "7.1.71",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 7.1.71 did not fire (trace status absent): another path made it",
+    "form yugByAm is right but 7.1.71 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.1.74": {
@@ -2481,35 +3097,44 @@
    "id": "7.2.9",
    "type": "VIDHI",
    "subkind": "<<प्रत्ययोत्तरपदयोश्च>> [[7.2.98]] इति त",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form roditi is right but 7.2.9 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.2.12": {
    "id": "7.2.12",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "sanādi: no generic entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "sanādi: no generic entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.2.20": {
    "id": "7.2.20",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tasya is right but 7.2.20 did not fire (trace status absent): another path made it",
+    "form kim is right but 7.2.20 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "7.2.37": {
    "id": "7.2.37",
@@ -2620,13 +3245,15 @@
    "id": "7.2.56",
    "type": "VIDHI",
    "subkind": "<<उदितो वा>> [[7.2.56]] इति विकल्पेन इडा",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "several forms in one example",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.2.57": {
@@ -2745,12 +3372,16 @@
    "id": "7.2.98",
    "type": "VIDHI",
    "subkind": "<<प्रत्ययोत्तरपदयोश्च>> [[7.2.98]] इति त",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "readings ['tvam', 'tvvamm'] ≠ expected tava",
+    "form tO is right but 7.2.98 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.2.101": {
@@ -2802,12 +3433,16 @@
    "id": "7.3.51",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form ASizA is right but 7.3.51 did not fire (trace status absent): another path made it",
+    "form kaH is right but 7.3.51 did not fire (trace status absent): another path made it",
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.3.55": {
@@ -2843,12 +3478,14 @@
    "id": "7.3.69",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "form kim is right but 7.3.69 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.3.71": {
@@ -2922,12 +3559,14 @@
    "id": "7.3.94",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "sanādi: no generic entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "sanādi: no generic entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.3.117": {
@@ -2949,12 +3588,14 @@
    "id": "7.4.5",
    "type": "VIDHI",
    "subkind": "<<ह्रस्वः>> [[7.4.59]] इति अभ्यासस्य ह्र",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "sanādi: no generic entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "sanādi: no generic entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.12": {
@@ -3004,85 +3645,106 @@
    "id": "7.4.24",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['ASizO'] ≠ expected ASizi",
+    "form kim is right but 7.4.24 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "7.4.26": {
    "id": "7.4.26",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['pUrvassyassya', 'pUrvasyasya', 'pUrvvassyassya', 'pUrvvasyasya'] ≠ expected pUrvasya",
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.27": {
    "id": "7.4.27",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tena is right but 7.4.27 did not fire (trace status absent): another path made it",
+    "form kim is right but 7.4.27 did not fire (trace status absent): another path made it",
     "sanādi: no generic entry point",
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.32": {
    "id": "7.4.32",
    "type": "VIDHI",
    "subkind": "प्रत्ययस्य लोपे कृते अपि <<प्रत्ययलोपे प",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "several forms in one example",
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.33": {
    "id": "7.4.33",
    "type": "VIDHI",
    "subkind": "<<क्यचि च>> [[7.4.33]] इत्यनेन ईत्वम् ।",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['assyassya', 'asyasya'] ≠ expected asya",
+    "readings ['BavatO'] ≠ expected Bavati",
     "label shape not recognised",
-    "several forms in one example"
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.42": {
    "id": "7.4.42",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.43": {
    "id": "7.4.43",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.48": {
@@ -3117,12 +3779,16 @@
    "id": "7.4.57",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "sanādi: no generic entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 7.4.57 did not fire (trace status absent): another path made it",
+    "form nenikte is right but 7.4.57 did not fire (trace status absent): another path made it",
+    "sanādi: no generic entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "7.4.61": {
@@ -3189,12 +3855,16 @@
    "id": "8.1.4",
    "type": "VIDHI",
    "subkind": "<<नित्यवीप्सयोः>> [[8.1.4]] इति द्वित्वम",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "form yad is right but 8.1.4 did not fire (trace status absent): another path made it",
+    "form tasya is right but 8.1.4 did not fire (trace status absent): another path made it",
+    "form dve is right but 8.1.4 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.2": {
@@ -3217,11 +3887,16 @@
    "id": "8.2.19",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form tasya is right but 8.2.19 did not fire (trace status absent): another path made it",
+    "form sarvam is right but 8.2.19 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.2.21": {
    "id": "8.2.21",
@@ -3241,64 +3916,79 @@
    "id": "8.2.43",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.2.43 did not fire (trace status absent): another path made it",
+    "form yAtaH is right but 8.2.43 did not fire (trace status absent): another path made it",
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.44": {
    "id": "8.2.44",
    "type": "VIDHI",
    "subkind": "<<ल्वादिभ्यः>> [[8.2.44]] इति निष्ठातकार",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.2.44 did not fire (trace status absent): another path made it",
+    "readings ['DAtaH'] ≠ expected DAtuH",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.45": {
    "id": "8.2.45",
    "type": "VIDHI",
    "subkind": "<<ओदितश्च>> [[8.2.45]] इति निष्ठातकारस्य",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.51": {
    "id": "8.2.51",
    "type": "VIDHI",
    "subkind": "<<शुषो कः>> [[8.2.51]] इति निष्ठातकारस्य",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kaH is right but 8.2.51 did not fire (trace status absent): another path made it",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.52": {
    "id": "8.2.52",
    "type": "VIDHI",
    "subkind": "<<पचो वः>> [[8.2.52]] इति तकारस्य वकाराद",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "label shape not recognised",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.2.63": {
@@ -3443,71 +4133,92 @@
    "id": "8.2.84",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form yad is right but 8.2.84 did not fire (trace status absent): another path made it",
+    "form tasya is right but 8.2.84 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.4": {
    "id": "8.3.4",
    "type": "VIDHI",
    "subkind": "<<अत्रानुनासिकः पूर्वस्य तु वा>> [[8.3.2",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "form pUrvaH is right but 8.3.4 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['ye'] ≠ expected yasmin",
     "several forms in one example",
-    "label shape not recognised"
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.5": {
    "id": "8.3.5",
    "type": "VIDHI",
    "subkind": "<<आदेशप्रत्यययोः>> [[8.3.59]] इति षत्वम्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.3.5 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.6": {
    "id": "8.3.6",
    "type": "VIDHI",
    "subkind": "<<शासिवसिघसीनां च>> [[8.3.60]] इति षत्वम",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "form kim is right but 8.3.6 did not fire (trace status absent): another path made it",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.10": {
    "id": "8.3.10",
    "type": "VIDHI",
    "subkind": "<<नॄन् पे>> [[8.3.10]] इति नृ-शब्दस्य पक",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "form kim is right but 8.3.10 did not fire (trace status absent): another path made it",
+    "readings ['nraH', 'nrraH'] ≠ expected nfn",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.12": {
    "id": "8.3.12",
    "type": "VIDHI",
    "subkind": "<<कानाम्रेडिते>> [[8.3.12]] इति आम्रेडित",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['assyassya', 'asyasya'] ≠ expected asya",
+    "form tena is right but 8.3.12 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.14": {
@@ -3546,21 +4257,28 @@
    "id": "8.3.26",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.3.26 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.27": {
    "id": "8.3.27",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.28": {
    "id": "8.3.28",
@@ -3597,81 +4315,107 @@
    "id": "8.3.31",
    "type": "VIDHI",
    "subkind": "<<शि तुक्>> [[8.3.31]] इति नकारस्य विकल्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.32": {
    "id": "8.3.32",
    "type": "VIDHI",
    "subkind": "<<ङमो ह्रस्वादचि ङमुण्नित्यम्>> [[8.3.32",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.3.32 did not fire (trace status absent): another path made it",
+    "readings ['pratiH', 'prratiH'] ≠ expected pratyaN",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.33": {
    "id": "8.3.33",
    "type": "VIDHI",
    "subkind": "<<उञः>> [[1.1.17]] इति प्रगृह्यसंज्ञा, अ",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['assyassya', 'asyasya'] ≠ expected asya",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['vAcO'] ≠ expected vAci",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.37": {
    "id": "8.3.37",
    "type": "VIDHI",
    "subkind": "<<कुप्वोः ≍क ≍पौ च>> [[8.3.37]] इति जिह्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "several forms in one example"
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "readings ['pacatO'] ≠ expected pacati",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "several forms in one example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.38": {
    "id": "8.3.38",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "taddhita: the sense (taddhitArtha) is not in the example"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.3.38 did not fire (trace status absent): another path made it",
+    "readings ['kamate'] ≠ expected kAmayate",
+    "taddhita: the sense (taddhitArtha) is not in the example",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.39": {
    "id": "8.3.39",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['pacatO'] ≠ expected pacati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.48": {
    "id": "8.3.48",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['taH'] ≠ expected saH",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.56": {
    "id": "8.3.56",
@@ -3706,21 +4450,28 @@
    "id": "8.3.67",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.76": {
    "id": "8.3.76",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['mamajjiTa'] ≠ expected mamaNkTa",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.79": {
    "id": "8.3.79",
@@ -3740,11 +4491,16 @@
    "id": "8.3.87",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.3.87 did not fire (trace status absent): another path made it",
+    "form daDi is right but 8.3.87 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.3.111": {
    "id": "8.3.111",
@@ -3767,12 +4523,16 @@
    "id": "8.4.3",
    "type": "VIDHI",
    "subkind": "<<पूर्वपदात् संज्ञायामगः>> [[8.4.3]] इति",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.4.3 did not fire (trace status absent): another path made it",
+    "form pUrveRa is right but 8.4.3 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.4.12": {
@@ -3794,33 +4554,45 @@
    "id": "8.4.14",
    "type": "VIDHI",
    "subkind": "<<उपसर्गादसमासेऽपि णोपदेशस्य>> [[8.4.14]",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "form tasya is right but 8.4.14 did not fire (trace status absent): another path made it",
+    "form kim is right but 8.4.14 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.4.15": {
    "id": "8.4.15",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 3,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['mimAya'] ≠ expected mamO",
+    "readings ['mAd', 'mAdd', 'mAdt', 'mAt'] ≠ expected mAtA",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.4.16": {
    "id": "8.4.16",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.4.16 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.4.37": {
    "id": "8.4.37",
@@ -3858,11 +4630,16 @@
    "id": "8.4.43",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form tad is right but 8.4.43 did not fire (trace status absent): another path made it",
+    "readings ['BavatO'] ≠ expected Bavati",
+    "readings ['BavAd', 'BavAdd', 'BavAdt', 'BavAt'] ≠ expected BavAn",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.4.44": {
    "id": "8.4.44",
@@ -3885,49 +4662,63 @@
    "id": "8.4.49",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
-   "reasons": []
+   "reasons": [
+    "form dve is right but 8.4.49 did not fire (trace status absent): another path made it",
+    "readings ['BavatasaH'] ≠ expected BavataH",
+    "form kim is right but 8.4.49 did not fire (trace status absent): another path made it",
+    "examples from Kāśikā/Laghukaumudī prose"
+   ]
   },
   "8.4.60": {
    "id": "8.4.60",
    "type": "VIDHI",
    "subkind": "<<तोर्लि>> [[8.4.60]] इति लत्वम्",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 1,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "readings ['BavatO'] ≠ expected Bavati",
     "several forms in one example",
-    "label shape not recognised"
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.4.61": {
    "id": "8.4.61",
    "type": "VIDHI",
    "subkind": "<<उदः स्थास्तम्भोः पूर्वस्य>> [[8.4.61]]",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 2,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "label shape not recognised"
+    "readings ['BavatO'] ≠ expected Bavati",
+    "form kim is right but 8.4.61 did not fire (trace status absent): another path made it",
+    "label shape not recognised",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.4.62": {
    "id": "8.4.62",
    "type": "VIDHI",
    "subkind": "<<झयो होऽन्यतरस्याम्>> [[8.4.62]] इति हक",
-   "verdict": "NO_EXAMPLE",
-   "examples_tried": 0,
+   "verdict": "FAIL",
+   "examples_tried": 4,
    "positives": [],
    "negatives": [],
    "reasons": [
+    "form vAg is right but 8.4.62 did not fire (trace status absent): another path made it",
+    "form kim is right but 8.4.62 did not fire (trace status absent): another path made it",
+    "readings ['praH', 'prraH'] ≠ expected prAN",
     "label shape not recognised",
     "several forms in one example",
-    "kṛdanta: the engine has no generic krt+dhātu entry point"
+    "kṛdanta: the engine has no generic krt+dhātu entry point",
+    "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.4.63": {
