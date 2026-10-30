@@ -12,32 +12,7 @@ penultimate *a* → **G-s** (घ्स्).
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
-
-_GATE_KEY: str = "6_4_98_gamahanaja_98"
-
-
-def _has_kngiti_pratyaya(state: State) -> bool:
-    return any("kngiti" in t.tags for t in state.terms)
-
-
-def _find_gas_upadha_lopa(state: State) -> int | None:
-    if not state.meta.get("lakara_liT"):
-        return None
-    if not _has_kngiti_pratyaya(state):
-        return None
-    for i, t in enumerate(state.terms):
-        if "dhatu" not in t.tags or "abhyasa" in t.tags:
-            continue
-        if t.meta.get("6_4_98_gas_upadha_done"):
-            continue
-        vs = t.varnas
-        if len(vs) == 3 and vs[0].slp1 == "G" and vs[1].slp1 == "a" and vs[2].slp1 == "s":
-            return i
-    return None
-
 
 _GAMAHANA = frozenset({"gam", "han", "Gan", "jan", "Kan", "Gas"})      # Gan: han after 7.3.55 (abhyāsāc ca)
 _AC = frozenset("aAiIuUfFxXeEoO")
@@ -68,25 +43,17 @@ def _find_general(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    # structural only in cond (Art. 2): the legacy घस् branch lives in act
-    if _find_general(state) is not None:
-        return True
-    return samhita_gate_eligible(state, "6.4.98", gate_key=_GATE_KEY)
+    return _find_general(state) is not None
 
 
 def act(state: State) -> State:
-    i = _find_gas_upadha_lopa(state)
+    i = _find_general(state)
     if i is None:
-        i = _find_general(state)
-    if i is not None:
-        t = state.terms[i]
-        j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), 0)
-        del t.varnas[j + 1]            # the upadhā a (after any aṭ)
-        t.meta["6_4_98_gas_upadha_done"] = True
         return state
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY] = True
-    state.meta["anga_kind"] = "6.4.98"
+    t = state.terms[i]
+    j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), 0)
+    del t.varnas[j + 1]                # the upadhā a (after any aṭ)
+    t.meta["6_4_98_gas_upadha_done"] = True
     return state
 
 

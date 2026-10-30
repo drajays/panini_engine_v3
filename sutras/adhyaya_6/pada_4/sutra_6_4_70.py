@@ -1,5 +1,5 @@
 """
-6.4.70  मयतेरिदन्यतरस्याम्  —  VIDHI
+6.4.70  मयतेरिदन्यतरस्याम्  —  VIBHASHA
 
 Padaccheda: मयतेः इत् अन्यतरस्याम्
 
@@ -9,27 +9,61 @@ Pāṭha: ashtadhyayi.com data.txt row i=64070 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_4_70_mayaterida_70"
+from phonology import mk
+
+_NASAL = frozenset("mnNRY")                      # anunāsika-final: m n ṅ ṇ ñ
+_JHAL = frozenset("JBGQDjbgqdKPCWTcwtkpSzsh")
+
+
+def _head(state: State, i: int):
+    """The pratyaya that stands right after the aṅga at ``i`` (an āgama belongs to the affix it precedes; a lopa ghost still counts)."""
+    return next((u for u in state.terms[i + 1:] if "agama" not in u.tags), None)
+
+
+def _name(t) -> str:
+    return (t.meta.get("upadesha_slp1") or "").strip()
+
+
+def _flat(t) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+
+def _kvi_or_jhal_kngit(h) -> bool:
+    """क्विझलोः क्ङिति: a kvip, or a kṅit pratyaya that begins with a jhal."""
+    return h is not None and (_name(h) == "kvip" or ("kngiti" in h.tags and bool(h.varnas) and h.varnas[0].slp1 in _JHAL))
+
+
+# SHORTCUT S82: the pratyaya is read by its upadeśa name and the root by its flat spelling (no kṛt-family / root-class tag yet) — Lexicon tables (S14)
+def _site(state: State):
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or t.meta.get("6_4_70_it_done") or _flat(t) not in ("mI", "mA"):
+            continue
+        if t.meta.get("upadesha_slp1", "").strip().rstrip("~") not in ("qumiY", "mI", "mA"):
+            continue
+        h = _head(state, i)
+        if h is not None and _name(h) == "lyap":
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.70", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.70"
+    t = _site(state)
+    if t is None:
+        return state
+    t.varnas[-1] = mk("i")  # अप + मा (मिञ्, ट्मी) + ल्यप्: अपमित्य (the vā leaves अपमाय)
+    t.meta["6_4_70_it_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.70",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,
     r1_form_identity_exempt = True,
     text_slp1             = "mayateridanyatarasyAm",
     text_dev              = "मयतेरिदन्यतरस्याम्",

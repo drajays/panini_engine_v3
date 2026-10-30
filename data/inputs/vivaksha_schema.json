@@ -172,7 +172,8 @@
    },
    "BAva": {
     "forms": [
-     "BAve"
+     "BAve",
+     "BAvakaraRayoH"
     ],
     "sutras": [
      "3.1.107",
@@ -277,14 +278,16 @@
      "3.3.116",
      "3.4.69",
      "4.4.144",
-     "6.2.25"
+     "6.2.25",
+     "6.4.27"
     ]
    },
    "karaRa": {
     "forms": [
      "karaRe",
      "karaRam",
-     "karaRADikaraRayoH"
+     "karaRADikaraRayoH",
+     "BAvakaraRayoH"
     ],
     "sutras": [
      "1.4.42",
@@ -323,7 +326,8 @@
      "3.4.38",
      "3.4.39",
      "3.4.40",
-     "6.1.202"
+     "6.1.202",
+     "6.4.27"
     ]
    },
    "aDikaraRa": {
