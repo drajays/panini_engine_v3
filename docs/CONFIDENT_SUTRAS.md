@@ -10,9 +10,9 @@ Generated 2026-10-30 by `python3 -m tools.sutra_class`. **307 of 3983** are conf
 | confident_structural | 181 |
 | gate_only | 193 |
 | pending_structural | 206 |
-| placeholder | 563 |
-| unexercised | 1922 |
-| working | 792 |
+| placeholder | 556 |
+| unexercised | 1928 |
+| working | 793 |
 
 | pāda | confident | of |
 |---|---|---|

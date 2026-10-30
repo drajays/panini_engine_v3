@@ -35,6 +35,15 @@ def _source(sid: str) -> str:
     return p.read_text(encoding="utf-8") if p.exists() else ""
 
 
+def _placeholder(rec, src: str) -> bool:
+    """A gate-only placeholder is a sūtra whose ACTIVE cond is the template gate; a kept legacy half beside a real cond does not count."""
+    import inspect
+    try:
+        return "samhita_gate_eligible" in inspect.getsource(rec.cond)
+    except (OSError, TypeError):
+        return "return samhita_gate_eligible" in src
+
+
 def rows() -> list[dict]:
     ledger = load_ledger() or {}
     invoked, moved = set(ledger.get("invoked", ())), set(ledger.get("moved", ()))
@@ -47,7 +56,7 @@ def rows() -> list[dict]:
         r = dict(
             id=sid, pada=".".join(sid.split(".")[:2]), type=typ,
             exempt=bool(getattr(rec, "r1_form_identity_exempt", False)),
-            placeholder="return samhita_gate_eligible" in src,
+            placeholder=_placeholder(rec, src),
             stub_gloss=bool(_PLACEHOLDER_WHY.search(src)),
             invoked=sid in invoked, moved=sid in moved,
             cited=sid in cited, mentions=mentions.get(sid, 0),
