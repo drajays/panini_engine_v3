@@ -2281,7 +2281,7 @@
 },
 {
 "id": "6.1.76",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.77",
@@ -2309,7 +2309,7 @@
 },
 {
 "id": "6.1.91",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.93",
@@ -2321,7 +2321,7 @@
 },
 {
 "id": "6.1.95",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.96",
@@ -2349,7 +2349,7 @@
 },
 {
 "id": "6.1.105",
-"status": "placeholder"
+"status": "pending_structural"
 },
 {
 "id": "6.1.107",
@@ -2381,11 +2381,11 @@
 },
 {
 "id": "6.1.122",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.123",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.125",
@@ -2397,7 +2397,7 @@
 },
 {
 "id": "6.1.128",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.131",
@@ -2405,7 +2405,7 @@
 },
 {
 "id": "6.1.132",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.133",
@@ -2417,7 +2417,7 @@
 },
 {
 "id": "6.1.138",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.139",
@@ -2425,11 +2425,11 @@
 },
 {
 "id": "6.1.140",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.141",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.2.184",
@@ -2465,7 +2465,7 @@
 },
 {
 "id": "6.3.66",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.3.67",
@@ -2485,11 +2485,11 @@
 },
 {
 "id": "6.3.90",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.3.91",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.3.93",
@@ -2513,7 +2513,7 @@
 },
 {
 "id": "6.3.116",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.3.128",
@@ -2537,7 +2537,7 @@
 },
 {
 "id": "6.4.6",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.7",
@@ -2565,7 +2565,7 @@
 },
 {
 "id": "6.4.15",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.16",
@@ -2577,11 +2577,11 @@
 },
 {
 "id": "6.4.20",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.21",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.22",
@@ -2597,7 +2597,7 @@
 },
 {
 "id": "6.4.27",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.30",
@@ -2605,7 +2605,7 @@
 },
 {
 "id": "6.4.33",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.34",
@@ -2617,11 +2617,11 @@
 },
 {
 "id": "6.4.37",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "6.4.41",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.42",
@@ -2629,15 +2629,15 @@
 },
 {
 "id": "6.4.43",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.44",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.47",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.48",
@@ -2645,11 +2645,11 @@
 },
 {
 "id": "6.4.49",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.50",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.51",
@@ -2657,7 +2657,7 @@
 },
 {
 "id": "6.4.52",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.55",
@@ -2689,11 +2689,11 @@
 },
 {
 "id": "6.4.68",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.70",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.71",
@@ -2757,11 +2757,11 @@
 },
 {
 "id": "6.4.96",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.98",
-"status": "placeholder"
+"status": "working"
 },
 {
 "id": "6.4.101",
@@ -2809,19 +2809,19 @@
 },
 {
 "id": "6.4.115",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.116",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.117",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.118",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.119",
@@ -2833,7 +2833,7 @@
 },
 {
 "id": "6.4.121",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.122",
@@ -2841,7 +2841,7 @@
 },
 {
 "id": "6.4.124",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.126",
@@ -2861,11 +2861,11 @@
 },
 {
 "id": "6.4.131",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.132",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.133",
@@ -2893,7 +2893,7 @@
 },
 {
 "id": "6.4.140",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.142",
@@ -2917,7 +2917,7 @@
 },
 {
 "id": "6.4.150",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.155",
@@ -2933,19 +2933,19 @@
 },
 {
 "id": "6.4.161",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.163",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.164",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.167",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.168",
@@ -2953,7 +2953,7 @@
 },
 {
 "id": "6.4.169",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "7.1.1",

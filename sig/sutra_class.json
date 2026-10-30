@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T09:36:32+00:00",
+ "generated_at": "2026-10-30T19:45:08+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -17445,7 +17445,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 22,
+   "mentions": 23,
    "status": "confident_structural"
   },
   {
@@ -18524,7 +18524,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -26779,7 +26779,7 @@
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -29730,7 +29730,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -29743,7 +29743,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -29808,7 +29808,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -29821,7 +29821,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -29834,7 +29834,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -29938,7 +29938,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -29990,7 +29990,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -30003,7 +30003,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -30016,7 +30016,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -30081,7 +30081,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -30133,7 +30133,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -30146,7 +30146,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -32700,15 +32700,15 @@
   {
    "id": "6.1.76",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 7,
+   "status": "unexercised"
   },
   {
    "id": "6.1.77",
@@ -32876,7 +32876,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -32897,13 +32897,13 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.1.92",
@@ -32949,13 +32949,13 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.1.96",
@@ -33032,7 +33032,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 47,
+   "mentions": 48,
    "status": "confident"
   },
   {
@@ -33045,7 +33045,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 12,
+   "mentions": 14,
    "status": "confident"
   },
   {
@@ -33077,15 +33077,15 @@
   {
    "id": "6.1.105",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "PRATISHEDHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "pending_structural"
   },
   {
    "id": "6.1.106",
@@ -33298,28 +33298,28 @@
   {
    "id": "6.1.122",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 5,
+   "status": "unexercised"
   },
   {
    "id": "6.1.123",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 5,
+   "status": "unexercised"
   },
   {
    "id": "6.1.124",
@@ -33376,15 +33376,15 @@
   {
    "id": "6.1.128",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 5,
+   "status": "unexercised"
   },
   {
    "id": "6.1.129",
@@ -33430,13 +33430,13 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.1.133",
@@ -33508,13 +33508,13 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.1.139",
@@ -33534,26 +33534,26 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.1.141",
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.1.142",
@@ -38058,13 +38058,13 @@
    "pada": "6.3",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.3.67",
@@ -38076,7 +38076,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -38370,26 +38370,26 @@
    "pada": "6.3",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
+   "cited": true,
    "mentions": 2,
-   "status": "placeholder"
+   "status": "unexercised"
   },
   {
    "id": "6.3.91",
    "pada": "6.3",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 3,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.3.92",
@@ -38708,13 +38708,13 @@
    "pada": "6.3",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.3.117",
@@ -39025,7 +39025,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 35,
+   "mentions": 38,
    "status": "confident_structural"
   },
   {
@@ -39083,15 +39083,15 @@
   {
    "id": "6.4.6",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.7",
@@ -39202,13 +39202,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.16",
@@ -39267,26 +39267,26 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.21",
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.22",
@@ -39358,13 +39358,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.28",
@@ -39434,15 +39434,15 @@
   {
    "id": "6.4.33",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.4.34",
@@ -39493,8 +39493,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "6.4.38",
@@ -39540,13 +39540,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.42",
@@ -39564,28 +39564,28 @@
   {
    "id": "6.4.43",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.4.44",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.45",
@@ -39616,15 +39616,15 @@
   {
    "id": "6.4.47",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.48",
@@ -39644,26 +39644,26 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 4,
+   "status": "unexercised"
   },
   {
    "id": "6.4.50",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.51",
@@ -39683,13 +39683,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.4.53",
@@ -39870,7 +39870,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -39889,15 +39889,15 @@
   {
    "id": "6.4.68",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 4,
+   "status": "unexercised"
   },
   {
    "id": "6.4.69",
@@ -39915,15 +39915,15 @@
   {
    "id": "6.4.70",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 2,
-   "status": "placeholder"
+   "mentions": 4,
+   "status": "unexercised"
   },
   {
    "id": "6.4.71",
@@ -40065,7 +40065,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 6,
    "status": "unexercised"
   },
   {
@@ -40255,13 +40255,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 4,
+   "status": "unexercised"
   },
   {
    "id": "6.4.97",
@@ -40281,13 +40281,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
    "moved": true,
    "cited": false,
    "mentions": 3,
-   "status": "placeholder"
+   "status": "working"
   },
   {
    "id": "6.4.99",
@@ -40500,54 +40500,54 @@
   {
    "id": "6.4.115",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 4,
+   "status": "unexercised"
   },
   {
    "id": "6.4.116",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.117",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.118",
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.119",
@@ -40580,13 +40580,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 2,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 3,
+   "status": "unexercised"
   },
   {
    "id": "6.4.122",
@@ -40617,15 +40617,15 @@
   {
    "id": "6.4.124",
    "pada": "6.4",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.125",
@@ -40689,7 +40689,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 17,
+   "mentions": 20,
    "status": "confident_structural"
   },
   {
@@ -40710,26 +40710,26 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.132",
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.133",
@@ -40827,13 +40827,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.141",
@@ -40854,10 +40854,10 @@
    "type": "VIDHI",
    "exempt": true,
    "placeholder": false,
-   "stub_gloss": true,
+   "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 0,
    "status": "working"
   },
@@ -40884,7 +40884,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 6,
    "status": "confident"
   },
   {
@@ -40957,13 +40957,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.151",
@@ -41075,10 +41075,10 @@
    "type": "VIDHI",
    "exempt": true,
    "placeholder": false,
-   "stub_gloss": true,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "unexercised"
   },
@@ -41088,10 +41088,10 @@
    "type": "VIDHI",
    "exempt": true,
    "placeholder": false,
-   "stub_gloss": true,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
+   "cited": true,
    "mentions": 0,
    "status": "unexercised"
   },
@@ -41100,13 +41100,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.162",
@@ -41126,26 +41126,26 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.164",
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.165",
@@ -41178,13 +41178,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 1,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.4.168",
@@ -41204,13 +41204,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
-   "cited": false,
-   "mentions": 3,
-   "status": "placeholder"
+   "cited": true,
+   "mentions": 5,
+   "status": "unexercised"
   },
   {
    "id": "6.4.170",
@@ -41287,7 +41287,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 5,
+   "mentions": 8,
    "status": "placeholder"
   },
   {
@@ -46981,7 +46981,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 6,
+   "mentions": 9,
    "status": "unexercised"
   },
   {
