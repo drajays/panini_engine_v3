@@ -16,6 +16,9 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from sutras.adhyaya_6.pada_4.sutra_6_4_164 import barred as _barred_164
+from sutras.adhyaya_6.pada_4.sutra_6_4_167 import barred as _barred_167
+from sutras.adhyaya_6.pada_4.sutra_6_4_169 import barred as _barred_169
 
 
 def _eligible(state: State) -> bool:
@@ -41,7 +44,7 @@ def _in_site(state: State):
             continue
         if t.varnas[-2].slp1 == "a" and (_an_barred(state, t, pr) or "q" in (pr.meta.get("it_markers") or ()) or t.meta.get("6_4_143_dit_done")):
             continue                      # (a ḍit taddhita: 6.4.143 takes the same ṭi)
-        if (pr.meta.get("upadesha_slp1") or "") == "aR" and not any(e.get("artha") == "apatya" for e in state.adhikara_stack):
+        if _barred_164(state, t, pr):
             continue                      # 6.4.164 inaṇyanapatye: prakṛtibhāva
         return t
     return None
@@ -51,14 +54,11 @@ def _an_barred(state: State, t, pr) -> bool:
     """The prakṛtibhāva exceptions to 6.4.144 for an-stems: 6.4.145 ahan keeps its ṭi except before ṭ / kha, 6.4.167 an before aṇ (apatya or not),
     6.4.168 an before a y-initial taddhita unless the sense is bhāva / karman (the frames 5.1.119 – 136), 6.4.169 ātman / adhvan before kha.
     SHORTCUT S21b: the bhāva / karman sense is read off the open frame (5.1.119 – 136), not asked as a vivakṣā value."""
-    flat = "".join(v.slp1 for v in t.varnas)
     up = pr.meta.get("upadesha_slp1") or ""
-    org = next((x.split(":", 1)[1] for x in pr.tags if x.startswith("origin_pratyaya:")), up)      # kha may already stand as īna (7.1.2)
-    if flat == "ahan":
+    if "".join(v.slp1 for v in t.varnas) == "ahan":
+        org = next((x.split(":", 1)[1] for x in pr.tags if x.startswith("origin_pratyaya:")), up)      # kha may already stand as īna (7.1.2)
         return not (org.startswith("w") or org == "Ka")
-    if up == "aR":
-        return True
-    if flat in ("Atman", "aDvan") and org == "Ka":
+    if _barred_167(state, t, pr) or _barred_169(state, t, pr):      # the exceptions 6.4.167 / 6.4.169 each hold their own condition
         return True
     return up.startswith("y") and not any("5.1.119" <= e.get("id", "") <= "5.1.136" and e.get("artha") for e in state.adhikara_stack)      # 6.4.168 (string order is fine within 5.1.1xx)
 

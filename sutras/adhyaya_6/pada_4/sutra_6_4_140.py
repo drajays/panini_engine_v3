@@ -16,14 +16,38 @@ from engine.krt_eligibility import samhita_gate_eligible
 _GATE_KEY: str = "6_4_140_Ato_140"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return samhita_gate_eligible(state, "6.4.140", gate_key=_GATE_KEY)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["anga_kind"]             = "6.4.140"
+    return state
+
+
+from engine.state import State
+
+def _find(state: State):
+    for i, t in enumerate(state.terms[:-1]):
+        if ({"anga", "bha"} <= t.tags and len(t.varnas) > 1 and t.varnas[-1].slp1 == "A"
+                and any(x.startswith("origin_dhatu:") for x in t.tags) and not t.meta.get("6_4_140_done")):
+            return i
+    return None
+
+
+def cond(state: State) -> bool:
+    return _find(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    hit = _find(state)
+    if hit is None:
+        return _legacy_act(state)
+    t = state.terms[hit]
+    del t.varnas[-1]                        # कीलालपा → कीलालप् (कीलालपः); a dhātu-final ā only (खट्वा keeps it)
+    t.meta["6_4_140_done"] = True
     return state
 
 
@@ -36,7 +60,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "AtaH DAtoH Basya lopaH",
     samagra_dev           = "आतः धातोः भस्य लोपः",
     padaccheda_dev        = "आतः धातोः",
-    why_dev               = "(सूत्रम् 6.4.140) आतो धातोः।",
+    why_dev               = "आकारान्तस्य धातोः (धात्वन्तस्य) भस्य आकारलोपः — कीलालपः, शुभंयः।",
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,
