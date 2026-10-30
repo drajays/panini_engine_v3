@@ -104,6 +104,9 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
     # gh (kṣatrād ghah)
     if c0 == "G" and (len(varnas) == 1 or (len(varnas) == 2 and varnas[1].slp1 == "a")):
         return ("iya", parse_slp1_upadesha_sequence("iya"))
+    # SHORTCUT S36: the gha of ghatup (5.2.40 – 41, vatup with va → gha) is folded into the pratyaya's name; its residue after it-lopa is G-a-t, and only the gha is replaced
+    if c0 == "G" and len(varnas) == 3 and varnas[1].slp1 == "a" and varnas[2].slp1 == "t":
+        return ("iyat", parse_slp1_upadesha_sequence("iyat"))
     return None
 
 
@@ -162,6 +165,9 @@ def act(state: State) -> State:
     pr.varnas = [v.clone() for v in new_varnas]
     pr.meta["upadesha_slp1"] = new_id
     pr.meta[_META_DONE] = True
+    if new_id == "iyat":      # S36: the t is the tu of ghatup, already past it-lopa: 1.3.3 must not name it it a second time
+        from engine.it_samjna import META_LOPA_DONE
+        pr.meta[META_LOPA_DONE] = (new_id, new_id)
     return state
 
 

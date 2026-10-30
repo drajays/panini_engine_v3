@@ -53,6 +53,7 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
         # sūtra kram, before the aṅga rules of 6.4 and 7.x that work on their output (abhyāsa-kārya 7.4.59–7.4.97
         # after the dvitva 6.1.8 of liṭ).
         ((6, 1, 1), (6, 1, 71)),
+        ((6, 3, 90), (6, 3, 91)),     # ā / īś / kī before vatu: they bar 7.2.102 (tyadādīnām aḥ), so they act in the same phase as it
         ((6, 4, 1), (6, 4, 168)),
         ((7, 1, 1), (7, 4, 97)),
     ),

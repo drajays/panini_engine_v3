@@ -45,7 +45,8 @@ def _hit(state: State):
     # … v a n t  or  … m a n t  at end (7.1.70 nuṃ already inserted)
     if vs[-1].slp1 != "t" or vs[-2].slp1 != "n":
         return None
-    if vs[-3].slp1 != "a" or vs[-4].slp1 not in ("v", "m"):
+    # SHORTCUT S36: the ugit atu of ghatup (iyat, kiyat) stands as ...iyant; the letter before ant is read off the letters, y only for the stem that came from ghatup
+    if vs[-3].slp1 != "a" or not (vs[-4].slp1 in ("v", "m") or (vs[-4].slp1 == "y" and "origin_pratyaya:iyat" in anga.tags)):
         return None
     return len(vs) - 3
 

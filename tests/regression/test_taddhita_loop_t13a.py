@@ -59,15 +59,15 @@ CASES = [   # (sense, stem, lexical tags, liṅga, a form that must be among the
     ("sarvacarmakfta", "sarvacarman", None, N, "sarvacarmIRam"),                                 # 5.2.5
     ("vyApnoti", "sarvakarman", SM, N, "sarvakarmIRam"),                                         # 5.2.7
     ("karmaGawa", "karman", None, N, "karmaWam"),                                                # 5.2.35
+    ("parimARa", "yad", None, N, "yAvat"),                     # 5.2.39
+    ("parimARa", "tad", None, N, "tAvat"),
+    ("parimARa", "etad", None, N, "etAvat"),
+    ("parimARa", "kim", None, N, "kiyat"),   # 5.2.40
+    ("parimARa", "idam", None, N, "iyat"),
 ]
 GAPS = [    # the pratyaya is the sūtra's; the form waits for another sūtra
     ("Bakzayati", "sarvAnna", None, N, "sarvAnnInam", "the compound is one Term, so 8.4.1 turns its second n into ṇ across the member boundary (S30 kind)"),   # 5.2.9
     ("mUla", "pakza", None, S, "pakzatiH", "the a of pakza is dropped before ti and ṣ + t becomes ṣṭ (pakzwiH): 6.4.148 reads ti as an i-initial pratyaya"),   # 5.2.25
-    ("parimARa", "yad", None, N, "yAvat", "6.3.91 (ā sarvanāmnaḥ) is not real"),                     # 5.2.39
-    ("parimARa", "tad", None, N, "tAvat", "6.3.91 is not real"),
-    ("parimARa", "etad", None, N, "etAvat", "6.3.91 is not real"),
-    ("parimARa", "kim", None, N, "kiyat", "6.3.90 (idaṅkimor īśkī) and 7.1.2 gha → iy are not real for this chain"),   # 5.2.40
-    ("parimARa", "idam", None, N, "iyat", "6.3.90 is not real"),
 ]
 
 
