@@ -111,6 +111,7 @@ VOCABULARY = {
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],
                       "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO", "jAti"], "brahmacAri": ["brahmacAriRi"],
                       # 5.4.104 – 157 (agent H)
+                      "samavAya": ["samavAye"], "lavana": ["lavane"], "hiMsA": ["hiMsAyAm"],
                       "jAnapadAKyA": ["jAnapadAKyAyAm"], "dAru": ["dAruRi"], "karmavyatihAra": ["karmavyatihAre"], "vandita": ["vandite"],
                       "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"],
                       "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},

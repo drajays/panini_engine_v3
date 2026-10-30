@@ -69,3 +69,6 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S71 | 6.4.154 – 160, 5.3.63 | tṛ is recognised by its final letters; the ādeśas of 6.4.157 and 5.3.63 are shown as they stand before the pratyaya (baṃhi, varṣi, drāghi, neda / sādha with the ṭi already taken) | derive the ādeśa on the live Term | open |
 | S72 | 6.4.159 | yiṭ is shown as its y, without an upadeśa tag | a real āgama Term with its it-marks | open |
 | S74 | 5.4.7, 8, 14 | 5.4.7: the stems aṣaḍakṣa, āśitaṅgu, alaṅkarman, alampuruṣa are an inline set (the adhyuttarapada compounds need the samāsa machine); 5.4.8: "not a direction word, not a feminine" reads the caller's `lex:dikSabda` / `lex:strI` tags; 5.4.14: the feminine condition is not checked, only the ṇac origin | samāsa as a pair of Terms; Lexicon tables (S14) | open |
+| S76 | 6.1.95, 132 | the 6.1.95 āṅ branch is missing (āṅ is not its own pada on the tape: om only); 6.1.132's nañ-samāsa condition reads the caller tag `lex:nanjsamAsa` | āṅ as a pada; samāsa as a pair of Terms | open |
+| S77 | 6.1.138, 140, 141 | gate on `arthaViSeSa` with fixed upasarga and dhātu upadeśa lists | gaṇa / dhātupāṭha lookups | open |
+| S78 | 6.1.76, 122, 123, 128 | the `pada` tag and the prakṛtibhāva tag carry the pada boundary | a pada boundary on the tape | open |
