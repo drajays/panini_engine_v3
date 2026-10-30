@@ -1051,6 +1051,90 @@
       "L6 Track G (svara)",
       "sandhi / svara"
     ],
+    "6.3.2": [
+      "पञ्चम्याः स्तोकादिभ्यः",
+      "aluk / pumvat before the uttarapada: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.9": [
+      "हलदन्तात् सप्तम्याः संज्ञायाम्",
+      "aluk / pumvat before the uttarapada: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.14": [
+      "तत्पुरुषे कृति बहुलम्",
+      "aluk / pumvat before the uttarapada: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.34": [
+      "स्त्रियाः पुंवद्भाषितपुंस्कादनूङ् समानाधिकरणे स्त्रियामपूरणीप्रियाऽऽदिषु",
+      "aluk / pumvat before the uttarapada: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.47": [
+      "द्व्यष्टनः संख्यायामबहुव्रीह्यशीत्योः",
+      "saṃkhyā compounds (dvādaśa, trayodaśa): waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.48": [
+      "त्रेस्त्रयः",
+      "saṃkhyā compounds (dvādaśa, trayodaśa): waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.73": [
+      "नलोपो नञः",
+      "nañ compounds: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.74": [
+      "तस्मान्नुडचि",
+      "nañ compounds: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.81": [
+      "अव्ययीभावे चाकाले",
+      "avyayībhāva: waits for the samāsa machine",
+      "L5 samāsa batch",
+      "sandhi / samāsa"
+    ],
+    "6.3.93": [
+      "समः समि",
+      "the kvin / kvip uttarapada chain (añc …) is not selectable in the kṛdanta loop yet",
+      "L4 kṛdanta kvip / kvin",
+      "sandhi / samāsa"
+    ],
+    "6.3.94": [
+      "तिरसस्तिर्यलोपे",
+      "the kvin / kvip uttarapada chain (añc …) is not selectable in the kṛdanta loop yet",
+      "L4 kṛdanta kvip / kvin",
+      "sandhi / samāsa"
+    ],
+    "6.3.95": [
+      "सहस्य सध्रिः",
+      "the kvin / kvip uttarapada chain (añc …) is not selectable in the kṛdanta loop yet",
+      "L4 kṛdanta kvip / kvin",
+      "sandhi / samāsa"
+    ],
+    "6.3.128": [
+      "विश्वस्य वसुराटोः",
+      "the kvin / kvip uttarapada chain (añc …) is not selectable in the kṛdanta loop yet",
+      "L4 kṛdanta kvip / kvin",
+      "sandhi / samāsa"
+    ],
+    "6.3.138": [
+      "चौ",
+      "the kvin / kvip uttarapada chain (añc …) is not selectable in the kṛdanta loop yet",
+      "L4 kṛdanta kvip / kvin",
+      "sandhi / samāsa"
+    ],
     "6.4.144": [
       "nastaddhite for an-stems (in-stems real)",
       "6.4.145–169 prakṛtibhāva exceptions (S21)",
