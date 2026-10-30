@@ -72,7 +72,6 @@ CASES = [   # (sense, stem, lexical tags, extra vivakṣā, a form that must be 
     ("prakAravacana", "kim", None, {}, "kaTam"),   # 7.2.103 – 105 on a taddhita vibhakti
 ]
 XFAIL = [   # the pratyaya is the sūtra's own; the form waits for the rule named in the reason
-    ("saptamIvib", "kim", None, {}, "kva", "7.2.105 gives kva, but the t of 5.3.12 at stays (1.3.4 na vibhaktau tusmāḥ keeps it for a vibhakti): kvat, kvad. The Kāśikā form is kva; no source in the brain says how the t goes (SK: needs the decision whether 5.3.12 at is a-with-uccāraṇārtha t)"),
     ("kAle", "idam", None, {}, "etarhi", "S52: 5.3.16 and 5.3.18 both teach a pratyaya for idam in the same sense; the loop does not explore a choice between two sūtras"),
     ("atiSAyana", "paWu", None, {}, "paWizWam", "S54: 6.4.154 – 159 (ṭi-lopa before iṣṭha) are not real, and 5.3.55 does not yet teach iṣṭhan"),
 ]

@@ -32,6 +32,9 @@ from sutras.adhyaya_1.pada_4.sutra_1_4_104 import (
 )
 
 TAG_5_3_1_VIBHAKTI = "samjna_5_3_1_vibhakti"
+# Kāśikā on 1.3.4: "किमोऽत् (5.3.12), इटोऽत् (3.4.106) इत्यत्र प्रतिषेधो न भवति, अनित्यत्वादस्य प्रतिषेधस्य" — the t of at is it even though at is a
+# vibhakti (kim + at → kva by 7.2.105, not kvat); the upadeśa names where the niṣedha does not act.
+_ANITYA = frozenset({"at"})
 PRATISHEDHA_TAG = "it_pratishedha_1_3_4"
 
 
@@ -45,7 +48,7 @@ def is_vibhakti_upadesha(t) -> bool:
 
 def tusma_final_vibhakti(t) -> bool:
     """The upadeśa is a vibhakti ending in tu-varga / s / m (1.3.3 blocked)."""
-    if not t.varnas or not is_vibhakti_upadesha(t):
+    if not t.varnas or t.meta.get("upadesha_slp1") in _ANITYA or not is_vibhakti_upadesha(t):
         return False
     last = t.varnas[-1].slp1
     return last in HAL and last in TUSMA

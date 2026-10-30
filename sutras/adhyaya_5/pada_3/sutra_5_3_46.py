@@ -38,7 +38,6 @@ from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vikalpa import policy_pick
 from engine.vivaksha import vivaksita
 from sutras.adhyaya_1.pada_1.sutra_1_1_38 import META_ASARVA_VIBHAKTI_TADDHITA
-from sutras.adhyaya_1.pada_3.sutra_1_3_4 import TAG_5_3_1_VIBHAKTI
 
 _RULES = (
     ({'stems': ['dvi', 'tri']}, ('eDAc', '-')),
@@ -74,7 +73,6 @@ def act(state: State) -> State:
         return state
     state = attach_taddhita(state, up)
     state.terms[-1].meta[META_ASARVA_VIBHAKTI_TADDHITA] = True      # a vibhakti pratyaya (5.3.1) does not take every case: 1.1.38 makes the word an avyaya
-    state.terms[-1].tags.add(TAG_5_3_1_VIBHAKTI)      # 5.3.1 prāg diśo vibhaktiḥ: its scope's pratyayas are vibhakti (1.3.4 keeps the final m of dānīm)
     return state
 
 
