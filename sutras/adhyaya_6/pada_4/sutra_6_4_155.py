@@ -51,17 +51,58 @@ def _site(state: State):
     return 0
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state) is not None
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     ti = _site(state)
     if ti is None:
         return state
     ang = state.terms[ti]
     del ang.varnas[-1]
     ang.meta["upadesha_slp1"] = "paT"
+    return state
+
+
+from engine.state import State, Term
+from phonology import mk
+
+_PR = ("izWan", "imanic", "Iyasu~n")      # iṣṭhan, imanic, īyasun
+_FAM = "6_4_155_family_done"                # the ṭi of this aṅga has been dealt with by one of 6.4.154 – 159 / 5.3.61 – 64
+_AC = frozenset("aAiIuUfFxXeEoO")
+_DONE = {_FAM: True, "6_4_143_dit_done": True, "6_4_148_lopa_done": True}      # the aṅga's ṭi is dealt with: the existing guards of 6.4.148 / 6.4.134 keep them from acting on it again
+
+
+def _flat(t: Term) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+
+def _ti_site(state: State, prs=_PR):
+    """The bha aṅga Term standing before iṣṭhan / imanic / īyasun (its pratyaya Term follows it), not yet dealt with by the ṭi-lopa family."""
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if {"anga", "bha"} <= t.tags and not t.meta.get(_FAM) and "taddhita" in pr.tags and any(f"origin_pratyaya:{u}" in pr.tags for u in prs):
+            return i
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    i = _ti_site(state)
+    return i is not None and any(v.slp1 in _AC for v in state.terms[i].varnas)
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if not _new_cond(state):
+        return _legacy_act(state)
+    t = state.terms[_ti_site(state)]
+    j = max(k for k, v in enumerate(t.varnas) if v.slp1 in _AC)      # 1.1.64 aco 'ntyādi ṭi: the last vowel and what follows it
+    del t.varnas[j:]
+    t.meta.update(_DONE)
     return state
 
 
@@ -75,8 +116,8 @@ SUTRA = SutraRecord(
     padaccheda_dev="इष्ठवत्-भावः",
     why_dev="पटु-अन्त्य-उ-कार-लोपः णिच्-पूर्वम् (P025)।",
     anuvritti_from=("6.4.1",),
-    cond=cond,
-    act=act,
+    cond                  = cond,
+    act                   = act,
 )
 
 register_sutra(SUTRA)

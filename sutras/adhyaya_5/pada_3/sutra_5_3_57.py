@@ -58,7 +58,8 @@ from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vikalpa import policy_pick
 from engine.vivaksha import vivaksita
 
-_RULES = (
+_RULES = (      # SHORTCUT S70: the niyama 5.3.58 (iṣṭhan / īyasun only after a guṇavacana) is folded in here: the caller's `lex:guRavacana` tag admits the second reading
+    (dict(tag="guRavacana"), ('tarap', 'Iyasu~n')),
     ({}, 'tarap'),
 )      # (the stems the sūtra names, the pratyaya or its readings)
 

@@ -73,7 +73,6 @@ CASES = [   # (sense, stem, lexical tags, extra vivakṣā, a form that must be 
 ]
 XFAIL = [   # the pratyaya is the sūtra's own; the form waits for the rule named in the reason
     ("kAle", "idam", None, {}, "etarhi", "S52: 5.3.16 and 5.3.18 both teach a pratyaya for idam in the same sense; the loop does not explore a choice between two sūtras"),
-    ("atiSAyana", "paWu", None, {}, "paWizWam", "S54: 6.4.154 – 159 (ṭi-lopa before iṣṭha) are not real, and 5.3.55 does not yet teach iṣṭhan"),
 ]
 
 
