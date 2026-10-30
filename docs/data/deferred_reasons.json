@@ -104,10 +104,10 @@
       "taddhita chandas"
     ],
     "5.1.58": [
-      "saṃkhyāyāḥ saṃjñāsaṃghasūtrādhyayaneṣu",
-      "the svārthe pratyaya after a saṃkhyā in a name / group / sūtra / study (pañcakāḥ śakunayaḥ): no vivakṣā for 'the name itself'",
-      "L5 svārthe batch",
-      "taddhita krīta group"
+      "saMKyAyAH saMjYAsaMGasUtrADyayanezu",
+      "a sense-restricted sūtra (not a plain svārthe one): needs the 5.1.57 parimāṇa frame plus the saṃjñā / saṅgha / sūtra / adhyayana senses; does not fit the single svArTa value",
+      "L5 after a sense-frame design",
+      "taddhita ṭhañ group"
     ],
     "5.1.59": [
       "paṅktiviṃśatitriṃśat…śatam",
@@ -577,18 +577,6 @@
       "L5 after an anuvṛtti audit",
       "taddhita 5.4 group"
     ],
-    "5.4.7": [
-      "अषडक्षाशितङ्ग्वलंकर्मालम्पुरुषाध्युत्तरपदात् खः",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.8": [
-      "विभाषा अञ्चेरदिक्स्त्रियाम्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
     "5.4.11": [
       "किमेत्तिङव्ययघादाम्वद्रव्यप्रकर्षे",
       "needs tarap/tamap (5.3.55) real",
@@ -599,24 +587,6 @@
       "अमु च च्छन्दसि",
       "the Vedic sense (chandasi) is not modelled",
       "L6 Track G (chandas)",
-      "taddhita 5.4 group"
-    ],
-    "5.4.13": [
-      "अनुगादिनष्ठक्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.14": [
-      "णचः स्त्रियामञ्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.15": [
-      "अणिनुणः",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
       "taddhita 5.4 group"
     ],
     "5.4.17": [
@@ -641,48 +611,6 @@
       "समूहवच्च बहुषु",
       "needs the samūhavat atideśa from 4.2.37 ff",
       "L5 after 4.2 atideśa",
-      "taddhita 5.4 group"
-    ],
-    "5.4.23": [
-      "अनन्तावसथेतिहभेषजाञ्ञ्यः",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.27": [
-      "देवात्तल्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.28": [
-      "अवेः कः",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.29": [
-      "यावादिभ्यः कन्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.34": [
-      "विनयादिभ्यष्ठक्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.38": [
-      "प्रज्ञादिभ्यश्च",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
-      "taddhita 5.4 group"
-    ],
-    "5.4.39": [
-      "मृदस्तिकन्",
-      "svārthika: no sense is named, and a vivakṣā value's form must occur in the sūtra's own samagra — needs an owner decision on a svārthe design",
-      "L5 svārthika design",
       "taddhita 5.4 group"
     ],
     "5.4.41": [
