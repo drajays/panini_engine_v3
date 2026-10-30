@@ -62,10 +62,7 @@ CASES = [   # (sense, stem, lexical tags, liṅga, a form that must be among the
 ]
 GAPS = [    # the pratyaya is the sūtra's; the form waits for another sūtra
     ("Bakzayati", "sarvAnna", None, N, "sarvAnnInam", "the compound is one Term, so 8.4.1 turns its second n into ṇ across the member boundary (S30 kind)"),   # 5.2.9
-    ("mUla", "karRa", None, N, "karRajAham", "1.3.7 drops the initial j of jAhac; the Kāśikā example keeps it (karṇajāham): it-exemption audit"),   # 5.2.24
     ("mUla", "pakza", None, S, "pakzatiH", "the a of pakza is dropped before ti and ṣ + t becomes ṣṭ (pakzwiH): 6.4.148 reads ti as an i-initial pratyaya"),   # 5.2.25
-    ("vitta", "vidyA", None, N, "vidyAcuYcu", "1.3.7 drops the initial c of cuYcup; the Kāśikā example keeps it (vidyācuñcuḥ): it-exemption audit"),   # 5.2.26
-    ("vitta", "vidyA", None, N, "vidyAcaRam", "1.3.7 drops the initial c of caRap (vidyācaṇaḥ)"),
     ("parimARa", "yad", None, N, "yAvat", "6.3.91 (ā sarvanāmnaḥ) is not real"),                     # 5.2.39
     ("parimARa", "tad", None, N, "tAvat", "6.3.91 is not real"),
     ("parimARa", "etad", None, N, "etAvat", "6.3.91 is not real"),
