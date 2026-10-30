@@ -65,3 +65,6 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S63 | 5.4.68 – 160 | 5.4.68 opens in every taddhita loop, so the gate-only legacy halves of 5.4.69 – 160 fire as noise (they change no tape) | a vivakṣā-gated opener once the samāsa machine exists | open |
 | S64 | 5.4.81 – 159 | the vā readings `-` leave the compound with no pratyaya; the samāsa kinds (tatpuruza, dvigu, bahuvrIhi, avyayIBAva …) are caller tags | Lexicon tables (S14) | open |
 | S65 | 5.4.155 – 159 | the barring sūtras are a `kap_barred` meta flag, not a real na | model the niṣedha as a bādhā | open |
+| S70 | 5.3.55, 57, 58 | the 5.3.58 niyama (iṣṭhan / īyasun only after a guṇavacana) is folded into 5.3.55 / 57 by the caller's `lex:guRavacana` tag | Lexicon tables (S14) | open |
+| S71 | 6.4.154 – 160, 5.3.63 | tṛ is recognised by its final letters; the ādeśas of 6.4.157 and 5.3.63 are shown as they stand before the pratyaya (baṃhi, varṣi, drāghi, neda / sādha with the ṭi already taken) | derive the ādeśa on the live Term | open |
+| S72 | 6.4.159 | yiṭ is shown as its y, without an upadeśa tag | a real āgama Term with its it-marks | open |

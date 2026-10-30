@@ -1013,15 +1013,15 @@
 },
 {
 "id": "3.1.98",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.1.113",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.1.124",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.1.133",
@@ -1045,7 +1045,7 @@
 },
 {
 "id": "3.2.1",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.3",
@@ -1057,15 +1057,15 @@
 },
 {
 "id": "3.2.17",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.20",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.38",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.58",
@@ -1089,23 +1089,23 @@
 },
 {
 "id": "3.2.78",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.83",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.85",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.94",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.96",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.99",
@@ -1133,7 +1133,7 @@
 },
 {
 "id": "3.2.124",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.2.134",
@@ -1189,7 +1189,7 @@
 },
 {
 "id": "3.3.57",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.3.89",
@@ -1197,7 +1197,7 @@
 },
 {
 "id": "3.3.90",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.3.92",
@@ -1229,7 +1229,7 @@
 },
 {
 "id": "3.3.115",
-"status": "pending_structural"
+"status": "confident_structural"
 },
 {
 "id": "3.3.121",
@@ -1237,7 +1237,7 @@
 },
 {
 "id": "3.3.126",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.3.128",
@@ -1397,11 +1397,11 @@
 },
 {
 "id": "4.1.5",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.6",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.10",
@@ -1497,15 +1497,15 @@
 },
 {
 "id": "4.1.84",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.85",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.86",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.87",
@@ -1529,15 +1529,15 @@
 },
 {
 "id": "4.1.96",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.101",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.104",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.105",
@@ -1545,7 +1545,7 @@
 },
 {
 "id": "4.1.112",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.114",
@@ -1569,7 +1569,7 @@
 },
 {
 "id": "4.1.138",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.1.163",
@@ -1593,11 +1593,11 @@
 },
 {
 "id": "4.2.1",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.3",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.4",
@@ -1605,19 +1605,19 @@
 },
 {
 "id": "4.2.7",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.9",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.10",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.14",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.16",
@@ -1625,11 +1625,11 @@
 },
 {
 "id": "4.2.24",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.30",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.36",
@@ -1637,7 +1637,7 @@
 },
 {
 "id": "4.2.37",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.38",
@@ -1645,7 +1645,7 @@
 },
 {
 "id": "4.2.43",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.61",
@@ -1653,7 +1653,7 @@
 },
 {
 "id": "4.2.67",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.2.68",
@@ -1669,11 +1669,11 @@
 },
 {
 "id": "4.2.88",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.89",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.92",
@@ -1681,15 +1681,15 @@
 },
 {
 "id": "4.2.93",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.98",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.104",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.2.107",
@@ -1697,27 +1697,27 @@
 },
 {
 "id": "4.2.114",
-"status": "gate_only"
+"status": "confident"
 },
 {
 "id": "4.2.138",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.1",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.2",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.3",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.11",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.23",
@@ -1729,15 +1729,15 @@
 },
 {
 "id": "4.3.26",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.39",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.42",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.53",
@@ -1745,15 +1745,15 @@
 },
 {
 "id": "4.3.55",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.74",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.81",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.82",
@@ -1761,19 +1761,19 @@
 },
 {
 "id": "4.3.83",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.85",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.86",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.87",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.89",
@@ -1781,7 +1781,7 @@
 },
 {
 "id": "4.3.120",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.3.134",
@@ -1789,11 +1789,11 @@
 },
 {
 "id": "4.3.144",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.3.160",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.4.1",
@@ -1801,19 +1801,19 @@
 },
 {
 "id": "4.4.2",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.3",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.5",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.8",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.20",
@@ -1821,7 +1821,7 @@
 },
 {
 "id": "4.4.34",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.41",
@@ -1829,7 +1829,7 @@
 },
 {
 "id": "4.4.73",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.75",
@@ -1837,15 +1837,15 @@
 },
 {
 "id": "4.4.76",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.77",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "4.4.91",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "4.4.98",
@@ -1853,7 +1853,7 @@
 },
 {
 "id": "4.4.105",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.1.1",
@@ -1861,15 +1861,15 @@
 },
 {
 "id": "5.1.2",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.1.5",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "5.1.6",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.1.18",
@@ -1881,19 +1881,19 @@
 },
 {
 "id": "5.1.42",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "5.1.63",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "5.1.66",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.1.79",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "5.1.115",
@@ -1933,7 +1933,7 @@
 },
 {
 "id": "5.2.1",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.23",
@@ -1941,31 +1941,31 @@
 },
 {
 "id": "5.2.36",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.37",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.40",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.42",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.49",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.51",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.88",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.94",
@@ -1973,31 +1973,31 @@
 },
 {
 "id": "5.2.96",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.100",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.109",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.116",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.121",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.127",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.2.140",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.1",
@@ -2009,23 +2009,23 @@
 },
 {
 "id": "5.3.3",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.4",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.5",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.6",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.7",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.9",
@@ -2033,7 +2033,7 @@
 },
 {
 "id": "5.3.11",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.14",
@@ -2041,7 +2041,7 @@
 },
 {
 "id": "5.3.15",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.16",
@@ -2049,15 +2049,15 @@
 },
 {
 "id": "5.3.21",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.24",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.25",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.56",
@@ -2073,7 +2073,7 @@
 },
 {
 "id": "5.3.67",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.68",
@@ -2089,19 +2089,19 @@
 },
 {
 "id": "5.3.73",
-"status": "unexercised"
+"status": "gate_only"
 },
 {
 "id": "5.3.92",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.93",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.3.96",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.11",
@@ -2109,7 +2109,7 @@
 },
 {
 "id": "5.4.21",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.38",
@@ -2137,11 +2137,11 @@
 },
 {
 "id": "5.4.86",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.87",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.91",
@@ -2149,11 +2149,11 @@
 },
 {
 "id": "5.4.92",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.106",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.107",
@@ -2161,19 +2161,19 @@
 },
 {
 "id": "5.4.111",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.113",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.115",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.116",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "5.4.138",
@@ -2289,7 +2289,7 @@
 },
 {
 "id": "6.1.79",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "6.1.85",
@@ -2677,7 +2677,7 @@
 },
 {
 "id": "6.4.65",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "6.4.66",
@@ -2905,7 +2905,7 @@
 },
 {
 "id": "6.4.144",
-"status": "gate_only"
+"status": "confident"
 },
 {
 "id": "6.4.146",
@@ -3137,11 +3137,11 @@
 },
 {
 "id": "7.1.80",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.81",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.82",
@@ -3349,7 +3349,7 @@
 },
 {
 "id": "7.2.82",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.2.84",
@@ -3425,7 +3425,7 @@
 },
 {
 "id": "7.2.104",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.2.106",
@@ -3481,7 +3481,7 @@
 },
 {
 "id": "7.3.20",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.3.33",
@@ -3497,7 +3497,7 @@
 },
 {
 "id": "7.3.44",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.3.51",
@@ -4321,7 +4321,7 @@
 },
 {
 "id": "8.4.59",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "8.4.60",
