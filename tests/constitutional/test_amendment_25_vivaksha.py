@@ -27,6 +27,8 @@ def test_schema_values_are_named_by_the_sutras_they_cite():
     for key, values in schema().items():
         for value, entry in values.items():
             assert entry["sutras"], f"{key}={value}: no citing sūtra"
+            if "kashika" in entry:      # AMENDMENT 27: cited to the Kāśikā, the sūtras are an allow-list
+                continue
             for sid in entry["sutras"]:
                 assert _samagra_words(sid) & set(entry["forms"]), f"{key}={value}: {sid} does not name it"
 
@@ -54,7 +56,11 @@ def test_vivaksita_only_for_a_meaning_the_sutra_names():
             args = call.args[1:3]
             assert len(args) == 2 and all(isinstance(a, ast.Constant) for a in args), f"{path}: vivaksita needs literals"
             key, value = (a.value for a in args)
-            forms = schema()[key][value]["forms"]
+            entry = schema()[key][value]
+            if "kashika" in entry:      # AMENDMENT 27: only an allow-listed svārthika sūtra, and only this value
+                assert sid.group(1) in entry["sutras"], f"{path}: not on the AMENDMENT 27 allow-list"
+                continue
+            forms = entry["forms"]
             assert _samagra_words(sid.group(1)) & set(forms), f"{path}: asks {key}={value} but its samagra has none of {forms}"
 
 

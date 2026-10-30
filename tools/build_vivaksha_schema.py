@@ -130,6 +130,8 @@ VOCABULARY = {
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }
+# AMENDMENT 27 allow-list: sūtras that may ask taddhitArtha=svArTa (Kāśikā: "svārthe"); extend only with the Kāśikā line cited in the sūtra's file
+SVARTHIKA = ["5.1.58", "5.4.7", "5.4.8", "5.4.13", "5.4.14", "5.4.15", "5.4.23", "5.4.27", "5.4.28", "5.4.29", "5.4.34", "5.4.38", "5.4.39"]
 _SPLIT = re.compile(r"[\s\-,.;:|।॥()'\"]+")
 
 
@@ -148,6 +150,8 @@ def build() -> dict:
             if not cited:
                 raise SystemExit(f"{key}={value}: none of {forms} occurs in any samagra — refused")
             schema["keys"][key][value] = {"forms": forms, "sutras": cited}
+    # AMENDMENT 27: the svārthika sūtras name no sense; the Kāśikā (5.3.1, "svārthe") supplies it. One value, an explicit allow-list, a Kāśikā citation.
+    schema["keys"].setdefault("taddhitArtha", {})["svArTa"] = {"forms": ["svArTe"], "sutras": sorted(SVARTHIKA, key=order), "kashika": "5.3.1"}
     return schema
 
 
