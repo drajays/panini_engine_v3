@@ -78,6 +78,7 @@ CASES = [   # (stem, lexical tags, extra vivakṣā, a form that must be among t
     ("SuBaM", None, M, "SuBaMyuH"),
     ("SaM", None, M, "SaMyuH"),                                           # 5.2.138
     ("kaM", None, M, "kaMyuH"),
+    ("UrRA", None, M, "UrRAyuH"),                                         # 5.2.123 (sit: pada, 1.4.16, so 6.4.148 keeps the ā)
 ]
 
 
@@ -89,7 +90,6 @@ def test_senses(stem, og, extra, want):
 
 XFAIL = [   # (stem, extra, want, cause)
     ("danta", {"arthaViSeSa": "saMjYA"}, "dantAvalaH", "5.2.113: the long ā of dantāvala (dīrgha before valac) is not modelled"),
-    ("UrRA", {}, "UrRAyuH", "5.2.123: 6.4.148 drops the ā before yus; ūrṇāyuḥ keeps it"),
 ]
 
 
