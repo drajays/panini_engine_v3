@@ -11,6 +11,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vartika import Vartika
 
 _STEMS = frozenset({"kumuda", "naqa", "vetasa"})      # the three words the sūtra itself names
 
@@ -25,6 +26,20 @@ def act(state: State) -> State:
     return state
 
 
+# Art. 25 / AMENDMENT 29: the vārttika of 4.2.87 lives here: mahiṣāc ceti vaktavyam (Kāśikā: mahiṣmān nāma deśaḥ) — mahiṣa takes ḍmatup in the same sense.
+def _mahiza_cond(state: State) -> bool:
+    return taddhita_site(state, "cAturarTika", stems=frozenset({"mahiza"})) is not None
+
+
+def _mahiza_act(state: State) -> State:
+    return attach_taddhita(state, "qmatu~p")
+
+
+VARTIKAS = (
+    Vartika(id="4.2.87.v1", source="Kātyāyana vā. 1 on 4.2.87 (Kāśikā 4.2.87; Kaumudī)", tier="T1", relation="extension",
+            text_dev="महिषाच्चेति वक्तव्यम्", cond=_mahiza_cond, act=_mahiza_act),
+)
+
 SUTRA = SutraRecord(
     sutra_id              = "4.2.87",
     sutra_type            = SutraType.VIDHI,
@@ -38,6 +53,7 @@ SUTRA = SutraRecord(
     anuvritti_from        = ('4.1.1',),
     apavada_of            = ('4.1.83',),      # the special over the default aṇ of the cāturarthika frame
     also_vidhi            = True,
+    vartikas              = VARTIKAS,
     cond                  = cond,
     act                   = act,
 )

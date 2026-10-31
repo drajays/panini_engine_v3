@@ -24,6 +24,7 @@ OK = [   # (stem, artha, tags, form)
     ("deva", "apatya", E, "dEva"), ("aSvapati", "apatya", E, "ASvapata"), ("SuBra", "apatya", E, "SOBreya"),
     ("SiSu", "apatya", E, "SESava"), ("rUru", "apatya", E, "rOrava"), ("pfTA", "apatya", E, "pArTa"),             # 6.4.146 ogunaH; 6.4.148 + 7.2.117
     ("madrarAjan", "samAsAnta", frozenset({"lex:samAsa"}), "madrarAja"),                                          # 5.4.91 ṭac, 6.4.144 an-lopa
+    ("mahiza", "asti", E, "mahizmat"), ("naqa", "asti", E, "naqvala"),     # 4.2.87 + vā. mahiṣāc ca; 4.2.88
     ("UrRA", "astyasya", E, "UrRAyu"),                                                                            # 5.2.123 yus (sit: pada)
     ("kazAya", "rakta", RAGA, "kAzAya"), ("maYjizWa", "rakta", RAGA, "mAYjizWa"), ("kusumBa", "rakta", RAGA, "kOsumBa"),
     ("Sukla", "rakta", RAGA, "SOkla"), ("kfzRa", "rakta", RAGA, "kArzRa"),                                        # 4.2.1 aṇ
@@ -31,9 +32,9 @@ OK = [   # (stem, artha, tags, form)
     ("kardama", "rakta", RAGA, "kArdamika"),                                                                      # 4.2.2 ṭhak
     ("pIta", "rakta", RAGA, "pItaka"), ("nIlI", "rakta", RAGA, "nIla"), ("Sakala", "rakta", RAGA, "SAkala"),      # 4.2.2 vārttikas v1-v3
     ("haridrA", "rakta", RAGA, "hAridra"), ("mahArajana", "rakta", RAGA, "mAhArajana"),                           # vā. añ
-    ("maGA", "yukta", NAKS, "mAGa"),                                                                              # 4.2.3 aṇ
+    ("maGA", "yukta", NAKS, "mAGa"), ("puzya", "yukta", NAKS, "pOza"), ("tizya", "yukta", NAKS, "tEza"),      # 4.2.3; vārttika 6.4.149.v3 (ya-lopa)                                                                              # 4.2.3 aṇ
     ("vasizWa", "dfzwa", E, "vAsizWa"), ("viSvAmitra", "dfzwa", E, "vESvAmitra"), ("kruYca", "dfzwa", E, "krOYca"),   # 4.2.7
-    ("kali", "dfzwa", E, "kAleya"), ("vAmadeva", "dfzwa", E, "vAmadevya"), ("uSanas", "dfzwa", E, "OSanasa"),     # 4.2.8, 4.2.9
+    ("kali", "dfzwa", E, "kAleya"), ("vAmadeva", "dfzwa", E, "vAmadevya"), ("uSanas", "dfzwa", E, "OSanasa"), ("uSanas", "dfzwa", E, "OSana"),   # 4.2.8.v2 aṇ ḍid vā: ṭi-lopa 6.4.143     # 4.2.8, 4.2.9
     ("vastra", "parivfta", E, "vAstra"), ("pARqukambala", "parivfta", E, "pARqukambalin"),                         # 4.2.10, 4.2.11
     ("dvEpa", "parivfta", E, "dvEpa"), ("vEyAGra", "parivfta", E, "vEyAGra"),                                      # 4.2.12 añ
     ("SarAva", "udDfta", E, "SArAva"), ("mallikA", "udDfta", E, "mAllika"), ("karpara", "udDfta", E, "kArpara"),   # 4.2.14
@@ -72,12 +73,9 @@ def _x(reason, stem, artha, og, want, **kw):
 
 
 GAPS = [
-    _x("vārttika 'tiṣyapuṣyayor nakṣatrāṇi yalopaḥ' (6.4.149): not written; the loop gives pOzya", "puzya", "yukta", NAKS, "pOza"),
     _x("4.2.4 lup aviśeṣe is a gate-only stub: the aṇ of 4.2.3 is never luped (adya puṣyaḥ)", "puzya", "yukta", NAKS, "puzya"),
     _x("4.2.4 lup (uttarā kālaḥ: the aṇ of 4.2.3 luped, 1.2.51 keeps the prakṛti's liṅga): stub", "uttarA", "yukta", NAKS, "uttarA"),
     _x("4.2.6 dvandvāc cha is a gate-only stub (tiṣyapunarvasavīyam needs a dvandva stem and cha in both viśeṣa / aviśeṣa)", "tizyapunarvasu", "yukta", NAKS, "tizyapunarvasavIya"),
-    _x("vārttika 'asminn arthe aṇ ḍid vā vaktavyaḥ' (4.2.8): the ḍit reading (ṭi-lopa 6.4.143: auśanaḥ) is not offered", "uSanas", "dfzwa", E, "OSana"),
-    _x("vārttika 'mahiṣāc ca' on 4.2.87: not written; the cāturarthika aṇ gives mAhiza", "mahiza", "asti", E, "mahizmat"),
     _x("vārttika 'pāṇḍor ḍyaṇ' (4.1.166-170 tadrāja group): the janapada-kṣatriya sūtras 4.1.168-178 are gate-only stubs; the loop gives pARqava", "pARqu", "apatya", E, "pARqya"),
     _x("4.1.137 rājaśvaśurād yat does not fire (+ vārttika rājño jātigrahaṇam: rājanya): the loop gives rAja", "rAjan", "apatya", E, "rAjanya"),
     _x("4.1.151 kurvādibhyo ṇyaḥ is a gate-only stub (Kāśikā: kauravyaḥ; the deck's añ via 4.1.86 contradicts the Kāśikā, Art. 22): the loop gives kOrava", "kuru", "apatya", E, "kOravya"),
