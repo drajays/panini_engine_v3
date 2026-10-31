@@ -25,6 +25,7 @@ _ENGINE_LITERAL_SUTRA_ID_ALLOW: dict[str, frozenset[str]] = {
     # Art. 21 L10 named override table (CONFLICT_OVERRIDES) — docs/AMENDMENT_19.md
     # aṅgādhikāra bound read by the declension rules' shared site test (6.4.1 … 7.4.97) — a scope marker, not an apply_rule target
     "declension.py": frozenset({"6.4.1"}),
+    "krt_attach.py": frozenset({"2.4.52"}),   # bhavya: as -> bhU before the krtya sutras choose (docs/AMENDMENT_19.md)
     "resolver.py": frozenset({"6.1.17", "7.4.60", "7.3.96", "7.4.50", "6.4.101", "6.4.119", "6.1.50", "7.3.84", "7.2.1", "6.1.8", "6.1.45", "7.2.3", "7.2.73", "6.1.11", "6.4.51", "6.4.72", "6.4.71", "6.1.58", "7.3.86"}),
 }
 
