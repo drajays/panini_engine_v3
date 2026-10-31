@@ -5,17 +5,22 @@ Padaccheda: द्वन्द्वात् छः
 
 द्वंद्वाच्छः (4.2.6)
 Pāṭha: ashtadhyayi.com data.txt row i=42006 (Art. 14).
+
+A dvandva of nakṣatra names takes cha (īya, 7.1.2) in the sense of 4.2.3, whether the time is divided or not (viśeṣe cāviśeṣe ca), displacing aṇ and its lup
+(tiṣyapunarvasavīyam ahaḥ, rādhānurādhīyam adya). That the stem is a dvandva of nakṣatras is the caller's Lexicon fact (``lex:nakzatra`` + ``lex:dvandva``).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
 
 _GATE_KEY: str = "4_2_6_dvaMdvAcCa_6"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.2.6", state, "4.1.76"):
@@ -27,11 +32,25 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.2.6"
     return state
+
+
+def _site(state: State):
+    return taddhita_site(state, ok=vivaksita(state, "taddhitArtha", "yukta"), tag="nakzatra", has_tag="lex:dvandva")
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _site(state) is None:
+        return _legacy_act(state)
+    return attach_taddhita(state, "Ca")
 
 
 SUTRA = SutraRecord(
@@ -45,6 +64,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "द्वन्द्वात् छः",
     why_dev               = "(सूत्रम् 4.2.6) द्वंद्वाच्छः।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.2.3',),
     cond                  = cond,
     act                   = act,
 )

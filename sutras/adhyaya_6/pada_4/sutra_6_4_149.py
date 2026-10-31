@@ -12,6 +12,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
+from engine.vartika import Vartika
 
 _GATE_KEY: str = "6_4_149_sUryatizyA_149"
 
@@ -27,6 +28,35 @@ def act(state: State) -> State:
     return state
 
 
+# Art. 25 / AMENDMENT 29: the vārttika of 6.4.149 lives here. Kātyāyana (Kāśikā 6.4.149): tiṣyapuṣyayor nakṣatrāṇi yalopa iti vācyam — the ya of the
+# nakṣatra words tiṣya, puṣya goes before a taddhita (pauṣa, taiṣa). After 6.4.148 took the a, the ya stands last (pauṣya -> pauṣy -> pauṣ).
+def _tp_site(state: State):
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if not ({"bha", "anga"} <= t.tags and {"taddhita", "pratyaya"} <= pr.tags) or t.meta.get("6_4_149_v3_done"):
+            continue
+        if t.meta.get("upadesha_slp1") in ("tizya", "puzya") and "lex:nakzatra" in t.tags and t.meta.get("6_4_148_lopa_done") \
+                and t.varnas and t.varnas[-1].slp1 == "y":
+            return t
+    return None
+
+
+def _tp_cond(state: State) -> bool:
+    return _tp_site(state) is not None
+
+
+def _tp_act(state: State) -> State:
+    t = _tp_site(state)
+    t.varnas.pop()
+    t.meta["6_4_149_v3_done"] = True
+    return state
+
+
+VARTIKAS = (
+    Vartika(id="6.4.149.v3", source="Kātyāyana vā. 3 on 6.4.149 (Kāśikā 6.4.149; Kaumudī)", tier="T1", relation="apavada",       # the host is gate-only here: its own cond holds, so the vārttika must displace its act
+            text_dev="तिष्यपुष्ययोर्नक्षत्राणि यलोप इति वाच्यम्", cond=_tp_cond, act=_tp_act),
+)
+
 SUTRA = SutraRecord(
     sutra_id              = "6.4.149",
     sutra_type            = SutraType.VIDHI,
@@ -38,7 +68,8 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "सूर्य-तिष्य-अगस्त्य-मत्स्यानाम् यः उपधायाः",
     why_dev               = "(सूत्रम् 6.4.149) सूर्यतिष्यागस्त्यमत्स्यानां य उपधायाः।",
     anuvritti_from        = ('6.1.1',),
-    cond                  = cond,
+    vartikas              = VARTIKAS,
+    cond                 = cond,
     act                   = act,
 )
 

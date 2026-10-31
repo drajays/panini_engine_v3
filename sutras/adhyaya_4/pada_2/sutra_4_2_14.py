@@ -16,7 +16,7 @@ from engine.vivaksha import vivaksita
 
 
 def _site(state: State):
-    return taddhita_site(state, ok=vivaksita(state, "taddhitArtha", "udDfta"))
+    return taddhita_site(state, ok=vivaksita(state, "taddhitArtha", "udDfta"), tag="amatra")      # amatrebhyaH: the stem names a vessel (śarāva, mallikā, karpara): the caller's Lexicon fact, not pāṇi
 
 
 def cond(state: State) -> bool:

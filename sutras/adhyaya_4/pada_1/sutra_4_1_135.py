@@ -5,17 +5,21 @@ Padaccheda: चतुष्पाद्‍भ्यः ढञ्
 
 चतुष्पाद्भ्यो ढञ् (4.1.135)
 Pāṭha: ashtadhyayi.com data.txt row i=41135 (Art. 14).
+
+Kāśikā: the names of four-footed creatures take ḍhañ in the offspring sense, displacing aṇ (kāmaṇḍaleyaḥ, jāmbeyaḥ). That a stem names a four-footed creature
+is the caller's Lexicon fact ``lex:catuzpAd`` (like ``lex:jAti``); 6.4.147 then drops the u (ḍhe lopo 'kadrvāḥ).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
 
 _GATE_KEY: str = "4_1_135_catuzpAdBy_135"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.1.135", state, "4.1.92"):
@@ -27,11 +31,25 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.1.135"
     return state
+
+
+def _site(state: State):
+    return taddhita_site(state, "apatya", tag="catuzpAd")
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _site(state) is None:
+        return _legacy_act(state)
+    return attach_taddhita(state, "QaY")
 
 
 SUTRA = SutraRecord(
@@ -45,6 +63,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "चतुष्पाद्‍भ्यः ढञ्",
     why_dev               = "(सूत्रम् 4.1.135) चतुष्पाद्भ्यो ढञ्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.1.83',),
     cond                  = cond,
     act                   = act,
 )

@@ -20,14 +20,15 @@ _TAILS = ("saKi", "sakhi", "rAjan", "ahan", "ahan")
 
 
 def _sakhi_or_rajan_ahan(state: State) -> bool:
-    for t in reversed(state.terms):
+    for i in range(len(state.terms) - 1, -1, -1):
+        t = state.terms[i]
         if not t.varnas:
             continue
         flat = "".join(v.slp1 for v in t.varnas)
-        if any(flat.endswith(tail) for tail in ("saKi", "rAjan", "ahan")):
-            return True
+        if any(flat.endswith(tail) and (len(flat) > len(tail) or i > 0) for tail in ("saKi", "rAjan", "ahan")):
+            return True       # a samāsa has a pūrvapada before the tail (in the word or as an earlier Term): the bare word rājan (rājñaḥ apatyam, 4.1.137) is no tatpuruṣa
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in {"saKi", "saki", "rAjan", "ahan"}:
+        if i > 0 and up in {"saKi", "saki", "rAjan", "ahan"}:
             return True
     return False
 

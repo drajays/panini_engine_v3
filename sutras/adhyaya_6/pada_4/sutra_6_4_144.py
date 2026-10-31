@@ -63,6 +63,9 @@ def _an_barred(state: State, t, pr) -> bool:
     return up.startswith("y") and not any("5.1.119" <= e.get("id", "") <= "5.1.136" and e.get("artha") for e in state.adhikara_stack)      # 6.4.168 (string order is fine within 5.1.1xx)
 
 
+an_barred = _an_barred      # read by 6.4.134 as well: the same prakṛtibhāva exceptions keep the an-aṅga whole before a taddhita
+
+
 def cond(state: State) -> bool:
     return _eligible(state) or _in_site(state) is not None
 

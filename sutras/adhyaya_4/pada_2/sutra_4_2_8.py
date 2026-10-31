@@ -13,6 +13,7 @@ from engine.state import State
 from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vikalpa import policy_pick  # noqa: F401
 from engine.vivaksha import vivaksita
+from engine.vartika import Vartika
 
 
 def _site(state: State):
@@ -29,6 +30,21 @@ def act(state: State) -> State:
     return attach_taddhita(state, "Qak")
 
 
+# Art. 25 / AMENDMENT 29: the vārttika of 4.2.8 lives here (Bhāṣya 4.2.8): asminn arthe aṇ ḍid vā vaktavyaḥ — in the dṛṣṭaṃ sāma sense the aṇ of 4.2.7 is
+# optionally ḍit (uśanasā dṛṣṭaṃ sāma: auśanasam / auśanam, the ṭi going by 6.4.143).
+def _qit_cond(state: State) -> bool:
+    return taddhita_site(state, ok=vivaksita(state, "taddhitArtha", "dfzwa")) is not None
+
+
+def _qit_act(state: State) -> State:
+    return attach_taddhita(state, ("aR", "qaR")[policy_pick(state, "4.2.8.v2", 2)])
+
+
+VARTIKAS = (
+    Vartika(id="4.2.8.v2", source="Kātyāyana vā. 2 on 4.2.8 (Bhāṣya 4.2.8)", tier="T1", relation="extension",
+            text_dev="अस्मिन्नर्थेऽण् डिद्वा वक्तव्यः", cond=_qit_cond, act=_qit_act),
+)
+
 SUTRA = SutraRecord(
     sutra_id              = "4.2.8",
     sutra_type            = SutraType.VIDHI,
@@ -41,6 +57,7 @@ SUTRA = SutraRecord(
     why_dev               = "(सूत्रम् 4.2.8) कलेर्ढक्।",
     anuvritti_from        = ('4.1.1',),
     apavada_of     = ('4.2.7',),
+    vartikas              = VARTIKAS,
     cond                  = cond,
     act                   = act,
 )

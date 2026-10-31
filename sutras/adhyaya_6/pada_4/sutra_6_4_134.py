@@ -57,6 +57,12 @@ def _find_upadhā_a(state: State):
             continue
         if anga.meta.get("6_4_148_lopa_done"):
             continue                      # the aṅga's own final a went by 6.4.148 (vaitan-ika): it is still a-final (1.1.56), not an an-aṅga
+        if {"taddhita", "pratyaya"} <= nxt.tags:
+            from sutras.adhyaya_6.pada_4.sutra_6_4_144 import an_barred
+            if an_barred(state, anga, nxt):
+                continue                  # 6.4.167 - 169 prakṛtibhāva (rājan + yat: rājanya; an + aṇ): the an-aṅga stays as it is
+        if anga.meta.get("6_4_143_dit_done"):
+            continue                      # the ṭi (as of uśanas) went by 6.4.143 (ḍit aṇ: auśanam): the aṅga is still as-final (1.1.56), not an an-aṅga
         if samyogad_vamanta([v.slp1 for v in vs]):
             continue                              # 6.4.137 न संयोगाद्वमन्तात्
         return (ti, len(vs) - 2)
