@@ -55,6 +55,10 @@ Verdict: ok = by rule, surface matches; gap = not reached / not modelled; wrong 
 | 4.2.16 saṃskṛtaṃ bhakṣāḥ, 4.2.21 sāsmin paurṇamāsīti saṃjñāyām (summary only) | 4.2.16: dAdhika (check 1); 4.2.21 not exercised | known / untested |
 | Practice (aham+yus, jambū+ḍhak, dharma+ṭhak, bhavatī+chas, sugandha+i, kim+ḍatarac, sīra+aṇ, triṃśat+ḍini, madhu+ra, yama+ṇya, ahan+kha, pitṛ+ṭhañ, kuru+añ, rohiṇī+ḍhak, jaḍa+ṣyañ) | senses not given in the deck; rohiṇī -> rOhiReya, bhavatī known, aham+yus gap, kuru gap | untested |
 
-Counts (rows): ok 16, known 8, gap 16, wrong 1, n/a 1, untested 1. Tests: 48 pass, 18 strict xfail (17 gaps/wrong + lupi).
-Causes shared: (a) vārttikas of the host sūtra not written (4.2.2 x3, 6.4.149, 4.2.8, 4.2.87); (b) gate-only stubs for senses/suffixes the deck uses (4.2.4, 4.2.6, 4.1.135, 4.1.151, 4.1.171, 4.1.168-170);
-(c) 4.1.137 not firing; (d) pāṭha data (uḍuloman); (e) lexical sense conditions (amatra, ratha).
+Counts (rows, phase 1): ok 18, known 9, gap 15, wrong 1, n/a 1, untested 1. Tests at phase 1: 48 pass, 18 strict xfail.
+Phase 2 (one commit per step, docs/PLAN_TADDHITA_FIX.md method; vārttikas as VARTIKAS blocks in the host sūtra, Amendment 29): fixed 13 gap rows + the wrong row; tests now 66+ pass, 3 strict xfail.
+Fixed: 4.2.2 vā. x3 (śakala/kardama aṇ, nīlī an, pīta kan), 6.4.149 vā. (tiṣya/puṣya ya-lopa), 4.2.8 vā. (aṇ ḍid vā), 4.2.87 vā. (mahiṣa ḍmatup), 4.1.137 yat (the bare rājan no longer takes ṭac from the 5.4.91 legacy half;
+6.4.134 now respects the 6.4.167-169 prakṛtibhāva) + vā. jātigrahaṇa, 4.1.151 kurvādi ṇya, 4.1.135 ḍhañ (lex:catuzpAd), 6.4.147 real (ḍhe lopaḥ, apavāda of 6.4.146; 6.4.134 skips an an left by 6.4.143), 4.1.120 reads ūṅ,
+4.2.4 lup (+1.2.51 śravaṇam), 4.2.6 cha (dvandva), 4.2.14 reads lex:amatra, 5.2.140 yus (the deck's stems are ahaṃ / śubhaṃ, not aham). Source conflicts followed the Kāśikā: kauravya (deck: añ), cārmaṇa (deck: cārma), śaitabāheya as ḍhañ (Kāśikā 6.4.147: śaitavāheya).
+Shortcut added: S110 (stem in both kurvādi and śubhrādi keeps ḍhak). Still open (strict xfail, blocked): pāṇḍu + ḍyaṇ and kunti + ñyaṅ (the tadrāja group 4.1.168-178 is gate-only; the vārttika's host number in the Bhāṣya DB is 4.1.166, a numbering clash),
+uḍuloman (bāhvādi ākṛtigaṇa: Kāśikā gives auḍulomi only as an example; pāṭha data, Art. 22), ratha / kāya sense limits of 4.2.10 (samarthatā, known), svara.
