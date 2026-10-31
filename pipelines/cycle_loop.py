@@ -39,7 +39,10 @@ def derive_stri_stem(stem_slp1: str, origin_tags: set[str] | None = None, **viva
     s = build_taddhita_state(stem_slp1, set(origin_tags or ()) | {"strīliṅga"}, linga="strI", **vivaksha)   # SHORTCUT S104: the strīliṅga tag 4.1.4 reads is the caller's linga=strI, put on the stem here
     s.phase = "upadesha"
     st = run_autonomously(s, "", stem_slp1, 300, stop_before_tripadi=True).state
-    return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)) | {"strīliṅga"}
+    rec = set(origin.record_from_terms(st.terms)) | {"strīliṅga"}
+    if any("stri_wAp" in t.tags for t in st.terms):
+        rec.add(origin.PRATYAYA + "wAp")      # 4.1.4 merged the ṭāp into the stem (6.1.101): it still ends in that pratyaya (1.1.72 tadanta)
+    return "".join(v.slp1 for t in st.terms for v in t.varnas), rec
 
 
 def derive_nama_dhatu(stem_slp1: str, origin_tags: set[str], vibhakti: int, vacana: int, **vivaksha: str) -> list[Term]:

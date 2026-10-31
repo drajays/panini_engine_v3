@@ -23,7 +23,7 @@ _LISTED = frozenset({"Qa", "aR", "aY", "dvayasac", "daGnac", "mAtrac", "tayap", 
 def _wanted(t) -> bool:
     """anupasarjana, a-final (``at`` runs through the whole strī adhikāra), made by a ṭit or listed pratyaya."""
     return (bool(t.varnas) and t.varnas[-1].slp1 == "a" and "upasarjana" not in t.tags
-            and (origin.last_pratyaya(t) in _LISTED or origin.IT + "w" in t.tags))
+            and (origin.last_pratyaya(t) in _LISTED or origin.sthanin_pratyaya(t) in _LISTED or origin.IT + "w" in t.tags))      # ika is ṭhak by sthānivat (1.1.56)
 
 
 def _site(state: State):
@@ -62,6 +62,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="टि-इति / ङीप्",
     why_dev="टितः कृतः स्त्रियां ङीप् (प००५-अ, संक्षिप्तम्)।",
     anuvritti_from=("4.1.4",),
+    apavada_of=("4.1.4",),      # ṭāpo 'pavādaḥ (Kāśikā 4.1.15)
     cond=cond,
     act=act,
 )

@@ -25,14 +25,18 @@ def strI_site(state: State, wanted):
     return None
 
 
-def append_nip(state: State) -> State:
+def append_stri(state: State, upadesha: str) -> State:
     state.terms.append(Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("NIp")),
+        varnas=list(parse_slp1_upadesha_sequence(upadesha)),
         tags={"pratyaya", "upadesha", "stri_pratyaya", "prātipadika", "strīliṅga", "anga"},   # ṅyāp-prātipadika (4.1.1): the aṅga of the sup
-        meta={"upadesha_slp1": "NIp"},
+        meta={"upadesha_slp1": upadesha},
     ))
     return state
+
+
+def append_nip(state: State) -> State:
+    return append_stri(state, "NIp")
 
 
 def _site(state: State):

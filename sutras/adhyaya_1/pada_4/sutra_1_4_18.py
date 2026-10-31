@@ -121,7 +121,7 @@ def _eligible_anga_indices(state: State):
             yield k
             continue
         if (
-            "taddhita" in pr.tags              # any taddhita (4.1.76 ff.); the pipelines' meta flags above are the older, narrower form
+            ("taddhita" in pr.tags or "stri_pratyaya" in pr.tags)       # any svādi pratyaya after the sup: a taddhita (4.1.76 ff.) or a strī-pratyaya (ṅīp, ṅīṣ …); the pipelines' meta flags above are the older, narrower form
             and "pratyaya" in pr.tags
         ):
             if "pada_1_4_16" in anga.tags:

@@ -57,12 +57,63 @@ FORMS = [
     ("ekAdaSan", "tasyapUraRa", frozenset({"lex:saMKyA", "lex:saMKyAdi"}), "ekAdaSa"),    # ḍit: ṭi-lopa
     ("naqa", "asti", frozenset(), "naqvala"),               # ḍit ḍvalac
     ("jana", "samUha", frozenset(), "janata"),              # tal: l is it (1.3.3)
+    ("SuBra", "apatya", frozenset(), "SOBreya"),            # 4.1.123 ḍhak (śubhrādi): ḍ it, 7.1.2 Q -> eya, kit vṛddhi 7.2.118, 6.4.148
+    ("Barata", "apatya", frozenset(), "BArateya"),          # śubhrādi, over utsādi añ 4.1.86
+    ("goDA", "apatya", frozenset(), "gODeya"),              # śubhrādi (Kāśikā 4.1.129: gaudheyo 'pi)
+    ("garut", "astyasya", frozenset(), "garutmat"),         # 5.2.94 matup (vivakṣā astyasya): u~ it (1.3.2), p it (1.3.3)
+    ("yaSas", "astyasya", frozenset(), "yaSasvin"),         # 5.2.121 vini (a stem in as): ṅi's final i... vini: n stays, 1.4.19 pada-sañjñā aside
 ]
 
 
 @pytest.mark.parametrize("stem,artha,og,want", FORMS, ids=[f[3] for f in FORMS])
 def test_forms(stem, artha, og, want):
     assert want in derive(stem, artha, og), sorted(derive(stem, artha, og))
+
+
+def test_kumudvat_by_dmatup_and_jhayah():
+    """kumuda + 4.2.87 ḍmatup (cāturarthika, 'asti'): ḍ it (1.3.7), ṭi-lopa 6.4.143, m -> v by 8.2.10 jhayaḥ."""
+    from pipelines.taddhita_loop import derive_taddhita
+    got = {b.surface_slp1 for b in explore(lambda: derive_taddhita("kumuda", 1, 1, "puMliNga", taddhitArtha="asti"))}
+    assert "kumudvAn" in got, sorted(got)
+
+
+@pytest.mark.xfail(strict=True, reason="gap (S45/S52): naqa has 4.2.87 ḍmatup (naqvAn) and 4.2.88 ḍvalac (naqvalaH); the loop does not explore between two competing sūtras, para 4.2.88 wins")
+def test_naqvan_both_readings():
+    from pipelines.taddhita_loop import derive_taddhita
+    got = {b.surface_slp1 for b in explore(lambda: derive_taddhita("naqa", 1, 1, "puMliNga", taddhitArtha="asti"))}
+    assert {"naqvAn", "naqvalaH"} <= got, sorted(got)
+
+
+def test_matup_vini_by_rule():
+    assert {"1.3.2", "1.3.3", "1.3.9"} <= set(_steps("garut", "astyasya", "garutmat"))      # matu~p: u~ (1.3.2), p (1.3.3), lopa
+    assert "1.4.19" in _steps("yaSas", "astyasya", "yaSasvin")                           # tasau matvarthe: bha, so yaśas is not pada
+    from pipelines.taddhita_loop import derive_taddhita
+    got = {b.surface_slp1 for b in explore(lambda: derive_taddhita("garut", 1, 2, "puMliNga", taddhitArtha="astyasya"))}
+    assert "garutmantO" in got, sorted(got)                                               # 7.2.70 ugit num (u~ of matup)
+
+
+def test_dhak_after_strI_chain():
+    """vinatā: strī stem (4.1.4 ṭāp, recorded as its last pratyaya) + 4.1.120 strībhyo ḍhak -> vainateya, not aṇ."""
+    from pipelines import chain
+    st = chain.taddhita(chain.strI(chain.Stem("vinata")), taddhitArtha="apatya")
+    assert st.slp1 == "vEnateya" and "4.1.120" in st.trace[-1][1], (st.slp1, st.trace[-1][1][:12])
+
+
+@pytest.mark.parametrize("stem,artha,want", [("upagu", "apatya", "OpagavI"), ("akza", "dIvyati", "AkzikI"), ("dadhi", "tenasaMskfta", "dAdhikI")])
+def test_strI_after_taddhita_nip_4_1_15(stem, artha, want):
+    """aṇ / ṭhak (listed in 4.1.15; ika is ṭhak by sthānivat) + striyām: ṅīp, not ṭāp (4.1.15 apavāda of 4.1.4); a lopa 6.4.148 (bha, 1.4.18 for the strī-pratyaya)."""
+    from pipelines import chain
+    st = chain.strI(chain.taddhita(chain.Stem(stem), taddhitArtha=artha))
+    ids = {i for _, x in st.trace[-1:] for i in x}
+    assert st.slp1 == want and "4.1.15" in ids and "4.1.4" not in ids, (st.slp1, sorted(ids))
+
+
+@pytest.mark.parametrize("stem,tags,want", [("gOra", (), "gOrI"), ("Sudra", ("origin_it:z",), "SudrI")], ids=["gaurAdi", "zit"])
+def test_strI_nis_4_1_41(stem, tags, want):
+    """ṅīṣ: a gaurādi word (gaura) or a stem made by a ṣit pratyaya (the origin record carries its it-letter ṣ)."""
+    from pipelines import chain
+    st = chain.strI(chain.Stem(stem, frozenset(tags)))
+    assert st.slp1 == want and "4.1.41" in {i for _, x in st.trace[-1:] for i in x}, st.slp1
 
 
 def _steps(stem, artha, want, og=frozenset()):
@@ -93,20 +144,22 @@ def test_pada_1_4_17_before_consonant_initial_taddhita():
     assert "1.4.17" in _steps("jana", "samUha", "janata")
 
 
-# --- gaps / wrong order -------------------------------------------------------------------------------------------------------------------
-def test_ti_lopa_after_vrddhi_for_nit_ait():       # 7.2.117 is later than 6.4.148: paratva, and the teaching, put vṛddhi first
+# --- order (Art. 21: declared ordering in CONFLICT_OVERRIDES / 1.4.17 waits for the pratyaya's ādeśa) -------------------------------------
+def test_vrddhi_before_ti_lopa_for_nit_ait():       # 7.2.117 (para) before yasyeti ca 6.4.148
     s = _steps("dakza", "apatya", "dAkzi")
     assert s.index("7.2.117") < s.index("6.4.148")
 
 
-test_ti_lopa_after_vrddhi_for_nit_ait = pytest.mark.xfail(strict=True, reason="wrong-order: loop applies 6.4.148 before 7.2.117 (same surface); teaching: vṛddhi then yasyeti ca")(
-    test_ti_lopa_after_vrddhi_for_nit_ait)
-
-
-@pytest.mark.xfail(strict=True, reason="wrong-order: 1.4.17 pada is decided before the ṭhasyekaḥ ādeśa 7.3.50; the teaching decides ajādi/halādi after ādeśa")
 def test_pada_bha_decided_after_adesha():
     s = _steps("dadhi", "tenasaMskfta", "dAdhika")
-    assert s.index("7.3.50") < s.index("1.4.17")
+    assert s.index("7.3.50") < s.index("1.4.18") and "1.4.17" not in s    # ika is yac-initial: bha, never pada
+
+
+# --- gaps ---------------------------------------------------------------------------------------------------------------------------------
+@pytest.mark.xfail(strict=True, reason="blocked (Amendment 25): samarthatā (2.1.1 / 4.1.82 samarthānāṃ prathamāt: vyapekṣā or ekārthībhāva between the base and the word it is related to) needs the related word on the tape and a vivakṣā value that some sūtra's samagra names; neither exists (data/inputs/vivaksha_schema.json has no such key, and the schema is built from the samagras, not typed). The sense value taddhitArtha alone licenses the pratyaya")
+def test_samarthata_is_a_named_gate():
+    from engine.vivaksha import schema
+    assert "samarTatA" in schema()      # a closed, cited vivakṣā key for the sāmarthya the speaker intends
 
 
 @pytest.mark.xfail(strict=True, reason="gap: no svara sūtra (6.1.164/165/185/197/217, 3.1.4) fires in the taddhita loop; accent is not modelled on the stem")
@@ -116,15 +169,8 @@ def test_svara_by_itletter(stem, artha, want, sid):
 
 
 GAPS = [   # (stem, artha, lex tags, form the teaching gives, reason)
-    ("garut", "asti", frozenset(), "garutmat", "matup 5.2.94 is armed only by a recipe (matup_recipe), not chosen by the loop: engine gives gAruta (aṇ)"),
-    ("kumuda", "asti", frozenset(), "kumudvat", "same: matup / vatup (1.3.2 u~) never reached in the loop; engine gives kOmuda"),
-    ("yaSas", "asti", frozenset(), "yaSasvin", "vini 5.2.121 not reached; engine gives yASasa"),
-    ("vinatA", "apatya", frozenset(), "vEnateya", "ḍhak 4.1.119-20 (kit, gives -eya) not reached; engine gives vEnata"),
-    ("Barata", "apatya", frozenset(), "BArateya", "ḍhak not reached; engine gives BArata"),
-    ("SuBra", "apatya", frozenset(), "SOBreya", "4.1.123 ḍhak not reached"),
-    ("mfkaRqu", "apatya", frozenset(), "mArkaRqeya", "ḍhak not reached; engine gives mArkaRqava"),
-    ("goDA", "apatya", frozenset(), "gODeya", "ḍhak not reached; engine gives gODa"),
-    ("parSu", "apatya", frozenset(), "pArSva", "ṇas 4.1.? (sit, pada) not reached; engine gives pArSava"),
+    ("mfkaRqu", "apatya", frozenset(), "mArkaRqeya", "Art. 22 data conflict: Kāśikā 4.1.123 lists मृकण्डु (mfkaRqu) but data/inputs/ganapatha_full.json has sfkaRqu in SuBrAdiH, so the gaṇa test fails; needs an owner ruling / upstream correction, not a code change"),
+    ("parSu", "samUha", frozenset(), "pArSva", "SK 1.4.16 teaches parśu + ṇas (samūha) from a gaṇa-vārttika; no sūtra in the pāṭha carries ṇas (5.3.117 parśvādi gives aṇ/añ pārśava, svārtha). Needs the vārttika layer (Art. 18 gap), not code"),
     ("kraya", "krIta", frozenset(), "kraya" + "ika", "the deck's ṇit/nit illustration kraya+ṭhan -> krayika (no vṛddhi): loop picks ṭhak and gives krAyika"),
 ]
 

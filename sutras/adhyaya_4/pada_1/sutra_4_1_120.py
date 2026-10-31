@@ -8,14 +8,17 @@ Pāṭha: ashtadhyayi.com data.txt row i=41120 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra, origin
 from engine.state import State
 from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vivaksha import vivaksita  # noqa: F401
 
 
+_STRI_PRATYAYAS = frozenset({"wAp", "qAp", "cAp", "NIp", "NIz", "NIn"})      # strī-pratyayas (4.1.4 – 4.1.75): "strībhyaḥ" = strīpratyayānta (Bhāṣya 4.1.120)
+
+
 def _site(state: State):
-    return taddhita_site(state, "apatya", final=lambda f: f[-1:] in ("A", "I") and "strIliNga" in state.terms[-1].tags)
+    return taddhita_site(state, "apatya", origin_in=_STRI_PRATYAYAS)
 
 
 def cond(state: State) -> bool:

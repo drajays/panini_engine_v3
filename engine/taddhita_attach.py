@@ -20,7 +20,7 @@ def frame_open(state: State, artha: str | None = None) -> bool:
 
 def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | None = None, final=None, origin: str | None = None,
                   ok: bool | None = None, stems: frozenset[str] | None = None, tag: str | None = None, gana_of: str | None = None,
-                  has_tag: str | None = None, lacks: tuple[str, ...] = ()):
+                  has_tag: str | None = None, lacks: tuple[str, ...] = (), origin_in: frozenset[str] | None = None):
     """The stem Term when the frame is open, the stem ends the tape and the sūtra's own condition on it holds: membership of a gaṇa, its final
     letters (a predicate on the SLP1 string), the pratyaya it already ends in (``origin``, for gotra-pratyayānta stems)."""
     if ok is None:
@@ -46,6 +46,8 @@ def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | No
         return None
     if origin is not None and f"origin_pratyaya:{origin}" not in t.tags:
         return None
+    if origin_in is not None and not any(f"origin_pratyaya:{o}" in t.tags for o in origin_in):
+        return None            # the stem ends in one of these pratyayas (a strī-pratyaya: strībhyaḥ)
     return t
 
 

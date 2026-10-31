@@ -27,7 +27,8 @@ IT = "origin_it:"
 DHATU = "origin_dhatu:"
 VIKARANA = "origin_vikarana:"
 ABHYASTA = "origin_abhyasta"
-ORIGIN_PREFIXES = (PRATYAYA, IT, DHATU, VIKARANA)
+STHANIN = "origin_sthanin:"      # the upadeśa an ādeśa replaced (ṭhak -> ika 7.3.50): the pratyaya stays what it was for the sūtras that name it (1.1.56 sthānivat)
+ORIGIN_PREFIXES = (PRATYAYA, IT, DHATU, VIKARANA, STHANIN)
 
 _UK = frozenset("uUfFxX")          # u, ṛ, ḷ (the uk pratyāhāra, short and long)
 _TRC = frozenset({"tfc", "tfn"})
@@ -44,6 +45,10 @@ def origin_tags_of(pratyaya_upadesha: str | None, it_letters: Iterable[str], dha
     out |= {IT + str(c) for c in it_letters}
     out |= {DHATU + d for d in dhatus}
     return out
+
+
+def sthanin_pratyaya(term) -> str | None:
+    return next((t[len(STHANIN):] for t in _tags(term) if t.startswith(STHANIN)), None)
 
 
 def last_pratyaya(term) -> str | None:
@@ -84,6 +89,8 @@ def record_from_terms(terms) -> set[str]:
     dhatus = [(t.meta.get("upadesha_slp1") or "") for t in terms if "dhatu" in t.tags and "abhyasa" not in t.tags]
     out = origin_tags_of(last.meta.get("upadesha_slp1") if last is not None else None,
                          sorted(last.meta.get("it_markers", ())) if last is not None else [], dhatus)
+    if last is not None and last.meta.get("upadesha_slp1_original") not in (None, last.meta.get("upadesha_slp1")):
+        out.add(STHANIN + last.meta["upadesha_slp1_original"])
     out |= {VIKARANA + (t.meta.get("upadesha_slp1") or "") for t in terms if "vikarana" in t.tags and t.kind == "pratyaya"}
     if any("abhyasa" in t.tags for t in terms):
         out.add(ABHYASTA)

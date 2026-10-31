@@ -9,29 +9,21 @@ Pāṭha: ashtadhyayi.com data.txt row i=41123 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
 
-_GATE_KEY: str = "4_1_123_SuBrAdiBya_123"
+
+def _site(state: State):
+    """The apatya frame (4.1.92) is open and the stem is one of the Gaṇapāṭha's śubhrādi (an ākṛtigaṇa: only the listed words)."""
+    return taddhita_site(state, "apatya", gana_name="SuBrAdiH")
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.123", state, "4.1.92"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.123"
-    return state
+    return attach_taddhita(state, "Qak") if _site(state) is not None else state      # Q: 7.1.2 -> eya; k: kit (7.2.118 vṛddhi, 6.4.148)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +37,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "शुभ्र-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.123) शुभ्रादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.1.83', '4.1.86'),      # Kāśikā: yathāyogam iñādīnām apavādaḥ
     cond                  = cond,
     act                   = act,
 )
