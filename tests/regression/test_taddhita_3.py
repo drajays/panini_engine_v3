@@ -29,6 +29,7 @@ OK = [   # (stem, artha, tags, form)
     ("Sukla", "rakta", RAGA, "SOkla"), ("kfzRa", "rakta", RAGA, "kArzRa"),                                        # 4.2.1 aṇ
     ("lAkzA", "rakta", RAGA, "lAkzika"), ("rocanA", "rakta", RAGA, "rOcanika"), ("Sakala", "rakta", RAGA, "SAkalika"),
     ("kardama", "rakta", RAGA, "kArdamika"),                                                                      # 4.2.2 ṭhak
+    ("pIta", "rakta", RAGA, "pItaka"), ("nIlI", "rakta", RAGA, "nIla"), ("Sakala", "rakta", RAGA, "SAkala"),      # 4.2.2 vārttikas v1-v3
     ("haridrA", "rakta", RAGA, "hAridra"), ("mahArajana", "rakta", RAGA, "mAhArajana"),                           # vā. añ
     ("maGA", "yukta", NAKS, "mAGa"),                                                                              # 4.2.3 aṇ
     ("vasizWa", "dfzwa", E, "vAsizWa"), ("viSvAmitra", "dfzwa", E, "vESvAmitra"), ("kruYca", "dfzwa", E, "krOYca"),   # 4.2.7
@@ -71,9 +72,6 @@ def _x(reason, stem, artha, og, want, **kw):
 
 
 GAPS = [
-    _x("vārttika 'pītāt kan vaktavyaḥ' (4.2.2): no VARTIKAS block; the loop gives the aṇ type pEta", "pIta", "rakta", RAGA, "pItaka"),
-    _x("vārttika 'nīlyā aṅ vaktavyaḥ' (4.2.2): not written; the loop gives the aṇ type nEla", "nIlI", "rakta", RAGA, "nIla"),
-    _x("Kāśikā 4.2.2 'śakalakardamābhyām aṇ apīṣyate': the second reading (śākala) is not offered", "Sakala", "rakta", RAGA, "SAkala"),
     _x("vārttika 'tiṣyapuṣyayor nakṣatrāṇi yalopaḥ' (6.4.149): not written; the loop gives pOzya", "puzya", "yukta", NAKS, "pOza"),
     _x("4.2.4 lup aviśeṣe is a gate-only stub: the aṇ of 4.2.3 is never luped (adya puṣyaḥ)", "puzya", "yukta", NAKS, "puzya"),
     _x("4.2.4 lup (uttarā kālaḥ: the aṇ of 4.2.3 luped, 1.2.51 keeps the prakṛti's liṅga): stub", "uttarA", "yukta", NAKS, "uttarA"),
