@@ -34,9 +34,6 @@ def _bhavya_readings():
     return {b.surface_slp1 for b in explore(lambda: derive_krdanta("Adadi_02_0060", 1, 1, "napuṃsaka", krt="kftya"))}
 
 
-@pytest.mark.xfail(strict=True, reason="A1: 3.1.124 (RyAt) attaches at the as-stage, seeing hal-final s; 2.4.52 (asterBUH) has no "
-                   "forward-looking trigger (viSayasaptami: fires before the affix exists) in engine/krt_attach.py kftya_open, so the "
-                   "BU substitution never precedes affix choice. Engine gives BAvyam, not Scharf's Bavyam (Scharf 2022 p.2)")
 def test_bhavya_from_as():
     assert "Bavyam" in _bhavya_readings()
 
