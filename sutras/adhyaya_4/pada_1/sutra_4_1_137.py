@@ -12,6 +12,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vivaksha import vivaksita  # noqa: F401
+from engine.vartika import Vartika
 
 
 def _site(state: State):
@@ -28,6 +29,17 @@ def act(state: State) -> State:
     return attach_taddhita(state, "yat")
 
 
+# Art. 25 / AMENDMENT 29: the vārttika of 4.1.137 lives here: rājño jātāv eveti vācyam (Bhāṣya: rājanyo nāma jātiḥ; rājano 'nyaḥ, the aṇ stays otherwise).
+# jāti is the caller's Lexicon fact (lex:jAti), as for the other jāti-conditioned sūtras.
+def _not_jati_cond(state: State) -> bool:
+    return taddhita_site(state, "apatya", final=lambda f: f == "rAjan", lacks=("jAti",)) is not None
+
+
+VARTIKAS = (
+    Vartika(id="4.1.137.v1", source="Kātyāyana vā. on 4.1.137 (Bhāṣya 4.1.137: rājñaḥ apatye jātigrahaṇam)", tier="T1", relation="restriction",
+            text_dev="राज्ञो जातावेवेति वाच्यम्", cond=_not_jati_cond, act=lambda state: state),
+)
+
 SUTRA = SutraRecord(
     sutra_id              = "4.1.137",
     sutra_type            = SutraType.VIDHI,
@@ -40,6 +52,7 @@ SUTRA = SutraRecord(
     why_dev               = "(सूत्रम् 4.1.137) राजश्वशुराद्यत्।",
     anuvritti_from        = ('4.1.1',),
     apavada_of     = ('4.1.83', '4.1.95'),
+    vartikas              = VARTIKAS,
     cond                  = cond,
     act                   = act,
 )
