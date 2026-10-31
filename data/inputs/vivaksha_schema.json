@@ -4925,6 +4925,27 @@
      "3.4.26"
     ]
    }
+  },
+  "icCA": {
+   "icCA": {
+    "forms": [
+     "icCAyAM"
+    ],
+    "sutras": [
+     "3.1.8",
+     "3.1.9"
+    ]
+   }
+  },
+  "hetumat": {
+   "hetumat": {
+    "forms": [
+     "hetumati"
+    ],
+    "sutras": [
+     "3.1.26"
+    ]
+   }
   }
  }
 }

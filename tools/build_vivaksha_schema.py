@@ -130,6 +130,8 @@ VOCABULARY = {
     "tAcCIlya": {"tAcCIlya": ["tAcCIlye"]}, "AtmamAna": {"AtmamAna": ["AtmamAne"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
+    # the sanādi senses: 3.1.7 san / 3.1.8 kyac / 3.1.9 kāmyac — the wish (icCAyAm); 3.1.26 ṇic — the prompting agent (hetumati)
+    "icCA": {"icCA": ["icCAyAM"]}, "hetumat": {"hetumat": ["hetumati"]},
 }
 # AMENDMENT 27 allow-list: sūtras that may ask taddhitArtha=svArTa (Kāśikā: "svārthe"); extend only with the Kāśikā line cited in the sūtra's file
 SVARTHIKA = ["5.1.58", "5.4.7", "5.4.8", "5.4.13", "5.4.14", "5.4.15", "5.4.23", "5.4.27", "5.4.28", "5.4.29", "5.4.34", "5.4.38", "5.4.39"]

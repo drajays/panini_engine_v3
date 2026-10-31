@@ -9,22 +9,29 @@ Pāṭha: ashtadhyayi.com data.txt row i=74033 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_33_kyaci_33"
+
+def _site(state: State):
+    """The aṅga's final avarṇa (a / ā — 'asya', 7.4.32) before kyac; a lugged sup between them is no letter."""
+    for j, ky in enumerate(state.terms):
+        if ky.kind != "pratyaya" or ky.meta.get("upadesha_slp1") != "kyac":
+            continue
+        ang = next((t for t in reversed(state.terms[:j]) if t.varnas), None)
+        if ang is not None and ang.varnas[-1].slp1 in ("a", "A") and "prakriti" == ang.kind:
+            return ang
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.33", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.33"
+    ang = _site(state)
+    if ang is not None:
+        ang.varnas[-1] = mk("I")        # the apavāda of 7.4.25: putra + kya → putrIya (and ajA → ajI)
     return state
 
 

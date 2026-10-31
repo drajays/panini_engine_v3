@@ -9,10 +9,12 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 
 def cond(state: State) -> bool:
-    return not any(e.get("id") == "4.1.3" for e in state.adhikara_stack)
+    # the loop opens the strī frame when the speaker intends the feminine (vivakṣā linga=strI, samagra 'striyAm'); recipes still apply it directly
+    return not any(e.get("id") == "4.1.3" for e in state.adhikara_stack) and (not state.vivaksha or vivaksita(state, "linga", "strI"))
 
 
 def act(state: State) -> State:
@@ -34,6 +36,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "स्त्रियाम्",
     why_dev        = "स्त्र्यधिकारः (द्वितीयः) — ४.१.३ तः ४.१.८९ पर्यन्तम्।",
     anuvritti_from = (),
+    also_vidhi     = True,          # the frame is opened by the loop: the speaker's linga=strI
     cond           = cond,
     act            = act,
     adhikara_scope = ("4.1.3", "4.1.89"),

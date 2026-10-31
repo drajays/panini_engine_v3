@@ -2,10 +2,10 @@
 
 Target (user's diagrams): prātipadika —sup→ nāmapada; prātipadika —taddhita/strī→ prātipadika; prātipadika —sanādi→ dhātu; dhātu —kṛt→ prātipadika; dhātu —sanādi→ dhātu; dhātu —vikaraṇa+tiṅ→ kriyāpada. Aṣṭādhyāyī shape: 1–2 prakṛti, 3–5 pratyaya, 6–8 operations → pada.
 
-Done: `pipelines/chain.py` (`Stem`, `krt`, `taddhita`, `sup`), tests/unit/test_chain.py: kṛt → taddhita → taddhita → sup compose on the existing loop entry points.
+Done: `pipelines/chain.py` (`Stem`, `Dhatu`, `strI`, `nama_dhatu`, `sanadi`, `krt`, `taddhita`, `sup`, `tinanta`), tests/unit/test_chain.py and test_chain_cycle.py: aja —strī→ ajA —kyac→ ajIya —ṇic→ ajIyi —Ṇvul→ ajIyaka —iñ→ AjIyaki —sup→ AjIyakiH, and ajIyayati from the same dhātu, every arrow by the loop (pipelines/cycle_loop.py). Real sūtras for it: 4.1.3 (opened by vivakṣā linga=strI, phase window 4.1.3–75), 4.1.4, 3.1.8, 2.4.71, 3.1.32, 7.4.33, 3.1.26 (vivakṣā hetumat). Shortcuts S101–S105. Still open from the diagram: san / yaṅ / kāmyac / kyaṅ / ṇic-svārthe as stages (only ṇic and kyac are loop-driven), ṅīp/ṅīṣ/ṅīn.
 
 Open, ranked:
-1. strī stem stage — only ṭāp (4.1.4) runs, and only in the subanta preflight; ṅīp/ṅīṣ/ṅīn (4.1.5 ff.) are not on that path (gaura/brāhmaṇa get ṭāp, Bavat gets nothing). Needs those sūtras in the loop first.
+1. strī stem stage — ṭāp now runs in the loop (chain.strI); the rest: only ṭāp (4.1.4) runs, and only in the subanta preflight; ṅīp/ṅīṣ/ṅīn (4.1.5 ff.) are not on that path (gaura/brāhmaṇa get ṭāp, Bavat gets nothing). Needs those sūtras in the loop first.
 2. sanādi / nāmadhātu stages: result must be a dhātu `build_dhatu_state` accepts (san/ṇic/yaṅ today = recipe flags, laṭ only; kyac hard-coded in tinanta.py:2630).
 3. Adhikāra nesting: the taddhita loop never opens the frames 3.1.1 ⊃ 4.1.1 ⊃ 4.1.3 ⊃ 4.1.76 (data/inputs/adhikara_scope_index.json has them); rules fire on phase window + vivakṣā. Open the frames from the index when a sūtra of a scope fires, then let conds read them.
 4. Recipe spines (tinanta.py, subanta.py) hard-sequence 6–8 steps and open tripāḍī by hand; phase 6.1.72 sandhi runs after 6.4–7.4 in the loop.
