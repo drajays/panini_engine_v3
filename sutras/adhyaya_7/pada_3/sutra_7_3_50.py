@@ -12,19 +12,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.taddhita_attach import tha_site
 from engine.sthanivat import TADDHITA_PRATYAYATVA, adesha_substitute_varnas
 
 
 def _find(state: State) -> int | None:
-    for i, t in enumerate(state.terms):
-        if t.kind != "pratyaya" or "taddhita" not in t.tags:
-            continue
-        if (t.meta.get("upadesha_slp1") or "").strip() not in ("Tak", "Wak", "WaY", "Wan", "Wac", "zWan", "zWal", "zWac", "wiWan"):      # ṭh- (SLP1 W); "Tak" is the older recipes' spelling
-            continue
-        if t.meta.get("7_3_50_Tak_to_ika_done"):
-            continue
-        return i
-    return None
+    hit = tha_site(state)
+    return None if hit is None else hit[0]
 
 
 def cond(state: State) -> bool:

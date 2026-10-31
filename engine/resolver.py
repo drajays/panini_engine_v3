@@ -48,9 +48,16 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     frozenset({"6.1.8", "6.1.45"}): "6.1.45",       # docs/AMENDMENT_19.md: glai/ṣṭyai/vai liṭ — ātva on the bare root, then dvitva (jaglau)
     frozenset({"6.1.58", "7.3.84"}): "6.1.58",       # docs/AMENDMENT_19.md: srazwA, drazwA — am goes in first (nitya: guṇa first would not undo it, am undoes the guṇa site)
     frozenset({"6.1.58", "7.3.86"}): "6.1.58",
-    frozenset({"6.4.148", "7.2.117"}): "7.2.117",   # docs/AMENDMENT_19.md: dAkzi — ñit/ṇit vṛddhi (para, 1.4.2) before yasyeti ca; same surface, teaching order
     frozenset({"7.3.96", "7.4.50"}): "7.3.96",     # docs/AMENDMENT_19.md: आसीः — īṭ comes first, so the two s's are no longer adjacent
 }
+
+# Declared order (data, docs/AMENDMENT_19.md "taddhita order"): (first, second) — while `first` is a candidate `second` is withheld, and the rest of
+# the ladder decides among the others. Unlike CONFLICT_OVERRIDES the pair does not outrank a third rule that kram would put before `first`.
+ORDER_BEFORE: tuple[tuple[str, str], ...] = (
+    ("7.2.117", "6.4.148"),      # ñit / ṇit ādivṛddhi (para, 1.4.2) before yasyeti ca: dakṣa + iñ -> dākṣi
+    ("7.3.50", "7.2.118"),       # the pratyaya's own ādeśa (ṭh -> ik) before the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50: revatī + ṭhak)
+    ("7.3.51", "7.2.118"),       # likewise ṭh -> k
+)
 
 # Decision.layer values Art. 21 permits. Constitutional test greps this set.
 DECISION_LAYERS: FrozenSet[str] = frozenset({
@@ -229,6 +236,12 @@ def resolve_with_reason(
         raise ValueError("resolve() needs at least one candidate id")
     if len(candidate_ids) == 1:
         return Decision(candidate_ids[0], "sole-candidate", "एकम् एव प्राप्तम्", ())
+
+    withheld = {b for a, b in ORDER_BEFORE if a in candidate_ids and b in candidate_ids}
+    if withheld:
+        candidate_ids = [c for c in candidate_ids if c not in withheld]
+        if len(candidate_ids) == 1:
+            return Decision(candidate_ids[0], "override", "क्रमनियमः (ORDER_BEFORE, docs/AMENDMENT_19.md)", tuple(sorted(withheld)))
 
     key = frozenset(candidate_ids)
     named = next((w for k, w in CONFLICT_OVERRIDES.items() if k <= key and w in candidate_ids), None)   # a named pair inside a larger set

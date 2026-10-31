@@ -23,10 +23,10 @@ def _run(stem, og, **viv):
 
 
 @lru_cache(maxsize=None)
-def derive(stem, artha, og=frozenset()):
-    """{stem surface: application order of the sūtras} over every vikalpa reading."""
+def derive(stem, artha, og=frozenset(), extra=()):
+    """{stem surface: application order of the sūtras} over every vikalpa reading (``extra``: more vivakṣā pairs)."""
     out = {}
-    for b in explore(lambda: _run(stem, og, taddhitArtha=artha)):
+    for b in explore(lambda: _run(stem, og, taddhitArtha=artha, **dict(extra))):
         out.setdefault(b.surface_slp1, b.state.meta["_steps"])
     return out
 
@@ -72,30 +72,42 @@ def test_thak_ik_7_3_50():
     assert "7.3.50" in s
 
 
-# --- gaps -----------------------------------------------------------------------------------------------------------------------
-@pytest.mark.xfail(strict=True, reason="7.3.51 isusuktāntāt kaḥ is inert (act only sets a meta flag, no ṭh -> k): ṭhak after is/us/u/ṛ/t-final aṅga and doṣ "
-                   "gives ik (sArpisika, DAnusika, DEnavika, yAkftika, dOzika) instead of ka; the apavāda of 7.3.50 never applies")
-@pytest.mark.parametrize("stem,want", [("sarpis", "sArpiska"), ("Danus", "DAnuska"), ("Denu", "DEnuka"), ("yakft", "yAkftka"), ("doz", "dOzka")])
+# --- 7.3.51 and the order of 7.3.50 / 7.3.51 / 7.2.118 (ORDER_BEFORE in engine/resolver.py) ---------------------------------------------
+@pytest.mark.parametrize("stem,want", [("sarpis", "sArpiska"), ("Danus", "DAnuska"), ("Denu", "DEnuka"), ("yakft", "yAkftka")])
 def test_7_3_51_tha_to_ka(stem, want):
-    assert want in derive(stem, "tenasaMskfta", SAMKHYA if stem == "yakft" else frozenset())
+    assert want in derive(stem, "tenasaMskfta", SAMKHYA if stem == "yakft" else frozenset())      # is / us / uk / t-final aṅga: ṭh -> k, apavāda of 7.3.50
 
 
-@pytest.mark.xfail(strict=True, reason="wrong order: deck (Kāśikā 7.3.50 revatī + ṭhak) does 7.3.50 ṭh -> ik first, then 7.2.118 kiti ca vṛddhi; the loop does 7.2.118 first")
+@pytest.mark.xfail(strict=True, reason="vārttika 'doṣa upasaṅkhyānam' (Kāśikā 7.3.51: dauṣkaḥ): no sūtra row carries it, and doṣ (…oṣ) is not is / us / uk / t-final; Art. 18 gap, not code")
+def test_7_3_51_dos_varttika():
+    assert "dOzka" in derive("doz", "tenasaMskfta")
+
+
 def test_7_3_50_before_7_2_118():
     s = derive("akza", "dIvyati")["Akzika"]
-    assert s.index("7.3.50") < s.index("7.2.118")
+    assert s.index("7.3.50") < s.index("7.2.118")      # ṭh -> ik is the pratyaya's own ādeśa: it precedes the aṅga's kiti ca vṛddhi
 
 
-@pytest.mark.xfail(strict=True, reason="4.2.115 bhavataṣṭhak-chasau is not loop-driven: bhavatī + sense bhava gives BAvata (aṇ), not BavadIya")
+def test_7_3_51_instead_of_7_3_50():
+    s = derive("sarpis", "tenasaMskfta")["sArpiska"]
+    assert "7.3.51" in s and "7.3.50" not in s and s.index("7.3.51") < s.index("7.2.118")
+
+
+# --- gaps -----------------------------------------------------------------------------------------------------------------------
 def test_bhavadiya_4_2_115():
-    assert "BavadIya" in derive("BavatI", "Bava")
+    d = derive("Bavat", "Bava")      # bhavat (the word the sūtra names); chas -> īya, ṭhak -> ka (7.3.51, t-final); d for t is 8.2.39, after this stage
+    assert {"BavatIya", "BAvatka"} <= set(d), sorted(d)
 
 
-@pytest.mark.xfail(strict=True, reason="4.2.116 kāśyādibhyaṣṭhañiṭhau is not loop-driven: kāśī gives kASIya (cha), not kASika (ṭhañ, ṭh -> ik)")
 def test_kasika_4_2_116():
-    assert "kASika" in derive("kASI", "Bava")
+    assert "kASika" in derive("kASi", "Bava")      # kāśi (Gaṇapāṭha, short i) + ṭhañ; ñiṭh gives the same stem (strī / svara differ)
 
 
-@pytest.mark.xfail(strict=True, reason="4.1.90 phiñ (glucukādi, ph -> āyan) is not loop-driven: glucuka + apatya gives glOcuki (iñ), not glucukAyani")
 def test_glucukayani_phin():
-    assert "glucukAyani" in derive("glucuka", "apatya")
+    d = derive("glucuka", "apatya", extra=(("arthaViSeSa", "prAcAm"),))      # 4.1.160 prācām avṛddhāt phiñ bahulam (the sūtra the Kāśikā gives; 4.1.90 is yūni luk)
+    assert "glucukAyani" in d and "glOcuki" in d, sorted(d)      # bahulam: the iñ reading stays
+
+
+@pytest.mark.xfail(strict=True, reason="cvi (5.4.50 abhūtatadbhāve kṛbhvastiyoge sampadyakartari cviḥ) + apṛkta-vi 6.1.67 beyond the kvip flag: the sense abhūtatadbhāva is not in the closed vivakṣā vocabulary and no Art. 22 owner ruling (brain rulings/R-*) admits it; 6.1.67 stays the kvip-residue flag. Not added without a ruling")
+def test_cvi_sukli():
+    assert "SuklI" in derive("Sukla", "abhUtatadBAva")

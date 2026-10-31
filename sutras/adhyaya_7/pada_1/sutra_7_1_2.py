@@ -73,6 +73,9 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
         and varnas[1].slp1 == "a"
     ):
         return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
+    # phin (4.1.160 glucuka + Pi -> Ayani): the n is it (1.3.3) and gone; only the initial Ph is replaced, the i stays
+    if c0 == "P" and len(varnas) in (2, 3) and varnas[1].slp1 == "i" and (len(varnas) == 2 or varnas[2].slp1 == "n"):
+        return ("Ayani", parse_slp1_upadesha_sequence("Ayani"))
     # phak
     if (
         c0 == "P"

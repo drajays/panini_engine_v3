@@ -50,5 +50,5 @@ The two are not a mutual विप्रतिषेध: 6.1.58 stays applicable
 layer reads one-sided kills as conflict and would hand it to para. Evidence: brain 6.1.58 (Kāśikā; SK `drazwA`, `srazwA`; Vidyut floor lists 6.1.58 before 1.4.13). Pinned by `tests/regression/test_6_1_58_am.py`.
 
 ## Addition (2026-10-31): taddhita order (docs/PLAN_TADDHITA_FIX.md step 1)
-`frozenset({"6.4.148", "7.2.117"}) -> "7.2.117"`: ñit/ṇit ādivṛddhi is para (1.4.2) and the deck teaches vṛddhi, then yasyeti ca (dakṣa + iñ: dākṣi).
+`ORDER_BEFORE` (engine/resolver.py), data (first, second): while `first` is a candidate `second` is withheld and the ladder decides among the rest (a CONFLICT_OVERRIDES pair would also outrank a third rule that kram puts earlier: 7.3.16 in dvivārṣika). Pairs: (7.2.117, 6.4.148) ñit/ṇit ādivṛddhi is para (1.4.2), then yasyeti ca (dakṣa + iñ: dākṣi); (7.3.50, 7.2.118) and (7.3.51, 7.2.118): the pratyaya's own ādeśa (ṭh -> ik / k) precedes the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50, revatī + ṭhak).
 1.4.17 (pada) waits while an ādeśa of the taddhita pratyaya (7.1.2, 7.3.50) is still to act, so pada / bha is decided on the pratyaya as it finally stands (ṭhak -> ika is yac-initial: bha). No override pair: a pair would also outrank 7.3.16 (dvivārṣika).
