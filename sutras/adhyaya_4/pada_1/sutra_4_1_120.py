@@ -14,7 +14,7 @@ from engine.taddhita_attach import taddhita_site, attach_taddhita
 from engine.vivaksha import vivaksita  # noqa: F401
 
 
-_STRI_PRATYAYAS = frozenset({"wAp", "qAp", "cAp", "NIp", "NIz", "NIn"})      # strī-pratyayas (4.1.4 – 4.1.75): "strībhyaḥ" = strīpratyayānta (Bhāṣya 4.1.120)
+_STRI_PRATYAYAS = frozenset({"wAp", "qAp", "cAp", "NIp", "NIz", "NIn", "UN"})      # strī-pratyayas (4.1.4 – 4.1.75; ūṅ 4.1.66 – 72: kādraveya, Nyāsa 6.4.147): "strībhyaḥ" = strīpratyayānta (Bhāṣya 4.1.120)
 
 
 def _site(state: State):
