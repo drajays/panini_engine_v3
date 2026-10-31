@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.krt_attach import kftya_ardhadhatuka_intended
 from engine.state import State
 from engine.sthanivat import DHATUTVA, adesha_substitute_varnas
 
@@ -43,7 +44,7 @@ def _ardhadhatuka_lakara(state: State) -> bool:
 def cond(state: State) -> bool:
     if state.meta.get("2_4_52_as_to_bhu_done"):
         return False
-    if not (adhikara_in_effect("2.4.52", state, "2.4.35") or _ardhadhatuka_lakara(state)):
+    if not (adhikara_in_effect("2.4.52", state, "2.4.35") or _ardhadhatuka_lakara(state) or kftya_ardhadhatuka_intended(state)):
         return False
     return _find_as_dhatu(state) is not None
 

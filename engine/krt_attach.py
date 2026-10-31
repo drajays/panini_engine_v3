@@ -29,10 +29,25 @@ def kftya_stem(state: State) -> str:
     return "".join(v.slp1 for v in state.terms[-1].varnas) if state.terms else ""
 
 
-def kftya_open(state: State, sutra_id: str) -> bool:
-    """The speaker means a kṛtya (vivakṣā), the dhātu ends the tape, and this sūtra has not already been declined."""
+def kftya_ready(state: State) -> bool:
+    """The speaker means a kṛtya and the dhātu ends the tape. 2.4.52 asterbhūḥ is a viṣaya-saptamī (ārdhadhātuke): every kṛtya is
+    ārdhadhātuka, so as → bhū comes first and the affix sūtras (3.1.97 aco yat, not 3.1.124 ṇyat) read the dhātu it leaves —
+    they wait while 2.4.52 stands ready on this tape."""
+    from engine.registry import get_sutra
     from engine.vivaksha import vivaksita
-    return not state.meta.get(f"kftya_declined:{sutra_id}") and vivaksita(state, "krt", "kftya") and dhatu_ends_tape(state)
+    return vivaksita(state, "krt", "kftya") and dhatu_ends_tape(state) and not get_sutra("2.4.52").cond(state)
+
+
+def kftya_open(state: State, sutra_id: str) -> bool:
+    """kftya_ready, and this sūtra has not already been declined."""
+    return not state.meta.get(f"kftya_declined:{sutra_id}") and kftya_ready(state)
+
+
+def kftya_ardhadhatuka_intended(state: State) -> bool:
+    """आर्धधातुके as a viṣaya-saptamī (2.4.52): a kṛtya is meant, and every kṛtya is ārdhadhātuka (3.4.114, none is śit), so a substitution
+    that wants an ārdhadhātuka after the dhātu may stand before the affix is chosen, and the affix sūtras then see the dhātu it leaves."""
+    from engine.vivaksha import vivaksita
+    return dhatu_ends_tape(state) and vivaksita(state, "krt", "kftya")
 
 
 def kftya_attach(state: State, sutra_id: str, upadesha_slp1: str, *, bars: tuple[str, ...] = (), nitya: bool = False) -> State:

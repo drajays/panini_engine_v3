@@ -21,10 +21,9 @@ existing pipelines that have not yet migrated continue to work.
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.krt_attach import attach_krt, dhatu_ends_tape
+from engine.krt_attach import attach_krt, kftya_ready
 from engine.state import State, Term
 from engine.vikalpa import policy_pick
-from engine.vivaksha import vivaksita
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -58,7 +57,7 @@ def _matches_tavyat(state: State) -> bool:
 
 def _kftya_vivaksita(state: State) -> bool:
     """कृत्याः (3.1.95) is the family the speaker means; the dhātu is the tape's last term and no kṛt stands yet."""
-    return vivaksita(state, "krt", "kftya") and dhatu_ends_tape(state)
+    return kftya_ready(state)
 
 
 def cond(state: State) -> bool:
