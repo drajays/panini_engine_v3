@@ -74,8 +74,11 @@ _VIBHAKTI_4_1_2 = frozenset({"su~", "O", "jas", "am", "OW", "Sas", "wA", "ByAm",
 
 def is_siti_pada_context(pr: Term, anga: Term) -> bool:
     """**1.4.16** — *siti* + *asarvanāmasthāna* *svādi* (*ca* extends **1.4.14** *pada*)."""
-    if "sup" not in pr.tags or "anga" not in anga.tags:
+    # svādi (4.1.2 – 5.4.151) takes the taddhita pratyayas too, as in 1.4.17 below (Bhāṣya 4.2.43 vā. 4 ṇas: pārśva is pada by 1.4.16).
+    if "anga" not in anga.tags:
         return False
+    if "sup" not in pr.tags:
+        return "taddhita" in pr.tags and "pratyaya" in pr.tags and "it:sit" in pr.tags     # siti ca, no yaci narrowing: the s the loop's own it-lopa tagged
     if is_sarvanamasthana_sup(pr, anga):
         return False
     raw = pr.meta.get("upadesha_slp1") or ""

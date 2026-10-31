@@ -225,7 +225,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twenty-five** Articles (numbered 0 through 24) are amended only by:
+These **twenty-six** Articles (numbered 0 through 25) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -720,3 +720,18 @@ The engine is a word-generation machine of the Aṣṭādhyāyī. Every word it 
 5. **MVP before breadth.** The cycle is proved end to end on a few examples (tests/unit/test_chain_cycle.py) before any arrow is widened; widening an arrow is then ordinary sūtra work.
 
 *Enforcement:* `tests/unit/test_chain.py`, `tests/unit/test_chain_cycle.py`, `tests/constitutional/test_adhikara_nesting.py`.
+
+## Article 25 — Vārttikas, Bhāṣya rulings and paribhāṣās live inside the sūtra
+
+> Added by **AMENDMENT 29** (see `docs/AMENDMENT_29.md`).
+
+1. The sūtra is the only unit that fires. A vārttika (Art. 22 T1) or Bhāṣya ruling (T2) is an entry of the
+   `vartikas` tuple of the sūtra it modifies, in that sūtra's file (Art. 7); the sūtra draws its power from it.
+2. An entry has an id (`<sūtra>.v<n>`), a source, an Art. 22 tier, a relation to its host (`apavada`, `extension`,
+   `restriction`), its own cond/act under Art. 2 (the tape only), and its text verbatim from the database (Art. 14).
+3. The trace records `HOST + vā. n`; firing coverage (Art. 16) credits the host.
+4. A vārttika has no private priority: it contends under Art. 21 as its host.
+5. Paribhāṣās stay one shared data layer (Art. 12), named by id from a sūtra and in the trace when they decide.
+6. Each tier can be switched off for audit (`engine.vartika.disabled_tiers`).
+
+*Enforcement:* `tests/constitutional/test_amendment_29_vartikas.py`.

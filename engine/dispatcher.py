@@ -90,7 +90,7 @@ def _finish_apply_rule(
     return new_state
 
 
-_BOOKKEEPING_META = frozenset({"__why_now_dev__"})
+_BOOKKEEPING_META = frozenset({"__why_now_dev__", "__vartika__"})
 
 
 def _state_effect(state: State):
@@ -286,6 +286,7 @@ def apply_rule(
             f"executor for {sutra_id} ({stype.name}) raised: {ex}"
         ) from ex
     _stamp_origin(sutra_id, new_state)
+    vartika = new_state.meta.pop("__vartika__", None)      # Art. 25: a vārttika of this host decided; the trace names it
 
     form_after = new_state.render()
 
@@ -365,6 +366,8 @@ def apply_rule(
         if _why_now:
             _applied_step["why_now_dev"] = _why_now
         _applied_step["parts"] = term_parts(new_state)
+        if vartika:
+            _applied_step.update(vartika)
         _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
         if rec.operates_on_samjna_of and form_changed:
             _mark_samjna_licensors(sutra_id, frozenset(rec.operates_on_samjna_of), new_state)

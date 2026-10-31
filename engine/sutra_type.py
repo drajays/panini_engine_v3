@@ -284,12 +284,19 @@ class SutraRecord:
     r1_form_identity_exempt: bool                    = False
     why_dev_vacuous        : Optional[str]           = None
     skip_detail_cond_false : Optional[str]           = None
+    # Art. 25 (AMENDMENT 29): vārttikas / Bhāṣya rulings of this sūtra, folded into cond/act at construction (engine/vartika.py).
+    vartikas               : Tuple[Any, ...]         = field(default_factory=tuple)
 
     # ─────────────────────────────────────────────────────────────────
     # Self-validation.  Raises at import time (fail-fast) if a sūtra
     # file violates its type contract.
     # ─────────────────────────────────────────────────────────────────
     def __post_init__(self) -> None:
+        if self.vartikas:
+            from engine.vartika import compose
+            c, a = compose(self.sutra_id, self.cond, self.act, self.vartikas)
+            object.__setattr__(self, "cond", c)
+            object.__setattr__(self, "act", a)
         self._validate_basics()
         self._validate_type_specific()
 
