@@ -16,11 +16,29 @@ from engine.state  import State
 from engine.subanta_eligibility import nominal_paribhasha_gate_eligible
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return nominal_paribhasha_gate_eligible(state, "1_4_19_tasau_matvArTe")
 
 
+def _sites(state: State):
+    """The aṅga ending in t or s (tasau) just before a matvarthīya taddhita: the sense frame of 5.2.94 (tadasyāstyasminniti) is open."""
+    from engine.taddhita_attach import sense_in
+    if not sense_in(state, "5.2.94"):
+        return
+    for i in range(len(state.terms) - 1):
+        a, p = state.terms[i], state.terms[i + 1]
+        if "anga" in a.tags and "bha" not in a.tags and a.varnas and a.varnas[-1].slp1 in ("t", "s") \
+                and "taddhita" in p.tags and "pratyaya" in p.tags and p.varnas:
+            yield i
+
+
+def cond(state: State) -> bool:
+    return next(_sites(state), None) is not None or _legacy_cond(state)
+
+
 def act(state: State) -> State:
+    for i in list(_sites(state)):
+        state.terms[i].tags.add("bha")           # tasau matvarthe bham: pada (1.4.17) is not given, so no jaś / rutva on yaśas, garut, vidyut
     state.paribhasha_gates["1_4_19_tasau_matvArTe"] = True
     state.samjna_registry["tasau_matvArTe"] = frozenset({"ta_su_matvArtha"})
     return state

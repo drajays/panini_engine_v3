@@ -48,3 +48,7 @@ ajādi ṇijanta before caṅ (aṭ→āṭ, `awi`): the second ekāc `wi` is do
 sṛj / dṛś before a non-kit jhal-initial affix: am (a after the last vowel) goes in first — `sṛj + tā → sra-j + tā → स्रष्टा`, `द्रष्टा`, `द्रष्टव्य`, `दद्रष्ट` — not guṇa first (`*सर्क्ता`, `*दर्ष्टा`).
 The two are not a mutual विप्रतिषेध: 6.1.58 stays applicable after the guṇa (so it is nitya, PŚ 38) while the am removes the guṇa's site. The resolver's `purva`
 layer reads one-sided kills as conflict and would hand it to para. Evidence: brain 6.1.58 (Kāśikā; SK `drazwA`, `srazwA`; Vidyut floor lists 6.1.58 before 1.4.13). Pinned by `tests/regression/test_6_1_58_am.py`.
+
+## Addition (2026-10-31): taddhita order (docs/PLAN_TADDHITA_FIX.md step 1)
+`frozenset({"6.4.148", "7.2.117"}) -> "7.2.117"`: ñit/ṇit ādivṛddhi is para (1.4.2) and the deck teaches vṛddhi, then yasyeti ca (dakṣa + iñ: dākṣi).
+1.4.17 (pada) waits while an ādeśa of the taddhita pratyaya (7.1.2, 7.3.50) is still to act, so pada / bha is decided on the pratyaya as it finally stands (ṭhak -> ika is yac-initial: bha). No override pair: a pair would also outrank 7.3.16 (dvivārṣika).

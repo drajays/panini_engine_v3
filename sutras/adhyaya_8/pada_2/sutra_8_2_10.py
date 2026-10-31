@@ -18,7 +18,7 @@ from phonology    import mk
 from phonology.pratyahara import JHAL
 from sutras.adhyaya_8.pada_2.sutra_8_2_9 import _yavadi
 
-_MATUP = "matu~p"
+_MATUP = ("matu~p", "qmatu~p")      # ḍmatup (4.2.87) is matup with a ḍ that 1.3.7 takes
 
 _JHAY = frozenset(JHAL) - frozenset("SzsH") - frozenset("h")      # jhay = jhal minus the ūṣmans and h
 
@@ -27,7 +27,7 @@ def _site(state: State):
     if not state.tripadi_zone:
         return None
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "") != _MATUP or not t.varnas or t.varnas[0].slp1 != "m":
+        if (t.meta.get("upadesha_slp1") or "") not in _MATUP or not t.varnas or t.varnas[0].slp1 != "m":
             continue
         prev = next((u for u in reversed(state.terms[:i]) if u.varnas), None)
         if prev is None or (prev.meta.get("upadesha_slp1") or "") in _yavadi():     # ayavādibhyaḥ continues (Kāśikā: harit, kakud, garut, marut … keep m)

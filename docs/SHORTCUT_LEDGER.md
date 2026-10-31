@@ -47,7 +47,7 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S41 | 5.2.49 | the sūtra drops the stem's `bha` tag when it inserts maṭ (1.4.18 was given before maṭ stood before the pratyaya) | scheduler order that inserts the āgama before 1.4.18, or a saṃjñā recomputed | open |
 | S42 | 5.2.56 – 58 | the viṃśatyādi, śatādi, ṣaṣṭyādi and māsa lists are inline stem sets | gaṇa lookups | open |
 | S43 | 5.2.48 – 55 | `lex:saMKyA` / `lex:saMKyAdi` come from the caller (5.2.57 also needs `lex:saMKyA` on māsa …) | Lexicon tables | open |
-| S44 | pipelines/taddhita_loop.py | 8.2.9 (matup inside a taddhita stem: Dhana + matup → DanavAn) is called by the pipeline after the loop, not offered by the scheduler | let the scheduler offer 8.2.9 (as S29) | open |
+| S44 | pipelines/taddhita_loop.py | 8.2.9 and 8.2.10 (matup/ḍmatup inside a taddhita stem: Dhana + matup → DanavAn) is called by the pipeline after the loop, not offered by the scheduler | let the scheduler offer 8.2.9 / 8.2.10 (as S29) | open |
 | S45 | 5.2.117, 127 | a stem in two gaṇas (tunda) is not explored across the two sūtras | explore the vikalpa between competing sūtras | open |
 | S46 | 5.2.94 – 140 | prāṇistha, samāsa, pūraṇa are caller `lex:` tags; stem lists are inline; man-stems of 5.2.137 wait for S21 | Lexicon tables; S21 | open |
 | S58 | 5.4.56, 58 – 67 | the yoga with kṛ / bhū / as and the samartha-vibhakti are not checked; the sense (kṛṣi, yāpanā …) is a vivakṣā value | S16 (samartha-vibhakti) plus the verb context | open |

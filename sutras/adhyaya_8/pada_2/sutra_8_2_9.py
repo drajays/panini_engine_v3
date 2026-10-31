@@ -18,7 +18,7 @@ from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import JHAL
 
-_MATUP = "matu~p"
+_MATUP = ("matu~p", "qmatu~p")      # ḍmatup (4.2.87) is matup with a ḍ that 1.3.7 takes
 
 
 @lru_cache(maxsize=1)
@@ -31,7 +31,7 @@ def _yavadi() -> frozenset[str]:
 def _matup_after_prakriti(state: State):
     """(index of the matup Term, the prakṛti Term before it) for a matup whose m is still m."""
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "") != _MATUP or not t.varnas or t.varnas[0].slp1 != "m":
+        if (t.meta.get("upadesha_slp1") or "") not in _MATUP or not t.varnas or t.varnas[0].slp1 != "m":
             continue
         prev = next((u for u in reversed(state.terms[:i]) if u.varnas), None)
         if prev is not None:
