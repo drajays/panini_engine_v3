@@ -8,30 +8,27 @@ Pāṭha: ashtadhyayi.com data.txt row i=41041 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine       import SutraType, SutraRecord, register_sutra, origin, gana
 from engine.state import State
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 
-_GATE_KEY: str = "4_1_41_zidgOrAdiB_41"
+
+def _wanted(t) -> bool:
+    """anupasarjana, and either made by a ṣit pratyaya (ṣvun: nartakī) or a word of the gaurādi gaṇa (gaurī)."""
+    name = t.meta.get("upadesha_slp1") or "".join(v.slp1 for v in t.varnas)
+    return "upasarjana" not in t.tags and (origin.IT + "z" in t.tags or gana.in_gana("gOrAdiH", name))
+
+
+def _site(state: State):
+    return strI_site(state, _wanted)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.41", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.41"
-    return state
+    return append_stri(state, "NIz") if _site(state) is not None else state
 
 
 SUTRA = SutraRecord(
@@ -45,6 +42,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "षित्-गौरादिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.41) षिद्गौरादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.1.4',),      # ṭāpo 'pavādaḥ
     cond                  = cond,
     act                   = act,
 )

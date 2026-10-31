@@ -46,7 +46,15 @@ from engine.lopa_ghost import LUK_LOPA_GHOST_TAG, state_live_sup_indexes
 from engine.state import State
 
 
+def _dhatu_internal_sup(state: State) -> list[int]:
+    """A sup that lies inside a dhātu: a sanādi pratyaya (kyac …) that 3.1.32 has made part of a dhātu follows it (putram + kyac → putrīya-)."""
+    return [i for i in state_live_sup_indexes(state)
+            if any("sanadi" in t.tags and "dhatu" in t.tags and t.kind == "pratyaya" for t in state.terms[i + 1:])]
+
+
 def cond(state: State) -> bool:
+    if _dhatu_internal_sup(state):
+        return True
     if not state.meta.get("luk_2_4_71_recipe"):
         return False
     if not state.meta.get("pratipadika_avayava_ready"):
@@ -55,7 +63,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    idxs = state_live_sup_indexes(state)
+    idxs = _dhatu_internal_sup(state) or state_live_sup_indexes(state)
     if not idxs:
         return state
     for i in idxs:

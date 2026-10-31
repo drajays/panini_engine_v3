@@ -20,7 +20,7 @@ def frame_open(state: State, artha: str | None = None) -> bool:
 
 def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | None = None, final=None, origin: str | None = None,
                   ok: bool | None = None, stems: frozenset[str] | None = None, tag: str | None = None, gana_of: str | None = None,
-                  has_tag: str | None = None, lacks: tuple[str, ...] = ()):
+                  has_tag: str | None = None, lacks: tuple[str, ...] = (), origin_in: frozenset[str] | None = None):
     """The stem Term when the frame is open, the stem ends the tape and the sūtra's own condition on it holds: membership of a gaṇa, its final
     letters (a predicate on the SLP1 string), the pratyaya it already ends in (``origin``, for gotra-pratyayānta stems)."""
     if ok is None:
@@ -46,6 +46,8 @@ def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | No
         return None
     if origin is not None and f"origin_pratyaya:{origin}" not in t.tags:
         return None
+    if origin_in is not None and not any(f"origin_pratyaya:{o}" in t.tags for o in origin_in):
+        return None            # the stem ends in one of these pratyayas (a strī-pratyaya: strībhyaḥ)
     return t
 
 
@@ -116,3 +118,21 @@ def open_sense(state: State, sid: str, value: str) -> bool:
     """The speaker's ``taddhitArtha`` is the sense this opener teaches and its frame is not yet open (a stem ends the tape)."""
     from engine.vivaksha import vivaksita
     return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", value) and not any(e.get("id") == sid for e in state.adhikara_stack)
+
+
+_THA = ("Tak", "Wak", "WaY", "Wan", "Wac", "zWan", "zWal", "zWac", "wiWan")      # ṭh-initial taddhitas ("Tak": the older recipes' spelling)
+
+
+def tha_site(state: State):
+    """(index of the ṭh-initial taddhita Term whose ṭh no ādeśa has taken yet, the aṅga Term before it): 7.3.50 and its apavāda 7.3.51 both read this."""
+    for i, t in enumerate(state.terms):
+        if i == 0 or t.kind != "pratyaya" or "taddhita" not in t.tags or t.meta.get("7_3_50_Tak_to_ika_done"):
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() not in _THA:
+            continue
+        k = i - 1
+        while k >= 0 and not state.terms[k].varnas:
+            k -= 1
+        if k >= 0 and "anga" in state.terms[k].tags:      # aṅgāt (the anuvṛtti of both sūtras): 1.4.13 has named the aṅga
+            return i, state.terms[k]
+    return None

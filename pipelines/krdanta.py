@@ -709,9 +709,12 @@ def derive_krdanta_stem(dhatu_ref: str, *, upapada: tuple[str, str] | None = Non
     from engine import origin
     from tools.autonomy_report import run_autonomously
 
-    s = build_dhatu_state(dhatu_ref, upapada=upapada, **vivaksha)
+    if isinstance(dhatu_ref, str):
+        s = build_dhatu_state(dhatu_ref, upapada=upapada, **vivaksha)
+    else:       # a derived dhātu (pipelines.chain.Dhatu): its live Terms, as the sanādi stage left them
+        s = build_krdanta_state(([_upapada_term(*upapada)] if upapada else []) + [t.clone() for t in dhatu_ref.terms], **vivaksha)
     s.phase = "upadesha"
-    run = run_autonomously(s, "", dhatu_ref, 300, stop_before_tripadi=True)
+    run = run_autonomously(s, "", dhatu_ref if isinstance(dhatu_ref, str) else dhatu_ref.slp1, 300, stop_before_tripadi=True)
     st = run.state
     return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)), dict(st.meta.get("vikalpa_multi") or {})
 

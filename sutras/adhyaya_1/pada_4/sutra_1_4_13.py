@@ -40,7 +40,7 @@ def cond(state: State) -> bool:
         if "dhatu" in t0.tags:
             return True
         # *prātipadika* + *sup*: the prātipadika is aṅga with respect to sup.
-        if "prātipadika" in t0.tags and ("sup" in t1.tags or "stri_wAp" in t1.tags):
+        if "prātipadika" in t0.tags and ("sup" in t1.tags or "stri_wAp" in t1.tags or "stri_pratyaya" in t1.tags):
             return True
         # a taddhita: the prātipadika is the aṅga of the pratyaya that follows it (4.1.76 ff.; the pipelines' flags below are older, narrower forms)
         if "prātipadika" in t0.tags and "dhatu" not in t0.tags and "taddhita" in t1.tags and "sup" not in t1.tags:

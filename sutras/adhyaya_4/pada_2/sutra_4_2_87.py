@@ -9,28 +9,19 @@ Pāṭha: ashtadhyayi.com data.txt row i=42087 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
 
-_GATE_KEY: str = "4_2_87_kumudanaqa_87"
+_STEMS = frozenset({"kumuda", "naqa", "vetasa"})      # the three words the sūtra itself names
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.2.87", state, "4.1.76"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return taddhita_site(state, "cAturarTika", stems=_STEMS) is not None      # the sense frame 4.2.67 opened (tad asmin asti iti deśe tannāmni)
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.2.87"
+    if cond(state):
+        attach_taddhita(state, "qmatu~p")        # ḍ: it (1.3.7); u~: it (1.3.2); ḍit: ṭi-lopa 6.4.143; the m of matup: v by 8.2.10 jhayaḥ
     return state
 
 
@@ -45,6 +36,8 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "कुमुद-नड-वेतसेभ्यः ड्‍मतुप्",
     why_dev               = "(सूत्रम् 4.2.87) कुमुदनडवेतसेभ्यो ड्मतुप्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.1.83',),      # the special over the default aṇ of the cāturarthika frame
+    also_vidhi            = True,
     cond                  = cond,
     act                   = act,
 )

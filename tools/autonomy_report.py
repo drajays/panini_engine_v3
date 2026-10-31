@@ -34,6 +34,7 @@ if str(_ROOT) not in sys.path:
 
 OUT_PATH = _ROOT / "sig" / "autonomy.json"
 MAX_STEPS = 60
+LAST_RUN: "Run | None" = None
 
 
 @dataclass
@@ -85,6 +86,8 @@ def run_autonomously(state: Any, expected: str, case: str, budget: int, *, stop_
         result.outcome = "diverged"
     result.surface = state.flat_slp1()
     result.state = state
+    global LAST_RUN
+    LAST_RUN = result            # pipelines/chain.py reads the sūtras the last loop run fired, for the stage record
     if result.surface == expected:
         result.outcome = "reached"
     return result
@@ -118,17 +121,24 @@ def _tinanta_start(case: Any) -> Any:
     + the tiṅ that vivakṣā (puruṣa · vacana) selects. Everything after — it-lopa, the atideśa 3.4.85,
     3.4.113, the vikaraṇa, guṇa, sandhi — is the loop's."""
     import sutras  # noqa: F401
-    from engine import apply_rule
-    from pipelines.tinanta import (
-        P00_lac_lat_attach, P00_parasmai_tin_adesha, P06a_pratyaya_adhikara_3_1_1_to_3,
-        _bootstrap_tinanta_derivation, _dhatu_row_by_upadesha, _select_tin_adesha,
-    )
+    from pipelines.tinanta import _bootstrap_tinanta_derivation, _dhatu_row_by_upadesha
 
     dhatu, lakara, purusha, vacana = case.args
     state, _gana, pada_key, _done = _bootstrap_tinanta_derivation(
         _dhatu_row_by_upadesha(dhatu), lakara, "kartari", purusha=purusha, vacana=vacana)
     if getattr(case, "pada", None) in ("parasmai", "atmane"):
         pada_key = case.pada            # an ubhayapadī root: the caller picks the pada (the vivakṣā), as for puruṣa and vacana
+    return _tinanta_attach(state, lakara, pada_key, purusha, vacana, ashis=getattr(case, "ashis", False))
+
+
+def _tinanta_attach(state: Any, lakara: str, pada_key: str, purusha: int, vacana: int, *, ashis: bool = False) -> Any:
+    """The lakāra the meaning chose + the tiṅ (puruṣa · vacana) on a dhātu tape (also pipelines/cycle_loop.derive_tinanta for a derived dhātu)."""
+    import sutras  # noqa: F401
+    from engine import apply_rule
+    from pipelines.tinanta import (
+        P00_lac_lat_attach, P00_parasmai_tin_adesha, P06a_pratyaya_adhikara_3_1_1_to_3, _select_tin_adesha,
+    )
+
     if lakara == "laT":
         state = P00_lac_lat_attach(state)
     elif lakara in _LAKARA_ATTACH:
@@ -145,7 +155,7 @@ def _tinanta_start(case: Any) -> Any:
     else:
         raise NotImplementedError(f"lakāra {lakara!r}: its attach sūtra does not attach on its own yet")
     state = P00_parasmai_tin_adesha(state, _select_tin_adesha(lakara, pada_key, purusha, vacana))
-    if getattr(case, "ashis", False):      # the blessing sense (7.1.35): an input the caller proposes
+    if ashis:      # the blessing sense (7.1.35): an input the caller proposes
         next(x for x in state.terms if "dhatu" in x.tags).tags.add("ashis")
     state.phase = "pratyaya"       # the stratum we are in: affixes are being attached (3.1–3.4)
     return state

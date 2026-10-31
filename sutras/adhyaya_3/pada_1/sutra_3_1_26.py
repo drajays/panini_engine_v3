@@ -24,18 +24,19 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.vivaksha import vivaksita
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _matches(state: State) -> bool:
-    # Structural: nic_recipe="nic" coordination key OR legacy arm.
-    if state.meta.get("nic_recipe") != "nic":
-        return False
+    # the loop: the speaker intends a prompting agent (vivakṣā hetumat) and a dhātu ends the tape; the legacy recipes arm nic_recipe="nic"
     if not state.terms or "dhatu" not in state.terms[0].tags:
         return False
     if any("nic" in t.tags for t in state.terms):
         return False
-    return True
+    if state.meta.get("nic_recipe") == "nic":
+        return True
+    return len(state.terms) == 1 and "abhyasa" not in state.terms[0].tags and vivaksita(state, "hetumat", "hetumat")
 
 
 def cond(state: State) -> bool:

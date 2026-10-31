@@ -30,6 +30,11 @@ def _wit_agama_of_taddhita(state: State, i: int) -> bool:
             and {"taddhita", "pratyaya"} <= state.terms[i + 2].tags)
 
 
+def _adesha_pending(state: State) -> bool:
+    from engine.registry import get_sutra
+    return any(get_sutra(sid).cond(state) for sid in ("7.1.2", "7.3.50", "7.3.51"))
+
+
 def _eligible(state: State):
     for i in range(len(state.terms) - 1):
         anga, pr = state.terms[i], state.terms[i + 1]
@@ -37,6 +42,8 @@ def _eligible(state: State):
             continue
         if "pada_1_4_17" in anga.tags:
             continue
+        if "taddhita" in pr.tags and "sup" not in pr.tags and _adesha_pending(state):
+            continue    # the deck: it-lopa, then any ādeśa of the pratyaya (ṭhasyekaḥ 7.3.50, isusuktāntāt kaḥ 7.3.51, āyaneyīnīyiyaḥ 7.1.2), then decide pada / bha on what stands
         if "pada_1_4_16" in anga.tags:
             continue
         if "bha" in anga.tags:  # 1.4.18 is apavāda: bha blocks pada re-entry

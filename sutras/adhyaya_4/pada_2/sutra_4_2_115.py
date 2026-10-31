@@ -9,29 +9,25 @@ Pāṭha: ashtadhyayi.com data.txt row i=42115 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
 
-_GATE_KEY: str = "4_2_115_BavatazWak_115"
+_UPA = ("Wak", "Cas")      # ṭhak and chas: the two pratyayas the sūtra gives side by side (s: pada, 1.4.16)
+
+
+def _site(state: State):
+    return taddhita_site(state, "Seza", stems=frozenset({"Bavat"}))      # the word the sūtra names, in the śeṣa sense (4.2.92); bhavat is vṛddha as a tyadādi (Kāśikā)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.2.115", state, "4.1.76"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.2.115"
-    return state
+    if _site(state) is None:
+        return state
+    return attach_taddhita(state, _UPA[policy_pick(state, "4.2.115", len(_UPA))])
 
 
 SUTRA = SutraRecord(
@@ -45,6 +41,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "भवतः ठक्-छसौ",
     why_dev               = "(सूत्रम् 4.2.115) भवतष्ठक्छसौ।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.2.114', '4.1.83'),
     cond                  = cond,
     act                   = act,
 )

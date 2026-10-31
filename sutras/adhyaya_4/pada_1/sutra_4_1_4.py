@@ -97,6 +97,8 @@ def _insert_site(state: State):
         return (i, st) if i + 1 < len(state.terms) and "stri_wAp" in state.terms[i + 1].tags else None
     if hit is None:
         return None
+    if any("stri_pratyaya" in u.tags for u in state.terms):
+        return None        # a strī-pratyaya (ṅīp 4.1.5, 4.1.15 …) has been given to this stem: one strī-pratyaya, not ṭāp after it
     idx, t = hit
     from engine.registry import get_sutra
     if get_sutra("4.1.15").cond(state):
