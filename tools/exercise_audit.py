@@ -237,7 +237,7 @@ def audit(filters: list[str]) -> dict:
         typ = str(getattr(rec, "sutra_type", "")).split(".")[-1]
         row = {"id": sid, "type": typ, "subkind": _subkind(db, sid), "verdict": "NO_EXAMPLE", "examples_tried": 0, "positives": [], "negatives": [], "reasons": []}
         ex = db.execute("select distinct e.deriv_id from sutra_examples e where e.sutra_id=? order by e.deriv_id", (sid,)).fetchall()
-        runnable = []
+        runnable, prose = [], False
         for (d,) in ex:
             lab, src, kind, res = db.execute("select label, source, kind, result_slp1 from derivations where id=?", (d,)).fetchone()
             first = (db.execute("select state_slp1 from steps where deriv_id=? order by step_no limit 1", (d,)).fetchone() or ("",))[0]
@@ -249,6 +249,7 @@ def audit(filters: list[str]) -> dict:
             runnable.append((d, spec, expected))
         if not runnable:                       # second source: Kāśikā / Laghukaumudī prose words
             runnable = prose_examples(db, sid)
+            prose = bool(runnable)
             if runnable:
                 row["reasons"].append("examples from Kāśikā/Laghukaumudī prose")
         # spread the examples over distinct stems / dhātus before trying
@@ -280,7 +281,8 @@ def audit(filters: list[str]) -> dict:
                 row["verdict"] = "NEEDS_OWNER"
                 row["reasons"].append("fires where the attested derivation does not use it (over-application, or an order difference to the attested derivation)")
         elif fails:
-            row["verdict"] = "FAIL"
+            # a prose word is matched to a derivation by surface only (homonym: Bavati ← stem Bavati loc., not the verb), so a miss proves nothing
+            row["verdict"] = "NO_EXAMPLE" if prose else "FAIL"
             row["reasons"] = [f["why"] for f in fails[:3]] + row["reasons"]
         out[sid] = row
         if n % 25 == 0:
