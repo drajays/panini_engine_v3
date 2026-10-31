@@ -16,7 +16,7 @@ CASES = [   # (stem, lexical tags, sense, liṅga, form that must be one of the 
     ("vastra", None, "parivfta", "pulliṅga", "vAstraH"),              # 4.2.10
     ("pARqukambala", None, "parivfta", "pulliṅga", "pARqukambalI"),   # 4.2.11 ini
     ("dvEpa", None, "parivfta", "pulliṅga", "dvEpaH"),                # 4.2.12 añ
-    ("SarAva", None, "udDfta", "pulliṅga", "SArAvaH"),                # 4.2.14
+    ("SarAva", {"lex:amatra"}, "udDfta", "pulliṅga", "SArAvaH"),                # 4.2.14
     ("indra", None, "devatA", "pulliṅga", "EndraH"),                  # 4.2.24
     ("soma", None, "devatA", "pulliṅga", "sOmyaH"),                   # 4.2.30 ṣyaṇ
     ("kAka", None, "samUha", "pulliṅga", "kAkaH"),                    # 4.2.37
