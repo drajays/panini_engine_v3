@@ -9,6 +9,7 @@ from pipelines.taddhita_loop import derive_taddhita
 PS, SM, ASM = {"lex:prANisTa"}, {"lex:samAsa"}, {"lex:samAsa"}
 M = {}
 CASES = [   # (stem, lexical tags, extra vivakṣā, a form that must be among the readings)
+    ("UrRA", None, M, "UrRAyuH"),                                         # 5.2.123 yus is sit: 1.4.16 pada, so 6.4.148 does not drop the ā (Art. 25 work)
     ("go", None, M, "gomAn"),                                             # 5.2.94
     ("Dana", None, M, "DanavAn"),                                         # + 8.2.9 (S44)
     ("rasa", None, M, "rasavAn"),                                         # 5.2.95 niyama
@@ -89,7 +90,6 @@ def test_senses(stem, og, extra, want):
 
 XFAIL = [   # (stem, extra, want, cause)
     ("danta", {"arthaViSeSa": "saMjYA"}, "dantAvalaH", "5.2.113: the long ā of dantāvala (dīrgha before valac) is not modelled"),
-    ("UrRA", {}, "UrRAyuH", "5.2.123: 6.4.148 drops the ā before yus; ūrṇāyuḥ keeps it"),
 ]
 
 
