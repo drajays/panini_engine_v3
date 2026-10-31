@@ -225,7 +225,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twenty-four** Articles (numbered 0 through 23) are amended only by:
+These **twenty-five** Articles (numbered 0 through 24) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -702,3 +702,21 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
 
 *Enforcement:* concept-card schema test (with the cards); Art. 3's
 `test_no_kaumudi_leakage.py` is unchanged.
+
+---
+
+## Article 24 — The word-generation cycle
+
+> Added by **AMENDMENT 28** (see `docs/AMENDMENT_28.md`; open links in `docs/V4_CYCLE.md`).
+
+The engine is a word-generation machine of the Aṣṭādhyāyī. Every word it makes is a **pada** (1.4.14 *suptiṅantaṃ padam*); a pada is **prakṛti + pratyaya**; a **vākya** is a *padasamūha*.
+
+1. **The graph.** Prakṛti is a *prātipadika* or a *dhātu*; the pratyayas move between them and out to the pada:
+   prātipadika —*sup*→ nāmapada · prātipadika —*strī*, *taddhita*→ prātipadika · prātipadika —*sanādi* (nāmadhātu: kyac, kyaṅ, kyaṣ …)→ dhātu · dhātu —*kṛt*→ prātipadika · dhātu —*sanādi* (san, yaṅ, ṇic)→ dhātu · dhātu —*vikaraṇa + tiṅ*→ kriyāpada.
+   Every arrow's result is again a prakṛti the next arrow can take: a stage takes the previous stage's result (`pipelines/chain.py`), never a string re-typed by hand, and carries its vyutpatti record (`engine/origin.py`).
+2. **The shape.** Adhyāyas 1–2 give the prakṛti side (saṃjñā, paribhāṣā, kāraka, samāsa), 3–5 attach the pratyaya, 6–8 operate on prakṛti + pratyaya to make the pada, tripāḍī last (Art. 3). A stage runs through the loop and `apply_rule`; a recipe that lists sūtras to reach a known form is a shortcut (SHORTCUT_LEDGER).
+3. **Nested adhikāras.** Adhikāras overlap by nesting (3.1.1 pratyaya ⊃ 4.1.1 ṅyāp-prātipadika ⊃ 4.1.3 strī ⊃ 4.1.76 taddhita). The scope of a sūtra is the set of heads in `data/inputs/adhikara_scope_index.json`; a stage opens those frames, and they close at their own `scope_end` (Art. 23 §6).
+4. **No faked arrow.** A link the engine cannot yet make by rule is listed as open in `docs/V4_CYCLE.md` and, where a test names it, a strict xfail (Art. 18); it is not filled by a hard-coded stem list.
+5. **MVP before breadth.** The cycle is proved end to end on a few examples (tests/unit/test_chain_cycle.py) before any arrow is widened; widening an arrow is then ordinary sūtra work.
+
+*Enforcement:* `tests/unit/test_chain.py`, `tests/unit/test_chain_cycle.py`.
