@@ -170,9 +170,13 @@ def test_svara_by_itletter(stem, artha, want, sid):
 
 GAPS = [   # (stem, artha, lex tags, form the teaching gives, reason)
     ("mfkaRqu", "apatya", frozenset(), "mArkaRqeya", "Art. 22 data conflict: Kāśikā 4.1.123 lists मृकण्डु (mfkaRqu) but data/inputs/ganapatha_full.json has sfkaRqu in SuBrAdiH, so the gaṇa test fails; needs an owner ruling / upstream correction, not a code change"),
-    ("parSu", "samUha", frozenset(), "pArSva", "SK 1.4.16 teaches parśu + ṇas (samūha) from a gaṇa-vārttika; no sūtra in the pāṭha carries ṇas (5.3.117 parśvādi gives aṇ/añ pārśava, svārtha). Needs the vārttika layer (Art. 18 gap), not code"),
     ("kraya", "krIta", frozenset(), "kraya" + "ika", "the deck's ṇit/nit illustration kraya+ṭhan -> krayika (no vṛddhi): loop picks ṭhak and gives krAyika"),
 ]
+
+
+def test_parsu_nas_vartika():
+    """Bhāṣya 4.2.43 vā. 4 पर्श्वा णस् वक्तव्यः, living in 4.2.43 (Art. 25): parśu + ṇas = pārśva, pada by 1.4.16 (sit) so no guṇa."""
+    assert "pArSva" in derive("parSu", "samUha")
 
 
 @pytest.mark.xfail(strict=True, reason="gap: see GAPS")
