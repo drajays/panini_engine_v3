@@ -1,15 +1,13 @@
-# STATE (overwrite at each session end; ≤ 40 lines) — 2026-10-30
+# STATE (overwrite at each session end; ≤ 40 lines) — 2026-11-01
 
-- Merged and committed: T13 (5.2), pāṭha data (uṇādi 748, gaṇa overlay, authority()), T14 (5.3–5.4), J kim, L an-stems (S21 closed), K it-anityatva (1.3.7/1.3.4), M comparatives (6.4.154–160), S svārthika (AMENDMENT_27, 12 sūtras), P1 6.1, P3 6.3, P4a/P4b 6.4, Q exercise audit; ledger up to S86 (S87 unused).
-- Suite: FULL SUITE GREEN at the close: 22095 passed / 13 skipped / 23 xfailed / 0 failed (2026-10-31). Nothing in flight, no agents running.
-- LK scope (1087): 106 confident · 85 conf_structural · 367 working · 368 unexercised (new real sūtras not yet invoked: refresh the firing ledger when convenient, ≈1 h, it also runs a full suite) · 61 pending_structural · 76 gate_only · 24 placeholder (was 74). Plan: docs/PLAN_LAGHUKAUMUDI_FIRST.md.
-- In flight: nothing. Q's exercise audit (tools/exercise_audit.py, sig/exercise_audit.json, `python3 -m tools.exercise_audit [--write 7.2 …]`, ≈25 min) on the unexercised LK sūtras gave DONE 1 · FAIL 105 (81 surface differs: real bugs or source disagreements, e.g. 7.2.37 grahitA/grahItA, 1.3.47 vadati/vadate, 7.2.45/48; 24 right form but the sūtra did not fire: 1.1.34, 1.2.2, 7.1.16, 7.2.5, 7.2.6) · NO_EXAMPLE 215. Next free ledger id S88.
-- Not committed by design: `.gitignore` edit, `docs/STATUS.md` line, `scratch/kt.py`, `sig/loop_gauge.json`, `.audit/*`; Subhastini P1 (step cards, contract tests) sits uncommitted in `/Users/dr.ajayshukla/subhastini`.
-- Owner decisions: none waiting (svArTa accepted; 1.3.4 anityatva resolved; "unexercised counts as done only when the fresh ledger shows it invoked and tests name it ≥5×").
-- Next batch: LK step 0 (refresh sweep) → adhyāya 6 placeholders by pāda (agents), per the plan.
-- Laws: vivaksita literals + form in the sūtra's own samagra; one sūtra one file; no recipe knows the answer; strict xfail over fudge; full suite once per merged set.
-
-- Cost rules for the next session: docs/COST_PLAN.md (last section) and docs/AGENT_RULES.md (agent prompts are 5 lines: sūtra list, test-file name, ledger id range).
-
-- Next-session plan for the 321: (1) Q2 = add Kāśikā/Laghukaumudī prose example words as a second example source in tools/exercise_audit.py (mechanical → a fresh non-fork agent, model override) and re-run NO_EXAMPLE; (2) triage the 81 surface FAILs against Kāśikā + Vidyut (bug / engine fault / source disagreement) in sig/exercise_audit.json; (3) fix agents by cluster (7.2, 8.2, 7.1, 7.3, 3.1, 7.4), each flipping its FAIL rows; (4) wire the 24 right-form-wrong-route sūtras. A sūtra is ticked DONE only by this harness (example form equals attested AND the sūtra fires).
-
+- Read next: docs/PLAN_WEEK_LK.md (week plan, token rules). Goal: finish the Laghukaumudī scope by Fri 2026-11-06 00:30.
+- main = ekādeśa-span merge on top of 88192c1b. Full suite on main (before the ekādeśa merge): 22368 passed / 13 skipped / 38 xfailed, 0 failed (5 h 25 min). After the merge: constitutional 17123 + test_ekadesa_both_terms pass only (targeted).
+- Merged this session: bhavya from `as` (xfail flipped); Art. 24 word-generation cycle (Amendment 28; docs/V4_CYCLE.md open links; data/inputs/adhikara_nesting.json from tools/adhikara_nesting.py, 36/74 heads Kāśikā-confirmed); pipelines/chain.py stages krt/taddhita/strI/nama_dhatu/sanadi/tinanta/sup + cycle_loop (aja→ajA→ajIya→ajIyi→ajIyaka→AjIyaki, tests/unit/test_chain_cycle.py); taddhita decks 1–3 checked and fixed (docs/TADDHITA_BASICS_CHECK.md, _2_, _3_; ORDER_BEFORE table in engine/resolver.py; matup/ḍhak/ṅīp/ṅīṣ/7.3.51 …); Art. 25 / Amendment 29: vārttikas inside the host sūtra (engine/vartika.py; 4.2.43 v4 pārśva); ekādeśa_span in dispatcher.
+- Literal-sūtra-id allowlists live in TWO places (audit/pipeline_auditor.py and tests/unit/test_prakriya_integrity.py): edit both.
+- Uncommitted by design: .gitignore, data/inputs/adhikara_scope_index.json + tools/build_scope_index.py, docs/PLAN_LAGHUKAUMUDI_FIRST.md, sig/*, scratch/, docs/ADHIKARA_CROSSCHECK.md, RESEARCH_PAPERS_PLAN.md, PLAN_WEEK_LK.md, tests/constitutional/test_no_external_corpus_in_engine.py.
+- Open (strict xfails, reasons in tests): svara needs an accent tape; samarthatā gate (no Amendment 25 value); pāṇḍu ḍyaṇ / kunti ñyaṅ (tadrāja 4.1.168–178 gate-only; DB files the vārttika under 4.1.166); mṛkaṇḍu (Kāśikā vs ganapāṭha spelling); naḍa 4.2.87 vs 4.2.88; cvi 6.1.67 beyond kvip; pūrvarūpa 6.1.109 not in ekadesa_span. Owner decision open: pārśva vārttika host 4.2.43 (kept) vs 4.2.42.
+- Chain gaps: san/yaṅ/kyaṅ/kāmyac not loop stages; chain.krt then strI gives pAWakA (7.3.44 ikā not reached); taddhita loop never opens adhikāra frames 3.1.1 ⊃ 4.1.1 ⊃ 4.1.76 (Art. 24 §3); vākya/Pada record (V4_CYCLE item 5).
+- Vārttika migration backlog: 23 files (list in docs/AMENDMENT_29.md).
+- exercise_audit: prose-only misses are now NO_EXAMPLE; re-run to refresh sig/exercise_audit.json. Old worktrees under .claude/worktrees/ (all merged except a8c71…, superseded) can be removed.
+- Next 3 actions: (1) adhyāya 6 placeholders by pāda (one agent, serial); (2) open adhikāra frames from the scope index in the loops; (3) 7.3.44 + remaining strī (ṅīn, ūṅ) in chain.strI. Next free ledger id S111 (check docs/SHORTCUT_LEDGER.md).
+- Cost rules: docs/COST_PLAN.md, docs/AGENT_RULES.md. Laws: vivaksita literals; one sūtra one file; no recipe knows the answer; strict xfail over fudge; Vidyut and external corpora are validators only.
