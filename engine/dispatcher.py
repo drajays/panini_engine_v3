@@ -162,6 +162,26 @@ def _stamp_origin(sutra_id: str, state: State) -> None:
                     v.tags.add(ORIGIN_TAG + sutra_id)
 
 
+def _flat(state: State):
+    return [(ti, vi, v) for ti, t in enumerate(state.terms) for vi, v in enumerate(t.varnas)]
+
+
+def _ekadesa_span(before, after):
+    """Ekādeśa (6.1.84; 1.1.54/1.1.56) as trace data, read off the tape in this one shared path: two adjacent
+    varṇas of DIFFERENT terms vanished and exactly one new varṇa stands where they were — the ādeśa is the
+    sthānin of both pūrva and para. Acts stay blind (Art. 2); the span is read from what the step did.
+    ponytail: a substitute that reuses the pūrva varṇa object (e.g. pūrvarūpa) is not detected here."""
+    kept = {id(v) for _, _, v in after}
+    gone = [(i, ti, vi, v) for i, (ti, vi, v) in enumerate(before) if id(v) not in kept]
+    old = {id(v) for _, _, v in before}
+    new = [(ti, vi, v) for ti, vi, v in after if id(v) not in old]
+    if len(gone) != 2 or len(new) != 1 or gone[1][0] != gone[0][0] + 1 or gone[0][1] == gone[1][1]:
+        return None
+    pos = lambda g: {"term_idx": g[1], "varna_idx": g[2], "slp1": g[3].slp1}
+    return {"purva": pos(gone[0]), "para": pos(gone[1]),
+            "adesa": {"term_idx": new[0][0], "varna_idx": new[0][1], "slp1": new[0][2].slp1}}
+
+
 def apply_rule(
     sutra_id    : str,
     state       : State,
@@ -278,6 +298,7 @@ def apply_rule(
     # ── Dispatch to executor (the ONLY place we call exec_*) ─────────
     exec_fn = _EXEC_TABLE[stype]
     _mark_present(new_state)
+    flat_before = _flat(new_state)
     try:
         new_state, fired = exec_fn(rec, new_state, recipe_step)
     except Exception as ex:
@@ -366,6 +387,9 @@ def apply_rule(
         if _why_now:
             _applied_step["why_now_dev"] = _why_now
         _applied_step["parts"] = term_parts(new_state)
+        span = _ekadesa_span(flat_before, _flat(new_state))
+        if span:
+            _applied_step["ekadesa_span"] = span
         if vartika:
             _applied_step.update(vartika)
         _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
