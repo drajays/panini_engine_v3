@@ -48,3 +48,6 @@ Create `docs/STATE.md` (≤ 40 lines, overwritten at each session end, never app
 1. svārthika design (5.4.7, 8, 13–15, 23, 27–29, 34, 38, 39; 5.1.58): how a sūtra that names no sense is licensed.
 2. `kva` / 1.3.4: does `na vibhaktau tusmāḥ` cover taddhita vibhaktis (audit K will propose)?
 3. Whether the LK end gate counts `unexercised` as done once the refreshed sweep shows the sūtra fires.
+
+## Roadmap item (2026-10-31): svara tier — deferred until after the LK scope
+Finding: engine/ has no pitch tier (no udātta/anudātta/svarita on State; only a mention in scheduler.py). Laghukaumudī is laukika, so LK scope never needs it. Work when Vedic forms matter: (1) pitch tier on State and trace; (2) it-marker → accent link (c, p, ñ, ṇ, k …); (3) accent sūtras 6.1.158–223, 6.2, 3.1.3–4, 3.1.… ; (4) ekādeśa must carry pitch across 6.1.84–111 (needs the sthānin-span fix first: tests/unit/test_ekadesa_both_terms.py strict xfails). Order: ekādeśa span fix → LK scope → svara. Cost L. Not in any current batch.

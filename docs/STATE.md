@@ -11,3 +11,5 @@
 - exercise_audit: prose-only misses are now NO_EXAMPLE; re-run to refresh sig/exercise_audit.json. Old worktrees under .claude/worktrees/ (all merged except a8c71…, superseded) can be removed.
 - Next 3 actions: (1) adhyāya 6 placeholders by pāda (one agent, serial); (2) open adhikāra frames from the scope index in the loops; (3) 7.3.44 + remaining strī (ṅīn, ūṅ) in chain.strI. Next free ledger id S111 (check docs/SHORTCUT_LEDGER.md).
 - Cost rules: docs/COST_PLAN.md, docs/AGENT_RULES.md. Laws: vivaksita literals; one sūtra one file; no recipe knows the answer; strict xfail over fudge; Vidyut and external corpora are validators only.
+
+- 2026-11-06: merged 7.3.44 chain fix (pAWikA) + adhyāya 6 LK placeholders (22/24 real; 6.1.134 needs metre; 6.2.184 tag only). Open: 2.4.71 must skip tag `alug` (engine/lopa_ghost.py state_live_sup_indexes); 6.4.136 not reached on full pipeline (rAjYi); ledger S111–S113 written, next free S114. Next: pending_structural (61, by pāda), ūṅ 4.1.66/ṅīn, adhikāra frames. Old agent worktrees removable (a858 locked).
