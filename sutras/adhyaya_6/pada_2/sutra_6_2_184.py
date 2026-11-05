@@ -11,18 +11,47 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
+from engine.gana import in_gana
 
 _GATE_KEY: str = "6_2_184_nirudakAdI_184"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return samhita_gate_eligible(state, "6.2.184", gate_key=_GATE_KEY)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["anga_kind"]             = "6.2.184"
+    return state
+
+
+# SHORTCUT S113: there is no accent tape (svara), so the antodātta is a tag "svara:antodAtta" on the compound's last sound, read by nothing yet
+_MARK = "svara:antodAtta"
+
+
+def _site(state: State):
+    """निरुदकादीनि च: the compounds of the nirudakādi gaṇa (nirudaka, nirupala, nirajina …) are antodātta; the whole compound is the gaṇa member."""
+    live = [t for t in state.terms if t.varnas and "sup" not in t.tags]
+    if len(live) < 2 or not any("samasa_purvapada" in t.tags for t in live) or _MARK in live[-1].varnas[-1].tags:
+        return None
+    return live[-1] if in_gana("nirudakAdiH", "".join(v.slp1 for t in live for v in t.varnas)) else None
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    t = _site(state)
+    if t is None:
+        return _legacy_act(state)
+    t.varnas[-1].tags.add(_MARK)
     return state
 
 
@@ -35,7 +64,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "uttarapadAdiH antaH nirudakAdIni ca upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "उत्तरपदादिः अन्तः निरुदकादीनि च उपसर्गात्",
     padaccheda_dev        = "निरुदक-आदीनि च",
-    why_dev               = "(सूत्रम् 6.2.184) निरुदकादीनि च।",
+    why_dev               = 'निरुदकादीनि समासरूपाणि अन्तोदात्तानि — निरुदकम्, निरुपलम्, निरजिनम्।',
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

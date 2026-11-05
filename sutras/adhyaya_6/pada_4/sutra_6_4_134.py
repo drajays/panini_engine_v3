@@ -44,6 +44,8 @@ def _find_upadhā_a(state: State):
         nxt = state.terms[ti + 1]
         if not nxt.varnas or nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoOy":
             continue                      # bha is yaci (1.4.18): the stem before su, bhyām … is a pada, whatever the loose tag says
+        if (nxt.meta.get("upadesha_slp1") or "") in ("Ni", "SI") and any(f.get("sutra_id") == "6.4.136" for f in state.vibhasha_forks):
+            continue                      # 6.4.136 vibhāṣā ṅiśyoḥ declined the lopa: rājani, sāmani
         if not adhikara_in_effect("6.4.134", state, "6.4.1"):
             continue
         if not adhikara_in_effect("6.4.134", state, "6.4.129"):
