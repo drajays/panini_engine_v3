@@ -19,10 +19,15 @@ def _site(state: State):
     Taparaḥ: only the short a. Not a sup's ā (asupaḥ): the aṅga's own ṭāp (``stri_wAp``) is what is meant; a pratyaya-less ka (śakā) stays."""
     if not adhikara_in_effect("7.3.44", state, "6.4.1"):
         return None
-    for t in state.terms:
+    for i, t in enumerate(state.terms):
         v = [x.slp1 for x in t.varnas]
-        if ("stri_wAp" in t.tags and "anga" in t.tags and origin.last_pratyaya(t) is not None
-                and v[-3:] == ["a", "k", "A"] and not t.meta.get("7_3_44_done")):
+        if "anga" not in t.tags or origin.last_pratyaya(t) is None or t.meta.get("7_3_44_done"):
+            continue
+        if "stri_wAp" in t.tags and v[-3:] == ["a", "k", "A"]:
+            return t
+        # the ṭāp still a Term of its own, before 6.1.101 joins it to the aṅga (strI stage: pāṭhaka + A)
+        nxt = state.terms[i + 1] if i + 1 < len(state.terms) else None
+        if nxt is not None and "stri_wAp" in nxt.tags and v[-3:] == ["a", "k", "a"]:
             return t
     return None
 

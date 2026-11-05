@@ -62,3 +62,9 @@ def test_kyac_on_an_a_stem_putriya():
     d = chain.nama_dhatu(chain.Stem("putra"))
     assert d.slp1 == "putrIya"
     assert chain.tinanta(d, "laT", 3, 1).flat_slp1() == "putrIyati"
+
+
+def test_krt_then_stri_reaches_7_3_44():
+    """pāṭhaka + ṭāp: the a before the ka of the pratyaya becomes i (pāṭhikā), not pāṭhakā."""
+    s = chain.strI(chain.krt("01.0381", krt="Rvultfc"))
+    assert s.slp1 == "pAWikA" and "7.3.44" in _ids(s, "strI")
