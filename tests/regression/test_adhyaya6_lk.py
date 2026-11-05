@@ -170,7 +170,6 @@ def test_6_3_14_needs_a_krt_and_a_tatpurusha():
     assert "alug" not in run("6.3.14", [T("saras", "samasa_purvapada"), SUP("i", "vib_saptami"), T("ja"), T("qa", "krt", kind="pratyaya")], pick=True).terms[1].tags
 
 
-@pytest.mark.xfail(strict=True, reason="2.4.71 (state_live_sup_indexes) does not yet read the 'alug' tag: the luk would still take the sup (engine/lopa_ghost.py)")
 def test_alug_sup_is_not_lukked():
     s = run("6.3.2", _alug_tape("stoka", "At", "vib_panchami", "mukta"))
     s.meta.update({"luk_2_4_71_recipe": True, "pratipadika_avayava_ready": True})

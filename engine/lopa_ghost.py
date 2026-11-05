@@ -39,8 +39,8 @@ def state_sup_luk_ghost_indexes(state: "State") -> list[int]:
 
 
 def state_live_sup_indexes(state: "State") -> list[int]:
-    """Indexes of *sup* terms that **2.4.71** may still annihilate (not yet ghost)."""
-    return [i for i, t in enumerate(state.terms) if term_sup_phonetically_live(t)]
+    """Indexes of *sup* terms that **2.4.71** may still annihilate (not yet ghost; *aluk*-tagged sups, 6.3.2 ff., are spared)."""
+    return [i for i, t in enumerate(state.terms) if term_sup_phonetically_live(t) and "alug" not in t.tags]
 
 
 def state_has_sup_luk_ghost(state: "State") -> bool:
