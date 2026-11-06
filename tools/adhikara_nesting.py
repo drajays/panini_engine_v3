@@ -29,6 +29,7 @@ def main() -> dict:
     for h, ms in EXTEND.items():
         members[h] |= set(ms)
     kas = dict(c.execute("select sutra_id, content from texts where source='kashika'"))
+    c.close()
     heads: dict[str, dict] = {}
     for h, ms in members.items():
         p = sorted({pos[x] for x in ms | {h} if x in pos})

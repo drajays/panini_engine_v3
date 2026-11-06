@@ -1,6 +1,7 @@
 """Adhyāya 6 placeholders made real (6.1.59, 85, 133; 6.2.184; 6.3.2 – 138; 6.4.127 – 139): each on a hand-built tape, the Laghukaumudī / Kāśikā
 examples from the DB, the vā ones down both readings. 6.1.134 (pādapūraṇa needs metre) is a strict xfail."""
 import sqlite3
+from contextlib import closing
 from pathlib import Path
 
 import pytest
@@ -54,10 +55,10 @@ EXAMPLES = [("6.1.59", "क्रष्टा"), ("6.1.85", "शिवेहि"
 @pytest.mark.skipif(not DB.exists(), reason="brain DB absent")
 @pytest.mark.parametrize("sid,word", EXAMPLES)
 def test_example_in_db(sid, word):
-    db = sqlite3.connect(DB)
-    texts = " ".join(r[0] for r in db.execute("select content from texts where sutra_id=? and source in ('laghukaumudi','kashika')", (sid,)))
-    if word not in texts:      # the DB files a few LK passages under a neighbouring id: look in the next ids too
-        texts = " ".join(r[0] for r in db.execute("select content from texts where sutra_id like ? and source in ('laghukaumudi','kashika')", (sid.rsplit(".", 1)[0] + ".%",)))
+    with closing(sqlite3.connect(DB)) as db:
+        texts = " ".join(r[0] for r in db.execute("select content from texts where sutra_id=? and source in ('laghukaumudi','kashika')", (sid,)))
+        if word not in texts:      # the DB files a few LK passages under a neighbouring id: look in the next ids too
+            texts = " ".join(r[0] for r in db.execute("select content from texts where sutra_id like ? and source in ('laghukaumudi','kashika')", (sid.rsplit(".", 1)[0] + ".%",)))
     assert word.replace("॒", "") in texts.replace("॒", "").replace("॑", ""), (sid, word)
 
 
