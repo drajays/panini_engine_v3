@@ -56,8 +56,9 @@ def _key(sid: str) -> tuple[int, ...]:
     return tuple(int(x) for x in sid.split("."))
 
 
+@lru_cache(maxsize=None)
 def _db() -> sqlite3.Connection:
-    return sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    return sqlite3.connect(f"file:{DB}?mode=ro", uri=True)       # one shared read-only handle: a new one per call leaked
 
 
 def _slp1(dev: str) -> str:
