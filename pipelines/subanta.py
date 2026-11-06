@@ -503,6 +503,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.129",
     "6.4.130",
     "6.4.137",
+    "6.4.136",  # vibhāṣā ṅiśyoḥ: tried before 6.4.134 (ORDER_BEFORE)
     "6.4.134",
     "6.4.146",
     "6.4.148",

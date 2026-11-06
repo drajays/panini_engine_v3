@@ -40,7 +40,7 @@ quick:   ## only the tests a git change can reach (tools/test_impact.py); `make 
 
 .PHONY: test-all
 test-all:
-	$(PYTHON) -m pytest tests/ -v --tb=short -x
+	$(PYTHON) -m pytest tests/ -q --tb=short -n8 -p no:cacheprovider
 
 .PHONY: full-check
 full-check: audit-duplicates audit-blocks audit-constitutional test-all

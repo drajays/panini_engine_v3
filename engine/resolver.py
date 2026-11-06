@@ -57,6 +57,7 @@ ORDER_BEFORE: tuple[tuple[str, str], ...] = (
     ("7.2.117", "6.4.148"),      # ñit / ṇit ādivṛddhi (para, 1.4.2) before yasyeti ca: dakṣa + iñ -> dākṣi
     ("7.3.50", "7.2.118"),       # the pratyaya's own ādeśa (ṭh -> ik) before the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50: revatī + ṭhak)
     ("7.3.51", "7.2.118"),       # likewise ṭh -> k
+    ("6.4.136", "6.4.134"),      # vibhāṣā ṅiśyoḥ is the exception to the an-lopa: tried first, its declined branch bars 6.4.134 (rājani, sāmani)
 )
 
 # Decision.layer values Art. 21 permits. Constitutional test greps this set.

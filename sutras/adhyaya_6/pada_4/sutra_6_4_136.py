@@ -11,22 +11,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 from sutras.adhyaya_6.pada_4.sutra_6_4_137 import samyogad_vamanta
-
-_GATE_KEY: str = "6_4_136_viBAzA_136"
-
-
-def _legacy_cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.136", gate_key=_GATE_KEY)
-
-
-def _legacy_act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.136"
-    return state
-
 
 def _flat(t) -> str:
     return "".join(v.slp1 for v in t.varnas)
@@ -57,13 +42,13 @@ def _new_cond(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _new_cond(state) or _legacy_cond(state)
+    return _new_cond(state)
 
 
 def act(state: State) -> State:
     t = _site(state)
     if t is None:
-        return _legacy_act(state)
+        return state
     del t.varnas[-2]                       # the a of an (the vā takes this reading; the other is 6.4.134 held back, rājani)
     t.meta["6_4_136_done"] = True
     return state
