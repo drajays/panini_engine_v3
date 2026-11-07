@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from typing import FrozenSet
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra, samkhya
 from engine.state import State
 
 # 1.1.23: *bahu* / *gaṇa* / *vatu* / *ḍati* — prātipadika shape in SLP1/Velthuis (as in *gaṇapāṭha* *bahv*-*ādi* *lists* / engine).
@@ -26,7 +26,7 @@ SANKHYA_1_1_23_PRATIPADIKA_SLP1: FrozenSet[str] = frozenset(
         "tAvat",  # तावत् (५.२.३९ *vatuṭ* *anta* — *corpus*)
         "kati",  # कति (*kim* + *ḍati* — *corpus*)
     }
-)
+) | samkhya.laukika()      # + the laukika numerals the Kāśikā names (ṣaṣ, pañcan, saptan, aṣṭan, navan, daśan: Kāśikā 1.1.24 / 7.1.21)
 
 # R2: *saṅkhyā* *saṃjñā* as a prātipadika *set* (same *symbol* *key* idiom as ``vṛddhi`` / ``guṇa`` in **1.1.1** / **1.1.2**).
 SANKHYA_KEY: str = "saṅkhyā"

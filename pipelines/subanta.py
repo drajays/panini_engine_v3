@@ -394,6 +394,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.103",
     "1.4.13",
     "1.4.14",
+    "1.1.23",  # बहुगणवतुडति संख्या — the laukika numerals the Kāśikā names (ṣaṣ, pañcan, saptan, aṣṭan, navan, daśan) …
+    "1.1.24",  # ष्णान्ता षट् — … get the saṃjñā ṣaṭ (tag zat_samjna), read by 7.1.22, 7.1.55, 4.1.10
     "2.4.82",  # अव्ययादाप्सुपः — the sup after an avyaya (a taddhitānta 1.1.38 gave the saṃjñā: tatra, kutaḥ) is luk'd
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
@@ -402,6 +404,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.86",  # इतोऽत् सर्वनामस्थाने — its i → a
     "7.1.87",  # थो न्थः — th → nth (पन्थानौ)
     "7.1.88",  # भस्य टेर्लोपः — पथः, पथा
+    "7.2.84",   # अष्टन आ विभक्तौ (vikalpa) — aṣṭan → aṣṭā …
+    "7.1.21",   # अष्टाभ्य औश् — … + jas / śas → auś (apavāda of 7.1.22)
+    "7.1.22",   # षड्भ्यो लुक् — jas / śas luk after a ṣaṭ numeral: pañca, sapta, nava, daśa, aṣṭa. Before 6.4.8 (vipratiṣedha: the luk removes the jas that 6.4.8 needs)
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
     "6.4.13",  # सौ च — in / han / pūṣan / aryaman: dīrgha in the nominative singular (योगी, वृत्रहा)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)

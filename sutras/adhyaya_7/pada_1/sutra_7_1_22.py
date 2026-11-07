@@ -9,22 +9,31 @@ Pāṭha: ashtadhyayi.com data.txt row i=71022 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine.declension import anga_and_sup
+from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
 from engine.state import State
 
-_GATE_KEY: str = "7_1_22_zaqByo_22"
+
+def _site(state: State):
+    """A ṣaṭ-saṃjñaka aṅga (the tag 1.1.24 puts on ṣaṣ, pañcan, saptan, aṣṭan, navan, daśan) before jas / śas."""
+    hit = anga_and_sup(state)      # no 6.4.1 gate: 6.4.8 is not gated either, and the luk / ādeśa must meet it as a rival (vipratiṣedha, para)
+    if hit is None:
+        return None
+    anga, sup = hit
+    if "zat_samjna" not in anga.tags or (sup.meta.get("upadesha_slp1") or "").strip() not in ("jas", "Sas") or LUK_LOPA_GHOST_TAG in sup.tags:
+        return None
+    return sup
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.22", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.22"
+    sup = _site(state)
+    sup.varnas.clear()                 # luk (1.1.61): the sup is gone and nothing it conditioned follows (1.1.62 does not apply to a lumata luk)
+    sup.tags.add(LUK_LOPA_GHOST_TAG)
+    state.meta["7_1_22_luk"] = True
     return state
 
 

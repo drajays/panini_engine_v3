@@ -8,12 +8,12 @@ Pāṭha: ashtadhyayi.com data.txt row i=71055 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra, samkhya
 from engine.state import State
 from engine.declension import anga_and_sup, is_stem
 from phonology import mk
 
-_SHAT = ("zaz", "paYcan", "saptan", "azwan", "navan", "daSan")      # ṣaṭ-saṃjñā (1.1.24): the ṣ- / ṇ-final numerals
+_SHAT = tuple(w for w in samkhya.laukika() if w[-1] in "zn")      # ṣaṭ-saṃjñā (1.1.24): the ṣ- / n-final numerals of the Kāśikā (data/inputs/samkhya_patha.json)
 
 
 def _site(state: State):
@@ -22,7 +22,7 @@ def _site(state: State):
     if hit is None:
         return None
     anga, sup = hit
-    if not is_stem(anga, "catur", *_SHAT, tadanta=True):
+    if "zat_samjna" not in anga.tags and not is_stem(anga, "catur", *_SHAT, tadanta=True):
         return None
     if (sup.meta.get("upadesha_slp1") or "").strip() != "Am" or (sup.varnas and "nut_agama_inserted" in sup.varnas[0].tags):
         return None

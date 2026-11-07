@@ -7,7 +7,7 @@ the technical name *ṣaṭ*.
 
 v3: ``samjna_registry['zaW']`` registers the **ending-set** (SLP1) ``{'z', 'n'}`` once (R2), and
 ``sankhya_pratipadika_is_zananta`` provides the operational membership test without consulting any
-gold lists (CONSTITUTION Art. 2 / Art. 6).  This file does not mutate any ``Term``.
+gold lists (CONSTITUTION Art. 2 / Art. 6).  The stems on the tape that are saṅkhyā and end in ṣ / n get the tag ``zat_samjna`` (read by 4.1.10, 7.1.22, 7.1.55 …).
 """
 from __future__ import annotations
 
@@ -48,6 +48,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry[ZAT_KEY] = ZANANTA_ENDINGS_SLP1
+    for t in state.terms:      # the saṅkhyā stems on the tape that end in ṣ or n are ṣaṭ (ṣaṣ, pañcan, saptan, aṣṭan, navan, daśan)
+        upa = (t.meta.get("upadesha_slp1") or "").strip()
+        if "prātipadika" in t.tags and upa in s1123.SANKHYA_1_1_23_PRATIPADIKA_SLP1 and sankhya_pratipadika_is_zananta(upa):
+            t.tags.add("zat_samjna")
     return state
 
 

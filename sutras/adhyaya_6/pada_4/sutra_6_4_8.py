@@ -46,6 +46,8 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
+    if "luk_lopa" in pr.tags:
+        return False        # 1.1.63 na lumatāṅgasya: a luk'd sup (jas of pañcan, 7.1.22) conditions no aṅgakārya
     if "sarvanamasthana" not in pr.tags:
         return False
     if "sambuddhi" in pr.tags:

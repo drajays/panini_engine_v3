@@ -20,7 +20,38 @@
   }
  ],
  "laukika_numerals": {
-  "status": "source-needed",
-  "entries": []
+  "status": "kashika-1.1.24 (ṣaṭ-saṃjñaka only; the other numerals are source-needed)",
+  "entries": [
+   {
+    "dev": "षष्",
+    "slp1": "zaz",
+    "evidence": "Kāśikā 1.1.24: षट् तिष्ठन्ति"
+   },
+   {
+    "dev": "पञ्चन्",
+    "slp1": "paYcan",
+    "evidence": "Kāśikā 1.1.24: नकारान्ता — पञ्च"
+   },
+   {
+    "dev": "सप्तन्",
+    "slp1": "saptan",
+    "evidence": "Kāśikā 1.1.24: सप्त"
+   },
+   {
+    "dev": "नवन्",
+    "slp1": "navan",
+    "evidence": "Kāśikā 1.1.24: नव"
+   },
+   {
+    "dev": "दशन्",
+    "slp1": "daSan",
+    "evidence": "Kāśikā 1.1.24: दश"
+   },
+   {
+    "dev": "अष्टन्",
+    "slp1": "azwan",
+    "evidence": "Kāśikā 1.1.24: अष्टानामित्यत्र नुड्"
+   }
+  ]
  }
 }
