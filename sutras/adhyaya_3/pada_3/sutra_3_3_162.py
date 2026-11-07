@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.lakara_attach import lakara_varnas
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -54,7 +55,7 @@ def act(state: State) -> State:
         # structural path: attach the loṭ placeholder (the ṭ is it: 1.3.3 → 1.3.9 take it away)
         state.terms.append(Term(
             kind="pratyaya",
-            varnas=parse_slp1_upadesha_sequence("loT"),
+            varnas=lakara_varnas("loT"),
             tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
             meta={"upadesha_slp1": "loT"},
         ))

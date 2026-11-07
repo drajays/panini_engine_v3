@@ -50,7 +50,7 @@ def _structural_site(state: State):
             continue
         nxt = state.terms[i + 1]
         # क्ङिति: the saṃjñā tag, or the it-letter itself as the it-prakaraṇa records it (ktvā's k: it:kit)
-        if {"kngiti", "it:kit", "it:Git"} & nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in JHAL:
+        if {"kngiti", "it:kit", "it:Git", "it:Nit"} & nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in JHAL:
             return i
     return None
 

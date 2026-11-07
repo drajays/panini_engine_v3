@@ -23,7 +23,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.lakara_attach import attach_lakara, lakara_site
+from engine.lakara_attach import attach_lakara, lakara_site, lakara_varnas
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -43,7 +43,7 @@ def act(state: State) -> State:
     state.meta["liT_lakara_recipe"] = False
     lit = Term(
         kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("liT"),
+        varnas=lakara_varnas("liT"),
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "liT"},
     )

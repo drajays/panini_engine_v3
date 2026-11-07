@@ -22,7 +22,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine.lakara_attach import lakara_varnas
 
 
 def _scope_open(state: State) -> bool:
@@ -46,9 +46,7 @@ def act(state: State) -> State:
             "text_dev"  : 'वर्तमाने लट्',
         })
     if _needs_laT(state):
-        vs = parse_slp1_upadesha_sequence("laT")
-        if vs and vs[-1].slp1 == "T":
-            vs = vs[:-1]
+        vs = lakara_varnas("laT")      # la~w: 1.3.2 / 1.3.3 / 1.3.9 leave the l, which the tiṅ replaces (3.4.78)
         state.terms.append(Term(
             kind="pratyaya",
             varnas=vs,

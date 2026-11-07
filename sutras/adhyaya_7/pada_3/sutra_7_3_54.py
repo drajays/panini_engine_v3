@@ -24,7 +24,7 @@ def _nit_follows(state: State, di: int) -> bool:
         if pr.kind != "pratyaya":
             continue
         itm = pr.meta.get("it_markers") or set()
-        if "N" in itm or "R" in itm:
+        if itm & {"Y", "R", "n"}:      # ñṇinneṣu: ñ-it, ṇ-it, n-it — not ṅ-it (N: the liṅ lakāra's ṅ)
             return True
         if "nit" in pr.tags:
             return True

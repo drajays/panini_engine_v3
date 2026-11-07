@@ -22,7 +22,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
-from engine.lakara_attach import attach_lakara, lakara_site
+from engine.lakara_attach import attach_lakara, lakara_site, lakara_varnas
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -46,9 +46,7 @@ def act(state: State) -> State:
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "luT"},
     )
-    vs = parse_slp1_upadesha_sequence("luT")
-    if vs and vs[-1].slp1 == "T":
-        vs = vs[:-1]
+    vs = lakara_varnas("luT")
     lu.varnas = vs
     state.terms.append(lu)
     state.meta["3_3_15_lut_attached"] = True

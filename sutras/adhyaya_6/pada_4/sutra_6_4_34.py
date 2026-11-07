@@ -24,7 +24,7 @@ def _site(state: State):
         if nxt is None:
             continue
         ang = (nxt.meta.get("upadesha_slp1") or "").strip() == "aG"
-        hal_kngit = nxt.varnas[0].slp1 in HAL and bool({"kngiti", "it:kit", "it:Git"} & nxt.tags or is_kit(nxt))
+        hal_kngit = nxt.varnas[0].slp1 in HAL and bool({"kngiti", "it:kit", "it:Git", "it:Nit"} & nxt.tags or is_kit(nxt))
         k = max((n for n, v in enumerate(t.varnas) if v.slp1 == "A"), default=None)
         if (ang or hal_kngit) and k is not None:
             return t, k

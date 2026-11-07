@@ -41,6 +41,16 @@ def lakara_site(state: State, derivation_tag: str, sutra_id: str, legacy_keys: t
         and not any((t.meta.get("source_lakara_upadesha") or "") != "" for t in state.terms)
 
 
+# The ten lakāras as Pāṇini's upadeśa: l + an anunāsika vowel (it by 1.3.2) + a final it (ṭ / ṅ: 1.3.3), e.g. la~w. The engine names them laT, liG …
+LAKARA_UPADESHA = {"laT": "la~w", "liT": "li~w", "luT": "lu~w", "lRT": "lf~w", "leT": "le~w", "loT": "lo~w",
+                   "laG": "la~N", "liG": "li~N", "luG": "lu~N", "lRG": "lf~N", "lfN": "lf~N"}
+
+
+def lakara_varnas(name: str):
+    """The varṇas of a lakāra's upadeśa (la~w for laT): 1.3.2 takes the anunāsika vowel away, 1.3.3 the last letter, 1.3.9 leaves the l."""
+    return parse_slp1_upadesha_sequence(LAKARA_UPADESHA.get(name, name))
+
+
 def attach_lakara(state: State, upadesha: str, *, at_context: bool = False, tags: frozenset = frozenset()) -> State:
     """Append the lakāra placeholder (its it-letter stays; 1.3.3 → 1.3.9 take it away, as for every affix)."""
     if at_context:                       # 6.4.71 अट् reads this: laṅ · luṅ · lṛṅ
@@ -49,7 +59,7 @@ def attach_lakara(state: State, upadesha: str, *, at_context: bool = False, tags
                 t.tags.add(AT_AGAMA_CONTEXT_TAG_NAME)
     state.terms.append(Term(
         kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence(upadesha),
+        varnas=lakara_varnas(upadesha),
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"} | set(tags),
         meta={"upadesha_slp1": upadesha},
     ))

@@ -905,7 +905,10 @@ def P00_lac_lat_attach(s: State) -> State:
     """laṭ-pratyaya scope: 3.1.91 → (P06a 3.1.1–3) → 3.2.123 → append laṭ placeholder."""
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    return P00_lat_vartamane(s)
+    s = P00_lat_vartamane(s)
+    for sid in ("1.3.2", "1.3.3", "1.3.9"):     # la~w: the anunāsika vowel (1.3.2) and the ṭ (1.3.3) are it and go (1.3.9); the l stays for the tiṅ to replace
+        s = apply_rule(sid, s)
+    return s
 
 
 def P00_lat_vartamane(s: State) -> State:

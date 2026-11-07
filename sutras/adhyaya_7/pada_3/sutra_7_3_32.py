@@ -28,7 +28,7 @@ def _nit_follows(state: State, di: int) -> bool:
         if up in _BLOCKED:
             return False
         itm = pr.meta.get("it_markers") or set()
-        if "N" in itm or "R" in itm or "nit" in pr.tags:
+        if "R" in itm or "Y" in itm or "nit" in pr.tags:      # ñit / ṇit (SLP1 Y, R) — not ṅit (N), which the liṅ lakāra's ṅ is
             return True
         if up in {"Ramul", "Namul", "Rvul"}:
             return True

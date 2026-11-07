@@ -150,6 +150,7 @@ def _tinanta_attach(state: Any, lakara: str, pada_key: str, purusha: int, vacana
         if lakara == "liT":                # ijādi gurumān (3.1.36): ām, liṭ luk (2.4.81), then kṛ + liṭ (3.1.40, anuprayoga)
             for sid in ("3.1.35", "3.1.36", "6.4.55", "2.4.81", "3.1.40"):      # 3.1.35: ām after a ṇijanta/pratyayānta dhātu
                 state = apply_rule(sid, state)
+        state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
     else:

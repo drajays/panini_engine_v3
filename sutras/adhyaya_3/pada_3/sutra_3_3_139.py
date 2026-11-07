@@ -20,6 +20,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.lakara_attach import lakara_varnas
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -53,7 +54,7 @@ def _attach_lRG(state: State) -> State:
             term.tags.add(AT_AGAMA_CONTEXT_TAG)
     lit = Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("lfN")),
+        varnas=list(lakara_varnas("lfN")),
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "lRG"},
     )
