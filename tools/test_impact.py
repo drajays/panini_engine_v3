@@ -17,12 +17,15 @@ tests of that sūtra's own prakaraṇa by name.
 
 Selection (sound by construction, never narrower than the dependency):
   * a changed ``sutras/**/sutra_A_B_C.py`` → the tests that consulted sūtra A.B.C;
-  * a changed shared file (engine, pipelines, phonology, core, data) → every test; tools/api/docs select nothing;
+  * a changed shared .py file → the tests that called one of the functions whose lines changed (``f`` in the map, recorded with
+    ``sys.setprofile``); a change outside any function (imports, module/class body, decorators) or in a non-.py shared file → every test;
+    tools/api/docs select nothing;
   * a test absent from the map (new, edited, or run in a subprocess) always runs; so does a test file that changed;
   * tests/constitutional always run (they read source, not derivations).
 """
 from __future__ import annotations
 
+import ast
 import json
 import re
 import subprocess
@@ -42,6 +45,11 @@ _SHARED = ("engine/", "pipelines/", "phonology/", "core/", "data/", "sutras/__in
 
 _CURRENT: set[str] | None = None
 _MAP: dict[str, dict[str, Any]] = {}
+_FUNCS: list[str] = []                    # "file::qualname" table, indexed by the "f" lists in the map (append-only on disk)
+_FIDX: dict[str, int] = {}
+_FCUR: set[int] | None = None
+_CODE: dict[Any, int | None] = {}         # code object → function index (None: not shared source)
+_TABLE = "__funcs__"
 
 
 # ── recording ──────────────────────────────────────────────────────────────
@@ -60,6 +68,24 @@ class _Consulting:
         if out and _CURRENT is not None:
             _CURRENT.add(self._sid)          # only a cond that came out true shapes a derivation (see the module note on widening)
         return out
+
+
+def _profile(frame, event, arg):
+    if event != "call" or _FCUR is None:
+        return
+    code = frame.f_code
+    i = _CODE.get(code, -1)
+    if i == -1:
+        rel = code.co_filename[len(str(_ROOT)) + 1:] if code.co_filename.startswith(str(_ROOT)) else ""
+        i = None
+        if rel.endswith(".py") and rel.startswith(_SHARED) and not _SUTRA_FILE.match(rel) and code.co_name != "<module>":
+            key = f"{rel}::{code.co_qualname}"
+            i = _FIDX.setdefault(key, len(_FUNCS))
+            if i == len(_FUNCS):
+                _FUNCS.append(key)
+        _CODE[code] = i
+    if i is not None:
+        _FCUR.add(i)
 
 
 def _install() -> None:
@@ -95,6 +121,39 @@ def changed_files(base: str = "HEAD") -> list[str]:
     return sorted(set(_git("diff", "--name-only", base)) | set(_git("ls-files", "--others", "--exclude-standard")))
 
 
+def _qualnames(tree: ast.AST):
+    """(first line incl. decorators, last line, qualname) for every def, nested ones as ``f.<locals>.g`` like ``co_qualname``."""
+    def walk(node, prefix, in_func):
+        for ch in ast.iter_child_nodes(node):
+            if isinstance(ch, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                q = prefix + ch.name
+                yield min([ch.lineno, *(d.lineno for d in ch.decorator_list)]), ch.end_lineno, q
+                yield from walk(ch, q + ".<locals>.", True)
+            elif isinstance(ch, ast.ClassDef):
+                yield from walk(ch, prefix + ch.name + ".", in_func)
+            else:
+                yield from walk(ch, prefix, in_func)
+    return list(walk(tree, "", False))
+
+
+def changed_functions(path: str, base: str = "HEAD") -> set[str] | None:
+    """Qualnames of the defs whose lines the diff touches, or None if any hunk lies outside every def (or the file is new/unparsable)."""
+    defs = _qualnames(ast.parse((_ROOT / path).read_text(encoding="utf-8"))) if (_ROOT / path).exists() else None
+    if defs is None or path in _git("ls-files", "--others", "--exclude-standard"):
+        return None
+    out: set[str] = set()
+    for h in _git("diff", "-U0", base, "--", path):
+        if not (m := re.match(r"@@ -\S+ \+(\d+)(?:,(\d+))?", h)):
+            continue
+        a, n = int(m[1]), int(m[2] or 1)
+        lo, hi = (a, a + n - 1) if n else (a, a + 1)     # n == 0: pure deletion between lines a and a+1
+        inside = [q for s, e, q in defs if s <= hi and e >= lo and (n or (s < a + 1 <= e))]
+        if not inside:
+            return None
+        out |= set(inside)
+    return out
+
+
 def select(items_ids: list[str], base: str = "HEAD") -> tuple[list[str], str]:
     """(node ids to run, why)."""
     files = [f for f in changed_files(base) if f.endswith((".py", ".json")) and not f.startswith(("docs/", "sig/", ".audit/", "scratch/"))]
@@ -102,18 +161,23 @@ def select(items_ids: list[str], base: str = "HEAD") -> tuple[list[str], str]:
     src = [f for f in files if not f.startswith("tests/")]
     if not MAP_PATH.exists():
         return items_ids, "no map yet: run `python3 -m tools.test_impact record`"
-    other = [f for f in src if not _SUTRA_FILE.match(f) and f.startswith(_SHARED)]
-    if other:
-        return items_ids, f"shared source changed ({other[0]}{' …' if len(other) > 1 else ''}): every test can reach it"
-    ids = {".".join(m.groups()) for f in src if (m := _SUTRA_FILE.match(f))}
+    shared = [f for f in src if not _SUTRA_FILE.match(f) and f.startswith(_SHARED)]
     mapped = json.loads(MAP_PATH.read_text(encoding="utf-8"))
+    table = mapped.pop(_TABLE, [])
+    funcs: set[int] = set()
+    for f in shared:
+        names = changed_functions(f, base) if f.endswith(".py") else None
+        if names is None:
+            return items_ids, f"shared source changed outside a function ({f}): every test can reach it"
+        funcs |= {table.index(k) for n in names if (k := f"{f}::{n}") in table}
+    ids = {".".join(m.groups()) for f in src if (m := _SUTRA_FILE.match(f))}
     run = []
     for nid in items_ids:
         f = nid.split("::")[0]
         entry = mapped.get(nid)
-        if entry is None or f in test_files or f.startswith("tests/constitutional/") or ids & set(entry["s"]):
+        if entry is None or f in test_files or f.startswith("tests/constitutional/") or ids & set(entry["s"]) or "f" not in entry or funcs & set(entry["f"]):
             run.append(nid)
-    return run, f"{len(ids)} sūtra file(s) changed: {', '.join(sorted(ids)) or 'none'}"
+    return run, f"{len(ids)} sūtra file(s), {len(funcs)} mapped function(s) changed: {', '.join(sorted(ids)) or 'none'}"
 
 
 # ── pytest plugin ──────────────────────────────────────────────────────────
@@ -141,22 +205,33 @@ def pytest_collection_modifyitems(config, items):
 
 
 def pytest_runtest_call(item):
-    global _CURRENT
+    global _CURRENT, _FCUR
     if item.config.getoption("--impact-record"):
-        _CURRENT = set()
+        _CURRENT, _FCUR = set(), set()
+        sys.setprofile(_profile)
 
 
 def pytest_runtest_teardown(item):
-    global _CURRENT
+    global _CURRENT, _FCUR
     if item.config.getoption("--impact-record") and _CURRENT is not None:
-        _MAP[item.nodeid] = {"s": sorted(_CURRENT)}
-        _CURRENT = None
+        sys.setprofile(None)
+        _MAP[item.nodeid] = {"s": sorted(_CURRENT), "f": sorted(_FCUR or ())}
+        _CURRENT = _FCUR = None
 
 
 def pytest_sessionfinish(session, exitstatus):
     if session.config.getoption("--impact-record") and _MAP:
         MAP_PATH.parent.mkdir(parents=True, exist_ok=True)
         merged = json.loads(MAP_PATH.read_text(encoding="utf-8")) if MAP_PATH.exists() else {}
+        table = merged.get(_TABLE, [])           # append-only, so indices in older entries stay valid
+        pos = {k: i for i, k in enumerate(table)}
+        for k in _FUNCS:
+            if k not in pos:
+                pos[k] = len(table)
+                table.append(k)
+        for e in _MAP.values():
+            e["f"] = sorted(pos[_FUNCS[i]] for i in e["f"])
+        merged[_TABLE] = table
         merged.update(_MAP)                      # a partial run refreshes its own tests and keeps the rest
         MAP_PATH.write_text(json.dumps(merged, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
         print(f"\n[test_impact] {len(_MAP)} tests (re)mapped → {MAP_PATH.relative_to(_ROOT)}")
