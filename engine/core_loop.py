@@ -57,7 +57,9 @@ def open_adhikaras(state: State) -> None:
     from engine.registry import SUTRA_REGISTRY
 
     path = Path(__file__).resolve().parent.parent / "data" / "inputs" / "phase_adhikaras.json"
-    for sid in json.loads(path.read_text(encoding="utf-8")).get(state.phase, ()):
+    frames = json.loads(path.read_text(encoding="utf-8"))
+    # a nominal derivation (build_taddhita_state) stands inside 3.1.1 ⊃ 4.1.1 ⊃ 4.1.76 (Art. 24 §3); 4.1.3 overlaps, the speaker's linga=strI opens it
+    for sid in (*frames.get(state.phase, ()), *frames.get(state.meta.get("adhikara_frames", ""), ())):
         if not any(e.get("id") == sid for e in state.adhikara_stack):
             state.adhikara_stack.append(
                 {"id": sid, "scope_end": SUTRA_REGISTRY[sid].adhikara_scope[1]}

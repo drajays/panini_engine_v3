@@ -77,3 +77,13 @@ def test_stri_un_and_nin():
     assert "4.1.66" not in _ids(chain.strI(chain.Stem("kuru")), "strI")            # no vivakṣā: no ūṅ
     s = chain.strI(chain.Stem("SArNgarava"))
     assert s.slp1 == "SArNgaravI" and "4.1.73" in _ids(s, "strI")
+
+
+def test_nominal_frames_open():
+    """Art. 24 §3: a taddhita / strī derivation stands inside 3.1.1 ⊃ 4.1.1 ⊃ 4.1.76 (4.1.3 overlaps: opened by linga=strI)."""
+    import sutras  # noqa: F401
+    from engine.core_loop import open_adhikaras
+    from engine.tape_init.taddhita import build_taddhita_state
+    s = build_taddhita_state("aja", None, linga="strI")
+    open_adhikaras(s)
+    assert [e["id"] for e in s.adhikara_stack if e["id"] in ("3.1.1", "4.1.1", "4.1.76")] == ["3.1.1", "4.1.1", "4.1.76"]
