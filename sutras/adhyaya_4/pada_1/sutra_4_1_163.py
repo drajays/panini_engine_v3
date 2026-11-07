@@ -15,6 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_1_163_jIvati_163"
 
 
+# SHORTCUT S126 S133: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -43,7 +44,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "vaMSye jIvati pOtrapraBfteH apatyam tu yuvA",
     samagra_dev           = "वंश्ये जीवति पौत्रप्रभृतेः अपत्यम् तु युवा",
     padaccheda_dev        = "जीवति तु वंश्ये युवा",
-    why_dev               = "(सूत्रम् 4.1.163) जीवति तु वंश्ये युवा।",
+    why_dev               = "जीवति तु वंश्ये युवा — वंश्ये पित्रादौ जीवति पौत्रप्रभृतेः अपत्यं युवसंज्ञं भवति।",
     anuvritti_from        = ('4.1.1',),
     cond                  = cond,
     act                   = act,

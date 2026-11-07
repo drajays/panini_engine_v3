@@ -15,6 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "7_3_3_na_3"
 
 
+# SHORTCUT S131: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -37,7 +38,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "aNgasya na yvAByAm padAntAByAm pUrvO tu tAByAm Ec vfdDiH acaH YRiti tadDitezu AdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "अङ्गस्य न य्वाभ्याम् पदान्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच् वृद्धिः अचः ञ्णिति तद्धितेषु आदेः",
     padaccheda_dev        = "न य्-वाभ्याम् पद-अन्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच्",
-    why_dev               = "(सूत्रम् 7.3.3) न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्।",
+    why_dev               = "न य्वाभ्यां पदान्ताभ्यां पूर्वौ तु ताभ्यामैच् — पदान्ताभ्यां यवाभ्यां परस्य न वृद्धिः, पूर्वौ ऐजागमौ (वैयाकरणः)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

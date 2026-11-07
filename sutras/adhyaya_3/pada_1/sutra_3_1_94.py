@@ -15,6 +15,7 @@ from engine.krt_eligibility import krt_insertion_eligible
 _GATE_KEY: str = "3_1_94_vAsarUpost_94"
 
 
+# SHORTCUT S133: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     if not krt_insertion_eligible(state, "3.1.94", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False

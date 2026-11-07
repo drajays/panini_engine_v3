@@ -15,6 +15,7 @@ from engine.krt_eligibility import tripadi_gate_eligible
 _GATE_KEY: str = "8_2_3_na_3"
 
 
+# SHORTCUT S132: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     return tripadi_gate_eligible(state, "8.2.3", gate_key=_GATE_KEY)
 
@@ -35,7 +36,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "mu ne pUrvatra asidDam na",
     samagra_dev           = "मु ने पूर्वत्र असिद्धम् न",
     padaccheda_dev        = "न मु (लुप्तप्रथमान्तनिर्देशः) ने",
-    why_dev               = "(सूत्रम् 8.2.3) न मु ने।",
+    why_dev               = "न मु ने — नाभावे कर्तव्ये मुभावः असिद्धः न (अमुना)।",
     anuvritti_from        = ('8.1.1',),
     cond                  = cond,
     act                   = act,

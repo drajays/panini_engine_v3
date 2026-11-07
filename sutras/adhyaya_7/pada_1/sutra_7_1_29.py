@@ -7,6 +7,7 @@ For asmad/yuzmad stem in dvitīyā bahuvacana, replace the ādi (initial) 'a' of
 the śas pratyaya (after ś-it lopa → [a,s]) with 'n', giving [n,s] = "ns".
 
 शसो न (7.1.29)
+Pāṭha: ashtadhyayi.com data.txt row i=71029 (Art. 14); Kāśikā 7.1.29 (yuṣmān, asmān).
 
 Engine implementation:
   cond:
@@ -51,6 +52,7 @@ def _find_target(state: State):
     return None
 
 
+# SHORTCUT S135: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     return _find_target(state) is not None
 
@@ -81,7 +83,7 @@ SUTRA = SutraRecord(
     samagra_dev           = "अङ्गस्य शसः न युष्मद्-अस्मद्भ्याम्",
     padaccheda_dev        = "शसः न (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "अस्मद्-शब्दयोः शस्-प्रत्ययस्य आदि-'अ' स्थाने नकारः "
-                            "(सूत्रम् ७.१.२९ शसो न)।",
+                            "(७.१.२९ शसो न)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

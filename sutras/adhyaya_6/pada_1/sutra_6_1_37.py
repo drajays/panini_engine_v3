@@ -9,20 +9,30 @@ Pāṭha: ashtadhyayi.com data.txt row i=61037 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.declension import is_stem
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_1_37_na_37"
+_YAN = frozenset("yvrl")
 
 
+def _site(state: State):
+    """न सम्प्रसारणे सम्प्रसारणम् — when a samprasāraṇa has just been made (yuvan → yUn by 6.4.133), the yaṇ before it (the y of yuvan) does not itself take
+    samprasāraṇa: यूनः, यूना (not *इऊनः)."""
+    for t in state.terms:
+        if "anga" in t.tags and t.meta.get("6_4_133_done") and not t.meta.get("6_1_37_done") and is_stem(t, "yuvan", tadanta=True):
+            vs = [v.slp1 for v in t.varnas]
+            if len(vs) >= 3 and vs[-3] in _YAN and vs[-2] in "UuoO":
+                return t
+    return None
+
+
+# SHORTCUT S134: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.37", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.37"
+    _site(state).meta["6_1_37_done"] = True            # the y stays: no later samprasāraṇa rule may take it
     return state
 
 
@@ -35,7 +45,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "na samprasAraRe samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "न सम्प्रसारणे सम्प्रसारणम्",
     padaccheda_dev        = "न सम्प्रसारणे सम्प्रसारणम्",
-    why_dev               = "(सूत्रम् 6.1.37) न सम्प्रसारणे सम्प्रसारणम्।",
+    why_dev               = "न सम्प्रसारणे सम्प्रसारणम् — सम्प्रसारणे कृते पूर्वस्य यणः (यकारस्य) सम्प्रसारणं न (यूनः)।",
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

@@ -495,6 +495,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.68",
     "6.4.4",    # न तिसृचतसृ — blocks 6.4.3 for तिसृ / चतसृ
     "6.4.3",
+    "6.4.7",    # नोपधायाः — the upadhā of an n-final aṅga before the nuṭ of Ām: पञ्चानाम्
     "7.3.103",
     "7.3.104",  # ओसि च — a → e before os (then 6.1.78: rAmayoH)
     "7.3.112",  # आट् for ṅit sups after नदी — नद्यै · नद्याः

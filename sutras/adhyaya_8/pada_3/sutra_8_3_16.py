@@ -20,6 +20,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+# SHORTCUT S137: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     # Structural conversion already handled by 8.3.15; this rule is a trace only.
     return False

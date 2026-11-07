@@ -15,6 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_1_10_na_10"
 
 
+# SHORTCUT S133: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -43,7 +44,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "zaw-svasrAdiByaH NyApprAtipadikAt striyAm NIp pratyayaH na",
     samagra_dev           = "षट्-स्वस्रादिभ्यः ङ्याप्प्रातिपदिकात् स्त्रियाम् ङीप् प्रत्ययः न",
     padaccheda_dev        = "न षट्-स्वस्रादिभ्यः",
-    why_dev               = "(सूत्रम् 4.1.10) न षट्स्वस्रादिभ्यः।",
+    why_dev               = "न षट्स्वस्रादिभ्यः — षट्-स्वस्रादिभ्यः (स्वसा, तिस्रः, चतस्रः, ननान्दा, दुहिता, याता, माता) ङीप्टापौ न।",
     anuvritti_from        = ('4.1.1',),
     cond                  = cond,
     act                   = act,

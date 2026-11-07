@@ -36,6 +36,7 @@ def _site(state: State) -> bool:
     return True
 
 
+# SHORTCUT S137: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     return _site(state)
 

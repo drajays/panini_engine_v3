@@ -15,6 +15,7 @@ from engine.krt_eligibility import tripadi_gate_eligible
 _GATE_KEY: str = "8_2_79_na_79"
 
 
+# SHORTCUT S132: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     return tripadi_gate_eligible(state, "8.2.79", gate_key=_GATE_KEY)
 
@@ -35,7 +36,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "padasya pUrvatrAsidDam na BakurCurAm DAtoH rvoH dIrGa",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "पदस्य पूर्वत्रासिद्धम् न भकुर्छुराम् धातोः र्वोः दीर्घ",
     padaccheda_dev        = "न भ-कुर्-छुराम्",
-    why_dev               = "(सूत्रम् 8.2.79) न भकुर्छुराम्।",
+    why_dev               = "न भकुर्छुराम् — भस्य कुर्-छुरोः उपधायाः दीर्घः न।",
     anuvritti_from        = ('8.1.1',),
     cond                  = cond,
     act                   = act,

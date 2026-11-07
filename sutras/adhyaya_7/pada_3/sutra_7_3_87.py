@@ -15,6 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "7_3_87_nAByastasy_87"
 
 
+# SHORTCUT S131: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -37,7 +38,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "aNgasya na aByastasya aci piti sArvaDAtuke guRaH pugantalaGUpaDasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "अङ्गस्य न अभ्यस्तस्य अचि पिति सार्वधातुके गुणः पुगन्तलघूपधस्य",
     padaccheda_dev        = "न अभ्यस्तस्य अचि पिति सार्वधातुके",
-    why_dev               = "(सूत्रम् 7.3.87) नाभ्यस्तस्याचि पिति सार्वधातुके।",
+    why_dev               = "नाभ्यस्तस्याचि पिति सार्वधातुके — लघूपधगुणः न (नेनिजानि)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

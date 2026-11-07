@@ -81,3 +81,27 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S111 | 6.3.2 | stokādi list taken from the Kāśikā (no Gaṇapāṭha entry) | gaṇapāṭha entry | open |
 | S112 | 6.3.47 / 6.3.48 | vārttika "prāk śatāt" as a numeral list (śata, sahasra, ayuta, lakṣa, koṭi, prayuta, arbuda) | vārttika inside the host file (Art. 25) with the saṅkhyā list from the DB | open |
 | S113 | 6.2.184 | only tags the last varṇa `svara:antodAtta`; nothing reads it (no accent tape) | the svara tier | open |
+| S114 | 1.1.25, 1.1.33, 1.1.35, 1.1.36 | tests/regression/test_lk_pending_a.py: the stem's sense tags (ajnati_samjna, dhana_samjna, bahiryoga, upasaMvyAna) are set by the test, not derived | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S115 | 1.1.37 | tests/regression/test_lk_pending_a.py: svarAdi list is an inline frozenset, not the nipata gaNa | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S116 | 1.1.69, 1.1.70, 1.1.71 | tests/regression/test_lk_pending_a.py: paribhasha gates are only registered; no consumer reads them from the tape in the test | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S117 | 1.2.27, 1.2.31, 1.2.44 | tests/regression/test_lk_pending_a.py: matra/svarita/ekavibhakti are registry entries; svara machinery is not driven | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S118 | 1.4.2, 1.4.11, 1.4.19 | tests/regression/test_lk_pending_a.py: gate/registry only; vipratisedha is decided by the resolver, not read from this entry | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S119 | 1.4.12 | tests/regression/test_lk_pending_a.py: guru_dirgha is a registry set; guru is read from phoneme data elsewhere | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S120 | 1.4.24 | tests/regression/test_lk_pending_a.py: apadAna_source is a test-set tag, standing for the vivaksha/artha input | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S121 | 1.4.42, 1.4.49, 1.4.51 | tests/regression/test_lk_pending_a.py: sADakatama / kartfr_Ipsita_kArman / akaTita_karma are test-set tags (artha inputs) | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S122 | 1.4.57, 1.4.58, 1.4.61 | tests/regression/test_lk_pending_a.py: ca-adi / pra-adi / Urya-adi lists are inline sets, not gaNapatha lookups | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S123 | 2.1.1, 2.3.49 | tests/regression/test_lk_pending_a.py: gate/registry only | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S124 | 2.2.23 | tests/regression/test_lk_pending_a.py: bahuvrIhi tag is test-set; the samasa machine is not run | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S125 | 2.4.83 | tests/regression/test_lk_pending_a.py: 2_4_83_lup_context meta is test-set | derive from the pipeline/gaNa/artha input when that machinery exists | open |
+| S126 | 4.1.163, 4.1.174, 5.4.69 (tests) | the taddhita / samāsa pipelines never call these sūtras; the test builds a prātipadika tape by hand and opens the adhikāra | call them from `derive_taddhita` / the samāsa machine | open |
+| S127 | 6.1.3 | dvitva of liṭ is not looped; cond reads the ajādi root's shape, act records the skipped n/d/r in `dvitva_skip_6_1_3`; the test tape is hand-built | 6.1.2 / 6.1.1 reading `dvitva_skip_6_1_3` when it doubles | open |
+| S128 | 6.4.30 | the pūjā sense of añc is the lexical tag `lex:pUjArTa` (añc has two senses; no vivakṣā value) | a vivakṣā value for pūjāyām | open |
+| S129 | 6.4.74 | the upapada mā(ṅ) is the dhātu tag `mAN_yoga` (as 'ashis' is) | a sentence-level upapada input | open |
+| S130 | 6.4.126 | only śas and dad are named; the vakārādi dhātus with a guṇa-a are not modelled | the vādi list with the guṇa origin of the a | open |
+| S131 | 7.2.8, 7.2.39, 7.2.59, 7.3.3, 7.3.87 | gate-only cond (aṅga on the tape, adhikāra open): opens a gate, no effect on a derivation | real conds with their targets blocked (7.2.35, 7.2.38, 7.3.84 …) | open |
+| S132 | 8.2.3, 8.2.8, 8.2.79 | gate-only cond in the tripāḍī; the effect of 8.2.8 lives in 8.2.7's tag test (sambuddhi / ngi) | 8.2.8 blocking 8.2.7 by name; 8.2.3 in the asiddha exceptions; 8.2.79 blocking 8.2.77/78 | open |
+| S133 | 3.1.94, 3.1.95, 4.1.10, 4.1.56, 4.1.163, 4.1.174, 5.4.69 | cond true on any dhātu / stem under the adhikāra; act writes a gate, no tag or block | 4.1.10/4.1.56 blocking 4.1.4/4.1.5/4.1.54 by name; 4.1.163/174 tagging the pratyaya; 5.4.69 blocking 5.4.91 … | open |
+| S134 | 6.1.37 | marker `6_1_37_done` on the aṅga only; no samprasāraṇa rule reads it yet | the samprasāraṇa rules (6.1.13 …) consult it | open |
+| S135 | 7.1.29 | cond needs the arm flag `7_1_29_arm` set by pipelines/asmad_subanta | structural cond on yuṣmad / asmad + śas | open |
+| S136 | 6.4.7 | run by the autonomous loop and the subanta spine, but 8.2.7 (premerge Branch C) is only offered by the subanta pipeline, so the loop stops at paYcAnnAm | see S29 | open |
+| S137 | 8.1.2, 8.3.16 | 8.1.2's cond is the P017 pawat tape only; 8.3.16 is an anuvāda with cond False | 8.1.2 for any dviruktam; 8.3.16 as the rule 8.3.15 is read under | open |
