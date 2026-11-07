@@ -488,6 +488,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.109",  # दश्च — the d that 7.2.112 / 7.2.113 left: इमौ, इमे, इमम्, इमानि
     "7.1.72",
     "7.1.73",   # इकोऽचि विभक्तौ — nuṃ for a neuter ik-final aṅga before an ac-initial vibhakti (vāriṇā, madhunī)
+    "7.1.75",   # अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः — asthi / dadhi / sakthi / akṣi: i → an before an ac-initial sup of the third vibhakti on (apavāda of 7.1.73)
     "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)
     "6.4.8",
     # Second 6.1.68 attempt (idempotent, same pattern as 6.4.8's own second
