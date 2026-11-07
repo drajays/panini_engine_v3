@@ -689,6 +689,8 @@ def _it_agama(state: State) -> State:
     then 7.2.58 गमेरिट् परस्मैपदेषु, which re-grants iṭ over that niṣedha."""
     state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला (ग्लाता)
     state = apply_rule("7.2.10", state)
+    state = apply_rule("7.2.42", state)   # vṛto vā iṭ in ātmanepada liṅ / sic
+    state = apply_rule("7.2.43", state)   # ṛtaś ca saṁyogādeḥ — likewise
     state = apply_rule("7.2.35", state)
     state = apply_rule("7.2.37", state)   # ग्रहोऽलिटि दीर्घः: ग्रहीता
     state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
@@ -1512,6 +1514,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
             # otherwise guṇa (अमोदिष्ट, अभविष्ट). No sic-vṛddhi: 7.2.1 is parasmaipada.
             state = apply_rule("1.2.11", state)
             state = apply_rule("1.2.12", state)
+            state = apply_rule("7.1.100", state)   # kit sic after ṝ: astīrṣṭa
+            state = apply_rule("1.1.51", state)
             state = P00_guna_rapara_ayadi(state)
         # वध (2.4.43) is a-anta: 6.4.48 before sici vṛddhi / 7.2.7.
         state = apply_rule("6.4.48", state)
@@ -3318,6 +3322,8 @@ def _derive_ashir_liG_atmane(state: State, purusha: int, vacana: int) -> State:
     state = _it_agama(state)
     state = apply_rule("1.2.11", state)
     state = apply_rule("1.2.12", state)
+    state = apply_rule("7.1.100", state)   # kit sīyuṭ after ṝ: tīrṣīṣṭa
+    state = apply_rule("1.1.51", state)
     state = P00_hal_anit_guna(state)
     state = apply_rule("1.1.51", state)
 

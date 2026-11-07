@@ -37,4 +37,4 @@ def hal_ik(vs: list[str]) -> bool:          # 1.2.11 (इको झल् 1.2.9,
 
 
 def r_final(vs: list[str]) -> bool:         # 1.2.12 उः = ऋवर्णात्
-    return vs[-1] == "f"
+    return vs[-1] in ("f", "F")      # ṛvarṇa: ṛ and ṝ
