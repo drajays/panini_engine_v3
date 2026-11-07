@@ -376,11 +376,11 @@ def test_7_2_13_krsr_bhr_vr_stu_dru_sru_shru_liti():
 
 
 def test_7_2_39_na_lini():
-    """na liṅi (7.2.39): stariṣīṣṭa — the ṛ-final root's iṭ is not lengthened before the sīyuṭ of āśīrliṅ: 7.2.38 is barred."""
-    before, after = _fire("7.2.39", _tin_pada("stfY", "AsIrliG", 1, 1, "atmane"))
+    """na liṅi (7.2.39): the iṭ of vṛ / a ṝ-final root is not lengthened before the sīyuṭ of āśīrliṅ (Kāśikā 7.2.42: varisīṣṭa): 7.2.38 is barred."""
+    before, after = _fire("7.2.39", _tin_pada("vfN", "AsIrliG", 1, 1, "atmane"))
     assert "7.2.38" in after.blocked_sutras
     _barred(after, "7.2.38")
-    _never("7.2.39", _tin("stfY", "liT", 1, 1))                                 # not liṅ
+    _never("7.2.39", _tin("vfN", "liT", 1, 1))                                 # not liṅ
     _never("7.2.39", _tin_pada("BU", "AsIrliG", 1, 1, "atmane"))                # not ṛ-final
 
 

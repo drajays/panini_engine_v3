@@ -690,6 +690,8 @@ def _it_agama(state: State) -> State:
     state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला (ग्लाता)
     state = apply_rule("7.2.10", state)
     state = apply_rule("7.2.35", state)
+    state = apply_rule("7.2.37", state)   # ग्रहोऽलिटि दीर्घः: ग्रहीता
+    state = apply_rule("7.2.38", state)   # वृतो वा: वरिता / वरीता
     return apply_rule("7.2.58", state)
 
 
@@ -815,6 +817,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
         state = apply_rule("7.2.35", state)
+        state = apply_rule("7.2.37", state)
+        state = apply_rule("7.2.38", state)
         # IT on iṭ: iṭ has T as halantyam-it
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
@@ -991,6 +995,8 @@ def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -
     if needs_it:
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.35", state)
+        state = apply_rule("7.2.37", state)
+        state = apply_rule("7.2.38", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
         state.meta["liT_dvitva_recipe"] = True

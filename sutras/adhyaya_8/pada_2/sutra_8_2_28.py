@@ -34,7 +34,7 @@ def _find(state: State) -> tuple[int, int] | None:
     # इटः (iṭ) + स् + ईटि: the ई must be the īṭ āgama of 7.3.96, not any ī/i —
     # the sīyuṭ ī of भविषीष्ट and the 1sg ending इ of अभविषि keep their स्.
     for i in range(1, len(t.varnas) - 1):
-        if (t.varnas[i].slp1 == "s" and t.varnas[i - 1].slp1 == "i"
+        if (t.varnas[i].slp1 == "s" and (t.varnas[i - 1].slp1 == "i" or (t.varnas[i - 1].slp1 == "I" and "it_agama" in t.varnas[i - 1].tags))      # the iṭ, lengthened by 7.2.37 (agrahīt), is still the iṭ
                 and "Iw_agama" in t.varnas[i + 1].tags):
             return (0, i)
     return None

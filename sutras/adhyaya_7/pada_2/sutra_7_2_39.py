@@ -22,7 +22,9 @@ def _site(state: State):
     if not adhikara_in_effect("7.2.39", state, "6.4.1"):
         return None
     for i, t in enumerate(state.terms):
-        if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas or t.varnas[-1].slp1 not in ("f", "F"):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas:
+            continue
+        if t.varnas[-1].slp1 != "F" and (t.meta.get("upadesha_slp1") or "").strip() not in ("vfY", "vfN"):      # the dhātus 7.2.38 names: vṛ, ṝ-final
             continue
         rest = state.terms[i + 1:]
         if any((u.meta.get("source_lakara_upadesha") or "").strip() == "liG" for u in rest) \

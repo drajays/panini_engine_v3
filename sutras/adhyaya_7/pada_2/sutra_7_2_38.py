@@ -9,28 +9,41 @@ Pāṭha: ashtadhyayi.com data.txt row i=72038 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_2_38_vFto_38"
+
+def _site(state: State):
+    """vṛ (vṛñ, vṛṅ) and the ṝ-final dhātus (tṝ, jṝ, śṝ …), directly followed by their iṭ (7.2.35), in any lakāra but liṭ: the iṭ may be ī
+    (varitā / varītā, taritā / tarītā; Kāśikā 7.2.38: 'ṝkārāntebhyaḥ'; kariṣyati, hariṣyati — short ṛ — keep the short iṭ). The āśīrliṅ is barred by 7.2.39."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas:
+            continue
+        if t.varnas[-1].slp1 != "F" and (t.meta.get("upadesha_slp1") or "").strip() not in ("vfY", "vfN"):      # vṛ is named by the sūtra: vṛñ, vṛṅ
+            continue
+        nxt = state.terms[i + 1]
+        if not nxt.varnas or nxt.varnas[0].slp1 != "i" or "it_agama" not in nxt.varnas[0].tags:
+            return None
+        if any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms):
+            return None
+        return nxt
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.38", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.38"
+    nxt = _site(state)
+    nxt.varnas[0] = mk("I")
+    nxt.varnas[0].tags.add("it_agama")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.38",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,
     r1_form_identity_exempt = True,
     text_slp1             = "vFto vA",
     text_dev              = "वॄतो वा",
@@ -39,6 +52,8 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "वॄतः वा",
     why_dev               = "(सूत्रम् 7.2.38) वॄतो वा।",
     anuvritti_from        = ('7.1.1',),
+    vibhasha_default      = False,     # varitā is the default reading; choose({"7.2.38": True}) / explore() give varītā
+    vibhasha_scope        = cond,      # asked only of a ṛ-final dhātu with its iṭ
     cond                  = cond,
     act                   = act,
 )

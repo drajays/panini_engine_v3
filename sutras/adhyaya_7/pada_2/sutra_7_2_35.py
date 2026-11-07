@@ -239,7 +239,7 @@ def _find_seT_sic_collapse(state: State) -> int | None:
             continue
         if t.meta.get("seT_sic_collapse_done"):
             continue
-        if len(t.varnas) == 2 and t.varnas[0].slp1 == "i" and t.varnas[1].slp1 == "s":
+        if len(t.varnas) == 2 and t.varnas[0].slp1 in ("i", "I") and t.varnas[1].slp1 == "s":      # I: grah, whose iṭ 7.2.37 has already lengthened
             return i
     return None
 
