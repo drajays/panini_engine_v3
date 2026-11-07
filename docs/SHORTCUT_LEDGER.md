@@ -105,3 +105,4 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S135 | 7.1.29 | cond needs the arm flag `7_1_29_arm` set by pipelines/asmad_subanta | structural cond on yuṣmad / asmad + śas | open |
 | S136 | 6.4.7 | run by the autonomous loop and the subanta spine, but 8.2.7 (premerge Branch C) is only offered by the subanta pipeline, so the loop stops at paYcAnnAm | see S29 | open |
 | S137 | 8.1.2, 8.3.16 | 8.1.2's cond is the P017 pawat tape only; 8.3.16 is an anuvāda with cond False | 8.1.2 for any dviruktam; 8.3.16 as the rule 8.3.15 is read under | open |
+| S138 | 4.1.73 | the añ branch (stem made by añ) is not modelled: 4.1.15 lists añ for ṅīp and the Kāśikā line dividing them is not in the repo | the añ branch once the Kāśikā line is cited | open |

@@ -117,6 +117,8 @@ VOCABULARY = {
                       "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},
     # 5.3.98 – 99: who or what is meant when the kan is taken away (lup)
     "abhiDeya": {"manuzya": ["manuzye"], "apaRya": ["apaRye"]},
+    # 4.1.65 – 66: the stem names a human tribe / class (manuzya-jAteH): ūṅ after u-final (kuru → kurūḥ)
+    "jAtiBeda": {"manuzyajAti": ["jAteH"]},
     "jIvikArTa": {"jIvikArTa": ["jIvikArTe"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},

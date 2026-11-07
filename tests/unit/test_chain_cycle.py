@@ -68,3 +68,12 @@ def test_krt_then_stri_reaches_7_3_44():
     """pāṭhaka + ṭāp: the a before the ka of the pratyaya becomes i (pāṭhikā), not pāṭhakā."""
     s = chain.strI(chain.krt("01.0381", krt="Rvultfc"))
     assert s.slp1 == "pAWikA" and "7.3.44" in _ids(s, "strI")
+
+
+def test_stri_un_and_nin():
+    """4.1.66 ūṅ after a human-class u-stem (kuru → kurūḥ); 4.1.73 ṅīn after a śārṅgaravādi stem (śārṅgaravī)."""
+    k = chain.strI(chain.Stem("kuru"), jAtiBeda="manuzyajAti")
+    assert k.slp1 == "kurU" and "4.1.66" in _ids(k, "strI") and chain.sup(k, 1, 1).flat_slp1() == "kurUH"
+    assert "4.1.66" not in _ids(chain.strI(chain.Stem("kuru")), "strI")            # no vivakṣā: no ūṅ
+    s = chain.strI(chain.Stem("SArNgarava"))
+    assert s.slp1 == "SArNgaravI" and "4.1.73" in _ids(s, "strI")
