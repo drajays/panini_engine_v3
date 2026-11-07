@@ -691,6 +691,8 @@ def _it_agama(state: State) -> State:
     state = apply_rule("7.2.10", state)
     state = apply_rule("7.2.35", state)
     state = apply_rule("7.2.37", state)   # ग्रहोऽलिटि दीर्घः: ग्रहीता
+    state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
+    state = apply_rule("7.2.40", state)   # sici ca parasmaipadeṣu
     state = apply_rule("7.2.38", state)   # वृतो वा: वरिता / वरीता
     return apply_rule("7.2.58", state)
 
@@ -818,6 +820,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
         state = apply_rule("7.2.35", state)
         state = apply_rule("7.2.37", state)
+        state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
+        state = apply_rule("7.2.40", state)   # sici ca parasmaipadeṣu
         state = apply_rule("7.2.38", state)
         # IT on iṭ: iṭ has T as halantyam-it
         state = apply_rule("1.3.3", state)
@@ -996,6 +1000,8 @@ def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.35", state)
         state = apply_rule("7.2.37", state)
+        state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
+        state = apply_rule("7.2.40", state)   # sici ca parasmaipadeṣu
         state = apply_rule("7.2.38", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)

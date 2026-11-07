@@ -25,3 +25,15 @@ def test_sya_and_the_rest():
 def test_lit_is_not_lengthened_and_the_default_is_short():
     assert not any("I" in f for f in forms("tF", "liT"))                                                # tatAra …, no ī
     assert derive("vfY", "luT", "kartari", 3, 1).flat_slp1() == "varitA"                              # vibhāṣā: the default reading is the short iṭ
+
+
+def test_7_2_39_and_7_2_40_bar_the_dirgha():
+    """na liṅi (7.2.39): varisīṣṭa, not *varīsīṣṭa; sici ca parasmaipadeṣu (7.2.40): atāriṣṭām, avāriṣṭām — the iṭ of a parasmaipada sic stays short."""
+    from engine.vikalpa import explore as _x
+
+    def f(d, lakara, pu, vac, pada):
+        return {b.surface_slp1 for b in _x(lambda: derive(d, lakara, "kartari", pu, vac, pada=pada)) if "zz" not in b.surface_slp1 and "Amm" not in b.surface_slp1}
+
+    assert f("vfY", "AsIrliG", 3, 1, "atmane") == {"varizIzwa"}
+    assert f("tF", "luG", 3, 2, "parasmai") == {"atArizwAm"} and f("vfY", "luG", 3, 2, "parasmai") == {"avArizwAm"}
+    assert f("tF", "luG", 3, 1, "atmane") == {"atarizwa", "atarIzwa"}                                 # ātmanepada: 7.2.38 is open again (7.2.42)

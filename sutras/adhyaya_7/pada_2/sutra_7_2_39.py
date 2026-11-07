@@ -9,7 +9,6 @@ Pāṭha: ashtadhyayi.com data.txt row i=72039 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 from phonology import HAL
 
@@ -19,8 +18,6 @@ _BLOCKS = ("7.2.38",)                  # vṛto vā (the iṭ and its dīrgha)
 
 def _site(state: State):
     """A ṛ-final dhātu followed by a val-initial ārdhadhātuka tiṅ of liṅ (the sīyuṭ of āśīrliṅ is part of it, 1.1.46)."""
-    if not adhikara_in_effect("7.2.39", state, "6.4.1"):
-        return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas:
             continue
@@ -28,7 +25,7 @@ def _site(state: State):
             continue
         rest = state.terms[i + 1:]
         if any((u.meta.get("source_lakara_upadesha") or "").strip() == "liG" for u in rest) \
-                and rest and rest[0].varnas and rest[0].varnas[0].slp1 in _VAL:
+                and rest and rest[0].varnas and (rest[0].varnas[0].slp1 in _VAL or "it_agama" in rest[0].varnas[0].tags):      # val-initial, or already carrying its iṭ (a recipe applies it after 7.2.35)
             return t
     return None
 
