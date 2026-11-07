@@ -2296,6 +2296,66 @@
     }
    ],
    "source": "Kāśikā 3.2.58–59 (spṛśo'nudake kvin, ṛtvigdadhṛk… : दृश्, दिश्, स्पृश् + क्विन्)"
+  },
+  {
+   "stem": "suDI",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "DIN",
+     "dhatu_id": "04.0031"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + DIN (dhātupāṭha 4.31 dhī) + kvip (Kāśikā 6.4.85 sudhiyaḥ)"
+  },
+  {
+   "stem": "suDI",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "DIN",
+     "dhatu_id": "04.0031"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + DIN (dhātupāṭha 4.31 dhī) + kvip (Kāśikā 6.4.85 sudhiyaḥ)"
+  },
+  {
+   "stem": "suDI",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "DIN",
+     "dhatu_id": "04.0031"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + DIN (dhātupāṭha 4.31 dhī) + kvip (Kāśikā 6.4.85 sudhiyaḥ)"
   }
  ]
 }

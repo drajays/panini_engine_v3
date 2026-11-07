@@ -8,26 +8,38 @@ Pāṭha: ashtadhyayi.com data.txt row i=31095 (Art. 14).
 """
 from __future__ import annotations
 
+import json
+from functools import lru_cache
+from pathlib import Path
+
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
 
-_GATE_KEY: str = "3_1_95_kftyAH_95"
+_CATALOG = Path(__file__).resolve().parents[3] / "data" / "inputs" / "krit_pratyaya.json"
 
 
-# SHORTCUT S133: see docs/SHORTCUT_LEDGER.md
+@lru_cache(maxsize=1)
+def _kftya() -> frozenset[str]:
+    """The pratyayas the kṛt catalogue files between 3.1.96 and ṇvul-tṛcau (3.1.133): prāṅ ṇvulaḥ."""
+    key = lambda s: tuple(map(int, s.split(".")))
+    d = json.loads(_CATALOG.read_text(encoding="utf-8"))
+    return frozenset(k for k, v in d.items() if isinstance(v, dict) and v.get("vidhana_sutra")
+                     and key("3.1.96") <= key(v["vidhana_sutra"]) < key("3.1.133"))
+
+
+def _targets(state: State):
+    return [t for t in state.terms if "pratyaya" in t.tags and "kftya" not in t.tags
+            and (t.meta.get("upadesha_slp1") or "").strip() in _kftya()]
+
+
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.95", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return bool(_targets(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.95"
+    for t in _targets(state):
+        t.tags.add("kftya")
+    state.samjna_registry["3_1_95_kftyAH"] = True
     return state
 
 

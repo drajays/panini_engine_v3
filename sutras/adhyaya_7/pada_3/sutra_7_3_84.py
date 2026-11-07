@@ -73,7 +73,7 @@ def _last_ik_index(d0) -> int | None:
     # num) and शीक् (dīrgha upadhā) take no guṇa.
     # ponytail: still credited to 7.3.84 in the trace; moving it to 7.3.86
     # is the "7.3.84 misattribution" item in docs/FINAL_PLAN_2026-09.md.
-    if len(vs) >= 2 and vs[-2].slp1 in IK and vs[-2].slp1 in "iufx":
+    if len(vs) >= 2 and vs[-2].slp1 in IK and vs[-2].slp1 in "iufx" and not d0.meta.get("7_3_87_barred"):      # 7.3.87: no laghūpadha guṇa (nenijāni)
         return len(vs) - 2
     return None
 

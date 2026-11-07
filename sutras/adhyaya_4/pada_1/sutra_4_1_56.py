@@ -8,30 +8,34 @@ Pāṭha: ashtadhyayi.com data.txt row i=41056 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra, gana
+from engine.declension import n_vowels
 from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "4_1_56_na_56"
+_BLOCKS = ("4.1.54", "4.1.55")      # ṅīṣ after a svāṅga (svāṅgāc copasarjanād …, nāsikodara …)
 
 
-# SHORTCUT S133: see docs/SHORTCUT_LEDGER.md
-def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
+def _wanted(t) -> bool:
+    """A member of the krodādi gaṇa, or bahvac: three or more vowels.
+    SHORTCUT S139: bahvac is read as 'three or more ac' (the Kāśikā line is not in the repo); the svāṅga / upasarjana test stays with 4.1.54 / 4.1.55."""
+    name = t.meta.get("upadesha_slp1") or "".join(v.slp1 for v in t.varnas)
+    return gana.in_gana("kroqAdiH", name) or n_vowels(t) >= 3
+
+
+def _site(state: State):
     if not adhikara_in_effect("4.1.56", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+        return None
+    return next((t for t in state.terms
+                 if t.kind == "prakriti" and "prātipadika" in t.tags and "strīliṅga" in t.tags and _wanted(t)), None)
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None and not set(_BLOCKS) <= state.blocked_sutras
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.56"
+    state.blocked_sutras.update(_BLOCKS)
     return state
 
 
@@ -46,6 +50,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न क्रोडा-आदि-बहु-अचः",
     why_dev               = "न क्रोडादिबह्वचः — क्रोडादेः बह्वचश्च स्वाङ्गात् ङीष् (४.१.५४) न (कल्याणक्रोडा)।",
     anuvritti_from        = ('4.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

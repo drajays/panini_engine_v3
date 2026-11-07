@@ -53,20 +53,33 @@ def _target_premerge(state: State):
     return None
 
 
+def _target_inpada(state: State):
+    """Tripāḍī: the prātipadika's final n inside the merged pada, before a consonant-initial sup (paYcAn + nAm: the n of paYcan goes)."""
+    if not state.tripadi_zone or len(state.terms) != 1 or "pada" not in state.terms[0].tags:
+        return None
+    vs = state.terms[0].varnas
+    for k in range(len(vs) - 1):
+        if "pratipadika_anta_v" in vs[k].tags and vs[k].slp1 == "n" and vs[k + 1].slp1 in HAL:
+            return k
+    return None
+
+
 def cond(state: State) -> bool:
     # Branch A (default): Tripāḍī, pada-final n-lopa — but only when that
     # final n *belongs to the prātipadika* (राजन्, आत्मन् … — प्रातिपदिकान्तस्य,
     # tagged ``an_pratipadika`` at subanta tape-init), not when it is a sup
     # ending that happens to surface as n after sandhi (रामान्, सर्वान् —
     # अकारान्त स्तेम + अम्-द्वितीया).
+    # Branch D: the merged pada still shows where the prātipadika ended (varṇa tag from pada_merge)
+    if _target_inpada(state) is not None:
+        return True
+
     if state.tripadi_zone and len(state.terms) == 1 and "pada" in state.terms[0].tags:
         t0 = state.terms[0]
         if t0.meta.get("nalopa_8_2_7_done"):
             return False
         if not t0.varnas or t0.varnas[-1].slp1 != "n":
             return False
-        if "sambuddhi" in t0.tags or "ngi" in t0.tags:
-            return False  # 8.2.8 न ङिसम्बुद्ध्योः — blocks this very rule there
         return "an_pratipadika" in t0.tags   # 7.1.94's anaṅ tags the real prātipadika n; a krt_tfc stem's sup-n (भवितॄन्) is not it
 
     # Branch B (narrow demo): samāsa boundary n-lopa on the prior member (P011 dvigu).
@@ -83,6 +96,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    k = _target_inpada(state)
+    if k is not None:
+        del state.terms[0].varnas[k]
+        return state
     hit = _target_premerge(state)
     if hit is not None and not state.meta.get("purvapada_n_lopa_recipe"):
         stem = state.terms[hit]

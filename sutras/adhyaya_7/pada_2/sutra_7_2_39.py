@@ -11,21 +11,32 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology import HAL
 
-_GATE_KEY: str = "7_2_39_na_39"
+_VAL = HAL - {"y", "h"}      # val: every consonant after ha, ya
+_BLOCKS = ("7.2.38",)                  # vṛto vā (the iṭ and its dīrgha)
 
 
-# SHORTCUT S131: see docs/SHORTCUT_LEDGER.md
+def _site(state: State):
+    """A ṛ-final dhātu followed by a val-initial ārdhadhātuka tiṅ of liṅ (the sīyuṭ of āśīrliṅ is part of it, 1.1.46)."""
+    if not adhikara_in_effect("7.2.39", state, "6.4.1"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas or t.varnas[-1].slp1 not in ("f", "F"):
+            continue
+        rest = state.terms[i + 1:]
+        if any((u.meta.get("source_lakara_upadesha") or "").strip() == "liG" for u in rest) \
+                and rest and rest[0].varnas and rest[0].varnas[0].slp1 in _VAL:
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.39", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None and not set(_BLOCKS) <= state.blocked_sutras
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.39"
+    state.blocked_sutras.update(_BLOCKS)
     return state
 
 
@@ -40,6 +51,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न लिङि",
     why_dev               = "न लिङि — वृतः इटः लिङि दीर्घः न (स्तरिषीष्ट)।",
     anuvritti_from        = ('7.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

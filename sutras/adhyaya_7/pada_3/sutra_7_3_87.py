@@ -11,21 +11,32 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.declension import vowel_initial
 
-_GATE_KEY: str = "7_3_87_nAByastasy_87"
+_BLOCKS = ("7.3.86",)      # pugantalaghūpadhasya ca; 7.3.84 credits the laghūpadha guṇa too (ponytail there), so the aṅga is marked: ``7_3_87_barred``
 
 
-# SHORTCUT S131: see docs/SHORTCUT_LEDGER.md
+def _site(state: State):
+    """An abhyasta aṅga (abhyāsa + dhātu) before an ac-initial pit sārvadhātuka (the āṭ of the loṭ uttama is part of it, 1.1.46: nij + āni)."""
+    if not adhikara_in_effect("7.3.87", state, "6.4.1"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or i == 0 or "abhyasa" not in state.terms[i - 1].tags or t.meta.get("7_3_87_barred"):
+            continue
+        rest = state.terms[i + 1:]
+        tin = next((u for u in rest if "agama" not in u.tags), None)
+        if tin is not None and vowel_initial(rest[0]) \
+                and "it:pit" in tin.tags and any(g.startswith("sarvadhatuka") for g in tin.tags):
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.87", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.87"
+    _site(state).meta["7_3_87_barred"] = True
     return state
 
 
@@ -40,6 +51,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न अभ्यस्तस्य अचि पिति सार्वधातुके",
     why_dev               = "नाभ्यस्तस्याचि पिति सार्वधातुके — लघूपधगुणः न (नेनिजानि)।",
     anuvritti_from        = ('7.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

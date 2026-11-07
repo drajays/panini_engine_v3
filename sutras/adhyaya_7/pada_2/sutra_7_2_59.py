@@ -12,20 +12,31 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "7_2_59_na_59"
+_ROOTS = frozenset({"vftu~", "vfDu~", "SfDu~", "syandU~"})      # vṛt, vṛdh, śṛdh, syand
+_BLOCKS = ("7.2.35",)                                            # the iṭ of a val-initial ārdhadhātuka
 
 
-# SHORTCUT S131: see docs/SHORTCUT_LEDGER.md
+def _site(state: State):
+    """One of the four roots, in parasmaipada, before an s-initial ārdhadhātuka (sya: se)."""
+    if not adhikara_in_effect("7.2.59", state, "6.4.1"):
+        return None
+    if not any("parasmaipada" in t.tags for t in state.terms):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or (t.meta.get("upadesha_slp1") or "").strip() not in _ROOTS:
+            continue
+        pr = next((u for u in state.terms[i + 1:] if "ardhadhatuka" in u.tags and u.varnas), None)
+        if pr is not None and pr.varnas[0].slp1 == "s":
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.59", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None and not set(_BLOCKS) <= state.blocked_sutras
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.59"
+    state.blocked_sutras.update(_BLOCKS)
     return state
 
 
@@ -40,6 +51,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न वृद्‍भ्यः चतुर्भ्यः",
     why_dev               = "न वृद्भ्यश्चतुर्भ्यः — वृतुवृधुशृधुस्यन्दूभ्यः सकारादेः आर्धधातुकस्य इण् न (वर्त्स्यति)।",
     anuvritti_from        = ('7.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

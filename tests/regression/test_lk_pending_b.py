@@ -62,6 +62,10 @@ def _tin(dhatu, lakara, purusha, vacana, dhatu_tags=()):
     return s
 
 
+def _tin_pada(dhatu, lakara, purusha, vacana, pada):
+    return start_state(SimpleNamespace(kind="tinanta", args=(dhatu, lakara, purusha, vacana), pada=pada))
+
+
 def _reaches(state, gold, case="x"):
     return run_autonomously(state, gold, case, budget=120).outcome == "reached"
 
@@ -117,11 +121,21 @@ def test_3_1_94_vasarupo_utsarga_apavada_gate():
 
 
 def test_3_1_95_krtya_names_the_pratyayas_before_nvul():
-    """kṛtyāḥ (3.1.95): the pratyayas up to ṇvul-tṛcau are kṛtya (tavyat, tavya, anīyar, yat, kyap, ṇyat)."""
-    s = _krdanta_scope()
-    after = apply_rule("3.1.95", s)
-    assert after.meta["krt_kind"] == "3.1.95" and after.samjna_registry["3_1_95_kftyAH_95"] is True
-    assert not SUTRA_REGISTRY["3.1.95"].cond(_tin("pac" if False else "BU", "laT", 3, 1))
+    """kṛtyāḥ (3.1.95): the pratyayas up to ṇvul-tṛcau are kṛtya (tavyat, tavya, anīyar, yat, kyap, ṇyat) — read from the kṛt catalogue's own sūtra numbers."""
+    from engine.state import Term
+    from engine.tape_init.krdanta import build_krdanta_state
+
+    def tape(upadesha):
+        pr = Term(kind="pratyaya", varnas=list(parse_slp1_upadesha_sequence(upadesha)), tags={"pratyaya", "krt", "upadesha"}, meta={"upadesha_slp1": upadesha})
+        return build_krdanta_state([_term("kf", {"dhatu", "anga"}, upadesha_slp1="qukfY"), pr])
+
+    for up in ("tavyat", "tavya", "anIyar", "yat", "kyap", "Ryat"):
+        after = apply_rule("3.1.95", tape(up))
+        assert "kftya" in after.terms[1].tags and after.samjna_registry["3_1_95_kftyAH"] is True, up
+        assert not SUTRA_REGISTRY["3.1.95"].cond(after)                         # once
+    for up in ("Rvul", "tfc", "Ramu"):
+        assert not SUTRA_REGISTRY["3.1.95"].cond(tape(up)), up                  # ṇvul and after, or elsewhere: not kṛtya
+    assert not SUTRA_REGISTRY["3.1.95"].cond(_tin("BU", "laT", 3, 1))           # a tiṅanta tape has no kṛtya
 
 
 def test_3_4_115_lit_tin_is_ardhadhatuka():
@@ -138,15 +152,20 @@ def test_3_4_115_lit_tin_is_ardhadhatuka():
 def test_4_1_10_svasradi_take_no_nip_tap(stem, linga, gold):
     """na ṣaṭsvasrādibhyaḥ (4.1.10): svasā, mātā — no ṅīp / ṭāp (the Laghukaumudī's list: svasā tisraś catasraś ca …)."""
     before, after = _fire("4.1.10", _sub(stem, 1, 1, linga))
-    assert after.paribhasha_gates["4_1_10_na_10"] is True and after.meta["taddhita_kind"] == "4.1.10"
+    assert {"4.1.4", "4.1.5", "4.1.6", "4.1.15", "4.1.41", "4.1.66", "4.1.73"} <= after.blocked_sutras
+    _barred(after, "4.1.5")
     assert _reaches(_sub(stem, 1, 1, linga), gold)
+    _never("4.1.10", _sub("kanyA", 1, 1, "strīliṅga"))                          # any other stem: no pratiṣedha
 
 
 def test_4_1_56_krodadi_take_no_nish():
-    """na krodādibahvacaḥ (4.1.56): kalyāṇakrodā / sujaghanā keep ā — no ṅīṣ."""
-    before, after = _fire("4.1.56", _sub("kroqA", 1, 1, "strīliṅga"))
-    assert after.paribhasha_gates["4_1_56_na_56"] is True
+    """na krodādibahvacaḥ (4.1.56): kalyāṇakrodā / sujaghanā keep ā — no ṅīṣ (4.1.54 / 4.1.55 are barred)."""
+    for stem in ("kroqA", "sujaGanA"):                                           # krodādi · bahvac (four vowels)
+        before, after = _fire("4.1.56", _sub(stem, 1, 1, "strīliṅga"))
+        assert {"4.1.54", "4.1.55"} <= after.blocked_sutras
+        _barred(after, "4.1.54", "4.1.55")
     assert _reaches(_sub("kroqA", 1, 1, "strīliṅga"), "kroqA")
+    _never("4.1.56", _sub("kanyA", 1, 1, "strīliṅga"))                          # two vowels, not in the gaṇa
 
 
 def _taddhita_hand(sid_adhikara, stem="garga"):
@@ -325,10 +344,26 @@ def test_7_2_4_neti_agopit():
     assert _reaches(_tin("gupU~", "luG", 3, 1), "agopIt")
 
 
-def test_7_2_8_ned_vasi_kriti_gate():
-    """neḍ vaśi kṛti (7.2.8): no iṭ before a vaś-initial kṛt (suśarmā) — the gate is opened on an aṅga tape (the gate form is S131)."""
-    before, after = _fire("7.2.8", _tin("qukfY", "liT", 1, 1))
-    assert after.paribhasha_gates["7_2_8_neq_8"] is True and after.meta["anga_kind"] == "7.2.8"
+def _krt_tape(dhatu_upadesha, krt):
+    """HAND (S141): the kṛt is put on the dhātu by the test — the kṛt-vidhāna sūtras (3.3.90 …) are not offered by a pipeline for these pratyayas."""
+    from engine.lexicon import _dhatu_row
+    from engine.tape_init.krdanta import build_krdanta_state
+    from engine.tape_init.tinanta import dhatu_term_from_row
+
+    dh = dhatu_term_from_row(_dhatu_row({"kind": "dhatu", "upadesha": dhatu_upadesha}), "kartari", "laT")
+    dh.tags.discard("kartari")
+    pr = Term(kind="pratyaya", varnas=list(parse_slp1_upadesha_sequence(krt)), tags={"pratyaya", "krt", "upadesha"}, meta={"upadesha_slp1": krt})
+    return build_krdanta_state([dh, pr])
+
+
+def test_7_2_8_ned_vasi_kriti():
+    """neḍ vaśi kṛti (7.2.8): no iṭ before a vaś-initial kṛt (yaj + naṅ → yajña) — 7.2.35 is barred; a kṛt that is not vaś-initial keeps the question open."""
+    before, after = _fire("7.2.8", _krt_tape("yaja~", "naN"))
+    assert "7.2.35" in after.blocked_sutras
+    _barred(after, "7.2.35")
+    assert _reaches(_krt_tape("yaja~", "naN"), "yajYa")
+    _never("7.2.8", _krt_tape("yaja~", "tavyat"))                               # t is not vaś
+    _never("7.2.8", _tin("BU", "laT", 3, 1))                                    # no kṛt on a tiṅanta tape
 
 
 def test_7_2_13_krsr_bhr_vr_stu_dru_sru_shru_liti():
@@ -340,16 +375,22 @@ def test_7_2_13_krsr_bhr_vr_stu_dru_sru_shru_liti():
     _never("7.2.13", _tin("paci~", "liT", 2, 1))                                # papaciTha: any other root keeps the iṭ
 
 
-def test_7_2_39_na_lini_gate():
-    """na liṅi (7.2.39): stariṣīṣṭa — vṛta's iṭ is not lengthened in āśīrliṅ (gate form, S131)."""
-    before, after = _fire("7.2.39", _tin("stfY", "liT", 1, 1))
-    assert after.paribhasha_gates["7_2_39_na_39"] is True if "7_2_39_na_39" in after.paribhasha_gates else after.meta["anga_kind"] == "7.2.39"
+def test_7_2_39_na_lini():
+    """na liṅi (7.2.39): stariṣīṣṭa — the ṛ-final root's iṭ is not lengthened before the sīyuṭ of āśīrliṅ: 7.2.38 is barred."""
+    before, after = _fire("7.2.39", _tin_pada("stfY", "AsIrliG", 1, 1, "atmane"))
+    assert "7.2.38" in after.blocked_sutras
+    _barred(after, "7.2.38")
+    _never("7.2.39", _tin("stfY", "liT", 1, 1))                                 # not liṅ
+    _never("7.2.39", _tin_pada("BU", "AsIrliG", 1, 1, "atmane"))                # not ṛ-final
 
 
-def test_7_2_59_vrd_bhyash_catur_gate():
-    """na vṛdbhyaś caturbhyaḥ (7.2.59): vartsyati — no iṭ before sya after vṛt, vṛdh, śṛdh, syand in parasmaipada (gate form, S131)."""
-    before, after = _fire("7.2.59", _tin("vftu~", "lRT", 1, 1))
-    assert after.meta["anga_kind"] == "7.2.59"
+def test_7_2_59_vrd_bhyash_catur():
+    """na vṛdbhyaś caturbhyaḥ (7.2.59): vartsyati — no iṭ before sya after vṛt, vṛdh, śṛdh, syand in parasmaipada: 7.2.35 is barred."""
+    before, after = _fire("7.2.59", _tin_pada("vftu~", "lRT", 3, 1, "parasmai"))              # 1.3.92: vṛtādi take parasmaipada before sya / sana
+    assert "7.2.35" in after.blocked_sutras
+    _barred(after, "7.2.35")
+    _never("7.2.59", _tin_pada("vftu~", "lRT", 3, 1, "atmane"))                 # vartiṣyate: ātmanepada
+    _never("7.2.59", _tin("pac", "lRT", 3, 1))                                  # any other root
 
 
 # ── 7.3 ────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -359,10 +400,16 @@ def test_7_3_3_ny_vabhyam_padantabhyam_gate():
     assert after.meta["anga_kind"] == "7.3.3"
 
 
-def test_7_3_87_na_abhyastasya_gate():
-    """jusi ca; nābhyastasyācipiti sārvadhātuke (7.3.87): neniji — no laghūpadha guṇa for an abhyasta aṅga (gate form, S131)."""
-    before, after = _fire("7.3.87", _tin("BU", "laT", 3, 1))
-    assert after.meta["anga_kind"] == "7.3.87"
+def test_7_3_87_na_abhyastasya():
+    """jusi ca; nābhyastasyācipiti sārvadhātuke (7.3.87): nenijāni, vevijāni — no laghūpadha guṇa for an abhyasta aṅga before an ac-initial pit sārvadhātuka."""
+    for dh, gold in (("Riji~r", "nenijAni"), ("viji~r", "vevijAni"), ("vizx~", "vevizARi")):
+        before, after = _fire("7.3.87", _tin(dh, "loT", 1, 1))
+        assert "7.3.86" in after.blocked_sutras
+        _barred(after, "7.3.86")
+        assert _reaches(_tin(dh, "loT", 1, 1), gold)
+    _never("7.3.87", _tin("Riji~r", "laT", 3, 1))                               # nenekti: the tiṅ is not ac-initial
+    _never("7.3.87", _tin("pac", "loT", 1, 1))                                  # not abhyasta
+    assert _reaches(_tin("hu", "loT", 1, 1), "juhavAni")                        # the final-ik guṇa of 7.3.84 is not 7.3.86's
 
 
 # ── 8.x ────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -374,17 +421,32 @@ def test_8_1_2_dvitiya_pawat_is_amredita():
     assert s.flat_slp1() == "pawapawAyati" and _traced(s, "8.1.2")
 
 
-@pytest.mark.parametrize("rule", ["8.2.3", "8.2.8", "8.2.79"])
-def test_8_2_na_gate_sutras_on_a_pada(rule):
-    """8.2.3 na mu ne (amunā) · 8.2.8 na ṅisambuddhyoḥ (he rājan) · 8.2.79 na bhakurchuraḥ — the tripāḍī prohibitions open their gate on a pada."""
-    stem, vib, vac, lg = {"8.2.3": ("amu", 3, 1, "puṃliṅga"), "8.2.8": ("rAjan", 8, 1, "puṃliṅga"),
-                          "8.2.79": ("kuru", 1, 3, "puṃliṅga")}[rule]
-    before, after = _fire(rule, _sub(stem, vib, vac, lg))
+@pytest.mark.parametrize("rule", ["8.2.3"])
+def test_8_2_3_na_gate_sutra_on_a_pada(rule):
+    """8.2.3 na mu ne (amunā) — a tripāḍī prohibition that still opens its gate on a pada (S132: deferred, see ledger)."""
+    before, after = _fire(rule, _sub("amu", 3, 1, "puṃliṅga"))
     assert after.meta["sandhi_kind"] == rule
-    if rule == "8.2.8":
-        assert _reaches(_sub(stem, vib, vac, lg), "rAjan")                      # he rājan: the n stays
-    if rule == "8.2.3":
-        assert _reaches(_sub(stem, vib, vac, lg), "amunA")
+    assert _reaches(_sub("amu", 3, 1, "puṃliṅga"), "amunA")
+
+
+def test_8_2_8_na_ngi_sambuddhi():
+    """8.2.8 na ṅisambuddhyoḥ: he rājan, rājani — the n of the prātipadika stays (8.2.7 is barred)."""
+    before, after = _fire("8.2.8", _sub("rAjan", 8, 1, "puṃliṅga"))
+    assert "8.2.7" in after.blocked_sutras
+    _barred(after, "8.2.7")
+    for vib, gold in ((8, "rAjan"), (7, "rAjani")):
+        assert _reaches(_sub("rAjan", vib, 1, "puṃliṅga"), gold)
+    _never("8.2.8", _sub("rAjan", 1, 1, "puṃliṅga"))                           # rājā: the n goes by 8.2.7
+
+
+def test_8_2_79_na_bha_kur_chur():
+    """8.2.79 na bhakurchurām: kurvaḥ, kurutaḥ, churataḥ — no dīrgha (8.2.77 / 8.2.78 are barred) for the dhātu kur / chur."""
+    for dh, pu, gold in (("qukfY", 1, "kurvaH"), ("Cura~", 3, "CurataH")):
+        before, after = _fire("8.2.79", _tin(dh, "laT", pu, 2))
+        assert _reaches(_tin(dh, "laT", pu, 2), gold)
+        assert {"8.2.77", "8.2.78"} <= after.blocked_sutras
+        _barred(after, "8.2.77", "8.2.78")
+    _never("8.2.79", _tin("BU", "laT", 3, 1))                                    # any other dhātu
 
 
 def test_8_3_16_rors_supi_is_a_trace_of_8_3_15():

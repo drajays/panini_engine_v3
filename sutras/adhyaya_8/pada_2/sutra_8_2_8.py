@@ -10,20 +10,21 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
 
-_GATE_KEY: str = "8_2_8_na_8"
+_BLOCKS = ("8.2.7",)      # nalopaḥ prātipadikāntasya
 
 
-# SHORTCUT S132: see docs/SHORTCUT_LEDGER.md
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.8", gate_key=_GATE_KEY)
+    """The pada ends in the prātipadika's n and is a ṅi-sup form or a sambuddhi (he rājan; rājani)."""
+    if not state.tripadi_zone or len(state.terms) != 1 or "pada" not in state.terms[0].tags:
+        return False
+    t = state.terms[0]
+    return bool(t.varnas) and t.varnas[-1].slp1 == "n" and ("sambuddhi" in t.tags or "ngi" in t.tags) \
+        and not set(_BLOCKS) <= state.blocked_sutras
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.8"
+    state.blocked_sutras.update(_BLOCKS)
     return state
 
 
@@ -38,6 +39,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न ङि-सम्बुद्ध्योः",
     why_dev               = "न ङिसम्बुद्ध्योः — ङौ सम्बुद्धौ च नलोपः न (हे राजन्)।",
     anuvritti_from        = ('8.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )
