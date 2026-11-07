@@ -546,6 +546,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     PADA_MERGE_STEP,
     "1.4.110",
     "8.2.1",
+    "8.2.8",    # na NisambudDyoH — the prohibition is settled before 8.2.7 (Art. 21 Ladder 1)
     "8.2.7",    # nalopaH prAtipadikAntasya — rAjan/Atman-final n-lopa at pada-end
     "8.2.23",   # संयोगान्तस्य लोपः — pada-final cluster loses its last letter (भवान्त् → भवान्)
     "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
@@ -782,7 +783,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     _scan_pool(sandhi_ids)
     # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
-    _scan_pool(["8.2.1", "8.2.7", "8.2.23", "8.2.72", "8.2.66"])
+    _scan_pool(["8.2.1", "8.2.8", "8.2.7", "8.2.23", "8.2.72", "8.2.66"])
     s.meta.pop("tripadi_cursor", None)    # the stem as a pada (8.2.23 / 8.2.72 / 8.2.66 on its own end) is one site, the word's end another: 8.2.1 orders within a site
     _scan_pool(["6.1.113", "6.1.114", "6.1.87"])   # ru after a → u before a haś (manaru+bhyām), then a+u → o: manobhyām
 
@@ -839,9 +840,13 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
            autonomous_scanner: bool | None = None,
            anvadesha: bool = False,
+           **vivaksha: str,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
+
+    ``vivaksha`` — the speaker's intended meaning for this noun (engine/vivaksha.py: ``svaBeda``, ``antaraBeda``, ``kArakaArTa`` …),
+    recorded on the tape by engine/tape_init; the sūtras that name the meaning read it, nothing sets a tag by hand.
 
     A stem's origin (made by matup / tṛc / kvip, from the dhātu han …) is **not** an argument: it comes from the Lexicon
     (``data/inputs/subanta_lexicon.json``, AMENDMENT 22). ``engine.lexicon.compose`` runs the entry's components through the
@@ -881,6 +886,9 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         derived_pratipadika=entry is not None,
     )
     s.terms[0].tags |= origin_record
+    if vivaksha:
+        from engine.tape_init.sanadi import with_vivaksha
+        with_vivaksha(s, **vivaksha)
     if entry is not None:
         # the stem ends in the dhātu itself (kvip leaves nothing but it): its letters are the dhātu's own, for the tripāḍī rules that say
         # "dhātoḥ" (8.2.31–8.2.37) and name roots (8.2.36). The lexicon's record names the dhātu; the tape is only marked, not changed.

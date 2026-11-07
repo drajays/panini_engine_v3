@@ -15,13 +15,10 @@ from __future__ import annotations
 
 from engine import SutraRecord, SutraType, register_sutra
 from engine.state import State
+from engine import gana
 
-# Canonical twenty upasargas (SLP1)
-_PRA_ADI: frozenset[str] = frozenset({
-    "pra", "parA", "apa", "sam", "anu", "ava",
-    "nis", "nir", "dus", "dur", "vi", "A",
-    "ni", "aDi", "api", "ati", "su", "ut", "ud",
-})
+# The pra-ādi gaṇa of the Gaṇapāṭha: the upasargas (1.4.58)
+_PRA_ADI: frozenset[str] = gana.members("prAdiH")
 
 
 def cond(state: State) -> bool:

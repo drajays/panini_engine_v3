@@ -6,14 +6,18 @@ import pytest
 
 import sutras  # noqa: F401
 from engine import apply_rule
+from engine.tape_init.sanadi import with_vivaksha
 from pipelines.subanta import build_initial_state
 
 
-def st(stem, *tags, **meta):
+def st(stem, *tags, viv=None, **meta):
+    """The stem on the subanta tape; ``viv`` is the speaker's vivakṣā (engine/tape_init), the only way a sense reaches the tape."""
     s = build_initial_state(stem, 1, 1)
     s.terms[0].tags.add("prātipadika")
     s.terms[0].tags.update(tags)
     s.meta.update(meta)
+    if viv:
+        with_vivaksha(s, **viv)
     return s
 
 
@@ -45,13 +49,13 @@ def test_1_1_33_negative():
 
 def test_1_1_35_sva():
     assert "sarvanama" in run("1.1.35", st("sva")).terms[0].tags            # sva = the self's
-    assert "sarvanama" not in run("1.1.35", st("sva", "ajnati_samjna")).terms[0].tags   # sva = a kinsman
-    assert "sarvanama" not in run("1.1.35", st("sva", "dhana_samjna")).terms[0].tags    # sva = wealth
+    assert "sarvanama" not in run("1.1.35", st("sva", viv={"svaBeda": "jYAti"})).terms[0].tags   # sva = a kinsman
+    assert "sarvanama" not in run("1.1.35", st("sva", viv={"svaBeda": "Dana"})).terms[0].tags    # sva = wealth
 
 
 def test_1_1_36_antara():
-    assert "sarvanama" in run("1.1.36", st("antara", "bahiryoga")).terms[0].tags        # antare grAmAH
-    assert "sarvanama" in run("1.1.36", st("antara", "upasaMvyAna")).terms[0].tags      # antarah SATakah
+    assert "sarvanama" in run("1.1.36", st("antara", viv={"antaraBeda": "bahiryoga"})).terms[0].tags        # antare grAmAH
+    assert "sarvanama" in run("1.1.36", st("antara", viv={"antaraBeda": "upasaMvyAna"})).terms[0].tags      # antarah SATakah
     assert "sarvanama" not in run("1.1.36", st("antara")).terms[0].tags
 
 
@@ -107,23 +111,23 @@ def test_1_4_19_tasau():
 
 
 def test_1_4_24_apadana():             # grAmAd Agacchati: dhruvam apAye 'pAdAnam
-    s = run("1.4.24", run("1.4.23", st("grAma", "apadAna_source")))
+    s = run("1.4.24", run("1.4.23", st("grAma", viv={"kArakaArTa": "apAya"})))
     assert "apAdAna" in s.terms[0].tags
-    assert "apAdAna" not in run("1.4.24", st("grAma", "apadAna_source")).terms[0].tags   # no kAraka adhikara open
+    assert "apAdAna" not in run("1.4.24", st("grAma", viv={"kArakaArTa": "apAya"})).terms[0].tags   # no kAraka adhikara open
 
 
 def test_1_4_42_karana():              # sAdhakatamaM karaNam: parazunA Cinatti
-    s = run("1.4.42", st("parazu", "sADakatama"))
+    s = run("1.4.42", st("parazu", viv={"kArakaArTa": "sADakatama"}))
     assert "karaRa" in s.terms[0].tags and reg(s, "karaRa") == "sADakatama"
 
 
 def test_1_4_49_karman():              # kartur ipsitatamaM karma: odanaM pacati
-    assert "karman" in run("1.4.49", st("odana", "kartfr_Ipsita_kArman")).terms[0].tags
+    assert "karman" in run("1.4.49", st("odana", viv={"kArakaArTa": "Ipsitatama"})).terms[0].tags
     assert "karman" not in run("1.4.49", st("odana")).terms[0].tags
 
 
 def test_1_4_51_akathita():            # akathitaM ca: gAM dogDi payaH
-    assert "karman" in run("1.4.51", st("go", "akaTita_karma")).terms[0].tags
+    assert "karman" in run("1.4.51", st("go", viv={"kArakaArTa": "akaTita"})).terms[0].tags
 
 
 def test_1_4_57_ca_adi():
@@ -135,8 +139,8 @@ def test_1_4_58_pra_adi():
 
 
 def test_1_4_61_urya_adi():
-    s = run("1.4.61", st("Ury"))
-    assert "Ury" in reg(s, "gati_uryadiR") and "Ury" in reg(s, "gati_set")
+    s = run("1.4.61", st("UrI"))
+    assert "UrI" in reg(s, "gati_uryadiR") and "UrI" in reg(s, "gati_set")
 
 
 # ── 2.x ───────────────────────────────────────────────────────────────────────
@@ -157,3 +161,11 @@ def test_2_4_83_navyayibhava():        # upakumBam: am stays (no luk) -- the lup
     s = run("2.4.83", st("upakumBa", **{"2_4_83_lup_context": True}))
     assert s.meta["lup_kind"] == "2.4.83"
     assert "lup_kind" not in run("2.4.83", st("rAma")).meta
+
+
+def test_derive_records_the_vivaksha():
+    """The subanta pipeline takes the speaker's meaning and puts it on the tape (engine/tape_init); a value outside the closed schema is refused."""
+    from pipelines.subanta import derive
+    assert derive("grAma", 5, 1, "pulliṅga", kArakaArTa="apAya").vivaksha == {"kArakaArTa": "apAya"}
+    with pytest.raises(ValueError):
+        derive("grAma", 5, 1, "pulliṅga", kArakaArTa="no_such_role")

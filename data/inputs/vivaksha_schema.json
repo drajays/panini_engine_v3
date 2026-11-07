@@ -4493,6 +4493,78 @@
     ]
    }
   },
+  "svaBeda": {
+   "jYAti": {
+    "forms": [
+     "svamajYAtiDanAKyAyAmasaMjYAyAm"
+    ],
+    "sutras": [
+     "1.1.35"
+    ]
+   },
+   "Dana": {
+    "forms": [
+     "svamajYAtiDanAKyAyAmasaMjYAyAm"
+    ],
+    "sutras": [
+     "1.1.35"
+    ]
+   }
+  },
+  "antaraBeda": {
+   "bahiryoga": {
+    "forms": [
+     "bahiryoga"
+    ],
+    "sutras": [
+     "1.1.36"
+    ]
+   },
+   "upasaMvyAna": {
+    "forms": [
+     "upasaMvyAnayoH"
+    ],
+    "sutras": [
+     "1.1.36"
+    ]
+   }
+  },
+  "kArakaArTa": {
+   "apAya": {
+    "forms": [
+     "apAye"
+    ],
+    "sutras": [
+     "1.4.24"
+    ]
+   },
+   "sADakatama": {
+    "forms": [
+     "sADakatamam"
+    ],
+    "sutras": [
+     "1.4.42",
+     "1.4.43",
+     "1.4.44"
+    ]
+   },
+   "Ipsitatama": {
+    "forms": [
+     "Ipsitatamam"
+    ],
+    "sutras": [
+     "1.4.49"
+    ]
+   },
+   "akaTita": {
+    "forms": [
+     "akaTitam"
+    ],
+    "sutras": [
+     "1.4.51"
+    ]
+   }
+  },
   "jIvikArTa": {
    "jIvikArTa": {
     "forms": [

@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 
 def _eligible(state: State):
@@ -36,7 +37,7 @@ def _eligible(state: State):
         if upa != "antara":
             continue
         # Conditional grant: only in bahiryoga or upasaṃvyāna sense.
-        if "bahiryoga" not in t.tags and "upasaMvyAna" not in t.tags:
+        if not (vivaksita(state, "antaraBeda", "bahiryoga") or vivaksita(state, "antaraBeda", "upasaMvyAna")):
             continue
         yield t
 

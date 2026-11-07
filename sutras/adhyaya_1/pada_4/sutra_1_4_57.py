@@ -14,13 +14,10 @@ from __future__ import annotations
 
 from engine import SutraRecord, SutraType, register_sutra
 from engine.state import State
+from engine import gana
 
-# SLP1 ca-ādi list (canonical Ashtadhyayi ca-ādi gaṇa members)
-_CA_ADI: frozenset[str] = frozenset({
-    "ca", "vA", "ha", "aha", "eva", "evam", "nUnam", "SaSvat",
-    "yugapat", "BUyas", "kila", "Kalu", "bata", "nanu", "u", "ut",
-    "tU", "pAtam", "hanta", "Aho", "aho", "are", "hA", "hi",
-})
+# The ca-ādi gaṇa of the Gaṇapāṭha (engine/gana.py): the nipātas of 1.4.57
+_CA_ADI: frozenset[str] = gana.members("cAdiH")
 
 
 def cond(state: State) -> bool:

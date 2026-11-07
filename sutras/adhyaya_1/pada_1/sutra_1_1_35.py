@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 
 def _eligible(state: State):
@@ -35,8 +36,8 @@ def _eligible(state: State):
         upa = t.meta.get("upadesha_slp1")
         if upa != "sva":
             continue
-        # Niyama: blocked when the stem is used in ajñāti or dhana sense.
-        if "ajnati_samjna" in t.tags or "dhana_samjna" in t.tags:
+        # Niyama: blocked when the speaker means a kinsman or wealth (ajñātidhanākhyāyām).
+        if vivaksita(state, "svaBeda", "jYAti") or vivaksita(state, "svaBeda", "Dana"):
             continue
         yield t
 

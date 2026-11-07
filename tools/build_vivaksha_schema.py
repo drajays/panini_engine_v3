@@ -119,6 +119,12 @@ VOCABULARY = {
     "abhiDeya": {"manuzya": ["manuzye"], "apaRya": ["apaRye"]},
     # 4.1.65 – 66: the stem names a human tribe / class (manuzya-jAteH): ūṅ after u-final (kuru → kurūḥ)
     "jAtiBeda": {"manuzyajAti": ["jAteH"]},
+    # 1.1.35: sva as a kinsman or wealth is not a sarvanāma (svam ajñātidhanākhyāyām) · 1.1.36: antara of an outside / an inner garment is
+    "svaBeda": {"jYAti": ["svamajYAtiDanAKyAyAmasaMjYAyAm"], "Dana": ["svamajYAtiDanAKyAyAmasaMjYAyAm"]},       # the samagra of 1.1.35 is one run-together word
+    "antaraBeda": {"bahiryoga": ["bahiryoga"], "upasaMvyAna": ["upasaMvyAnayoH"]},
+    # 1.4.24 / 42 / 49 / 51: the role the speaker gives the noun in the sentence (kārakāṇi vivakṣātaḥ): the fixed point of a separation,
+    # the most effective means, what the agent most wishes to reach, what is not otherwise said
+    "kArakaArTa": {"apAya": ["apAye"], "sADakatama": ["sADakatamam"], "Ipsitatama": ["Ipsitatamam"], "akaTita": ["akaTitam"]},
     "jIvikArTa": {"jIvikArTa": ["jIvikArTe"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},

@@ -16,11 +16,10 @@ from __future__ import annotations
 
 from engine import SutraRecord, SutraType, register_sutra
 from engine.state import State
+from engine import gana
 
-_URYA_ADI: frozenset[str] = frozenset({
-    "Ury", "tiras", "antarA", "hAs", "hiMs", "viHs", "AvIs", "AkUs",
-    "AzIs", "sAt", "sat", "vibA", "AgUs",
-})
+# The ūry-ādi gaṇa of the Gaṇapāṭha
+_URYA_ADI: frozenset[str] = gana.members("UryAdiH")
 
 
 def cond(state: State) -> bool:

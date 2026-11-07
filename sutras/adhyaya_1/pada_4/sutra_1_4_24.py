@@ -17,12 +17,16 @@ from __future__ import annotations
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
 from engine.state  import State
+from engine.vivaksha import vivaksita
 
 SAMJNA_KEY = "1_4_24_apAdAna"
 META_DONE  = "1_4_24_done"
 
-# Source tag set by the pipeline to flag apādāna candidates.
-_TRIGGER: frozenset[str] = frozenset({"apadAna_source"})
+# The speaker's intended role of the noun: the fixed point of a separation (apāye dhruvam).
+
+
+def _role(state: State) -> bool:
+    return vivaksita(state, "kArakaArTa", "apAya")
 
 
 def cond(state: State) -> bool:
@@ -31,7 +35,7 @@ def cond(state: State) -> bool:
     for t in state.terms:
         if META_DONE in t.meta:
             continue
-        if _TRIGGER & t.tags:
+        if _role(state) and "prātipadika" in t.tags:
             return True
     return False
 
@@ -40,7 +44,7 @@ def act(state: State) -> State:
     for t in state.terms:
         if META_DONE in t.meta:
             continue
-        if _TRIGGER & t.tags:
+        if _role(state) and "prātipadika" in t.tags:
             t.tags.add("apAdAna")
             t.meta[META_DONE] = True
     state.samjna_registry[SAMJNA_KEY] = True

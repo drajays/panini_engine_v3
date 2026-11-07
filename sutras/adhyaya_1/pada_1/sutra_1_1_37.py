@@ -20,60 +20,11 @@ Pāṭha: ashtadhyayi.com data.txt row i=11037 (Art. 14).
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra, gana
 from engine.state import State
 
-# Module-level frozenset — traditional svarādi-nipāta list (SLP1 transliteration).
-SVARADI_NIPATA_SLP1: frozenset = frozenset({
-    "svar",      # the head of the gaṇa
-    "antar",     # antara as nipāta-indeclinable
-    "prAtar",    # prātar (in the morning)
-    "aDas",      # adhas (below)
-    "upari",     # upari (above)
-    "Avis",      # āvis (manifestly)
-    "bahis",     # bahis (outside)
-    "agre",      # agre (in front)
-    "A",         # ā (up to)
-    "i",         # i (particle)
-    "u",         # u (particle)
-    "RO",        # particle
-    "svasti",    # svasti (well-being)
-    "alam",      # alam (enough)
-    "namas",     # namas (salutation)
-    "nanu",      # nanu (is it not)
-    "mA",        # mā (prohibitive)
-    "mA~",       # mā (with anunāsika marking)
-    "mAgra",     # māgra
-    "mAGam",     # māgham
-    "vi",        # vi (apart)
-    "su",        # su (well)
-    "dus",       # dus (ill)
-    "puras",     # puras (in front)
-    "purA",      # purā (formerly)
-    "tiras",     # tiras (across/secretly)
-    "purA~",     # purā (with anunāsika marking)
-    "sad",       # sat
-    "saT",       # saṭ
-    "sacA",      # sacā (together)
-    "sAkam",     # sākam (together)
-    "sAkza",     # sākṣa (in person)
-    "svayam",    # svayam (by oneself)
-    "kintu",     # kintu (but)
-    "paramtu",   # paramtu (however)
-    "nahi",      # nahi (not at all)
-    "nAnu",      # nānu
-    "aho",       # aho (exclamation)
-    "hanta",     # hanta (alas / well)
-    "evam",      # evam (thus)
-    "taTā",      # tathā (so)
-    "yaTā",      # yathā (as)
-    "iti",       # iti (thus / quote-marker)
-    "cet",       # cet (if)
-    "yadi",      # yadi (if)
-    "kim",       # kim (what? — as particle)
-    "ku",        # ku (ill / how?)
-    "kuvid",     # kuvid (perhaps)
-})
+# The nipātas of the Gaṇapāṭha: the svarādi, ca-ādi (1.4.57) and pra-ādi (1.4.58) gaṇas (engine/gana.py)
+_NIPATA_GANAS = ("svarAdiH", "cAdiH", "prAdiH")
 
 
 def _eligible(state: State):
@@ -81,7 +32,7 @@ def _eligible(state: State):
         if "avyaya" in t.tags:
             continue
         upa = t.meta.get("upadesha_slp1")
-        if t.kind == "nipata" or (isinstance(upa, str) and upa in SVARADI_NIPATA_SLP1):
+        if t.kind == "nipata" or (isinstance(upa, str) and any(gana.in_gana(g, upa) for g in _NIPATA_GANAS)):
             yield t
 
 
@@ -115,4 +66,4 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
-__all__ = ["SVARADI_NIPATA_SLP1", "SUTRA"]
+__all__ = ["SUTRA"]

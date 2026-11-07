@@ -17,18 +17,22 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.vivaksha import vivaksita
 
 META_DONE   = "1_4_42_karaka_done"
-_TRIGGER    = frozenset({"sADakatama"})
 _SAMJNA     = "karaRa"
 _GATE_KEY   = "karaRa"
+
+
+def _role(state: State) -> bool:
+    return vivaksita(state, "kArakaArTa", "sADakatama")      # the speaker's intended role: the most effective means
 
 
 def cond(state: State) -> bool:
     if state.samjna_registry.get(_GATE_KEY) is None:
         return True
     for t in state.terms:
-        if META_DONE not in t.meta and _TRIGGER & t.tags:
+        if META_DONE not in t.meta and _role(state) and "prātipadika" in t.tags:
             return True
     return False
 
@@ -37,7 +41,7 @@ def act(state: State) -> State:
     if state.samjna_registry.get(_GATE_KEY) is None:
         state.samjna_registry[_GATE_KEY] = "sADakatama"
     for t in state.terms:
-        if META_DONE not in t.meta and _TRIGGER & t.tags:
+        if META_DONE not in t.meta and _role(state) and "prātipadika" in t.tags:
             t.tags.add(_SAMJNA)
             t.meta[META_DONE] = True
     state.samjna_registry["1_4_42_karaRa"] = True
