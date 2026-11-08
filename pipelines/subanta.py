@@ -560,6 +560,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.2.81",   # eta Id bahuvacane — e → I (amI), d → m
     "8.2.39",   # JalAM jaSo'nte — jhal pada-final -> jaS (vAk -> vAg, etc.)
     "8.2.66",
+    "8.2.68",   # ahan → ahaH / aho- (the n is not 8.2.7's)
     "8.3.15",   # ru → visarga at avasāna or before khar
     "8.3.16",   # roḥ supi (trace/ANUVADA; structural work done by 8.3.15)
     "8.3.24",   # n → anusvāra before jhal
@@ -789,7 +790,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     _scan_pool(sandhi_ids)
     # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
-    _scan_pool(["8.2.1", "8.2.8", "8.2.7", "8.2.23", "8.2.72", "8.2.66"])
+    _scan_pool(["8.2.1", "8.2.8", "8.2.7", "8.2.23", "8.2.72", "8.2.66", "8.2.68"])
     s.meta.pop("tripadi_cursor", None)    # the stem as a pada (8.2.23 / 8.2.72 / 8.2.66 on its own end) is one site, the word's end another: 8.2.1 orders within a site
     _scan_pool(["6.1.113", "6.1.114", "6.1.87"])   # ru after a → u before a haś (manaru+bhyām), then a+u → o: manobhyām
 

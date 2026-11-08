@@ -10,19 +10,39 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from phonology    import mk, HAL
 
-_GATE_KEY: str = "8_2_68_ahan_68"
+
+def _flat(varnas) -> str:
+    return "".join(v.slp1 for v in varnas)
+
+
+def _site(state: State):
+    """(term index, varṇa index) of the n of the pada ahan, which becomes ru (ahobhiḥ, ahobhyām, ahaḥ; Kāśikā 8.2.68). Not 8.2.7's: that sūtra leaves ahan's n alone."""
+    if not state.tripadi_zone and state.phase != "tripadi" and len(state.terms) < 2:
+        return None
+    for i, t in enumerate(state.terms):
+        if "an_pratipadika" in t.tags and t.varnas and _flat(t.varnas) == "ahan":      # premerge: ahan + a hal-initial sup, or alone (su lupta)
+            nxt = state.terms[i + 1] if i + 1 < len(state.terms) else None
+            if nxt is None or not nxt.varnas or nxt.varnas[0].slp1 in HAL:
+                return i, len(t.varnas) - 1
+        if len(state.terms) == 1 and "pada" in t.tags:                                  # merged pada: the prātipadika's final n is tagged
+            vs = t.varnas
+            for k in range(len(vs) - 1):
+                if "pratipadika_anta_v" in vs[k].tags and vs[k].slp1 == "n" and _flat(vs[:k + 1]) == "ahan" and vs[k + 1].slp1 in HAL:
+                    return i, k
+    return None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.68", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.68"
+    ti, vi = _site(state)
+    ru = mk("r")
+    ru.tags.add("ru_intermediate")
+    state.terms[ti].varnas[vi] = ru
     return state
 
 

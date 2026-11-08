@@ -32,6 +32,11 @@ from engine.state import State
 from phonology.pratyahara import HAL
 
 
+def _ahan(varnas) -> bool:
+    """The word ahan: 8.2.68 names it without the n-lopa (Kāśikā: 'nalopam akṛtvā nirdeśo jñāpakaḥ'), so its n is for ru, not for this sūtra."""
+    return "".join(v.slp1 for v in varnas) == "ahan"
+
+
 def _target_premerge(state: State):
     """PRE-MERGE: an_pratipadika stem ending in 'n', followed by a HAL-initial sup."""
     if len(state.terms) < 2:
@@ -42,7 +47,7 @@ def _target_premerge(state: State):
             continue
         if stem.meta.get("nalopa_8_2_7_done"):
             continue
-        if not stem.varnas or stem.varnas[-1].slp1 != "n":
+        if not stem.varnas or stem.varnas[-1].slp1 != "n" or _ahan(stem.varnas):
             continue
         wit = "agama" in pratyaya.tags and "it:wit" in pratyaya.tags and i + 2 < len(state.terms) and {"taddhita", "pratyaya"} <= state.terms[i + 2].tags      # maṭ of ḍaṭ (5.2.49): first part of the pratyaya (1.1.46)
         if not ({"sup"} <= pratyaya.tags or {"taddhita", "pratyaya"} <= pratyaya.tags or wit) or not pratyaya.varnas:
@@ -59,7 +64,7 @@ def _target_inpada(state: State):
         return None
     vs = state.terms[0].varnas
     for k in range(len(vs) - 1):
-        if "pratipadika_anta_v" in vs[k].tags and vs[k].slp1 == "n" and vs[k + 1].slp1 in HAL:
+        if "pratipadika_anta_v" in vs[k].tags and vs[k].slp1 == "n" and vs[k + 1].slp1 in HAL and not _ahan(vs[:k + 1]):
             return k
     return None
 
@@ -78,7 +83,7 @@ def cond(state: State) -> bool:
         t0 = state.terms[0]
         if t0.meta.get("nalopa_8_2_7_done"):
             return False
-        if not t0.varnas or t0.varnas[-1].slp1 != "n":
+        if not t0.varnas or t0.varnas[-1].slp1 != "n" or _ahan(t0.varnas):
             return False
         return "an_pratipadika" in t0.tags   # 7.1.94's anaṅ tags the real prātipadika n; a krt_tfc stem's sup-n (भवितॄन्) is not it
 
