@@ -63,7 +63,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id="2.4.40",
-    sutra_type=SutraType.VIDHI,
+    sutra_type=SutraType.VIBHASHA,
     text_slp1='liwyanyatarasyAm',
     text_dev='लिट्यन्यतरस्याम्',
     samagra_slp1="ArDaDAtuke liwi anyatarasyAm adaH Gasx",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
@@ -71,6 +71,8 @@ SUTRA = SutraRecord(
     padaccheda_dev="लिटि / अन्यतरस्याम्",
     why_dev="लिटि अद्-धातोः घस्-आदेशः — प०३४ (*जक्षतुः*)।",
     anuvritti_from=("2.4.1",),
+    vibhasha_default=True,       # jaghasitha (ghasl) is the reading the engine always gave; choose({"2.4.40": False}) / explore() give āditha
+    vibhasha_scope=cond,
     cond=cond,
     act=act,
 )

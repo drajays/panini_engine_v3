@@ -9,22 +9,29 @@ Pāṭha: ashtadhyayi.com data.txt row i=72066 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "7_2_66_iqattyarti_66"
+_BLOCKS = ("7.2.61", "7.2.62", "7.2.63")      # the iṭ-less readings of thal, which these three roots do not allow
+_ROOTS  = ("ada", "f", "vyaya")               # atti, arti, vyayati (upadeśa, without the anubandha ~)
+
+
+def _site(state: State):
+    """ad, ṛ (arti) and vyay before thal in liṭ: the iṭ stays (āditha, āriṭha, vivyayitha; Kāśikā 7.2.66)."""
+    if not any((t.meta.get("upadesha_slp1") or "").strip() == "Tal" for t in state.terms) \
+            or not any((t.meta.get("source_lakara_upadesha") or "").strip() == "liT" for t in state.terms):
+        return None
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if dh is not None and (dh.meta.get("upadesha_slp1") or "").replace("~", "").strip() in _ROOTS:
+        return dh
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.66", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None and not set(_BLOCKS) <= state.blocked_sutras
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.66"
+    state.blocked_sutras.update(_BLOCKS)
     return state
 
 
@@ -39,6 +46,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "इट् अत्ति-अर्ति-व्ययतीनाम्",
     why_dev               = "(सूत्रम् 7.2.66) इडत्त्यर्तिव्ययतीनाम्।",
     anuvritti_from        = ('7.1.1',),
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

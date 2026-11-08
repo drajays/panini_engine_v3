@@ -819,7 +819,10 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = _lit_samprasarana(state)  # 6.1.15 वचिस्वपियजादीनां किति: वच् → उच् before a kit ending (ऊचिव, ईजिम)
         state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
+        state = apply_rule("7.2.66", state)   # atty-arti-vyayatīnām: these keep the iṭ, so the three below must not fire
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
+        state = apply_rule("7.2.61", state)   # acas tāsvat thalya… — the iṭ-less alternative
+        state = apply_rule("7.2.62", state)   # upadeśe 'tvataḥ …
         state = apply_rule("7.2.35", state)
         state = apply_rule("7.2.37", state)
         state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
@@ -972,6 +975,8 @@ def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -
     state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     state = apply_rule("2.4.40", state)
+    if not state.meta.get("2_4_40_ad_to_gas"):      # anyatarasyām: the other branch keeps ad (āda, āditha) — the general liṭ spine
+        return _derive_lit(state, pada_key, purusha, vacana)
     state = run_it_prakarana(state)
 
     tin_std = _select_tin_adesha("liT", pada_key, purusha, vacana)
