@@ -170,6 +170,10 @@ def act(state: State) -> State:
     kind = d0.meta.get("urN_rapara_pending")
     ins_after = d0.meta.get("urN_rapara_after_index")
     v_rl = mk("r" if kind == "r" else "l")
+    prev = d0.varnas[ins_after] if isinstance(ins_after, int) and 0 <= ins_after < len(d0.varnas) else d0.varnas[-1]
+    if "dhatu_adesha_v" in prev.tags:         # the rapara r goes with the ādeśa it follows, so it is inside the root (gir)
+        v_rl.tags.add("dhatu_v")
+        v_rl.tags.add("dhatu_adesha_v")
     if isinstance(ins_after, int) and -1 <= ins_after < len(d0.varnas):
         d0.varnas.insert(ins_after + 1, v_rl)
     else:

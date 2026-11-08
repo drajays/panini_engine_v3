@@ -98,6 +98,8 @@ def act(state: State) -> State:
         i, k = mid
         new = parse_slp1_upadesha_sequence(_JHAL_TO_JAS[state.terms[i].varnas[k].slp1])[0]
         new.tags.add("jas_8_2_39")
+        if state.terms[i].varnas[k].tags & {"dhatu_v", "mula_dhatu_v", "dhatu_adesha_v"}:
+            new.tags |= {"dhatu_v", "dhatu_adesha_v"}      # the ādeśa stands in the root (1.1.56): 8.2.63 still reads naś
         state.terms[i].varnas[k] = new
         return state
     i = _find_target(state)
@@ -106,7 +108,10 @@ def act(state: State) -> State:
     t = state.terms[i]
     old = t.varnas[-1].slp1
     new = _JHAL_TO_JAS[old]
+    old_v = t.varnas[-1]
     t.varnas[-1] = parse_slp1_upadesha_sequence(new)[0]
+    if old_v.tags & {"dhatu_v", "mula_dhatu_v", "dhatu_adesha_v"}:
+        t.varnas[-1].tags |= {"dhatu_v", "dhatu_adesha_v"}      # the ādeśa stands in the root (1.1.56): 8.2.63 still reads naś
     t.tags.add("8_2_39_done")
     state.samjna_registry[f"8_2_39_{old}_to_{new}"] = True
     state.meta["__why_now_dev__"] = (

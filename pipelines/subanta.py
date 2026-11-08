@@ -558,6 +558,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
     "8.2.80",   # adaso'ser dAd u do maH — d → m, following vowel → u/U
     "8.2.81",   # eta Id bahuvacane — e → I (amI), d → m
+    "8.2.63",   # naśer vā — naś: the final → ku, or not (nak / naṭ)
     "8.2.39",   # JalAM jaSo'nte — jhal pada-final -> jaS (vAk -> vAg, etc.)
     "8.2.66",
     "8.2.68",   # ahan → ahaH / aho- (the n is not 8.2.7's)
@@ -840,6 +841,12 @@ def _recipe_only(stem_slp1: str, linga: str, anvadesha: bool) -> bool:
     return anvadesha or (stem_slp1, "*") in _RECIPE_ONLY or (stem_slp1, linga) in _RECIPE_ONLY
 
 
+def _norm_root(x: str) -> str:
+    """A stem's dhātu letters against the Dhātupāṭha's: 6.1.65 (ṇ-/ṣ-initial roots n-/s-) and 6.4.15 (a lengthened upadhā) leave the root itself."""
+    x = x.translate(str.maketrans("AIUF", "aiuf"))
+    return ("n" + x[1:] if x[:1] == "R" else "s" + x[1:] if x[:1] == "z" else x)
+
+
 def derive(stem_slp1: str, vibhakti: int, vacana: int,
            linga: str = "pulliṅga",
            *,
@@ -907,7 +914,7 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
                 except KeyError:
                     continue
                 vs = s.terms[0].varnas
-                if root and "".join(v.slp1 for v in vs).endswith(root):
+                if root and _norm_root("".join(v.slp1 for v in vs)).endswith(_norm_root(root)):
                     for v in vs[len(vs) - len(root):]:
                         v.tags |= {"dhatu_v", "mula_dhatu_v"}
                     s.terms[0].meta["it_lopa_done"] = (tag.split(":", 1)[1], root)

@@ -1,5 +1,5 @@
 """
-7.2.44  स्वरतिसूतिसूयतिधूञूदितो वा  —  VIDHI
+7.2.44  स्वरतिसूतिसूयतिधूञूदितो वा  —  VIBHASHA
 
 Padaccheda: स्वरति-सूति-सूयति-धूञ्-ऊदितः वा
 
@@ -9,29 +9,44 @@ Pāṭha: ashtadhyayi.com data.txt row i=72044 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import HAL
 
-_GATE_KEY: str = "7_2_44_svaratisUt_44"
+_BLOCKS = ("7.2.35",)      # the iṭ-less branch
+_NAMES = frozenset({"svf", "sUN", "sU", "DUY"})     # svarati, sūti, sūyati, dhūñ; every other root is ūdit
+
+
+def _site(state: State):
+    """svarati, sūti, sūyati, dhūñ and an ūdit dhātu (kṣamū, gāhū …), before a val-initial ārdhadhātuka: the iṭ is optional (cakṣame / cakṣamiṣe …)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags:
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if not (up.replace("~", "") in _NAMES or "U~" in up):
+            continue
+        for u in state.terms[i + 1:]:
+            if "ardhadhatuka" in u.tags and u.varnas and u.varnas[0].slp1 in HAL and u.varnas[0].slp1 not in ("y", "h"):
+                return t
+            if u.varnas:
+                break
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.44", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.44"
+    if "7.2.35" in state.blocked_sutras:      # an aniṭ dhātu (7.2.10): this branch gives the iṭ back
+        state.blocked_sutras.discard("7.2.35")
+    else:
+        state.blocked_sutras.update(_BLOCKS)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.44",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
     text_slp1             = "svaratisUtisUyatiDUYUdito vA",
     text_dev              = "स्वरतिसूतिसूयतिधूञूदितो वा",
     samagra_slp1          = "aNgasya svaratisUtisUyatiDUYUditaH vA ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
@@ -39,6 +54,9 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "स्वरति-सूति-सूयति-धूञ्-ऊदितः वा",
     why_dev               = "(सूत्रम् 7.2.44) स्वरतिसूतिसूयतिधूञूदितो वा।",
     anuvritti_from        = ('7.1.1',),
+    vibhasha_default      = False,     # the iṭ is the default reading; explore() gives the iṭ-less one
+    vibhasha_scope        = cond,
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

@@ -38,6 +38,8 @@ def _find(state: State):
     for i in range(len(vs) - 1):
         if vs[i + 1].slp1 not in JHAL:
             continue
+        if vs[i].slp1 == "n" and "padanta_v" in vs[i].tags:
+            continue
         if vs[i].slp1 == "n" or (vs[i].slp1 == "m" and "dhatu_v" in vs[i].tags):
             return i
     return None

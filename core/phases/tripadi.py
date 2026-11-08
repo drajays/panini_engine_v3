@@ -32,6 +32,7 @@ from engine.state import State
 _TRIPADI_SPINE: tuple[str, ...] = (
     # ── 8.2 — Asiddha gate + pada-final operations ──────────────────────────
     "8.2.1",    # pūrvatrāsiddham — opens Tripāḍī zone (idempotent gate)
+    "8.2.21",   # aci vibhāṣā — r of gir before a vowel → l, optionally (gilati)
     "8.2.23",   # saṃyogāntalopa — drops final cluster (ant→an)
     "8.2.25",   # dhi ca — s drops before dh (ऐधिध्वम्, भविताध्वे)
     "8.2.27",   # hrasvād aṅgāt — sic-s drops after a short aṅga before jhal (अकृत)
@@ -43,9 +44,12 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.2.34",   # नहो धः — नह्'s ह् → ध् (apavāda of 8.2.31)
     "8.2.31",   # हो ढः — ह् → ढ् before jhal / at pada-end
     "8.2.37",   # एकाचो बशो भष्… — दुघ्+स् → धुघ्+स्
+    "8.2.63",   # naśer vā — naś: ś/ṣ → ku, or not (नक् / नट्)
     "8.2.39",   # jhal padānte → jaś (t→d at word-end)
     "8.2.40",   # jhaṣ+t/th → dh (लब्ध, दुग्ध+ति→दुग्ध्धि; idempotent gate)
     "8.2.41",   # षढोः कः सि — ष्/ढ् before स् → क् (लेक्ष्यति, दंक्ष्यति)
+    "8.2.64",   # mo no dhātoḥ — dhātu-final m → n at pada end (प्रशान्)
+    "8.2.65",   # mvośca — dhātu-final m → n before m / v
     "8.2.66",   # sasajuṣo ruḥ — s→r at word-end
     "8.2.79",   # na bhakurchurām — the prohibition first (blocks 8.2.77 / 8.2.78 for kur, chur)
     "8.2.77",   # hali ca — dhātu r/v + hal: दीव्यति

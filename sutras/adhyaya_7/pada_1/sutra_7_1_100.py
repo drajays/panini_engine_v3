@@ -75,7 +75,8 @@ def act(state: State) -> State:
     if i is None:
         return state
     d0 = state.terms[i]
-    d0.varnas[-1] = mk("i")
+    old = d0.varnas[-1]
+    d0.varnas[-1] = mk("i", *((old.tags - {"mula_dhatu_v"}) | {"dhatu_adesha_v"}))   # the ādeśa stays part of the root (sthānivat): 8.2.21 reads gir
     d0.meta["urN_rapara_pending"] = "r"
     d0.meta[_DONE] = True
     d0.meta["anga_guna_7_3_84"] = True

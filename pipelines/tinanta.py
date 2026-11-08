@@ -691,6 +691,7 @@ def _it_agama(state: State) -> State:
     state = apply_rule("7.2.10", state)
     state = apply_rule("7.2.42", state)   # vṛto vā iṭ in ātmanepada liṅ / sic
     state = apply_rule("7.2.43", state)   # ṛtaś ca saṁyogādeḥ — likewise
+    state = apply_rule("7.2.44", state)   # svaratisūti…ūdito vā — the iṭ is optional
     state = apply_rule("7.2.35", state)
     state = apply_rule("7.2.37", state)   # ग्रहोऽलिटि दीर्घः: ग्रहीता
     state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
@@ -823,6 +824,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
         state = apply_rule("7.2.61", state)   # acas tāsvat thalya… — the iṭ-less alternative
         state = apply_rule("7.2.62", state)   # upadeśe 'tvataḥ …
+        state = apply_rule("7.2.44", state)   # ūdit dhātu: the iṭ is optional (cakṣaṇva)
         state = apply_rule("7.2.35", state)
         state = apply_rule("7.2.37", state)
         state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:

@@ -42,6 +42,8 @@ def _site(state: State):
             continue
         if t.varnas[-1].slp1 not in _NASAL or t.varnas[-2].slp1 not in "aiuf" or t.varnas[-3].slp1 in "aAiIuUfFxXeEoO":
             continue
+        if _flat(t) == "han":      # SHORTCUT S143: the stems vṛtrahan, śatruhan keep a short a; the reason (han's own n) is not written
+            continue
         h = _head(state, i)
         if not _kvi_or_jhal_kngit(h):
             continue
