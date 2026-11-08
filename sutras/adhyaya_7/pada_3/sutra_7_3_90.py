@@ -1,5 +1,5 @@
 """
-7.3.90  ऊर्णोतेर्विभाषा  —  VIDHI
+7.3.90  ऊर्णोतेर्विभाषा  —  VIBHASHA
 
 Padaccheda: ऊर्णोतेः विभाषा
 
@@ -9,29 +9,30 @@ Pāṭha: ashtadhyayi.com data.txt row i=73090 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from phonology    import mk
+from sutras.adhyaya_7.pada_3.sutra_7_3_89 import _find
 from engine.state import State
 
-_GATE_KEY: str = "7_3_90_UrRoterviB_90"
-
-
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.90", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state, urnu=True) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.90"
+    i = _find(state, urnu=True)
+    if i is None:
+        return state
+    t = state.terms[i]
+    t.varnas[-1] = mk("O")                  # the vṛddhi reading: ऊर्णौति; declined, 7.3.84's guṇa gives ऊर्णोति
+    t.meta["7_3_89_done"] = True
+    t.meta["anga_guna_7_3_84"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.3.90",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_default      = False,     # the guṇa reading is the default; explore() gives the vṛddhi one
+    vibhasha_scope        = lambda state: _find(state, urnu=True) is not None,
     text_slp1             = "UrRoterviBAzA",
     text_dev              = "ऊर्णोतेर्विभाषा",
     samagra_slp1          = "aNgasya UrRoteH viBAzA piti sArvaDAtuke vfdDiH hali",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

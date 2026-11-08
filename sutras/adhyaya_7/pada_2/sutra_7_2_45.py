@@ -1,5 +1,5 @@
 """
-7.2.45  रधादिभ्यश्च  —  VIDHI
+7.2.45  रधादिभ्यश्च  —  VIBHASHA
 
 Padaccheda: रध-आदिभ्यः च
 
@@ -9,29 +9,28 @@ Pāṭha: ashtadhyayi.com data.txt row i=72045 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from sutras.adhyaya_7.pada_2.sutra_7_2_44 import _BLOCKS, site, toggle_it
 
-_GATE_KEY: str = "7_2_45_raDAdiByaS_45"
+_NAMES = frozenset({"raDa","RaSa","tfpa","dfpa","druha","muha","zRuha","zRiha"})
+
+
+def _site(state: State):
+    """रधादिभ्यश्च — radh, naś, tṛp, dṛp, druh, muh, snuh, snih: the iṭ before a val-initial ārdhadhātuka is optional."""
+    return site(state, _NAMES)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.45", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.45"
-    return state
+    return toggle_it(state)
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.45",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
     text_slp1             = "raDAdiByaSca",
     text_dev              = "रधादिभ्यश्च",
     samagra_slp1          = "aNgasya raDAdiByaH ca ArDaDAtukasya iw valAdeH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
@@ -39,6 +38,9 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "रध-आदिभ्यः च",
     why_dev               = "(सूत्रम् 7.2.45) रधादिभ्यश्च।",
     anuvritti_from        = ('7.1.1',),
+    vibhasha_default      = False,     # the default reading is 7.2.35 / 7.2.10 as they stand; explore() gives the other
+    vibhasha_scope        = cond,
+    blocks_sutra_ids      = _BLOCKS,
     cond                  = cond,
     act                   = act,
 )

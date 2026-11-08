@@ -21,7 +21,8 @@ Pāṇinian sequence varies by cell; key sūtras used:
   7.2.93  yūyavayau jasi               (asm → vaya before jas)
   7.2.94  tvāhau sau                   (asm → aha before su)
   7.2.95  tubhyamahyau ṅayi            (asm → mahya before ṅe)
-  7.2.96  tvamāv ekavacane             (asm → ma in ekavacana; asm → mama for ṅas)
+  7.2.97  tvamāv ekavacane             (asm → ma in ekavacana)
+  7.2.96  tavamamau ṅasi               (asm → mama for ṅas)
   6.1.97  atah guṇe (extended)         (consecutive a+a → a pararūpa)
   6.1.101 akah savarṇe dīrghaḥ        (a+ā → ā within stem)
   6.1.107 ami pūrvaḥ                   (stem-final vowel + am-initial a)
@@ -138,9 +139,9 @@ def _cell_1_3(s: State) -> State:
 def _cell_2_1(s: State) -> State:
     """माम् — dvitīyā ekavacana."""
     # pratyaya 'am' already (no 7.1.28 needed)
-    s.meta["7_2_96_ma_arm"] = True
-    s = apply_rule("7.2.96", s)       # asm → ma
-    s.meta.pop("7_2_96_ma_arm", None)
+    s.meta["7_2_97_ma_arm"] = True
+    s = apply_rule("7.2.97", s)       # asm → ma
+    s.meta.pop("7_2_97_ma_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a
     s.meta["7_2_87_arm"] = True
     s = apply_rule("7.2.87", s)       # d → ā (dvitīyā)
@@ -179,9 +180,9 @@ def _cell_2_3(s: State) -> State:
 
 def _cell_3_1(s: State) -> State:
     """मया — tṛtīyā ekavacana."""
-    s.meta["7_2_96_ma_arm"] = True
-    s = apply_rule("7.2.96", s)       # asm → ma
-    s.meta.pop("7_2_96_ma_arm", None)
+    s.meta["7_2_97_ma_arm"] = True
+    s = apply_rule("7.2.97", s)       # asm → ma
+    s.meta.pop("7_2_97_ma_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a
     s.meta["7_2_89_arm"] = True
     s = apply_rule("7.2.89", s)       # d → y (before vowel ā of ṭā)
@@ -244,9 +245,9 @@ def _cell_5_1(s: State) -> State:
     s.meta["7_1_32_arm"] = True
     s = apply_rule("7.1.32", s)       # ṅasi → at
     s.meta.pop("7_1_32_arm", None)
-    s.meta["7_2_96_ma_arm"] = True
-    s = apply_rule("7.2.96", s)       # asm → ma
-    s.meta.pop("7_2_96_ma_arm", None)
+    s.meta["7_2_97_ma_arm"] = True
+    s = apply_rule("7.2.97", s)       # asm → ma
+    s.meta.pop("7_2_97_ma_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a (intra-stem)
     s = apply_rule("7.2.90", s)       # del d (Mode A)
     s = apply_rule("6.1.97", s)       # a+a cross-term (ma + at boundary)
@@ -315,9 +316,9 @@ def _cell_6_3(s: State) -> State:
 
 def _cell_7_1(s: State) -> State:
     """मयि — saptami ekavacana."""
-    s.meta["7_2_96_ma_arm"] = True
-    s = apply_rule("7.2.96", s)       # asm → ma
-    s.meta.pop("7_2_96_ma_arm", None)
+    s.meta["7_2_97_ma_arm"] = True
+    s = apply_rule("7.2.97", s)       # asm → ma
+    s.meta.pop("7_2_97_ma_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a
     s.meta["7_2_89_arm"] = True
     s = apply_rule("7.2.89", s)       # d → y (before i of ṅi)

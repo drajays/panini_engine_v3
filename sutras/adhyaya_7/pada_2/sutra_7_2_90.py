@@ -41,7 +41,7 @@ def _find_target(state: State):
     """
     _ASMAD_DONE_TAGS = {
         "7_2_94_done", "7_2_92_done", "7_2_93_done",
-        "7_2_95_done", "7_2_96_done",
+        "7_2_95_done", "7_2_96_done", "7_2_97_done",
     }
     for i, t in enumerate(state.terms):
         if "anga" not in t.tags:

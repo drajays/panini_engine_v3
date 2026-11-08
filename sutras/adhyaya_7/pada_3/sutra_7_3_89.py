@@ -19,7 +19,7 @@ _GATE_KEY: str = "7_3_89_uto_89"
 _AC = frozenset("aAiIuUfFxXeEoO")
 
 
-def _find(state: State) -> int | None:
+def _find(state: State, urnu: bool = False) -> int | None:
     """उतो वृद्धिर्लुकि हलि (नाभ्यस्तस्य): after śap-luk, a root ending in short u
     takes vṛddhi before a hal-initial pit ending — क्षौति, यौति, स्तौति."""
     if not state.meta.get("2_4_72_sap_luk"):
@@ -29,8 +29,8 @@ def _find(state: State) -> int | None:
             continue
         if not t.varnas or t.varnas[-1].slp1 != "u":
             return None
-        if (t.meta.get("upadesha_slp1") or "").strip() == "UrRuY":
-            return None          # ऊर्णोतेर्विभाषा (7.3.90): vṛddhi or guṇa (7.3.91 गुणोऽपृक्ते); the guṇa branch is the one output (और्णोत्)
+        if ((t.meta.get("upadesha_slp1") or "").strip() == "UrRuY") != urnu:
+            return None          # ऊर्णोतेर्विभाषा (7.3.90) takes ūrṇu: vṛddhi or, declined, guṇa (7.3.91 गुणोऽपृक्ते: और्णोत्)
         tin = next((u for u in state.terms[i + 1:] if u.varnas), None)
         if tin is None or tin.varnas[0].slp1 in _AC or "kngiti" in tin.tags or tin.meta.get("is_apit"):
             return None

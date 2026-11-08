@@ -9,22 +9,38 @@ Pāṭha: ashtadhyayi.com data.txt row i=73092 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from phonology.varna import parse_slp1_upadesha_sequence
 from engine.state import State
 
-_GATE_KEY: str = "7_3_92_tfRaha_92"
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+_PIT_TIN_UPADESHA: frozenset = frozenset({"tip", "sip", "mip"})
+_DONE = "7_3_92_im_agama_done"
+
+
+def _target(state: State):
+    """तृणह इम् — the tṛṇah of tṛha~ (tṛṇa-infixed) takes the mit īm before a hal-initial pit sārvadhātuka: तृणेढि, तृणेह्मि."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or t.meta.get(_DONE) or "abhyasa" in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").replace("~", "") != "tfha" or not t.varnas or t.varnas[-1].slp1 != "h":
+            continue
+        tin = state.terms[i + 1]
+        if "pratyaya" in tin.tags and tin.varnas and tin.varnas[0].slp1 not in _AC \
+                and (tin.meta.get("upadesha_slp1") or "").strip() in _PIT_TIN_UPADESHA:
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.92", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _target(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.92"
+    t = _target(state)
+    if t is not None:
+        t.varnas.insert(len(t.varnas) - 1, parse_slp1_upadesha_sequence("i")[0])      # mit: after the root's last vowel (6.1.87 then a + i → e)
+        t.meta[_DONE] = True
     return state
 
 

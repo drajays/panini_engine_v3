@@ -16,12 +16,13 @@ _BLOCKS = ("7.2.38",)      # vṛto vā
 
 def _site(state: State):
     """vṛ / a ṝ-final dhātu, then a sic that begins with its iṭ, then a parasmaipada tiṅ: no dīrgha (atāriṣṭām, avāriṣṭām; Kāśikā 7.2.40)."""
-    if not any("parasmaipada" in t.tags for t in state.terms):
+    if not any(g in t.tags for t in state.terms for g in ("parasmaipada", "parasmaipada_1_4_99")) and state.meta.get("pada") != "parasmaipada":
         return None
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas:
             continue
-        if t.varnas[-1].slp1 != "F" and (t.meta.get("upadesha_slp1") or "").strip() not in ("vfY", "vfN"):
+        up = (t.meta.get("upadesha_slp1") or "").strip()      # the upadeśa, not the tape: vṛddhi may already have changed the aṅga (amAr)
+        if not up.rstrip("^\\").endswith("F") and up not in ("vfY", "vfN"):
             continue
         nxt = state.terms[i + 1]
         if (nxt.meta.get("upadesha_slp1") or "").strip() == "sic" and nxt.varnas and "it_agama" in nxt.varnas[0].tags:

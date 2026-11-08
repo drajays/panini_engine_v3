@@ -606,6 +606,7 @@ def _run_lat_kartari_bhuvadi_spine(
 
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5", state)
+    state = apply_rule("7.3.92", state)   # tṛṇaha im — before the ato dīrgho of the next line
     state = apply_rule("7.3.101", state)
     state = P00_guna_7_3_84(state)
     # 1.1.51 उरण् रपरः: guṇa of ṛ is ar, not a (वृत् → वर्तते, not वतते) —
@@ -692,6 +693,8 @@ def _it_agama(state: State) -> State:
     state = apply_rule("7.2.42", state)   # vṛto vā iṭ in ātmanepada liṅ / sic
     state = apply_rule("7.2.43", state)   # ṛtaś ca saṁyogādeḥ — likewise
     state = apply_rule("7.2.44", state)   # svaratisūti…ūdito vā — the iṭ is optional
+    for _sid in ("7.2.45", "7.2.48", "7.2.57", "7.2.70", "7.2.71"):     # radhādi, iṣ-sah-lubh-ruṣ-riṣ (ta-), kṛt-cṛt-chṛd-tṛd-nṛt (se 'sici)
+        state = apply_rule(_sid, state)
     state = apply_rule("7.2.35", state)
     state = apply_rule("7.2.37", state)   # ग्रहोऽलिटि दीर्घः: ग्रहीता
     state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
@@ -825,6 +828,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.61", state)   # acas tāsvat thalya… — the iṭ-less alternative
         state = apply_rule("7.2.62", state)   # upadeśe 'tvataḥ …
         state = apply_rule("7.2.44", state)   # ūdit dhātu: the iṭ is optional (cakṣaṇva)
+        state = apply_rule("7.2.45", state)   # radhādi
         state = apply_rule("7.2.35", state)
         state = apply_rule("7.2.37", state)
         state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
@@ -1530,6 +1534,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # sici vṛddhi (parasmaipada): 7.2.1 for a vowel-final aṅga (नी → नै);
         # 7.2.3 for a hal-final one, only when iṭ was blocked (7.2.4 नेटि):
         # पच् → पाच् (अपाक्षीत्). Both self-gate on sic + parasmaipada.
+        state = apply_rule("7.2.5", state)   # hmyanta-kṣaṇa-śvasa-jāgṛ-ṇi-śvi-eḍitām: no vṛddhi
+        state = apply_rule("7.2.6", state)   # ūrṇoter vibhāṣā
         state = apply_rule("7.2.1", state)
         state = apply_rule("1.1.51", state)   # ṛ-vṛddhi is ār (अहार्षीत्)
         if "7.2.35" in state.blocked_sutras:

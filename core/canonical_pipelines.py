@@ -1867,6 +1867,7 @@ def P00_sap_luk(s: State) -> State:
     rules — 7.3.89 उतो वृद्धिर्लुकि हलि (क्षौति), 7.2.76 रुदादिभ्यः (रोदिति)."""
     s = apply_rule("2.4.72", s)
     s = apply_rule("7.3.89", s)
+    s = apply_rule("7.3.90", s)   # ūrṇoter vibhāṣā — ūrṇu: vṛddhi, or (declined) the guṇa of 7.3.84
     s = apply_rule("7.2.76", s)
     s = apply_rule("7.3.98", s)       # रुदश्च पञ्चभ्यः: īṭ before apṛkta (अरोदीत्)
     return s

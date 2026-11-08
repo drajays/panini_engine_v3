@@ -9,22 +9,34 @@ Pāṭha: ashtadhyayi.com data.txt row i=72070 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "7_2_70_fdDanoH_70"
+_AFFIX = frozenset({"sya", "syat"})
+
+
+def _site(state: State):
+    """ऋद्धनोः स्ये — an ṛ-final dhātu and han take the iṭ before sya (जरिष्यति, हनिष्यति)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags:
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip().replace("^", "").replace("\\", "")
+        if not (up.replace("~", "").endswith(("f", "F")) or up.replace("~", "") == "han"):
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is not None and (nxt.meta.get("upadesha_slp1") or "").strip() in _AFFIX and "it_7_2_70" not in nxt.tags:
+            return nxt
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.70", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.70"
+    nxt = _site(state)
+    if nxt is not None:
+        nxt.tags.add("it_7_2_70")
+        state.blocked_sutras.discard("7.2.35")      # the iṭ is given even to an aniṭ dhātu (7.2.10 is set aside)
     return state
 
 

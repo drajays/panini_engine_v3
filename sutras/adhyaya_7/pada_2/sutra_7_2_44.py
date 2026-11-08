@@ -16,20 +16,33 @@ _BLOCKS = ("7.2.35",)      # the iṭ-less branch
 _NAMES = frozenset({"svf", "sUN", "sU", "DUY"})     # svarati, sūti, sūyati, dhūñ; every other root is ūdit
 
 
-def _site(state: State):
-    """svarati, sūti, sūyati, dhūñ and an ūdit dhātu (kṣamū, gāhū …), before a val-initial ārdhadhātuka: the iṭ is optional (cakṣame / cakṣamiṣe …)."""
+def site(state: State, names, first=None, ud: bool = False):
+    """The dhātu (upadeśa in ``names``, or ūdit when ``ud``) before an ārdhadhātuka that begins with ``first`` (a val consonant by default)."""
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if not (up.replace("~", "") in _NAMES or "U~" in up):
+        if not (up.replace("~", "") in names or (ud and "U~" in up)):
             continue
         for u in state.terms[i + 1:]:
-            if "ardhadhatuka" in u.tags and u.varnas and u.varnas[0].slp1 in HAL and u.varnas[0].slp1 not in ("y", "h"):
+            if "ardhadhatuka" in u.tags and u.varnas and (u.varnas[0].slp1 == first if first else u.varnas[0].slp1 in HAL and u.varnas[0].slp1 not in ("y", "h")):
                 return t
             if u.varnas:
                 break
     return None
+
+
+def toggle_it(state: State) -> State:
+    """The vibhāṣā on iṭ: the default reading keeps 7.2.35's iṭ (or, for an aniṭ dhātu, lacks it); the other reading reverses it."""
+    if "7.2.35" in state.blocked_sutras:      # an aniṭ dhātu (7.2.10): this branch gives the iṭ back
+        state.blocked_sutras.discard("7.2.35")
+    else:
+        state.blocked_sutras.update(_BLOCKS)
+    return state
+
+
+def _site(state: State):
+    return site(state, _NAMES, ud=True)
 
 
 def cond(state: State) -> bool:
@@ -37,11 +50,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if "7.2.35" in state.blocked_sutras:      # an aniṭ dhātu (7.2.10): this branch gives the iṭ back
-        state.blocked_sutras.discard("7.2.35")
-    else:
-        state.blocked_sutras.update(_BLOCKS)
-    return state
+    return toggle_it(state)
 
 
 SUTRA = SutraRecord(

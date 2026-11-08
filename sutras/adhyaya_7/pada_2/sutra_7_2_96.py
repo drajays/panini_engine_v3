@@ -3,7 +3,7 @@
 
 Padaccheda: त्व-मौ एकवचने / तव-ममौ ङसि
 
-Two modes for asmad stem replacement in ekavacana context:
+Only the ṅas genitive singular (asm → mama) is this rule; the general ekavacana ma / tva is 7.2.97.
 
 Mode A (general ekavacana: ṭā, ṅi, am, ṅasi/at): asm → ma
   arm flag "7_2_96_ma_arm":
@@ -26,23 +26,6 @@ from engine.pronoun_stem import PRONOUN_PREFIX, prefix_len, stem_key
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _find_target_ma(state: State):
-    """Find stem for 'ma' replacement (general ekavacana)."""
-    if not state.meta.get("7_2_96_ma_arm"):
-        return None
-    for i, t in enumerate(state.terms):
-        if stem_key(t) not in PRONOUN_PREFIX:
-            continue
-        if "anga" not in t.tags:
-            continue
-        if "7_2_96_done" in t.tags:
-            continue
-        if not prefix_len(t):
-            continue
-        return i
-    return None
-
-
 def _find_target_mama(state: State):
     """Find stem for 'mama' replacement (ṅas genitive singular)."""
     if not state.meta.get("7_2_96_mama_arm"):
@@ -61,7 +44,7 @@ def _find_target_mama(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_target_ma(state) is not None or _find_target_mama(state) is not None
+    return _find_target_mama(state) is not None
 
 
 def act(state: State) -> State:
@@ -74,16 +57,6 @@ def act(state: State) -> State:
         # result: [m, a, m, a, a, d]
         stem.tags.add("7_2_96_done")
         state.samjna_registry["7_2_96_asm_to_mama"] = True
-        return state
-
-    i_ma = _find_target_ma(state)
-    if i_ma is not None:
-        stem = state.terms[i_ma]
-        replacement = parse_slp1_upadesha_sequence({"asmad": "ma", "yuzmad": "tva"}[stem_key(stem)])
-        stem.varnas = replacement + list(stem.varnas[prefix_len(stem):])
-        # result: [m, a, a, d]
-        stem.tags.add("7_2_96_done")
-        state.samjna_registry["7_2_96_asm_to_ma"] = True
         return state
 
     return state
