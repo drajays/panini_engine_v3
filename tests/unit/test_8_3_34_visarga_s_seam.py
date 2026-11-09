@@ -41,3 +41,12 @@ def test_3_4_109_jus_after_abhyasta():
     for dh, want in (("02.0067", "ajAgaruH"), ("02.0068", "adaridruH")):
         s = derive(dh, "laG", "kartari", 3, 3)
         assert s.flat_slp1() == want and any(t["sutra_id"] == "3.4.109" and t["status"] == "APPLIED" for t in s.trace)
+
+
+def test_8_2_73_74_75_sip_tip_lopa():
+    from pipelines.tinanta import derive
+    def f(d, n):
+        return {b.surface_slp1 for b in explore(lambda: derive(d, "laG", "kartari", n, 1, pada="parasmai"))}
+    assert {"aBinaH", "aBinat"} <= f("07.0002", 2)       # 8.2.75 (d-final dhātu + sip: ru or d)
+    assert {"acakAH", "acakAt"} <= f("02.0069", 2)       # 8.2.74
+    assert "acakAt" in f("02.0069", 3) and "acakAH" not in f("02.0069", 3)   # 8.2.73 tipi: d

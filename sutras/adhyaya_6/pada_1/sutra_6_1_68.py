@@ -159,6 +159,7 @@ def act(state: State) -> State:
     if j is not None:
         state.terms[j].varnas = []                  # लोपः of the apṛkta ti/si
         state.terms[j].meta["6_1_68_tin_lopa"] = True
+        state.meta["tin_lopa_of"] = (state.terms[j].meta.get("upadesha_slp1") or "").strip()      # tip / sip: pratyayalakṣaṇa for 8.2.73–75 (the pada has swallowed the term)
         return state
     i = _find_eligible_boundary(state)
     if i is None:

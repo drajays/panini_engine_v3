@@ -10,19 +10,25 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from phonology    import mk
 
-_GATE_KEY: str = "8_2_73_tipyanaste_73"
+
+def _site(state: State):
+    """the pada's last letter when a tip/sip was lopa'd (6.1.68) and the pada ends in s."""
+    if not state.tripadi_zone or len(state.terms) != 1 or state.meta.get("tin_lopa_of") not in ("tip",):
+        return None
+    vs = state.terms[0].varnas
+    return vs[-1] if vs and vs[-1].slp1 == "s" and "tin_lopa_8_2_7x_done" not in vs[-1].tags else None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.73", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.73"
+    v = _site(state)
+    state.terms[0].varnas[-1] = mk("d")      # tipi: nityam d (acakād bhavān)
+    state.terms[0].varnas[-1].tags.add("tin_lopa_8_2_7x_done")
     return state
 
 
@@ -37,6 +43,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "तिपि अन्-अस्तेः",
     why_dev               = "(सूत्रम् 8.2.73) तिप्यनस्तेः।",
     anuvritti_from        = ('8.1.1',),
+    apavada_of            = ("8.2.66",),      # sip/tip: d (and ru) instead of the general s → ru
     cond                  = cond,
     act                   = act,
 )
