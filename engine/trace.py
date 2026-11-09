@@ -212,8 +212,11 @@ def extract_chronological_sutra_sequence(trace: List[Dict[str, Any]]) -> List[st
 
 def chronological_prev_sutra_id(trace: List[Dict[str, Any]]) -> Optional[str]:
     """Last non-structural sūtra on ``trace`` before the next ``apply_rule`` call."""
-    seq = extract_chronological_sutra_sequence(trace)
-    return seq[-1] if seq else None
+    for step in reversed(trace):
+        sid = step.get("sutra_id", "")
+        if sid and not sid.startswith("__"):
+            return sid
+    return None
 
 
 def attach_chronological_transition(

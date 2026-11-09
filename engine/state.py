@@ -51,6 +51,43 @@ class Varna:
         return Varna(slp1=self.slp1, dev=self.dev, tags=set(self.tags))
 
 
+_ATOMS = (str, int, float, bool, type(None), frozenset)
+
+
+def _flat(v: Any) -> bool:
+    return type(v) in _ATOMS or (type(v) is tuple and all(type(x) in _ATOMS for x in v))
+
+
+def _quick(v: Any):
+    """A copy of ``v`` when it is atoms, a flat tuple, or a list/dict of those (one level of dicts inside a list); else NotImplemented."""
+    t = type(v)
+    if _flat(v):
+        return v
+    if t is dict and all(_flat(x) for x in v.values()):
+        return dict(v)
+    if t is list:
+        out = []
+        for x in v:
+            if _flat(x):
+                out.append(x)
+            elif type(x) is dict and all(_flat(y) for y in x.values()):
+                out.append(dict(x))
+            else:
+                return NotImplemented
+        return out
+    return NotImplemented
+
+
+def copy_meta(meta: Dict[str, Any]) -> Dict[str, Any]:
+    """deepcopy(meta), but flat values (atoms, tuples, lists/dicts of atoms) are copied directly; the rest go through one shared deepcopy memo."""
+    memo: Dict[int, Any] = {}
+    out = {}
+    for k, v in meta.items():
+        c = _quick(v)
+        out[k] = deepcopy(v, memo) if c is NotImplemented else c
+    return out
+
+
 # ═════════════════════════════════════════════════════════════════════════
 # TERM
 # ═════════════════════════════════════════════════════════════════════════
@@ -86,7 +123,7 @@ class Term:
             kind   = self.kind,
             varnas = [v.clone() for v in self.varnas],
             tags   = set(self.tags),
-            meta   = deepcopy(self.meta),
+            meta   = copy_meta(self.meta),
         )
 
     # Convenience accessors (never read forbidden fields).
@@ -169,7 +206,7 @@ class State:
             tripadi_zone     = self.tripadi_zone,
             phase            = self.phase,
             trace            = [dict(s) for s in self.trace],
-            meta             = deepcopy(self.meta),
+            meta             = copy_meta(self.meta),
             vivaksha         = dict(self.vivaksha),
         )
 
