@@ -88,6 +88,8 @@ def _spec(label: str, source: str, kind: str, first: str, result: str):
     if source == "ashtadhyayi.com" and kind == "subanta":
         m = re.match(r"^(\S+) (\S+) (\d) →", label)
         stem = first.split("+")[0].strip()
+        if m and any("ऀ" <= c <= "ॿ" for c in m.group(1)):
+            stem = _slp1(m.group(1))            # the label's own word is the stem; the first step may already be the finished form
         if m and m.group(2) in _VIB_DEV and re.match(r"^[A-Za-z]+$", stem):
             return ("subanta?", stem, None, _VIB_DEV[m.group(2)], int(m.group(3))), expected, None   # linga unknown: tried in turn
     m = re.match(r"^([A-Za-z]+) \+ ([A-Za-z~]+)$", (first or "").strip())     # "pati + wA": the first step names the stem and one sup
