@@ -17,6 +17,8 @@ Narrow spine:
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
@@ -48,8 +50,8 @@ def derive_BitzIzwa() -> State:
     s = P00_ashir_atmane_suw_yalopa_merge(s)
 
     # Two s-kāras occur here (sī + suṭ); apply ṣatva twice.
-    s = apply_rule("8.3.59", s)
-    s = apply_rule("8.3.59", s)
+    s = P00_satva(s)
+    s = P00_satva(s)
     s = apply_rule("8.4.55", s)
     s = apply_rule("8.4.41", s)
     return s

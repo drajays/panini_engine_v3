@@ -12,6 +12,8 @@ Target SLP1: **acaEzIt** (अचैषीत्).
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import sutras  # noqa: F401
 
 from engine       import apply_rule
@@ -47,7 +49,7 @@ def _enter_tripadi_and_finish(state: State) -> State:
     s = state
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s = apply_rule("8.3.59", s)  # satva in tripadi
+    s = P00_satva(s)  # satva in tripadi
     return s
 
 

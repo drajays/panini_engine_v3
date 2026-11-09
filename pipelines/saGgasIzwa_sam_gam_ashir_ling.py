@@ -23,6 +23,8 @@ Narrow spine:
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
@@ -64,8 +66,8 @@ def derive_saGgasIzwa() -> State:
     s = apply_rule("6.4.37", s)
     s = P00_ashir_atmane_suw_yalopa_merge(s)
     s = apply_rule("8.3.23", s)
-    s = apply_rule("8.3.59", s)
-    s = apply_rule("8.3.59", s)
+    s = P00_satva(s)
+    s = P00_satva(s)
     s = apply_rule("8.4.58", s)
     s = apply_rule("8.4.41", s)
     return s

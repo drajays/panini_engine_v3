@@ -17,6 +17,8 @@ Narrow spine:
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import P00_abhyasa_trim, P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti, P00_san_dvitva
@@ -55,7 +57,7 @@ def derive_rurudizati() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s = apply_rule("8.3.59", s)
+    s = P00_satva(s)
     return s
 
 

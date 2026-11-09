@@ -63,6 +63,8 @@ Gaṇa → vikaraṇa map (implemented in _apply_vikarana):
 # ── CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected ──
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import json
 from functools import lru_cache
 from pathlib import Path
@@ -2051,7 +2053,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("8.4.68", state)
     else:
         state = P00_tripadi_rutva_visarga(state)
-        state = apply_rule("8.3.59", state)   # s → ṣ after IK in pratyaya (sya → ṣya)
+        state = P00_satva(state)   # s → ṣ after IK in pratyaya (sya → ṣya)
         state = apply_rule("8.4.68", state)   # trace marker
 
     return state
@@ -2931,7 +2933,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = _merge_pada(state)
     state = apply_rule("6.1.97", state)
     state = apply_rule("8.2.1", state)
-    state = apply_rule("8.3.59", state)
+    state = P00_satva(state)
     return state
 
 
@@ -3148,7 +3150,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)   # full phase (8.4.40 अच्छेत्स्यत …)
-    state = apply_rule("8.3.59", state)    # s→ṣ after IK (sya→ṣya)
+    state = P00_satva(state)    # s→ṣ after IK (sya→ṣya)
 
     return state
 
@@ -3427,7 +3429,7 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
 
     state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
-    state = apply_rule("8.3.59", state)   # suṭ-s → ṣ (z) after ciṇ-i (iK)
+    state = P00_satva(state)   # suṭ-s → ṣ (z) after ciṇ-i (iK)
 
     return state
 
@@ -3855,7 +3857,7 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     state = _merge_pada(state)
     # ── TRIPĀḌĪ ───────────────────────────────────────────────────────────
     state = P00_tripadi_rutva_visarga(state)
-    state = apply_rule("8.3.59", state)   # s→ṣ after iṭ-i (in sya: iṣya)
+    state = P00_satva(state)   # s→ṣ after iṭ-i (in sya: iṣya)
     state = apply_rule("8.4.68", state)
 
     return state

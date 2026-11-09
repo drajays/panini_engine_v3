@@ -157,6 +157,8 @@ def _ubhayapadi(dhatu_id: str) -> bool:
 def attempt(spec, expected: str, sid: str, typ: str) -> dict:
     """Run one example (for `subanta?` try each liṅga). {ok, why, spec, observed, statuses}: ok = some reading equals the attested form AND fires the sūtra."""
     specs = [spec] if spec[0] != "subanta?" else [("subanta", spec[1], l, spec[3], spec[4]) for l in _LINGA.values()]
+    if spec[0] == "subanta?" and spec[1].endswith("z"):      # the database writes the s-stem as its visible ṣ (धनुष्): the engine's stem is …s
+        specs += [("subanta", spec[1][:-1] + "s", l, spec[3], spec[4]) for l in _LINGA.values()]
     if spec[0] == "tinanta" and _ubhayapadi(spec[1]):       # an ubhayapadī root has both padas; a strictly one-pada root is NOT forced (a real disagreement stays a FAIL)
         specs += [spec + ("parasmai",), spec + ("atmane",)]
     okst = OK_STATUS.get(typ, _DEFAULT_OK)

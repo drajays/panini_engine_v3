@@ -57,7 +57,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     # ── 8.3 — visarga, ṣatva ────────────────────────────────────────────────
     "8.3.15",   # khari visarjanīyaḥ — r→ḥ
     "8.3.24",   # naścopādhā anusvāraḥ — n→M before consonant
-    "8.3.59",   # ādeśasya — ṣatva after IK in pratyaya-s (fixed: IK not word-final guard)
+    "8.3.58", "8.3.59",   # ādeśasya — ṣatva after IK in pratyaya-s (fixed: IK not word-final guard)
     "8.3.60",   # śāsi/vasi/ghasi ṣatva (idempotent: 8_3_60_satva_done flag)
     # ── 8.4 — assimilation ──────────────────────────────────────────────────
     "8.4.37",   # padāntasya — a pada-final n stays (vṛkṣān): tags n, 8.4.1/8.4.2 pass over

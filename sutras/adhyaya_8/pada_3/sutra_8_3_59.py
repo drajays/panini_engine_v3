@@ -43,7 +43,15 @@ _IN_KUK_PREV = frozenset({"i", "I", "u", "U", "f", "F", "e", "E", "o", "O",
 # Characters transparent for ṣatva look-back: semivowels, anusvāra (M), visarga (H).
 # Anusvāra and visarga (from 8.3.24/8.3.15) do not interrupt the iK context that
 # triggers ṣatva — scan back through them to find the preceding iK vowel.
-_SEMIVOWELS = frozenset({"y", "v", "r", "l", "M", "H"})
+_SEMIVOWELS = frozenset({"y", "v", "r", "l"})
+VYAVAYA_TAG = "satva_vyavaya_8_3_58"     # 8.3.58 tags the one anusvāra / visarga / śar it lets ṣatva look past
+
+
+def eligible_s(t, i: int) -> bool:
+    """An s that 8.3.59 may reach: not done, not pada-final, and an ādeśa / pratyaya s (not the stem's or dhātu's own)."""
+    v = t.varnas[i]
+    return (v.slp1 == "s" and "satva_done" not in v.tags and i < len(t.varnas) - 1
+            and "mula_dhatu_v" not in v.tags and "mula_prakrti_v" not in v.tags)
 
 
 def _find_target(state: State):
@@ -75,7 +83,7 @@ def _find_target(state: State):
             return i
         # Scan back through semivowels to find iK (for suṭ-s after sīy-y)
         j = i - 1
-        while j >= 1 and t.varnas[j].slp1 in _SEMIVOWELS:
+        while j >= 1 and (t.varnas[j].slp1 in _SEMIVOWELS or VYAVAYA_TAG in t.varnas[j].tags):
             j -= 1
         if j >= 0 and t.varnas[j].slp1 in _IN_KUK_PREV:
             return i

@@ -17,6 +17,8 @@ This is a narrow luṅ demo that exists to exercise:
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
+from core.canonical_pipelines import P00_satva
+
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import P00_it_halantyam_lopa_yathasankhyam, P00_luN_lakara_cli_sic, P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base
@@ -83,7 +85,7 @@ def derive_aDhyagIzwa() -> State:
     # Tripāḍī: ṣatva + ṣṭutva.
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s = apply_rule("8.3.59", s)
+    s = P00_satva(s)
     s = apply_rule("8.4.41", s)
     return s
 
