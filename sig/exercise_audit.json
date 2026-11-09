@@ -1,9 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 103,
+   "FAIL": 99,
    "NO_EXAMPLE": 228,
-   "DONE": 9
+   "DONE": 13
   },
   "by_type": {
    "NIYAMA": {
@@ -15,14 +15,17 @@
     "NO_EXAMPLE": 6
    },
    "VIBHASHA": {
-    "FAIL": 4,
+    "FAIL": 3,
     "NO_EXAMPLE": 3,
-    "DONE": 2
+    "DONE": 3
    },
    "VIDHI": {
     "NO_EXAMPLE": 213,
-    "FAIL": 94,
+    "FAIL": 91,
     "DONE": 7
+   },
+   "PRATISHEDHA": {
+    "DONE": 3
    }
   },
   "n": 340
@@ -5249,23 +5252,85 @@
    "negatives": [],
    "reasons": [
     "readings ['BavatO'] ≠ expected Bavati",
-    "readings ['mamajjiTa'] ≠ expected mamaNkTa",
+    "readings ['mamadkTa', 'mamajjiTa'] ≠ expected mamaNkTa",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.79": {
    "id": "8.3.79",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "readings ['tutuviDve'] ≠ expected tutuviQve",
-    "readings ['yuyuviDve'] ≠ expected yuyuviQve",
-    "readings ['vfzIDvam'] ≠ expected vArizIQvam"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0029",
+      "liT",
+      "karmani",
+      2,
+      3
+     ],
+     "observed": "tutuviQve",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "tutuviQve",
+     "deriv": 5914
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0027",
+      "liT",
+      "karmani",
+      2,
+      3
+     ],
+     "observed": "yuyuviQve",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "yuyuviQve",
+     "deriv": 5915
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "01.0511",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "expected": "kAmayate",
+     "deriv": 6776,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "06.0151",
+      "liT",
+      "kartari",
+      2,
+      1
+     ],
+     "expected": "mamaNkTa",
+     "deriv": 7847,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "8.3.87": {
    "id": "8.3.87",
@@ -5376,31 +5441,171 @@
   },
   "8.4.37": {
    "id": "8.4.37",
-   "type": "VIDHI",
+   "type": "PRATISHEDHA",
    "subkind": "<<तस्माच्छसो नः पुंसि>> [[6.1.103]] इति ",
-   "verdict": "FAIL",
-   "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
+   "verdict": "DONE",
+   "examples_tried": 3,
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "rAma",
+      "pulliṅga",
+      2,
+      3
+     ],
+     "observed": "rAmAn",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "rAmAn",
+     "deriv": 627
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "sarva",
+      "pulliṅga",
+      2,
+      3
+     ],
+     "observed": "sarvAn",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "sarvAn",
+     "deriv": 929
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "katara",
+      "pulliṅga",
+      2,
+      3
+     ],
+     "observed": "katarAn",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "katarAn",
+     "deriv": 1029
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "pUrva",
+      null,
+      1,
+      1
+     ],
+     "expected": "pUrvaH",
+     "deriv": 1275,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "Bavati",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form rAmAn is right but 8.4.37 did not fire (trace status absent): another path made it",
-    "form sarvAn is right but 8.4.37 did not fire (trace status absent): another path made it",
-    "form katarAn is right but 8.4.37 did not fire (trace status absent): another path made it",
     "kṛdanta: the engine has no generic krt+dhātu entry point",
     "taddhita: the sense (taddhitArtha) is not in the example"
    ]
   },
   "8.4.39": {
    "id": "8.4.39",
-   "type": "VIDHI",
+   "type": "PRATISHEDHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 2,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "05.0028",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "tfpnoti",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "tfpnoti",
+     "deriv": 7904
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "09.0055",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "kzuBnAti",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "kzuBnAti",
+     "deriv": 7905
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "01.0511",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "expected": "kAmayate",
+     "deriv": 6776,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "06.0151",
+      "liT",
+      "kartari",
+      2,
+      1
+     ],
+     "expected": "mamaNkTa",
+     "deriv": 7847,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form tfpnoti is right but 8.4.39 did not fire (trace status absent): another path made it",
-    "form kzuBnAti is right but 8.4.39 did not fire (trace status absent): another path made it",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
@@ -5422,16 +5627,97 @@
   },
   "8.4.44": {
    "id": "8.4.44",
-   "type": "VIBHASHA",
+   "type": "PRATISHEDHA",
    "subkind": "<<स्तोः श्चुना श्चुः>> [[8.4.40]] इति नक",
-   "verdict": "FAIL",
-   "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
+   "verdict": "DONE",
+   "examples_tried": 3,
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "09.0059",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "aSnAti",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "aSnAti",
+     "deriv": 7897
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "05.0036",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "dASnoti",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "dASnoti",
+     "deriv": 7898
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "09.0058",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "kliSnAti",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "kliSnAti",
+     "deriv": 7899
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "01.0511",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "expected": "kAmayate",
+     "deriv": 6776,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "06.0151",
+      "liT",
+      "kartari",
+      2,
+      1
+     ],
+     "expected": "mamaNkTa",
+     "deriv": 7847,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form aSnAti is right but 8.4.44 did not fire (trace status absent): another path made it",
-    "form dASnoti is right but 8.4.44 did not fire (trace status absent): another path made it",
-    "form kliSnAti is right but 8.4.44 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "label shape not recognised",
     "kṛdanta: the engine has no generic krt+dhātu entry point"

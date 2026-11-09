@@ -1,44 +1,65 @@
 """
-8.4.39  क्षुभ्नाऽऽदिषु च  —  VIDHI
+8.4.39  क्षुभ्नाऽऽदिषु च  —  PRATISHEDHA
 
-Padaccheda: क्षुभ्ना-आदिषु च
-
-क्षुभ्नाऽऽदिषु च (8.4.39)
+kṣubhnādiṣu ca: no ṇatva in kṣubhnā, tṛpnu … (क्षुभ्नाति, तृप्नोति). The kṣubhnādi roots are named by upadeśa (an ākṛtigaṇa in the Kāśikā; S146).
 Pāṭha: ashtadhyayi.com data.txt row i=84039 (Art. 14).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from sutras.adhyaya_8.pada_4.sutra_8_4_2 import _BLOCKERS
 
-_GATE_KEY: str = "8_4_39_kzuBnAdi_39"
+TAG = "natva_done"          # the tag 8.4.1 / 8.4.2 already skip: ṇatva is settled for this n (here: barred)
+_RASHA = frozenset("rfFz")
+
+
+def _ns(state: State):
+    """Every untagged n that 8.4.1 / 8.4.2 would turn to ṇ: after r / ṛ / ṣ with no blocker between, before a vowel or y v m n, or pada-final."""
+    flat = [v for t in state.terms for v in t.varnas]
+    out = []
+    for k, v in enumerate(flat):
+        if v.slp1 != "n" or TAG in v.tags:
+            continue
+        j = k - 1
+        while j >= 0 and flat[j].slp1 not in _RASHA and flat[j].slp1 not in _BLOCKERS:
+            j -= 1
+        if j >= 0 and flat[j].slp1 in _RASHA:
+            out.append((k, v, k == len(flat) - 1))
+    return out
+
+
+# SHORTCUT S146: the ākṛtigaṇa is the two roots the engine can derive (kṣubh, tṛp), named by upadeśa.
+_KSUBHNADI = frozenset({"kzuBa~", "tfpa~", "tfpA~", "tfpa"})
+
+
+def _live(state: State) -> bool:
+    return any((t.meta.get("dhatu_upadesha") or "").strip() in _KSUBHNADI for t in state.terms)
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.4.39", gate_key=_GATE_KEY)
+    return state.tripadi_zone and _live(state) and bool(_ns(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.4.39"
+    for _k, v, _fin in _ns(state):
+        v.tags.add(TAG)
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "8.4.39",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = 'kzuBnAdizu ca',
-    text_dev              = 'क्षुभ्नाऽऽदिषु च',
-    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm kzuBnA-Adizu ca razAByAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् क्षुभ्ना-आदिषु च रषाभ्याम् न",
-    padaccheda_dev        = "क्षुभ्ना-आदिषु च",
-    why_dev               = "(सूत्रम् 8.4.39) क्षुभ्नाऽऽदिषु च।",
-    anuvritti_from        = ('8.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id         = "8.4.39",
+    sutra_type       = SutraType.PRATISHEDHA,
+    text_slp1        = 'kzuBnAxdizu ca',
+    text_dev         = 'क्षुभ्नाऽऽदिषु च',
+    samagra_slp1     = 'razAByAm naH RaH na kzuBnAxdizu ca',
+    samagra_dev      = 'रषाभ्याम् नः णः न क्षुभ्नादिषु च',
+    padaccheda_dev   = 'क्षुभ्ना-आदिषु च',
+    why_dev          = 'क्षुभ्नादिषु नस्य णत्वं न।',
+    anuvritti_from   = ("8.4.1",),
+    blocks_sutra_ids = (),   # per-position bar by tag; a wholesale block of the target would stop its other sites
+    cond             = cond,
+    act              = act,
 )
 
 register_sutra(SUTRA)

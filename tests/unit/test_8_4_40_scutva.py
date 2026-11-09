@@ -25,5 +25,10 @@ def test_scutva_cases():
 
 def test_sat_cit_after_jashtva_only_and_blocks():
     assert _run("sad", "cit")[1] == "sajcit"          # d+c → j+c (after 8.2.39 made sad)
-    assert not _run("praS", "na")[0]                   # 8.4.44 śāt
+    from sutras.adhyaya_8.pada_4.sutra_8_4_44 import SUTRA as S44   # 8.4.44 śāt tags the n; 8.4.40 then has nothing
+    st = State(terms=[Term(kind="prakriti", varnas=P(w), tags=set(), meta={}) for w in ("praS", "na")])
+    st.tripadi_zone = True
+    assert S44.cond(st)
+    S44.act(st)
+    assert not SUTRA.cond(st)
     assert not _run("rAmas", "Seta", tripadi=False)[0]  # Tripāḍī only

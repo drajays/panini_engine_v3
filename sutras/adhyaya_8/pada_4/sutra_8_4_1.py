@@ -81,9 +81,6 @@ _KSUBHNADI = frozenset({"kzuBa~", "tfpa~", "tfpA~", "tfpa"})
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
-    # 8.4.39 क्षुभ्नादिषु च: no ṇatva in the kṣubhnādi forms (क्षुभ्नाति, तृप्नोति)
-    if any((t.meta.get("dhatu_upadesha") or "").strip() in _KSUBHNADI for t in state.terms):
-        return False
     return _find_adjacent_natva(state) is not None
 
 

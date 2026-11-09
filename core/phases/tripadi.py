@@ -60,8 +60,11 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.3.59",   # ādeśasya — ṣatva after IK in pratyaya-s (fixed: IK not word-final guard)
     "8.3.60",   # śāsi/vasi/ghasi ṣatva (idempotent: 8_3_60_satva_done flag)
     # ── 8.4 — assimilation ──────────────────────────────────────────────────
+    "8.4.37",   # padāntasya — a pada-final n stays (vṛkṣān): tags n, 8.4.1/8.4.2 pass over
+    "8.4.39",   # kṣubhnādiṣu ca — no ṇatva in kṣubhnā, tṛpnu: same tag
     "8.4.1",    # raṣābhyāṃ no ṇaḥ samānapade — r/ṣ/ṛ + n (+ vowel) → ṇ
     "8.4.2",    # aṭkupvāṅnumvyavāye'pi — the same across aṭ/ku/pu (स्तृणोति, क्रीणाति)
+    "8.4.44",   # śāt — no ścutva for a tavarga after ś (aśnāti): tags, 8.4.40 passes over
     "8.4.40",   # stoḥ ścunā ścuḥ — dental next to a palatal → palatal (जज्ञे, राज्ञा)
     "8.4.41",   # ṣṭunā ṣṭuḥ — ṣ+t→ṣ+ṭ (structural; arm-guarded for edge cases)
     # ढो ढे लोपः after ṣṭutva: Kāśikā 8.3.13 "ष्टुत्वस्यात्र सिद्धत्वमाश्रयाद् द्रष्टव्यम्";

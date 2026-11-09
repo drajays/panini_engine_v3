@@ -1,63 +1,46 @@
 """
-8.4.44  शात्  —  VIBHASHA (representative)
+8.4.44  शात्  —  PRATISHEDHA
 
-Classical reading: "An s-series or t-varga letter followed by S/c-varga
- is OPTIONALLY replaced by the corresponding ś-series / c-varga letter."
-
-(Note: in the full Aṣṭādhyāyī this is not actually vibhāṣā; we use it
-here as a representative VIBHASHA SutraRecord so the engine tests cover
-all ten types.  The real 8.4.44 is an obligatory pariṇāmana; substitute
-any genuine vibhāṣā when building the production catalog.)
+Padaccheda: शात् (न, तोः, श्चुना श्चुः by anuvṛtti)
+After ś a tavarga letter does not take ścutva (8.4.40): प्रश्नः, विश्नः, अश्नाति, दाश्नोति, क्लिश्नाति.
+The act tags the tavarga varṇa; 8.4.40 passes over a tagged varṇa.
 Pāṭha: ashtadhyayi.com data.txt row i=84044 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology     import mk
+
+_TAVARGA = frozenset("tTdDn")
+TAG = "scutva_barred_8_4_44"
 
 
-_FIRST  = {"s": "S", "t": "c", "T": "C", "d": "j", "D": "J", "n": "Y"}
-_SECOND = frozenset({"S", "c", "C", "j", "J", "Y"})
-
-
-def _find(state: State):
-    flat = []
-    for ti, t in enumerate(state.terms):
-        for vi, v in enumerate(t.varnas):
-            flat.append((ti, vi, v))
-    for k in range(len(flat) - 1):
-        (ti1, vi1, v1) = flat[k]
-        (_,   _,   v2) = flat[k + 1]
-        if v1.slp1 in _FIRST and v2.slp1 in _SECOND:
-            return (ti1, vi1, _FIRST[v1.slp1])
-    return None
+def _sites(state: State):
+    flat = [v for t in state.terms for v in t.varnas]
+    return [b for a, b in zip(flat, flat[1:]) if a.slp1 == "S" and b.slp1 in _TAVARGA and TAG not in b.tags]
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return state.tripadi_zone and bool(_sites(state))
 
 
 def act(state: State) -> State:
-    hit = _find(state)
-    if hit is None:
-        return state
-    ti, vi, new_slp1 = hit
-    state.terms[ti].varnas[vi] = mk(new_slp1)
+    for v in _sites(state):
+        v.tags.add(TAG)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id         = "8.4.44",
-    sutra_type       = SutraType.VIBHASHA,
+    sutra_type       = SutraType.PRATISHEDHA,
     text_slp1        = 'SAt',
     text_dev         = 'शात्',
-    samagra_slp1     = "SAt toH ScuH na",
-    samagra_dev      = "शात् तोः श्चुः न",
-    padaccheda_dev   = "स्तोः श्चुना श्चुः",
-    why_dev          = "स्-तवर्गयोः श्च्वर्ग-परे विकल्पेन श्चुः (श्-चवर्ग)।",
+    samagra_slp1     = "stoH ScunA ScuH SAt na",
+    samagra_dev      = "स्तोः श्चुना श्चुः शात् न",
+    padaccheda_dev   = "शात्",
+    why_dev          = "शकारात् परस्य तवर्गस्य श्चुत्वं न (प्रश्नः)।",
     anuvritti_from   = ("8.4.40",),
+    blocks_sutra_ids = (),   # per-position bar by tag; a wholesale block of the target would stop its other sites
     cond             = cond,
     act              = act,
-    vibhasha_default = True,
 )
 
 register_sutra(SUTRA)

@@ -46,7 +46,7 @@ def _find_stu(state: State):
             continue
         prev = flat[k - 1][0].varnas[flat[k - 1][1]].slp1 if k else ""
         nxt = flat[k + 1][0].varnas[flat[k + 1][1]].slp1 if k + 1 < len(flat) else ""
-        if prev == "S" and c in _TAVARGA:   # 8.4.44 शात्
+        if "scutva_barred_8_4_44" in t.varnas[i].tags:   # 8.4.44 शात् tagged it
             continue
         if nxt in _SCU or prev in _SCU:
             return t, i

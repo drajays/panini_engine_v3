@@ -960,6 +960,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("8.2.1", state)    # opens tripadi_zone
     # 8.3.78 इणः षीध्वंलुङ्लिटां धोऽङ्गात् — dhve after an iṆ-final aṅga: चकृढ्वे
     state = apply_rule("8.3.78", state)
+    state = apply_rule("8.3.79", state)   # विभाषेटः: after an iṭ the ḍhatva is optional (लुलुविढ्वे / लुलुविध्वे)
     state = apply_rule("8.4.54", state)   # carc on abhyāsa term
 
     # ── MERGE then full post-merge Tripāḍī spine ──────────────────────────────
