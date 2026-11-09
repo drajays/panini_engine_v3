@@ -10,25 +10,31 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from phonology    import mk
+from sutras.adhyaya_8.pada_3._visarga import KU_PU, SHAR, seam
 
-_GATE_KEY: str = "8_3_37_kupvoH_37"
+
+def _site(state: State):
+    """a k/p-varga letter after the visarga: jihvāmūlīya / upadhmānīya, or the visarga itself (cakāra) — vṛkṣa(ḥ) karoti, vṛkṣa(ḥ) phalati."""
+    h = seam(state)
+    return h[0] if h and h[1] in KU_PU and h[2] not in SHAR else None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.3.37", gate_key=_GATE_KEY)
-
+    return _site(state) is not None
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.3.37"
-    return state
-
+    st = state
+    left, nxt, _ = seam(st)
+    left.varnas[-1] = mk("Z" if nxt in "kK" else "V")      # kapau uccāraṇārthau: jihvāmūlīya / upadhmānīya
+    left.tags.add("visarga_settled")
+    return st
 
 SUTRA = SutraRecord(
     sutra_id              = "8.3.37",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_default      = False,
+    vibhasha_scope        = lambda state: _site(state) is not None,
     r1_form_identity_exempt = True,
     text_slp1             = 'kupvoH kapO ca',
     text_dev              = 'कुप्वोः ≍क≍पौ च',

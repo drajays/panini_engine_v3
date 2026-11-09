@@ -46,7 +46,7 @@ def _find_visarga_t_boundary(state: State):
             continue
         if left.varnas[-1].slp1 != "H":
             continue
-        if right.varnas[0].slp1 not in "cCwWtT":      # khari, but k/p-varga go to 8.3.37 (kupvoḥ ≍k≍pau ca, the apavāda) and the śar cases to 8.3.35/36
+        if "visarga_settled" in left.tags or right.varnas[0].slp1 not in "cCwWtTSzs":      # khari; k/p-varga are 8.3.37's (apavāda), śarpare 8.3.35's, śar + optional 8.3.36
             continue
         return i
     return None

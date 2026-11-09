@@ -58,6 +58,8 @@ HAL_BASE = {k: v[:-1] for k, v in HAL_DEV.items()}
 SPECIAL_DEV = {
     "M": "ं",
     "H": "ः",
+    "Z": "ᳵ",      # jihvāmūlīya (8.3.37)
+    "V": "ᳶ",      # upadhmānīya (8.3.37)
 }
 
 

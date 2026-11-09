@@ -30,7 +30,7 @@ def test_avarna_y_before_a_vowel_is_optional():               # 8.3.19 शाक
 def test_other_ru_is_not_touched():                           # not bho/avarṇa: अग्निर् अत्र, and 8.3.15 before a khar
     assert _seam("agnis", "atra") == {"agnir atra"}
     assert _seam("vfkzas", "tarati") == {"vfkzas tarati"}       # 8.3.34 visarga → s before t
-    assert _seam("vfkzas", "karoti") == {"vfkzaH karoti"}       # k stays ḥ (8.3.37)
+    assert _seam("vfkzas", "karoti") == {"vfkzaH karoti", "vfkzaZ karoti"}       # k stays ḥ (8.3.37)
 
 
 def test_8_3_22_takes_the_y_only_not_the_v():
