@@ -1,9 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 95,
+   "FAIL": 94,
    "NO_EXAMPLE": 228,
-   "DONE": 17
+   "DONE": 18
   },
   "by_type": {
    "NIYAMA": {
@@ -15,9 +15,9 @@
     "NO_EXAMPLE": 6
    },
    "VIBHASHA": {
-    "FAIL": 4,
+    "FAIL": 3,
     "NO_EXAMPLE": 3,
-    "DONE": 4
+    "DONE": 5
    },
    "VIDHI": {
     "NO_EXAMPLE": 213,
@@ -5069,13 +5069,13 @@
    "type": "VIDHI",
    "subkind": "<<हलि सर्वेषाम्>> [[8.3.22]] इति यकारलोप",
    "verdict": "FAIL",
-   "examples_tried": 3,
+   "examples_tried": 5,
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['mAsAByAm', 'mAsAbByyAmm'] ≠ expected mAByAm",
-    "readings ['okArByAm', 'okArbByAm', 'okArbByAmm', 'okArbbByAmm'] ≠ expected okAByAm",
-    "readings ['BArByAm', 'BArbByAm', 'BArbByAmm', 'BArbbByAmm'] ≠ expected BAByAm",
+    "form Bo janAH is right but 8.3.22 did not fire (trace status ['SKIPPED']): another path made it",
+    "form Bago devAH is right but 8.3.22 did not fire (trace status ['SKIPPED']): another path made it",
+    "form aGo rAkzasAH is right but 8.3.22 did not fire (trace status ['SKIPPED']): another path made it",
     "several forms in one example",
     "label shape not recognised"
    ]
@@ -5111,14 +5111,73 @@
    "id": "8.3.28",
    "type": "VIBHASHA",
    "subkind": "<<ङ्णोः कुक्टुक् शरि>> [[8.3.28]] इति सू",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 4,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "prAYc",
+      "pulliṅga",
+      7,
+      3
+     ],
+     "observed": "prANkzu",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "prANkzu",
+     "deriv": 4192
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "kruYc",
+      "pulliṅga",
+      7,
+      3
+     ],
+     "observed": "kruNkzu",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "kruNkzu",
+     "deriv": 4218
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "pUrva",
+      null,
+      1,
+      1
+     ],
+     "expected": "pUrvaH",
+     "deriv": 1275,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['prAYYkzu', 'prAYkzu'] ≠ expected prANkzu",
-    "readings ['kruYYkzu', 'kruYkzu'] ≠ expected kruNkzu",
-    "readings ['prAYYkzu', 'prAYkzu'] ≠ expected prANKzu",
     "several forms in one example"
    ]
   },

@@ -85,9 +85,13 @@ def _hit_premerge(state: State):
     if "sarvanamasthana" in sup.tags or stem.meta.get("8_2_23_done"):
         return None
     vs = stem.varnas
-    if len(vs) < 2 or vs[-1].slp1 != "s" or vs[-2].slp1 not in {"m", "M"}:
+    if len(vs) < 2:
         return None
-    return len(vs) - 1
+    if vs[-1].slp1 == "s" and vs[-2].slp1 in {"m", "M"}:
+        return len(vs) - 1
+    if "origin_pratyaya:kvin" in stem.tags and vs[-1].slp1 in HAL and vs[-2].slp1 in HAL:      # prāñc + su: the c goes, then 8.2.62 (prāṅkṣu)
+        return len(vs) - 1
+    return None
 
 
 def cond(state: State) -> bool:

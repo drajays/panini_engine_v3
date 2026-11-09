@@ -14,7 +14,7 @@ from phonology import mk
 from phonology.pratyahara import HAL
 
 _KU = {"q": "g", "Q": "G", "w": "k", "W": "K", "d": "g", "D": "G", "t": "k", "T": "K", "b": "g", "B": "G", "p": "k", "P": "K",
-       "j": "g", "J": "G", "c": "k", "C": "K", "z": "k", "S": "k", "s": "k"}
+       "Y": "N", "j": "g", "J": "G", "c": "k", "C": "K", "z": "k", "S": "k", "s": "k"}
 
 
 def _site(state: State):

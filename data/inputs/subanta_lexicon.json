@@ -2464,6 +2464,114 @@
     }
    ],
    "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "kruYc",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "krunca~",
+     "dhatu_id": "01.0213"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "kruYc",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "krunca~",
+     "dhatu_id": "01.0213"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "kruYc",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "krunca~",
+     "dhatu_id": "01.0213"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "prAYc",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "pra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "prAYc",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "pra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "prAYc",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "pra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
   }
  ]
 }
