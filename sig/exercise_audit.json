@@ -1,9 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 99,
+   "FAIL": 97,
    "NO_EXAMPLE": 228,
-   "DONE": 13
+   "DONE": 15
   },
   "by_type": {
    "NIYAMA": {
@@ -15,14 +15,14 @@
     "NO_EXAMPLE": 6
    },
    "VIBHASHA": {
-    "FAIL": 3,
+    "FAIL": 4,
     "NO_EXAMPLE": 3,
-    "DONE": 3
+    "DONE": 4
    },
    "VIDHI": {
     "NO_EXAMPLE": 213,
-    "FAIL": 91,
-    "DONE": 7
+    "FAIL": 88,
+    "DONE": 8
    },
    "PRATISHEDHA": {
     "DONE": 3
@@ -4937,8 +4937,8 @@
    "negatives": [],
    "reasons": [
     "form pUrvaH is right but 8.3.4 did not fire (trace status absent): another path made it",
-    "readings ['BavatO'] ≠ expected Bavati",
-    "readings ['ye'] ≠ expected yasmin",
+    "form Bavati is right but 8.3.4 did not fire (trace status absent): another path made it",
+    "form yasmin is right but 8.3.4 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "label shape not recognised",
     "examples from Kāśikā/Laghukaumudī prose"
@@ -4953,7 +4953,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.5 did not fire (trace status absent): another path made it",
     "form kim is right but 8.3.5 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
@@ -4983,7 +4983,7 @@
    "negatives": [],
    "reasons": [
     "form kim is right but 8.3.10 did not fire (trace status absent): another path made it",
-    "readings ['nraH', 'nrraH'] ≠ expected nfn",
+    "readings ['nFn', 'nFnn'] ≠ expected nfn",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -4997,9 +4997,9 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['assyassya', 'asyasya'] ≠ expected asya",
+    "form asya is right but 8.3.12 did not fire (trace status absent): another path made it",
     "form tena is right but 8.3.12 did not fire (trace status absent): another path made it",
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.12 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5045,7 +5045,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.26 did not fire (trace status absent): another path made it",
     "form kim is right but 8.3.26 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5059,13 +5059,13 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.27 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
   "8.3.28": {
    "id": "8.3.28",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "<<ङ्णोः कुक्टुक् शरि>> [[8.3.28]] इति सू",
    "verdict": "FAIL",
    "examples_tried": 4,
@@ -5073,23 +5073,65 @@
    "negatives": [],
    "reasons": [
     "readings ['prAYkzu', 'prrAYYkzu'] ≠ expected prANkzu",
-    "readings ['krruYYSu', 'kruYSu'] ≠ expected kruNkzu",
+    "readings ['krruYYkzu', 'kruYkzu'] ≠ expected kruNkzu",
     "readings ['prAYkzu', 'prrAYYkzu'] ≠ expected prANKzu",
     "several forms in one example"
    ]
   },
   "8.3.30": {
    "id": "8.3.30",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "<<नश्च>> [[8.3.30]] इत्यनेन सकारस्य पाक्",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "praSAm",
+      "pulliṅga",
+      7,
+      3
+     ],
+     "observed": "praSAntsu",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "praSAntsu",
+     "deriv": 3239
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "pUrva",
+      null,
+      1,
+      1
+     ],
+     "expected": "pUrvaH",
+     "deriv": 1275,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['praSAsu', 'prraSAsu'] ≠ expected praSAntsu",
-    "readings ['Kasu'] ≠ expected Kantsu",
-    "readings ['Kasu'] ≠ expected KanTsu",
     "label shape not recognised",
     "several forms in one example"
    ]
@@ -5103,7 +5145,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.31 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5117,9 +5159,9 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.32 did not fire (trace status absent): another path made it",
     "form kim is right but 8.3.32 did not fire (trace status absent): another path made it",
-    "readings ['pratiH', 'prratiH'] ≠ expected pratyaN",
+    "readings ['pratyaY', 'prrattyyaYY'] ≠ expected pratyaN",
     "label shape not recognised",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5133,9 +5175,9 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['assyassya', 'asyasya'] ≠ expected asya",
-    "readings ['BavatO'] ≠ expected Bavati",
-    "readings ['vAcO'] ≠ expected vAci",
+    "form asya is right but 8.3.33 did not fire (trace status absent): another path made it",
+    "form Bavati is right but 8.3.33 did not fire (trace status absent): another path made it",
+    "form vAci is right but 8.3.33 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5149,9 +5191,9 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatasaH'] ≠ expected BavataH",
-    "readings ['pacatO'] ≠ expected pacati",
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form BavataH is right but 8.3.37 did not fire (trace status absent): another path made it",
+    "form pacati is right but 8.3.37 did not fire (trace status absent): another path made it",
+    "form Bavati is right but 8.3.37 did not fire (trace status absent): another path made it",
     "several forms in one example",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5165,7 +5207,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.38 did not fire (trace status absent): another path made it",
     "form kim is right but 8.3.38 did not fire (trace status absent): another path made it",
     "readings ['kamate'] ≠ expected kAmayate",
     "taddhita: the sense (taddhitArtha) is not in the example",
@@ -5181,8 +5223,8 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
-    "readings ['pacatO'] ≠ expected pacati",
+    "form Bavati is right but 8.3.39 did not fire (trace status absent): another path made it",
+    "form pacati is right but 8.3.39 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
@@ -5195,8 +5237,8 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
-    "readings ['taH'] ≠ expected saH",
+    "form Bavati is right but 8.3.48 did not fire (trace status absent): another path made it",
+    "form saH is right but 8.3.48 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
@@ -5210,24 +5252,98 @@
    "negatives": [],
    "reasons": [
     "readings ['turAsAq', 'turAsAqq', 'turAsAqw', 'turAsAw'] ≠ expected turAzAq",
-    "readings ['turAsAqByAm', 'turAsAqqByyAmm'] ≠ expected turAzAqByAm",
-    "readings ['turAsAq', 'turAsAqq', 'turAsAqw', 'turAsAw'] ≠ expected turAzAw"
+    "readings ['turAsAq', 'turAsAqq', 'turAsAqw', 'turAsAw'] ≠ expected turAzAw",
+    "readings ['turAsAqByAm', 'turAsAqqByyAmm'] ≠ expected turAzAqByAm"
    ]
   },
   "8.3.58": {
    "id": "8.3.58",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "readings ['DanuzaH'] ≠ expected DanUMzi",
-    "readings ['DanuzaH'] ≠ expected DanUMzi",
-    "readings ['DanuzaH'] ≠ expected heDanUMzi",
-    "label shape not recognised"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "Danus",
+      "napuṃsaka",
+      1,
+      3
+     ],
+     "observed": "DanUMzi",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "DanUMzi",
+     "deriv": 5622
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "Danus",
+      "napuṃsaka",
+      2,
+      3
+     ],
+     "observed": "DanUMzi",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "DanUMzi",
+     "deriv": 5625
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "Danus",
+      "pulliṅga",
+      7,
+      3
+     ],
+     "observed": "Danuzzu",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Danuzzu",
+     "deriv": 5640
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "pUrva",
+      null,
+      1,
+      1
+     ],
+     "expected": "pUrvaH",
+     "deriv": 1275,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "8.3.67": {
    "id": "8.3.67",
@@ -5238,7 +5354,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.67 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
   },
@@ -5251,7 +5367,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.76 did not fire (trace status absent): another path made it",
     "readings ['mamadkTa', 'mamajjiTa'] ≠ expected mamaNkTa",
     "examples from Kāśikā/Laghukaumudī prose"
    ]
@@ -5341,7 +5457,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['BavatO'] ≠ expected Bavati",
+    "form Bavati is right but 8.3.87 did not fire (trace status absent): another path made it",
     "form kim is right but 8.3.87 did not fire (trace status absent): another path made it",
     "form daDi is right but 8.3.87 did not fire (trace status absent): another path made it",
     "examples from Kāśikā/Laghukaumudī prose"
