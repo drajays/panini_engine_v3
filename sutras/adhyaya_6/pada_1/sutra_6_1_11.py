@@ -83,7 +83,8 @@ def act(state: State) -> State:
             state.terms.insert(gi, ab)
             state.terms.insert(gi, Term(kind=dh.kind, varnas=lead, tags=set(dh.tags) - {"dhatu"} | {"anga"}, meta={}))
         else:
-            ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas],
+            src = dh.meta.get("pre_vrddhi_varnas") or dh.varnas      # bhū+ṇic: the abhyāsa is bhu(7.4.59), not the vṛddhi-guṇa form bhav
+            ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in src],
                       tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
             state.terms.insert(gi, ab)
         if pre:         # the aṭ is its own Term before the abhyāsa — 7.4.60 must not read it

@@ -124,6 +124,9 @@ def act(state: State) -> State:
         return state
     ti, vi, rep = hit
     old = state.terms[ti].varnas[vi].slp1
+    if "pre_vrddhi_varnas" not in state.terms[ti].meta:        # the doubling of caṅ (6.1.11) reads the root as it stood before this vṛddhi
+        from copy import deepcopy
+        state.terms[ti].meta["pre_vrddhi_varnas"] = deepcopy(state.terms[ti].varnas)
     state.terms[ti].varnas[vi] = mk(rep)
     state.terms[ti].meta["aco_nniti_vrddhi_done"] = True
     if old in ("f", "F", "x", "X"):          # hand the r/l to 1.1.51 उरण् रपरः

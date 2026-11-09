@@ -22,6 +22,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
+    P00_abhyasa_trim,
     P00_lit_tip_to_Nal,
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
@@ -55,7 +56,7 @@ def derive_ninAya_lit_nI_P036() -> State:
     s = apply_rule("6.1.8", s)
 
     s = apply_rule("7.4.59", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 

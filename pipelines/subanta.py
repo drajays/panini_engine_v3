@@ -404,6 +404,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.86",  # इतोऽत् सर्वनामस्थाने — its i → a
     "7.1.87",  # थो न्थः — th → nth (पन्थानौ)
     "7.1.88",  # भस्य टेर्लोपः — पथः, पथा
+    "7.4.48",   # अपो भि — ap + bh…: p → t (adbhiḥ)
     "7.2.84",   # अष्टन आ विभक्तौ (vikalpa) — aṣṭan → aṣṭā …
     "7.1.21",   # अष्टाभ्य औश् — … + jas / śas → auś (apavāda of 7.1.22)
     "7.1.22",   # षड्भ्यो लुक् — jas / śas luk after a ṣaṭ numeral: pañca, sapta, nava, daśa, aṣṭa. Before 6.4.8 (vipratiṣedha: the luk removes the jas that 6.4.8 needs)

@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tip_to_t_aprkta, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_abhyasa_trim, P00_tip_to_t_aprkta, P06a_pratyaya_adhikara_3_1_1_to_3
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -104,8 +104,9 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
 
     s = apply_rule("7.4.59", s)
     s = apply_rule("7.4.93", s)
+    s = apply_rule("7.4.80", s)
     s = apply_rule("7.4.94", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
 
     s = apply_rule("6.1.101", s)
 

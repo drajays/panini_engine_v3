@@ -9,29 +9,32 @@ Pāṭha: ashtadhyayi.com data.txt row i=74049 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_49_saH_49"
+
+def _find(state: State):
+    """A dhātu ending in s before an ārdhadhātuka that begins with s: vas + syati → vatsyati, ghas + sic → aghatsAtAm (Kāśikā)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" in t.tags and "abhyasa" not in t.tags and t.varnas and t.varnas[-1].slp1 == "s":
+            nxt = state.terms[i + 1]
+            if nxt.varnas and nxt.varnas[0].slp1 == "s" and "ardhadhatuka" in nxt.tags:
+                return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.49", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.49"
+    _find(state).varnas[-1] = mk("t")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.49",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "saH syArdDaDAtuke",
     text_dev              = "सः स्यार्द्धधातुके",
     samagra_slp1          = "saH aNgasya ArDaDAtuke si taH",

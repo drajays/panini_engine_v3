@@ -9,29 +9,36 @@ Pāṭha: ashtadhyayi.com data.txt row i=74048 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_48_apo_48"
+# S145 (docs/SHORTCUT_LEDGER.md): the aṅga "ap" and its tadanta (su-ap = svap) are named by stem, because the samāsa machine does not yet say that a stem ends in the word ap
+_APAH = ("ap", "svap")
+
+
+def _find(state: State):
+    """अप् before a bh-initial sup: ap + bhyām → at + bhyām (then 8.4.53: adbhyām)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "sup" in t.tags or not t.varnas or "".join(v.slp1 for v in t.varnas) not in _APAH:
+            continue
+        nxt = state.terms[i + 1]
+        if "sup" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 == "B":
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.48", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.48"
+    _find(state).varnas[-1] = mk("t")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.48",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "apo Bi",
     text_dev              = "अपो भि",
     samagra_slp1          = "aNgasya apaH Bi taH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

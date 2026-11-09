@@ -9,29 +9,40 @@ Pāṭha: ashtadhyayi.com data.txt row i=74061 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "7_4_61_SarpUrvAH_61"
+_AC = frozenset("aAiIuUeEoOfFxX")
+_SAR = frozenset("Szs")                    # śar
+_KHAY = frozenset("kKcCwWtTpP")        # khay: the voiceless stops
+
+
+def _find(state: State):
+    """अभ्यास: a śar followed by a khay in the onset loses the śar, so the khay is what 7.4.60 keeps (paspaśa, tasthau; Kāśikā)."""
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags or t.meta.get("7_4_61_done") or t.meta.get("7_4_60_haladi_done"):
+            continue
+        vs = t.varnas
+        vi = next((j for j, v in enumerate(vs) if v.slp1 in _AC), None)
+        if vi is not None and vi >= 2 and vs[0].slp1 in _SAR and vs[1].slp1 in _KHAY:
+            return ti
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.61", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.61"
+    ti = _find(state)
+    t = state.terms[ti]
+    del t.varnas[0]
+    t.meta["7_4_61_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.61",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "SarpUrvAH KayaH",
     text_dev              = "शर्पूर्वाः खयः",
     samagra_slp1          = "aByAsasya AdiH Sar-pUrvAH KayaH hal SezaH",

@@ -234,6 +234,12 @@ def _juhotyadi_remove_slu_placeholder(state: State) -> None:
         )
 
 
+def P00_abhyasa_trim(s: State) -> State:
+    """Abhyāsa trim: 7.4.61 śarpūrvāḥ khayaḥ (the khay after a śar stays), then 7.4.60 halādiḥ śeṣaḥ."""
+    s = apply_rule("7.4.61", s)
+    return apply_rule("7.4.60", s)
+
+
 def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
     """Gaṇa 3 (*juhotyādi*) vikaraṇa: **2.4.75** *śluḥ* (*śap* → zero) →
     **1.1.60**/**1.1.61** (*ślu* counts as *pratyaya-lopa*) → structural removal
@@ -257,7 +263,7 @@ def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
             t.meta.pop("urN_rapara_pending", None)
             t.meta.pop("urN_rapara_after_index", None)
     s = apply_rule("7.4.59", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     s = apply_rule("7.4.62", s)
     return s
 
@@ -531,7 +537,7 @@ def P00_yang_luk_simple_dvitva_to_guna(s: State) -> State:
     **7.4.60** → **7.4.82** → aC three-term frame → **2.4.74**/**1.1.4**
     यङ्-लुक् → **7.3.84** guṇa → **6.4.77** उवङ्. Used by e.g. लोलुवः/पोपुवः
     (लू/पू) — roots whose अभ्यास needs no दीर्घ/इत्व augment of its own."""
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     s = apply_rule("7.4.82", s)
     s = P00_yang_ac_three_term_frame(s)
     s = P00_yang_luk_2_4_74_and_1_1_4(s)
@@ -1502,7 +1508,7 @@ def P00_lit_dvitva_abhyasa_hrasva(s: State, *, short_abhyasa: bool = False) -> S
     if short_abhyasa and s.terms and "abhyasa" in s.terms[0].tags:
         s.terms[0].meta["7_4_60_first_hal_only"] = True
     s = apply_rule("6.1.4", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     return s
 
 
@@ -1663,7 +1669,7 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
     s = apply_rule("1.1.51", s)
     if first_hal_only and s.terms and "abhyasa" in s.terms[0].tags:
         s.terms[0].meta["7_4_60_first_hal_only"] = True
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     return s
 
 
@@ -1842,7 +1848,7 @@ def P00_anit_iT_tfc_chain(s: State) -> State:
 def P00_san_dirgha_hrasva(s: State) -> State:
     """San dīrgha + abhyāsa hrasva: 6.4.16 → 7.4.60."""
     s = apply_rule("6.4.16", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     return s
 
 
@@ -1850,7 +1856,7 @@ def P00_yang_abhyasa_hrasva_chain(s: State) -> State:
     """Yaṅ abhyāsa hrasva chain: 7.4.59 → 7.4.83 → 7.4.60."""
     s = apply_rule("7.4.59", s)
     s = apply_rule("7.4.83", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_abhyasa_trim(s)
     return s
 
 

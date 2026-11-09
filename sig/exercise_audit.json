@@ -1,8 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 112,
-   "NO_EXAMPLE": 228
+   "FAIL": 103,
+   "NO_EXAMPLE": 228,
+   "DONE": 9
   },
   "by_type": {
    "NIYAMA": {
@@ -15,11 +16,13 @@
    },
    "VIBHASHA": {
     "FAIL": 4,
-    "NO_EXAMPLE": 3
+    "NO_EXAMPLE": 3,
+    "DONE": 2
    },
    "VIDHI": {
     "NO_EXAMPLE": 213,
-    "FAIL": 103
+    "FAIL": 94,
+    "DONE": 7
    }
   },
   "n": 340
@@ -3825,43 +3828,202 @@
   },
   "7.4.12": {
    "id": "7.4.12",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "observed": "SaSruH",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "observed": "dadruH",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "dadruH",
+     "deriv": 7115
+    }
+   ],
    "negatives": [],
-   "reasons": [
-    "readings ['SaSaruH'] ≠ expected SaSruH",
-    "readings ['dadaruH'] ≠ expected dadruH",
-    "readings ['SaSAra'] ≠ expected SaSre"
-   ]
+   "reasons": []
   },
   "7.4.20": {
    "id": "7.4.20",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "form avocad is right but 7.4.20 did not fire (trace status absent): another path made it",
-    "readings ['abrAvId', 'abrAvIt'] ≠ expected avocata",
-    "form avocat is right but 7.4.20 did not fire (trace status absent): another path made it"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0058",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "avocad",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "avocad",
+     "deriv": 7553
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0058",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "avocat",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "avocat",
+     "deriv": 7597
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "7.4.21": {
    "id": "7.4.21",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 2,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0026",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "Sete",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Sete",
+     "deriv": 7566
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0026",
+      "laT",
+      "kartari",
+      3,
+      3
+     ],
+     "observed": "Serate",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Serate",
+     "deriv": 7567
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['SIte'] ≠ expected Sete",
-    "readings ['SIate'] ≠ expected Serate",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
@@ -3976,27 +4138,157 @@
    "id": "7.4.48",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 2,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "readings ['svabByAm', 'svabbByyAmm'] ≠ expected svadByAm",
-    "readings ['abByAm', 'abbByyAmm'] ≠ expected adByAm"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "svap",
+      "napuṃsaka",
+      3,
+      2
+     ],
+     "observed": "svadByAm",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED"
+     ],
+     "expected": "svadByAm",
+     "deriv": 8346
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "ap",
+      "strīliṅga",
+      3,
+      2
+     ],
+     "observed": "adByAm",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED"
+     ],
+     "expected": "adByAm",
+     "deriv": 8347
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "Bavati",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "Bavati",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "7.4.49": {
    "id": "7.4.49",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.1160",
+      "lRT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "vatsyati",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "vatsyati",
+     "deriv": 7027
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.0812",
+      "lRT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "Gatsyati",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Gatsyati",
+     "deriv": 7028
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['AtsAtAm'] ≠ expected aGatsAtAm",
-    "readings ['vassyati'] ≠ expected vatsyati",
-    "readings ['Gassyati'] ≠ expected Gatsyati",
     "sanādi: no generic entry point"
    ]
   },
@@ -4020,14 +4312,98 @@
    "id": "7.4.61",
    "type": "VIDHI",
    "subkind": "<<शर्पूर्वाः खयः>> [[7.4.61]] इति अभ्यास",
-   "verdict": "FAIL",
-   "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
+   "verdict": "DONE",
+   "examples_tried": 3,
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.0751",
+      "liT",
+      "kartari",
+      2,
+      3
+     ],
+     "observed": "tastfkza",
+     "statuses": [
+      "APPLIED",
+      "SKIPPED"
+     ],
+     "expected": "tastfkza",
+     "deriv": 6247
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.0749",
+      "liT",
+      "kartari",
+      2,
+      3
+     ],
+     "observed": "tastrakza",
+     "statuses": [
+      "APPLIED",
+      "SKIPPED"
+     ],
+     "expected": "tastrakza",
+     "deriv": 6248
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.1032",
+      "liT",
+      "kartari",
+      2,
+      3
+     ],
+     "observed": "paspaSa",
+     "statuses": [
+      "APPLIED",
+      "SKIPPED"
+     ],
+     "expected": "paspaSa",
+     "deriv": 6249
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form tastfkza is right but 7.4.61 did not fire (trace status absent): another path made it",
-    "form tastrakza is right but 7.4.61 did not fire (trace status absent): another path made it",
-    "form paspaSa is right but 7.4.61 did not fire (trace status absent): another path made it",
     "label shape not recognised",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
@@ -4037,13 +4413,60 @@
    "id": "7.4.67",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 2,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "01.0842",
+      "liT",
+      "kartari",
+      3,
+      1,
+      "atmane"
+     ],
+     "observed": "didyute",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "didyute",
+     "deriv": 7050
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form suzvApa is right but 7.4.67 did not fire (trace status absent): another path made it",
-    "readings ['dudyota'] ≠ expected didyute",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
@@ -4052,27 +4475,157 @@
    "id": "7.4.80",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "10.0277",
+      "luG",
+      "kartari",
+      3,
+      1,
+      "atmane"
+     ],
+     "observed": "abIBavata",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "abIBavata",
+     "deriv": 8040
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "10.0235",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "ayIyavata",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "ayIyavata",
+     "deriv": 8041
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "10.0382",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "abIBavata",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "abIBavata",
+     "deriv": 8042
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "form abIBavata is right but 7.4.80 did not fire (trace status absent): another path made it",
-    "form ayIyavata is right but 7.4.80 did not fire (trace status absent): another path made it",
-    "form abIBavata is right but 7.4.80 did not fire (trace status absent): another path made it",
     "sanādi: no generic entry point"
    ]
   },
   "7.4.97": {
    "id": "7.4.97",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 1,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "10.0391",
+      "luG",
+      "kartari",
+      3,
+      1,
+      "atmane"
+     ],
+     "observed": "ajIgaRata",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "ajIgaRata",
+     "deriv": 8047
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "09.0021",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "SaSruH",
+     "deriv": 7114,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0026",
+      "liT",
+      "kartari",
+      3,
+      3
+     ],
+     "expected": "dadruH",
+     "deriv": 7115,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['ajagaRad', 'ajagaRat'] ≠ expected ajIgaRata",
     "sanādi: no generic entry point"
    ]
   },
