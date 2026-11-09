@@ -9,29 +9,38 @@ Pāṭha: ashtadhyayi.com data.txt row i=71006 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "7_1_6_SINo_6"
+_DONE = "7_1_6_rut_done"
+
+
+def _target(state: State):
+    """The a-initial tiṅ (jhi's ādeśa at-) after शीङ्: शे + रत् + ए → शेरते (Kāśikā 7.1.6)."""
+    if len(state.terms) < 2:
+        return None
+    dhatu, affix = state.terms[-2], state.terms[-1]
+    if "dhatu" not in dhatu.tags or (dhatu.meta.get("upadesha_slp1") or "").replace("~", "").strip() != "SIN":
+        return None
+    if "pratyaya" not in affix.tags or not affix.varnas or affix.varnas[0].slp1 != "a" or affix.meta.get(_DONE):
+        return None
+    return affix
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.6", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _target(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.6"
+    affix = _target(state)
+    affix.varnas.insert(0, parse_slp1_upadesha_sequence("r")[0])      # ṭit: the āgama stands before the at
+    affix.meta[_DONE] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.6",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "SINo ruw",
     text_dev              = "शीङो रुट्",
     samagra_slp1          = "SINaH aNgAt JaH ataH rUw",

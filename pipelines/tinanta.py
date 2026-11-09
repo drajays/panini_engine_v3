@@ -609,6 +609,7 @@ def _run_lat_kartari_bhuvadi_spine(
     state = apply_rule("7.3.92", state)   # tṛṇaha im — before the ato dīrgho of the next line
     state = apply_rule("7.3.101", state)
     state = P00_guna_7_3_84(state)
+    state = apply_rule("7.4.21", state)   # śīṅ: guṇa even before a ṅit sārvadhātuka (apavāda of 1.1.5)
     # 1.1.51 उरण् रपरः: guṇa of ṛ is ar, not a (वृत् → वर्तते, not वतते) —
     # the lṛṭ/lṛṅ spines already complete it; this laṭ spine did not.
     state = apply_rule("1.1.51", state)
@@ -1479,6 +1480,9 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["pada_asked"] = pada_key        # the cli → aṅ rules are pada-sensitive (3.1.53 parasmai, 3.1.54 ātmane) and the tiṅ is not on the tape yet
     for _sid in ("3.1.52", "3.1.53", "3.1.54", "3.1.56", "3.1.57", "3.1.58"):    # cli → aṅ: each names its own roots and padas
         state = apply_rule(_sid, state)
+    state = apply_rule("7.4.20", state)    # vac + aṅ: um (u)
+    if state.meta.get("7_4_20_um_done"):
+        state = apply_rule("6.1.87", state)   # va+u+c → voc
     state = apply_rule("3.1.44", state)   # cli → sic; vacuous if 3.1.55 already fired
     # 3.1.45 शल इगुपधादनिटः क्सः (apavāda of 3.1.44 for शल्-अंत इक्-उपधा अनिट्
     # roots): marks the recipe so 7.2.3/7.3.96 skip वृद्धि/ईट् below (अशिक्षत्,
@@ -2539,6 +2543,10 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
     state.meta["3_1_68_kartari_recipe"] = True
     state = P00_jha_adesha(state)   # 3pl: 7.1.5 (at) → 7.1.3: आसते, not *आग्झे*
     state = P00_adadi_sap_luk_tere(state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("7.1.6", state)      # śīṅo ruṭ: śī+jhi → śī+rut+at (śerate)
+    state = apply_rule("7.4.21", state)     # śīṅ: guṇa before a ṅit sārvadhātuka (apavāda of 1.1.5)
+    state = apply_rule("6.1.78", state)     # e + āte → ayāte
     # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्→दुग्धे) needs the
     # same pre-merge tripadi entry the kartari-parasmai spine already has;
     # a no-op for आस्/अद् etc. (this function's original P008 आस्ते case),

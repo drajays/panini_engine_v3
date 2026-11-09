@@ -40,11 +40,6 @@ def act(state: State) -> State:
     cli.meta["it_markers"] = {"G"}
     cli.kind = "pratyaya"
     cli.tags |= {"pratyaya", "vikarana", "kngiti", "ardhadhatuka", "anit_ardhadhatuka"}
-    if "".join(v.slp1 for v in dh.varnas) == "vac" and not any("aT_agama_v" in v.tags for v in dh.varnas[:1]) or \
-            "".join(v.slp1 for v in dh.varnas if "aT_agama_v" not in v.tags) == "vac":
-        # 7.4.20 वच उम् (अङि): the um (u) after the a of vac, and 6.1.87 guṇa → voc (अवोचत्)
-        j = next(k for k, v in enumerate(dh.varnas) if v.slp1 == "a" and k and dh.varnas[k - 1].slp1 == "v")
-        dh.varnas[j] = mk("o", *dh.varnas[j].tags)
     return state
 
 
