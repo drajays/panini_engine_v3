@@ -13,3 +13,13 @@ def test_8_3_34(l, r, want):
 
 def test_ku_pu_not_8_3_34():
     assert {b.surface_slp1 for b in explore(lambda: join_tripadi("vfkzas", "karoti"))} == {"vfkzaHkaroti"}
+
+
+def test_8_2_69_ahan_before_non_sup():
+    assert "ahardadAti" in {b.surface_slp1 for b in explore(lambda: join_tripadi("ahan", "dadAti"))}
+    assert {b.surface_slp1 for b in explore(lambda: join_tripadi("ahan", "karoti"))} == {"ahaHkaroti"}
+
+
+def test_8_4_46_47_gemination_over_a_seam():
+    got = {b.surface_slp1 for b in explore(lambda: join_tripadi("ahan", "dadAti", dvitva=True))}
+    assert got == {"ahardadAti", "aharddadAti"}          # 8.4.46 aco rahābhyāṃ dve (r + d), once

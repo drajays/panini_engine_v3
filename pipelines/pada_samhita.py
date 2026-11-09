@@ -57,13 +57,16 @@ def join(left_slp1: str, right_slp1: str) -> State:
     return s
 
 
-def join_tripadi(left_slp1: str, right_slp1: str) -> State:
+def join_tripadi(left_slp1: str, right_slp1: str, *, dvitva: bool = False) -> State:
     """Two padas side by side on one tape, the tripāḍī run over the seam (8.2.66 ru, 8.3.15, 8.3.17–8.3.22 …): भोस् जनाः → भो जनाः.
     Vowel–vowel seams of padas that end in a vowel go through :func:`join` (the 6.1 ac-sandhi); a pada ending in s / r / ḥ comes here."""
     from core.phases.tripadi import execute_tripadi_phase  # noqa: PLC0415
 
     s = State(terms=[_pada(left_slp1), _pada(right_slp1)], meta={}, trace=[])
     s = apply_rule("8.2.1", s)
+    if dvitva:          # the optional gemination 8.4.46/47 (kept out of the spine: too broad for a merged pada); run, then the spine's later rules see the doubled tape
+        s = execute_tripadi_phase(s)
+        s = apply_rule("8.4.47", apply_rule("8.4.46", s))
     return execute_tripadi_phase(s)
 
 

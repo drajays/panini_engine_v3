@@ -51,6 +51,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.2.41",   # षढोः कः सि — ष्/ढ् before स् → क् (लेक्ष्यति, दंक्ष्यति)
     "8.2.64",   # mo no dhātoḥ — dhātu-final m → n at pada end (प्रशान्)
     "8.2.65",   # mvośca — dhātu-final m → n before m / v
+    "8.2.69",   # ro'supi — ahan → ahar before a non-sup word (ahar dadāti)
     "8.2.66",   # sasajuṣo ruḥ — s→r at word-end
     "8.2.79",   # na bhakurchurām — the prohibition first (blocks 8.2.77 / 8.2.78 for kur, chur)
     "8.2.77",   # hali ca — dhātu r/v + hal: दीव्यति

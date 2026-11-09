@@ -10,19 +10,25 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from phonology    import mk
 
-_GATE_KEY: str = "8_2_69_rosupi_69"
+
+def _site(state: State):
+    """अहन् → अहर् (a plain r, not ru) when the next word is not a sup (Kāśikā 8.2.69: अहर्ददाति, अहर्भुङ्क्ते; अहोभ्याम् keeps 8.2.68's ru). Built for the two-pada seam."""
+    if not state.tripadi_zone or len(state.terms) < 2:
+        return None
+    left, right = state.terms[0], state.terms[1]
+    if "pada" not in left.tags or "pada" not in right.tags or "sup" in right.tags:
+        return None
+    return left if "".join(v.slp1 for v in left.varnas) == "ahan" else None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.69", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.69"
+    _site(state).varnas[-1] = mk("r")
     return state
 
 

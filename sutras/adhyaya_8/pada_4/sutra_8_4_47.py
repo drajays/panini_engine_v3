@@ -57,7 +57,8 @@ def _right_not_followed_by_ac(flat: list[tuple[int, int, str]], left_i: int) -> 
 
 
 def _already_doubled(state: State, ti: int, vi: int) -> bool:
-    return _DVITVA_TAG in state.terms[ti].varnas[vi].tags
+    tags = state.terms[ti].varnas[vi].tags
+    return _DVITVA_TAG in tags or "yar_dvitva_8_4_46" in tags      # a letter 8.4.46 already doubled is not doubled again
 
 
 _JASH = {"K": "g", "G": "g", "C": "j", "J": "j", "W": "q", "Q": "q", "T": "d", "D": "d", "P": "b", "B": "b"}
