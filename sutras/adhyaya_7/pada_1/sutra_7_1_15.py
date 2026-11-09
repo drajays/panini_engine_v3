@@ -26,6 +26,8 @@ from engine.state import State
 from phonology    import mk
 
 
+PURVADI = frozenset({"pUrva", "para", "avara", "dakziRa", "uttara", "apara", "aDara", "sva", "antara"})   # 7.1.16 pūrvādibhyo navabhyaḥ (the Gaṇapāṭha nine)
+
 _TABLE = {
     "Nasi": ("s", "m", "A", "t"),   # स्मात्
     "Ni":   ("s", "m", "i", "n"),   # स्मिन्
@@ -48,6 +50,8 @@ def _matches(state: State) -> bool:
         return False  # adanta only (7.1.9 ataḥ): an ā-stem sarvanāma takes syāṭ by 7.3.114
     if pr.meta.get("smat_smin_done"):
         return False
+    if "".join(v.slp1 for v in anga.varnas) in PURVADI:
+        return False  # the nine pūrvādi take smāt/smin only by 7.1.16 (vā)
     return True
 
 

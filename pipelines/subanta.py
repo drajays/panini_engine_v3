@@ -451,6 +451,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.3.107",
     "6.1.69",
     "7.1.15",
+    "7.1.16",   # pūrvādibhyo navabhyo vā — the nine take smāt/smin only optionally (pūrvāt / pūrvasmāt)
     "7.1.12",
     "7.2.112",  # अनाप्यकः — idam: id → an before ṭā(ina) / os
     "7.1.14",
