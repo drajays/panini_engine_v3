@@ -60,6 +60,22 @@ def _already_doubled(state: State, ti: int, vi: int) -> bool:
     return _DVITVA_TAG in state.terms[ti].varnas[vi].tags
 
 
+_JASH = {"K": "g", "G": "g", "C": "j", "J": "j", "W": "q", "Q": "q", "T": "d", "D": "d", "P": "b", "B": "b"}
+
+
+def _after_ac(state: State, flat: list[tuple[int, int, str]], i: int, *, may_left: bool) -> bool:
+    """The yaṇ/may pair (left letter at ``i``) stands right after a vowel — "ac iti vartate" (Kāśikā 8.4.47; every example has one:
+    utkkā, valmmīka, dadhyyatra, madhvvatra, sudhyupāsya). For a may on the left the base anaci doubles it first (mattyatra), so the
+    vārttika takes the yaṇ only once the may is a geminate d·dh / t·t after the vowel (SK suddhyyupāsya)."""
+    if i < 1:
+        return False
+    if not may_left:
+        return flat[i - 1][2] in _AC
+    c, p = flat[i][2], flat[i - 1][2]
+    copy = p == c or _JASH.get(c) == p or _DVITVA_TAG in state.terms[flat[i - 1][0]].varnas[flat[i - 1][1]].tags
+    return copy and i >= 2 and flat[i - 2][2] in _AC
+
+
 def _find_vartika_dvitva(state: State) -> tuple[int, int] | None:
     """Kāśikā vārttikas यणो मयो द्वे / शरः खयो द्वे (phase 1 — before *anaci*)."""
     flat = _flat_varnas(state)
@@ -70,10 +86,10 @@ def _find_vartika_dvitva(state: State) -> tuple[int, int] | None:
         if _already_doubled(state, ti_r, vi_r):
             continue
         # यणो मयो (पञ्चमी-षष्ठी): यणात् परो मय्
-        if left in YAN and right in _MAY:
+        if left in YAN and right in _MAY and _after_ac(state, flat, i, may_left=False):
             return (ti_r, vi_r)
         # मयो यणो (षष्ठी-पञ्चमी): मयात् परो यण् — not when मय् immediately follows *ac*
-        if left in _MAY and right in YAN and (i == 0 or flat[i - 1][2] not in _AC):
+        if left in _MAY and right in YAN and _after_ac(state, flat, i, may_left=True):
             return (ti_r, vi_r)
         # शरः खयो: शरात् परो खय्
         if left in _SHAR and right in _KHAY:
