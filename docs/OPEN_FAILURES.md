@@ -16,3 +16,12 @@ Source: `tools/exercise_audit` after commits 996b98b4 … 43376140. Method: audi
 | 8.4.47 | partly open | śar/khay and avasāne vārttika branches still make kzzantA, prANNkzzu (attested in the Kāśikā but they fire in isolated words) | decide whether isolated words may take them |
 | lint | stale | sig/suite_sig.json does not know the new PRATISHEDHA sūtras (8.4.37/39/44, 8.3.111): they set `blocks_sutra_ids=()` on purpose | refresh with tools.test_impact record |
 | tests | known | test_kirati_karati_split_prakriyas::test_P009 fails (1.3.3 order) since before this work | — |
+
+## 2026-11-10 triage of the audit's "right form, sūtra did not fire" rows
+| Sūtra | Finding |
+|---|---|
+| 7.1.79 | dadanti is made by 7.1.70 (nuṃ) in the kṛdanta/subanta route although 7.1.78 (nābhyastācchatuḥ) should bar it (the strī route does bar it: juhvatī). Fix: make 7.1.78 win over 7.1.70 in the subanta scanner (a trace showed 7.1.70 APPLIED before 7.1.78), then 7.1.79 as a VIBHASHA that inserts nuṃ (7.1.72 must skip abhyasta Śatṛ stems). An attempt was reverted: just listing 7.1.78 before 7.1.70 in pipelines/subanta.py did not reorder them. |
+| 4.1.41 | engine rule is real (tests/regression/test_taddhita_basics.py via chain.strI); derive(stem, strīliṅga) goes ṭāp-only (gOrA), the audit cannot start from the base stem. Harness/route gap, not a missing rule. |
+| 1.1.34 | tag-driven niyama; the audit passes no vivakṣā (saṃjñā/vyavasthā). |
+| 8.2.2 | siddha-statement, not a firing rule. |
+| 3.1.31, 3.4.109, 8.2.75 | not yet triaged (3.4.109 jus after abhyasta/vid; 8.2.75 dat-final dhātu + sip → ru/d). |
