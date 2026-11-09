@@ -38,6 +38,9 @@ def _find(state: State):
         last = state.terms[-1]
         if last.varnas[-1].slp1 == "r":
             return (len(state.terms) - 1, len(last.varnas) - 1)
+    for ti, (t, u) in enumerate(zip(state.terms, state.terms[1:])):       # the seam between two padas: ru before a khar of the next pada
+        if t.varnas and u.varnas and "pada" in t.tags and "ru_intermediate" in t.varnas[-1].tags and u.varnas[0].slp1 in KHAR:
+            return (ti, len(t.varnas) - 1)
     for ti in range(len(state.terms) - 1, -1, -1):
         t = state.terms[ti]
         for vi in range(len(t.varnas) - 1, -1, -1):

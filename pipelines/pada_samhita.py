@@ -57,4 +57,14 @@ def join(left_slp1: str, right_slp1: str) -> State:
     return s
 
 
-__all__ = ["AC_SANDHI", "join", "seam_kind"]
+def join_tripadi(left_slp1: str, right_slp1: str) -> State:
+    """Two padas side by side on one tape, the tripāḍī run over the seam (8.2.66 ru, 8.3.15, 8.3.17–8.3.22 …): भोस् जनाः → भो जनाः.
+    Vowel–vowel seams of padas that end in a vowel go through :func:`join` (the 6.1 ac-sandhi); a pada ending in s / r / ḥ comes here."""
+    from core.phases.tripadi import execute_tripadi_phase  # noqa: PLC0415
+
+    s = State(terms=[_pada(left_slp1), _pada(right_slp1)], meta={}, trace=[])
+    s = apply_rule("8.2.1", s)
+    return execute_tripadi_phase(s)
+
+
+__all__ = ["AC_SANDHI", "join", "join_tripadi", "seam_kind"]

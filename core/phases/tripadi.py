@@ -57,6 +57,11 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     # ── 8.3 — visarga, ṣatva ────────────────────────────────────────────────
     "8.3.14",   # ro ri — r before r is elided, the aṇ before it is lengthened by 6.3.111 (nīraktam, ajarghāḥ)
     "8.3.15",   # khari visarjanīyaḥ — r→ḥ
+    "8.3.17",   # bhobhagoaghoapūrvasya yo'śi — ru → y at a seam before an aś (bho atra, devā gacchanti)
+    "8.3.18",   # vyor laghuprayatnataraḥ śākaṭāyanasya — optional lighter y/v
+    "8.3.19",   # lopaḥ śākalyasya — optional loss of y/v before an aś
+    "8.3.20",   # oto gārgyasya — y after o is lost before an aś
+    "8.3.22",   # hali sarveṣām — y lost before a haś, whatever its kind
     "8.3.24",   # naścopādhā anusvāraḥ — n→M before consonant
     "8.3.28",   # ṅṇoḥ kuk-ṭuk śari — optional k/ṭ after a pada-final ṅ/ṇ before a śar (prāṅkṣu)
     "8.3.30",   # naś ca — optional dhuṭ between a pada-final n and s (praśāntsu)

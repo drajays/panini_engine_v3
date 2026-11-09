@@ -70,7 +70,7 @@ def _target_premerge(state: State):
             continue
         if not pratyaya.varnas:
             continue
-        if pratyaya.varnas[0].slp1 not in HAL:
+        if pratyaya.varnas[0].slp1 not in HAL and "pada" not in pratyaya.tags:    # a vowel after a whole next pada is a seam: the s is still pada-final
             continue
         return (i, len(stem.varnas) - 1)
     return None
