@@ -34,3 +34,10 @@ def test_8_3_35_36_37():
     assert _s("vfkzas", "SeTe") == {"vfkzaSSeTe", "vfkzaHSeTe"}             # 8.3.36 vā śari
     assert _s("vfkzas", "karoti") == {"vfkzaHkaroti", "vfkzaZkaroti"}       # 8.3.37 jihvāmūlīya
     assert _s("vfkzas", "Palati") == {"vfkzaHPalati", "vfkzaVPalati"}       # upadhmānīya
+
+
+def test_3_4_109_jus_after_abhyasta():
+    from pipelines.tinanta import derive
+    for dh, want in (("02.0067", "ajAgaruH"), ("02.0068", "adaridruH")):
+        s = derive(dh, "laG", "kartari", 3, 3)
+        assert s.flat_slp1() == want and any(t["sutra_id"] == "3.4.109" and t["status"] == "APPLIED" for t in s.trace)

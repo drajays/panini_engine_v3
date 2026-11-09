@@ -531,6 +531,8 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # 7.1.4 अदभ्यस्तात् (apavāda of 7.1.3 झोऽन्तः): abhyasta jhi → ati, not
         # anti (जुह्वति). Must run before P00_jha_adesha's 7.1.3 below.
         state = apply_rule("3.4.108", state)   # 3.4.109 अभ्यस्तात् in laṅ: jhi → jus (अजुहवुः), before 7.1.4 sees a jhi
+        state = apply_rule("3.4.109", state)
+        state = apply_rule("3.4.110", state)
         state = apply_rule("7.1.4", state)
         # NOTE (next session): jhaṣ-initial roots (भृ, भी, धा…) still need
         # 8.4.54 अभ्यासे चर्च (बिभर्ति, not भिभर्ति) — but that's a tripāḍī
@@ -1317,6 +1319,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: laṅ-specific tiṅ substitutions ───────────────────────────────
     state = apply_rule("6.1.6", state)     # जक्षित्यादयः षट्: abhyasta
     state = apply_rule("3.4.108", state)   # झेर्जुस् (3.4.109 अभ्यस्तात्): अजक्षुः, अजागरुः
+    state = apply_rule("3.4.109", state)
+    state = apply_rule("3.4.110", state)
     state = apply_rule("7.3.83", state)    # जुसि च: अजागरुः
     state = apply_rule("6.4.112", state)   # abhyasta ā-final root before ṅit jus: अदरिद्रुः
     # 3.4.101 (apavāda) BEFORE 3.4.100: tas→tām, Tas→tam, Ta→ta, mi→am
@@ -1570,6 +1574,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     if not _is_anit and not _caN and (purusha, vacana) == (3, 3):
         # seṭ 3pl: jher jus (3.4.108) → [u, s] instead of 7.1.3 jh→anti
         state = apply_rule("3.4.108", state)
+        state = apply_rule("3.4.109", state)
+        state = apply_rule("3.4.110", state)
 
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
@@ -1682,6 +1688,8 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
 
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.108", state)
+    state = apply_rule("3.4.109", state)
+    state = apply_rule("3.4.110", state)
     state = apply_rule("3.4.100", state)
     state = apply_rule("3.4.99",  state)
 
@@ -1793,6 +1801,8 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.106", state)
     # 3.4.108: jhi → jus → [u,s]  (only fires for 3pl)
     state = apply_rule("3.4.108", state)
+    state = apply_rule("3.4.109", state)
+    state = apply_rule("3.4.110", state)
     # 3.4.100: ti→t, si→s  (i-lopa; skips [u,s] from jus, tām, am, etc.)
     state = apply_rule("3.4.100", state)
     # 3.4.99: vas→va, mas→ma  (s-lopa for uttama 1du/1pl)
@@ -1887,6 +1897,8 @@ def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.108", state)
+    state = apply_rule("3.4.109", state)
+    state = apply_rule("3.4.110", state)
     state = apply_rule("3.4.100", state)
     state = apply_rule("3.4.99", state)
 

@@ -10,20 +10,15 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tin_pratyaya_gate_eligible
-
-_GATE_KEY: str = "3_4_110_AtaH_110"
+from sutras.adhyaya_3.pada_4.sutra_3_4_108 import _find_jhi_tin, act as _jus
 
 
 def cond(state: State) -> bool:
-    return tin_pratyaya_gate_eligible(state, "3.4.110", gate_key=_GATE_KEY)
+    return _find_jhi_tin(state, "3.4.110") is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.4.110"
-    return state
+    return _jus(state, "3.4.110")
 
 
 SUTRA = SutraRecord(
@@ -37,6 +32,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "आतः",
     why_dev               = "धातोः प्रत्ययः (३.4.110)।",
     anuvritti_from        = ('3.1.1',),
+    apavada_of            = ("7.1.3", "7.1.4"),
     cond                  = cond,
     act                   = act,
 )

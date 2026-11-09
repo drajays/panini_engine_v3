@@ -37,7 +37,7 @@ def _dhatu_is_anit(state: State) -> bool:
     return False
 
 
-def _find_jhi_tin(state: State) -> int | None:
+def _find_jhi_tin(state: State, only: str | None = None) -> int | None:
     """The jhi tiṅ ādeśa of a liṅ (vidhi or āśīr) — and of a luṅ that has sic (3.4.109 सिजभ्यस्तविदिभ्यश्च,
     अपठिषुः) — read from the affix's own provenance, not from the derivation's lakāra (Art. 2)."""
     has_sic = any((t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
@@ -54,7 +54,8 @@ def _find_jhi_tin(state: State) -> int | None:
         # 3.4.110 आतः: after an ā-final root whose sic was luk'd (2.4.77) jhi is jus too — aguH, asthuH, adaH
         ata = (source == "luG" and state.samjna_registry.get("2.4.77_sic_luk")
                and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms))
-        if source != "liG" and not (source == "luG" and has_sic) and not abhyasta_lan and not ata:
+        by = {"3.4.108": source == "liG", "3.4.109": (source == "luG" and has_sic) or abhyasta_lan, "3.4.110": bool(ata)}   # each sūtra takes its own jhi
+        if not (by.get(only, False) if only else any(by.values())):
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() == "Ji" and "".join(v.slp1 for v in t.varnas) in {"Ji", "J"}:
             return i
@@ -62,11 +63,11 @@ def _find_jhi_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    return _find_jhi_tin(state) is not None
+    return _find_jhi_tin(state, "3.4.108") is not None
 
 
-def act(state: State) -> State:
-    j = _find_jhi_tin(state)
+def act(state: State, only: str = "3.4.108") -> State:
+    j = _find_jhi_tin(state, only)
     if j is None:
         return state
     t = state.terms[j]
@@ -75,7 +76,7 @@ def act(state: State) -> State:
     t.meta["upadesha_slp1"] = "jus"
     t.meta["3_4_108_liG_done"] = True
     t.tags.discard("upadesha")
-    state.samjna_registry["3.4.108_jhi_jus"] = True
+    state.samjna_registry[f"{only}_jhi_jus"] = True
     state.meta["__why_now_dev__"] = (
         "लिङः झि-आदेशस्य स्थाने जुस् (झोऽन्तस्य अपवादः) — भवेयुः, भूयासुः; सिचि लुङ्यपि (अपठिषुः)। (३.४.१०८)"
     )
