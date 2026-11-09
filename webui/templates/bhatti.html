@@ -39,20 +39,9 @@
   <div class="two-pane">
     <div>
       <h2>प्रक्रिया</h2>
-      <div class="trace-filter" id="trace-filter">
-        <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
-        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
-        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
-        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
-        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
-      </div>
-      <ol class="trace" id="trace"></ol>
+      <div id="trace"></div>
     </div>
-    <div class="sutra-detail" id="sutra-detail">
-      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
     </div>
-  </div>
 </div>
 
 <div class="panel" id="error-panel" style="display:none;">
@@ -125,8 +114,6 @@ async function runWord(btn) {
        <div><span>${st.applied_count || 0} प्रयुक्तानि</span>
             <span>${st.blocked_count || 0} निवारितानि</span></div>`;
     renderTrace(data.trace || []);
-    document.getElementById("sutra-detail").innerHTML =
-      '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
   } catch (e) {
     document.getElementById("error-panel").style.display = "";
     document.getElementById("error-msg").textContent = "दोषः: " + e.message;

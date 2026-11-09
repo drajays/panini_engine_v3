@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block title %}अभ्यासः — पाणिनि-यन्त्रम्{% endblock %}
-{% block head_extra %}<script src="{{ url_for('static', filename='transliterate.js') }}"></script>{% endblock %}
 {% block content %}
 <div class="panel">
   <h1>अभ्यासः <span class="muted" style="font-size:14px;font-weight:400">Practice — every answer is checked by the engine</span></h1>
@@ -16,7 +15,6 @@
 <div class="panel" id="why" hidden></div>
 {% endblock %}
 {% block body_extra %}
-<script src="{{ url_for('static', filename='prakriya.js') }}"></script>
 <script>
 (() => {
   const $ = id => document.getElementById(id), esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -76,7 +74,7 @@
 
   function finish(ok, ans) {
     cur.answered = true; S.n++; if (ok) S.ok++; tally();
-    $("fb").innerHTML = `<b style="color:${ok ? "#196b1a" : "#a02020"}">${ok ? "सम्यक् ✓ correct" : "न सम्यक् ✗ not quite"}</b> — ${ans}`;
+    $("fb").innerHTML = `<b style="color:${ok ? "var(--success)" : "var(--danger)"}">${ok ? "सम्यक् ✓ correct" : "न सम्यक् ✗ not quite"}</b> — ${ans}`;
     $("why").hidden = false;
     Prakriya.mount($("why"), {trace: cur.r.trace, title: cur.sub ? cur.spec.stem : cur.spec.dhatu, surface: {slp1: cur.r.surface_slp1, dev: cur.r.surface_dev}});
   }

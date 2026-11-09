@@ -155,19 +155,10 @@
       <div id="rd-word"></div>
       <div id="rd-trace-area" style="display:none;">
         <h3 style="margin:12px 0 6px;">प्रक्रिया</h3>
-        <div class="trace-filter" id="trace-filter">
-          <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-          <label><input type="checkbox" value="APPLIED" checked> प्रयुक्तम्</label>
-          <label><input type="checkbox" value="AUDIT" checked> निरीक्षणम्</label>
-          <label><input type="checkbox" value="BLOCKED" checked> निवारितम्</label>
-          <label><input type="checkbox" value="SKIPPED"> अतिक्रान्तम्</label>
-          <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
-        </div>
-        <ol class="trace" id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></ol>
+        <div id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></div>
         <div id="rd-vidyut"></div>
       </div>
-      <div id="sutra-detail"></div>
-    </div>
+      </div>
   </div>
 </div>
 {% endif %}
@@ -567,7 +558,6 @@ async function selectWord(k) {
   if (vc) h += `<div class="rd-verdict ${vc.ok ? "st-derived" : "st-differs"}">${vc.ok ? "✓" : "✗"} विभक्तिः ${esc(VIB[vc.found])}; ${esc(vc.why)} → ${esc(VIB[vc.expected])}</div>`;
   if (sl.length) h += `<div class="rd-sutra-list">${sl.map(sutraLine).join("")}</div>`;
   $("rd-word").innerHTML = h;
-  $("sutra-detail").innerHTML = "";
   $("rd-trace-area").style.display = "none";
   if (!e.request) return;
   try {
@@ -577,7 +567,6 @@ async function selectWord(k) {
     renderTrace(t.trace);
     renderVidyut(t.vidyut, t.surface_slp1);
   } catch (err) {
-    $("sutra-detail").innerHTML = `<div class="muted">${esc(err.message)}</div>`;
   }
 }
 
@@ -678,7 +667,7 @@ async function selectBhashyaWord(el) {
   if (!r.found) {
     $("rd-detail-empty").style.display = "none"; $("rd-detail-body").style.display = "";
     $("rd-word").innerHTML = `<h3>${esc(r.surface)}</h3><div class="muted">न लब्धम् — not in the deposit's bhāṣya dictionary.</div>`;
-    $("rd-trace-area").style.display = "none"; $("sutra-detail").innerHTML = "";
+    $("rd-trace-area").style.display = "none";
     return;
   }
   showAnalysis(r.surface, r);
@@ -709,7 +698,6 @@ async function showAnalysis(title, entry) {
     <div class="rd-kv">${kv.filter(r => r[1]).map(([a, b]) => `<div class="k">${esc(a)}</div><div class="v dev">${esc(b)}</div>`).join("")}</div>
     ${entry.parts.map(partHtml).join("")}
     <p class="muted" style="font-size:11px">Analysis: Tamal Maharaj (CC BY 4.0), a hypothesis — ✓ only when the engine re-derives it.</p>`;
-  $("sutra-detail").innerHTML = "";
   $("rd-trace-area").style.display = "none";
   $("rd-word").querySelectorAll("button[data-part]").forEach(b => b.onclick = () => loadTrace(entry.parts[+b.dataset.part].engine.request));
   const first = entry.parts.find(p => p.engine.request);
@@ -723,7 +711,6 @@ async function loadTrace(req) {
     renderTrace(t.trace);
     renderVidyut(t.vidyut, t.surface_slp1);
   } catch (err) {
-    $("sutra-detail").innerHTML = `<div class="muted">${esc(err.message)}</div>`;
   }
 }
 

@@ -73,20 +73,9 @@
     <div id="sc-cell-result"></div>
     <div class="two-pane" style="margin-top:12px;">
       <div>
-        <div class="trace-filter" id="trace-filter">
-          <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-          <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
-          <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
-          <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
-          <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
-          <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
-        </div>
-        <ol class="trace" id="trace" style="max-height:400px;overflow-y:auto;"></ol>
+        <div id="trace" style="max-height:400px;overflow-y:auto;"></div>
       </div>
-      <div class="sutra-detail" id="sutra-detail">
-        <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
       </div>
-    </div>
   </div>
 </div>
 
@@ -317,8 +306,6 @@ async function openScCell(v, vv) {
     `शम्भु — विभक्तिः ${v}, वचनम् ${vv}`;
   document.getElementById("trace").innerHTML =
     '<li class="muted">लादयति…</li>';
-  document.getElementById("sutra-detail").innerHTML =
-    '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
 
   const r    = await fetch("/api/derive", {
     method: "POST",

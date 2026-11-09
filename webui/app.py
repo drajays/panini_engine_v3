@@ -133,6 +133,12 @@ def prakriya_page():
                            cov=coverage_report(SUTRA_REGISTRY))
 
 
+@app.route("/api/lk-sutras")
+def api_lk_sutras():
+    """Sūtra ids of the Laghukaumudī work-list (docs/data/lk_worklist.json) — the Kaumudī view highlights these."""
+    return jsonify(sorted({r["id"] for r in json.loads((_DOCS / "data/lk_worklist.json").read_text(encoding="utf-8"))}))
+
+
 @app.route("/practice")
 def practice_page():
     return render_template("practice.html", nav_active="practice", cov=coverage_report(SUTRA_REGISTRY))
@@ -184,6 +190,67 @@ def derive_page():
     )
 
 
+
+# ─────────────────────────────────────────────────────────────────
+# Display-only extras on the derivation APIs: letter origins and the what-if sūtra disabler
+# ─────────────────────────────────────────────────────────────────
+
+import contextlib as _contextlib
+import threading as _threading
+
+_WHATIF_LOCK = _threading.Lock()
+
+
+@_contextlib.contextmanager
+def _what_if(disabled):
+    """DISPLAY-ONLY what-if: every State created inside the block starts with ``disabled`` in ``blocked_sutras``,
+    so the scheduler never offers those sūtras.  The patch lives in this web process for the duration of the
+    block (serialised by a lock) and is always undone; no engine file is changed and no rule reads it (Art. 2, 6).
+    The result is a deliberately malformed derivation shown beside the normal one, never stored or fed back."""
+    from engine.state import State
+    ids = {d.strip() for d in disabled if d.strip()}
+    with _WHATIF_LOCK:
+        orig = State.__init__
+
+        def init(self, *a, **k):
+            orig(self, *a, **k)
+            self.blocked_sutras |= ids
+        State.__init__ = init
+        try:
+            yield
+        finally:
+            State.__init__ = orig
+
+
+def _letters(state) -> list[dict]:
+    """Final word, letter by letter, each with the sūtra(s) that created it (Varna tags ``origin:<id>``)."""
+    out = []
+    for ti, t in enumerate(state.terms):
+        for v in t.varnas:
+            tags = getattr(v, "tags", None) or ()
+            out.append({"slp1": getattr(v, "slp1", str(v)), "term": ti,
+                        "origin": sorted(x[7:] for x in tags if str(x).startswith("origin:"))})
+    return out
+
+
+def _pack(state) -> dict:
+    return {"surface_dev": state.flat_dev(), "surface_slp1": state.flat_slp1(), "trace": _enrich_trace(state.trace),
+            "letters": _letters(state)}
+
+
+def _with_extras(out: dict, state, data: dict, rerun) -> dict:
+    out["letters"] = _letters(state)
+    dis = data.get("disable") or []
+    if isinstance(dis, str):
+        dis = dis.split(",")
+    if dis:
+        try:
+            with _what_if(dis):
+                out["whatif"] = {"disabled": [d.strip() for d in dis if d.strip()], **_pack(rerun())}
+        except Exception as ex:                                  # a malformed derivation may legitimately fail
+            out["whatif"] = {"disabled": list(dis), "error": f"{type(ex).__name__}: {ex}"}
+    return out
+
 # ─────────────────────────────────────────────────────────────────
 # Derivation
 # ─────────────────────────────────────────────────────────────────
@@ -215,7 +282,7 @@ def api_derive():
 
     enriched = _enrich_trace(state.trace)
 
-    return jsonify({
+    return jsonify(_with_extras({
         "stem"         : stem,
         "vibhakti"     : vib,
         "vacana"       : vac,
@@ -232,7 +299,7 @@ def api_derive():
             "blocked_count" : sum(1 for s in state.trace if s.get("status") == "BLOCKED"),
             "skipped_count" : sum(1 for s in state.trace if s.get("status") == "SKIPPED"),
         },
-    })
+    }, state, data, lambda: derive(stem, vib, vac, linga=linga)))
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -966,7 +1033,7 @@ def api_tinanta():
     enriched = _enrich_trace(state.trace)
 
     tr = state.trace
-    return jsonify({
+    return jsonify(_with_extras({
         "dhatu_slp1"     : dhatu_slp1,
         "dhatu_dev"      : row.get("mula_dhatu_dev", dhatu_slp1),
         "dhatupatha_id"  : row.get("dhatupatha_id", ""),
@@ -988,7 +1055,7 @@ def api_tinanta():
             "audit_count"   : sum(1 for s in tr if s.get("status") == "AUDIT"),
             "skipped_count" : sum(1 for s in tr if s.get("status") == "SKIPPED"),
         },
-    })
+    }, state, data, lambda: tin_derive(dhatu, lakara, prayoga, purusha, vacana)))
 
 
 @app.route("/api/tinanta/paradigm", methods=["POST"])
@@ -1382,12 +1449,12 @@ def api_krdanta():
             nom_state = derive_trc_nom_sg_from_state(tfc_state, vibhakti=1, vacana=1, linga="pulliṅga")
             surface   = nom_state.flat_dev() if hasattr(nom_state, "flat_dev") else ""
             enriched  = _enrich_trace(nom_state.trace)
-            return jsonify({
+            return jsonify(_with_extras({
                 "surface_dev": surface,
                 "trace": enriched,
                 "dhatu_id": dhatu_id,
                 "krt_type": krt_type,
-            })
+            }, nom_state, data, lambda: derive_trc_nom_sg_from_state(derive_tfc_pratipadika(upadesha, udatta_dhatu=udatta), vibhakti=1, vacana=1, linga="pulliṅga")))
         elif krt_type == "nvul":
             from pipelines.krdanta import derive_krt
             # Label comes from dhātupātha metadata; fall back to raw upadesha only.
@@ -1399,12 +1466,12 @@ def api_krdanta():
             )
             surface  = nvul_state.flat_dev() if hasattr(nvul_state, "flat_dev") else ""
             enriched = _enrich_trace(nvul_state.trace)
-            return jsonify({
+            return jsonify(_with_extras({
                 "surface_dev": surface,
                 "trace": enriched,
                 "dhatu_id": dhatu_id,
                 "krt_type": krt_type,
-            })
+            }, nvul_state, data, lambda: derive_krt(upadesha, krt_upadesha_slp1="Rvul", merge_pratipadika_label=label)))
         else:
             return jsonify({"error": f"Unsupported krt_type: {krt_type}"}), 400
     except Exception as ex:

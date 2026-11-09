@@ -77,19 +77,9 @@
         <!-- Prakriyā trace area -->
         <div id="pd-trace-area" style="display:none;">
           <h3 style="margin:12px 0 6px;">प्रक्रिया</h3>
-          <div class="trace-filter" id="trace-filter">
-            <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-            <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
-            <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
-            <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
-            <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
-            <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
-          </div>
-          <ol class="trace" id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></ol>
+          <div id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></div>
         </div>
-        <div id="sutra-detail">
-          <div class="empty" style="padding:16px;font-size:12px;">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
-        </div>
+        
 
       </div>
     </div>
@@ -278,8 +268,6 @@ function selectWord(wordData, el) {
     loadTrace(_selectedAna);
   } else {
     document.getElementById("pd-trace-area").style.display = "none";
-    document.getElementById("sutra-detail").innerHTML =
-      '<div class="empty" style="padding:16px;font-size:12px;">व्युत्पत्तिः अनुपलब्धा।</div>';
   }
 }
 
@@ -326,8 +314,6 @@ async function loadTrace(ana) {
   const traceList = document.getElementById("trace");
   traceArea.style.display = "";
   traceList.innerHTML = '<li class="muted" style="padding:6px;">लादयति…</li>';
-  document.getElementById("sutra-detail").innerHTML =
-    '<div class="empty" style="padding:16px;font-size:12px;">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
 
   try {
     const r = await fetch("/api/patha/trace", {

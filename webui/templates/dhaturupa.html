@@ -143,16 +143,6 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     $("tally").textContent = `Vidyut: ${tot} cells · engine agrees ${ok} · differs ${bad} · n/a ${na}` + (done ? "" : " …");
   }
 
-  function engSteps() {
-    const E = (lastTrace && lastTrace.engine) || {};
-    if (!E.trace) return `<div class="dr-step">${esc(E.na || E.error || "")}</div>`;
-    const rupa = $("f-rupa") ? $("f-rupa").checked : true, audit = $("f-audit") && $("f-audit").checked, skip = $("f-skip") && $("f-skip").checked;
-    return E.trace.filter(s => {
-      if (["APPLIED","APPLIED_VACUOUS"].includes(s.status)) return !rupa || s.form_before !== s.form_after || s._is_structural || !!s.licenses;
-      if (s.status === "SKIPPED") return skip;
-      return audit;
-    }).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${Lipi.step(E.trace, s)}</span>${s.why_now_dev || s.why_dev ? `<div class="r" style="font-family:var(--dev);font-size:.78rem">${esc(s.why_now_dev || s.why_dev)}</div>` : ""}</div>`).join("");
-  }
 
   async function openCell(v, r, c) {
     const a = args();
@@ -163,21 +153,17 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     const lab = LAKARA.find(x => x[0] === v)[2];
     $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
       <p class="dr-tally" style="margin:.2rem 0 .6rem">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(esc).join(", ")}</b>` : (Array.isArray(d.vidyut) && E.trace ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
-      <div class="dr-step" style="font-size:.8rem">${Lipi.select("f-lipi")}
-        <span class="dr-note">देवनागरी shows each varṇa apart — vyañjana with halanta, svara as its own letter — until __MERGE__ joins them.</span></div>
       <div class="dr-two"><div><h3>Vidyut</h3><div id="vsteps">${vidSteps()}</div></div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
-      <div class="dr-step" style="font-size:.8rem"><label><input type="checkbox" id="f-rupa" checked> रूप-परिवर्तन-मात्रम्</label> <label><input type="checkbox" id="f-audit"> अधिकार/परिभाषा</label> <label><input type="checkbox" id="f-skip"> अतिक्रान्त</label></div>
-      <div id="esteps">${engSteps()}</div></div></div></div>`;
-    ["f-rupa","f-audit","f-skip"].forEach(i => $(i).addEventListener("change", () => { $("esteps").innerHTML = engSteps(); }));
-    Lipi.bind("f-lipi");
+      <div id="esteps"></div></div></div></div>`;
+    if (E.trace) Prakriya.mount($("esteps"), {trace: E.trace, title: E.dev || "", surface: E.slp1 ? {slp1: E.slp1, dev: E.dev} : null}); else $("esteps").textContent = E.na || E.error || "";
     $("dcard").scrollIntoView({block:"nearest"});
   }
   let lastMiss = new Set();
   function vidSteps() {
     const V = lastTrace && lastTrace.vidyut;
-    return Array.isArray(V) ? V.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step${lastMiss.has(s.code.split(":")[0]) ? " miss" : ""}"><b>${esc(s.code)}</b><span class="r">${Lipi.terms(s.result)}</span></div>`).join("")).join("") : esc(V && V.error || "Vidyut unavailable");
+    return Array.isArray(V) ? V.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step${lastMiss.has(s.code.split(":")[0]) ? " miss" : ""}"><b>${esc(s.code)}</b><span class="r">${esc(s.result.map(t => Prakriya.fmt(t, "")).join(" + "))}</span></div>`).join("")).join("") : esc(V && V.error || "Vidyut unavailable");
   }
-  window.addEventListener("lipi-change", () => { if ($("esteps")) { $("esteps").innerHTML = engSteps(); $("vsteps").innerHTML = vidSteps(); } });
+  window.addEventListener("prakriya-change", () => { if ($("vsteps")) $("vsteps").innerHTML = vidSteps(); });
 
   $("out").addEventListener("click", e => { const b = e.target.closest(".dr-cell"); if (b) openCell(b.dataset.la, +b.dataset.r, +b.dataset.c); });
 })();

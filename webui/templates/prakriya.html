@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block title %}प्रक्रिया — पाणिनि-यन्त्रम्{% endblock %}
-{% block head_extra %}<script src="{{ url_for('static', filename='transliterate.js') }}"></script>{% endblock %}
 {% block content %}
 <div class="panel">
   <h1>प्रक्रिया <span class="muted" style="font-size:14px;font-weight:400">Derive any word, step by step</span></h1>
@@ -18,6 +17,7 @@
       <label>वचनम्<select id="vc2">{% for k, v in vacana %}<option value="{{ loop.index }}">{{ v }}</option>{% endfor %}</select></label></span>
     <span data-k="krdanta" class="pk-form-row">
       <label>कृत्<select id="krt"><option value="tfc">तृच्</option><option value="nvul">ण्वुल्</option></select></label></span>
+    <label>सूत्र-निवारणम् (what-if)<input id="dis" size="16" placeholder="7.1.12, 8.4.2" title="Display only: run the derivation with these sūtras switched off"></label>
     <button type="submit">व्युत्पादयतु</button>
   </form>
   <p id="st" class="muted"></p>
@@ -25,16 +25,16 @@
 <div class="panel" id="res"></div>
 {% endblock %}
 {% block body_extra %}
-<script src="{{ url_for('static', filename='prakriya.js') }}"></script>
 <script>
 (() => {
   const $ = id => document.getElementById(id), Q = new URLSearchParams(location.search);
-  const FIELDS = {kind:"kind", w:"w", vib:"vib", vac:"vac", lg:"lg", la:"la", pr:"pr", pu:"pu", vc2:"vc2", krt:"krt"};
+  const FIELDS = {dis:"dis", kind:"kind", w:"w", vib:"vib", vac:"vac", lg:"lg", la:"la", pr:"pr", pu:"pu", vc2:"vc2", krt:"krt"};
   for (const k in FIELDS) if (Q.has(k)) $(k).value = Q.get(k);
   const slp = t => /[ऀ-ॿ]/.test(t) ? Transliterate.toSLP1(t, "devanagari") : t;
   const show = () => document.querySelectorAll("[data-k]").forEach(e => { e.hidden = e.dataset.k !== $("kind").value; });
   $("kind").onchange = show; show();
-  const post = (u, b) => fetch(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b)}).then(r => r.json());
+  const post = (u, b) => { const d = $("dis").value.split(",").map(x => x.trim()).filter(Boolean); if (d.length) b = {...b, disable: d};
+    return fetch(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b)}).then(r => r.json()); };
   async function run(push) {
     const kind = $("kind").value, w = $("w").value.trim(); if (!w) return;
     if (push) { const p = new URLSearchParams(); for (const k in FIELDS) p.set(k, $(k).value); history.replaceState(null, "", "?" + p); }
@@ -47,7 +47,11 @@
     } catch (e) { $("st").textContent = "दोषः: " + e.message; return; }
     if (r.error) { $("st").textContent = r.error; return; }
     $("st").textContent = "";
-    Prakriya.mount($("res"), {trace: r.trace, title: w, surface: {slp1: r.surface_slp1 || ((r.trace || []).slice(-1)[0] || {}).form_after || "", dev: r.surface_dev}, request: Object.fromEntries(Q)});
+    $("res").innerHTML = `<div id="main-v"></div>${r.whatif ? `<div class="pk-whatif"><p><b>What-if (display only)</b> — sūtras switched off: ${r.whatif.disabled.join(", ")}.
+      The result below is deliberately malformed; the engine's real derivation is above.</p><div id="alt-v"></div></div>` : ""}`;
+    Prakriya.mount($("main-v"), {trace: r.trace, title: w, letters: r.letters, surface: {slp1: r.surface_slp1 || ((r.trace || []).slice(-1)[0] || {}).form_after || "", dev: r.surface_dev}});
+    if (r.whatif) { if (r.whatif.error) $("alt-v").textContent = r.whatif.error;
+      else Prakriya.mount($("alt-v"), {trace: r.whatif.trace, title: w + " (what-if)", letters: r.whatif.letters, surface: {slp1: r.whatif.surface_slp1, dev: r.whatif.surface_dev}}); }
   }
   $("f").addEventListener("submit", e => { e.preventDefault(); run(true); });
   if (Q.has("w")) run(false);

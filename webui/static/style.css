@@ -149,49 +149,6 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
   .two-pane { grid-template-columns: 1fr; }
 }
 
-/* ── Trace ────────────────────────────────────────────────────── */
-
-.trace { list-style: none; padding: 0; margin: 0; }
-.trace-step {
-  border-left: 3px solid var(--line);
-  padding: 8px 12px;
-  margin: 2px 0;
-  background: var(--bg-subtle);
-  cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  transition: background 0.1s;
-}
-.trace-step:hover { background: #ece6d2; }
-.trace-step.applied   { border-left-color: var(--success); }
-.trace-step.applied_vacuous { border-left-color: #6b8e6b; }
-.trace-step.audit     { border-left-color: #6b7fb3; }
-.trace-step.blocked   { border-left-color: var(--danger);
-                        background: #faf0ec; }
-.trace-step.skipped   { border-left-color: var(--ink-faint);
-                        opacity: 0.6; }
-.trace-step.structural { border-left-color: var(--accent-dim);
-                         background: #fff8f0; }
-.trace-step.selected  { background: #fff3dd;
-                        box-shadow: inset 3px 0 0 var(--accent); }
-
-.ts-head { display: flex; align-items: baseline; gap: 10px; }
-.ts-icon { font-family: var(--mono); font-size: 12px; width: 14px; }
-.ts-id   { font-family: var(--mono); font-size: 12px; color: var(--ink-dim);
-           min-width: 60px; }
-.ts-dev  { flex: 1; }
-.ts-form { white-space: nowrap; }
-/* Devanāgarī intermediate forms in the trace list */
-.ts-form-dev { font-family: var(--dev); font-size: 13px; color: var(--ink-dim); }
-.ts-form-dev.ts-form-after    { color: var(--accent-dim); font-weight: 500; }
-.ts-form-dev.ts-form-unchanged{ color: var(--ink-faint); }
-.ts-form .arrow { color: var(--accent-dim); margin: 0 4px; }
-
-.trace-filter { display: flex; gap: 8px; margin-bottom: 10px; font-size: 12px;}
-.trace-filter label {
-  display: flex; align-items: center; gap: 4px; color: var(--ink-dim);
-  cursor: pointer;
-}
-
 /* ── Result headline ─────────────────────────────────────────── */
 
 .result {
@@ -206,54 +163,6 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .result .slp1    { font-family: var(--mono); color: var(--ink-faint); }
 .result .stats   { margin-left: auto; font-size: 11px; color: var(--ink-faint); }
 .result .stats span { margin-left: 12px; font-family: var(--mono); }
-
-/* ── Sūtra detail panel ──────────────────────────────────────── */
-
-.sutra-detail {
-  position: sticky; top: 20px;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
-}
-.sutra-detail .empty {
-  color: var(--ink-faint);
-  font-style: italic;
-  padding: 40px 20px;
-  text-align: center;
-}
-.sutra-detail h2 .sid {
-  font-family: var(--mono); color: var(--ink-faint); font-weight: 400;
-  margin-right: 8px;
-}
-.sutra-detail .text-dev { font-size: 20px; line-height: 1.4;
-                          color: var(--accent); margin: 8px 0; }
-.sutra-detail .padaccheda { color: var(--ink-dim); margin: 4px 0; }
-.sutra-detail .why { margin: 10px 0; }
-.sutra-detail .kv { font-size: 12px; margin: 4px 0; }
-/* why_now_dev "अत्र किमर्थम्" context box */
-.sutra-detail .kv.why-now-box {
-  background: var(--bg-alt, #f5f3ec);
-  border-left: 3px solid var(--accent, #b05c2a);
-  border-radius: 3px;
-  padding: 6px 10px;
-  margin-top: 8px;
-  font-family: var(--dev);
-  font-size: 13px;
-  line-height: 1.7;
-}
-.sutra-detail .kv strong { display: inline-block; min-width: 100px;
-                            color: var(--ink-faint);
-                            font-weight: 600; font-size: 11px;
-                            letter-spacing: 0.5px; text-transform: uppercase; }
-.sutra-detail .type-badge {
-  display: inline-block;
-  font-size: 10px;
-  padding: 2px 6px;
-  background: var(--accent);
-  color: white;
-  border-radius: 3px;
-  letter-spacing: 1px;
-  vertical-align: middle;
-}
 
 /* ── 24-cell matrix ──────────────────────────────────────────── */
 
@@ -1431,16 +1340,18 @@ table.matrix td.cell-fixed::after {
 .pk-form{font-size:1.1rem;overflow-wrap:anywhere}
 .pk-gloss{font-size:13px;color:var(--ink-dim);margin-top:2px}
 .pk-sch{font-size:12px;margin-top:.25rem;padding-left:.6rem;border-left:2px solid var(--line)}
-.pk-why{color:#a02020}
-.pk-blocked .pk-tag{color:#a02020;border-color:#a02020}.pk-applied .pk-tag{color:#196b1a;border-color:#196b1a}
+.pk-why{color:var(--danger)}
+.pk-blocked .pk-tag{color:var(--danger);border-color:var(--danger)}.pk-applied .pk-tag{color:var(--success);border-color:var(--success)}
 .pk-skipped,.pk-audit,.pk-defined,.pk-vacuous{opacity:.75}
 .pk-hit,.pk-step:target{background:var(--bg-subtle);outline:2px solid var(--accent)}
 .pk-form-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:end}
 .pk-form-row label{font-size:12px;color:var(--ink-dim);display:flex;flex-direction:column;gap:2px}
 @media print{.no-print{display:none!important}.pk-step{break-inside:avoid}body{background:#fff;color:#000}}
-/* Bundled Devanāgarī face (Noto Sans Devanagari, SIL OFL) — no network fonts. */
-@font-face{font-family:"Noto Sans Devanagari";src:local("Noto Sans Devanagari"),url("/static/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Noto Serif Devanagari";src:local("Noto Serif Devanagari"),url("/static/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:100 900;font-display:swap}
+/* Bundled Devanāgarī faces (Noto Sans Devanagari, SIL OFL) — no network fonts. */
+@font-face{font-family:"Noto Sans Devanagari";src:local("Noto Sans Devanagari"),url("/static/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:100 599;font-display:swap}
+@font-face{font-family:"Noto Sans Devanagari";src:url("/static/fonts/NotoSansDevanagari-Bold.woff") format("woff");font-weight:600 900;font-display:swap}
+@font-face{font-family:"Noto Serif Devanagari";src:local("Noto Serif Devanagari"),url("/static/fonts/NotoSansDevanagari-Regular.woff2") format("woff2");font-weight:100 599;font-display:swap}
+@font-face{font-family:"Noto Serif Devanagari";src:url("/static/fonts/NotoSansDevanagari-Bold.woff") format("woff");font-weight:600 900;font-display:swap}
 
 /* ── Phase 8: a11y, mobile, print ── */
 .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:.5rem 1rem;z-index:999}
@@ -1458,3 +1369,12 @@ table.matrix td.cell-fixed::after {
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{.pk-gloss,.pk-main{color:#000}a{color:#000;text-decoration:none}.content{padding:0}}
+
+:root{color-scheme:light}  /* the app has one (light) theme; keeps form controls readable under OS dark mode */
+.pk-letters{display:flex;flex-wrap:wrap;gap:.2rem;margin:.3rem 0}
+.pk-letter{font:inherit;font-family:var(--dev);font-size:1.15rem;min-width:2rem;padding:.1rem .4rem;border:1px solid var(--accent);border-radius:4px;background:var(--bg-panel);color:var(--ink);cursor:pointer}
+.pk-letter.pk-given{border-style:dashed;border-color:var(--line)}
+.pk-lk{color:var(--accent);margin-left:.3rem}
+.pk-inspect{margin-top:1rem;font-size:13px}.pk-inspect-out{margin-top:.4rem;line-height:1.6}
+.pk-whatif{border:2px dashed var(--danger);padding:.6rem;margin-top:1rem;border-radius:6px}
+.pk-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1rem}

@@ -56,19 +56,7 @@
       <div class="pl-trace-area">
         <div class="pl-trace-left">
           <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">प्रक्रिया</h2>
-          <div class="trace-filter" id="trace-filter">
-            <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-            <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
-            <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
-            <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
-            <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
-            <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
-          </div>
-          <ol class="trace" id="trace" style="overflow-y:auto;flex:1;margin:0;"></ol>
-        </div>
-        <div class="pl-trace-right" id="sutra-detail">
-          <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">सूत्र-विवरणम्</h2>
-          <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+          <div id="trace" style="overflow-y:auto;flex:1;margin:0;"></div>
         </div>
       </div>
     </div>
@@ -266,9 +254,6 @@ function showResult(data) {
     </div>`;
 
   /* सूत्र-विवरण-पट्टिका पुनरारम्भः */
-  document.getElementById("sutra-detail").innerHTML =
-    `<h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">सूत्र-विवरणम्</h2>
-     <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>`;
 
   showState("result");
   renderTrace(data.trace);
