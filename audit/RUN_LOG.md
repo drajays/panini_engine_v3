@@ -209,6 +209,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 13:05 | cursor | P1 SC-001 ruling → AMENDMENT 16 / Art. 20 ArthaNirdesha; 4.1.92 frame 4.1.83–4.1.178 | CONSTITUTION.md, docs/AMENDMENT_16.md, engine/sutra_type.py, engine/gates.py, engine/__init__.py, sutras/adhyaya_4/pada_1/sutra_4_1_92.py, tests/constitutional/test_artha_nirdesha.py, tests/unit/test_sutra_4_1_92_prAgdIvyatIyaSezAdhikAra.py, tests/unit/test_adhikara_gate_scope.py, core/i18n_hi.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
 | 2026-10-20 08:30 | cursor | P2 /reader — Advaita Sharada (Sringeri) Prasthānatrayī bhāṣya + Ānandagiri, local gitignored cache only (All rights reserved) | tools/fetch_advaita_sharada.py, tools/advaita_sharada_reader.py, data/reference/advaita_sharada/SOURCE.json, .gitignore, data/inputs/grantha_catalog.json, webui/app.py, webui/templates/reader.html, tests/unit/test_advaita_sharada_reader.py, tools/fetch_prasthanatrayi_words.py, data/reference/prasthanatrayi_words/SOURCE.json, handover.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
+| 2026-11-09 (session) | claude | Unified web UI Phases 1-2: tabbed sections (/shabdarupa, /dhaturupa, /reader), redirects for retired URLs, यन्त्रशाला dev area, stale text fixes | webui/**, api/*.html, docs/learn.html, tests/unit/test_webui_routes.py, audit/RUN_LOG.md | released |
 
 ---
 
@@ -241,6 +242,8 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+- 2026-11-09 claude: web UI Phases 1-2 done. /derive,/matrix,/showcase,/sarvanama -> /shabdarupa?tab=; /krdanta -> /dhaturupa?tab=krdanta; /bhatti,/patha,/text -> /reader?tab=; /devendra,/dik pages removed (301 to /); /coverage,/review -> /yantrashala; /pipelines,/sig,/tests moved under यन्त्रशाला tab bar. Tab views are the old view functions dispatched by `_tab()` in webui/app.py. Tests: tests/unit/test_webui_routes.py (41 pass). Phases 3-8 done in the same session: seven-section menu + home; shared derivation view /prakriya (webui/static/prakriya.js: Student/Scholar, dev/SLP1/IAST, hi/en/sa gloss, #s-N permalinks, print, JSON export); /learn serves docs/learn.html (offline-rewired, /docs/ static mount); /practice in Flask (fill the cell, name the sūtra; checked against engine APIs); /sutra/<id> for all 3983 sūtras (status, Kāśikā examples from docs/data/sutras.json, where applied from docs/data/traces); bundled Noto font (webui/static/fonts), skip link, mobile + print CSS; /api/krdanta now resolves ids like /v1/krdanta. Not done: FastAPI :8000 HTML pages still served (tests/test_api_smoke.py asserts /lab,/practice 200); old per-tab views still use their own trace renderers (not yet on prakriya.js); padaccheda splitting is the stored text only.
 
 ### 2026-10-21 14:30  [cursor, coordinator]  Brain = final reference: B0 + B1
 

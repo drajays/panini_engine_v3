@@ -587,5 +587,82 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792911356.279234
+ },
+ {
+  "id": "ui-p1-cleanup",
+  "agent": "cursor",
+  "scope": [
+   "docs/UI_PLAN.md",
+   "xxweb/**",
+   "xxstreamlit_app/**",
+   "streamlit_app/**",
+   "web_design/**",
+   "webui/add_matrix_css_js.py",
+   "webui/add_rules_route.py",
+   "webui/app.py",
+   "README.md",
+   "Panini?Engine.command",
+   "run_web.sh"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794198630.2165
+ },
+ {
+  "id": "ui-learner-plan",
+  "agent": "cursor",
+  "scope": [
+   "docs/UI_LEARNER_PLAN.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794198463.142106
+ },
+ {
+  "id": "ui-learner-p1-p2",
+  "agent": "cursor",
+  "scope": [
+   "webui/app.py",
+   "webui/templates/",
+   "webui/static/",
+   "api/main.py",
+   "api/hub.html",
+   "api/lab.html",
+   "api/shabda.html",
+   "README.md",
+   "run_web.sh",
+   "docs/UI_LEARNER_PLAN.md",
+   "tests/unit/test_webui_routes.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794198779.326731
+ },
+ {
+  "id": "ui-learner-p1-p2",
+  "agent": "cursor",
+  "scope": [
+   "webui/app.py",
+   "webui/templates/",
+   "webui/static/",
+   "api/main.py",
+   "api/hub.html",
+   "api/lab.html",
+   "api/shabda.html",
+   "api/practice.html",
+   "api/review.html",
+   "README.md",
+   "run_web.sh",
+   "docs/UI_LEARNER_PLAN.md",
+   "tests/unit/test_webui_routes.py",
+   "tests/test_api_smoke.py"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1794198779.382158
  }
 ]

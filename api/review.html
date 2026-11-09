@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sa">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>प्रक्रिया-संशोधनम् — Pāṇini Engine v3</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#fafaf7;--panel:#fff;--subtle:#f1ede3;--ink:#1b1a17;--dim:#5b574d;--faint:#8b8578;
   --accent:#8b2e00;--ok:#196b1a;--warn:#b07600;--bad:#a02020;--line:#d7d2c4;--soft:#ece8dc;
   --mono:"SF Mono",Menlo,Consolas,monospace;--dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
-  --body:Charter,"Iowan Old Style",Georgia,serif;
+  --body:Spectral,Charter,"Iowan Old Style",Georgia,serif;
 }
 @media (prefers-color-scheme:dark){:root{
   --bg:#16150f;--panel:#1e1d16;--subtle:#262418;--ink:#ece7d8;--dim:#b0a894;--faint:#837c6c;
@@ -67,9 +68,50 @@ main{padding:1rem;max-width:1100px;margin:0 auto}
 .err{color:var(--bad);font-family:var(--mono);font-size:.82rem;white-space:pre-wrap;
   border:1px solid var(--bad);border-radius:4px;padding:.6rem}
 @media (max-width:700px){.forms{width:auto}.why,.st{display:none}}
+/* Learning app: mini-topbar, keyboard hints, improved layout */
+.mini-topbar{display:flex;gap:.6rem;align-items:center;padding:.35rem 1rem;
+  background:var(--subtle);border-bottom:1px solid var(--line);font-size:.8rem;flex-wrap:wrap}
+.mini-topbar a{color:var(--accent);text-decoration:none;font-family:var(--dev)}
+.mini-topbar a:hover{text-decoration:underline}
+.mini-topbar .sep{color:var(--faint)}
+.kbd-hint{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;padding:.25rem 1rem;
+  background:var(--panel);border-bottom:1px solid var(--soft);font-size:.74rem;color:var(--faint)}
+kbd{background:var(--subtle);border:1px solid var(--line);border-radius:3px;
+  padding:.05rem .3rem;font-family:var(--mono);font-size:.74rem}
+.sutra-badge{display:inline-flex;align-items:center;gap:.25rem;padding:.15rem .45rem;
+  background:var(--subtle);border:1px solid var(--line);border-radius:3px;
+  font-family:var(--mono);font-size:.78rem;color:var(--accent);cursor:pointer}
+.sutra-badge:hover{background:var(--accent);color:var(--bg)}
+.form-status{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.form-status .pill{padding:.15rem .6rem;border-radius:99px;font-size:.75rem;border:1px solid}
+.pill-applied{color:var(--ok);border-color:var(--ok)}
+.pill-blocked{color:var(--bad);border-color:var(--bad)}
+.pill-skipped{color:var(--faint);border-color:var(--faint)}
+.pill-audit{color:var(--warn);border-color:var(--warn)}
 </style>
 </head>
 <body>
+<!-- Learning app mini-topbar -->
+<div class="mini-topbar">
+  <a href="/">← Hub</a>
+  <span class="sep">·</span>
+  <a href="/practice">अभ्यास</a>
+  <span class="sep">·</span>
+  <a href="/shabda">शब्दरूप</a>
+  <span class="sep">·</span>
+  <a href="/lab">Lab</a>
+  <span class="sep">·</span>
+  <a href="http://127.0.0.1:5050/sutras" target="_blank" rel="noopener">सूत्राणि ↗</a>
+  <span style="margin-left:auto;font-family:var(--mono);font-size:.75rem" id="open-count-mini"></span>
+</div>
+<!-- Keyboard hints -->
+<div class="kbd-hint">
+  <span>सूत्र पर क्लिक → विस्तार</span>
+  <span class="sep">·</span>
+  <span><kbd>⚑</kbd> किसी भी पंक्ति पर Flag करें</span>
+  <span class="sep">·</span>
+  <span><kbd>Enter</kbd> derive करें</span>
+</div>
 <header>
   <h1><span class="dev">प्रक्रिया-संशोधनम्</span> · review</h1>
   <select id="kind" onchange="fields()">
@@ -155,7 +197,7 @@ function step(s){
   const flagged = NOTES[s.n]?.length;
   return `<div class="rowline ${s.changed ? "changed" : ""} ${flagged ? "flagged" : ""}" id="row${s.n}">
       <span class="n">${s.n}</span>
-      <span class="sid" title="${esc(s.text_dev || "")}">${esc(s.sutra_id)}</span>
+      <span class="sid" title="${esc(s.text_dev || '')}">${esc(s.sutra_id)}</span>
       <span class="forms">${esc(s.before.dev)}<span class="arrow">→</span>${esc(s.after.dev)}</span>
       <span class="st ${esc(s.status)}">${esc(s.status)}</span>
       <span class="why">${esc(s.why_dev)}</span>
@@ -213,11 +255,22 @@ async function del(id){
 async function refreshOpen(){
   const r = await fetch("/v1/reviews");
   const d = await r.json();
-  $("#count").textContent = `${d.total} open correction${d.total === 1 ? "" : "s"}`;
+  const label = `${d.total} open correction${d.total === 1 ? "" : "s"}`;
+  $("#count").textContent = label;
+  // Also update mini-topbar counter
+  const mini = document.getElementById("open-count-mini");
+  if(mini) mini.textContent = d.total ? `⚑ ${d.total}` : "";
   $("#open").innerHTML = d.total ? `<h2>all open corrections</h2><ul>` + d.reviews.map(c =>
       `<li><code>${esc(c.target)}</code> ${c.step_n ? "step " + c.step_n + " · " + esc(c.sutra_id || "") : "final form"} →
-       <b class="dev">${esc(c.expected_form || "")}</b> ${esc(c.note || "")}</li>`).join("") + "</ul>" : "";
+       <b class="dev">${esc(c.expected_form || "")}</b> ${esc(c.note || "")}<button onclick="del('${c.id}')" style="margin-left:.5rem;font-size:.7rem">delete</button></li>`).join("") + "</ul>" : "";
 }
+
+// Keyboard shortcut: Enter submits derive when input is focused
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && e.target.tagName === "INPUT" && !e.defaultPrevented) {
+    e.preventDefault(); derive();
+  }
+});
 
 fields();
 refreshOpen();

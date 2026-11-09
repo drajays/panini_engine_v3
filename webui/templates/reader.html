@@ -548,11 +548,11 @@ async function selectWord(k) {
     kv.push(["कृत्", `${inp.krt_dev} (${inp.krt_slp1 || ""})`]);
   let links = [];
   if (w.kind === "tinanta" && inp.dhatu_upadesha_slp1)
-    links.push(`<a href="/tinanta?dhatu=${encodeURIComponent(inp.dhatu_upadesha_slp1)}&lakara=${encodeURIComponent(inp.lakara || "laT")}&prayoga=${encodeURIComponent(inp.prayoga || "kartari")}&purusha=${inp.purusha || 3}&vacana=${inp.vacana || 1}">तिङन्त-प्रक्रिया ↗</a>`);
+    links.push(`<a href="/dhaturupa?dhatu=${encodeURIComponent(inp.dhatu_upadesha_slp1)}&lakara=${encodeURIComponent(inp.lakara || "laT")}&prayoga=${encodeURIComponent(inp.prayoga || "kartari")}&purusha=${inp.purusha || 3}&vacana=${inp.vacana || 1}">तिङन्त-प्रक्रिया ↗</a>`);
   if (w.kind === "subanta" && inp.stem_slp1)
-    links.push(`<a href="/derive?stem=${encodeURIComponent(inp.stem_slp1)}&vibhakti=${inp.vibhakti || 1}&vacana=${inp.vacana || 1}&linga=${encodeURIComponent(inp.linga || "pulliṅga")}">सुबन्त-प्रक्रिया ↗</a>`);
+    links.push(`<a href="/shabdarupa?tab=derive&stem=${encodeURIComponent(inp.stem_slp1)}&vibhakti=${inp.vibhakti || 1}&vacana=${inp.vacana || 1}&linga=${encodeURIComponent(inp.linga || "pulliṅga")}">सुबन्त-प्रक्रिया ↗</a>`);
   if (w.kind === "krdanta")
-    links.push(`<a href="/krdanta">कृदन्त-पृष्ठम् ↗</a>`);
+    links.push(`<a href="/dhaturupa?tab=krdanta">कृदन्त-पृष्ठम् ↗</a>`);
   let h = `<h3>${esc(w.word)} <span class="muted" style="font-size:12px">${esc(w.anvaya_no)}</span></h3>
     <div class="rd-kv">${kv.filter(r => r[1]).map(([a, b]) => `<div class="k">${esc(a)}</div><div class="v dev">${esc(b)}</div>`).join("")}</div>
     ${links.length ? `<div style="margin:6px 0;font-size:13px">${links.join(" · ")}</div>` : ""}

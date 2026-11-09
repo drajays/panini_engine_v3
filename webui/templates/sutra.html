@@ -15,8 +15,9 @@
   "APAVADA"     : "अपवादः",
 } %}
 
-<div style="margin-bottom:8px;">
+<div style="margin-bottom:8px;display:flex;justify-content:space-between;gap:1rem" class="no-print">
   <a href="/sutras" style="font-size:12px;color:var(--accent);">← सूत्र-सूची</a>
+  <span style="font-size:12px;font-family:var(--mono)">{% if prev_sid %}<a href="/sutra/{{ prev_sid }}">← {{ prev_sid }}</a>{% endif %} {% if next_sid %}<a href="/sutra/{{ next_sid }}">{{ next_sid }} →</a>{% endif %}</span>
 </div>
 
 <div class="panel">
@@ -26,6 +27,7 @@
                  border:1px solid var(--line-soft);color:var(--ink-dim);">
       {{ _TYPE_DEV.get(rec.sutra_type, rec.sutra_type) }}
     </span>
+    <span style="font-size:12px;padding:2px 8px;border-radius:4px;border:1px solid {{ 'var(--accent)' if implemented else 'var(--line)' }};color:{{ 'var(--accent)' if implemented else 'var(--ink-dim)' }}">{{ 'यन्त्रे प्रयुक्तम् · implemented' if implemented else 'अद्यापि न · not yet implemented (placeholder)' }}</span>
   </div>
 
   {% if rec.text_dev %}
@@ -85,11 +87,20 @@
 
 </div>
 
+{% if examples %}
+<div class="panel" style="margin-top:12px;"><h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">उदाहरणानि · Kāśikā examples</h2>
+  <p class="dev" style="font-size:16px;line-height:1.9;margin:0">{{ examples|join(' · ') }}</p></div>
+{% endif %}
+<div class="panel" style="margin-top:12px;"><h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">यन्त्रे कुत्र प्रयुक्तम् · where the engine applies it</h2>
+  {% if applied %}<p class="muted" style="font-size:12px">{{ applied|length }} recorded derivation{{ 's' if applied|length > 1 }}.</p>
+  <p style="line-height:2">{% for slug, form in applied[:24] %}<a href="/learn#{{ slug|urlencode }}" class="dev" style="margin-right:.8rem">{{ form }}</a>{% endfor %}</p>
+  {% else %}<p class="muted" style="font-size:12px">{{ 'No recorded derivation uses it yet.' if implemented else 'Not implemented, so no derivation uses it.' }}</p>{% endif %}</div>
+
 <div class="panel" style="margin-top:12px;">
   <h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">प्रक्रिया-दर्शनम्</h2>
   <p class="muted" style="font-size:12px;">
-    इदं सूत्रम् <a href="/pipelines" style="color:var(--accent);">प्रक्रिया-पृष्ठे</a> व्युत्पत्तिषु द्रष्टुं शक्यते।
-    <a href="/matrix" style="color:var(--accent);">चतुर्विंशतिकोष्ठे</a> अपि व्युत्पत्तयः निरीक्षणीयाः।
+    इदं सूत्रम् <a href="/prakriya" style="color:var(--accent);">प्रक्रिया-पृष्ठे</a> व्युत्पत्तिषु द्रष्टुं शक्यते।
+    <a href="/shabdarupa?tab=matrix" style="color:var(--accent);">चतुर्विंशतिकोष्ठे</a> अपि व्युत्पत्तयः निरीक्षणीयाः।
   </p>
 </div>
 {% endblock %}

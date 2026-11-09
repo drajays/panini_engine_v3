@@ -6,13 +6,13 @@
   <h1>कृदन्त-व्युत्पत्तिः <span class="muted" style="font-size:14px;font-weight:400;">(Kṛdanta Derivation)</span></h1>
   <p class="muted" style="font-size:13px;margin:0 0 12px;">
     धातुं प्रविश्य कृत्-प्रत्ययं चित्वा कृदन्त-प्रातिपदिकं व्युत्पादयतु।
-    तृच् (agent noun) तथा ण्वुल् (agent noun -aka) समर्थितौ।
+    अत्र तृच् (कर्तृ-नाम) तथा ण्वुल् (-अक) प्रदर्शितौ; अन्ये कृत्-प्रत्ययाः क्रमशः योज्यन्ते।
   </p>
 
   <div class="form-row">
     <label>धातु-क्रमाङ्कः (ID)
       <input id="dhatu-id" type="text" value="BU" list="dhatu-suggestions"
-             placeholder="e.g. BU, qupa~c~z, RIY">
+             placeholder="e.g. BU, pac, RIY">
       <datalist id="dhatu-suggestions">
         {% for did in demo_ids %}
         <option value="{{ did }}">{{ did }}</option>
@@ -35,7 +35,7 @@
   <div style="margin-top:12px;">
     <span class="muted" style="font-size:11px;">शीघ्र-उदाहरणानि:</span>
     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
-      <button class="secondary demo-btn" data-id="qupa~c~z" data-krt="nvul">पाचक (qupa~c~z + ण्वुल्)</button>
+      <button class="secondary demo-btn" data-id="pac" data-krt="nvul">पाचक (pac + ण्वुल्)</button>
       <button class="secondary demo-btn" data-id="RIY"      data-krt="nvul">नायक (RIY + ण्वुल्)</button>
       <button class="secondary demo-btn" data-id="ciY"      data-krt="tfc">चेता (ciY + तृच्)</button>
       <button class="secondary demo-btn" data-id="BU"       data-krt="tfc">भवितृ (BU + तृच्)</button>

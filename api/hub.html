@@ -3,64 +3,348 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>पाणिनि-यन्त्रम् — local</title>
+<title>पाणिनि-यन्त्रम् — Learning Hub</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap">
 <style>
 :root{
-  --bg:#fafaf7;--panel:#fff;--subtle:#f1ede3;--ink:#1b1a17;--dim:#5b574d;--faint:#8b8578;
-  --accent:#8b2e00;--line:#d7d2c4;--soft:#ece8dc;
-  --dev:"Noto Serif Devanagari","Noto Sans Devanagari","Sanskrit Text",serif;
-  --body:Charter,"Iowan Old Style",Georgia,serif;
+  --ground:#f3ece0; --panel:#fbf7ef; --band:#d8c49a; --band-soft:#e7d9bb;
+  --row:#fdfbf7; --ink:#241d12; --ink-soft:#5d5140; --ink-faint:#8d8069;
+  --rule:#d9ccb2; --indigo:#2c4a7c; --madder:#9c3822; --moss:#3f6b4a; --select:#f6e6a8;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
+  --mono:"IBM Plex Mono",Menlo,monospace; --body:"Spectral",Georgia,serif;
 }
-@media (prefers-color-scheme:dark){:root{
-  --bg:#16150f;--panel:#1e1d16;--subtle:#262418;--ink:#ece7d8;--dim:#b0a894;--faint:#837c6c;
-  --accent:#e08a55;--line:#3a382c;--soft:#2a281e;
-}}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+    --row:#1d1811; --ink:#ece3d2; --ink-soft:#b0a58f; --ink-faint:#857a66;
+    --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e; --moss:#87bd91; --select:#4a3f20;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+  --row:#1d1811; --ink:#ece3d2; --ink-soft:#b0a58f; --ink-faint:#857a66;
+  --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e; --moss:#87bd91; --select:#4a3f20;
+}
 *{box-sizing:border-box}
-body{margin:0;font:16px/1.5 var(--body);color:var(--ink);background:var(--bg)}
-.dev{font-family:var(--dev)}
-header{padding:1.4rem 1.5rem .8rem;border-bottom:1px solid var(--line);background:var(--panel)}
-h1{margin:0;font-size:1.15rem}
-h1 .dev{color:var(--accent);font-size:1.45rem}
-.sub{color:var(--dim);font-size:.9rem;margin-top:.25rem}
-main{max-width:52rem;margin:0 auto;padding:1.2rem 1.4rem 3rem}
-h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:1.4rem 0 .6rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.7rem}
-a.card{display:block;padding:.85rem .95rem;background:var(--panel);border:1px solid var(--line);
-  border-radius:8px;text-decoration:none;color:inherit}
-a.card:hover{border-color:var(--accent);background:var(--subtle)}
-a.card b{display:block;font-family:var(--dev);font-size:1.05rem;color:var(--accent)}
-a.card span{display:block;color:var(--dim);font-size:.82rem;margin-top:.2rem}
-.note{margin-top:1.6rem;font-size:.82rem;color:var(--faint)}
-code{font-size:.85em}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body)}
+
+/* ── NAV ── */
+.topnav{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1rem;
+  padding:.45rem 1.2rem;background:var(--panel);border-bottom:1px solid var(--rule);
+  font-size:.8rem;font-family:var(--mono)}
+.topnav a{color:var(--indigo);text-decoration:none}
+.topnav a:hover{text-decoration:underline}
+.topnav .active{color:var(--ink);font-weight:600}
+.topnav .ml-auto{margin-left:auto}
+
+/* ── HEADER ── */
+header{padding:1.1rem 1.4rem .9rem;background:var(--band);border-bottom:2px solid var(--rule);
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem}
+.brand{flex:1}
+.brand h1{margin:0;font-family:var(--dev);font-size:1.6rem;color:var(--ink);line-height:1.2}
+.brand p{margin:.15rem 0 0;font-size:.82rem;color:var(--ink-soft);font-family:var(--body)}
+.streak-box{display:flex;align-items:center;gap:.35rem;padding:.4rem .8rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+  font-family:var(--mono);font-size:.82rem;color:var(--ink-soft)}
+.streak-num{font-size:1.1rem;font-weight:600;color:var(--madder)}
+
+/* ── PROGRESS ── */
+.progress-band{padding:.7rem 1.4rem;background:var(--panel);border-bottom:1px solid var(--rule)}
+.prog-label{display:flex;justify-content:space-between;font-size:.8rem;
+  color:var(--ink-soft);margin-bottom:.35rem;font-family:var(--dev)}
+.prog-bar{height:7px;background:var(--band);border-radius:4px;overflow:hidden}
+.prog-fill{height:100%;background:var(--moss);border-radius:4px;transition:width .4s ease}
+.prog-note{font-size:.74rem;color:var(--ink-faint);margin-top:.3rem;font-family:var(--mono)}
+
+/* ── MAIN ── */
+main{max-width:56rem;margin:0 auto;padding:1.4rem 1.2rem 4rem}
+
+/* ── SECTION HEADERS ── */
+.section-header{display:flex;align-items:baseline;gap:.6rem;margin:1.8rem 0 .7rem}
+.section-header h2{margin:0;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);font-family:var(--mono)}
+.section-header .tag{font-size:.7rem;padding:.15rem .45rem;border-radius:3px;
+  font-family:var(--mono);font-weight:500}
+.tag-beginner{background:#e8f5e9;color:#2e7d32}
+.tag-intermediate{background:#fff3e0;color:#e65100}
+.tag-advanced{background:#ede7f6;color:#4527a0}
+@media(prefers-color-scheme:dark){
+  .tag-beginner{background:#1b3a1f;color:#87bd91}
+  .tag-intermediate{background:#3d2a0a;color:#e0a870}
+  .tag-advanced{background:#261d40;color:#b39ddb}
+}
+
+/* ── CARDS ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.65rem}
+a.card{display:flex;align-items:flex-start;gap:.75rem;padding:.85rem .95rem;
+  background:var(--panel);border:1px solid var(--rule);border-radius:7px;
+  text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
+a.card:hover{border-color:var(--indigo);background:var(--band-soft)}
+.card-icon{font-size:1.3rem;line-height:1;flex-shrink:0;padding-top:.1rem}
+.card-body{min-width:0}
+.card-body b{display:block;font-family:var(--dev);font-size:1.05rem;color:var(--madder);font-weight:500}
+.card-body .card-en{display:block;font-size:.74rem;color:var(--indigo);margin-top:.05rem;font-family:var(--mono)}
+.card-body span{display:block;color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;line-height:1.4}
+.card-ext::after{content:" ↗";font-size:.7em;opacity:.6}
+
+/* ── STATS FOOTER ── */
+.stats-footer{position:fixed;bottom:0;left:0;right:0;
+  display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;align-items:center;
+  padding:.55rem 1.4rem;background:var(--panel);border-top:1px solid var(--rule);
+  font-size:.75rem;color:var(--ink-faint);font-family:var(--mono)}
+.stats-footer .sep{color:var(--rule)}
+.stats-footer b{color:var(--indigo)}
+.stat-loading{font-style:italic}
+
+/* ── DARK TOGGLE ── */
+.toggle-theme{margin-left:auto;border:none;background:none;cursor:pointer;
+  font-size:.85rem;padding:.2rem .4rem;color:var(--ink-soft);border-radius:3px}
+.toggle-theme:hover{background:var(--band)}
+
+@media(max-width:600px){
+  header{padding:.85rem 1rem .7rem}
+  .brand h1{font-size:1.3rem}
+  main{padding:1rem .8rem 4rem}
+}
 </style>
 </head>
 <body>
+
+<!-- Mini nav -->
+<nav class="topnav" aria-label="Site navigation">
+  <span class="active">⌂ Hub</span>
+  <a href="/practice">अभ्यास</a>
+  <a href="/shabda">शब्दरूप</a>
+  <a href="/lab">Lab</a>
+  <a href="/review">संशोधनम्</a>
+  <a href="/pages/learn.html">पाठः</a>
+  <a href="/docs">API</a>
+  <button class="toggle-theme ml-auto" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+</nav>
+
+<!-- Header -->
 <header>
-  <h1><span class="dev">पाणिनि-यन्त्रम्</span> — local</h1>
-  <p class="sub">Offline on this machine. Close the Terminal window to stop the servers.</p>
+  <div class="brand">
+    <h1>पाणिनि-यन्त्रम्</h1>
+    <p>Pāṇini Engine v3 · Sanskrit Grammar Learning Hub</p>
+  </div>
+  <div class="streak-box" id="streakBox">
+    <span>🔥</span>
+    <span>Streak:</span>
+    <span class="streak-num" id="streakNum">0</span>
+    <span>·</span>
+    <span id="scoreDisplay">0/0</span>
+  </div>
 </header>
+
+<!-- Daily progress -->
+<div class="progress-band">
+  <div class="prog-label">
+    <span>आज का लक्ष्य: 10 प्रश्न (Today's goal)</span>
+    <span id="progText">0 / 10</span>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  <div class="prog-note" id="progNote">Complete questions in अभ्यास to fill today's goal.</div>
+</div>
+
 <main>
-  <h2>Derive · drill · correct</h2>
-  <div class="grid">
-    <a class="card" href="/lab"><b>प्रयोगशाला</b><span>Lab — paradigm vs Vidyut, click a cell for prakriyā</span></a>
-    <a class="card" href="/practice"><b>अभ्यासः</b><span>Practice with sūtra-by-sūtra explanations</span></a>
-    <a class="card" href="/review"><b>संशोधनम्</b><span>Derive a form and correct a step</span></a>
-    <a class="card" href="/shabda"><b>शब्द-सारणी</b><span>Live 24-cell noun paradigm</span></a>
-    <a class="card" href="/pages/learn.html"><b>प्रक्रिया-पाठः</b><span>Step-through exported traces</span></a>
-    <a class="card" href="/coverage"><b>सूत्र-व्याप्तिः</b><span>Coverage — sūtras done with confidence, by pāda; recipe-free derivation</span></a>
-    <a class="card" href="/pages/improvements.html"><b>सुधाराः</b><span>Improvements — Kāśikā forms vs the rule loop, before and now; AMENDMENT 25</span></a>
-    <a class="card" href="/docs"><b>API</b><span>OpenAPI — every derivation ships its sūtra chain</span></a>
+
+  <!-- Section 1: Learn -->
+  <div class="section-header">
+    <h2>सीखें · Learn</h2>
+    <span class="tag tag-beginner">Beginner</span>
   </div>
-  <h2>Full UI · धातुपाठ · भट्टिः</h2>
   <div class="grid">
-    <a class="card" href="http://127.0.0.1:5050/"><b>पूर्ण-UI</b><span>Paradigms, dhātupāṭha, Bhaṭṭi, Gītā reader, SIG</span></a>
-    <a class="card" href="http://127.0.0.1:5050/tinanta"><b>तिङन्तम्</b><span>Dhātu × lakāra glass-box</span></a>
-    <a class="card" href="http://127.0.0.1:5050/dhatufilters"><b>धातु-छन्दकः</b><span>Gaṇa / pada / iṭ / karma grid</span></a>
-    <a class="card" href="http://127.0.0.1:5050/bhatti"><b>भट्टिः</b><span>Bhaṭṭikāvya 1.1–1.2 Jayamaṅgalā</span></a>
-    <a class="card" href="http://127.0.0.1:5050/reader"><b>ग्रन्थ-पाठकः</b><span>Gītā · Raghuvamśa · Rāmāyaṇa</span></a>
-    <a class="card" href="http://127.0.0.1:5050/sutras"><b>सूत्राणि</b><span>Browse the registered Aṣṭādhyāyī</span></a>
+    <a class="card" href="/practice">
+      <span class="card-icon">📖</span>
+      <div class="card-body">
+        <b>अभ्यास</b><span class="card-en">Practice</span>
+        <span>MCQ · स्मरण · सूत्र — Every answer explained sūtra by sūtra</span>
+      </div>
+    </a>
+    <a class="card" href="/shabda">
+      <span class="card-icon">📊</span>
+      <div class="card-body">
+        <b>शब्दरूप</b><span class="card-en">Shabda</span>
+        <span>Live 24-cell noun paradigm — click any cell for prakriyā</span>
+      </div>
+    </a>
+    <a class="card" href="/lab">
+      <span class="card-icon">🧪</span>
+      <div class="card-body">
+        <b>प्रयोगशाला</b><span class="card-en">Lab</span>
+        <span>Pāṇini Engine vs Vidyut side-by-side comparison</span>
+      </div>
+    </a>
   </div>
-  <p class="note">127.0.0.1:8000 is this API. 127.0.0.1:5050 is the Flask UI. No internet is required after the first dependency install. Tools menu: <code>./Panini\ Engine.command menu</code></p>
+
+  <!-- Section 2: Test -->
+  <div class="section-header">
+    <h2>परीक्षण · Test</h2>
+    <span class="tag tag-intermediate">Intermediate</span>
+  </div>
+  <div class="grid">
+    <a class="card" href="/review">
+      <span class="card-icon">✍️</span>
+      <div class="card-body">
+        <b>संशोधनम्</b><span class="card-en">Review</span>
+        <span>Derive a form and flag wrong derivation steps</span>
+      </div>
+    </a>
+    <a class="card" href="/coverage">
+      <span class="card-icon">📜</span>
+      <div class="card-body">
+        <b>व्याप्तिः</b><span class="card-en">Coverage</span>
+        <span>Sūtra coverage heat-map by pāda, confidence bands</span>
+      </div>
+    </a>
+    <a class="card" href="/docs">
+      <span class="card-icon">📚</span>
+      <div class="card-body">
+        <b>API</b><span class="card-en">OpenAPI Docs</span>
+        <span>Full derivation API — every response ships its sūtra chain</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Section 3: Deep Study (port 5050) -->
+  <div class="section-header">
+    <h2>गहन अध्ययन · Deep Study</h2>
+    <span class="tag tag-advanced">Advanced</span>
+  </div>
+  <div class="grid">
+    <a class="card card-ext" href="http://127.0.0.1:5050/dhaturupa" target="_blank" rel="noopener">
+      <span class="card-icon">🌿</span>
+      <div class="card-body">
+        <b>धातुरूपाणि</b><span class="card-en">Dhāturūpāṇi</span>
+        <span>Verb paradigms — dhātu × lakāra glass-box view</span>
+      </div>
+    </a>
+    <a class="card card-ext" href="http://127.0.0.1:5050/reader" target="_blank" rel="noopener">
+      <span class="card-icon">📿</span>
+      <div class="card-body">
+        <b>ग्रन्थ-पाठकः</b><span class="card-en">Reader</span>
+        <span>Gītā · Raghuvamśa · Rāmāyaṇa — click any word for analysis</span>
+      </div>
+    </a>
+    <a class="card card-ext" href="http://127.0.0.1:5050/sutras" target="_blank" rel="noopener">
+      <span class="card-icon">🔖</span>
+      <div class="card-body">
+        <b>सूत्राणि</b><span class="card-en">Sūtras</span>
+        <span>Browse the full registered Aṣṭādhyāyī with anuvṛtti</span>
+      </div>
+    </a>
+    <a class="card card-ext" href="http://127.0.0.1:5050/bhatti" target="_blank" rel="noopener">
+      <span class="card-icon">📜</span>
+      <div class="card-body">
+        <b>भट्टिः</b><span class="card-en">Bhaṭṭi</span>
+        <span>Bhaṭṭikāvya 1.1–1.2 with Jayamaṅgalā commentary</span>
+      </div>
+    </a>
+    <a class="card card-ext" href="http://127.0.0.1:5050/tinanta" target="_blank" rel="noopener">
+      <span class="card-icon">⚙️</span>
+      <div class="card-body">
+        <b>तिङन्तम्</b><span class="card-en">Tiṅanta</span>
+        <span>Dhātu × lakāra conjugation with step-by-step prakriyā</span>
+      </div>
+    </a>
+    <a class="card card-ext" href="http://127.0.0.1:5050/" target="_blank" rel="noopener">
+      <span class="card-icon">🏛️</span>
+      <div class="card-body">
+        <b>पूर्ण-UI</b><span class="card-en">Full UI</span>
+        <span>All tools — paradigms, dhātupāṭha, filters, SIG</span>
+      </div>
+    </a>
+  </div>
+
 </main>
+
+<!-- Stats footer -->
+<footer class="stats-footer" id="statsFooter">
+  <span class="stat-loading" id="statsInner">Loading engine status…</span>
+</footer>
+
+<script>
+const store = {
+  get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)) } catch {} },
+};
+
+// ── Streak / score ──
+const score = store.get('abhyasa.score', {right:0, total:0, streak:0});
+document.getElementById('streakNum').textContent = score.streak;
+document.getElementById('scoreDisplay').textContent = `${score.right}/${score.total}`;
+
+// ── Daily progress ──
+// Determine today's date key
+const todayKey = 'abhyasa.today.' + new Date().toISOString().slice(0,10);
+const history = store.get('abhyasa.history', []);
+// Count questions answered today from history
+const todayDone = (() => {
+  const startOfDay = new Date(); startOfDay.setHours(0,0,0,0);
+  const ts = startOfDay.getTime();
+  return history.filter(h => h.date >= ts).reduce((s, h) => s + (h.total || 0), 0);
+})();
+const goal = 10;
+const pct = Math.min(100, Math.round(todayDone / goal * 100));
+document.getElementById('progFill').style.width = pct + '%';
+document.getElementById('progText').textContent = `${todayDone} / ${goal}`;
+document.getElementById('progNote').textContent =
+  todayDone >= goal
+    ? '🎉 आज का लक्ष्य पूरा! (Goal achieved today) · Keep going!'
+    : `${goal - todayDone} और प्रश्न — फिर लक्ष्य पूरा होगा (${goal - todayDone} more to reach goal)`;
+
+// ── Stats footer — fetch /v1/health ──
+(async () => {
+  try {
+    const r = await fetch('/v1/health');
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const sutras  = d.sutras_registered ?? d.sutra_count ?? '—';
+    const covPct  = d.coverage_pct != null ? d.coverage_pct.toFixed(1) + '%' : (d.coverage ?? '—');
+    const lastSess = (() => {
+      if (!history.length) return 'none yet';
+      const last = history[history.length - 1];
+      const diff = Math.round((Date.now() - last.date) / 60000);
+      if (diff < 2) return 'just now';
+      if (diff < 60) return `${diff}m ago`;
+      return `${Math.round(diff/60)}h ago`;
+    })();
+    document.getElementById('statsInner').innerHTML =
+      `<b>${sutras}</b> sūtras registered <span class="sep">·</span> ` +
+      `<b>${covPct}</b> coverage <span class="sep">·</span> ` +
+      `Last session: <b>${lastSess}</b> · ` +
+      `Total answered: <b>${score.total}</b>`;
+  } catch {
+    const lastSess = (() => {
+      if (!history.length) return 'none yet';
+      const last = history[history.length - 1];
+      const diff = Math.round((Date.now() - last.date) / 60000);
+      if (diff < 2) return 'just now';
+      if (diff < 60) return `${diff}m ago`;
+      return `${Math.round(diff/60)}h ago`;
+    })();
+    document.getElementById('statsInner').innerHTML =
+      `Engine offline or starting up · Last session: <b>${lastSess}</b> · Total answered: <b>${score.total}</b>`;
+  }
+})();
+
+// ── Dark mode toggle ──
+const themeBtn = document.getElementById('themeBtn');
+const savedTheme = localStorage.getItem('theme') || 'auto';
+function applyTheme(t){
+  document.documentElement.dataset.theme = (t === 'auto') ? '' : t;
+  themeBtn.textContent = t === 'dark' ? '☀️' : (t === 'light' ? '🌙' : '🌓');
+}
+applyTheme(savedTheme);
+themeBtn.onclick = () => {
+  const cur = localStorage.getItem('theme') || 'auto';
+  const next = cur === 'auto' ? 'dark' : cur === 'dark' ? 'light' : 'auto';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+};
+</script>
 </body>
 </html>

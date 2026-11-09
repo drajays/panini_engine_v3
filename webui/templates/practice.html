@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}अभ्यासः — पाणिनि-यन्त्रम्{% endblock %}
+{% block head_extra %}<script src="{{ url_for('static', filename='transliterate.js') }}"></script>{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>अभ्यासः <span class="muted" style="font-size:14px;font-weight:400">Practice — every answer is checked by the engine</span></h1>
+  <div class="pk-bar no-print">
+    <label>प्रश्न-प्रकारः<select id="mode"><option value="cell">रूपं पूरयतु · fill the cell</option><option value="sutra">सूत्रं नामयतु · name the sūtra</option></select></label>
+    <label>विषयः<select id="kind"><option value="subanta">सुबन्तम्</option><option value="tinanta">तिङन्तम्</option></select></label>
+    <label>उत्तर-लिपिः<select id="sch"><option value="devanagari">देवनागरी</option><option value="iast">IAST</option><option value="slp1">SLP1</option></select></label>
+    <button id="next" type="button">नूतनः प्रश्नः</button>
+    <span id="score" class="muted" aria-live="polite"></span>
+  </div>
+  <div id="q" aria-live="polite"></div>
+</div>
+<div class="panel" id="why" hidden></div>
+{% endblock %}
+{% block body_extra %}
+<script src="{{ url_for('static', filename='prakriya.js') }}"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id), esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const post = (u, b) => fetch(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b)}).then(r => r.json());
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const VIB = ["प्रथमा", "द्वितीया", "तृतीया", "चतुर्थी", "पञ्चमी", "षष्ठी", "सप्तमी", "सम्बोधनम्"], VAC = ["एकवचनम्", "द्विवचनम्", "बहुवचनम्"];
+  const STEMS = [["rAma", "pulliṅga"], ["hari", "pulliṅga"], ["guru", "pulliṅga"], ["kanyA", "strīliṅga"], ["nadI", "strīliṅga"], ["mati", "strīliṅga"], ["vAri", "napuṃsaka"]];
+  const ROOTS = ["BU", "qupaca~z", "gamx~", "nIY", "paWa~", "dfSi~r"];
+  const LA = [["laT", "लट्"], ["liT", "लिट्"], ["lRT", "लृट्"], ["loT", "लोट्"], ["laG", "लङ्"], ["liG", "विधिलिङ्"], ["luG", "लुङ्"]];
+  const PU = [[3, "प्रथमः"], [2, "मध्यमः"], [1, "उत्तमः"]];
+  let S = {ok: 0, n: 0}, cur = null;
+  try { S = JSON.parse(localStorage.getItem("panini-score")) || S; } catch (e) {}
+  const tally = () => { $("score").textContent = `${S.ok} / ${S.n}`; try { localStorage.setItem("panini-score", JSON.stringify(S)); } catch (e) {} };
+  const norm = s => s.normalize("NFC").replace(/\s+/g, "");
+  const toSlp = t => { t = t.trim(); try { return /[ऀ-ॿ]/.test(t) ? Transliterate.toSLP1(t, "devanagari") : Transliterate.toSLP1(t, $("sch").value === "devanagari" ? "slp1" : $("sch").value); } catch (e) { return t; } };
+
+  async function ask() {
+    $("why").hidden = true; $("q").innerHTML = "…";
+    for (let tries = 0; tries < 6; tries++) {
+      const kind = $("kind").value, sub = kind === "subanta";
+      let spec, r;
+      if (sub) { const [s, g] = pick(STEMS); spec = {stem: s, vibhakti: 1 + Math.floor(Math.random() * 8), vacana: 1 + Math.floor(Math.random() * 3), linga: g};
+        r = await post("/api/derive", spec); }
+      else { spec = {dhatu: pick(ROOTS), lakara: pick(LA)[0], prayoga: "kartari", purusha: pick(PU)[0], vacana: 1 + Math.floor(Math.random() * 3)};
+        r = await post("/api/tinanta", spec); }
+      if (r.error || !r.trace) continue;
+      cur = {sub, spec, r, answered: false};
+      return $("mode").value === "cell" ? cellQ() : sutraQ();
+    }
+    $("q").textContent = "प्रश्नः न लब्धः — पुनः यतताम्।";
+  }
+
+  function label() {
+    const {sub, spec} = cur;
+    if (sub) return `<b class="dev">${esc(Transliterate.fromSLP1(spec.stem, "devanagari"))}</b> (${esc(spec.linga)}) — ${VIB[spec.vibhakti - 1]} · ${VAC[spec.vacana - 1]}`;
+    return `<b class="dev">${esc(cur.r.dhatu_dev || spec.dhatu)}</b> — ${esc(LA.find(x => x[0] === spec.lakara)[1])} · ${PU.find(p => p[0] === spec.purusha)[1]} · ${VAC[spec.vacana - 1]}`;
+  }
+
+  function cellQ() {
+    $("q").innerHTML = `<p>${label()} — रूपं किम्?</p><form id="a" class="pk-form-row"><input id="ans" class="dev" size="18" autocomplete="off" autofocus aria-label="उत्तरम्"><button>परीक्ष्यताम्</button></form><p id="fb"></p>`;
+    $("a").onsubmit = e => { e.preventDefault(); if (cur.answered) return;
+      const got = toSlp($("ans").value), want = cur.r.surface_slp1;
+      finish(norm(got) === norm(want), `उत्तरम्: <b class="dev">${esc(cur.r.surface_dev)}</b> (${esc(want)})`); };
+  }
+
+  function sutraQ() {
+    const steps = cur.r.trace.filter(s => s.status === "APPLIED" && s.form_before !== s.form_after && !s._is_structural);
+    if (!steps.length) return ask();
+    const s = pick(steps), ids = [...new Set(cur.r.trace.filter(x => x.status === "APPLIED" && x.sutra_id !== s.sutra_id && !x._is_structural).map(x => x.sutra_id))];
+    const opts = [s.sutra_id, ...ids.sort(() => Math.random() - .5).slice(0, 3)].sort(() => Math.random() - .5);
+    cur.step = s;
+    $("q").innerHTML = `<p>${label()}: कः सूत्रः <b class="dev">${esc(Transliterate.fromSLP1(s.form_before, "devanagari"))} → ${esc(Transliterate.fromSLP1(s.form_after, "devanagari"))}</b> इति करोति?</p>
+      <div class="pk-form-row">${opts.map(o => `<button type="button" class="opt" data-s="${esc(o)}">${esc(o)}</button>`).join("")}</div><p id="fb"></p>`;
+    document.querySelectorAll(".opt").forEach(b => b.onclick = () => { if (!cur.answered)
+      finish(b.dataset.s === s.sutra_id, `सूत्रम्: <a href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a> <span class="dev">${esc(s._sutra_text_dev || "")}</span>`); });
+  }
+
+  function finish(ok, ans) {
+    cur.answered = true; S.n++; if (ok) S.ok++; tally();
+    $("fb").innerHTML = `<b style="color:${ok ? "#196b1a" : "#a02020"}">${ok ? "सम्यक् ✓ correct" : "न सम्यक् ✗ not quite"}</b> — ${ans}`;
+    $("why").hidden = false;
+    Prakriya.mount($("why"), {trace: cur.r.trace, title: cur.sub ? cur.spec.stem : cur.spec.dhatu, surface: {slp1: cur.r.surface_slp1, dev: cur.r.surface_dev}});
+  }
+
+  ["mode", "kind"].forEach(i => $(i).onchange = ask); $("next").onclick = ask; tally(); ask();
+})();
+</script>
+{% endblock %}

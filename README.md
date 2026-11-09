@@ -143,9 +143,8 @@ panini_engine_v3/
 │                              backward, regression)
 ├── tools/                   ← sig_benchmark, sig_report, listings, etc.
 ├── sig/                     ← engine JSONs + `coverage.json` + `sig_manifest.json` (see `sig/README.md`)
-├── webui/                   ← active Flask web UI (./run_web.sh)
-├── xxweb/                   ← DEPRECATED FastAPI prototype (reference only)
-└── xxstreamlit_app/         ← DEPRECATED Streamlit UI (reference only)
+├── webui/                   ← the one web UI: Flask, seven sections (./run_web.sh, port 5050)
+└── api/                     ← FastAPI: /v1 JSON API (port 8000; its HTML pages are legacy)
 ```
 
 Launch the web UI:

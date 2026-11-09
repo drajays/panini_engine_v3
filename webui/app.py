@@ -18,13 +18,14 @@ from __future__ import annotations
 import importlib
 import inspect as _inspect
 import json
+import re
 import subprocess
 import sys
 import time
 from pathlib import Path
 from typing import Any
 
-from flask import Flask, render_template, request, jsonify, abort, redirect, url_for
+from flask import Flask, render_template, request, jsonify, abort, redirect, url_for, g
 
 # Ensure repo root importable when launched as a module.
 _ROOT = Path(__file__).resolve().parent.parent
@@ -62,24 +63,125 @@ def home():
     )
 
 
-@app.route("/derive")
+# ─────────────────────────────────────────────────────────────────
+# Unified sections: one URL, several tabs (?tab=…).  Old page URLs redirect here.
+# ─────────────────────────────────────────────────────────────────
+
+# section → [(tab key, label, view function name)]; the first tab is the section's own page.
+_TABS = {
+    "shabdarupa": [("forms", "रूपाणि", None), ("derive", "सुबन्त-प्रक्रिया", "derive_page"),
+                   ("matrix", "२४-कोष्ठम्", "matrix"), ("showcase", "विशेष-सारण्यः", "showcase_page"),
+                   ("sarvanama", "सर्वनाम", "sarvanama_page")],
+    "dhaturupa":  [("forms", "तिङन्तम्", None), ("krdanta", "कृदन्तम्", "krdanta_page")],
+    "reader":     [("reader", "ग्रन्थ-पाठकः", None), ("bhatti", "भट्टिकाव्यम्", "bhatti_page"),
+                   ("patha", "पाठ-विश्लेषणम्", "patha_page"), ("text", "पाठ-अर्थः", "text_page")],
+}
+
+
+def _tab(section: str):
+    """Response for a non-default ``?tab=`` of ``section``; None means render the section's own page."""
+    key = request.args.get("tab")
+    for k, _label, fn in _TABS[section]:
+        if k == key and fn:
+            g.section = section
+            return globals()[fn]()
+    return None
+
+
+@app.context_processor
+def _tab_ctx():
+    sec = request.endpoint and next((s for s in _TABS if request.endpoint == s + "_page"), None)
+    sec = getattr(g, "section", None) or sec
+    if not sec:
+        return {"section": None, "tabs": None}
+    default = _TABS[sec][0][0]
+    return {"section": sec, "tabs": _TABS[sec], "tab": request.args.get("tab") or default}
+
+
+# Old URL → (section, tab).  Query strings are carried over.
+_MOVED = {
+    "/derive": ("shabdarupa", "derive"), "/matrix": ("shabdarupa", "matrix"), "/showcase": ("shabdarupa", "showcase"),
+    "/sarvanama": ("shabdarupa", "sarvanama"), "/paradigm": ("shabdarupa", "matrix"), "/special": ("shabdarupa", "showcase"),
+    "/shabda": ("shabdarupa", None), "/lab": ("shabdarupa", "derive"),
+    "/krdanta": ("dhaturupa", "krdanta"),
+    "/bhatti": ("reader", "bhatti"), "/patha": ("reader", "patha"), "/text": ("reader", "text"),
+    "/devendra": (None, None), "/dik": (None, None),           # pages retired; pipelines kept for tests
+    "/coverage": ("yantrashala", None), "/review": ("yantrashala", None),
+}
+
+
+def _moved(path: str):
+    def view():
+        sec, tab = _MOVED[path]
+        args = dict(request.args)
+        if tab:
+            args["tab"] = tab
+        return redirect(url_for(sec + "_page", **args) if sec else url_for("home"), code=301)
+    view.__name__ = "moved_" + path.strip("/")
+    return view
+
+
+for _p in _MOVED:
+    app.add_url_rule(_p, view_func=_moved(_p))
+
+
+@app.route("/prakriya")
+def prakriya_page():
+    """The one shared derivation view; all state lives in the query string, so any URL is a permalink."""
+    return render_template("prakriya.html", nav_active="prakriya", vibhakti=_SR_VIBHAKTI, vacana=_SR_VACANA,
+                           linga=list(_SR_LINGA), lakara=[(k, d) for _v, k, d, _n in _DR_LAKARA if k],
+                           cov=coverage_report(SUTRA_REGISTRY))
+
+
+@app.route("/practice")
+def practice_page():
+    return render_template("practice.html", nav_active="practice", cov=coverage_report(SUTRA_REGISTRY))
+
+
+_DOCS = _ROOT / "docs"
+
+
+@app.route("/docs/<path:p>")
+def docs_static(p):
+    """Read-only static files of the Pages site (learn.html's data/ and transliterate.js)."""
+    from flask import send_from_directory
+    return send_from_directory(_DOCS, p)
+
+
+@app.route("/learn")
+def learn_page():
+    """प्रक्रिया-पाठः — docs/learn.html (the stepper) served unchanged under this site's menu."""
+    html = (_DOCS / "learn.html").read_text(encoding="utf-8")
+    for rel in ('"data/', '`data/', 'src="transliterate.js"', 'href="index.html"', 'href="shabda.html"'):   # a <base> tag would break its #hash links
+        html = html.replace(rel, rel[0] + "/docs/" + rel[1:] if rel[0] in "\"`" else rel.replace('"', '"/docs/', 1))
+    html = html.replace('href="/docs/shabda.html"', 'href="/shabdarupa"')
+    html = re.sub(r'<link[^>]*(?:fonts\.googleapis|fonts\.gstatic)[^>]*>', '', html)          # offline: bundled font instead
+    html = html.replace("</head>", '<link rel="stylesheet" href="/static/fonts.css"></head>', 1)
+    html = html.replace("<header>", '<header><a href="/">← पाणिनि-यन्त्रम्</a>', 1)
+    return html
+
+
+# यन्त्रशाला — developer area (kept out of the student menu)
+_DEV = [("/pipelines", "प्रक्रियाः", "every canonical pipeline, one click"),
+        ("/sig", "SIG", "rule-dependency graph"),
+        ("/tests", "परीक्षाः", "run pytest and the SIG benchmark"),
+        ("http://127.0.0.1:8000/coverage", "Coverage", "sūtra coverage (FastAPI :8000)"),
+        ("http://127.0.0.1:8000/review", "Review", "reviewer console (FastAPI :8000)")]
+
+
+@app.route("/yantrashala")
+def yantrashala_page():
+    return render_template("yantrashala.html", nav_active="yantrashala", dev=_DEV,
+                           cov=coverage_report(SUTRA_REGISTRY))
+
+
+
 def derive_page():
     return render_template(
         "derive.html",
         nav_active="derive",
         cov=coverage_report(SUTRA_REGISTRY),
     )
-
-
-# Legacy FastAPI (xxweb/) paths → unified Flask routes
-@app.route("/paradigm")
-def legacy_paradigm():
-    return redirect(url_for("matrix", **request.args))
-
-
-@app.route("/special")
-def legacy_special():
-    return redirect(url_for("showcase_page", **request.args))
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -233,7 +335,6 @@ def _load_gold_for_stem(stem: str, linga: str) -> dict[str, str]:
     return {}
 
 
-@app.route("/matrix")
 def matrix():
     stem = request.args.get("stem", "rAma")
     return render_template(
@@ -342,7 +443,6 @@ def api_matrix_rules():
         "rules": rules_list
     })
 
-@app.route("/patha")
 def patha_page():
     from pipelines.patha_pipeline import get_form_index, lexicon_info
     index = get_form_index()          # build + cache on first request
@@ -406,7 +506,6 @@ def api_patha_trace():
 # Paradigm showcase — शम्भु development page
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/showcase")
 def showcase_page():
     return render_template(
         "showcase.html",
@@ -427,26 +526,63 @@ def api_paradigm_presets():
 # Sūtra detail
 # ─────────────────────────────────────────────────────────────────
 
+_SJ: dict = {}
+
+
+def _sutras_json() -> dict:
+    """Pages-site sūtra data (text, padaccheda, Kāśikā examples) for all ~4000 sūtras. Display only."""
+    if not _SJ:
+        _SJ.update(json.loads((_ROOT / "docs/data/sutras.json").read_text(encoding="utf-8")))
+    return _SJ
+
+
+_APPLIED: dict = {}
+
+
+def _applied_index() -> dict:
+    """sūtra id → [(derivation slug, final form)] over the recorded Pages-site traces (built once)."""
+    if not _APPLIED:
+        for f in sorted((_ROOT / "docs/data/traces").glob("*.json")):
+            try:
+                t = json.loads(f.read_text(encoding="utf-8"))
+            except ValueError:
+                continue
+            seen = set()
+            for st in t.get("trace", []):
+                if str(st.get("status", "")).startswith("APPLIED") and st.get("sutra_id") not in seen:
+                    seen.add(st["sutra_id"])
+                    _APPLIED.setdefault(st["sutra_id"], []).append((f.stem, _slp1_str_to_dev(t.get("final_flat_slp1", ""))))
+        _APPLIED[""] = []
+    return _APPLIED
+
+
+def _sid_key(x: str):
+    try:
+        return tuple(int(p) for p in x.split("."))
+    except ValueError:
+        return (99,)
+
+
 @app.route("/sutra/<sid>")
 def sutra_detail(sid):
     rec = SUTRA_REGISTRY.get(sid)
-    if rec is None:
+    sj = _sutras_json()
+    if rec is None and sid not in sj:
         abort(404)
+    j = sj.get(sid, {})
+    order = sorted(sj, key=_sid_key)
+    i = order.index(sid) if sid in sj else -1
+    r = {"sutra_id": sid, "sutra_type": j.get("y", ""), "text_slp1": "", "text_dev": j.get("t", ""),
+         "padaccheda_dev": j.get("p", ""), "why_dev": "", "anuvritti_from": [], "adhikara_scope": [], "blocks_sutra_ids": []}
+    if rec is not None:
+        r.update({"sutra_type": rec.sutra_type.name, "text_slp1": rec.text_slp1, "text_dev": rec.text_dev or r["text_dev"],
+                  "padaccheda_dev": rec.padaccheda_dev or r["padaccheda_dev"], "why_dev": rec.why_dev,
+                  "anuvritti_from": list(rec.anuvritti_from or ()), "adhikara_scope": list(rec.adhikara_scope or ()),
+                  "blocks_sutra_ids": list(rec.blocks_sutra_ids or ())})
     return render_template(
-        "sutra.html",
-        nav_active=None,
-        sid=sid,
-        rec={
-            "sutra_id"       : rec.sutra_id,
-            "sutra_type"     : rec.sutra_type.name,
-            "text_slp1"      : rec.text_slp1,
-            "text_dev"       : rec.text_dev,
-            "padaccheda_dev" : rec.padaccheda_dev,
-            "why_dev"        : rec.why_dev,
-            "anuvritti_from" : list(rec.anuvritti_from or ()),
-            "adhikara_scope" : list(rec.adhikara_scope or ()),
-            "blocks_sutra_ids": list(rec.blocks_sutra_ids or ()),
-        },
+        "sutra.html", nav_active="sutras", sid=sid, rec=r, implemented=rec is not None,
+        examples=j.get("ex", []), applied=_applied_index().get(sid, []),
+        prev_sid=order[i - 1] if i > 0 else None, next_sid=order[i + 1] if 0 <= i < len(order) - 1 else None,
     )
 
 
@@ -463,6 +599,11 @@ def api_sutras():
             "text_dev"  : rec.text_dev,
             "why_dev"   : rec.why_dev,
         })
+    for sid, j in _sutras_json().items():          # not yet implemented: listed so the explorer covers the whole Aṣṭādhyāyī
+        if sid not in SUTRA_REGISTRY:
+            by_type.setdefault(j.get("y", ""), []).append({"sutra_id": sid, "text_dev": j.get("t", ""), "why_dev": "", "placeholder": True})
+    for rows in by_type.values():
+        rows.sort(key=lambda r: _sid_key(r["sutra_id"]))
     return jsonify({
         "by_type"  : by_type,
         "coverage" : coverage_report(SUTRA_REGISTRY),
@@ -1152,7 +1293,6 @@ def api_sutra_ref_search():
 # सर्वनाम — pronoun paradigm (अस्मद्)
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/sarvanama")
 def sarvanama_page():
     return render_template("sarvanama.html", nav_active="sarvanama",
                            cov=coverage_report(SUTRA_REGISTRY))
@@ -1211,7 +1351,6 @@ def api_sarvanama_trace():
 # कृदन्तम् — kṛdanta derivation (tṛc / ṇvul)
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/krdanta")
 def krdanta_page():
     try:
         from pipelines.dhatupatha import list_tfc_demo_ids
@@ -1229,8 +1368,8 @@ def api_krdanta():
     dhatu_id = (data.get("dhatu_id") or "BU").strip()
     krt_type = data.get("krt_type", "tfc")  # tfc or nvul
     try:
-        from pipelines.dhatupatha import get_dhatu_row
-        row = get_dhatu_row(dhatu_id)
+        from pipelines.dhatupatha import resolve_dhatu_identifier   # upadeśa SLP1, pāṭha id or row id (as /v1/krdanta)
+        row = resolve_dhatu_identifier(dhatu_id)
         if not row:
             return jsonify({"error": f"Unknown dhatu: {dhatu_id}"}), 400
         upadesha = row.get("upadesha_slp1") or row.get("id") or dhatu_id
@@ -1280,12 +1419,6 @@ def api_krdanta():
 # देवेन्द्र / सूर्योदय — samāsa demo
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/devendra")
-def devendra_page():
-    return render_template("devendra.html", nav_active="devendra",
-                           cov=coverage_report(SUTRA_REGISTRY))
-
-
 @app.route("/api/devendra", methods=["POST"])
 def api_devendra():
     """Derive one of the samāsa examples: devendraH or sUryodayaH."""
@@ -1328,12 +1461,6 @@ def api_devendra():
 # दिक्-समासः — dik compound demo
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/dik")
-def dik_page():
-    return render_template("dik.html", nav_active="dik",
-                           cov=coverage_report(SUTRA_REGISTRY))
-
-
 @app.route("/api/dik/glass", methods=["POST"])
 def api_dik_glass():
     """Return glassbox explanation rows for a dik-samāsa preset."""
@@ -1358,7 +1485,6 @@ def api_dik_glass():
 # भट्टिकाव्य १.१–१.२ — जयमङ्गला padāni (glass-box prakriyā)
 # ─────────────────────────────────────────────────────────────────
 
-@app.route("/bhatti")
 def bhatti_page():
     from pipelines.bhattikavya_1_1 import NOTES, WORDS
     words = [
@@ -1395,6 +1521,8 @@ def _reader_for(unit: str):
 
 @app.route("/reader")
 def reader_page():
+    if (t := _tab("reader")) is not None:
+        return t
     from tools import advaita_sharada_reader as ar
     from tools import samsaadhanii_reader as rd
     return render_template(
@@ -1430,7 +1558,6 @@ def api_subhastini(p):
         return jsonify({"error": "Subhastini is not running", "offline": True}), 503
 
 
-@app.route("/text")
 def text_page():
     return render_template("text.html", nav_active="text")
 
@@ -1656,6 +1783,8 @@ def _dr_vidyut(op: str, row: dict, q: dict, **extra):
 
 @app.route("/dhaturupa")
 def dhaturupa_page():
+    if (t := _tab("dhaturupa")) is not None:
+        return t
     return render_template("dhaturupa.html", nav_active="dhaturupa", lakara=_DR_LAKARA, sanadi=_DR_SANADI,
                            upasarga=_DR_UPASARGA, purusha=_DR_PURUSHA, vacana=_DR_VACANA)
 
@@ -1795,6 +1924,8 @@ def _sr_vidyut(op: str, q: dict, **extra):
 
 @app.route("/shabdarupa")
 def shabdarupa_page():
+    if (t := _tab("shabdarupa")) is not None:
+        return t
     return render_template("shabdarupa.html", nav_active="shabdarupa", vibhakti=_SR_VIBHAKTI, vacana=_SR_VACANA,
                            linga=list(_SR_LINGA))
 

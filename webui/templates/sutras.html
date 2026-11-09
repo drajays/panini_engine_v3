@@ -7,6 +7,13 @@
   <span class="muted" style="font-size:13px;">पाणिनीय-सूत्राणाम् अनुक्रमणिका</span>
 </div>
 
+<div class="sutra-search-wrap">
+  <input class="sutra-search" id="sutraSearch" type="search"
+         placeholder="सूत्र खोजें… ID (6.1.97), Devanāgarī text, या अंग्रेज़ी"
+         autocomplete="off" oninput="filterSutras(this.value)">
+  <span id="sutraCount" style="font-size:12px;color:var(--ink-faint);margin-top:4px;display:block"></span>
+</div>
+
 <div class="panel">
   <div class="form-row" style="gap:8px;align-items:center;">
     <input id="s-search" type="text" placeholder="सूत्र-क्रमाङ्केन वा पाठेन अन्वेषयतु…"
@@ -123,7 +130,7 @@ function render() {
       <td style="padding:6px 8px;font-family:var(--mono);font-size:12px;white-space:nowrap;">
         <a href="/sutra/${encodeURIComponent(s.sutra_id)}" style="color:var(--accent);">${escH(s.sutra_id)}</a>
       </td>
-      <td style="padding:6px 8px;font-size:11px;color:var(--ink-dim);">${escH(typeDev(s.sutra_type))}</td>
+      <td style="padding:6px 8px;font-size:11px;color:var(--ink-dim);">${escH(typeDev(s.sutra_type))}${s.placeholder ? ' <span title="not yet implemented">○</span>' : ' <span title="implemented">●</span>'}</td>
       <td style="padding:6px 8px;" class="dev">${escH(s.text_dev || "")}</td>
       <td style="padding:6px 8px;font-size:12px;color:var(--ink-dim);" class="dev">${escH(s.why_dev || "")}</td>
     </tr>`;
@@ -137,6 +144,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("s-search").addEventListener("input", e => {
     _search = e.target.value.trim();
     render();
+  });
+});
+
+/* Sticky search bar helper — delegates to existing _search / render() */
+function filterSutras(q) {
+  _search = q.trim();
+  render();
+  const cnt = document.getElementById('sutraCount');
+  if (cnt) {
+    const visible = filtered().length;
+    cnt.textContent = q.trim() ? `${visible} सूत्र मिले` : '';
+  }
+  /* Keep the classic search field in sync */
+  const classic = document.getElementById('s-search');
+  if (classic && classic.value !== q) classic.value = q;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sutraSearch')?.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.target.value = ''; filterSutras(''); }
   });
 });
 </script>

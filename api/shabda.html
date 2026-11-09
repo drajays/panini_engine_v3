@@ -29,6 +29,14 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body)}
 .dev{font-family:var(--dev)}
+
+/* ── Mini topbar ── */
+.topbar-mini{display:flex;gap:.6rem;align-items:center;padding:.4rem 1rem;
+  background:var(--band);font-size:.8rem;border-bottom:1px solid var(--rule)}
+.topbar-mini a{color:var(--indigo);text-decoration:none}
+.topbar-mini a:hover{text-decoration:underline}
+#streak-mini{margin-left:auto;font-family:var(--mono);font-size:.75rem;color:var(--moss)}
+
 header{display:flex;flex-wrap:wrap;gap:.7rem 1.4rem;align-items:baseline;
   padding:.9rem 1.2rem;background:var(--band);border-bottom:1px solid var(--rule)}
 header h1{font-family:var(--dev);font-size:1.1rem;margin:0;font-weight:600}
@@ -37,6 +45,13 @@ header .live{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
   text-transform:uppercase;color:var(--moss);border:1px solid var(--moss);
   border-radius:99px;padding:.1rem .5rem}
 header .count{margin-left:auto;font-family:var(--mono);font-size:.74rem;color:var(--ink-soft)}
+
+/* ── Memorize mode toggle ── */
+.controls-bar{display:flex;flex-wrap:wrap;gap:.5rem .9rem;align-items:center;
+  padding:.5rem 1.2rem;background:var(--panel);border-bottom:1px solid var(--rule)}
+.toggle-wrap{display:flex;align-items:center;gap:.45rem;font-size:.84rem;cursor:pointer;user-select:none}
+.toggle-wrap input[type="checkbox"]{width:1.1rem;height:1.1rem;accent-color:var(--indigo);cursor:pointer}
+
 select,button,input{font:inherit;color:var(--ink)}
 select{font-size:.9rem;padding:.3rem .5rem;border:1px solid var(--rule);
   border-radius:3px;background:var(--panel);font-family:var(--dev)}
@@ -61,6 +76,12 @@ td.selected button{background:var(--select);font-weight:600}
 td .mark{font-family:var(--mono);font-size:.7rem;color:var(--moss)}
 td .mark.bad{color:var(--madder)}
 td .mark.wait{color:var(--ink-faint)}
+
+/* Memorize mode */
+body.memorize .cell-slp1{display:none}
+body.memorize .cell-slp1.revealed{display:inline}
+td .cell-slp1{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint)}
+
 .detail{padding:1.2rem 1.2rem 3rem;border-left:1px solid var(--rule);
   background:var(--panel);min-height:70vh}
 @media (max-width:900px){.detail{border-left:0;border-top:1px solid var(--rule)}}
@@ -102,7 +123,24 @@ td .mark.wait{color:var(--ink-faint)}
 .empty{color:var(--ink-faint);margin-top:3rem;text-align:center}
 footer{padding:.9rem 1.2rem;border-top:1px solid var(--rule);font-size:.78rem;
   color:var(--ink-faint);background:var(--band-soft)}
+
+/* ── Detail panel action buttons ── */
+.detail-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 .5rem}
+.detail-actions button{border:1px solid var(--rule);background:var(--row);border-radius:3px;
+  padding:.3rem .7rem;font-size:.82rem;cursor:pointer;font-family:var(--body)}
+.detail-actions button:hover{background:var(--band-soft)}
+.quiz-btn{border-color:var(--indigo)!important;color:var(--indigo)!important}
+.copy-btn{border-color:var(--moss)!important;color:var(--moss)!important}
+.copy-btn.copied{background:var(--moss)!important;color:var(--panel)!important}
 </style>
+
+<!-- Mini topbar -->
+<nav class="topbar-mini">
+  <a href="/">← Hub</a> ·
+  <a href="/practice">अभ्यास</a> ·
+  <a href="/lab">Lab</a>
+  <span id="streak-mini"></span>
+</nav>
 
 <header>
   <h1 class="dev">शब्दरूपाणि</h1>
@@ -111,6 +149,14 @@ footer{padding:.9rem 1.2rem;border-top:1px solid var(--rule);font-size:.78rem;
   <label class="sub">शब्दः <select id="word"></select></label>
   <span class="count" id="count"></span>
 </header>
+
+<!-- Controls bar: memorize toggle -->
+<div class="controls-bar">
+  <label class="toggle-wrap" title="Memorize mode: tap a cell to reveal SLP1 and hints">
+    <input type="checkbox" id="memorize-toggle" onchange="toggleMemorize(this.checked)">
+    🧠 Memorize mode
+  </label>
+</div>
 
 <main>
   <div class="tablewrap"><table id="grid"></table></div>
@@ -131,6 +177,26 @@ const VIBHAKTI = ["प्रथमा","द्वितीया","तृती�
 const VACANA = ["एकवचनम्","द्विवचनम्","बहुवचनम्"];
 
 let paradigm = null, derived = {}, selected = null, mode = "reading", notes = {};
+let memorizeMode = false;
+
+// ── Streak display ──
+(function loadStreak() {
+  try {
+    const s = JSON.parse(localStorage.getItem('abhyasa.score') || '{}');
+    const streak = s.streak || 0;
+    if (streak > 0) {
+      document.getElementById('streak-mini').textContent = `🔥 ${streak} दिन`;
+    }
+  } catch (e) {}
+})();
+
+// ── Memorize mode ──
+function toggleMemorize(on) {
+  memorizeMode = on;
+  document.body.classList.toggle('memorize', on);
+  // In memorize mode, clicking a cell reveals SLP1 for that cell
+  document.querySelectorAll('td .cell-slp1').forEach(el => el.classList.remove('revealed'));
+}
 
 async function api(path, options) {
   const r = await fetch(path, options);
@@ -152,11 +218,9 @@ async function load(stem) {
   $("#word").value = stem;
   $("#detail").innerHTML = `<p class="empty dev">रूपं चिनु — pick a form.</p>`;
   drawGrid();
-  // One at a time: the reading recorder rebinds the dispatcher, so the server
-  // serialises these anyway — sending 24 at once would just block 24 threads.
   for (let vibhakti = 1; vibhakti <= 8; vibhakti++) {
     for (let vacana = 1; vacana <= 3; vacana++) {
-      if (paradigm.stem_slp1 !== stem) return;      // the reader moved on
+      if (paradigm.stem_slp1 !== stem) return;
       await deriveCell(vibhakti, vacana);
     }
   }
@@ -171,7 +235,8 @@ function drawGrid() {
       VACANA.map((_, vn) => {
         const key = `${vi + 1}-${vn + 1}`;
         return `<td id="cell-${key}"><button onclick="pick('${key}')">
-          <span class="form dev">…</span><span class="mark wait">·</span></button></td>`;
+          <span class="form dev">…</span><span class="mark wait">·</span>
+          <span class="cell-slp1"></span></button></td>`;
       }).join("") + "</tr>").join("");
 }
 
@@ -198,15 +263,27 @@ async function deriveCell(vibhakti, vacana) {
 function paintCell(key) {
   const cell = derived[key], td = document.getElementById(`cell-${key}`);
   if (!td) return;
-  // Update in place: replacing the cell's innerHTML while the reader is
-  // clicking swallows the click, because the button they hit is gone.
+  const slp1 = (!cell.error && cell.body) ? cell.body.stem : "";
   td.querySelector(".form").textContent = cell.error ? "—" : cell.data.surface.dev;
   const mark = td.querySelector(".mark");
   mark.textContent = cell.agrees ? "✓" : "✗";
   mark.className = "mark" + (cell.agrees ? "" : " bad");
+  const slp1El = td.querySelector(".cell-slp1");
+  if (slp1El) slp1El.textContent = slp1 ? `[${slp1}]` : "";
 }
 
 function pick(key) {
+  if (memorizeMode) {
+    // Reveal SLP1 for this cell on click
+    const td = document.getElementById(`cell-${key}`);
+    if (td) {
+      const slp1El = td.querySelector('.cell-slp1');
+      if (slp1El && !slp1El.classList.contains('revealed')) {
+        slp1El.classList.add('revealed');
+        return; // first tap only reveals; don't open detail yet
+      }
+    }
+  }
   if (selected) document.getElementById(`cell-${selected}`)?.classList.remove("selected");
   selected = key;
   document.getElementById(`cell-${key}`)?.classList.add("selected");
@@ -237,6 +314,11 @@ function render() {
     return;
   }
   const data = cell.data;
+  const linga = encodeURIComponent(paradigm.linga);
+  const stem = encodeURIComponent(paradigm.stem_slp1);
+  // Build quiz URL for this cell
+  const quizUrl = `/practice?kind=subanta&lemma=${stem}&linga=${linga}`;
+
   $("#detail").innerHTML = `
     <h2>${esc(paradigm.word)}</h2>
     <p class="cellname">${esc(name)} · अपेक्षितम् ${esc(cell.attested.join(", "))}</p>
@@ -251,7 +333,11 @@ function render() {
     <p class="final">${esc(data.surface.dev)}
       <span class="ok ${cell.agrees ? "" : "no"}">${cell.agrees
         ? "✓ matches the attested form"
-        : "✗ differs from " + esc(cell.attested.join(", "))}</span></p>`;
+        : "✗ differs from " + esc(cell.attested.join(", "))}</span></p>
+    <div class="detail-actions">
+      <button class="quiz-btn" onclick="window.location.href='${esc(quizUrl)}'">🎯 इस रूप का अभ्यास करें</button>
+      <button class="copy-btn" id="copy-trace-btn" onclick="copyTrace()">📋 प्रक्रिया कॉपी करें</button>
+    </div>`;
 }
 
 function setMode(next) { mode = next; render(); }
@@ -265,8 +351,6 @@ function readingView(data) {
     </div></div>`).join("") || `<p class="empty">no changes recorded</p>`;
 }
 
-// The bracket holds the citation; the gloss sits under it, so the closing
-// bracket never ends up orphaned below a block of prose.
 function citation(s) {
   const text = s.text_dev ? `<span class="sutra">${esc(s.text_dev)}</span> ` : "";
   return `${text}<span class="num">${esc(s.id)}</span> इति`;
@@ -322,6 +406,35 @@ async function saveFlag(n, sutraId) {
   });
   (notes[selected] ||= []).push(saved);
   render();
+}
+
+// ── Copy prakriyā trace to clipboard ──
+async function copyTrace() {
+  if (!selected || !derived[selected] || derived[selected].error) return;
+  const cell = derived[selected];
+  const data = cell.data;
+  const [vi, vn] = selected.split("-").map(Number);
+  const name = `${VIBHAKTI[vi - 1]} ${VACANA[vn - 1]}`;
+  let lines = [];
+  lines.push(`${data.surface.dev} (${paradigm.stem_slp1} → ${data.surface.dev}) — ${name}`);
+  (data.reading || []).forEach(step => {
+    step.sutras.forEach(s => {
+      const sutraText = s.text_dev ? `${s.text_dev} ` : "";
+      lines.push(`${s.id}: ${sutraText}→ ${step.form_dev}`);
+    });
+  });
+  const text = lines.join("\n");
+  try {
+    await navigator.clipboard.writeText(text);
+    const btn = document.getElementById('copy-trace-btn');
+    if (btn) {
+      btn.classList.add('copied');
+      btn.textContent = '✓ कॉपी हो गई';
+      setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋 प्रक्रिया कॉपी करें'; }, 2000);
+    }
+  } catch (e) {
+    alert("Clipboard access denied.\n\n" + text);
+  }
 }
 
 boot();

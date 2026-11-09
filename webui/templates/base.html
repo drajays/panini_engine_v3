@@ -2,52 +2,63 @@
 <html lang="sa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}पाणिनि-यन्त्रम्{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>.lipi-dv{font-family:var(--dev);word-spacing:.15em}</style>
   {% block head_extra %}{% endblock %}
 </head>
 <body>
+<a class="skip" href="#main">मुख्यांशं गच्छतु · Skip to content</a>
 
 <header class="topbar">
   <a href="/" class="brand {{ 'brand-active' if nav_active == 'home' else '' }}">
     <span class="brand-dev">पाणिनि-यन्त्रम्</span>
     <span class="brand-sub">Pāṇini Engine <span class="ver">v3.1</span></span>
   </a>
-  <nav class="nav">
-    <a href="/shabdarupa" class="{{ 'active' if nav_active == 'shabdarupa' else '' }} nav-featured">शब्दरूपाणि ✦</a>
-    <a href="/derive"     class="{{ 'active' if nav_active == 'derive'    else '' }}">सुबन्तम्</a>
-    <a href="/dhaturupa" class="{{ 'active' if nav_active == 'dhaturupa' else '' }} nav-featured">तिङन्तम् — धातुरूपाणि ✦</a>
-    <a href="/matrix"    class="{{ 'active' if nav_active == 'matrix'    else '' }}">२४-कोष्ठम्</a>
-    <a href="/patha"     class="{{ 'active' if nav_active == 'patha'     else '' }}">पाठ-विश्लेषणम्</a>
-    <a href="/text"      class="{{ 'active' if nav_active == 'text' else '' }}">पाठ-अर्थः</a>
-    <a href="/reader"    class="{{ 'active' if nav_active == 'reader'    else '' }} nav-featured">ग्रन्थ-पाठकः ✦</a>
-    <a href="/bhatti"    class="{{ 'active' if nav_active == 'bhatti'    else '' }}">भट्टिः</a>
-    <a href="/sarvanama" class="{{ 'active' if nav_active == 'sarvanama' else '' }}">सर्वनाम</a>
-    <a href="/krdanta"   class="{{ 'active' if nav_active == 'krdanta'   else '' }}">कृदन्तम्</a>
-    <a href="/devendra"  class="{{ 'active' if nav_active == 'devendra'  else '' }}">समासः</a>
-    <a href="/dik"       class="{{ 'active' if nav_active == 'dik'       else '' }}">दिक्</a>
-    <a href="/showcase"  class="{{ 'active' if nav_active == 'showcase'  else '' }}">शम्भु</a>
-    <a href="/pipelines" class="{{ 'active' if nav_active == 'pipelines' else '' }}">प्रक्रियाः</a>
-    <a href="/sutras"    class="{{ 'active' if nav_active == 'sutras'    else '' }}">सूत्राणि</a>
-    <a href="/sig"       class="{{ 'active' if nav_active == 'sig'       else '' }}">SIG</a>
-    <a href="/tests"     class="{{ 'active' if nav_active == 'tests'     else '' }}">परीक्षाः</a>
+
+  <nav class="nav" id="main-nav">
+    {% set cur = section or nav_active %}
+    <a href="/learn" class="{{ 'active' if cur == 'learn' }}">पाठः</a>
+    <a href="/practice" class="{{ 'active' if cur == 'practice' }}">अभ्यासः</a>
+    <details class="nav-group"><summary class="{{ 'active' if cur in ['shabdarupa','dhaturupa'] }}">रूपाणि ▾</summary>
+      <div class="nav-dropdown"><a href="/shabdarupa">शब्दरूपाणि · subanta</a><a href="/dhaturupa">धातुरूपाणि · tiṅanta, kṛdanta</a></div></details>
+    <a href="/prakriya" class="{{ 'active' if cur == 'prakriya' }}">प्रक्रिया</a>
+    <a href="/sutras" class="{{ 'active' if cur == 'sutras' }}">सूत्राणि</a>
+    <a href="/reader" class="{{ 'active' if cur == 'reader' }}">ग्रन्थाः</a>
+    <a href="/yantrashala" class="{{ 'active' if cur in ['yantrashala','pipelines','sig','tests'] }}">यन्त्रशाला</a>
   </nav>
+
+  <!-- Coverage + hamburger -->
   <div class="cov">
     {% if cov %}
-      <span class="cov-pct">{{ cov.coverage_pct }}%</span>
-      <span class="cov-count">{{ cov.implemented }}/{{ cov.total }} सूत्राणि</span>
+      <a href="/sutras" style="text-decoration:none; color:inherit;">
+        <span class="cov-pct">{{ cov.coverage_pct }}%</span>
+        <span class="cov-count">{{ cov.implemented }}/{{ cov.total }} सूत्राणि</span>
+      </a>
     {% endif %}
   </div>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
 </header>
 
-<main class="content">
+{% if tabs %}
+<nav class="tabbar" aria-label="उपविभागाः">
+  {% for k, label, fn in tabs %}<a href="/{{ section }}{{ '' if loop.first else '?tab=' ~ k }}" class="{{ 'on' if tab == k }}">{{ label }}</a>{% endfor %}
+</nav>
+{% endif %}
+{% if nav_active in ['pipelines','sig','tests','yantrashala'] %}
+<nav class="tabbar" aria-label="यन्त्रशाला">
+  <a href="/yantrashala" class="{{ 'on' if nav_active == 'yantrashala' }}">यन्त्रशाला</a><a href="/pipelines" class="{{ 'on' if nav_active == 'pipelines' }}">प्रक्रियाः</a><a href="/sig" class="{{ 'on' if nav_active == 'sig' }}">SIG</a><a href="/tests" class="{{ 'on' if nav_active == 'tests' }}">परीक्षाः</a>
+</nav>
+{% endif %}
+<main class="content" id="main">
   {% block content %}{% endblock %}
 </main>
 
 <footer class="footer">
-  पाणिनि-यन्त्रम् v3.1 · काचपेटिका-नियम-आधारित-व्युत्पत्तिः ·
-  <a href="https://claude.ai">Claude-सहायेन निर्मितम्</a>
+  पाणिनि-यन्त्रम् v3.1 · अष्टाध्यायी-क्रम-आधारित-व्युत्पत्तिः
 </footer>
 
 <script src="{{ url_for('static', filename='transliterate.js') }}"></script>

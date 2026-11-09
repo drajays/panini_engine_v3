@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}प्रक्रिया — पाणिनि-यन्त्रम्{% endblock %}
+{% block head_extra %}<script src="{{ url_for('static', filename='transliterate.js') }}"></script>{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>प्रक्रिया <span class="muted" style="font-size:14px;font-weight:400">Derive any word, step by step</span></h1>
+  <form id="f" class="pk-form-row no-print">
+    <label>प्रकारः<select id="kind"><option value="subanta">सुबन्तम् (noun form)</option><option value="tinanta">तिङन्तम् (verb form)</option><option value="krdanta">कृदन्तम् (agent noun)</option></select></label>
+    <label id="l-w">शब्दः / धातुः (देवनागरी या SLP1)<input id="w" value="rAma" size="14" autocomplete="off"></label>
+    <span data-k="subanta" class="pk-form-row">
+      <label>विभक्तिः<select id="vib">{% for v in vibhakti %}<option value="{{ loop.index }}">{{ loop.index }} · {{ v }}</option>{% endfor %}</select></label>
+      <label>वचनम्<select id="vac">{% for k, v in vacana %}<option value="{{ loop.index }}">{{ v }}</option>{% endfor %}</select></label>
+      <label>लिङ्गम्<select id="lg">{% for l in linga %}<option>{{ l }}</option>{% endfor %}</select></label></span>
+    <span data-k="tinanta" class="pk-form-row">
+      <label>लकारः<select id="la">{% for k, d in lakara %}<option value="{{ k }}">{{ d }}</option>{% endfor %}</select></label>
+      <label>प्रयोगः<select id="pr"><option value="kartari">कर्तरि</option><option value="karmani">कर्मणि</option><option value="bhave">भावे</option></select></label>
+      <label>पुरुषः<select id="pu"><option value="3">प्रथमः</option><option value="2">मध्यमः</option><option value="1">उत्तमः</option></select></label>
+      <label>वचनम्<select id="vc2">{% for k, v in vacana %}<option value="{{ loop.index }}">{{ v }}</option>{% endfor %}</select></label></span>
+    <span data-k="krdanta" class="pk-form-row">
+      <label>कृत्<select id="krt"><option value="tfc">तृच्</option><option value="nvul">ण्वुल्</option></select></label></span>
+    <button type="submit">व्युत्पादयतु</button>
+  </form>
+  <p id="st" class="muted"></p>
+</div>
+<div class="panel" id="res"></div>
+{% endblock %}
+{% block body_extra %}
+<script src="{{ url_for('static', filename='prakriya.js') }}"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id), Q = new URLSearchParams(location.search);
+  const FIELDS = {kind:"kind", w:"w", vib:"vib", vac:"vac", lg:"lg", la:"la", pr:"pr", pu:"pu", vc2:"vc2", krt:"krt"};
+  for (const k in FIELDS) if (Q.has(k)) $(k).value = Q.get(k);
+  const slp = t => /[ऀ-ॿ]/.test(t) ? Transliterate.toSLP1(t, "devanagari") : t;
+  const show = () => document.querySelectorAll("[data-k]").forEach(e => { e.hidden = e.dataset.k !== $("kind").value; });
+  $("kind").onchange = show; show();
+  const post = (u, b) => fetch(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b)}).then(r => r.json());
+  async function run(push) {
+    const kind = $("kind").value, w = $("w").value.trim(); if (!w) return;
+    if (push) { const p = new URLSearchParams(); for (const k in FIELDS) p.set(k, $(k).value); history.replaceState(null, "", "?" + p); }
+    $("st").textContent = "…"; $("res").innerHTML = "";
+    let r;
+    try {
+      r = kind === "subanta" ? await post("/api/derive", {stem: slp(w), vibhakti: +$("vib").value, vacana: +$("vac").value, linga: $("lg").value})
+        : kind === "tinanta" ? await post("/api/tinanta", {dhatu: w, lakara: $("la").value, prayoga: $("pr").value, purusha: +$("pu").value, vacana: +$("vc2").value})
+        : await post("/api/krdanta", {dhatu_id: slp(w), krt_type: $("krt").value});
+    } catch (e) { $("st").textContent = "दोषः: " + e.message; return; }
+    if (r.error) { $("st").textContent = r.error; return; }
+    $("st").textContent = "";
+    Prakriya.mount($("res"), {trace: r.trace, title: w, surface: {slp1: r.surface_slp1 || ((r.trace || []).slice(-1)[0] || {}).form_after || "", dev: r.surface_dev}, request: Object.fromEntries(Q)});
+  }
+  $("f").addEventListener("submit", e => { e.preventDefault(); run(true); });
+  if (Q.has("w")) run(false);
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}यन्त्रशाला — पाणिनि-यन्त्रम्{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>यन्त्रशाला <span class="muted" style="font-size:14px;font-weight:400;">Developer workshop</span></h1>
+  <p class="muted">For maintainers: pipelines, rule graph, test runner. Students do not need this area. Everything here only <em>reads</em> the engine; nothing feeds back into the rules.</p>
+  <div class="card-grid">
+    {% for url, name, desc in dev %}
+    <a class="card" href="{{ url }}"{% if url.startswith('http') %} target="_blank" rel="noopener"{% endif %}><h3>{{ name }}</h3><p>{{ desc }}</p></a>
+    {% endfor %}
+    <a class="card" href="/sutras"><h3>सूत्राणि</h3><p>{{ cov.implemented }}/{{ cov.total }} implemented</p></a>
+  </div>
+</div>
+{% endblock %}
