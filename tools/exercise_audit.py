@@ -74,6 +74,9 @@ def _spec(label: str, source: str, kind: str, first: str, result: str):
     if rhs and any("ऀ" <= c <= "ॿ" for c in rhs):
         rhs = _slp1(rhs)
     expected = rhs or (result or "").strip()
+    m = re.match(r"^([A-Za-z]+) ([A-Za-z]+)$", (first or "").strip())          # vākya: two padas side by side, the tripāḍī over the seam
+    if m and kind == "sutrartha" and re.match(r"^[A-Za-z~]+ [A-Za-z~]+$", expected):
+        return ("vakya", m.group(1), m.group(2)), expected, None
     if not expected or "-->" in expected or "/" in expected or " " in expected.strip():
         return None, expected, "several forms in one example"
     if source == "vidyut" and kind == "subanta":
@@ -117,6 +120,9 @@ def _derive(spec: tuple):
     if spec[0] == "tinanta":
         from pipelines.tinanta import derive
         return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **({"pada": spec[6]} if len(spec) > 6 else {}))
+    if spec[0] == "vakya":
+        from pipelines.pada_samhita import join_tripadi
+        return join_tripadi(spec[1], spec[2])
     raise ValueError(spec[0])
 
 
