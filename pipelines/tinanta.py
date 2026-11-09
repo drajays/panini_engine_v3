@@ -929,7 +929,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.4.73", state)
 
     # ── आदन्त: 7.1.34 आत औ णलः (ददौ), 6.4.64 आतो लोप इटि च (ददतुः, ददिथ, ददे)
-    for sid in ("7.4.10", "7.4.11", "7.1.34", "6.4.64", "6.1.88"):
+    for sid in ("7.4.12", "7.4.10", "7.4.11", "7.1.34", "6.4.64", "6.1.88"):
         state = apply_rule(sid, state)
 
     # ── ajādi dhātus: 7.4.70 अत आदेः, 7.4.71 नुट्, 6.4.78 इयङ्/उवङ्, then the
