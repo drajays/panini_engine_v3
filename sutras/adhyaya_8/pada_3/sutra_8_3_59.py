@@ -50,7 +50,7 @@ VYAVAYA_TAG = "satva_vyavaya_8_3_58"     # 8.3.58 tags the one anusvāra / visar
 def eligible_s(t, i: int) -> bool:
     """An s that 8.3.59 may reach: not done, not pada-final, and an ādeśa / pratyaya s (not the stem's or dhātu's own)."""
     v = t.varnas[i]
-    return (v.slp1 == "s" and "satva_done" not in v.tags and i < len(t.varnas) - 1
+    return (v.slp1 == "s" and "satva_done" not in v.tags and "satva_barred_8_3_111" not in v.tags and i < len(t.varnas) - 1
             and "mula_dhatu_v" not in v.tags and "mula_prakrti_v" not in v.tags)
 
 
@@ -70,7 +70,7 @@ def _find_target(state: State):
         v = t.varnas[i]
         if v.slp1 != "s":
             continue
-        if "satva_done" in v.tags:
+        if "satva_done" in v.tags or "satva_barred_8_3_111" in v.tags:
             continue
         if i == len(t.varnas) - 1:
             continue        # pada-final s is 8.2.66's ru (पूर्वत्रासिद्धम्: 8.2.66 < 8.3.59)

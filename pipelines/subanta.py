@@ -563,11 +563,12 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.2.39",   # JalAM jaSo'nte — jhal pada-final -> jaS (vAk -> vAg, etc.)
     "8.2.66",
     "8.2.68",   # ahan → ahaH / aho- (the n is not 8.2.7's)
+    "8.3.14",   # ro ri
     "8.3.15",   # ru → visarga at avasāna or before khar
     "8.3.16",   # roḥ supi (trace/ANUVADA; structural work done by 8.3.15)
     "8.3.24",   # n → anusvāra before jhal
     "8.3.36",
-    "8.3.58", "8.3.59",   # ṣatva: scans back through M/H so fires correctly after 8.3.24/8.3.15
+    "8.3.111", "8.3.58", "8.3.59",   # ṣatva: scans back through M/H so fires correctly after 8.3.24/8.3.15
     "8.4.1",
     "8.4.2",
     "8.4.40",   # stoH ScunA ScuH — n→Y (rAjYA etc.), only the j+n slice

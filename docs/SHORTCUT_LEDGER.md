@@ -114,3 +114,4 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S144 | 7.2.5 / 7.2.6 | eḍit is read as "upadeśa ends in a~" (only matters for a sic with its iṭ, where 7.2.4 already withholds vṛddhi from a hal-final aṅga); 7.2.6 withholds the vṛddhi but the vibhāṣā's other reading (aurṇāvīt) is not generated | the eḍit list from the Dhātupāṭha it-markers; 7.2.1 aimed at ūrṇu's final u | open |
 | S145 | 7.4.48 | the aṅga ap and its tadanta svap are named by stem (_APAH); the samāsa machine does not yet say that a stem ends in the word ap | the samāsa machine's members (S126) | open |
 | S146 | 8.4.39 | the kṣubhnādi ākṛtigaṇa is the two roots the engine can derive (kṣubh, tṛp), named by upadeśa | the Kāśikā gaṇa list as a gaṇapāṭha input | open |
+| S147 | 8.3.111 | only the dhātu-initial ādeśa s (6.1.64) is barred; the sāt half (अग्निसात्) waits on 5.4.52, which is gate-only | 5.4.52 as a real taddhita, then sāt as a pratyaya s | open |

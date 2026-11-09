@@ -55,7 +55,7 @@ def derive_jizRuH() -> State:
     s = P00_pratipadika_prathama_sup_after_stem_merge(s)
     # Tripāḍī on *jisnu*+*su*: **8.3.59** / **8.4.1** on the stem cluster, then *ru*/*visarga*.
     s = apply_rule("8.2.1", s)
-    for sid in ("8.3.58", "8.3.59", "8.4.1", "8.2.66", "8.3.15"):
+    for sid in ("8.3.111", "8.3.58", "8.3.59", "8.4.1", "8.2.66", "8.3.15"):
         s = apply_rule(sid, s)
     return s
 

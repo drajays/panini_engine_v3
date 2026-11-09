@@ -20,3 +20,4 @@
 - Older next list: (a) finish step above; (b) 7.2.41-7.2.45 veṭ family and 7.2.5/7.2.6; (c) añ branch of 4.1.73 (needs jāti in the samagra) S138; (d) 3.1.94 vikalpa hook in the resolver; (e) 5.4.69 needs the samāsa machine; (f) 8.2.3 as an asiddha_strata exception; (g) harness gaps in tools/exercise_audit.py (kṛdanta/sanādi entry, label shapes).
 - Known wrong still: ṣaṣ + nām gives zazRAm (ṣaṇṇām needs 8.4.45); yuṣmad/asmad go through pipelines/asmad_subanta, not derive().
 - Uncommitted by design (the owner's): .gitignore, data/inputs/adhikara_scope_index.json, tools/build_scope_index.py, sig/loop_gauge.json, tests/constitutional/test_no_external_corpus_in_engine.py, scratch/, sig/exercise_audit.json (refreshed by the audit; commit it with the ledger refresh).
+- Open failures + causes: docs/OPEN_FAILURES.md (recorded 2026-11-09). Method: read the DB Kāśikā, cite, verify any outside claim against the DB before accepting it.

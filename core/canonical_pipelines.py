@@ -235,7 +235,8 @@ def _juhotyadi_remove_slu_placeholder(state: State) -> None:
 
 
 def P00_satva(s: State) -> State:
-    """Ṣatva: 8.3.58 (one num / visarga / śar may stand between) then 8.3.59."""
+    """Ṣatva: 8.3.111 (bars a padādi ādeśa s), 8.3.58 (one num / visarga / śar may stand between), then 8.3.59."""
+    s = apply_rule("8.3.111", s)
     s = apply_rule("8.3.58", s)
     return apply_rule("8.3.59", s)
 
@@ -1476,7 +1477,7 @@ def P15_tripadi_shesha_sibilant_n(s: State) -> State:
     """8.3.59 + 8.4.1 + 8.4.2 + 8.4.40 + 8.4.53 (jhal-jhaṣ pada-medial voicing,
     vAc+Bis -> vAgBiH) + 8.4.56 (jaś->car at avasāna, vAk not vAg) —
     sheṣa tripāḍī in this subanta block."""
-    for sid in ("8.3.24", "8.3.58", "8.3.59", "8.4.1", "8.4.2", "8.4.58", "8.4.40", "8.4.53", "8.4.56"):
+    for sid in ("8.3.24", "8.3.111", "8.3.58", "8.3.59", "8.4.1", "8.4.2", "8.4.58", "8.4.40", "8.4.53", "8.4.56"):
         s = apply_rule(sid, s)
     return s
 
