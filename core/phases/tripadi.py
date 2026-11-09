@@ -66,6 +66,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.3.24",   # naścopādhā anusvāraḥ — n→M before consonant
     "8.3.28",   # ṅṇoḥ kuk-ṭuk śari — optional k/ṭ after a pada-final ṅ/ṇ before a śar (prāṅkṣu)
     "8.3.30",   # naś ca — optional dhuṭ between a pada-final n and s (praśāntsu)
+    "8.3.34",   # visarjanīyasya saḥ — ḥ → s before c/ṭ/t-varga (8.4.40/41 then make ś/ṣ): vṛkṣaścinoti
     "8.3.111", "8.3.58", "8.3.59",   # ādeśasya — ṣatva after IK in pratyaya-s (fixed: IK not word-final guard)
     "8.3.60",   # śāsi/vasi/ghasi ṣatva (idempotent: 8_3_60_satva_done flag)
     # ── 8.4 — assimilation ──────────────────────────────────────────────────

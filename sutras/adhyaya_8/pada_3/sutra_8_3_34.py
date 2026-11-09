@@ -4,9 +4,8 @@
 Classical rule (broad): visarga (ḥ) can be replaced by dental 's' in certain
 following contexts.
 
-v3 narrow slice (vakya illustration P021):
-  When a visarga ``H`` is immediately followed by dental ``t`` *across a word
-  boundary* (i.e. end of one Term and start of the next), replace that ``H``
+Slice built so far (P021 and the seam audit): a visarga ``H`` at a pada end followed by c/ch/ṭ/ṭh/t/th
+  *across a word boundary* (i.e. end of one Term and start of the next), replace that ``H``
   with ``s``:
 
     grAmaH + tava  →  grAmas + tava
@@ -47,7 +46,7 @@ def _find_visarga_t_boundary(state: State):
             continue
         if left.varnas[-1].slp1 != "H":
             continue
-        if right.varnas[0].slp1 != "t":
+        if right.varnas[0].slp1 not in "cCwWtT":      # khari, but k/p-varga go to 8.3.37 (kupvoḥ ≍k≍pau ca, the apavāda) and the śar cases to 8.3.35/36
             continue
         return i
     return None
