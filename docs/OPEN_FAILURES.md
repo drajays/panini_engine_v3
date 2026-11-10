@@ -25,3 +25,12 @@ Source: `tools/exercise_audit` after commits 996b98b4 … 43376140. Method: audi
 | 1.1.34 | tag-driven niyama; the audit passes no vivakṣā (saṃjñā/vyavasthā). |
 | 8.2.2 | siddha-statement, not a firing rule. |
 | 3.1.31, 3.4.109, 8.2.75 | not yet triaged (3.4.109 jus after abhyasta/vid; 8.2.75 dat-final dhātu + sip → ru/d). |
+
+## 2026-11-10 (late) — añc stems: the user's Kāśikā text settles the nasal (6.4.138 / 6.4.139 / 6.3.138)
+Source: the user's pasted Kāśikā + Bhāṣya-vṛtti text. anc + kvin: kvin is kit, so 6.4.24 drops the nasal *at the stem stage* (anc → ac); the stem is the
+unfused tape [upasarga][ac] (pra + ac, prati + ac, ud + ac). In a bha (yac-bhaṃ 1.4.18) 6.4.138 deletes the a of ac, 6.4.139 turns it into ī after ud, and
+6.3.138 lengthens the preceding aṇ before the bare c (pratīcā, prācaḥ: pra + c → prā + c). Strong cases get the nasal back from 7.1.70 (añcu is ugit).
+Not built: the subanta pipeline takes a stem string, so [pra][ac] must stay two Terms to the sup (no 6.1.101 fusion before the pada). Next: let a lexicon
+entry hand the subanta scanner a Term list; then 6.4.24 at kvin (the term-0 limit of that rule must go), origin_it:u for ugit.
+7.1.79 (dadanti/dadati) is real now (7.1.78 bars 7.1.70 and 7.1.72; 7.1.79 VIBHASHA); the audit row stays FAIL only because the audit passes the bare stem
+"dadat" with no vyutpatti record — it needs a krdanta entry point.

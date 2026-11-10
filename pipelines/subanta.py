@@ -428,6 +428,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.99",   # त्रिचतुरोः स्त्रियां तिसृचतसृ
     "7.2.100",  # अचि र ऋतः — तिस्रः, चतस्रः
     "7.1.82",   # सावनडुहः — नुम् in su: अनड्वान्
+    "7.1.78",   # नाभ्यस्ताच्छतुः — bars 7.1.70 for an abhyasta Śatṛ stem (before it, its utsarga)
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
     "6.1.68",
@@ -489,6 +490,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.85",   # रायो हलि विभक्तौ आः — राभ्याम्, रासु
     "7.2.109",  # दश्च — the d that 7.2.112 / 7.2.113 left: इमौ, इमे, इमम्, इमानि
     "7.1.72",
+    "7.1.79",   # वा नपुंसकस्य — nuṃ optionally for the neuter abhyasta Śatṛ stem (dadanti / dadati)
     "7.1.73",   # इकोऽचि विभक्तौ — nuṃ for a neuter ik-final aṅga before an ac-initial vibhakti (vāriṇā, madhunī)
     "7.1.75",   # अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः — asthi / dadhi / sakthi / akṣi: i → an before an ac-initial sup of the third vibhakti on (apavāda of 7.1.73)
     "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)

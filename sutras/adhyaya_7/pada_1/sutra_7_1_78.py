@@ -16,7 +16,7 @@ from engine.state import State
 def _site(state: State):
     """नाभ्यस्ताच्छतुः — a Śatṛ-anta aṅga that is abhyasta (the dhātu was reduplicated: dadat, jakṣat, bibhrat) does not take nuṃ (7.1.70):
     ददतौ, ददतः (not *ददन्तौ). The record of the stem's making is engine/origin's."""
-    hit = anga_and_sup(state, "7.1.78")
+    hit = anga_and_sup(state)   # like 7.1.70, which this bars: not waiting for the 6.4.1 step
     if hit is None or "7.1.70" in state.blocked_sutras:
         return None
     anga, _ = hit
@@ -28,7 +28,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    state.blocked_sutras.add("7.1.70")
+    state.blocked_sutras.update(("7.1.70", "7.1.72"))   # the nuṃ adhikāra: every nuṃ of this stem; 7.1.79 gives it back (neuter, optional)
     return state
 
 
@@ -43,7 +43,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न अभ्यस्तात् शतुः",
     why_dev               = "नाभ्यस्ताच्छतुः — अभ्यस्तात् परस्य शतुः नुम् (७.१.७०) न (ददतौ)।",
     anuvritti_from        = ('7.1.1',),
-    blocks_sutra_ids      = ('7.1.70',),
+    blocks_sutra_ids      = ('7.1.70', '7.1.72'),
     cond                  = cond,
     act                   = act,
 )
