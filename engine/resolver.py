@@ -54,6 +54,7 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
 # Declared order (data, docs/AMENDMENT_19.md "taddhita order"): (first, second) — while `first` is a candidate `second` is withheld, and the rest of
 # the ladder decides among the others. Unlike CONFLICT_OVERRIDES the pair does not outrank a third rule that kram would put before `first`.
 ORDER_BEFORE: tuple[tuple[str, str], ...] = (
+    ("2.4.77", "3.4.109"),       # sic is luk'd (gātisthā…bhūbhyaḥ) before 3.4.109 looks for it: abhūvan, not *abhovuḥ (1.1.63: a luk does not leave the pratyaya for the sūtra)
     ("7.2.117", "6.4.148"),      # ñit / ṇit ādivṛddhi (para, 1.4.2) before yasyeti ca: dakṣa + iñ -> dākṣi
     ("7.3.50", "7.2.118"),       # the pratyaya's own ādeśa (ṭh -> ik) before the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50: revatī + ṭhak)
     ("7.3.51", "7.2.118"),       # likewise ṭh -> k
