@@ -58,6 +58,7 @@ ORDER_BEFORE: tuple[tuple[str, str], ...] = (
     ("7.3.50", "7.2.118"),       # the pratyaya's own ādeśa (ṭh -> ik) before the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50: revatī + ṭhak)
     ("7.3.51", "7.2.118"),       # likewise ṭh -> k
     ("6.1.33", "6.1.45"),        # संप्रसारणं तदाश्रयं च कार्यं बलवत् (Paribhāṣā; Kaumudī 6.1.31): ह्वे before dvitva takes samprasāraṇa, not ātva (juhāva)
+    ("7.2.35", "7.4.49"),        # iṭ before sya (seṭ as: asiṣyati): 7.4.49 सः स्यार्धधातुके needs the s of the root next to sya, which the iṭ makes impossible
     ("6.4.136", "6.4.134"),      # vibhāṣā ṅiśyoḥ is the exception to the an-lopa: tried first, its declined branch bars 6.4.134 (rājani, sāmani)
 )
 
