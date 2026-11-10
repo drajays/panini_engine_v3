@@ -43,8 +43,10 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
         return "O"
     if ch in ("f", "F", "x", "X"):
         return "A"                            # + 1.1.51 rapara: कृ → कार् (अकारि, कारक)
-    if ch in ("e", "E", "o", "O"):
-        return ch
+    if ch in ("e", "E"):
+        return "E"                            # ec -> aic by 1.1.50 (व्येञ् in liṭ: विव्याय, 6.1.46 keeps the e)
+    if ch in ("o", "O"):
+        return "O"
     return None
 
 
@@ -105,6 +107,10 @@ def _find(state: State):
     # Paninian ``ac`` (अच्) — hrasva + dīrgha; ``AC`` pratyāhāra here is short-only.
     if not (is_hrasva(last) or is_dirgha(last)):
         return None
+    if last in ("e", "o") and "mula_dhatu_v" in dhatu.varnas[-1].tags and "na_vyo_liTi_6_1_46" not in dhatu.tags:
+        return None                             # the root's own ec: ātva (6.1.45) comes first; only a root 6.1.45 may not touch (vyeñ in liṭ, 6.1.46) takes vṛddhi of its e
+    if dhatu.meta.get("samprasarana_done") and not dhatu.meta.get("6_1_108_purvarupa_done"):
+        return None                             # samprasāraṇa and its pūrvarūpa are stronger (संप्रसारणं तदाश्रयं च कार्यं बलवत्): hve -> hu first (juhāva)
     rep = _vrddhi_vowel(last, state)
     if rep is None and last in ("f", "F", "x", "X"):
         rep = "A"          # vṛddhi of ṛ/ḷ is ā + r/l (1.1.51): पॄ → पार् (पारयति)

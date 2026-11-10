@@ -22,6 +22,10 @@ def _find(state: State) -> int | None:
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas:
             continue
+        if t.meta.get("samprasarana_done") and not t.meta.get("6_1_108_purvarupa_done"):
+            continue       # संप्रसारणं तदाश्रयं च कार्यं बलवत्: the ec after a marked samprasāraṇa awaits its pūrvarūpa (1.1.45, 6.1.108): hu+e, not ātva (juhāva)
+        if "na_vyo_liTi_6_1_46" in t.tags:
+            continue       # न व्यो लिटि (6.1.46): vyeñ keeps its ec in liṭ
         last = t.varnas[-1]
         if last.slp1 not in _EC or "mula_dhatu_v" not in last.tags:
             continue

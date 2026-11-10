@@ -22,9 +22,9 @@ from phonology import mk
 from sutras.adhyaya_6.pada_1.sutra_6_1_16 import _STEMS as _GRAHI_STEMS   # उभयेषाम् — the 6.1.16 class too (विव्याध, विव्यच)
 
 _STEMS = frozenset({"vac", "svap"}) | _GRAHI_STEMS
-# yajādi members whose own ādeśas come first and are not derived yet — वेञ् (2.4.41 वयादेश → उवाय), व्येञ्, ह्वेञ्, श्वि (the
+# yajādi members whose own ādeśas come first and are not derived yet — वेञ् (2.4.41 वयादेश → उवाय), श्वि (the
 # optional vārttika: शिश्वाय / शुशाव). They stay on the unmodified path (and out of 6.1.15 in liṭ) until those rules exist.
-NOT_YET_DERIVED = frozenset({"veY", "vyeY", "hveY", "wuo~Svi"})
+NOT_YET_DERIVED = frozenset({"veY", "wuo~Svi"})
 _SAMPRASARANA = {"y": "i", "v": "u", "r": "f", "l": "x"}
 _VOWELS = frozenset("aAiIuUfFxXeEoO")
 

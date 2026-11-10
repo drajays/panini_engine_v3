@@ -10,19 +10,34 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_1_46_na_46"
+# Kāśikā 6.1.46: "व्येञ् इत्येतस्य धातोर्लिटि परत आकारादेशो न भवति। संविव्याय। संविव्ययिथ।
+# लिट्यभ्यासस्योभयेषाम् (6.1.17) इत्यभ्यासस्य संप्रसारणम्। णलि अचो ञ्णिति (7.2.115) इति वृद्धिः।"
+# The prohibition is a tag on the root (6.1.45 reads it), settled before the rules contend (Art. 21 ladder 1).
+TAG = "na_vyo_liTi_6_1_46"
+
+
+def _site(state: State):
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or TAG in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "vyeY" or not t.varnas \
+                or t.varnas[-1].slp1 != "e" or "mula_dhatu_v" not in t.varnas[-1].tags:
+            continue
+        if any("pratyaya" in u.tags and (u.meta.get("source_lakara_upadesha") or "").strip() == "liT"
+               for u in state.terms[i + 1:]):
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.46", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.46"
+    t = _site(state)
+    if t is not None:
+        t.tags.add(TAG)
     return state
 
 

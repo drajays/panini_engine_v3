@@ -52,3 +52,16 @@ layer reads one-sided kills as conflict and would hand it to para. Evidence: bra
 ## Addition (2026-10-31): taddhita order (docs/PLAN_TADDHITA_FIX.md step 1)
 `ORDER_BEFORE` (engine/resolver.py), data (first, second): while `first` is a candidate `second` is withheld and the ladder decides among the rest (a CONFLICT_OVERRIDES pair would also outrank a third rule that kram puts earlier: 7.3.16 in dvivārṣika). Pairs: (7.2.117, 6.4.148) ñit/ṇit ādivṛddhi is para (1.4.2), then yasyeti ca (dakṣa + iñ: dākṣi); (7.3.50, 7.2.118) and (7.3.51, 7.2.118): the pratyaya's own ādeśa (ṭh -> ik / k) precedes the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50, revatī + ṭhak).
 1.4.17 (pada) waits while an ādeśa of the taddhita pratyaya (7.1.2, 7.3.50) is still to act, so pada / bha is decided on the pratyaya as it finally stands (ṭhak -> ika is yac-initial: bha). No override pair: a pair would also outrank 7.3.16 (dvivārṣika).
+
+## Addition (2026-11-10): ORDER_BEFORE 6.1.33 over 6.1.45 (hve liṭ / san / yaṅ)
+
+ह्वे that is about to be doubled takes samprasāraṇa before dvitva (Kāśikā 6.1.33: "अभ्यस्तकारणस्य ह्वयतेः प्रागेव द्विर्वचनात् संप्रसारणं भवति। जुहाव। जोहूयते। जुहूषति"), so 6.1.45 ātva
+finds no ec left (हु). The two meet on the bare root and 6.1.45 is para; the Paribhāṣā "संप्रसारणं तदाश्रयं च कार्यं बलवत्" (Paribhāṣāśekhara; Kaumudī 6.1.31) is why samprasāraṇa wins.
+The pair is ORDER_BEFORE (not a CONFLICT_OVERRIDES pair) so 6.1.8 / 6.1.45 for glai etc. stay as above. Pinned by `tests/unit/test_6_1_33_hve_samprasarana.py`.
+
+## Addition (2026-11-10): the same cluster, other touch points
+
+- `engine/phase.py`: 6.1.108 sampprasāraṇāc ca is also eligible in the aṅga phase (gated by the samprasāraṇa on the tape), so hu+e -> hu precedes 7.2.115 / dvitva of the aṅga (juhāva).
+- 6.1.46 न व्यो लिटि is a real PRATISHEDHA (tag `na_vyo_liTi_6_1_46` on the root, read by 6.1.45 and 7.2.115); 7.2.115 gives e -> ai for such a root (विव्याय).
+- `engine/resolver._reach`: a ṭit āgama (Aṭ, iṭ) is the first part of the pratyaya it stands before (1.1.46), so a nimitta met by the āgama reaches the whole pratyaya. Without it the guṇa of 7.3.84
+  (nimitta: the sārvadhātuka Ani) looked bahiraṅga to 6.4.82's aci (the A of Aṭ) and bibhI + Ani gave *bibhyāni; now it is a plain vipratiṣedha, para = 7.3.84 (बिभयानि; Kāśikā 3.4.92: the Aṭ-ed uttama is pit).

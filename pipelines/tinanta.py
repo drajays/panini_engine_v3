@@ -357,8 +357,8 @@ def _lit_samprasarana(state: State) -> State:
     from sutras.adhyaya_6.pada_1.sutra_6_1_17 import NOT_YET_DERIVED
 
     root = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
-    if root is not None and (root.meta.get("upadesha_slp1") or "").strip() in NOT_YET_DERIVED:
-        return state
+    if root is not None and (root.meta.get("upadesha_slp1") or "").strip() in NOT_YET_DERIVED | {"vyeY"}:
+        return state          # vyeñ: its kit liṭ (vivyatuḥ, the root's own samprasāraṇa after the doubling) runs only in the loop; this recipe does the doubling first
     for sid in ("6.1.15", "1.1.45", "6.1.108", "6.4.2"):
         state = apply_rule(sid, state)
     return state
@@ -847,6 +847,9 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         # dvitva BEFORE vuk: 6.4.88 requires abhyāsa present to detect liṭ context
         state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.46", state)   # न व्यो लिटि: व्येञ् keeps its e (विव्याय)
+        for _sid in ("6.1.33", "1.1.45", "6.1.108", "6.4.2"):   # ह्वे before dvitva: samprasāraṇa, pūrvarūpa (juhāva); self-gating
+            state = apply_rule(_sid, state)
         state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला, धे → धा
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
@@ -875,6 +878,9 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
             state = apply_rule("1.2.5", state)
         state = _lit_samprasarana(state)      # 6.1.15: उच् / ईज् before a kit ending (ऊचतुः, ईजतुः, ऊहुः)
         state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.46", state)   # न व्यो लिटि: व्येञ् keeps its e (विव्याय)
+        for _sid in ("6.1.33", "1.1.45", "6.1.108", "6.4.2"):   # ह्वे before dvitva: samprasāraṇa, pūrvarūpa (juhāva); self-gating
+            state = apply_rule(_sid, state)
         state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला, धे → धा
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
