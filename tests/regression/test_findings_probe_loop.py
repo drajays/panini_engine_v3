@@ -13,11 +13,7 @@ import sutras  # noqa: F401
 from tools.autonomy_report import run_autonomously, start_state
 from tools.findings_probe import CASES
 
-KNOWN_GAPS = {
-    ("BvAdi_01_1163", "liT", 3, 1),       # hve: 6.1.33 abhyastasya ca not modelled (juhAva)
-    ("BvAdi_01_1162", "liT", 3, 1),       # vye: 6.1.46 na vyo liṭi + 6.1.17 for vyeñ (vivyAya)
-    ("JuhotyAdi_03_0002", "loT", 1, 1),   # bhī: guṇa before pit āni (biBayAni)
-}
+KNOWN_GAPS: set = set()      # hve 6.1.33, vye 6.1.46, bhī 3.4.92/6.4.82 closed 2026-11-10
 
 
 def _id(case):

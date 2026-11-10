@@ -162,6 +162,11 @@ def _reach(sid: str, state: State) -> int:
         cut.terms = cut.terms[: k + 1]
         try:
             if rec.cond(cut):
+                # 1.1.46 आद्यन्तौ टकितौ: a ṭit āgama (Aṭ, iṭ) is the first part of the pratyaya it stands before, so a nimitta that
+                # is satisfied by the āgama reaches the whole pratyaya (bibhayāni: the guṇa of 7.3.84 is not bahiraṅga to 6.4.82's aci)
+                if k + 1 < len(state.terms) and {"agama", "it:Tit"} <= state.terms[k].tags \
+                        and "pratyaya" in state.terms[k + 1].tags:
+                    return k + 1
                 return k
         except Exception:
             continue
