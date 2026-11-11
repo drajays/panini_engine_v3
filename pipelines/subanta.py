@@ -429,6 +429,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.100",  # अचि र ऋतः — तिस्रः, चतस्रः
     "7.1.82",   # सावनडुहः — नुम् in su: अनड्वान्
     "7.1.78",   # नाभ्यस्ताच्छतुः — bars 7.1.70 for an abhyasta Śatṛ stem (before it, its utsarga)
+    "6.4.127",  # अर्वणस्त्रसावनञः — arvan→arvantr (tṛ for n) except before su; the resolver orders it against 6.4.8 (para)
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
     "6.1.68",
@@ -726,7 +727,9 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
             if not candidates:
                 return
 
-            winner = _subanta_scanner_winner_by_spine_order(candidates, all_ids, s)
+            # An adhikāra opens its scope before the rules inside it contend (6.4.1 अङ्गस्य precedes 6.4.8 / 6.4.127).
+            opening = [c for c in scopes if get_sutra(c).sutra_type is _ST2.ADHIKARA]
+            winner = opening[0] if opening else _subanta_scanner_winner_by_spine_order(candidates, all_ids, s)
             sig_before = _state_sig(s)
             before_len = len(s.trace)
             s = apply_rule(winner, s)
