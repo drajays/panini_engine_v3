@@ -38,6 +38,8 @@ def _target(state: State):
     fem_sarvanama = "sarvanama" in anga.tags and "TAp_anta" in anga.tags   # ā-stem (āp): इदा, ता, का, सर्वा
     if ("nadi" not in anga.tags and not fem_sarvanama) or "sup" not in affix.tags:
         return None
+    if "nadi" in anga.tags and not fem_sarvanama and anga.varnas and anga.varnas[-1].slp1 in ("i", "u"):
+        return None                  # a hrasva i/u nadī (kṛti, dhenu) takes it by 7.3.117 idudbhyām
     if affix.meta.get(_DONE) or not affix.varnas:
         return None
     if (affix.meta.get("upadesha_slp1") or "") != "Ni":

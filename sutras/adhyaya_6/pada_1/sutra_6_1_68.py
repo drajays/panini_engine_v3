@@ -126,6 +126,11 @@ def _find_eligible_boundary(state: State) -> int | None:
             )
             if not has_tap_arm:
                 continue
+        if final == "I":
+            from sutras.adhyaya_1.pada_4.sutra_1_4_4 import iyanuvan_sthana
+
+            if iyanuvan_sthana(anga):
+                continue      # the ī of nī / śrī / sudhī is a kvip-dhātu's, not a ṅī: the su stays (nīḥ, śrīḥ, sudhīḥ — Kāśikā 1.4.4 hē śrīḥ)
         up = (anga.meta.get("upadesha_slp1") or "").strip()
         if up in {"asmad", "yuzmad"}:
             continue  # 7.1.28 अम्, not su-lopa

@@ -443,6 +443,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "4.1.3",    # स्त्रियाम् — feminine adhikāra
     "4.1.4",    # अजाद्यतष्टाप् — feminine sarvanāma: ṭāp after the a-ending stem (ida + ṭāp → idā, tā); strīliṅga only
     "1.4.3",    # यू स्त्र्याख्यौ नदी — the ī of a ṅīp that 4.1.6 attached (its ṅ, p go by it-lopa after 4.1.2): nuṃ 7.1.80–81 and 7.3.107 read nadī
+    "1.4.4",    # नेयङुवङ्स्थानावस्त्री — śrī, bhrū, nī (iyaṅuvaṅsthāna) lose it (hē śrīḥ) …
+    "1.4.5",    # वाऽऽमि — … back before Ām (śrīṇām / śriyām)
+    "1.4.6",    # ङिति ह्रस्वश्च — hrasva strī i/u and iyaṅuvaṅsthāna yU: nadī before ṅit, optionally (matyai / mataye); withdraws 1.4.7's ghi
     "7.1.81",   # शप्श्यनोर्नित्यम् — nuṃ of a Śatṛ-anta aṅga before the nadī (pacantī); before 7.1.80, its utsarga
     "7.1.80",   # आच्छीनद्योर्नुम् — vā, after Sa (tudantī / tudatī)
     "7.3.44",   # प्रत्ययस्थात् कात् पूर्वस्यात इदाप्यसुपः — pāṭhaka + ā → pāṭhikā (the ṭāp is already in the aṅga, S2)
@@ -510,6 +513,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.3.104",  # ओसि च — a → e before os (then 6.1.78: rAmayoH)
     "7.3.112",  # आट् for ṅit sups after नदी — नद्यै · नद्याः
     "7.3.116",  # ङि → आम् after नदी — नद्याम्
+    "7.3.117",  # इदुद्भ्याम् — ṅi → ām after a hrasva i/u nadī — matyām, dhenvām
     "7.3.102",
     "6.4.129",
     "6.4.130",

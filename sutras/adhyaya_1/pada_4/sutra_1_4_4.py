@@ -20,13 +20,17 @@ from engine.state  import State
 FEMININE_TAGS: frozenset = frozenset({"stri", "strīliṅga"})
 
 
+def iyanuvan_sthana(t) -> bool:
+    """A strī ī/ū-stem that is a dhātu (nī, śrī …) or bhrū: the stems whose ī/ū 6.4.77 turns into iyaṅ/uvaṅ (Kāśikā 1.4.4). Not the word strī (astrī)."""
+    from engine.declension import dhatu_aṅga
+
+    return (bool(FEMININE_TAGS & t.tags) and bool(t.varnas) and t.varnas[-1].slp1 in ("I", "U")
+            and dhatu_aṅga(t) and (t.meta.get("upadesha_slp1") or "").strip() != "strI")
+
+
 def _eligible(state: State):
     for t in state.terms:
-        if "nadi" not in t.tags:
-            continue
-        if t.meta.get("1_4_4_done"):
-            continue
-        if "iyaN_sub" in t.tags or "uvaN_sub" in t.tags or not (FEMININE_TAGS & t.tags):
+        if "nadi" in t.tags and not t.meta.get("1_4_4_done") and (iyanuvan_sthana(t) or not (FEMININE_TAGS & t.tags)):
             yield t
 
 

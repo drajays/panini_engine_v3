@@ -32,7 +32,7 @@ def _eligible(state: State):
             continue
         if not (FEMININE_TAGS & t.tags):
             continue
-        if "nadi" in t.tags:
+        if "nadi" in t.tags or t.meta.get("1_4_4_done"):      # 1.4.4 has taken the saṃjñā from an iyaṅuvaṅsthāna yU: 1.4.3 does not give it back
             continue
         if not t.varnas:
             continue

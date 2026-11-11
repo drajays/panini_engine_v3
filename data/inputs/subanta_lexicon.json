@@ -2572,6 +2572,22 @@
     }
    ],
    "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+  },
+  {
+   "stem": "SrI",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "SrI\\Y",
+     "dhatu_id": "09.0003"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "SrI (dhātupāṭha 9.3) + kvip: iyaṅuvaṅsthāna (Kāśikā 1.4.4 hē śrīḥ; 1.4.6 śriyai, śriye)"
   }
  ]
 }

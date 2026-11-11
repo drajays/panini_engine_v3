@@ -126,6 +126,15 @@ def _derive(spec: tuple):
     raise ValueError(spec[0])
 
 
+def _derive_loop(spec: tuple):
+    """The autonomous loop's own tape for a kartari tiṅanta (the path that is replacing the recipe): scored beside the recipe."""
+    from types import SimpleNamespace as NS
+    from tools.autonomy_report import run_autonomously, start_state
+
+    case = NS(kind="tinanta", args=(spec[1], spec[2], spec[4], spec[5]), pada=spec[6] if len(spec) > 6 else None)
+    return run_autonomously(start_state(case), "", spec[1], 250).state
+
+
 @lru_cache(maxsize=None)
 def run(spec: tuple):
     """→ ([(surface_slp1, {sutra_id: statuses})] over every vikalpa reading, error | None)"""
@@ -134,6 +143,12 @@ def run(spec: tuple):
     try:
         with _quiet():
             branches = explore(lambda: _derive(spec))
+            if spec[0] == "tinanta" and spec[3] == "kartari":
+                try:
+                    have = {b.surface_slp1 for b in branches}
+                    branches += [b for b in explore(lambda: _derive_loop(spec)) if b.surface_slp1 not in have]     # the loop may reach what the recipe does not (jaGAna)
+                except Exception:  # noqa: BLE001 — a loop gap is not the recipe's
+                    pass
             if not branches:
                 _derive(spec)               # raises the engine's own reason
     except Exception as e:  # noqa: BLE001 — the engine's own gap, reported as the reason

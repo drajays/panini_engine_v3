@@ -21,16 +21,14 @@ FEMININE_TAGS: frozenset = frozenset({"stri", "strīliṅga"})
 
 
 def _eligible(state: State):
-    for t in state.terms:
-        if "prātipadika" not in t.tags:
-            continue
-        if not (FEMININE_TAGS & t.tags):
-            continue
-        if "aami_context" not in t.meta:
-            continue
-        if t.meta.get("1_4_5_done"):
-            continue
-        yield t
+    """An iyaṅuvaṅsthāna yU stem (1.4.4 took its nadī-saṃjñā away) directly before the sup Ām: śriyām / śrīṇām (Kāśikā 1.4.5)."""
+    from sutras.adhyaya_1.pada_4.sutra_1_4_4 import iyanuvan_sthana
+
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        if ("nadi" not in t.tags and t.meta.get("1_4_4_done") and iyanuvan_sthana(t) and "sup" in nxt.tags
+                and (nxt.meta.get("upadesha_slp1") or "") == "Am" and not t.meta.get("1_4_5_done")):
+            yield t
 
 
 def cond(state: State) -> bool:
@@ -58,6 +56,7 @@ SUTRA = SutraRecord(
     anuvritti_from         = ("1.4.1", "1.4.3"),
     r1_form_identity_exempt= True,
     vibhasha_default       = True,
+    vibhasha_scope         = lambda state: next(_eligible(state), None) is not None,
     cond                   = cond,
     act                    = act,
 )

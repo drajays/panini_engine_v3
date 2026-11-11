@@ -270,6 +270,9 @@ def _find_target(state: State):
         # *ikārānta* + affix-initial short *i* (e.g. *hari* + *Ni* → *harau*) — not this lopa.
         if last.slp1 == "i" and first.slp1 == "i" and not taddhita_any:
             continue
+        # The sūtra reads īkāre (Kāśikā 6.4.148): a short i is not ī, so a sup i (ṅi) after an ī-stem is not this lopa — śrī + ṅi: 6.4.77 → śriyi
+        if last.slp1 == "I" and first.slp1 == "i" and "sup" in nxt.tags and not taddhita_any:
+            continue
         # *a* + *ī* before *sarvanāmasthāna* / dual-*O* paths is not this *lopa*
         # (e.g. *jñāna* + dual → *jñāne*; meta may still read ``O`` or ``Si``).
         if last.slp1 == "a" and first.slp1 == "I":
