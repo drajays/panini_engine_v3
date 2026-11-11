@@ -154,11 +154,35 @@ def write_ledger(path: Path = LEDGER_PATH) -> dict[str, Any]:
 
 # ── pytest plugin hooks (used via `-p tools.firing_coverage`) ──────────────
 
-def pytest_configure(config: Any) -> None:  # noqa: ARG001
+def pytest_configure(config: Any) -> None:
+    if getattr(config, "workerinput", None) is None:       # the controller starts clean
+        import shutil
+        shutil.rmtree(_ROOT / "sig" / ".fire_parts", ignore_errors=True)
     install()
 
 
+_PARTS = _ROOT / "sig" / ".fire_parts"
+
+
 def pytest_sessionfinish(session: Any, exitstatus: int) -> None:  # noqa: ARG001
+    """Under xdist each worker writes its part; the controller merges them (-n8 makes the ledger a ~1 h job, not 7 h)."""
+    wi = getattr(session.config, "workerinput", None)
+    if wi is not None:
+        _PARTS.mkdir(parents=True, exist_ok=True)
+        (_PARTS / f"{wi['workerid']}.json").write_text(
+            json.dumps({"i": sorted(INVOKED), "m": sorted(MOVED), "s": STATUS, "e": EDGES}), encoding="utf-8")
+        return
+    if _PARTS.exists():
+        for f in _PARTS.glob("*.json"):
+            d = json.loads(f.read_text(encoding="utf-8"))
+            INVOKED.update(d["i"]); MOVED.update(d["m"])
+            for sid, b in d["s"].items():
+                t = STATUS.setdefault(sid, {})
+                for k, n in b.items():
+                    t[k] = t.get(k, 0) + n
+            for k, n in d["e"].items():
+                EDGES[k] = EDGES.get(k, 0) + n
+            f.unlink()
     payload = write_ledger()
     sig = write_suite_sig()
     print(
