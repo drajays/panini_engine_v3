@@ -198,9 +198,14 @@ def probe(sutra_id: str, state: State) -> State:
         _DRY_DEPTH -= 1
 
 
+_CANON_ATOMS = (str, int, float, bool, type(None))
+
+
 def _canonical(value: Any) -> Any:
     """An order-free image of a meta value. ``repr`` of a set depends on the hash seed and insertion history, so two
     equal tapes could fingerprint differently and a vacuous rule look effective (the loop's PYTHONHASHSEED dependence)."""
+    if type(value) in _CANON_ATOMS:
+        return value
     if isinstance(value, dict):
         return tuple(sorted(((repr(k), _canonical(v)) for k, v in value.items()), key=lambda kv: kv[0]))
     if isinstance(value, (set, frozenset)):

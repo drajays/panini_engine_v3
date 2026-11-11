@@ -83,6 +83,9 @@ def copy_meta(meta: Dict[str, Any]) -> Dict[str, Any]:
     memo: Dict[int, Any] = {}
     out = {}
     for k, v in meta.items():
+        if type(v) in _ATOMS:            # the common case, without the three calls _quick makes
+            out[k] = v
+            continue
         c = _quick(v)
         out[k] = deepcopy(v, memo) if c is NotImplemented else c
     return out

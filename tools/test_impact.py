@@ -10,7 +10,8 @@ that test (recording *consulted* conds instead selects ~88 % of the suite for on
 So ``quick`` is the fast loop and the full serial run at the end of a batch is the proof; for a cond you widened, also run the
 tests of that sūtra's own prakaraṇa by name.
 
-    python3 -m tools.test_impact record              # one full run (≈ the full suite); writes the map
+    python3 -m tools.test_impact record-lite -n8     # sūtras only, no profiler, parallel: ≈ one full run; writes the map
+    python3 -m tools.test_impact record              # + per-function profile (10×+ slower, serial): lets shared-source edits select too
     python3 -m tools.test_impact quick               # run only the tests a git change can reach
     python3 -m tools.test_impact quick --base HEAD~3 # changes since a commit
     python3 -m tools.test_impact why                 # print the selection, run nothing
@@ -154,6 +155,31 @@ def changed_functions(path: str, base: str = "HEAD") -> set[str] | None:
     return out
 
 
+_IMPORT = re.compile(r"sutra_(\d+)_(\d+)_(\d+)")
+
+
+def with_importers(ids: set[str]) -> set[str]:
+    """A sūtra file that another sūtra file imports (iyanuvan_sthana, NGIT_SUPS …) changes the other's behaviour too: close the set over
+    'imports sutra_A_B_C' so a test that fired only the importer is still selected."""
+    graph: dict[str, set[str]] = {}
+    for f in (_ROOT / "sutras").rglob("sutra_*.py"):
+        m = _SUTRA_FILE.match(str(f.relative_to(_ROOT)))
+        if not m:
+            continue
+        me = ".".join(m.groups())
+        for a, b, c in _IMPORT.findall(f.read_text(encoding="utf-8")):
+            dep = f"{a}.{b}.{c}"
+            if dep != me:
+                graph.setdefault(dep, set()).add(me)
+    out, todo = set(ids), list(ids)
+    while todo:
+        for importer in graph.get(todo.pop(), ()):
+            if importer not in out:
+                out.add(importer)
+                todo.append(importer)
+    return out
+
+
 def select(items_ids: list[str], base: str = "HEAD") -> tuple[list[str], str]:
     """(node ids to run, why)."""
     files = [f for f in changed_files(base) if f.endswith((".py", ".json")) and not f.startswith(("docs/", "sig/", ".audit/", "scratch/"))]
@@ -170,7 +196,7 @@ def select(items_ids: list[str], base: str = "HEAD") -> tuple[list[str], str]:
         if names is None:
             return items_ids, f"shared source changed outside a function ({f}): every test can reach it"
         funcs |= {table.index(k) for n in names if (k := f"{f}::{n}") in table}
-    ids = {".".join(m.groups()) for f in src if (m := _SUTRA_FILE.match(f))}
+    ids = with_importers({".".join(m.groups()) for f in src if (m := _SUTRA_FILE.match(f))})
     run = []
     for nid in items_ids:
         f = nid.split("::")[0]
@@ -185,6 +211,7 @@ def select(items_ids: list[str], base: str = "HEAD") -> tuple[list[str], str]:
 def pytest_addoption(parser):
     g = parser.getgroup("test-impact")
     g.addoption("--impact-record", action="store_true", help="record the sūtras each test consults → sig/test_impact.json")
+    g.addoption("--impact-lite", action="store_true", help="with --impact-record: sūtras only (no per-function profile, ~free; a shared-source change then selects every test)")
     g.addoption("--impact", action="store_true", help="run only the tests the git change can reach")
     g.addoption("--impact-base", default="HEAD", help="git ref to diff against (default HEAD)")
 
@@ -208,18 +235,38 @@ def pytest_runtest_call(item):
     global _CURRENT, _FCUR
     if item.config.getoption("--impact-record"):
         _CURRENT, _FCUR = set(), set()
-        sys.setprofile(_profile)
+        if not item.config.getoption("--impact-lite"):
+            sys.setprofile(_profile)
 
 
 def pytest_runtest_teardown(item):
     global _CURRENT, _FCUR
     if item.config.getoption("--impact-record") and _CURRENT is not None:
-        sys.setprofile(None)
-        _MAP[item.nodeid] = {"s": sorted(_CURRENT), "f": sorted(_FCUR or ())}
+        if not item.config.getoption("--impact-lite"):
+            sys.setprofile(None)
+        _MAP[item.nodeid] = {"s": sorted(_CURRENT)} if item.config.getoption("--impact-lite") else {"s": sorted(_CURRENT), "f": sorted(_FCUR or ())}
         _CURRENT = _FCUR = None
 
 
+_PARTS = _ROOT / "sig" / ".impact_parts"
+
+
 def pytest_sessionfinish(session, exitstatus):
+    worker = getattr(session.config, "workerinput", None)
+    if worker is not None:                       # an xdist worker: hand the controller our share, do not touch the shared file
+        if session.config.getoption("--impact-record") and _MAP:
+            _PARTS.mkdir(parents=True, exist_ok=True)
+            (_PARTS / f"{worker['workerid']}.json").write_text(json.dumps({"map": _MAP, "funcs": _FUNCS}), encoding="utf-8")
+        return
+    if session.config.getoption("--impact-record") and _PARTS.exists():
+        for part in sorted(_PARTS.glob("*.json")):
+            got = json.loads(part.read_text(encoding="utf-8"))
+            base = len(_FUNCS)
+            _FUNCS.extend(got["funcs"])
+            for nid, e in got["map"].items():
+                _MAP[nid] = {"s": e["s"], **({"f": [i + base for i in e["f"]]} if "f" in e else {})}
+            part.unlink()
+        _PARTS.rmdir()
     if session.config.getoption("--impact-record") and _MAP:
         MAP_PATH.parent.mkdir(parents=True, exist_ok=True)
         merged = json.loads(MAP_PATH.read_text(encoding="utf-8")) if MAP_PATH.exists() else {}
@@ -230,7 +277,8 @@ def pytest_sessionfinish(session, exitstatus):
                 pos[k] = len(table)
                 table.append(k)
         for e in _MAP.values():
-            e["f"] = sorted(pos[_FUNCS[i]] for i in e["f"])
+            if "f" in e:
+                e["f"] = sorted(pos[_FUNCS[i]] for i in e["f"])
         merged[_TABLE] = table
         merged.update(_MAP)                      # a partial run refreshes its own tests and keeps the rest
         MAP_PATH.write_text(json.dumps(merged, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
@@ -245,6 +293,8 @@ def main(argv: list[str] | None = None) -> int:
     base = ["-p", "tools.test_impact", "-q", "-p", "no:cacheprovider"]
     if cmd == "record":
         return pytest.main(["tests", *args, "--impact-record", *base])
+    if cmd == "record-lite":                       # sūtras only, cheap enough to run under xdist:  record-lite -n8
+        return pytest.main(["tests", *args, "--impact-record", "--impact-lite", *base])
     if cmd == "quick":
         return pytest.main(["tests", *args, "--impact", *base])
     if cmd == "why":
