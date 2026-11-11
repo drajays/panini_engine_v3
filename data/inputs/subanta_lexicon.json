@@ -2588,6 +2588,22 @@
     }
    ],
    "source": "SrI (dhātupāṭha 9.3) + kvip: iyaṅuvaṅsthāna (Kāśikā 1.4.4 hē śrīḥ; 1.4.6 śriyai, śriye)"
+  },
+  {
+   "stem": "gir",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "gF",
+     "dhatu_id": "06.0146"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "gF (dhātupāṭha 6.146 nigaraṇe) + kvip: ṛ → ir 7.1.100; rephānta dhātu-pada, 8.2.76 (Kāśikā gīḥ)"
   }
  ]
 }

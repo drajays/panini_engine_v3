@@ -34,3 +34,5 @@ Not built: the subanta pipeline takes a stem string, so [pra][ac] must stay two 
 entry hand the subanta scanner a Term list; then 6.4.24 at kvin (the term-0 limit of that rule must go), origin_it:u for ugit.
 7.1.79 (dadanti/dadati) is real now (7.1.78 bars 7.1.70 and 7.1.72; 7.1.79 VIBHASHA); the audit row stays FAIL only because the audit passes the bare stem
 "dadat" with no vyutpatti record — it needs a krdanta entry point.
+
+- **8.2.76 (rvor upadhā dīrgha):** real for a dhātu's own r/v (gīḥ, gīrbhyām). Open: (a) a dhātu's s→ru (pipaṭhīḥ, sajūḥ) — the s's origin is lost at pada-merge, so ru is excluded; (b) gīrṣu — 1.4.18 tags the stem bha before `su` because `s` is in `_YACI_HAL` (pre-existing); (c) the scanner opens an adhikāra before contending rules (fixed 2026-11-12) but 6.4.1's late opening was the reason 6.4.127 never fired.
