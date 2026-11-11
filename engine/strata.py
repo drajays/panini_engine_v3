@@ -45,6 +45,7 @@ class Visibility:
         return self.visible
 
 
+@lru_cache(maxsize=None)
 def _tuple(sutra_id: str) -> tuple[int, ...]:
     try:
         return tuple(int(part) for part in sutra_id.split("."))
@@ -67,6 +68,7 @@ def _in_range(sutra_id: str, domain: dict[str, Any]) -> bool:
     return low <= _tuple(sutra_id) <= high
 
 
+@lru_cache(maxsize=None)
 def in_tripadi(sutra_id: str) -> bool:
     return _in_range(sutra_id, domains()["tripadi"])
 
@@ -87,6 +89,7 @@ def sees_later_tripadi(observer: str, cursor: str) -> bool:
     return any(observer == ex["observer"] and cursor in ex["sees"] for ex in tripadi_cursor_exceptions())
 
 
+@lru_cache(maxsize=None)
 def sees_tripadi_nimitta(observer: str, effect_of: str | None = None) -> bool:
     """A pre-tripāḍī rule whose own condition is a tripāḍī operation (6.3.111
     ढ्रलोपे …) — it may run inside the tripāḍī and see that operation."""

@@ -110,3 +110,50 @@ def tad_gold():
 def all_sutra_ids():
     return sorted(SUTRA_REGISTRY.keys(),
                   key=lambda s: tuple(int(p) for p in s.split(".")))
+
+
+# ── speed tiers ─────────────────────────────────────────────────────────────
+# A full run is hours because a few thousand tests each run whole derivations. Tiers keep the proof (everything) and
+# the loop (the fast majority) apart:
+#     pytest -n8 --tier=fast tests/      # skips tests recorded as ≥ --slow-secs (default 5 s); unknown tests run
+#     pytest -n8 --tier=slow tests/      # only those
+#     pytest -n8 --record-durations tests/   # (re)writes sig/test_durations.json — do this on every full run
+# Nothing is deselected unless sig/test_durations.json measured it slow, so a new test is always in the fast tier.
+_DUR_PATH = _ROOT / "sig" / "test_durations.json"
+_DUR: dict[str, float] = {}
+
+
+def pytest_addoption(parser):
+    g = parser.getgroup("tiers")
+    g.addoption("--tier", choices=("fast", "slow"), default=None, help="run only the fast or only the slow tier")
+    g.addoption("--slow-secs", type=float, default=5.0, help="a test measured at least this long is 'slow'")
+    g.addoption("--record-durations", action="store_true", help="merge measured call times into sig/test_durations.json")
+
+
+def pytest_collection_modifyitems(config, items):
+    tier = config.getoption("--tier")
+    if not tier or not _DUR_PATH.exists():
+        return
+    known = json.loads(_DUR_PATH.read_text(encoding="utf-8"))
+    cut = config.getoption("--slow-secs")
+    keep, drop = [], []
+    for it in items:
+        slow = known.get(it.nodeid, 0.0) >= cut
+        (keep if slow == (tier == "slow") else drop).append(it)
+    if drop:
+        config.hook.pytest_deselected(items=drop)
+        items[:] = keep
+
+
+def pytest_runtest_logreport(report):
+    if report.when == "call":
+        _DUR[report.nodeid] = round(report.duration, 2)
+
+
+def pytest_sessionfinish(session, exitstatus):
+    cfg = session.config
+    if hasattr(cfg, "workerinput") or not cfg.getoption("--record-durations") or not _DUR:
+        return
+    old = json.loads(_DUR_PATH.read_text(encoding="utf-8")) if _DUR_PATH.exists() else {}
+    old.update(_DUR)
+    _DUR_PATH.write_text(json.dumps(dict(sorted(old.items())), indent=0) + "\n", encoding="utf-8")

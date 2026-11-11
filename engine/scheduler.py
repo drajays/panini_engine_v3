@@ -40,6 +40,7 @@ Scheduler discipline (Phase 4):
 """
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import Any, List
 
 from engine.gates      import (
@@ -95,6 +96,7 @@ _PRATIPADIKA_REQUIRED_RANGES: tuple[tuple[tuple[int, ...], tuple[int, ...]], ...
 )
 
 
+@lru_cache(maxsize=None)
 def _id_tuple(sid: str) -> tuple[int, ...]:
     return tuple(int(p) for p in sid.split("."))
 
@@ -279,6 +281,9 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     """
     before = tape_fingerprint(state)
     keep = []
+    # state-constant parts of the memo key: computed once per call, not once per candidate
+    key_tail = (state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())),
+                tuple(sorted(repr(kv) for kv in state.vivaksha.items())))      # the speaker's vivakṣā: a rule may be effective under one and not another
     for sid in candidates:
         if is_gate_only(sid):
             continue
@@ -302,8 +307,7 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
             if other:
                 keep.append(sid)
                 continue
-        key = (sid, before, state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())),
-               tuple(sorted(repr(kv) for kv in state.vivaksha.items())))      # the speaker's vivakṣā: a rule may be effective under one and not another
+        key = (sid, before) + key_tail
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:
             try:
@@ -322,6 +326,21 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
 
 # P0 (PRAKARANA_MACHINE_PLAN): per-process counters; read by tools/scan_stats.py. Observation only.
 SCAN_STATS = {"steps": 0, "scanned": 0, "cond_calls": 0}
+
+
+_POOL: dict[tuple, list] = {}
+
+
+def _phase_pool(state: State) -> list:
+    """The (sid, rec) pairs that are loop-typed and inside the state's phase window — a pure function of (phase, registry),
+    so it is built once per phase instead of re-tested for every sūtra at every step."""
+    key = (getattr(state, "phase", "angakarya") or "angakarya", len(SUTRA_REGISTRY))
+    pool = _POOL.get(key)
+    if pool is None:
+        pool = [(sid, rec) for sid, rec in SUTRA_REGISTRY.items()
+                if (rec.sutra_type in _LOOP_TYPES or rec.also_vidhi) and _in_scheduler_phase(sid, state)]
+        _POOL[key] = pool
+    return pool
 
 
 def enumerate_candidates(state: State) -> List[str]:
@@ -347,12 +366,8 @@ def enumerate_candidates(state: State) -> List[str]:
     out = []
     in_tripadi = state.tripadi_zone
     SCAN_STATS["steps"] += 1
-    for sid, rec in SUTRA_REGISTRY.items():
+    for sid, rec in _phase_pool(state):
         SCAN_STATS["scanned"] += 1
-        if rec.sutra_type not in _LOOP_TYPES and not rec.also_vidhi:
-            continue
-        if not _in_scheduler_phase(sid, state):
-            continue
         if _skip_krt_window(sid, state):
             continue
         # Bidirectional Tripāḍī isolation in the scheduler.

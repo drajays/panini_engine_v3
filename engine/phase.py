@@ -12,6 +12,8 @@ phases only — not adhyāya 3 kṛt stubs on a bare dhātu tape.
 """
 from __future__ import annotations
 
+from functools import lru_cache
+
 from engine.state import State
 
 
@@ -80,6 +82,7 @@ def _id_tuple(sid: str) -> tuple[int, ...]:
     return tuple(int(p) for p in sid.split("."))
 
 
+@lru_cache(maxsize=None)
 def sutra_in_phase(sutra_id: str, phase: str) -> bool:
     """Return True iff ``sutra_id`` lies in the ID window for ``phase``."""
     if phase == "tripadi":
@@ -132,6 +135,7 @@ def set_phase(state: State, new_phase: str) -> State:
     return state
 
 
+@lru_cache(maxsize=None)
 def is_tripadi_sutra(sutra_id: str) -> bool:
     """
     Pure numeric test: is this a tripāḍī sūtra (8.2.1 – 8.4.68)?
