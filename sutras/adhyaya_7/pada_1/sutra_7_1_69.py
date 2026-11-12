@@ -6,6 +6,7 @@ Padaccheda: विभाषा चिण्-णमुलोः
 Kāśikā 7.1.69: labh takes num optionally before ciṇ and ṇamul — alābhi / alambhi, lābhaṃ lābham / lambhaṃ lambham
 (vyavasthita-vibhāṣā: nitya after an upasarga, prālambhi; the upasarga case is not modelled here).
 num is placed after the root's last vowel (1.1.47 vārttika / 7.1.58 model). The kept-off reading is the default (alābhi).
+Pāṭha: ashtadhyayi.com data.txt row i=71069 (Art. 14).
 """
 from __future__ import annotations
 

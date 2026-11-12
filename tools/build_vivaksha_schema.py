@@ -104,7 +104,7 @@ VOCABULARY = {
         "avakzepaRa": ["avakzepaRe"], "iva": ["ive"],
         # 5.4.68 ff (agent H)
         "samAsAnta": ["samAsAntAH"]},
-    "arthaViSeSa": {"aviSeza": ["aviSeze"], "garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA", "saMjYAyAM", "saMjYayoH"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+    "arthaViSeSa": {"aviSeza": ["aviSeze"], "garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "asaMjYAyAm", "saMjYA", "saMjYAyAM", "saMjYayoH"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
                       "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],

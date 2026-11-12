@@ -8,6 +8,7 @@ Sources consulted:
 
 After the abhyāsa of the dhātu ci, its c may become k (ku, 1.1.50) when the abhyāsa is due to san or liṭ: a following
 san, or a tiṅ that replaced liṭ (its `source_lakara_upadesha`). The default reading keeps c (cicāya); choose / explore give cikāya.
+Pāṭha: ashtadhyayi.com data.txt row i=73058 (Art. 14).
 """
 from __future__ import annotations
 

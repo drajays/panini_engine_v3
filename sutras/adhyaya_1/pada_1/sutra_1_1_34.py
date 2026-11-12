@@ -65,7 +65,7 @@ def _eligible(state: State):
 
 def _scope(state: State) -> bool:
     """The option is live only before jas for a non-saṃjñā use; a saṃjñā use is nitya (vyavasthita-vibhāṣā)."""
-    return not vivaksita(state, "arthaViSeSa", "saMjYA")
+    return cond(state) and not vivaksita(state, "arthaViSeSa", "saMjYA")
 
 
 def cond(state: State) -> bool:

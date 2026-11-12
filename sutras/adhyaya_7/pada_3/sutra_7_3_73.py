@@ -7,6 +7,7 @@ Kāśikā 7.3.73: duh, dih, lih, guh before an ātmanepada ending that begins wi
 (adugdha / adhukṣata, adihvahi / adhikṣāvahi, alīḍha / alikṣata). The v of vahi counts as dental (dantyoṣṭhya, Kāśikā:
 'दन्त्योष्ठ्योऽपि वकारो दन्त्य इति गृह्यते'). The kept ksa is the default reading; explore() gives the luk one.
 luk = the pratyaya is deleted without leaving a sthānivadbhāva trace (1.1.61 lup family; compare 2.4.72).
+Pāṭha: ashtadhyayi.com data.txt row i=73073 (Art. 14).
 """
 from __future__ import annotations
 

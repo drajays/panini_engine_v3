@@ -8,6 +8,7 @@ Kāśikā 7.3.36: arti (ṛ), hrī, vlī, rī, knūyī, kṣmāyī and every ā-
 puk is a kit āgama placed at the END of the aṅga (pūrvānta-karaṇa, so the upadhā stays short: adīdapat).
 Engine: the sūtra's own list read off the aṅga's surface (after it-lopa) + the ā-final class; the augment p is
 appended like the yuk of 7.3.37. Idempotent via Term.meta['7_3_36_puk_done'].
+Pāṭha: ashtadhyayi.com data.txt row i=72036 (Art. 14).
 """
 from __future__ import annotations
 

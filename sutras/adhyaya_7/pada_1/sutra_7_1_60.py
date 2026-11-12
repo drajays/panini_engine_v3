@@ -7,6 +7,7 @@ Kāśikā 7.1.60: masj, naś take num before a jhal-initial pratyaya — maṅkt
 nāśanam: the next letter must be jhal). Place: masj — before the last letter (vārttika to 1.1.47 'masjer antyāt pūrvam num': so the
 anusvāra-lopa of anuṣaṅga is served, magnaḥ); naś — after the last vowel (the ordinary mid-aco'ntyāt-paraḥ, which here is also
 before the last letter).
+Pāṭha: ashtadhyayi.com data.txt row i=71060 (Art. 14).
 """
 from __future__ import annotations
 
