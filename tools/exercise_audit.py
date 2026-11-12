@@ -124,6 +124,9 @@ def _quiet():
 
 
 def _derive(spec: tuple):
+    if spec[0] == "subanta" and spec[1] in ("yuzmad", "asmad"):     # the real path of the two pronouns (derive() is not it): the harness must use it
+        from pipelines import asmad_subanta
+        return getattr(asmad_subanta, "derive_" + spec[1])(spec[3], spec[4])
     if spec[0] == "subanta":
         from pipelines.subanta import derive
         return derive(spec[1], spec[3], spec[4], linga=spec[2])
