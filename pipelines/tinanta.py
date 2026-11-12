@@ -1330,6 +1330,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.108", state)   # झेर्जुस् (3.4.109 अभ्यस्तात्): अजक्षुः, अजागरुः
     state = apply_rule("3.4.109", state)
     state = apply_rule("3.4.110", state)
+    state = apply_rule("3.4.111", state)   # laṅaḥ śākaṭāyanasyaiva (vibhāṣā): yA + jhi → yA + jus (ayuH / ayAn)
+    state = apply_rule("6.1.96", state)    # usy apadāntāt: yA + us → y + us (ayuH)
     state = apply_rule("7.3.83", state)    # जुसि च: अजागरुः
     state = apply_rule("6.4.112", state)   # abhyasta ā-final root before ṅit jus: अदरिद्रुः
     # 3.4.101 (apavāda) BEFORE 3.4.100: tas→tām, Tas→tam, Ta→ta, mi→am
@@ -1581,11 +1583,12 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: tiṅ substitutions ─────────────────────────────────────────────
     state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am
 
-    if not _is_anit and not _caN and (purusha, vacana) == (3, 3):
-        # seṭ 3pl: jher jus (3.4.108) → [u, s] instead of 7.1.3 jh→anti
+    if (not _is_anit or state.samjna_registry.get("2.4.77_sic_luk")) and not _caN and (purusha, vacana) == (3, 3):
+        # seṭ 3pl: jher jus (3.4.108) → [u, s] instead of 7.1.3 jh→anti; an ā-final root whose sic was luk'd (2.4.77) too (3.4.110: asthuH)
         state = apply_rule("3.4.108", state)
         state = apply_rule("3.4.109", state)
         state = apply_rule("3.4.110", state)
+        state = apply_rule("6.1.96", state)    # usy apadāntāt: sthA + us → sth + us (asthuH, aguH)
 
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 

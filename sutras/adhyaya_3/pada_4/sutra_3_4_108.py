@@ -54,8 +54,10 @@ def _find_jhi_tin(state: State, only: str | None = None) -> int | None:
         # 3.4.110 आतः: after an ā-final root whose sic was luk'd (2.4.77) jhi is jus too — aguH, asthuH, adaH
         ata = (source == "luG" and state.samjna_registry.get("2.4.77_sic_luk")
                and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms))
-        by = {"3.4.108": source == "liG", "3.4.109": (source == "luG" and has_sic) or abhyasta_lan, "3.4.110": bool(ata)}   # each sūtra takes its own jhi
-        if not (by.get(only, False) if only else any(by.values())):
+        # 3.4.111 लङः शाकटायनस्यैव: laṅ after an ā-final (non-abhyasta) root — Śākaṭāyana's reading only (arAn / aruH)
+        ata_lan = source == "laG" and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms)
+        by = {"3.4.108": source == "liG", "3.4.109": (source == "luG" and has_sic) or abhyasta_lan, "3.4.110": bool(ata), "3.4.111": ata_lan}   # each sūtra takes its own jhi
+        if not (by.get(only, False) if only else any(v for k, v in by.items() if k != "3.4.111")):
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() == "Ji" and "".join(v.slp1 for v in t.varnas) in {"Ji", "J"}:
             return i
