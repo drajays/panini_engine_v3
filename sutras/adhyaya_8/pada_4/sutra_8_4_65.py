@@ -49,6 +49,7 @@ SUTRA = SutraRecord(
     padaccheda_dev   = 'झरो झरि सवर्णे',
     why_dev          = '(8.4.65) After a hal, a jhar is dropped before a savarṇa jhar, optionally.',
     anuvritti_from   = ("8.4.62",),
+    vibhasha_scope   = cond,
     cond             = cond,
     act              = act,
 )

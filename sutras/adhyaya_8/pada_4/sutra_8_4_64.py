@@ -49,6 +49,7 @@ SUTRA = SutraRecord(
     padaccheda_dev   = 'हलो यमां यमि लोपः',
     why_dev          = '(8.4.64) After a hal, a yam (y v r l ñ m ṅ ṇ n) is dropped before a savarṇa yam, optionally (anyatarasyām).',
     anuvritti_from   = ("8.4.62",),
+    vibhasha_scope   = cond,
     cond             = cond,
     act              = act,
 )

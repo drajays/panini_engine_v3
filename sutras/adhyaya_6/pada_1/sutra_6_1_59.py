@@ -10,22 +10,8 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 from phonology import mk
 from phonology.pratyahara import JHAL
-
-_GATE_KEY: str = "6_1_59_anudAttasy_59"
-
-
-def _legacy_cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.59", gate_key=_GATE_KEY)
-
-
-def _legacy_act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.59"
-    return state
 
 
 def _site(state: State):
@@ -48,13 +34,11 @@ def _new_cond(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _new_cond(state) or _legacy_cond(state)
+    return _new_cond(state)
 
 
 def act(state: State) -> State:
     d = _site(state)
-    if d is None:
-        return _legacy_act(state)
     d.varnas.insert(len(d.varnas) - 1, mk("a", "am_agama"))
     d.meta["6_1_59_am_done"] = True
     return state
