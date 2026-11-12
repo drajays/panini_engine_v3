@@ -45,6 +45,20 @@ _LAKARA = {"Lat": "laT", "Lit": "liT", "Lut": "luT", "Lrt": "lRT", "Lot": "loT",
 _SUP = {"su~": (1, 1), "O": (1, 2), "jas": (1, 3), "am": (2, 1), "Ow": (2, 2), "Sas": (2, 3), "wA": (3, 1), "Bis": (3, 3), "Ne": (4, 1),
         "Nasi~": (5, 1), "Nasi": (5, 1), "Nas": (6, 1), "Am": (6, 3), "Ni": (7, 1), "sup": (7, 3)}    # unambiguous sup → (vibhakti, vacana)
 _SANADI = {"san": "san_recipe", "Ric": "nic_recipe"}          # label's sanādi pratyaya → the tiṅanta entry's recipe flag
+# a kṛt is chosen by the meaning, never named (AMENDMENT 25): the pratyaya label of the example → the vivakṣās that can lead to it, tried in turn
+_KRT_VIV = {
+    "kta": [dict(kala="BUta", artha="karman"), dict(kala="BUta", artha="kartf"), dict(kala="BUta", artha="BAva")],
+    "ktavatu": [dict(kala="BUta", artha="kartf")],
+    "ktvA": [dict(kala="pUrvakAla", samAnakartfka="samAnakartfka")],
+    "kAnac": [dict(kala="BUta", artha="kartf"), dict(kala="vartamAna", artha="kartf")],
+    "kvasu": [dict(kala="BUta", artha="kartf")],
+    "SAnac": [dict(kala="vartamAna", artha="kartf"), dict(kala="vartamAna", artha="karman")],
+    "cAnaS": [dict(kala="vartamAna", artha="kartf"), dict(kala="vartamAna", artha="karman")],
+    "Satf": [dict(kala="vartamAna", artha="kartf")],
+}
+for _k in ("tavya", "yat", "Ryat", "kyap", "anIyar", "kelimar"):
+    _KRT_VIV[_k] = [dict(krt="kftya"), dict(krt="kftya", artha="karman"), dict(krt="kftya", artha="BAva")]
+_KRT_DEFAULT = [dict(artha="kartf"), {}, dict(artha="BAva"), dict(artha="karman")]
 _PRAYOGA = {"Kartari": "kartari", "Karmani": "karmani", "Bhave": "bhave"}
 OK_STATUS = {"VIDHI": {"APPLIED"}, "VIBHASHA": {"APPLIED"}, "ATIDESHA": {"APPLIED"}, "NIPATANA": {"APPLIED"},
              "NIYAMA": {"APPLIED", "AUDIT", "VACUOUS", "APPLIED_VACUOUS"}}
@@ -109,7 +123,10 @@ def _spec(label: str, source: str, kind: str, first: str, result: str):
     if m and m.group(2) in _SUP and re.match(r"^[A-Za-z]+$", expected) and kind in ("subanta", "sutrartha"):
         return ("subanta?", m.group(1), None) + _SUP[m.group(2)], expected, None
     if kind == "krdanta":
-        return None, expected, "kṛdanta: the engine has no generic krt+dhātu entry point"
+        m = re.match(r"^.*? \((\d\d\.\d+)\) \+(\S+) (Pum|Stri|Napumsaka) (\S+) (Eka|Dvi|Bahu) →", label)
+        if m and m.group(4) in _VIB:
+            return ("krdanta", m.group(1), m.group(2), _LINGA[m.group(3)], _VIB[m.group(4)], _VAC[m.group(5)]), expected, None
+        return None, expected, "kṛdanta label not parseable"
     if kind in ("taddhita",):
         return None, expected, "taddhita: the sense (taddhitArtha) is not in the example"
     if kind == "sanadi":
@@ -133,6 +150,9 @@ def _derive(spec: tuple):
     if spec[0] == "sanadi":
         from pipelines.tinanta import derive
         return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **{spec[6]: True}, **({"pada": spec[7]} if spec[7] else {}))
+    if spec[0] == "krdanta":
+        from pipelines.krdanta import derive_krdanta
+        return derive_krdanta(spec[1], spec[4], spec[5], spec[3], **dict(spec[6]))
     if spec[0] == "tinanta":
         from pipelines.tinanta import derive
         return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **({"pada": spec[6]} if len(spec) > 6 else {}))
@@ -198,6 +218,8 @@ def attempt(spec, expected: str, sid: str, typ: str) -> dict:
         specs += [("subanta", spec[1][:-1] + "s", l, spec[3], spec[4]) for l in _LINGA.values()]
     if spec[0] == "sanadi" and spec[3] == "kartari" and _ubhayapadi(spec[1]):
         specs += [spec[:7] + ("parasmai",), spec[:7] + ("atmane",)]
+    if spec[0] == "krdanta":                                 # the vivakṣā is the harness's choice of meaning for the pratyaya label
+        specs = [spec[:6] + (tuple(sorted(v.items())),) for v in _KRT_VIV.get(spec[2], _KRT_DEFAULT)]
     if spec[0] == "tinanta" and spec[3] == "kartari" and _ubhayapadi(spec[1]):      # an ubhayapadī root has both padas; a strictly one-pada root is NOT forced (a real disagreement stays a FAIL)
         specs += [spec + ("parasmai",), spec + ("atmane",)]
     okst = OK_STATUS.get(typ, _DEFAULT_OK)
