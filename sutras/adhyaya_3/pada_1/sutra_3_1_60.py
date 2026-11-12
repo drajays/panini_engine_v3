@@ -1,33 +1,51 @@
 """
 3.1.60  चिण् ते पदः  —  VIDHI
 
-Padaccheda: चिण् ते पदः
+Kāśikā 3.1.60: "पद गतौ अस्माद् धातोः परस्य च्लेश्चिणादेशो भवति तशब्दे परतः। सामर्थ्यादात्मनेपदैकवचनं गृह्यते।
+उदपादि सस्यम्। समपादि भैक्षम्। त इति किम्? उदपत्साताम्। उदपत्सत॥"
 
-Krt suffix rule from dhatu: चिण् ते पदः (60)
-Pāṭha: ashtadhyayi.com data.txt row i=31060 (Art. 14).
+Engine: after 3.1.43 the luṅ cli stands before the ātmanepada ``ta``; for the root pad it is replaced by
+ciṇ (the cli → ciṇ swap is the one 3.1.66 makes for bhāva/karman, here for kartari-of-pad).  ``swap_cli_cin``
+is shared with 3.1.61, which names six more roots and makes the swap optional.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "3_1_60_ciR_60"
+
+def cli_before_ta(state: State, roots) -> int | None:
+    """Index of the luṅ cli right after a root in ``roots`` (upadeśa without its ~) and before the tiṅ ``ta``."""
+    for i, t in enumerate(state.terms[:-1]):
+        if t.kind != "pratyaya" or (t.meta.get("upadesha_slp1") or "").strip() != "cli" or i == 0:
+            continue
+        dh, nxt = state.terms[i - 1], state.terms[i + 1]
+        if "dhatu" not in dh.tags or (dh.meta.get("upadesha_slp1") or "").strip().replace("~", "") not in roots:
+            continue
+        if "tin_adesha_3_4_78" in nxt.tags and "".join(v.slp1 for v in nxt.varnas) == "ta":
+            return i
+    return None
+
+
+def swap_cli_cin(state: State, i: int) -> State:
+    t = state.terms[i]
+    t.varnas = parse_slp1_upadesha_sequence("ciR")
+    t.meta["upadesha_slp1"] = "ciR"
+    t.meta["it_markers"] = {"c", "R"}
+    t.tags.update({"upadesha", "ardhadhatuka", "vikarana"})
+    return state
+
+
+_ROOTS = frozenset({"pada"})
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.60", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return cli_before_ta(state, _ROOTS) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.60"
-    return state
+    return swap_cli_cin(state, cli_before_ta(state, _ROOTS))
 
 
 SUTRA = SutraRecord(
@@ -36,11 +54,12 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ciR te padaH",
     text_dev              = "चिण् ते पदः",
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ciR te padaH luNi cleH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ciR te padaH luNi cleH",
     samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः चिण् ते पदः लुङि च्लेः",
     padaccheda_dev        = "चिण् ते पदः",
-    why_dev               = "धातोः [चिण् ते पदः]-प्रत्ययः विहितः (३.१.60)।",
-    anuvritti_from        = ('3.1.1',),
+    why_dev               = "पद-धातोः लुङि तशब्दे परे च्लेः चिण् (उदपादि) — काशिका ३.१.६०।",
+    anuvritti_from        = ("3.1.44",),
+    apavada_of            = ("3.1.44",),
     cond                  = cond,
     act                   = act,
 )
