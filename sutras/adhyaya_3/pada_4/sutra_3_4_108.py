@@ -52,7 +52,7 @@ def _find_jhi_tin(state: State, only: str | None = None) -> int | None:
         # 3.4.109 सिजभ्यस्तविदिभ्यश्च: in laṅ, jus after an abhyasta dhātu (abibhayuH, aduH) — and after vid
         abhyasta_lan = source == "laG" and any("abhyasa" in u.tags or "abhyasta" in u.tags or u.meta.get("slu_replaced_sap") for u in state.terms)
         # 3.4.110 आतः: after an ā-final root whose sic was luk'd (2.4.77) jhi is jus too — aguH, asthuH, adaH
-        ata = (source == "luG" and state.samjna_registry.get("2.4.77_sic_luk")
+        ata = (source == "luG" and any(state.samjna_registry.get(k) for k in ("2.4.77_sic_luk", "2.4.78_sic_luk"))     # 2.4.78 is the same luk, by option
                and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms))
         # 3.4.111 लङः शाकटायनस्यैव: laṅ after an ā-final (non-abhyasta) root — Śākaṭāyana's reading only (arAn / aruH)
         ata_lan = source == "laG" and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms)

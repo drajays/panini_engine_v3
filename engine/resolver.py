@@ -55,7 +55,8 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
 # the ladder decides among the others. Unlike CONFLICT_OVERRIDES the pair does not outrank a third rule that kram would put before `first`.
 ORDER_BEFORE: tuple[tuple[str, str], ...] = (
     ("2.4.77", "3.4.109"),       # sic is luk'd (gātisthā…bhūbhyaḥ) before 3.4.109 looks for it: abhūvan, not *abhovuḥ (1.1.63: a luk does not leave the pratyaya for the sūtra)
-    ("7.2.117", "6.4.148"),      # ñit / ṇit ādivṛddhi (para, 1.4.2) before yasyeti ca: dakṣa + iñ -> dākṣi
+    ("2.4.78", "3.4.109"),       # the vibhāṣā luk of sic (GrA, DeW, So, Co, zo) is likewise tried before 3.4.109: aGruH (luk) / aGrAsizuH (declined)
+    ("7.2.117", "6.4.148"),    # ñit / ṇit ādivṛddhi (para, 1.4.2) before yasyeti ca: dakṣa + iñ -> dākṣi
     ("7.3.50", "7.2.118"),       # the pratyaya's own ādeśa (ṭh -> ik) before the aṅga's kiti ca vṛddhi (Kāśikā 7.3.50: revatī + ṭhak)
     ("7.3.51", "7.2.118"),       # likewise ṭh -> k
     ("6.1.33", "6.1.45"),        # संप्रसारणं तदाश्रयं च कार्यं बलवत् (Paribhāṣā; Kaumudī 6.1.31): ह्वे before dvitva takes samprasāraṇa, not ātva (juhāva)

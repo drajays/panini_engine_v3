@@ -44,9 +44,10 @@ def _structural_site(state: State):
     for i, t in enumerate(state.terms[:-1]):
         if ("dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_37_nasal_lopa_done") or len(t.varnas) < 2):
             continue
-        if not (t.meta.get("ekac_dhatu") and not t.meta.get("udatta_dhatu")):
+        # "tanoti-ādīnām": every tanādi (gaṇa 8) root, udātta or not (manu~: amata); else the anudātta ekāc roots
+        if not (t.meta.get("ekac_dhatu") and (not t.meta.get("udatta_dhatu") or t.meta.get("gana") == 8)):
             continue
-        if t.varnas[-1].slp1 not in ("n", "m") or "mula_dhatu_v" not in t.varnas[-1].tags:
+        if t.varnas[-1].slp1 not in (("n", "m", "R") if t.meta.get("gana") == 8 else ("n", "m")) or "mula_dhatu_v" not in t.varnas[-1].tags:
             continue
         nxt = state.terms[i + 1]
         # क्ङिति: the saṃjñā tag, or the it-letter itself as the it-prakaraṇa records it (ktvā's k: it:kit)
