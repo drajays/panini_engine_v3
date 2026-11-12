@@ -1,30 +1,44 @@
 """
 2.4.49  गाङ् लिटि  —  VIDHI
 
-Padaccheda: गाङ् लिटि
+Kāśikā 2.4.49: "इङो लिटि परतो गाङादेशो भवति। अधिजगे, अधिजगाते, अधिजगिरे।  गाङोऽनुबन्धकरणं विशेषणार्थम्,
+गाङ्कुटादिभ्यः० (1.2.1) इत्यत्रास्य ग्रहणं यथा स्यात्।" (iṅ → gāṅ before liṭ; the ṅ is spoken so 1.2.1 sees it.)
 
-gang root in lit (perfect).
-Pāṭha: ashtadhyayi.com data.txt row i=24049 (Art. 14).
+Engine: the root ``iN`` (adhyayane) becomes ``gAN`` when the lakāra on the tape is liṭ; same shape as 2.4.45
+(iṇ → gā in luṅ), kept in its own file (one sūtra, one file).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "2_4_49_gang_liti"
+_DONE = "2_4_49_iNo_gAN_done"
+
+
+def _iN(state: State):
+    for t in state.terms:
+        if "dhatu" in t.tags and "abhyasa" not in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "iN" \
+                and not t.meta.get(_DONE):
+            return t
+    return None
+
+
+def _liT(state: State) -> bool:
+    return state.meta.get("lakara") == "liT" or any(
+        (t.meta.get("source_lakara_upadesha") or "").strip() == "liT" for t in state.terms)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return adhikara_in_effect("2.4.49", state, "2.4.35")
+    return _liT(state) and _iN(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["adesha_kind"]             = "2.4.49"
+    dh = _iN(state)
+    dh.varnas = list(parse_slp1_upadesha_sequence("gAN"))
+    dh.meta["upadesha_slp1"] = "gAN"
+    dh.meta[_DONE] = True
+    dh.tags.add("upadesha")      # the ādeśa is a fresh upadeśa: 1.3.3 names its ṅ, 1.3.9 drops it (the root is gA again, 1.2.1 has seen gAN)
     return state
 
 
@@ -34,10 +48,10 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gAN liwi",
     text_dev              = "गाङ् लिटि",
-    samagra_slp1          = "ArDaDAtuke gAN liwi iNaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "आर्धधातुके गाङ् लिटि इङः",
+    samagra_slp1          = "ArDaDAtuke iNaH gAN liwi",
+    samagra_dev           = "आर्धधातुके इङः गाङ् लिटि",
     padaccheda_dev        = "गाङ् लिटि",
-    why_dev               = "गाङ् लिटि (२.४.४९)।",
+    why_dev               = "इङो लिटि परतो गाङादेशः (अधिजगे) — काशिका २.४.४९।",
     anuvritti_from        = ('2.4.40',),
     cond                  = cond,
     act                   = act,
