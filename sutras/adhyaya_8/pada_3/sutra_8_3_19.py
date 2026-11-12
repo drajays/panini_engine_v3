@@ -17,7 +17,7 @@ from phonology import mk
 def _site(state: State):
     for t, u in seams(state):
         c = t.varnas[-1]
-        if c.slp1 in ("y", "v") and len(t.varnas) > 1 and t.varnas[-2].slp1 in AVARNA and "8_3_19_done" not in c.tags:
+        if c.slp1 in ("y", "v") and len(t.varnas) > 1 and t.varnas[-2].slp1 in AVARNA and "8_3_19_done" not in c.tags and not (c.slp1 == "y" and u.varnas[0].slp1 in HAS):   # y before a haś: 8.3.22 (apavāda)
             return t
     return None
 

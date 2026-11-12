@@ -1,5 +1,5 @@
 """
-1.1.34  पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्  —  NIYAMA
+1.1.34  पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्  —  VIBHASHA
 
 *Anuvṛtti*: sarvanāma from **1.1.27**.
 
@@ -32,6 +32,7 @@ from typing import FrozenSet
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.vivaksha import vivaksita
 
 # SLP1 prātipadika forms of the daiśika (directional) words restricted by 1.1.34.
 DAISIKA_SLP1: FrozenSet[str] = frozenset({
@@ -52,26 +53,19 @@ REGISTRY_KEY: str = "1_1_34_vyavasTA_asaMjJAyAm"
 
 
 def _eligible(state: State):
-    """
-    Yield Terms that:
-      - have upadesha_slp1 in the daiśika set
-      - currently carry 'sarvanama' (set by 1.1.27)
-      - carry 'samjna_proper_name' (they are being used as a proper name)
-      - have not already been processed by this rule
-    """
-    for t in state.terms:
-        if t.meta.get(META_1_1_34_DONE):
+    """Daiśika Terms still sarvanāma (1.1.27's gaṇa) that this sūtra reaches: a saṃjñā use (uttarāḥ kuravaḥ: never sarvanāma), or a jas follows (pūrve / pūrvāḥ: optional)."""
+    for i, t in enumerate(state.terms):
+        if t.meta.get(META_1_1_34_DONE) or "sarvanama" not in t.tags or t.meta.get("upadesha_slp1") not in DAISIKA_SLP1:
             continue
-        upa = t.meta.get("upadesha_slp1")
-        if not isinstance(upa, str):
-            continue
-        if upa not in DAISIKA_SLP1:
-            continue
-        if "sarvanama" not in t.tags:
-            continue
-        if "samjna_proper_name" not in t.tags:
-            continue
-        yield t
+        nxt = state.terms[i + 1] if i + 1 < len(state.terms) else None
+        jasi = nxt is not None and "sup" in nxt.tags and nxt.meta.get("upadesha_slp1") == "jas"
+        if vivaksita(state, "arthaViSeSa", "saMjYA") or jasi:
+            yield t
+
+
+def _scope(state: State) -> bool:
+    """The option is live only before jas for a non-saṃjñā use; a saṃjñā use is nitya (vyavasthita-vibhāṣā)."""
+    return not vivaksita(state, "arthaViSeSa", "saMjYA")
 
 
 def cond(state: State) -> bool:
@@ -88,7 +82,9 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "1.1.34",
-    sutra_type     = SutraType.NIYAMA,
+    sutra_type     = SutraType.VIBHASHA,
+    vibhasha_default = False,
+    vibhasha_scope = _scope,
     r1_form_identity_exempt = True,
     text_slp1      = 'pUrvaparAvaradakziRottarAparADarARi vyavasTAyAmasaMjYAyAm',
     text_dev       = 'पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्',

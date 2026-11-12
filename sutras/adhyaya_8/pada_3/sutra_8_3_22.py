@@ -41,6 +41,7 @@ SUTRA = SutraRecord(
     padaccheda_dev   = 'हलि सर्वेषाम्',
     why_dev          = 'भो-भगो-अघो-अवर्णात् परस्य पदान्तयकारस्य हलि सर्वेषां लोपः।',
     anuvritti_from   = ('8.3.19',),
+    apavada_of       = ('8.3.19', '8.3.20'),
     cond             = cond,
     act              = act,
 )

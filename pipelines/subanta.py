@@ -411,6 +411,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
     "6.4.13",  # सौ च — in / han / pūṣan / aryaman: dīrgha in the nominative singular (योगी, वृत्रहा)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
+    "1.1.34",   # पूर्वपरावर… व्यवस्थायामसंज्ञायाम् — jas optional: the saṃjñā goes (pūrvāḥ) or stays (pūrve, 7.1.17); before 7.1.17
     "1.4.7",
     "1.2.41",
     "7.2.107",  # adas + su: s → au (then 7.2.106 d→s, 6.1.88 → asau)

@@ -17,7 +17,7 @@ from phonology import mk
 def _site(state: State):
     for t, u in seams(state):
         c = t.varnas[-1]
-        if c.slp1 == "y" and LAGHU not in c.tags and len(t.varnas) > 1 and t.varnas[-2].slp1 == "o":
+        if c.slp1 == "y" and LAGHU not in c.tags and len(t.varnas) > 1 and t.varnas[-2].slp1 == "o" and u.varnas[0].slp1 not in HAS:   # before a haś 8.3.22 (apavāda) takes the y
             return t
     return None
 
