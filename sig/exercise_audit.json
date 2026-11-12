@@ -1,9 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 63,
+   "FAIL": 56,
    "NO_EXAMPLE": 228,
-   "DONE": 49
+   "DONE": 56
   },
   "by_type": {
    "NIYAMA": {
@@ -15,14 +15,14 @@
     "NO_EXAMPLE": 6
    },
    "VIBHASHA": {
-    "FAIL": 3,
+    "FAIL": 2,
     "NO_EXAMPLE": 4,
-    "DONE": 17
+    "DONE": 18
    },
    "VIDHI": {
     "NO_EXAMPLE": 212,
-    "FAIL": 55,
-    "DONE": 26
+    "FAIL": 49,
+    "DONE": 32
    },
    "PRATISHEDHA": {
     "DONE": 6
@@ -3124,12 +3124,59 @@
    "id": "6.4.63",
    "type": "VIDHI",
    "subkind": "अत्र <<सार्वधातुकार्धधातुकयोः>> [[7.3.84",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 1,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "04.0029",
+      "liT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "didIye",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "didIye",
+     "deriv": 7795
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "03.0005",
+      "lRT",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "pArizyate",
+     "deriv": 5807,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0023",
+      "lRT",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "vArizyate",
+     "deriv": 5808,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['didye'] ≠ expected didIye",
     "label shape not recognised",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
@@ -3138,29 +3185,168 @@
    "id": "6.4.107",
    "type": "VIBHASHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "readings ['kzaRuvaH'] ≠ expected kzaRvahe",
-    "readings ['manuvahe'] ≠ expected manvahe",
-    "readings ['tanuvaH'] ≠ expected tanvahe"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "08.0003",
+      "laT",
+      "kartari",
+      1,
+      2,
+      "atmane"
+     ],
+     "observed": "kzaRvahe",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "kzaRvahe",
+     "deriv": 6926
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "08.0009",
+      "laT",
+      "kartari",
+      1,
+      2
+     ],
+     "observed": "manvahe",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "manvahe",
+     "deriv": 6927
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "08.0001",
+      "laT",
+      "kartari",
+      1,
+      2,
+      "atmane"
+     ],
+     "observed": "tanvahe",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "tanvahe",
+     "deriv": 6928
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "03.0005",
+      "lRT",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "pArizyate",
+     "deriv": 5807,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "09.0023",
+      "lRT",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "vArizyate",
+     "deriv": 5808,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "6.4.127": {
    "id": "6.4.127",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
-   "examples_tried": 5,
-   "positives": [],
+   "verdict": "DONE",
+   "examples_tried": 3,
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "arvan",
+      "pulliṅga",
+      1,
+      2
+     ],
+     "observed": "arvantO",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED",
+      "VACUOUS"
+     ],
+     "expected": "arvantO",
+     "deriv": 3634
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "arvan",
+      "pulliṅga",
+      1,
+      3
+     ],
+     "observed": "arvantaH",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED",
+      "VACUOUS"
+     ],
+     "expected": "arvantaH",
+     "deriv": 3635
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "arvan",
+      "pulliṅga",
+      2,
+      1
+     ],
+     "observed": "arvantam",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED",
+      "VACUOUS"
+     ],
+     "expected": "arvantam",
+     "deriv": 3636
+    }
+   ],
    "negatives": [],
-   "reasons": [
-    "readings ['arvARO', 'arvvARO'] ≠ expected arvantO",
-    "readings ['arvARaH', 'arvvARaH'] ≠ expected arvantaH",
-    "readings ['arvARam', 'arvARamm', 'arvvARam', 'arvvARamm'] ≠ expected arvantam"
-   ]
+   "reasons": []
   },
   "6.4.128": {
    "id": "6.4.128",
@@ -3738,36 +3924,7 @@
      "deriv": 6669
     }
    ],
-   "negatives": [
-    {
-     "spec": [
-      "tinanta",
-      "07.0023",
-      "liT",
-      "kartari",
-      2,
-      1
-     ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
-     "fires": false,
-     "error": null
-    },
-    {
-     "spec": [
-      "tinanta",
-      "06.0009",
-      "liT",
-      "kartari",
-      2,
-      1
-     ],
-     "expected": "vivijize",
-     "deriv": 7916,
-     "fires": false,
-     "error": null
-    }
-   ],
+   "negatives": [],
    "reasons": [
     "sanādi: no generic entry point"
    ]
@@ -3802,28 +3959,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -3903,28 +4060,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4015,28 +4172,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4109,28 +4266,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4203,28 +4360,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4282,28 +4439,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4380,28 +4537,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4493,28 +4650,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4589,28 +4746,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4665,28 +4822,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4759,28 +4916,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4853,28 +5010,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -4912,28 +5069,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "01.0832",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "arahizwa",
+     "deriv": 6667,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "01.1024",
+      "luG",
       "kartari",
       2,
-      1
+      3
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "avyayizwa",
+     "deriv": 6668,
      "fires": false,
      "error": null
     }
@@ -5002,27 +5159,27 @@
    "negatives": [
     {
      "spec": [
-      "subanta",
-      "sva",
-      "pulliṅga",
-      1,
-      3
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
      ],
-     "expected": "svAH",
-     "deriv": 8318,
+     "expected": "Bavati",
+     "deriv": 4316,
      "fires": false,
      "error": null
     },
     {
      "spec": [
-      "subanta",
-      "pUrva",
-      "pulliṅga",
-      1,
-      3
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
      ],
-     "expected": "pUrvAH",
-     "deriv": 8319,
+     "expected": "Bavati",
+     "deriv": 4316,
      "fires": false,
      "error": null
     }
@@ -5082,7 +5239,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['ajanizwa'] ≠ expected ajani",
+    "readings ['ajanizwa', 'ajanizwwa'] ≠ expected ajani",
     "readings ['ajAni'] ≠ expected ajani",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
@@ -5097,7 +5254,7 @@
    "negatives": [],
    "reasons": [
     "readings ['cayayati'] ≠ expected capayate",
-    "readings ['jYAayati'] ≠ expected jYApayate",
+    "readings ['jYAayati', 'jYAyati'] ≠ expected jYApayate",
     "label shape not recognised",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
@@ -5123,12 +5280,59 @@
    "id": "7.3.55",
    "type": "VIDHI",
    "subkind": "<<अभ्यासाच्च>> [[7.3.55]] इति अभ्यासात् ",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 1,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "02.0002",
+      "liT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "jaGAna",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "jaGAna",
+     "deriv": 7537
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "04.0044",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "expected": "ajani",
+     "deriv": 7767,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "03.0025",
+      "luG",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "ajani",
+     "deriv": 7768,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['jahAna'] ≠ expected jaGAna",
     "label shape not recognised",
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
@@ -5166,14 +5370,95 @@
    "id": "7.3.71",
    "type": "VIDHI",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 3,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "04.0043",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "dyati",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "dyati",
+     "deriv": 7265
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "04.0040",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "Syati",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Syati",
+     "deriv": 7809
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "tinanta",
+      "04.0041",
+      "laT",
+      "kartari",
+      3,
+      1
+     ],
+     "observed": "Cyati",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "Cyati",
+     "deriv": 7810
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "tinanta",
+      "04.0044",
+      "luG",
+      "kartari",
+      3,
+      1
+     ],
+     "expected": "ajani",
+     "deriv": 7767,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "tinanta",
+      "03.0025",
+      "luG",
+      "karmani",
+      3,
+      1
+     ],
+     "expected": "ajani",
+     "deriv": 7768,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['doyati'] ≠ expected dyati",
-    "readings ['Soyati'] ≠ expected Syati",
-    "readings ['Coyati'] ≠ expected Cyati",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
   },
@@ -5186,9 +5471,9 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['adikzAva'] ≠ expected adihvahi",
-    "readings ['alikzAva'] ≠ expected alihvahi",
-    "readings ['adukzAva'] ≠ expected aduhvahi"
+    "readings ['aDikkzAva', 'aDikzAva', 'adikzAva'] ≠ expected adihvahi",
+    "readings ['alikzAva', 'alikzzAva'] ≠ expected alihvahi",
+    "readings ['aDukkzAva', 'aDukzAva', 'adukzAva'] ≠ expected aduhvahi"
    ]
   },
   "7.3.90": {
@@ -5221,28 +5506,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "04.0044",
+      "luG",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "ajani",
+     "deriv": 7767,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
-      "kartari",
-      2,
+      "03.0025",
+      "luG",
+      "karmani",
+      3,
       1
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "ajani",
+     "deriv": 7768,
      "fires": false,
      "error": null
     }
@@ -5260,7 +5545,7 @@
    "positives": [],
    "negatives": [],
    "reasons": [
-    "readings ['OrROd', 'OrROt', 'OrRud', 'OrRut'] ≠ expected OrRot"
+    "readings ['OrROd', 'OrROt', 'OrRRud', 'OrRRudd', 'OrRRudt', 'OrRRut', 'OrRud', 'OrRut'] ≠ expected OrRot"
    ]
   },
   "7.3.92": {
@@ -5311,28 +5596,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "04.0044",
+      "luG",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "ajani",
+     "deriv": 7767,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
-      "kartari",
-      2,
+      "03.0025",
+      "luG",
+      "karmani",
+      3,
       1
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "ajani",
+     "deriv": 7768,
      "fires": false,
      "error": null
     }
@@ -5357,14 +5642,105 @@
    "id": "7.3.117",
    "type": "VIDHI",
    "subkind": "नदीसंज्ञायां सत्याम् <<इदुद्भ्याम्>> [[7",
-   "verdict": "FAIL",
-   "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
+   "verdict": "DONE",
+   "examples_tried": 3,
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "mati",
+      "strīliṅga",
+      7,
+      1
+     ],
+     "observed": "matyAm",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED"
+     ],
+     "expected": "matyAm",
+     "deriv": 2343
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "Denu",
+      "strīliṅga",
+      7,
+      1
+     ],
+     "observed": "DenvAm",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED"
+     ],
+     "expected": "DenvAm",
+     "deriv": 2488
+    },
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "vyuzwi",
+      "strīliṅga",
+      7,
+      1
+     ],
+     "observed": "vyuzwyAm",
+     "statuses": [
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "BLOCKED",
+      "APPLIED"
+     ],
+     "expected": "vyuzwyAm",
+     "deriv": 8153
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "Bavat",
+      null,
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "ASiz",
+      null,
+      3,
+      1
+     ],
+     "expected": "ASizA",
+     "deriv": 5131,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['matO'] ≠ expected matyAm",
-    "readings ['DenO'] ≠ expected DenvAm",
-    "readings ['vyuzwO', 'vyuzwwO'] ≠ expected vyuzwyAm",
     "several forms in one example"
    ]
   },
@@ -6287,36 +6663,7 @@
      "deriv": 7935
     }
    ],
-   "negatives": [
-    {
-     "spec": [
-      "tinanta",
-      "07.0023",
-      "liT",
-      "kartari",
-      2,
-      1
-     ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
-     "fires": false,
-     "error": null
-    },
-    {
-     "spec": [
-      "tinanta",
-      "06.0009",
-      "liT",
-      "kartari",
-      2,
-      1
-     ],
-     "expected": "vivijize",
-     "deriv": 7916,
-     "fires": false,
-     "error": null
-    }
-   ],
+   "negatives": [],
    "reasons": [
     "sanādi: no generic entry point",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
@@ -6463,27 +6810,27 @@
    "negatives": [
     {
      "spec": [
-      "subanta",
-      "sva",
-      "pulliṅga",
-      1,
+      "subanta?",
+      "rAjan",
+      null,
+      3,
       3
      ],
-     "expected": "svAH",
-     "deriv": 8318,
+     "expected": "rAjaBiH",
+     "deriv": 633,
      "fires": false,
      "error": null
     },
     {
      "spec": [
-      "subanta",
-      "pUrva",
-      "pulliṅga",
-      1,
-      3
+      "subanta?",
+      "yajvan",
+      null,
+      3,
+      2
      ],
-     "expected": "pUrvAH",
-     "deriv": 8319,
+     "expected": "yajvaByAm",
+     "deriv": 3325,
      "fires": false,
      "error": null
     }
@@ -6554,27 +6901,27 @@
    "negatives": [
     {
      "spec": [
-      "subanta",
-      "sva",
-      "pulliṅga",
-      1,
+      "subanta?",
+      "rAjan",
+      null,
+      3,
       3
      ],
-     "expected": "svAH",
-     "deriv": 8318,
+     "expected": "rAjaBiH",
+     "deriv": 633,
      "fires": false,
      "error": null
     },
     {
      "spec": [
-      "subanta",
-      "pUrva",
-      "pulliṅga",
-      1,
-      3
+      "subanta?",
+      "yajvan",
+      null,
+      3,
+      2
      ],
-     "expected": "pUrvAH",
-     "deriv": 8319,
+     "expected": "yajvaByAm",
+     "deriv": 3325,
      "fires": false,
      "error": null
     }
@@ -6650,28 +6997,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "06.0146",
+      "laT",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "gilati",
+     "deriv": 7935,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "02.0044",
+      "laT",
       "kartari",
-      2,
-      1
+      3,
+      2
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "yAtaH",
+     "deriv": 5729,
      "fires": false,
      "error": null
     }
@@ -6742,27 +7089,27 @@
    "negatives": [
     {
      "spec": [
-      "subanta",
-      "sva",
-      "pulliṅga",
-      1,
+      "subanta?",
+      "rAjan",
+      null,
+      3,
       3
      ],
-     "expected": "svAH",
-     "deriv": 8318,
+     "expected": "rAjaBiH",
+     "deriv": 633,
      "fires": false,
      "error": null
     },
     {
      "spec": [
-      "subanta",
-      "pUrva",
-      "pulliṅga",
-      1,
-      3
+      "subanta?",
+      "yajvan",
+      null,
+      3,
+      2
      ],
-     "expected": "pUrvAH",
-     "deriv": 8319,
+     "expected": "yajvaByAm",
+     "deriv": 3325,
      "fires": false,
      "error": null
     }
@@ -6854,28 +7201,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "06.0146",
+      "laT",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "gilati",
+     "deriv": 7935,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "02.0044",
+      "laT",
       "kartari",
-      2,
-      1
+      3,
+      2
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "yAtaH",
+     "deriv": 5729,
      "fires": false,
      "error": null
     }
@@ -6948,28 +7295,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "06.0146",
+      "laT",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "gilati",
+     "deriv": 7935,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "02.0044",
+      "laT",
       "kartari",
-      2,
-      1
+      3,
+      2
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "yAtaH",
+     "deriv": 5729,
      "fires": false,
      "error": null
     }
@@ -7045,28 +7392,28 @@
     {
      "spec": [
       "tinanta",
-      "07.0023",
-      "liT",
+      "06.0146",
+      "laT",
       "kartari",
-      2,
+      3,
       1
      ],
-     "expected": "vivijiTa",
-     "deriv": 7915,
+     "expected": "gilati",
+     "deriv": 7935,
      "fires": false,
      "error": null
     },
     {
      "spec": [
       "tinanta",
-      "06.0009",
-      "liT",
+      "02.0044",
+      "laT",
       "kartari",
-      2,
-      1
+      3,
+      2
      ],
-     "expected": "vivijize",
-     "deriv": 7916,
+     "expected": "yAtaH",
+     "deriv": 5729,
      "fires": false,
      "error": null
     }
@@ -7080,14 +7427,56 @@
    "id": "8.2.76",
    "type": "VIDHI",
    "subkind": "<<र्वोरुपधाया दीर्घ इकः>> [[8.2.76]] इति",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "gir",
+      "strīliṅga",
+      1,
+      1
+     ],
+     "observed": "gIH",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "gIH",
+     "deriv": 4847
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta?",
+      "rAjan",
+      null,
+      3,
+      3
+     ],
+     "expected": "rAjaBiH",
+     "deriv": 633,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta?",
+      "yajvan",
+      null,
+      3,
+      2
+     ],
+     "expected": "yajvaByAm",
+     "deriv": 3325,
+     "fires": false,
+     "error": null
+    }
+   ],
    "reasons": [
-    "readings ['sajuq', 'sajuqq', 'sajuqw', 'sajuw'] ≠ expected sajUH",
-    "readings ['pipaWiq', 'pipaWiqq', 'pipaWiqw', 'pipaWiw'] ≠ expected pipaWIH",
-    "readings ['giH'] ≠ expected gIH",
     "label shape not recognised",
     "kṛdanta: the engine has no generic krt+dhātu entry point"
    ]
