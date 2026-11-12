@@ -29,6 +29,9 @@ def _hit(state: State):
     i = dhatu_before_sit(state)
     if i is None or _stem(state.terms[i]) not in _ADESHA:
         return None
+    t = state.terms[i]
+    if _stem(t) == "dA" and (t.meta.get("upadesha_slp1") or "").strip() not in ("", "dA", "dAR"):
+        return None            # the sūtra names dāṇ only: ḍudāñ (dadāti), dāp, do, dai keep their form
     return i
 
 

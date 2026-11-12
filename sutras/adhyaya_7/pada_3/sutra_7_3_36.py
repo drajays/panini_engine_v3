@@ -3,28 +3,46 @@
 
 Padaccheda: अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ
 
-अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ (7.3.36)
-Pāṭha: ashtadhyayi.com data.txt row i=73036 (Art. 14).
+Kāśikā 7.3.36: arti (ṛ), hrī, vlī, rī, knūyī, kṣmāyī and every ā-final aṅga take puk before ṇic
+(arpayati, hrepayati, vlepayati, repayati, knopayati, kṣmāpayati, dāpayati, dhāpayati).
+puk is a kit āgama placed at the END of the aṅga (pūrvānta-karaṇa, so the upadhā stays short: adīdapat).
+Engine: the sūtra's own list read off the aṅga's surface (after it-lopa) + the ā-final class; the augment p is
+appended like the yuk of 7.3.37. Idempotent via Term.meta['7_3_36_puk_done'].
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology.varna import mk
 
-_GATE_KEY: str = "7_3_36_arttihrIbl_36"
+_NAMED = frozenset({"f", "hrI", "vlI", "rI", "knUyI", "kzmAyI"})     # arti (both ṛ), hrī, vlī, rī, knūyī, kṣmāyī
+
+
+def _is_nic(state: State, di: int) -> bool:
+    if di + 1 >= len(state.terms):
+        return False
+    nxt = state.terms[di + 1]
+    return ("nic" in nxt.tags or "sanadi" in nxt.tags) and (nxt.meta.get("upadesha_slp1") or "").strip().rstrip("~") in ("Ric", "Nic")
+
+
+def _find(state: State):
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("7_3_36_puk_done") or not t.varnas:
+            continue
+        surf = "".join(v.slp1 for v in t.varnas)
+        if (surf in _NAMED or surf[-1] == "A") and _is_nic(state, i):
+            return i
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.36", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.36"
+    t = state.terms[_find(state)]
+    t.varnas.append(mk("p"))
+    t.meta["7_3_36_puk_done"] = True
     return state
 
 

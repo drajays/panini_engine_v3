@@ -828,6 +828,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
             state = apply_rule("1.2.5", state)
         state = _lit_samprasarana(state)  # 6.1.15 वचिस्वपियजादीनां किति: वच् → उच् before a kit ending (ऊचिव, ईजिम)
         state.meta["liT_krsrbhr_recipe"] = True
+        state = apply_rule("7.1.60", state)   # मस्जिनशोर्झलि: mamaNkTa, nanaMzWa (before the iṭ question: 7.2.10 / 7.2.13 read the aṅga)
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.66", state)   # atty-arti-vyayatīnām: these keep the iṭ, so the three below must not fire
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
@@ -1335,6 +1336,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.100", state)
     # 3.4.99: vas→v, mas→m (ṅit final 's' dropped)
     state = apply_rule("3.4.99", state)
+    state = apply_rule("7.3.91", state)    # गुणोऽपृक्ते: ūrṇu + the apṛkta t/s that 3.4.100 made → aurṇot (7.3.90 declined)
 
     # 7.1.3: jh (2 varnas after 3.4.100) → ant  (vacuous for non-3pl cells)
     state = P00_jha_adesha(state)
@@ -2828,6 +2830,7 @@ def _curadi_nic(state: State) -> State:
     state = apply_rule("3.1.25", state)
     state = P00_hal_it_lopa(state)          # Ṇ (1.3.7 cuṭū) + c (1.3.3) of ṇic
     state = apply_rule("6.4.48", state)    # अतो लोपः: adanta कथ/गण/वेल (1.1.57 then bars 7.2.116)
+    state = apply_rule("7.3.36", state)    # अर्तिह्री…आताम् पुक् णौ: ज्ञा → ज्ञाप् (ज्ञापयति), दाप्, अर्प्
     state = apply_rule("7.2.115", state)   # अचो ञ्णिति: च्यु → च्यौ (च्यावयति)
     state = apply_rule("7.2.116", state)   # अत उपधायाः: तड् → ताड्
     # laghūpadha guṇa (चुर् → चोर्), r of ṛ-vṛddhi (पार्), ayādi (च्याव्+इ)
@@ -3435,6 +3438,8 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.3.33", state)    # आतो युक् चिण्कृतोः: अग्लायि, अदायि
     state.meta["7_2_115_karmani_lut_arm"] = True
     state = apply_rule("7.2.115", state)
+    state = apply_rule("7.1.69", state)    # विभाषा चिण्णमुलोः: labh + ciṇ → alambhi (alābhi)
+    state = apply_rule("7.3.35", state)    # जनिवध्योश्च: ajani, avadhi (no upadhā vṛddhi)
     state = apply_rule("7.2.116", state)   # अत उपधायाः before ṇit ciṇ: अपाचि, अदाधि
     state = P00_guna_rapara_ayadi(state)   # laghūpadha guṇa: अमोदि, अतोदि
 

@@ -33,7 +33,7 @@ def _upadha_vrddhi_blocked(state: State, dhatu) -> bool:
         return True
     if dhatu.meta.get("6_4_48_a_lopa_done"):
         return True
-    if dhatu.meta.get("upadha_blocked_para_nimitta"):
+    if dhatu.meta.get("upadha_blocked_para_nimitta") or dhatu.meta.get("vrddhi_nishedha_7_3_35"):      # 7.3.35 jani-vadhyoś ca
         return True
     return False
 

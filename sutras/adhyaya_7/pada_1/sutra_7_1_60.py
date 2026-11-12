@@ -3,41 +3,53 @@
 
 Padaccheda: मस्जि-नशोः झलि
 
-मस्जिनशोर्झलि (7.1.60)
-Pāṭha: ashtadhyayi.com data.txt row i=71060 (Art. 14).
+Kāśikā 7.1.60: masj, naś take num before a jhal-initial pratyaya — maṅktā, maṅktum, naṃṣṭā, naṃṣṭum, naṃṣṭavyam (not majjanam,
+nāśanam: the next letter must be jhal). Place: masj — before the last letter (vārttika to 1.1.47 'masjer antyāt pūrvam num': so the
+anusvāra-lopa of anuṣaṅga is served, magnaḥ); naś — after the last vowel (the ordinary mid-aco'ntyāt-paraḥ, which here is also
+before the last letter).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk, HAL
 
-_GATE_KEY: str = "7_1_60_masjinaSor_60"
+_JHAL = HAL - frozenset("yrlvhNYRnmM")          # jhal: every consonant but the semivowels, h and the nasals
+_ROOTS = frozenset({"masj", "naS"})
+
+
+def _site(state: State):
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("7_1_60_num_done"):
+            continue
+        if "".join(v.slp1 for v in t.varnas) not in _ROOTS:
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is not None and nxt.varnas[0].slp1 in _JHAL:
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.60", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.60"
+    t = _site(state)
+    t.varnas.insert(len(t.varnas) - 1, mk("n", "num_agama"))       # before the last letter: mas-n-j, na-n-ś
+    t.meta["7_1_60_num_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.60",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "masjinaSorJali",
     text_dev              = "मस्जिनशोर्झलि",
     samagra_slp1          = "masji-naSoH num Jali",
     samagra_dev           = "मस्जि-नशोः नुम् झलि",
     padaccheda_dev        = "मस्जि-नशोः झलि",
-    why_dev               = "(सूत्रम् 7.1.60) मस्जिनशोर्झलि।",
+    why_dev               = "मस्जेः नशेश्च झलादौ प्रत्यये नुम् (मङ्क्ता, नंष्टा)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,
