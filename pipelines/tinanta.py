@@ -841,6 +841,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
         state = apply_rule("7.2.40", state)   # sici ca parasmaipadeṣu
         state = apply_rule("7.2.38", state)
+        state = apply_rule("1.2.2", state)    # विज इट्: the iṭ after vij is ṅidvat (vivijiTa, not *vivejiTa)
+        state = apply_rule("1.2.3", state)    # विभाषोर्णोः: the iṭ after ūrṇu is optionally ṅidvat
         # IT on iṭ: iṭ has T as halantyam-it
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
@@ -2022,6 +2024,9 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # Fires naturally via _ardhadhatuka_vikarana_index: sya is ardhadhatuka,
     # not krt, not done, starts with 's' (val consonant).
     state = _it_agama(state)
+    state = apply_rule("6.4.62", state)    # bhāva/karma: vā ciṇvat iṭ ca (bhāviṣyate / bhaviṣyate)
+    if any(t.meta.get("cinvat") for t in state.terms):
+        state = apply_rule("7.2.115", state)
 
     # Trace steps for iṭ it-lopa (iṭ's T is conceptual; vacuous in engine).
     state = apply_rule("1.3.3", state)
@@ -4110,6 +4115,7 @@ def _dispatch_tinanta_spine(
             # karmaṇi/bhāve lṛṭ is the general lṛṭ in ātmanepada (करिष्यते).
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+            next(t for t in state.terms if "dhatu" in t.tags).tags.add("bhava_karma_usage")     # भावकर्मणोः: 6.4.62 reads it
             return _derive_lRT(state, "atmane", purusha, vacana)
         if lakara == "loT":
             state = apply_rule("3.1.91", state)

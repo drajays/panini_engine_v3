@@ -1685,7 +1685,9 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
 def _am_agama_6_1_58(s: State) -> State:
     """6.1.58 सृजिदृशोर्झल्यमकिति — am goes in before the guṇa takes its site; yaṇ (6.1.77) then gives sra-j / dra-ś."""
     s = apply_rule("6.1.58", s)
-    if any(t.meta.get("6_1_58_done") for t in s.terms):
+    if not any(t.meta.get("6_1_58_done") for t in s.terms):
+        s = apply_rule("6.1.59", s)        # anudātta ṛ-upadha dhātu: am vā (kraṣṭā / karṣṭā)
+    if any(t.meta.get("6_1_58_done") or t.meta.get("6_1_59_am_done") for t in s.terms):
         s = apply_rule("6.1.77", s)
     return s
 

@@ -47,7 +47,7 @@ _AC = set("aAiIuUfFxXeEoO")
 def ijadi_gurumat_anrcchah(flat: str) -> bool:
     """इजादेः गुरुमतः अनृच्छः — ic-initial, has a guru vowel (long, or short before
     a saṃyoga: 1.4.11/12), and not ऋच्छ्. एध्, ईक्ष्, ऊह् → yes; इष्, उष्, ऋच्छ् → no."""
-    if not flat or flat[0] not in _IC or flat in ("fcC", "fC", "fcCa", "fCa", "ftC", "ftCa"):
+    if not flat or flat[0] not in _IC or flat in ("fcC", "fC", "fcCa", "fCa", "ftC", "ftCa", "UrRu"):     # UrRu: Kāśikā 3.1.36 ūrṇoteś ca pratiṣedho vaktavyaḥ (prorṇunāva)
         return False
     for i, c in enumerate(flat):
         if c in _DIRGHA_ETC:

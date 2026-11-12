@@ -64,7 +64,7 @@ def _find_subanta(state: State):
 
 def _find(state: State):
     # Karmani luṭ arm: direct vṛddhi on dhātu (ciṇvat iṭ from 6.4.62)
-    if state.meta.get("7_2_115_karmani_lut_arm"):
+    if state.meta.get("7_2_115_karmani_lut_arm") or any(t.meta.get("cinvat") for t in state.terms if "dhatu" in t.tags):   # 6.4.62 ciṇvat
         dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
         if dhatu is None or dhatu.meta.get("aco_nniti_vrddhi_done"):
             return None

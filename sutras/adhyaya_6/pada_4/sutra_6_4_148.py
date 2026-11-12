@@ -41,6 +41,8 @@ def _finals_for_pair(anga, pr) -> frozenset[str]:
         if "bha" not in anga.tags:
             return frozenset()
         return frozenset({"a", "A", "i", "I"})
+    if "dhatu" in anga.tags and "taddhita" not in pr.tags:
+        return frozenset()          # bhasya (6.4.129): a verb's aṅga before tiṅ / iṭ is not bha (1.4.18 reaches only svādi) — vivyiva, not *viviva
     # Taddhita (non-sup): include short 'a' — e.g. dāśaratha + iñ → dāśarathi; and short 'i' before ya (aditi + ṇya → āditya)
     return frozenset({"a", "A", "i", "I"})
 
