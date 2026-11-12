@@ -45,3 +45,42 @@ def test_kit_lit_of_vye_hve_keeps_the_y_and_v():
     assert _loop(VYE, "liT", 1, 3, "parasmai") == "vivyima"
     assert _loop(VYE, "liT", 3, 3, "atmane") == "vivyire"
     assert _loop(HVE, "liT", 1, 2, "parasmai") == "juhuviva"
+
+
+# --- padas lexicon stems: viśva + rāj / viśva + vah + ṇvi keep their parts apart on the tape ---
+def _cell(stem, vib, vac):
+    from pipelines.subanta import derive
+    return {b.surface_slp1.replace("SS", "S").replace("qq", "q") for b in explore(lambda: derive(stem, vib, vac, linga="pulliṅga"))}
+
+
+def test_6_3_128_viSva_rAj_lengthens_only_before_the_rAw():
+    assert {"viSvArAq", "viSvArAw"} <= _cell("viSvarAj", 1, 1)           # DB: viśvarāḍ / viśvarāṭ (6.3.128 before 8.2.36)
+    assert "viSvArAqByAm" in _cell("viSvarAj", 3, 2)
+    assert _cell("viSvarAj", 1, 2) == {"viSvarAjO"} and _cell("viSvarAj", 1, 3) == {"viSvarAjaH"}     # Kāśikā: viśvarājau, viśvarājaḥ
+
+
+def test_6_4_132_6_1_89_viSvavAh():
+    assert "viSvOhaH" in _cell("viSvavAh", 2, 3) and "viSvOhA" in _cell("viSvavAh", 3, 1)       # DB: viśvauhaḥ, viśvauhā
+    assert "viSvavAqByAm" in _cell("viSvavAh", 3, 2)                                                # not bha before a consonant sup
+
+
+# --- 6.1.32 hvaH samprasAraRam (ṇau ca sanścaṅoḥ): hve before a ṇic that a san / caṅ follows — hand-built tapes, like the Kāśikā's ---
+def _hve_tape(after):
+    from engine.state import State, Term
+    from phonology import mk
+
+    def t(slp1, up, *tags, kind="pratyaya", mula=False):
+        vs = [mk(c) for c in slp1]
+        if mula:
+            vs[-1].tags.add("mula_dhatu_v")
+        return Term(kind=kind, varnas=vs, tags=set(tags), meta={"upadesha_slp1": up})
+    return State(terms=[t("hve", "hveY", "dhatu", "anga", kind="prakriti", mula=True), t("i", "Ric", "pratyaya"), t("a", after, "pratyaya")])
+
+
+def test_6_1_32_hve_before_Nic_then_san_or_caN():
+    from engine import apply_rule
+    for after in ("san", "caN"):
+        s = apply_rule("6.1.32", _hve_tape(after))
+        assert s.terms[0].meta.get("samprasarana_done")                      # 1.1.45 will turn its v into u (juhāvayiṣati, ajūhavat)
+    s = apply_rule("6.1.32", _hve_tape("ap"))                                 # no san / caṅ after the ṇic: nothing
+    assert not s.terms[0].meta.get("samprasarana_done")

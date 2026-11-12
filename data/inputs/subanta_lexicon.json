@@ -1991,7 +1991,8 @@
      "upadesha": "kvip"
     }
    ],
-   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)",
+   "padas": true
   },
   {
    "stem": "viSvarAj",
@@ -2011,7 +2012,8 @@
      "upadesha": "kvip"
     }
    ],
-   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)",
+   "padas": true
   },
   {
    "stem": "viSvarAj",
@@ -2031,7 +2033,8 @@
      "upadesha": "kvip"
     }
    ],
-   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)",
+   "padas": true
   },
   {
    "stem": "suyuj",
@@ -2604,6 +2607,69 @@
     }
    ],
    "source": "gF (dhātupāṭha 6.146 nigaraṇe) + kvip: ṛ → ir 7.1.100; rephānta dhātu-pada, 8.2.76 (Kāśikā gīḥ)"
+  },
+  {
+   "stem": "viSvavAh",
+   "linga": "pulliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "vaha~",
+     "dhatu_id": "01.1159"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "Rvi"
+    }
+   ],
+   "source": "Kāśikā 6.4.132 (prāṣṭhauhaḥ) / the DB's viśvavāh: viśva + vah + ṇvi (3.2.64 vaho ṇvi; ṇit: 7.2.116 vah → vāh, 6.1.67 v-lopa); the parts stay apart for 6.4.132 + 6.1.89"
+  },
+  {
+   "stem": "viSvavAh",
+   "linga": "strīliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "vaha~",
+     "dhatu_id": "01.1159"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "Rvi"
+    }
+   ],
+   "source": "Kāśikā 6.4.132 (prāṣṭhauhaḥ) / the DB's viśvavāh: viśva + vah + ṇvi (3.2.64 vaho ṇvi; ṇit: 7.2.116 vah → vāh, 6.1.67 v-lopa); the parts stay apart for 6.4.132 + 6.1.89"
+  },
+  {
+   "stem": "viSvavAh",
+   "linga": "napuṃsaka",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "vaha~",
+     "dhatu_id": "01.1159"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "Rvi"
+    }
+   ],
+   "source": "Kāśikā 6.4.132 (prāṣṭhauhaḥ) / the DB's viśvavāh: viśva + vah + ṇvi (3.2.64 vaho ṇvi; ṇit: 7.2.116 vah → vāh, 6.1.67 v-lopa); the parts stay apart for 6.4.132 + 6.1.89"
   }
  ]
 }

@@ -12,6 +12,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
 from phonology import mk
+from phonology.pratyahara import JHAL
 
 _GATE_KEY: str = "6_3_128_viSvasya_128"
 
@@ -36,13 +37,24 @@ def _uttara(state: State, i: int):
     return next((u for u in state.terms[i + 1:] if u.varnas and "sup" not in u.tags), None)
 
 
+def _is_rat(state: State, u, j: int) -> bool:
+    """राट् is a vikāra-nirdeśa (Kāśikā: राडिति विकारनिर्देशो यत्रास्यैतद् रूपं तत्रैव): the uttarapada rāj that will be rāṭ — its j goes to ṭ/ḍ (8.2.36,
+    8.2.39) only before a jhal-initial sup or at the pada's end; before a vowel sup (viśvarājau, viśvarājaḥ) it stays rāj and nothing lengthens."""
+    if _flat(u) == "rAw":
+        return True
+    if _flat(u) != "rAj":
+        return False
+    nxt = next((x for x in state.terms[j + 1:] if x.varnas), None)
+    return nxt is not None and "sup" in nxt.tags and nxt.varnas[0].slp1 in JHAL
+
+
 def _site(state: State):
     """विश्वस्य वसुराटोः: viśva lengthens its final before vasu and before the form rāṭ (viśvāvasuḥ, viśvārāṭ); not before rāj- (viśvarājau)."""
     for i, t in enumerate(state.terms[:-1]):
         if "samasa_purvapada" not in t.tags or _flat(t) != "viSva" or t.meta.get("6_3_128_done"):
             continue
         u = _uttara(state, i)
-        if u is not None and _flat(u) in ("vasu", "rAw"):
+        if u is not None and (_flat(u) == "vasu" or _is_rat(state, u, state.terms.index(u))):
             return t
     return None
 

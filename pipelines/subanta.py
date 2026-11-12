@@ -433,6 +433,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.127",  # अर्वणस्त्रसावनञः — arvan→arvantr (tṛ for n) except before su; the resolver orders it against 6.4.8 (para)
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
+    "6.3.128",  # विश्वस्य वसुराटोः — viśva + rāj (a padas lexicon stem): ā before the rāṭ it will become, ahead of su-lopa (6.1.68)
     "6.1.68",
     "6.4.1",
     "7.1.94",
@@ -546,6 +547,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.1.51",   # uraṇ raparaḥ — the r of that ut
     "6.4.80",   # वाऽम्शसोः — the ī-keeping reading (स्त्रीम्, स्त्रीः); declined by default, both read by explore()
     "6.4.133",  # श्वयुवमघोनामतद्धिते — शुनः, यूनः, मघोनः
+    "6.4.132",  # वाह ऊठ् — a bha aṅga …vāh → …ūh (viśvavāh: viśvauhaḥ); before 6.1.89
     "6.4.79",   # स्त्रियाः — स्त्री + ac-sup: iyaṅ (स्त्रियौ, स्त्रियः)
     "6.4.84",   # वर्षाभ्वश्च — वर्षाभ्वः
     "6.4.85",   # न भूसुधियोः — blocks 6.4.82 / 6.4.83 for भू, सुधी
@@ -555,6 +557,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.131",  # दिव उत् — द्युभ्याम्, द्युषु: the v of div → u at pada end, then yaṇ
     "6.1.77",
     "6.1.112",  # ख्यत्यात् परस्य — सख्युः, पत्युः: the a of ṅasi / ṅas after the yaṇ of khi / ti becomes u
+    "6.1.89",   # एत्येधत्यूठ्सु — a / ā + the ū of ūṭh: vṛddhi (viśva + ūh → viśvauh); apavāda of 6.1.88 / 6.1.94
     "6.1.87",
     "6.1.88",
     "6.1.110",
@@ -913,6 +916,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         derived_pratipadika=entry is not None,
     )
     s.terms[0].tags |= origin_record
+    if entry is not None and entry.get("padas"):
+        s.terms = _padas_tape(entry, s.terms[0])
     if vivaksha:
         from engine.tape_init.sanadi import with_vivaksha
         with_vivaksha(s, **vivaksha)
@@ -938,6 +943,18 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     if autonomous_scanner:
         return run_subanta_sup_attach_and_finish_scanner(s)
     return run_subanta_pipeline(s)
+
+
+def _padas_tape(entry: dict, stem) -> list:
+    """A lexicon entry that keeps its parts apart (viśva + vah + kvip, pra + añc + kvin): the composed Terms replace the flat stem. The
+    pūrvapada(s) are samāsa members; the last live Term is the stem proper and carries what the flat stem carried (saṃjñā, liṅga, record)."""
+    from engine import lexicon
+    live = [t for t in lexicon.stem_terms(entry) if t.varnas]
+    for t in live[:-1]:
+        t.tags.add("samasa_purvapada")
+    live[-1].tags |= stem.tags
+    live[-1].meta.update({k: v for k, v in stem.meta.items() if k not in live[-1].meta})
+    return live
 
 
 def derive_all_readings(*args, **kwargs) -> list:

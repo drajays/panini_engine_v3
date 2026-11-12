@@ -28,7 +28,7 @@ _ROOT = Path(__file__).resolve().parent.parent / "data" / "inputs"
 LEXICON_PATH = _ROOT / "subanta_lexicon.json"
 
 KINDS = frozenset({"prakriti", "dhatu", "krt", "taddhita"})
-ENTRY_KEYS = frozenset({"stem", "linga", "components", "source"})   # source: the citation that licenses the analysis (Art. 14)
+ENTRY_KEYS = frozenset({"stem", "linga", "components", "source", "padas"})   # source: the citation that licenses the analysis (Art. 14)
 COMPONENT_KEYS = frozenset({"kind", "upadesha", "artha", "dhatu_id"})
 LINGAS = frozenset({"pulliṅga", "strīliṅga", "napuṃsaka"})
 
@@ -107,6 +107,47 @@ def _dhatu_row(c: dict) -> dict:
     return resolve_dhatu_identifier(c.get("dhatu_id") or c["upadesha"])
 
 
+def _lay_out(entry: dict):
+    """The vyutpatti tape of a non-loop entry after the real it-prakaraṇa and the rules of ``lexicon_compose_rules.json``."""
+    import sutras  # noqa: F401  (register the rules)
+    from engine import apply_rule
+    from engine.state import State, Term
+    from phonology.varna import parse_slp1_upadesha_sequence
+    from pipelines.it_prakarana import run_it_prakarana
+
+    comps = entry["components"]
+    terms: list[Term] = []
+    for c in comps:
+        up = c["upadesha"]
+        if c["kind"] in ("krt", "taddhita"):
+            t = Term(kind="pratyaya", varnas=parse_slp1_upadesha_sequence(up),
+                     tags={"pratyaya", c["kind"], "upadesha"}, meta={"upadesha_slp1": up})
+        elif c["kind"] == "dhatu":
+            t = Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(_dhatu_row(c)["upadesha_slp1"]),
+                     tags={"dhatu", "upadesha"}, meta={"upadesha_slp1": _dhatu_row(c)["upadesha_slp1"]})
+        else:
+            t = Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(up), tags={"prātipadika"}, meta={"upadesha_slp1": up})
+        if c.get("artha"):
+            t.meta["artha"] = c["artha"]
+        terms.append(t)
+    s = State(terms=terms)
+    s = run_it_prakarana(s)
+    rules = json.loads((_ROOT / "lexicon_compose_rules.json").read_text(encoding="utf-8"))
+    for sid in rules["after_it_prakarana"]:         # kvip's apṛkta v is lopa'd (the kṛt stays on the tape as the stem's last pratyaya)
+        s = apply_rule(sid, s)
+    if any((t.meta.get("upadesha_slp1") or "") == "kvi~n" or (t.meta.get("upadesha_slp1") or "") == "kvin" for t in s.terms):
+        for sid in rules["after_it_kvin"]:
+            s = apply_rule(sid, s)
+        s.tripadi_zone = True
+        for sid in rules["tripadi_when_kvin"]:
+            s = apply_rule(sid, s)
+    if any((t.meta.get("upadesha_slp1") or "") == "matu~p" for t in s.terms):
+        s.tripadi_zone = True                      # 8.2.9 / 8.2.10 are tripāḍī rules
+        for sid in rules["tripadi_when_matup"]:
+            s = apply_rule(sid, s)
+    return s
+
+
 def compose(entry: dict) -> tuple[str, set[str]]:
     """:func:`generate` and require that the result is the entry's stem (Art. 17); else :class:`LexiconGap` (Art. 18)."""
     surface, tags = generate(entry)
@@ -148,33 +189,11 @@ def generate(entry: dict) -> tuple[str, set[str]]:
         run = run_autonomously(s, entry["stem"], entry["stem"], 300)
         return run.surface, {g for t in run.state.terms for g in t.tags if g.startswith(origin.ORIGIN_PREFIXES)}
 
-    terms: list[Term] = []
-    for c in comps:
-        up = c["upadesha"]
-        if c["kind"] in ("krt", "taddhita"):
-            t = Term(kind="pratyaya", varnas=parse_slp1_upadesha_sequence(up),
-                     tags={"pratyaya", c["kind"], "upadesha"}, meta={"upadesha_slp1": up})
-        elif c["kind"] == "dhatu":
-            t = Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(_dhatu_row(c)["upadesha_slp1"]),
-                     tags={"dhatu", "upadesha"}, meta={"upadesha_slp1": _dhatu_row(c)["upadesha_slp1"]})
-        else:
-            t = Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(up), tags={"prātipadika"}, meta={"upadesha_slp1": up})
-        if c.get("artha"):
-            t.meta["artha"] = c["artha"]
-        terms.append(t)
-    s = State(terms=terms)
-    s = run_it_prakarana(s)
-    rules = json.loads((_ROOT / "lexicon_compose_rules.json").read_text(encoding="utf-8"))
-    for sid in rules["after_it_prakarana"]:         # kvip's apṛkta v is lopa'd (the kṛt stays on the tape as the stem's last pratyaya)
-        s = apply_rule(sid, s)
-    if any((t.meta.get("upadesha_slp1") or "") == "kvi~n" or (t.meta.get("upadesha_slp1") or "") == "kvin" for t in s.terms):
-        for sid in rules["after_it_kvin"]:
-            s = apply_rule(sid, s)
-        s.tripadi_zone = True
-        for sid in rules["tripadi_when_kvin"]:
-            s = apply_rule(sid, s)
-    if any((t.meta.get("upadesha_slp1") or "") == "matu~p" for t in s.terms):
-        s.tripadi_zone = True                      # 8.2.9 / 8.2.10 are tripāḍī rules
-        for sid in rules["tripadi_when_matup"]:
-            s = apply_rule(sid, s)
+    s = _lay_out(entry)
     return s.flat_slp1(), origin.record_from_terms(s.terms)
+
+
+def stem_terms(entry: dict) -> list:
+    """An entry marked ``"padas": true`` keeps its prakriti as a separate pūrvapada on the tape (viśva + vah, pra + añc): the Terms
+    the laid-out vyutpatti leaves, for the subanta scanner to attach the sup to. The record of the stem's making is read from them."""
+    return _lay_out(entry).terms

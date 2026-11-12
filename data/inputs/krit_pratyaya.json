@@ -1994,5 +1994,51 @@
     ],
     "special_interactions": "kit prevents guṇa/vṛddhi. The entire pratyaya disappears after lopa; dhātu = stem.",
     "effects": "kit (no guṇa), vit, pit. Zero-suffix pratyaya. dhātu form serves as stem."
+  },
+  "Rvi": {
+    "upadesha_devanagari": "ण्वि",
+    "upadesha_slp1": "Rvi",
+    "vidhana_sutra": "3.2.64",
+    "vidhana_sutra_dev": "वहश्च",
+    "vidhana_sutra_range": "3.2.63–3.2.64 (chandasi, supy upapade)",
+    "artha_codes": [
+      "kartari",
+      "sambandhe"
+    ],
+    "artha_dev": "कर्तरि / सम्बन्धे",
+    "it_varna_slp1": [
+      "R"
+    ],
+    "prakriya_base_slp1": "",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Rit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "ṇit → vṛddhi (7.2.116 / 7.2.115)",
+    "linga_default": "depends on upasarga/context",
+    "stem_type": "zero-suffix (pratyaya = zero after all lopa)",
+    "kvip_note": "ṇ is it (1.3.7); the remaining vi is apṛkta and goes by 6.1.67; the dhātu (with its vṛddhi) is the stem.",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "specific dhātus per context",
+    "dhatu_condition_dev": "विशिष्ट प्रसंगों में",
+    "examples_dev": [
+      "प्रष्ठवाह् (वह्+ण्वि)",
+      "विश्ववाह्"
+    ],
+    "examples_slp1": [
+      "prazWavAh",
+      "viSvavAh"
+    ],
+    "special_interactions": "kit prevents guṇa/vṛddhi. The entire pratyaya disappears after lopa; dhātu = stem.",
+    "effects": "kit (no guṇa), vit, pit. Zero-suffix pratyaya. dhātu form serves as stem."
   }
 }

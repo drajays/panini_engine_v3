@@ -10,19 +10,43 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
+from sutras.adhyaya_1.pada_1.sutra_1_1_45 import META_TARGETS
 
-_GATE_KEY: str = "6_1_32_hvaH_32"
+# Kāśikā 6.1.32: ṇau ca sanścaṅoḥ is understood — "san-parā caṅ-parā ca ṇau parato hvaḥ saṃprasāraṇaṃ bhavati: juhāvayiṣati,
+# ajūhavat". The root hve before a ṇic that a san or a caṅ follows; 1.1.45 turns its v into u, 6.1.108 absorbs the e (hu).
+_NIC = frozenset({"Ric", "Nic"})
+_SAN_CAN = frozenset({"san", "caN"})
+
+
+def _live(state: State, i: int):
+    return next((t for t in state.terms[i + 1:] if t.varnas), None)
+
+
+def _site(state: State):
+    for i, t in enumerate(state.terms[:-2]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("samprasarana_done"):
+            continue
+        if "".join(v.slp1 for v in t.varnas) != "hve" or "mula_dhatu_v" not in t.varnas[-1].tags:
+            continue
+        nic = _live(state, i)
+        if nic is None or (nic.meta.get("upadesha_slp1") or "").strip() not in _NIC:
+            continue
+        nxt = _live(state, state.terms.index(nic))
+        if nxt is not None and (nxt.meta.get("upadesha_slp1") or "").strip() in _SAN_CAN:
+            return i, 1                      # the v of ह्वे
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.32", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.32"
+    site = _site(state)
+    if site is not None:
+        ti, vi = site
+        state.meta[META_TARGETS] = [(ti, vi)]        # 1.1.45 reads it: v -> u; 6.1.108 then absorbs the e
+        state.terms[ti].meta["samprasarana_done"] = True
     return state
 
 
