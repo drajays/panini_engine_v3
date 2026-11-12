@@ -262,7 +262,10 @@ def _anc(pu, d="aYc", pr="kvin"):
 
 @pytest.mark.parametrize("sid,pu,want", [("6.3.93", "sam", "sami"), ("6.3.94", "tiras", "tiri"), ("6.3.95", "saha", "saDri")])
 def test_anc_adesa(sid, pu, want):
-    assert flat(run(sid, _anc(pu)))[0] == want
+    tape = _anc(pu)
+    if sid == "6.3.94":                       # alope: the sup is there and the añcu is not bha (1.4.18)
+        tape.append(T("s", "sup", "pratyaya", kind="pratyaya"))
+    assert flat(run(sid, tape))[0] == want
 
 
 @pytest.mark.parametrize("sid,pu", [("6.3.93", "sam"), ("6.3.94", "tiras"), ("6.3.95", "saha")])

@@ -48,9 +48,9 @@ def test_kit_lit_of_vye_hve_keeps_the_y_and_v():
 
 
 # --- padas lexicon stems: viśva + rāj / viśva + vah + ṇvi keep their parts apart on the tape ---
-def _cell(stem, vib, vac):
+def _cell(stem, vib, vac, linga="pulliṅga"):
     from pipelines.subanta import derive
-    return {b.surface_slp1.replace("SS", "S").replace("qq", "q") for b in explore(lambda: derive(stem, vib, vac, linga="pulliṅga"))}
+    return {b.surface_slp1.replace("SS", "S").replace("qq", "q") for b in explore(lambda: derive(stem, vib, vac, linga=linga))}
 
 
 def test_6_3_128_viSva_rAj_lengthens_only_before_the_rAw():
@@ -84,3 +84,13 @@ def test_6_1_32_hve_before_Nic_then_san_or_caN():
         assert s.terms[0].meta.get("samprasarana_done")                      # 1.1.45 will turn its v into u (juhāvayiṣati, ajūhavat)
     s = apply_rule("6.1.32", _hve_tape("ap"))                                 # no san / caṅ after the ṇic: nothing
     assert not s.terms[0].meta.get("samprasarana_done")
+
+
+# --- añc stems [upasarga][ac] (6.4.24 at kvin, 6.4.138/139, 6.3.93/94/138, 7.1.70, 8.2.62) ---
+def test_anc_stems_weak_and_strong():
+    assert "prAcaH" in _cell("prAYc", 2, 3) and "prAYcaH" in _cell("prAYc", 1, 3) and "prAN" in _cell("prAYc", 1, 1)
+    assert "udIcaH" in _cell("udaYc", 2, 3) and "udaYcaH" in _cell("udaYc", 1, 3) and "udagByAm" in _cell("udaYc", 3, 2)   # 6.4.139
+    assert "pratIcaH" in _cell("pratyaYc", 2, 3) and "pratyaYcaH" in _cell("pratyaYc", 1, 3)                              # 6.3.138
+    assert "samIcaH" in _cell("samyaYc", 2, 3) and "samyaYcaH" in _cell("samyaYc", 1, 3)                                  # 6.3.93
+    assert "tiryaN" in _cell("tiryaYc", 1, 1) and "tiraScaH" in _cell("tiryaYc", 2, 3) and "tiryagBiH" in _cell("tiryaYc", 3, 3)   # 6.3.94
+    assert "udakzu" in _cell("udaYc", 7, 3) and "gIrzu" in _cell("gIr", 7, 3, "strīliṅga")                                  # su is not yaci: no bha

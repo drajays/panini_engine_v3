@@ -117,7 +117,7 @@ def _find_pair(state: State) -> tuple[int, int] | None:
         for k in range(len(vs) - 1):  # inside one Term
             if vs[k].slp1 == "a" and vs[k + 1].slp1 in _GUNA:
                 return ti, k
-        if n + 1 < len(live) and "pada" not in t.tags and vs[-1].slp1 == "a":
+        if n + 1 < len(live) and not ({"pada", "samasa_purvapada"} & t.tags) and vs[-1].slp1 == "a":      # a samāsa pūrvapada is a pada (1.4.14, sup-luk 1.1.62): its a is padānta
             if state.terms[live[n + 1]].varnas[0].slp1 in _GUNA:
                 return ti, len(vs) - 1
     return None

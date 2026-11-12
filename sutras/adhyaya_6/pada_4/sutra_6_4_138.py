@@ -37,7 +37,7 @@ def _live_before(state: State, i: int):
 
 
 def _anc(t) -> bool:
-    return (t.meta.get("upadesha_slp1") or "").startswith("aYc") and "bha" in t.tags and _flat(t) == "ac"      # lupta-nakāra añcu
+    return (t.meta.get("upadesha_slp1") or "").startswith(("aYc", "anc")) and "bha" in t.tags and _flat(t) == "ac"      # lupta-nakāra añcu
 
 
 def _site(state: State):

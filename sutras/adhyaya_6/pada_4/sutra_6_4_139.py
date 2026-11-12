@@ -42,7 +42,7 @@ def _site(state: State):
     if not (adhikara_in_effect("6.4.139", state, "6.4.1") and adhikara_in_effect("6.4.139", state, "6.4.129")):
         return None
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").startswith("aYc") and "bha" in t.tags and _flat(t) == "ac" and not t.meta.get("6_4_139_done"):
+        if (t.meta.get("upadesha_slp1") or "").startswith(("aYc", "anc")) and "bha" in t.tags and _flat(t) == "ac" and not t.meta.get("6_4_139_done"):
             before = _live_before(state, i)
             if before is not None and _flat(before) == "ud":
                 return t

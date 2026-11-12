@@ -2534,7 +2534,8 @@
      "upadesha": "kvin"
     }
    ],
-   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)",
+   "padas": true
   },
   {
    "stem": "prAYc",
@@ -2554,7 +2555,8 @@
      "upadesha": "kvin"
     }
    ],
-   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)",
+   "padas": true
   },
   {
    "stem": "prAYc",
@@ -2574,7 +2576,8 @@
      "upadesha": "kvin"
     }
    ],
-   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)"
+   "source": "Kāśikā 3.2.59 (ṛtvigdadhṛk…añcuyujikruñcāṃ ca: kvin)",
+   "padas": true
   },
   {
    "stem": "SrI",
@@ -2670,6 +2673,258 @@
     }
    ],
    "source": "Kāśikā 6.4.132 (prāṣṭhauhaḥ) / the DB's viśvavāh: viśva + vah + ṇvi (3.2.64 vaho ṇvi; ṇit: 7.2.116 vah → vāh, 6.1.67 v-lopa); the parts stay apart for 6.4.132 + 6.1.89"
+  },
+  {
+   "stem": "udaYc",
+   "linga": "pulliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "ud"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "udaYc",
+   "linga": "strīliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "ud"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "udaYc",
+   "linga": "napuṃsaka",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "ud"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "pratyaYc",
+   "linga": "pulliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "prati"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "pratyaYc",
+   "linga": "strīliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "prati"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "pratyaYc",
+   "linga": "napuṃsaka",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "prati"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "samyaYc",
+   "linga": "pulliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "samyaYc",
+   "linga": "strīliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "samyaYc",
+   "linga": "napuṃsaka",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "tiryaYc",
+   "linga": "pulliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "tiras"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "tiryaYc",
+   "linga": "strīliṅga",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "tiras"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
+  },
+  {
+   "stem": "tiryaYc",
+   "linga": "napuṃsaka",
+   "padas": true,
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "tiras"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "ancu~",
+     "dhatu_id": "01.0215"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvin"
+    }
+   ],
+   "source": "Kāśikā 3.2.59 (añcu + kvin: the stem is [upasarga][ac] once 6.4.24 has dropped the n of the kit kvin's añcu); 6.4.138 / 6.4.139 / 6.3.138 / 6.3.93-94 read the parts"
   }
  ]
 }

@@ -549,6 +549,11 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.80",   # वाऽम्शसोः — the ī-keeping reading (स्त्रीम्, स्त्रीः); declined by default, both read by explore()
     "6.4.133",  # श्वयुवमघोनामतद्धिते — शुनः, यूनः, मघोनः
     "6.4.132",  # वाह ऊठ् — a bha aṅga …vāh → …ūh (viśvavāh: viśvauhaḥ); before 6.1.89
+    "6.4.139",  # उद ईत् — the a of the bha ac after ud becomes ī (udīcaḥ); apavāda of 6.4.138, so tried first
+    "6.4.138",  # अचः — the a of a bha ac (añcu, n lost at the stem stage by 6.4.24) goes: prācaḥ
+    "6.3.93",   # समः समि — sam → sami before the añcu of a kvin-anta (samyaṅ, samīcaḥ); the whole is replaced (1.1.55)
+    "6.3.94",   # तिरसस्तिर्यलोपे — tiras → tiri when the a of añcu stays (not a bha stem: tiryaṅ, tiryagbhyām; tiraścaḥ keeps tiras)
+    "6.3.138",  # चौ — the aṇ before the bare c lengthens: prā-c, prati → pratī-c (before 6.1.101 / 6.1.97 would join the a's)
     "6.4.79",   # स्त्रियाः — स्त्री + ac-sup: iyaṅ (स्त्रियौ, स्त्रियः)
     "6.4.84",   # वर्षाभ्वश्च — वर्षाभ्वः
     "6.4.85",   # न भूसुधियोः — blocks 6.4.82 / 6.4.83 for भू, सुधी
@@ -954,6 +959,10 @@ def _padas_tape(entry: dict, stem) -> list:
     for t in live[:-1]:
         t.tags.add("samasa_purvapada")
     live[-1].tags |= stem.tags
+    if "origin_pratyaya:kvin" in live[-1].tags:       # a kvin stem is a kṛdanta prātipadika (1.2.46), no longer the dhātu: 7.1.70 says adhātoḥ; its record names the dhātu. (kvip stems keep the dhātu Term: 8.2.36 rāj, 6.4.132 vāh read it)
+        live[-1].tags -= {"upadesha", "dhatu"}
+    for t in live if "origin_pratyaya:kvin" in live[-1].tags else ():     # ponytail: only añcu + kvin — rājf~ (kvip) must not get a nuṃ; the general ugit-of-a-kṛdanta rule is not written
+        live[-1].tags |= {"origin_it:" + c for c in t.meta.get("it_markers", ()) if c in "uUfFxX"}
     live[-1].meta.update({k: v for k, v in stem.meta.items() if k not in live[-1].meta})
     return live
 

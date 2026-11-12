@@ -26,13 +26,17 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-def _kngiti_present(state: State) -> bool:
-    # *kṅiti* locus: *kṛt* *pratyaya* rows use ``kind="pratyaya"`` with *kngiti* tag
-    # (``"pratyaya"`` string tag is not always present on the same ``Term``).
-    # The affix must follow the aṅga immediately ("pare"): a pit vikaraṇa (śap) between
-    # dhātu and a ṅit tiṅ blocks it (maTAvaH is wrong; manTAvaH).
-    nxt = next((t for t in state.terms[1:] if t.varnas), None)
-    return nxt is not None and "kngiti" in nxt.tags and (nxt.kind == "pratyaya" or "pratyaya" in nxt.tags)
+def _dhatu_site(state: State):
+    """(the first dhātu Term, the pratyaya that follows it): the aṅga and its ṅit / kit affix. A pūrvapada before the dhātu (pra + añc + kvin) is not the aṅga."""
+    di = next((i for i, t in enumerate(state.terms) if "dhatu" in t.tags), None)
+    if di is None:
+        return None
+    nxt = next((t for t in state.terms[di + 1:] if t.varnas or "krt" in t.tags), None)      # a kṛt whose letters are gone (kvip / kvin, 6.1.67) still stands: 1.1.62
+    # *kṅiti* locus: *kṛt* *pratyaya* rows use ``kind="pratyaya"`` with *kngiti* tag. The affix must follow the aṅga immediately ("pare"): a
+    # pit vikaraṇa (śap) between dhātu and a ṅit tiṅ blocks it (maTAvaH is wrong; manTAvaH).
+    if nxt is not None and "kngiti" in nxt.tags and (nxt.kind == "pratyaya" or "pratyaya" in nxt.tags):
+        return state.terms[di]
+    return None
 
 
 _NASAL = frozenset("NYRnmM")
@@ -40,11 +44,9 @@ _HAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh")
 
 
 def cond(state: State) -> bool:
-    if not _kngiti_present(state):
+    dh = _dhatu_site(state)
+    if dh is None:
         return False
-    if not state.terms or "dhatu" not in state.terms[0].tags:
-        return False
-    dh = state.terms[0]
     # अनिदितां हल उपधायाः क्ङिति: a hal-final root that is not idit, with a
     # nasal upadhā, loses it before a kṅit affix (स्कुन्भ् → स्कुभ्नाति, इन्ध् → इद्ध)
     if "idit" in dh.tags or dh.meta.get("7_1_58_num_done"):
@@ -67,7 +69,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not cond(state):
         return state
-    dh = state.terms[0]
+    dh = _dhatu_site(state)
     del dh.varnas[-2]
     dh.meta["6_4_24_n_lopa_done"] = True
     return state

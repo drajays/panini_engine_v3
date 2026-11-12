@@ -9,7 +9,9 @@ def _forms(stem, vib, vac):
 
 
 def test_prac_kruc():
-    assert {"prANkzu", "prANzu"} <= _forms("prAYc", 7, 3)
+    # prAYc is a padas stem [pra][ac] (6.4.24 at the kit kvin): the weak/pada stem has no nasal — prAgBiH, prAkzu (the DB's ashtadhyayi.com
+    # derivations: pra+ak+Bis > prAgBis; prAk+su > prAkzu); 7.1.70 gives the nasal back only before a sarvanāmasthāna: prAYcO, prAYcaH
+    assert "prAkzu" in _forms("prAYc", 7, 3)
     assert "kruNkzu" in _forms("kruYc", 7, 3)
-    assert "prAN" in _forms("prAYc", 1, 1) and "prANBiH" in _forms("prAYc", 3, 3)
+    assert "prAN" in _forms("prAYc", 1, 1) and "prAgBiH" in _forms("prAYc", 3, 3) and "prAYcO" in _forms("prAYc", 1, 2)
     assert "dfk" in _forms("dfS", 1, 1)

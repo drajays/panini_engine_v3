@@ -35,6 +35,13 @@ def _uttara(state: State, i: int):
     """The uttarapada of the pūrvapada at ``i``: the next Term with a sound that is not a sup."""
     return next((u for u in state.terms[i + 1:] if u.varnas and "sup" not in u.tags), None)
 
+def _alope(state: State, j: int) -> bool:
+    """अलोपे: the a of añcu is not going to be lopa'd (6.4.138) — the sup is there and it does not make the añcu a bha aṅga (1.4.18):
+    tiryaṅ, tiryagbhyām but tiraścaḥ (Kāśikā 6.3.94)."""
+    d = state.terms[j]
+    return "bha" not in d.tags and any("sup" in u.tags for u in state.terms[j + 1:])
+
+
 def _anc_site(state: State, pu: str):
     """The pūrvapada Term ``pu`` right before the añcu dhātu that a kvin / kvip ends (vapratyayānta añcati)."""
     live = [i for i, t in enumerate(state.terms) if t.varnas]
@@ -42,8 +49,10 @@ def _anc_site(state: State, pu: str):
         t, d = state.terms[i], state.terms[j]
         if _flat(t) != pu or t.meta.get("6_3_93_95_done") or not ({"samasa_purvapada", "upasarga", "gati"} & t.tags):
             continue
-        if "dhatu" in d.tags and (d.meta.get("upadesha_slp1") or "").startswith("aYc") and any(
-                (u.meta.get("upadesha_slp1") or "") in ("kvin", "kvip") for u in state.terms[j + 1:]):
+        up = d.meta.get("upadesha_slp1") or ""
+        anc = up.startswith(("aYc", "anc")) and ("dhatu" in d.tags or "origin_dhatu:" + up in d.tags)         # a kṛdanta stem keeps only the record of its dhātu
+        va = any((u.meta.get("upadesha_slp1") or "") in ("kvin", "kvip") for u in state.terms[j + 1:]) or bool({"origin_pratyaya:kvin", "origin_pratyaya:kvip"} & d.tags)
+        if anc and va and _alope(state, j):
             return t
     return None
 

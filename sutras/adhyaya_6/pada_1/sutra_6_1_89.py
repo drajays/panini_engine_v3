@@ -23,7 +23,7 @@ _VRIDDHI = {"e": "E", "U": "O"}
 
 def is_eti_edhati_uth(right) -> bool:
     """Shared with 6.1.94 so the apavāda is decided in one place."""
-    if "dhatu" not in right.tags or not right.varnas:
+    if not ({"dhatu"} & right.tags or any(g.startswith("origin_dhatu:") for g in right.tags)) or not right.varnas:     # a kṛdanta stem keeps only the record
         return False
     up = (right.meta.get("upadesha_slp1") or "").strip()
     first = right.varnas[0].slp1

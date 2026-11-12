@@ -44,7 +44,7 @@ def _site(state: State):
     live = [i for i, t in enumerate(state.terms) if t.varnas]
     for i, j in zip(live, live[1:]):
         t, d = state.terms[i], state.terms[j]
-        if (d.meta.get("upadesha_slp1") or "").startswith("aYc") and _flat(d) == "c" and t.varnas[-1].slp1 in _DIRGHA and not t.meta.get("6_3_138_done") \
+        if (d.meta.get("upadesha_slp1") or "").startswith(("aYc", "anc")) and _flat(d) == "c" and t.varnas[-1].slp1 in _DIRGHA and not t.meta.get("6_3_138_done") \
                 and "sup" not in t.tags:
             return t
     return None

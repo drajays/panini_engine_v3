@@ -136,11 +136,15 @@ def _lay_out(entry: dict):
     for sid in rules["after_it_prakarana"]:         # kvip's apṛkta v is lopa'd (the kṛt stays on the tape as the stem's last pratyaya)
         s = apply_rule(sid, s)
     if any((t.meta.get("upadesha_slp1") or "") == "kvi~n" or (t.meta.get("upadesha_slp1") or "") == "kvin" for t in s.terms):
-        for sid in rules["after_it_kvin"]:
-            s = apply_rule(sid, s)
-        s.tripadi_zone = True
-        for sid in rules["tripadi_when_kvin"]:
-            s = apply_rule(sid, s)
+        if entry.get("padas"):         # the parts stay apart: kvin is kit, so 6.4.24 drops the dhātu's nasal (añc → ac) at the stem stage; no sandhi yet
+            for sid in rules["after_it_kvin_padas"]:
+                s = apply_rule(sid, s)
+        else:
+            for sid in rules["after_it_kvin"]:
+                s = apply_rule(sid, s)
+            s.tripadi_zone = True
+            for sid in rules["tripadi_when_kvin"]:
+                s = apply_rule(sid, s)
     if any((t.meta.get("upadesha_slp1") or "") == "matu~p" for t in s.terms):
         s.tripadi_zone = True                      # 8.2.9 / 8.2.10 are tripāḍī rules
         for sid in rules["tripadi_when_matup"]:
@@ -151,7 +155,7 @@ def _lay_out(entry: dict):
 def compose(entry: dict) -> tuple[str, set[str]]:
     """:func:`generate` and require that the result is the entry's stem (Art. 17); else :class:`LexiconGap` (Art. 18)."""
     surface, tags = generate(entry)
-    if surface != entry["stem"]:
+    if surface != entry["stem"] and not entry.get("padas"):         # a padas entry is cited by its strong stem (prAYc); its tape is the weak [pra][ac] — 7.1.70 gives the nasal back
         raise LexiconGap(f"{entry['stem']}: the components give {surface!r} — a sūtra between them is not written (Art. 18)")
     return surface, tags
 
