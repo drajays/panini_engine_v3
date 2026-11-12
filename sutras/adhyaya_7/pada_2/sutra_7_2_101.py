@@ -11,27 +11,40 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "7_2_101_jarAyA_101"
+_VOWELS = frozenset("aAiIuUfFxXeEoO")
+
+
+def _site(state: State):
+    """jarA (the word the sūtra names) before a vowel-initial vibhakti: jaras in its place (jarasau, jarase; jarayā by the other reading)."""
+    if not adhikara_in_effect("7.2.101", state, "6.4.1"):
+        return None
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        if ("anga" in t.tags and "".join(v.slp1 for v in t.varnas) == "jarA" and not t.meta.get("7_2_101_done")
+                and "sup" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in _VOWELS):
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.101", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.101"
+    t = _site(state)
+    if t is not None:
+        t.varnas = list(parse_slp1_upadesha_sequence("jaras"))
+        t.meta["7_2_101_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.101",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_default        = True,
+    vibhasha_scope          = lambda state: _site(state) is not None,
     text_slp1             = "jarAyA jarasanyatarasyAm",
     text_dev              = "जराया जरसन्यतरस्याम्",
     samagra_slp1          = "jarAyAH aci viBaktO jaras anyatarasyAm",

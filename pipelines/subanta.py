@@ -429,6 +429,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.100",  # अचि र ऋतः — तिस्रः, चतस्रः
     "7.1.82",   # सावनडुहः — नुम् in su: अनड्वान्
     "7.1.78",   # नाभ्यस्ताच्छतुः — bars 7.1.70 for an abhyasta Śatṛ stem (before it, its utsarga)
+    "7.2.101",  # जराया जरसन्यतरस्याम् — jarA → jaras before a vowel-initial vibhakti (vā)
     "6.4.127",  # अर्वणस्त्रसावनञः — arvan→arvantr (tṛ for n) except before su; the resolver orders it against 6.4.8 (para)
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्

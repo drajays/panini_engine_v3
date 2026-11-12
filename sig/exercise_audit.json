@@ -1,9 +1,9 @@
 {
  "summary": {
   "verdicts": {
-   "FAIL": 56,
+   "FAIL": 55,
    "NO_EXAMPLE": 228,
-   "DONE": 56
+   "DONE": 57
   },
   "by_type": {
    "NIYAMA": {
@@ -17,11 +17,11 @@
    "VIBHASHA": {
     "FAIL": 2,
     "NO_EXAMPLE": 4,
-    "DONE": 18
+    "DONE": 19
    },
    "VIDHI": {
     "NO_EXAMPLE": 212,
-    "FAIL": 49,
+    "FAIL": 48,
     "DONE": 32
    },
    "PRATISHEDHA": {
@@ -5159,9 +5159,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "Bavat",
-      null,
+      "pulliṅga",
       7,
       1
      ],
@@ -5172,9 +5172,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "Bavat",
-      null,
+      "pulliṅga",
       7,
       1
      ],
@@ -5218,17 +5218,58 @@
   },
   "7.2.101": {
    "id": "7.2.101",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "subkind": "",
-   "verdict": "FAIL",
+   "verdict": "DONE",
    "examples_tried": 5,
-   "positives": [],
-   "negatives": [],
-   "reasons": [
-    "readings ['nirjarO', 'nirjjarO'] ≠ expected nirjarasO",
-    "readings ['jarO'] ≠ expected jarasO",
-    "readings ['nirjare', 'nirjjare'] ≠ expected nirjarasaH"
-   ]
+   "positives": [
+    {
+     "ok": true,
+     "why": "",
+     "spec": [
+      "subanta",
+      "jarA",
+      "pulliṅga",
+      1,
+      2
+     ],
+     "observed": "jarasO",
+     "statuses": [
+      "APPLIED"
+     ],
+     "expected": "jarasO",
+     "deriv": 2262
+    }
+   ],
+   "negatives": [
+    {
+     "spec": [
+      "subanta",
+      "Bavat",
+      "pulliṅga",
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    },
+    {
+     "spec": [
+      "subanta",
+      "Bavat",
+      "pulliṅga",
+      7,
+      1
+     ],
+     "expected": "Bavati",
+     "deriv": 4316,
+     "fires": false,
+     "error": null
+    }
+   ],
+   "reasons": []
   },
   "7.3.35": {
    "id": "7.3.35",
@@ -5715,9 +5756,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "Bavat",
-      null,
+      "pulliṅga",
       7,
       1
      ],
@@ -5728,9 +5769,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "ASiz",
-      null,
+      "pulliṅga",
       3,
       1
      ],
@@ -6810,9 +6851,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "rAjan",
-      null,
+      "pulliṅga",
       3,
       3
      ],
@@ -6823,9 +6864,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "yajvan",
-      null,
+      "pulliṅga",
       3,
       2
      ],
@@ -6901,9 +6942,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "rAjan",
-      null,
+      "pulliṅga",
       3,
       3
      ],
@@ -6914,9 +6955,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "yajvan",
-      null,
+      "pulliṅga",
       3,
       2
      ],
@@ -7089,9 +7130,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "rAjan",
-      null,
+      "pulliṅga",
       3,
       3
      ],
@@ -7102,9 +7143,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "yajvan",
-      null,
+      "pulliṅga",
       3,
       2
      ],
@@ -7451,9 +7492,9 @@
    "negatives": [
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "rAjan",
-      null,
+      "pulliṅga",
       3,
       3
      ],
@@ -7464,9 +7505,9 @@
     },
     {
      "spec": [
-      "subanta?",
+      "subanta",
       "yajvan",
-      null,
+      "pulliṅga",
       3,
       2
      ],

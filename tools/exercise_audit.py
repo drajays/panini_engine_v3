@@ -300,7 +300,10 @@ def audit(filters: list[str]) -> dict:
             kinds = {p["spec"][0] for p in row["positives"]}
             cands = [(d, sp, e) for k in kinds for (d, sp, e) in pool.get(k, []) if sid not in by_deriv.get(d, ())]
             for d, sp, e in cands[:MAX_NEG]:
-                branches, err = run(sp if sp[0] != "subanta?" else ("subanta", sp[1], "pulliṅga", sp[3], sp[4]))
+                sp = sp if sp[0] != "subanta?" else ("subanta", sp[1], "pulliṅga", sp[3], sp[4])      # the spec the test will run: a resolved one
+                branches, err = run(sp)
+                if err:
+                    continue        # a negative the engine cannot derive is no negative (a homonym's stem, a wrong liṅga)
                 fired = any(any(x in OK_STATUS.get(typ, _DEFAULT_OK) for x in seen.get(sid, ())) for surf, seen in branches if _norm(surf) == _norm(e))
                 row["negatives"].append({"spec": list(sp), "expected": e, "deriv": d, "fires": bool(fired), "error": err})
             if any(x["fires"] for x in row["negatives"]):
