@@ -2951,6 +2951,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = P00_san_dvitva(state)
     # 6.4.16 dīrgha + 7.4.60 abhyāsa hrasva
     state = P00_san_dirgha_hrasva(state)
+    state = apply_rule("7.4.79", state)         # sanyataḥ: abhyāsa a → i before san (vivadiṣate, tiṣṭhāsati)
     # Tiṅ spine (ātmanepada 3sg laṭ)
     state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
