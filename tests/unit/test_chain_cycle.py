@@ -36,7 +36,7 @@ def test_each_stage_fires_its_sutras():
     need = {
         "strI": {"4.1.3", "4.1.4", "6.1.101"},                      # striyām · ajādyataṣṭāp · a + ā → ā
         "nama_dhatu": {"3.1.8", "2.4.71", "3.1.32", "7.4.33"},      # kyac · sup-luk · sanādyantā dhātavaḥ · kyaci ca (ajA → ajI)
-        "sanadi": {"3.1.26", "3.1.32", "6.4.148"},                  # hetumati ca (ṇic) · yasyeti ca
+        "sanadi": {"3.1.26", "3.1.32", "6.4.48"},                   # hetumati ca (ṇic) · ato lopa ārdhadhātuke (a dhātu is not bha before ṇic: 1.4.18 is svādi only)
         "krt": {"3.1.133", "6.4.51", "7.1.1"},                      # ṇvul · ṇer aniṭi · yuvoranākau
         "taddhita": {"4.1.92", "4.1.95", "7.2.117", "6.4.148"},     # tasyāpatyam · ata iñ · taddhiteṣvacāmādeḥ
     }
