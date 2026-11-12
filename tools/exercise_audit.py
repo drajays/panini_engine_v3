@@ -44,6 +44,7 @@ _LAKARA = {"Lat": "laT", "Lit": "liT", "Lut": "luT", "Lrt": "lRT", "Lot": "loT",
            "VidhiLin": "liG", "AshirLin": "AsIrliG", "Let": None}
 _SUP = {"su~": (1, 1), "O": (1, 2), "jas": (1, 3), "am": (2, 1), "Ow": (2, 2), "Sas": (2, 3), "wA": (3, 1), "Bis": (3, 3), "Ne": (4, 1),
         "Nasi~": (5, 1), "Nasi": (5, 1), "Nas": (6, 1), "Am": (6, 3), "Ni": (7, 1), "sup": (7, 3)}    # unambiguous sup → (vibhakti, vacana)
+_SANADI = {"san": "san_recipe", "Ric": "nic_recipe"}          # label's sanādi pratyaya → the tiṅanta entry's recipe flag
 _PRAYOGA = {"Kartari": "kartari", "Karmani": "karmani", "Bhave": "bhave"}
 OK_STATUS = {"VIDHI": {"APPLIED"}, "VIBHASHA": {"APPLIED"}, "ATIDESHA": {"APPLIED"}, "NIPATANA": {"APPLIED"},
              "NIYAMA": {"APPLIED", "AUDIT", "VACUOUS", "APPLIED_VACUOUS"}}
@@ -81,6 +82,8 @@ def _spec(label: str, source: str, kind: str, first: str, result: str):
         return None, expected, "several forms in one example"
     if source == "vidyut" and kind == "subanta":
         m = re.match(r"^(\S+) (Pum|Stri|Napumsaka) (\S+) (Eka|Dvi|Bahu) →", label)
+        if m and m.group(2) == "Stri" and expected[-1:] in ("I", "U") and m.group(1)[-1:] not in ("I", "U"):     # "SiKA Stri Prathama Eka → SiKI": the label's stem is the BASE, the result a strī-pratyaya stem's cell
+            return None, expected, "strī-pratyaya from the base stem (ṅīp / ṅīṣ / ūṅ): the subanta entry takes the finished feminine stem, not base + strī-pratyaya"
         if m and m.group(3) in _VIB:
             return ("subanta", m.group(1), _LINGA[m.group(2)], _VIB[m.group(3)], _VAC[m.group(4)]), expected, None
     if source == "vidyut" and kind == "tinanta":
@@ -88,6 +91,13 @@ def _spec(label: str, source: str, kind: str, first: str, result: str):
         if m and _LAKARA.get(m.group(2)) and m.group(3) in _PRAYOGA and m.group(4) in _PUR:
             return ("tinanta", m.group(1), _LAKARA[m.group(2)], _PRAYOGA[m.group(3)], _PUR[m.group(4)], _VAC[m.group(5)]), expected, None
         return None, expected, "tiṅanta label not parseable (lakāra / prayoga outside the engine's set)"
+    if source == "vidyut" and kind == "sanadi":                  # "vada~ (01.1164) +san Lat Kartari Prathama Eka → vivadizate": the tiṅanta entry's own san / Ṇic recipe
+        m = re.match(r"^.*? \((\d\d\.\d+)\) \+(\S+) (\S+) (\S+) (\S+) (\S+) →", label)
+        if m and m.group(2) in _SANADI:
+            if _LAKARA.get(m.group(3)) and m.group(4) in _PRAYOGA and m.group(5) in _PUR:
+                return ("sanadi", m.group(1), _LAKARA[m.group(3)], _PRAYOGA[m.group(4)], _PUR[m.group(5)], _VAC[m.group(6)], _SANADI[m.group(2)], None), expected, None
+            return None, expected, "sanādi label: lakāra / prayoga outside the engine's set"
+        return None, expected, f"sanādi {m.group(2) if m else '?'}: the tiṅanta entry has only the san and Ṇic recipes (no yaṅ / yaṅluk)"
     if source == "ashtadhyayi.com" and kind == "subanta":
         m = re.match(r"^(\S+) (\S+) (\d) →", label)
         stem = first.split("+")[0].strip()
@@ -117,6 +127,9 @@ def _derive(spec: tuple):
     if spec[0] == "subanta":
         from pipelines.subanta import derive
         return derive(spec[1], spec[3], spec[4], linga=spec[2])
+    if spec[0] == "sanadi":
+        from pipelines.tinanta import derive
+        return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **{spec[6]: True}, **({"pada": spec[7]} if spec[7] else {}))
     if spec[0] == "tinanta":
         from pipelines.tinanta import derive
         return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **({"pada": spec[6]} if len(spec) > 6 else {}))
@@ -180,7 +193,9 @@ def attempt(spec, expected: str, sid: str, typ: str) -> dict:
     specs = [spec] if spec[0] != "subanta?" else [("subanta", spec[1], l, spec[3], spec[4]) for l in _LINGA.values()]
     if spec[0] == "subanta?" and spec[1].endswith("z"):      # the database writes the s-stem as its visible ṣ (धनुष्): the engine's stem is …s
         specs += [("subanta", spec[1][:-1] + "s", l, spec[3], spec[4]) for l in _LINGA.values()]
-    if spec[0] == "tinanta" and _ubhayapadi(spec[1]):       # an ubhayapadī root has both padas; a strictly one-pada root is NOT forced (a real disagreement stays a FAIL)
+    if spec[0] == "sanadi" and spec[3] == "kartari" and _ubhayapadi(spec[1]):
+        specs += [spec[:7] + ("parasmai",), spec[:7] + ("atmane",)]
+    if spec[0] == "tinanta" and spec[3] == "kartari" and _ubhayapadi(spec[1]):      # an ubhayapadī root has both padas; a strictly one-pada root is NOT forced (a real disagreement stays a FAIL)
         specs += [spec + ("parasmai",), spec + ("atmane",)]
     okst = OK_STATUS.get(typ, _DEFAULT_OK)
     best = None
