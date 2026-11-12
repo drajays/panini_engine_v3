@@ -1,7 +1,7 @@
 """
 3.1.60  चिण् ते पदः  —  VIDHI
 
-Kāśikā 3.1.60: "अस्माद् धातोः परस्य च्लेश्चिणादेशो भवति तशब्दे परतः। उदपादि सस्यम्। समपादि भैक्षम्।"
+Kāśikā 3.1.60: "अस्माद् धातोः परस्य च्लेश्चिणादेशो भवति तशब्दे परतः। … उदपादि सस्यम्। समपादि भैक्षम्।"
 
 Engine: after 3.1.43 the luṅ cli stands before the ātmanepada ``ta``; for the root pad it is replaced by
 ciṇ (the cli → ciṇ swap is the one 3.1.66 makes for bhāva/karman, here for kartari-of-pad).  ``swap_cli_cin``
