@@ -90,6 +90,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.4.55",   # khari ca — jhal→car before khar (idempotent: 8_4_55_khari_ca_done)
     "8.4.56",   # vāvasāne — jaś→car at pause (idempotent: gate)
     "8.4.58",   # anunāsika ca
+    "8.4.64", "8.4.65",   # halo yamāṃ yami lopaḥ / jharo jhari savarṇe — optional drop of the middle letter of a geminate cluster (cucyate beside cucyyate)
     "8.4.68",   # a-a padānte — trace marker (idempotent gate)
 )
 
