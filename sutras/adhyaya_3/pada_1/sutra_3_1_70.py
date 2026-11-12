@@ -10,6 +10,8 @@ root whose gaṇa gives śap (1) or śa (6) the option is śyan instead of it; f
 Engine: the vikaraṇa Term next to the root is swapped (Sap/Sa → SyaN; SyaN → Sap).  The default
 reading is the unchanged one; explore() gives the other.  The swap is made once (meta
 3_1_70_done); on the divādi side it also bars 3.1.69 from putting śyan back.
+
+Pāṭha: ashtadhyayi.com data.txt row i=31070 (Art. 14).
 """
 from __future__ import annotations
 

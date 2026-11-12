@@ -7,6 +7,8 @@ Kāśikā 2.4.79: "तनादिभ्य उत्तरस्य सिच�
 
 Engine: a gaṇa-8 root before a luṅ sic whose next term is the ātmanepada tiṅ ``ta`` or ``TAs``: the sic is
 optionally removed (luk, the act of 2.4.77).
+
+Pāṭha: ashtadhyayi.com data.txt row i=24079 (Art. 14).
 """
 from __future__ import annotations
 

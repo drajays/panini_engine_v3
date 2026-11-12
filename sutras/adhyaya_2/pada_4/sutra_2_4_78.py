@@ -8,6 +8,8 @@ Kāśikā 2.4.78: "घ्रा धेट् शा छा सा इत्य�
 Engine: the five roots (GrA, DeW, So, Co, zo) before a luṅ sic in parasmaipada: the sic is optionally
 removed (luk, same act as 2.4.77).  DeW leaves 2.4.77's list (the Kāśikā says its nitya luk there is
 turned optional here), so the one rule 2.4.78 carries both readings.
+
+Pāṭha: ashtadhyayi.com data.txt row i=24078 (Art. 14).
 """
 from __future__ import annotations
 

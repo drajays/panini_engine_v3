@@ -1,12 +1,13 @@
 """
 3.1.82  स्तन्भुस्तुन्भुस्कन्भुस्कुन्भुस्कुञ्भ्यः श्नुश्च  —  VIBHASHA (the "ca": both vikaraṇas are valid)
 
-Kāśikā 3.1.82: "आद्याश्चत्वारो धातवः सौत्राः, स्कुञ् आप्रवणे एतेभ्यः श्नाप्रत्ययो भवति श्नुश्च। स्तभ्नाति, स्तभ्नोति।
-स्तुभ्नाति, स्तुभ्नोति। स्कभ्नाति, स्कभ्नोति। स्कुभ्नाति, स्कुभ्नोति। स्कुनाति, स्कुनोति।"
+Kāśikā 3.1.82: "स्तभ्नाति, स्तभ्नोति। स्तुभ्नाति, स्तुभ्नोति।"
 
 The five roots (stanBu, stunBu, skanBu, skunBu, skuY; all gaṇa 9) take śnā (3.1.81) and also śnu.
 Engine: after 3.1.81 has put śnā next to the root, this rule may swap it for śnu; the default reading keeps
 śnā, explore() gives the śnu one.  (A real two-way choice, so typed VIBHASHA.)
+
+Pāṭha: ashtadhyayi.com data.txt row i=31082 (Art. 14).
 """
 from __future__ import annotations
 

@@ -1,11 +1,12 @@
 """
 2.4.49  गाङ् लिटि  —  VIDHI
 
-Kāśikā 2.4.49: "इङो लिटि परतो गाङादेशो भवति। अधिजगे, अधिजगाते, अधिजगिरे।  गाङोऽनुबन्धकरणं विशेषणार्थम्,
-गाङ्कुटादिभ्यः० (1.2.1) इत्यत्रास्य ग्रहणं यथा स्यात्।" (iṅ → gāṅ before liṭ; the ṅ is spoken so 1.2.1 sees it.)
+Kāśikā 2.4.49: "गाङादेशो भवतीङो लिटि परतः। अधिजगे, अधिजगाते, अधिजगिरे।" (iṅ → gāṅ before liṭ; the ṅ is spoken so 1.2.1 sees it.)
 
 Engine: the root ``iN`` (adhyayane) becomes ``gAN`` when the lakāra on the tape is liṭ; same shape as 2.4.45
 (iṇ → gā in luṅ), kept in its own file (one sūtra, one file).
+
+Pāṭha: ashtadhyayi.com data.txt row i=24049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -25,7 +26,7 @@ def _iN(state: State):
 
 
 def _liT(state: State) -> bool:
-    return state.meta.get("lakara") == "liT" or any(
+    return any(
         (t.meta.get("source_lakara_upadesha") or "").strip() == "liT" for t in state.terms)
 
 

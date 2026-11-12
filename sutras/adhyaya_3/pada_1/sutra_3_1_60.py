@@ -1,12 +1,13 @@
 """
 3.1.60  चिण् ते पदः  —  VIDHI
 
-Kāśikā 3.1.60: "पद गतौ अस्माद् धातोः परस्य च्लेश्चिणादेशो भवति तशब्दे परतः। सामर्थ्यादात्मनेपदैकवचनं गृह्यते।
-उदपादि सस्यम्। समपादि भैक्षम्। त इति किम्? उदपत्साताम्। उदपत्सत॥"
+Kāśikā 3.1.60: "अस्माद् धातोः परस्य च्लेश्चिणादेशो भवति तशब्दे परतः। उदपादि सस्यम्। समपादि भैक्षम्।"
 
 Engine: after 3.1.43 the luṅ cli stands before the ātmanepada ``ta``; for the root pad it is replaced by
 ciṇ (the cli → ciṇ swap is the one 3.1.66 makes for bhāva/karman, here for kartari-of-pad).  ``swap_cli_cin``
 is shared with 3.1.61, which names six more roots and makes the swap optional.
+
+Pāṭha: ashtadhyayi.com data.txt row i=31060 (Art. 14).
 """
 from __future__ import annotations
 
