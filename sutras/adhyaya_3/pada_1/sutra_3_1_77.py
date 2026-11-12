@@ -33,7 +33,7 @@ def _dhatu_gana(state: State) -> int | None:
 
 
 def _matches(state: State) -> bool:
-    if _dhatu_gana(state) != 6:
+    if _dhatu_gana(state) != 6 or state.meta.get("3_1_70_done"):     # 3.1.70 already swapped śyan in: the slot is taken
         return False
     if not state.terms:
         return False

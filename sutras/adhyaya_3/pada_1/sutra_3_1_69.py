@@ -41,7 +41,7 @@ def _dhatu_gana(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if _dhatu_gana(state) != 4:
+    if _dhatu_gana(state) != 4 or state.meta.get("3_1_70_sap"):    # 3.1.70 vibhāṣā chose śap: śyan is not put back
         return False
     return _find_sap(state) is not None
 
