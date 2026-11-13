@@ -589,6 +589,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.3.111", "8.3.58", "8.3.59",   # ṣatva: scans back through M/H so fires correctly after 8.3.24/8.3.15
     "8.4.1",
     "8.4.2",
+    "8.4.12",   # एकाजुत्तरपदे णः — the ṇatva across a samāsa's pūrvapada | uttarapada seam (vṛtrahaṇau)
     "8.4.40",   # stoH ScunA ScuH — n→Y (rAjYA etc.), only the j+n slice
     "8.4.41",
 )
@@ -958,7 +959,7 @@ def _padas_tape(entry: dict, stem) -> list:
     live = [t for t in lexicon.stem_terms(entry) if t.varnas]
     for t in live[:-1]:
         t.tags.add("samasa_purvapada")
-    live[-1].tags |= stem.tags
+    live[-1].tags |= stem.tags | ({"samasa_uttarapada"} if len(live) > 1 else set())
     if "origin_pratyaya:kvin" in live[-1].tags:       # a kvin stem is a kṛdanta prātipadika (1.2.46), no longer the dhātu: 7.1.70 says adhātoḥ; its record names the dhātu. (kvip stems keep the dhātu Term: 8.2.36 rāj, 6.4.132 vāh read it)
         live[-1].tags -= {"upadesha", "dhatu"}
     for t in live if "origin_pratyaya:kvin" in live[-1].tags else ():     # ponytail: only añcu + kvin — rājf~ (kvip) must not get a nuṃ; the general ugit-of-a-kṛdanta rule is not written

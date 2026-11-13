@@ -101,6 +101,8 @@ def _find_target(state: State):
             (ti2, vi2, vm) = flat[m]
             if ti2 != ti0:
                 break
+            if "samasa_purva_v" in v.tags and "samasa_uttara_v" in vm.tags:
+                break               # a samāsa's pūrvapada | uttarapada seam is not samānapada: 8.4.12 owns it
             if vm.slp1 == "n":
                 if m == k + 1:
                     # 8.4.1: adjacent *r* / *ṛ* / *ṣ* + *n*; *apī* of 8.4.2

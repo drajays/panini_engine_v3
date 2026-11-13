@@ -201,14 +201,6 @@ def test_4_4_1_pragvahates_thak_is_the_default_of_the_group():
     assert any(_traced(b.state, "4.4.1") for b in branches if hasattr(b, "state")) or "AkzikaH" in got
 
 
-def test_5_4_69_na_pujanat_blocks_the_samasanta():
-    """na pūjanāt (5.4.69): su-rājā, ati-rājā — no ṭac after pūjana-pūrvapada."""
-    s = apply_rule("5.4.68", _hand(_term("su", {"prātipadika", "samAsa_first"}, upadesha_slp1="su"),
-                                    _term("rAjan", {"prātipadika", "samAsa_second"}, upadesha_slp1="rAjan")))
-    after = apply_rule("5.4.69", s)
-    assert after.meta["taddhita_kind"] == "5.4.69" and after.paribhasha_gates["5_4_69_na_69"] is True
-
-
 # ── 6.1 ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 @pytest.mark.parametrize("root,hit", [("UrRu", True), ("UrRu\\Y", True), ("eD", False), ("Ikz", False)])
 def test_6_1_3_ndr_not_doubled(root, hit):

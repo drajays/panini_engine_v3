@@ -1,37 +1,42 @@
 """
-5.4.69  न पूजनात्  —  VIDHI
+5.4.69  न पूजनात्  —  PRATISHEDHA
 
 Padaccheda: न पूजनात्
 
 न पूजनात् (5.4.69)
 Pāṭha: ashtadhyayi.com data.txt row i=54069 (Art. 14).
+Kāśikā 5.4.69: "यान् शब्दानुपादाय समासान्ता विधीयन्ते राजाहःसखिभ्यष्टच् इत्येवमादीन्, यदा ते पूजनात् पूजनवचनात् परे भवन्ति तदा
+समासान्तो न भवति। सुराजा। अतिराजा। सुगौः। अतिगौः॥ पूजायां स्वतिग्रहणं कर्तव्यम्॥ … प्राग्बहुव्रीहिग्रहणं च कर्तव्यम्॥"
+
+The samāsa is read off the tape: a pūrvapada Term (``samasa_purvapada``, in a ``tatpurusha``) that is su or ati in the sense of
+honour (``lex:pUjana``, a vivakṣā of the speaker, as ``lex:pUjArTa`` in 6.4.30), with its uttarapada Term after it. The samāsānta
+sūtras before the bahuvrīhi ones (5.4.70 – 5.4.112, *prāg bahuvrīheḥ*) are blocked.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.registry import SUTRA_REGISTRY
 from engine.state import State
 
-_GATE_KEY: str = "5_4_69_na_69"
+_SU_ATI = frozenset({"su", "ati"})      # vārttika: pūjāyāṃ svatigrahaṇam
 
 
-# SHORTCUT S126 S133: see docs/SHORTCUT_LEDGER.md
+def _blocked_ids() -> tuple[str, ...]:
+    return tuple(f"5.4.{n}" for n in range(70, 113) if f"5.4.{n}" in SUTRA_REGISTRY)
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
     if not adhikara_in_effect("5.4.69", state, "5.4.68"):
         return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    for t in state.terms[:-1]:
+        if {"samasa_purvapada", "tatpurusha", "lex:pUjana"} <= t.tags and "".join(v.slp1 for v in t.varnas) in _SU_ATI:
+            return not set(_blocked_ids()) <= state.blocked_sutras
+    return False
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "5.4.69"
+    state.blocked_sutras |= set(_blocked_ids())
     return state
 
 
