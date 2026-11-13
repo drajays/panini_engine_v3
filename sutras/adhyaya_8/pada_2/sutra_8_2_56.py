@@ -3,7 +3,7 @@
 
 Padaccheda: नुद-विद-उन्द-त्रा-घ्रा-ह्रीभ्यः अन्यतरस्याम्
 
-nud, vid, und, trā, ghrā, hrī: na for the niṣṭhā's t is optional (nunna / nutta, vinna / vitta, trāṇa / trāta, hrīṇa / hrīta); the nitya 8.2.42 / 8.2.43 leave these dhātus to this vibhāṣā (_nistha.VIBHASHA_ROOTS). The default reading keeps the t; explore() gives the na. SHORTCUT S159: every vid (all four of them) is read, the Kāśikā means vid vicāraṇe and the verse extends it to the others.
+nud, vid, und, trā, ghrā, hrī: na for the niṣṭhā's t is optional (nunna / nutta, vinna / vitta, trāṇa / trāta, hrīṇa / hrīta); the nitya 8.2.42 / 8.2.43 leave these dhātus to this vibhāṣā (_nistha.VIBHASHA_ROOTS). The default reading keeps the t; explore() gives the na. SHORTCUT S166: every vid (all four of them) is read, the Kāśikā means vid vicāraṇe and the verse extends it to the others.
 Kāśikā 8.2.56: नुद विद उन्द त्रा घ्रा ह्री इत्येतेभ्य उत्तरस्य निष्ठातकारस्य नकार आदेशो भवत्यन्यतरस्याम्। नुद — नुन्नः, नुत्तः। विद — विन्नः, वित्तः।
 Pāṭha: ashtadhyayi.com data.txt row i=82056 (Art. 14).
 The niṣṭhā-ta and its dhātu are read by sutras/adhyaya_8/pada_2/_nistha.py (loose tape or merged kṛdanta pada).

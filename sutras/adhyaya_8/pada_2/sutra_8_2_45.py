@@ -3,7 +3,7 @@
 
 Padaccheda: ओत्-इतः च
 
-An ōdit dhātu takes na for the niṣṭhā's t: ōlasj → lagna, ōvij → udvigna, ōpyāy → āpīna. SHORTCUT S158: the svādi ōdits (ṣūṅ, dūṅ, dīṅ …) are named by upadeśa from the Kāśikā list; the Dhātupāṭha data carries no o-marker for them.
+An ōdit dhātu takes na for the niṣṭhā's t: ōlasj → lagna, ōvij → udvigna, ōpyāy → āpīna. SHORTCUT S165: the svādi ōdits (ṣūṅ, dūṅ, dīṅ …) are named by upadeśa from the Kāśikā list; the Dhātupāṭha data carries no o-marker for them.
 Kāśikā 8.2.45: ओकारेतो धातोरुत्तरस्य निष्ठातकारस्य नकारादेशो भवति। ओलस्जी — लग्नः। लग्नवान्। ओविजी — उद्विग्नः। उद्विग्नवान्।
 Pāṭha: ashtadhyayi.com data.txt row i=82045 (Art. 14).
 The niṣṭhā-ta and its dhātu are read by sutras/adhyaya_8/pada_2/_nistha.py (loose tape or merged kṛdanta pada).
@@ -14,7 +14,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from sutras.adhyaya_8.pada_2 import _nistha as N
 
-_SVADI_ODIT = frozenset({"zUN", "dUN", "dIN", "qIN", "DIN", "mIN", "rIN", "lIN", "vrIN"})     # S158
+_SVADI_ODIT = frozenset({"zUN", "dUN", "dIN", "qIN", "DIN", "mIN", "rIN", "lIN", "vrIN"})     # S165
 
 
 def _sites(state: State):
