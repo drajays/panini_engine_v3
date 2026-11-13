@@ -4058,8 +4058,8 @@ def _bootstrap_tinanta_derivation(
     state = _attach_upasargas(state, upasargas)
 
     if nic_recipe and lakara == "laT":
-        from engine.vivaksha import set_vivaksha
-        set_vivaksha(state, kartrabhiprAya="kartraBiprAya")    # the nic_recipe request is the kartrabhiprāya reading of 1.3.74
+        from engine.tape_init.sanadi import with_vivaksha
+        state = with_vivaksha(state, kartrabhiprAya="kartraBiprAya")    # the nic_recipe request is the kartrabhiprāya reading of 1.3.74 (tape init writes it)
         return _derive_laT_nic_atmane(state, purusha, vacana), gana, None, True
 
     if san_recipe and lakara == "laT":
