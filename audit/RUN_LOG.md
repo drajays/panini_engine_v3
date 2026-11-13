@@ -209,6 +209,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 13:05 | cursor | P1 SC-001 ruling → AMENDMENT 16 / Art. 20 ArthaNirdesha; 4.1.92 frame 4.1.83–4.1.178 | CONSTITUTION.md, docs/AMENDMENT_16.md, engine/sutra_type.py, engine/gates.py, engine/__init__.py, sutras/adhyaya_4/pada_1/sutra_4_1_92.py, tests/constitutional/test_artha_nirdesha.py, tests/unit/test_sutra_4_1_92_prAgdIvyatIyaSezAdhikAra.py, tests/unit/test_adhikara_gate_scope.py, core/i18n_hi.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
 | 2026-10-20 08:30 | cursor | P2 /reader — Advaita Sharada (Sringeri) Prasthānatrayī bhāṣya + Ānandagiri, local gitignored cache only (All rights reserved) | tools/fetch_advaita_sharada.py, tools/advaita_sharada_reader.py, data/reference/advaita_sharada/SOURCE.json, .gitignore, data/inputs/grantha_catalog.json, webui/app.py, webui/templates/reader.html, tests/unit/test_advaita_sharada_reader.py, tools/fetch_prasthanatrayi_words.py, data/reference/prasthanatrayi_words/SOURCE.json, handover.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
+| 2026-11-13 09:50 | cursor | P2 अभ्यासशाला: sanskritabhyas.in + RKMVU abhyāsa drills, beginner→grammarian, engine-keyed + Vidyut-checked (plan + log: docs/ABHYASA_PLAN.md) | core/abhyasa.py, tools/build_abhyasa_bank.py, data/practice/**, webui/abhyasa.py, webui/templates/practice.html, webui/static/abhyasa.js, webui/app.py (blueprint registration line only), tests/unit/test_abhyasa.py, docs/ABHYASA_PLAN.md, audit/RUN_LOG.md, handover.md | released |
 | 2026-11-09 (session) | claude | Unified web UI Phases 1-2: tabbed sections (/shabdarupa, /dhaturupa, /reader), redirects for retired URLs, यन्त्रशाला dev area, stale text fixes | webui/**, api/*.html, docs/learn.html, tests/unit/test_webui_routes.py, audit/RUN_LOG.md | released |
 
 ---
@@ -242,6 +243,30 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-11-13 10:15  [cursor]  अभ्यासशाला — sanskritabhyas.in's practice features in /practice, engine-keyed (plan + shared log: docs/ABHYASA_PLAN.md)
+
+Owner: "sanskritabhyas.in will be our main reference — I want all its features in our app's abhyās/practice tab", backed by
+our engine + Vidyut + our other processes, beginner → grammarian; RKMVU's sentence-by-sentence abhyāsa as well.
+- **No engine file touched.** New: `core/abhyasa.py` (question engine), `tools/abhyasa_vidyut.py` (Vidyut worker, .venv),
+  `tools/build_abhyasa_bank.py` (bank for slow families), `webui/abhyasa.py` (blueprint `/api/abhyasa/*`),
+  `webui/templates/practice.html` + `webui/static/abhyasa.js` (rewritten tab), `data/practice/{vakya_lexicon,abhyasa_bank,abhyasa_gaps}.json`,
+  `tests/unit/test_abhyasa.py` (23 pass). `webui/app.py`: two lines after `/practice` register the blueprint.
+- Families: संज्ञा · सर्वनाम · संख्या · क्रियापद · कृदन्त · तद्धितान्त · नामधातु · सन्धि · वर्ण/लिपि (+ प्रत्याहार, इत्संज्ञा, वाक्याभ्यास).
+  Drills: MCQ · recall · match · T/F · odd-one-out · whole table · which-sūtra · compose · kāraka. Levels आसान…वैयाकरण.
+  Views: सूचियाँ (9,007 stems, all dhātus), तुलना, पसंदीदा, प्रत्यय (4.1.2, 3.4.78), lipi table. Parity table: plan §1b.
+- Answer key: engine form when Vidyut and/or the printed ashtadhyayi.com paradigm agree; else (sanādi stacks,
+  nāmadhātu, unbanked kṛts) Vidyut's form **badged "यन्त्रं न्यूनम्"**. Each answer shows its source badges and opens the
+  engine's derivation (shared prakriyā view) beside Vidyut's path.
+- **Engine gaps for the engine agents** (`data/practice/abhyasa_gaps.json`, plan §6): asmad/yuṣmad wrong beyond 1/1
+  (*aham* everywhere); mahA+fzi → *mahazi* (1.1.51 raparatva after 6.1.87); hase~ lṛṭ *hatizyati*; qudAY vidhiliṅ *dadAyAt*;
+  ktvā declined *gatvAH* (avyaya sup-luk); Śatṛ/tṛc vivakṣā returns the bare root; Dana+asti → *DAnaH* (no matup);
+  agni+devatā → *AgnaH*. Runtime gaps while drilling: GET `/api/abhyasa/gaps`.
+- Bank build: `.venv/bin/python -m tools.build_abhyasa_bank` (writes after each family; full run 1 h 55 min at engine 3e07292d):
+  varṇa 37 · it 96 · sandhi 52 · vākya 270 sentences · subanta 137 · tinanta 468 · kṛdanta 131 · taddhita 17; 602 gaps
+  (tinanta 361, subanta 189, kṛdanta 32, taddhita 14, sandhi 6) in `data/practice/abhyasa_gaps.json`.
+- Next: multiple upasargas / gati; more UI languages; verb all-lakāra comparison; vākya lessons 10–12 (ktvā/tumun,
+  participles, kta) once the engine's kṛdanta avyaya + participle gaps close.
 
 - 2026-11-09 claude: web UI Phases 1-2 done. /derive,/matrix,/showcase,/sarvanama -> /shabdarupa?tab=; /krdanta -> /dhaturupa?tab=krdanta; /bhatti,/patha,/text -> /reader?tab=; /devendra,/dik pages removed (301 to /); /coverage,/review -> /yantrashala; /pipelines,/sig,/tests moved under यन्त्रशाला tab bar. Tab views are the old view functions dispatched by `_tab()` in webui/app.py. Tests: tests/unit/test_webui_routes.py (41 pass). Phases 3-8 done in the same session: seven-section menu + home; shared derivation view /prakriya (webui/static/prakriya.js: Student/Scholar, dev/SLP1/IAST, hi/en/sa gloss, #s-N permalinks, print, JSON export); /learn serves docs/learn.html (offline-rewired, /docs/ static mount); /practice in Flask (fill the cell, name the sūtra; checked against engine APIs); /sutra/<id> for all 3983 sūtras (status, Kāśikā examples from docs/data/sutras.json, where applied from docs/data/traces); bundled Noto font (webui/static/fonts), skip link, mobile + print CSS; /api/krdanta now resolves ids like /v1/krdanta. Follow-up (same day): every tab (shabdarupa/dhaturupa/reader/pipelines) now renders derivations through prakriya.js; trace.js is a 10-line shim, lipi.js, the old trace/sutra-detail CSS and markup are deleted; Bold Devanagari woff bundled; app is light-only (color-scheme: light). prakriya.js: 3 depths (Beginner/Kaumudi/Shastriya), letter chips with origin sutras (API `letters`), rule inspector, what-if disabler (`disable` param on /api/derive|tinanta|krdanta; webui-side State.__init__ wrapper under a lock, display-only, restored after) shown beside the real result on /prakriya. Not done: FastAPI :8000 HTML pages still served (tests/test_api_smoke.py asserts /lab,/practice 200); old per-tab views still use their own trace renderers (not yet on prakriya.js); padaccheda splitting is the stored text only.
 

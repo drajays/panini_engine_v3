@@ -1,85 +1,81 @@
 {% extends "base.html" %}
 {% block title %}अभ्यासः — पाणिनि-यन्त्रम्{% endblock %}
+{% block head_extra %}
+<style>
+  .ab-fams button,.ab-views button,.ab-opt,.ab-btns button,.ab-list button,.ab-tf .bt button,.ab-star{color:var(--ink)}
+  .ab-fams{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 .6rem}
+  .ab-fams button,.ab-views button{border:1px solid var(--line);background:var(--bg-panel);border-radius:999px;padding:.25rem .8rem;cursor:pointer;font-family:var(--dev);font-size:15px}
+  .ab-fams button.on,.ab-views button.on{background:var(--accent);color:#fff !important;border-color:var(--accent)}
+  .ab-views{display:flex;gap:.35rem;margin:.2rem 0 .8rem;flex-wrap:wrap;align-items:center}
+  .ab-views .sp{flex:1}
+  .ab-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1rem}
+  @media (max-width:900px){.ab-grid{grid-template-columns:1fr}}
+  .ab-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem}
+  .ab-drill{font-size:13px;color:var(--ink-dim);letter-spacing:.02em}
+  .ab-title{font-family:var(--dev);font-size:calc(20px*var(--ab-scale,1));margin:.2rem 0}
+  .ab-prompt{font-family:var(--dev);font-size:calc(24px*var(--ab-scale,1));margin:.4rem 0 .8rem;color:var(--accent)}
+  .ab-glyph{font-size:calc(56px*var(--ab-scale,1));line-height:1.2}
+  .ab-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.5rem}
+  .ab-opt{border:1px solid var(--line);border-radius:8px;padding:.55rem .7rem;background:var(--bg);cursor:pointer;font-family:var(--dev);font-size:calc(19px*var(--ab-scale,1));text-align:left}
+  .ab-opt:hover{border-color:var(--accent-dim)}
+  .ab-opt.good{background:#e6f3e6;border-color:var(--success)} .ab-opt.bad{background:#f8e4e4;border-color:var(--danger)}
+  .ab-opt.sel{outline:2px solid var(--accent)}
+  .ab-opt small{display:block;font-size:12px;color:var(--ink-faint);font-family:var(--body)}
+  .ab-in{font-family:var(--dev);font-size:calc(20px*var(--ab-scale,1));padding:.35rem .5rem;border:1px solid var(--line);border-radius:6px;min-width:220px}
+  .ab-in.good{border-color:var(--success);background:#eef7ee} .ab-in.bad{border-color:var(--danger);background:#fbeeee}
+  .ab-btns{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}
+  .ab-btns button{padding:.35rem .9rem;border-radius:6px;border:1px solid var(--line);background:var(--bg-subtle);cursor:pointer;font-family:var(--dev)}
+  .ab-btns button.go{background:var(--accent);color:#fff !important;border-color:var(--accent)}
+  .ab-fb{margin-top:.8rem;font-size:15px}
+  .ab-fb .ok{color:var(--success);font-weight:600} .ab-fb .no{color:var(--danger);font-weight:600}
+  .ab-src{display:inline-flex;gap:.25rem;margin-left:.4rem;vertical-align:middle}
+  .ab-src span{font-size:11px;border-radius:4px;padding:1px 5px;border:1px solid var(--line);color:var(--ink-dim);background:var(--bg)}
+  .ab-src span.engine{border-color:var(--success);color:var(--success)} .ab-src span.vidyut{border-color:#2a5d8f;color:#2a5d8f}
+  .ab-src span.corpus{border-color:var(--warn);color:var(--warn)} .ab-src span.only{border-color:var(--danger);color:var(--danger)}
+  .ab-note{font-size:13px;color:var(--warn);margin:.2rem 0}
+  .ab-tbl{border-collapse:collapse;width:100%;margin-top:.5rem}
+  .ab-tbl th,.ab-tbl td{border:1px solid var(--line-soft);padding:.3rem .45rem;font-family:var(--dev);font-size:calc(16px*var(--ab-scale,1))}
+  .ab-tbl th{background:var(--bg-subtle);font-weight:500;font-size:14px}
+  .ab-tbl td.click{cursor:pointer} .ab-tbl td.click:hover{background:var(--bg-subtle)}
+  .ab-tbl input{width:100%;box-sizing:border-box;font-family:var(--dev);font-size:16px;border:1px solid var(--line);border-radius:4px;padding:.15rem .3rem}
+  .ab-side label{display:block;font-size:13px;color:var(--ink-dim);margin:.45rem 0 .15rem}
+  .ab-side select,.ab-side input[type=text]{width:100%;box-sizing:border-box;padding:.25rem;font-family:var(--dev)}
+  .ab-side .chk{display:flex;flex-wrap:wrap;gap:.2rem .6rem;font-size:13px}
+  .ab-side .chk label{display:inline-flex;gap:.25rem;margin:0;color:var(--ink)}
+  .ab-score{font-size:13px;color:var(--ink-dim)}
+  .ab-match{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem}
+  .ab-tf{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem .8rem;align-items:center;font-family:var(--dev);font-size:calc(18px*var(--ab-scale,1))}
+  .ab-tf .bt button{margin-left:.25rem;padding:.15rem .6rem;border:1px solid var(--line);border-radius:5px;background:var(--bg);cursor:pointer}
+  .ab-tf .bt button.on{background:var(--accent);color:#fff !important}
+  .ab-tf .res.good{color:var(--success)} .ab-tf .res.bad{color:var(--danger)}
+  .ab-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.35rem;max-height:60vh;overflow:auto}
+  .ab-list button{text-align:left;border:1px solid var(--line-soft);background:var(--bg);border-radius:6px;padding:.3rem .5rem;cursor:pointer;font-family:var(--dev)}
+  .ab-list button small{display:block;color:var(--ink-faint);font-family:var(--body);font-size:11px}
+  .ab-steps{font-size:14px;margin:.4rem 0;padding-left:1.2rem;font-family:var(--dev)}
+  .ab-star{cursor:pointer;color:var(--warn) !important;font-size:18px;border:none;background:none}
+  .ab-en{font-size:calc(19px*var(--ab-scale,1));font-family:var(--body);margin:.3rem 0 .8rem}
+</style>
+{% endblock %}
 {% block content %}
 <div class="panel">
-  <h1>अभ्यासः <span class="muted" style="font-size:14px;font-weight:400">Practice — every answer is checked by the engine</span></h1>
-  <div class="pk-bar no-print">
-    <label>प्रश्न-प्रकारः<select id="mode"><option value="cell">रूपं पूरयतु · fill the cell</option><option value="sutra">सूत्रं नामयतु · name the sūtra</option></select></label>
-    <label>विषयः<select id="kind"><option value="subanta">सुबन्तम्</option><option value="tinanta">तिङन्तम्</option></select></label>
-    <label>उत्तर-लिपिः<select id="sch"><option value="devanagari">देवनागरी</option><option value="iast">IAST</option><option value="slp1">SLP1</option></select></label>
-    <button id="next" type="button">नूतनः प्रश्नः</button>
-    <span id="score" class="muted" aria-live="polite"></span>
+  <h1>अभ्यासः <span class="muted" style="font-size:14px;font-weight:400" data-l="sub">every answer is derived by our engine, checked with Vidyut and the printed paradigms</span></h1>
+  <div class="ab-fams" id="fams" role="tablist" aria-label="विषयाः"></div>
+  <div class="ab-views no-print">
+    <button data-v="practice" class="on" data-l="v_practice">अभ्यास</button>
+    <button data-v="list" data-l="v_list">सूचियाँ</button>
+    <button data-v="compare" data-l="v_compare">तुलना</button>
+    <button data-v="fav" data-l="v_fav">पसंदीदा ★</button>
+    <button data-v="pratyaya" data-l="v_pratyaya">प्रत्ययाः</button>
+    <span class="sp"></span>
+    <span class="ab-score" id="score"></span>
+    <button id="fs-" title="छोटा / smaller">अ−</button><button id="fs+" title="बड़ा / larger">अ+</button>
+    <select id="ui-lang" aria-label="language"><option value="hi">हिन्दी</option><option value="en">English</option><option value="sa">संस्कृतम्</option></select>
+    <select id="sch" aria-label="उत्तर-लिपिः"><option value="devanagari">देवनागरी</option><option value="iast">IAST</option><option value="slp1">SLP1</option><option value="hk">HK</option></select>
   </div>
-  <div id="q" aria-live="polite"></div>
+  <div id="view"></div>
 </div>
 <div class="panel" id="why" hidden></div>
 {% endblock %}
 {% block body_extra %}
-<script>
-(() => {
-  const $ = id => document.getElementById(id), esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const post = (u, b) => fetch(u, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(b)}).then(r => r.json());
-  const pick = a => a[Math.floor(Math.random() * a.length)];
-  const VIB = ["प्रथमा", "द्वितीया", "तृतीया", "चतुर्थी", "पञ्चमी", "षष्ठी", "सप्तमी", "सम्बोधनम्"], VAC = ["एकवचनम्", "द्विवचनम्", "बहुवचनम्"];
-  const STEMS = [["rAma", "pulliṅga"], ["hari", "pulliṅga"], ["guru", "pulliṅga"], ["kanyA", "strīliṅga"], ["nadI", "strīliṅga"], ["mati", "strīliṅga"], ["vAri", "napuṃsaka"]];
-  const ROOTS = ["BU", "qupaca~z", "gamx~", "nIY", "paWa~", "dfSi~r"];
-  const LA = [["laT", "लट्"], ["liT", "लिट्"], ["lRT", "लृट्"], ["loT", "लोट्"], ["laG", "लङ्"], ["liG", "विधिलिङ्"], ["luG", "लुङ्"]];
-  const PU = [[3, "प्रथमः"], [2, "मध्यमः"], [1, "उत्तमः"]];
-  let S = {ok: 0, n: 0}, cur = null;
-  try { S = JSON.parse(localStorage.getItem("panini-score")) || S; } catch (e) {}
-  const tally = () => { $("score").textContent = `${S.ok} / ${S.n}`; try { localStorage.setItem("panini-score", JSON.stringify(S)); } catch (e) {} };
-  const norm = s => s.normalize("NFC").replace(/\s+/g, "");
-  const toSlp = t => { t = t.trim(); try { return /[ऀ-ॿ]/.test(t) ? Transliterate.toSLP1(t, "devanagari") : Transliterate.toSLP1(t, $("sch").value === "devanagari" ? "slp1" : $("sch").value); } catch (e) { return t; } };
-
-  async function ask() {
-    $("why").hidden = true; $("q").innerHTML = "…";
-    for (let tries = 0; tries < 6; tries++) {
-      const kind = $("kind").value, sub = kind === "subanta";
-      let spec, r;
-      if (sub) { const [s, g] = pick(STEMS); spec = {stem: s, vibhakti: 1 + Math.floor(Math.random() * 8), vacana: 1 + Math.floor(Math.random() * 3), linga: g};
-        r = await post("/api/derive", spec); }
-      else { spec = {dhatu: pick(ROOTS), lakara: pick(LA)[0], prayoga: "kartari", purusha: pick(PU)[0], vacana: 1 + Math.floor(Math.random() * 3)};
-        r = await post("/api/tinanta", spec); }
-      if (r.error || !r.trace) continue;
-      cur = {sub, spec, r, answered: false};
-      return $("mode").value === "cell" ? cellQ() : sutraQ();
-    }
-    $("q").textContent = "प्रश्नः न लब्धः — पुनः यतताम्।";
-  }
-
-  function label() {
-    const {sub, spec} = cur;
-    if (sub) return `<b class="dev">${esc(Transliterate.fromSLP1(spec.stem, "devanagari"))}</b> (${esc(spec.linga)}) — ${VIB[spec.vibhakti - 1]} · ${VAC[spec.vacana - 1]}`;
-    return `<b class="dev">${esc(cur.r.dhatu_dev || spec.dhatu)}</b> — ${esc(LA.find(x => x[0] === spec.lakara)[1])} · ${PU.find(p => p[0] === spec.purusha)[1]} · ${VAC[spec.vacana - 1]}`;
-  }
-
-  function cellQ() {
-    $("q").innerHTML = `<p>${label()} — रूपं किम्?</p><form id="a" class="pk-form-row"><input id="ans" class="dev" size="18" autocomplete="off" autofocus aria-label="उत्तरम्"><button>परीक्ष्यताम्</button></form><p id="fb"></p>`;
-    $("a").onsubmit = e => { e.preventDefault(); if (cur.answered) return;
-      const got = toSlp($("ans").value), want = cur.r.surface_slp1;
-      finish(norm(got) === norm(want), `उत्तरम्: <b class="dev">${esc(cur.r.surface_dev)}</b> (${esc(want)})`); };
-  }
-
-  function sutraQ() {
-    const steps = cur.r.trace.filter(s => s.status === "APPLIED" && s.form_before !== s.form_after && !s._is_structural);
-    if (!steps.length) return ask();
-    const s = pick(steps), ids = [...new Set(cur.r.trace.filter(x => x.status === "APPLIED" && x.sutra_id !== s.sutra_id && !x._is_structural).map(x => x.sutra_id))];
-    const opts = [s.sutra_id, ...ids.sort(() => Math.random() - .5).slice(0, 3)].sort(() => Math.random() - .5);
-    cur.step = s;
-    $("q").innerHTML = `<p>${label()}: कः सूत्रः <b class="dev">${esc(Transliterate.fromSLP1(s.form_before, "devanagari"))} → ${esc(Transliterate.fromSLP1(s.form_after, "devanagari"))}</b> इति करोति?</p>
-      <div class="pk-form-row">${opts.map(o => `<button type="button" class="opt" data-s="${esc(o)}">${esc(o)}</button>`).join("")}</div><p id="fb"></p>`;
-    document.querySelectorAll(".opt").forEach(b => b.onclick = () => { if (!cur.answered)
-      finish(b.dataset.s === s.sutra_id, `सूत्रम्: <a href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a> <span class="dev">${esc(s._sutra_text_dev || "")}</span>`); });
-  }
-
-  function finish(ok, ans) {
-    cur.answered = true; S.n++; if (ok) S.ok++; tally();
-    $("fb").innerHTML = `<b style="color:${ok ? "var(--success)" : "var(--danger)"}">${ok ? "सम्यक् ✓ correct" : "न सम्यक् ✗ not quite"}</b> — ${ans}`;
-    $("why").hidden = false;
-    Prakriya.mount($("why"), {trace: cur.r.trace, title: cur.sub ? cur.spec.stem : cur.spec.dhatu, surface: {slp1: cur.r.surface_slp1, dev: cur.r.surface_dev}});
-  }
-
-  ["mode", "kind"].forEach(i => $(i).onchange = ask); $("next").onclick = ask; tally(); ask();
-})();
-</script>
+<script src="{{ url_for('static', filename='abhyasa.js') }}"></script>
 {% endblock %}

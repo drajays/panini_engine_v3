@@ -664,5 +664,24 @@
   "status": "in-progress",
   "hotspots": [],
   "updated": 1794198779.382158
+ },
+ {
+  "id": "abhyasa-shala",
+  "agent": "cursor",
+  "scope": [
+   "core/abhyasa.py",
+   "tools/build_abhyasa_bank.py",
+   "data/practice/**",
+   "webui/abhyasa.py",
+   "webui/templates/practice.html",
+   "webui/static/abhyasa.js",
+   "webui/app.py",
+   "tests/unit/test_abhyasa.py",
+   "docs/ABHYASA_PLAN.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794551090.153284
  }
 ]

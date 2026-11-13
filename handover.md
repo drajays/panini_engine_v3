@@ -1,5 +1,12 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-11-13 — cursor: अभ्यासशाला (/practice = sanskritabhyas.in's features, engine-keyed)
+Owner made sanskritabhyas.in/hi the main reference for the अभ्यास tab. Plan, parity checklist, answer-key rule, engine
+contract and **engine gaps found** (asmad/yuṣmad, ṛ-guṇa raparatva across padas, hasizyati, dadyāt, kṛt avyaya sup-luk,
+Śatṛ/tṛc vivakṣā, matup, Qak): `docs/ABHYASA_PLAN.md` (§1b, §5, §6, §7 log). Gap queue: `data/practice/abhyasa_gaps.json`.
+No engine file changed; `webui/app.py` only registers the blueprint. Engine agents: if you rename an entry point in plan §5,
+`tests/unit/test_abhyasa.py` fails — update `core/abhyasa.py` with it.
+
 ## SESSION 2026-10-23 — claude: all-sūtra plan (`docs/ALL_SUTRA_PLAN.md`, LK-first worklist `docs/data/lk_worklist.json`)
 6.1.6 real (jakṣ-ādi = abhyasta from `antarganas`); 7.1.4 / 6.4.112 read it; adādi laṭ + loṭ spines wired (jakṣati, jāgrati,
 daridrati, cakāsati; loṭ …atu; yāntu fixed by 6.1.101). Tests `tests/regression/test_jakshityadi_abhyasta.py`.

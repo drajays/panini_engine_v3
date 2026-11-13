@@ -1,0 +1,8597 @@
+{
+ "_doc": "Cells where the engine's form is not among Vidyut's (or the engine raised). Work queue for engine agents; see docs/ABHYASA_PLAN.md §6.",
+ "generated_at": "2026-11-13T06:23:50+00:00",
+ "engine_commit": "3e07292d",
+ "gaps": [
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "mahA",
+    "right": "fzi"
+   },
+   "engine": "mahazi",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "deva",
+    "right": "fzi"
+   },
+   "engine": "devazi",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "rAja",
+    "right": "fzi"
+   },
+   "engine": "rAjazi",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "nE",
+    "right": "aka"
+   },
+   "engine": "nAyaka",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "vizRo",
+    "right": "ava"
+   },
+   "engine": "vizRova",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "sandhi",
+   "request": {
+    "left": "ko",
+    "right": "api"
+   },
+   "engine": "kopi",
+   "vidyut": null,
+   "note": "Vidyut's sandhi rules cannot split the engine's join back"
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "aham",
+   "vidyut": [
+    "AvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "aham",
+   "vidyut": [
+    "vayam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "aham",
+   "vidyut": [
+    "AvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "ahAn",
+   "vidyut": [
+    "asmAn"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "ahena",
+   "vidyut": [
+    "mayA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 3
+   },
+   "engine": "ahEH",
+   "vidyut": [
+    "asmABiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mahyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 3
+   },
+   "engine": "aheByaH",
+   "vidyut": [
+    "asmaByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "ahAt",
+   "vidyut": [
+    "mad",
+    "mat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 3
+   },
+   "engine": "aheByaH",
+   "vidyut": [
+    "asmad",
+    "asmat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mama"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "ahayoH",
+   "vidyut": [
+    "AvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "ahAnAm",
+   "vidyut": [
+    "asmAkam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "ahe",
+   "vidyut": [
+    "mayi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "ahayoH",
+   "vidyut": [
+    "AvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 3
+   },
+   "engine": "aham",
+   "vidyut": [
+    "asmAsu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yUyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "tvAn",
+   "vidyut": [
+    "yuzmAn"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "tvena",
+   "vidyut": [
+    "tvayA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 3
+   },
+   "engine": "tvEH",
+   "vidyut": [
+    "yuzmABiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tuByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 3
+   },
+   "engine": "tveByaH",
+   "vidyut": [
+    "yuzmaByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "tvAt",
+   "vidyut": [
+    "tvad",
+    "tvat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 3
+   },
+   "engine": "tveByaH",
+   "vidyut": [
+    "yuzmad",
+    "yuzmat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tava"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "tvayoH",
+   "vidyut": [
+    "yuvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "tvAnAm",
+   "vidyut": [
+    "yuzmAkam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "tve",
+   "vidyut": [
+    "tvayi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "tvayoH",
+   "vidyut": [
+    "yuvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 3
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuzmAsu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "hatizyAmi",
+   "vidyut": [
+    "hasizyAmi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "hatizyAvaH",
+   "vidyut": [
+    "hasizyAvaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "hatizyAmaH",
+   "vidyut": [
+    "hasizyAmaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "hatizyasi",
+   "vidyut": [
+    "hasizyasi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "hatizyaTaH",
+   "vidyut": [
+    "hasizyaTaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "hatizyaTa",
+   "vidyut": [
+    "hasizyaTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "hatizyati",
+   "vidyut": [
+    "hasizyati"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "hatizyataH",
+   "vidyut": [
+    "hasizyataH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "hatizyanti",
+   "vidyut": [
+    "hasizyanti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "apibAm",
+   "vidyut": [
+    "apibam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "apibAn",
+   "vidyut": [
+    "apiban"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1143",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "apaSyAm",
+   "vidyut": [
+    "apaSyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1143",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "apaSyAn",
+   "vidyut": [
+    "apaSyan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "dadAhi",
+   "vidyut": [
+    "dattAd",
+    "dattAt",
+    "dehi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "dadAtam",
+   "vidyut": [
+    "dattam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "dadAta",
+   "vidyut": [
+    "datta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "dadAtAm",
+   "vidyut": [
+    "dattAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "dadAtu",
+   "vidyut": [
+    "dadatu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "dAtArO",
+   "vidyut": [
+    "dAtarO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "dAtAraH",
+   "vidyut": [
+    "dAtaraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "dAtAram",
+   "vidyut": [
+    "dAtaram"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "dAtArO",
+   "vidyut": [
+    "dAtarO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "dAtArO",
+   "vidyut": [
+    "dAtarO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dAtf",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "dAtAraH",
+   "vidyut": [
+    "dAtaraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "vAri",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "vArIRi",
+   "vidyut": [
+    "vAriRi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "vAri",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "vAre",
+   "vidyut": [
+    "vAri"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "maDu",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "maDo",
+   "vidyut": [
+    "maDu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 1
+   },
+   "engine": "BagavAn",
+   "vidyut": [
+    "Bagavad",
+    "Bagavat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "BagavantO",
+   "vidyut": [
+    "BagavatO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "BagavantaH",
+   "vidyut": [
+    "BagavataH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "Bagavantam",
+   "vidyut": [
+    "Bagavatam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "BagavantO",
+   "vidyut": [
+    "BagavatO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "Bagavan",
+   "vidyut": [
+    "Bagavad",
+    "Bagavat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "BagavantO",
+   "vidyut": [
+    "BagavatO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "Bagavat",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "BagavantaH",
+   "vidyut": [
+    "BagavataH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "vidvas",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 1
+   },
+   "engine": "vidvaH",
+   "vidyut": [
+    "vidvAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "aham",
+   "vidyut": [
+    "AvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "aham",
+   "vidyut": [
+    "vayam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "aham",
+   "vidyut": [
+    "AvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "ahAn",
+   "vidyut": [
+    "asmAn"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "ahena",
+   "vidyut": [
+    "mayA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 3
+   },
+   "engine": "ahEH",
+   "vidyut": [
+    "asmABiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mahyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 3
+   },
+   "engine": "aheByaH",
+   "vidyut": [
+    "asmaByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "ahAt",
+   "vidyut": [
+    "mad",
+    "mat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "ahAByAm",
+   "vidyut": [
+    "AvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 3
+   },
+   "engine": "aheByaH",
+   "vidyut": [
+    "asmad",
+    "asmat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "aham",
+   "vidyut": [
+    "mama"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "ahayoH",
+   "vidyut": [
+    "AvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "ahAnAm",
+   "vidyut": [
+    "asmAkam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "ahe",
+   "vidyut": [
+    "mayi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "ahayoH",
+   "vidyut": [
+    "AvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "asmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 3
+   },
+   "engine": "aham",
+   "vidyut": [
+    "asmAsu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yUyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuvAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "tvAn",
+   "vidyut": [
+    "yuzmAn"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "tvena",
+   "vidyut": [
+    "tvayA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 3
+   },
+   "engine": "tvEH",
+   "vidyut": [
+    "yuzmABiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tuByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 4,
+    "vacana": 3
+   },
+   "engine": "tveByaH",
+   "vidyut": [
+    "yuzmaByam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "tvAt",
+   "vidyut": [
+    "tvad",
+    "tvat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "tvAByAm",
+   "vidyut": [
+    "yuvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 5,
+    "vacana": 3
+   },
+   "engine": "tveByaH",
+   "vidyut": [
+    "yuzmad",
+    "yuzmat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "tava"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "tvayoH",
+   "vidyut": [
+    "yuvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "tvAnAm",
+   "vidyut": [
+    "yuzmAkam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "tve",
+   "vidyut": [
+    "tvayi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "tvayoH",
+   "vidyut": [
+    "yuvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yuzmad",
+    "linga": "pulliṅga",
+    "vibhakti": 7,
+    "vacana": 3
+   },
+   "engine": "tvam",
+   "vidyut": [
+    "yuzmAsu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "yad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "etad",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "napuṃsaka",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "imAni",
+   "vidyut": [
+    "idAni"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "imAni",
+   "vidyut": [
+    "idAni"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "idam",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "pulliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "adena",
+   "vidyut": [
+    "amunA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "pulliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 1,
+    "vacana": 3
+   },
+   "engine": "amI",
+   "vidyut": [
+    "amUH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "amum",
+   "vidyut": [
+    "amUm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "amuH",
+   "vidyut": [
+    "amUH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "adena",
+   "vidyut": [
+    "amuyA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 3,
+    "vacana": 3
+   },
+   "engine": "amIBiH",
+   "vidyut": [
+    "amUBiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "amuzmE",
+   "vidyut": [
+    "amuzyE"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 4,
+    "vacana": 3
+   },
+   "engine": "amIByaH",
+   "vidyut": [
+    "amUByaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "amuzmAt",
+   "vidyut": [
+    "amuzyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 5,
+    "vacana": 3
+   },
+   "engine": "amIByaH",
+   "vidyut": [
+    "amUByaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "amuzya",
+   "vidyut": [
+    "amuzyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "amIzAm",
+   "vidyut": [
+    "amUzAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "amuzmin",
+   "vidyut": [
+    "amuzyAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 7,
+    "vacana": 3
+   },
+   "engine": "amIzu",
+   "vidyut": [
+    "amUzu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 1,
+    "vacana": 1
+   },
+   "engine": "adat",
+   "vidyut": [
+    "adaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "ade",
+   "vidyut": [
+    "amU"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 1
+   },
+   "engine": "amut",
+   "vidyut": [
+    "adaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "ade",
+   "vidyut": [
+    "amU"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 3,
+    "vacana": 1
+   },
+   "engine": "adena",
+   "vidyut": [
+    "amunA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 1
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "adas",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 3
+   },
+   "engine": "ValueError: tyadādi pronouns do not take sambodhana cells",
+   "vidyut": null,
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "strīliṅga",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "ekasyE",
+   "vidyut": [
+    "ekAyE"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "strīliṅga",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "ekasyAH",
+   "vidyut": [
+    "ekAyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "strīliṅga",
+    "vibhakti": 6,
+    "vacana": 1
+   },
+   "engine": "ekasyAH",
+   "vidyut": [
+    "ekAyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "strīliṅga",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "ekasyAm",
+   "vidyut": [
+    "ekAyAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "napuṃsaka",
+    "vibhakti": 4,
+    "vacana": 1
+   },
+   "engine": "ekasmE",
+   "vidyut": [
+    "ekAya"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "napuṃsaka",
+    "vibhakti": 5,
+    "vacana": 1
+   },
+   "engine": "ekasmAt",
+   "vidyut": [
+    "ekAd",
+    "ekAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "eka",
+    "linga": "napuṃsaka",
+    "vibhakti": 7,
+    "vacana": 1
+   },
+   "engine": "ekasmin",
+   "vidyut": [
+    "eke"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "dvI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "dvI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "dvyoH",
+   "vidyut": [
+    "dvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "dvyoH",
+   "vidyut": [
+    "dvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "strīliṅga",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "dvI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 1,
+    "vacana": 2
+   },
+   "engine": "dvinI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 2
+   },
+   "engine": "dvinI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 3,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 4,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 5,
+    "vacana": 2
+   },
+   "engine": "dviByAm",
+   "vidyut": [
+    "dvAByAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 6,
+    "vacana": 2
+   },
+   "engine": "dvinoH",
+   "vidyut": [
+    "dvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 7,
+    "vacana": 2
+   },
+   "engine": "dvinoH",
+   "vidyut": [
+    "dvayoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "dvi",
+    "linga": "napuṃsaka",
+    "vibhakti": 8,
+    "vacana": 2
+   },
+   "engine": "dvinI",
+   "vidyut": [
+    "dve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "tri",
+    "linga": "napuṃsaka",
+    "vibhakti": 2,
+    "vacana": 3
+   },
+   "engine": "trIRi",
+   "vidyut": [
+    "triRi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "subanta",
+   "request": {
+    "stem": "zaz",
+    "linga": "pulliṅga",
+    "vibhakti": 6,
+    "vacana": 3
+   },
+   "engine": "zazRAm",
+   "vidyut": [
+    "zaRRAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1143",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "apaSyAn",
+   "vidyut": [
+    "apaSyan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1143",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "apaSyAm",
+   "vidyut": [
+    "apaSyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "apibAn",
+   "vidyut": [
+    "apiban"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "apibAm",
+   "vidyut": [
+    "apibam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "pAyAt",
+   "vidyut": [
+    "peyAd",
+    "peyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "pAyAstAm",
+   "vidyut": [
+    "peyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "pAyAsuH",
+   "vidyut": [
+    "peyAsuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "pAyAH",
+   "vidyut": [
+    "peyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "pAyAstam",
+   "vidyut": [
+    "peyAstam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "pAyAsta",
+   "vidyut": [
+    "peyAsta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "pAyAsam",
+   "vidyut": [
+    "peyAsam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "pAyAsva",
+   "vidyut": [
+    "peyAsva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1074",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "pAyAsma",
+   "vidyut": [
+    "peyAsma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "avadIt",
+   "vidyut": [
+    "avAdId",
+    "avAdIt",
+    "avadizwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "avadizwAm",
+   "vidyut": [
+    "avAdizwAm",
+    "avadizAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "avadizuH",
+   "vidyut": [
+    "avAdizuH",
+    "avadizata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "avadIH",
+   "vidyut": [
+    "avAdIH",
+    "avadizWAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "avadizwam",
+   "vidyut": [
+    "avAdizwam",
+    "avadizATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "avadizwa",
+   "vidyut": [
+    "avAdizwa",
+    "avadiDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "avadizam",
+   "vidyut": [
+    "avAdizam",
+    "avadizi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "avadizva",
+   "vidyut": [
+    "avAdizva",
+    "avadizvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "avadizma",
+   "vidyut": [
+    "avAdizma",
+    "avadizmahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "vadyAt",
+   "vidyut": [
+    "udyAd",
+    "udyAt",
+    "vadizIzwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "vadyAstAm",
+   "vidyut": [
+    "udyAstAm",
+    "vadizIyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "vadyAsuH",
+   "vidyut": [
+    "udyAsuH",
+    "vadizIran"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "vadyAH",
+   "vidyut": [
+    "udyAH",
+    "vadizIzWAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "vadyAstam",
+   "vidyut": [
+    "udyAstam",
+    "vadizIyAsTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "vadyAsta",
+   "vidyut": [
+    "udyAsta",
+    "vadizIDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "vadyAsam",
+   "vidyut": [
+    "udyAsam",
+    "vadizIya"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "vadyAsva",
+   "vidyut": [
+    "udyAsva",
+    "vadizIvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1164",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "vadyAsma",
+   "vidyut": [
+    "udyAsma",
+    "vadizImahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "apatat",
+   "vidyut": [
+    "apaptad",
+    "apaptat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "apatatAm",
+   "vidyut": [
+    "apaptatAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "apatan",
+   "vidyut": [
+    "apaptan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "apataH",
+   "vidyut": [
+    "apaptaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "apatatam",
+   "vidyut": [
+    "apaptatam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "apatata",
+   "vidyut": [
+    "apaptata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "apatam",
+   "vidyut": [
+    "apaptam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "apatAva",
+   "vidyut": [
+    "apaptAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0979",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "apatAma",
+   "vidyut": [
+    "apaptAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "ahatizyat",
+   "vidyut": [
+    "ahasizyad",
+    "ahasizyat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "ahatizyatAm",
+   "vidyut": [
+    "ahasizyatAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "ahatizyan",
+   "vidyut": [
+    "ahasizyan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "ahatizyaH",
+   "vidyut": [
+    "ahasizyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "ahatizyatam",
+   "vidyut": [
+    "ahasizyatam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "ahatizyata",
+   "vidyut": [
+    "ahasizyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "ahatizyam",
+   "vidyut": [
+    "ahasizyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "ahatizyAva",
+   "vidyut": [
+    "ahasizyAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0822",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "ahatizyAma",
+   "vidyut": [
+    "ahasizyAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "avAssIt",
+   "vidyut": [
+    "avAtsId",
+    "avAtsIt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "avAstAm",
+   "vidyut": [
+    "avAttAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "avAssuH",
+   "vidyut": [
+    "avAtsuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "avAssIH",
+   "vidyut": [
+    "avAtsIH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "avAstam",
+   "vidyut": [
+    "avAttam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "avAsta",
+   "vidyut": [
+    "avAtta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "avAssam",
+   "vidyut": [
+    "avAtsam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "avAssva",
+   "vidyut": [
+    "avAtsva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "avAssma",
+   "vidyut": [
+    "avAtsma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "vasyAt",
+   "vidyut": [
+    "uzyAd",
+    "uzyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "vasyAstAm",
+   "vidyut": [
+    "uzyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "vasyAsuH",
+   "vidyut": [
+    "uzyAsuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "vasyAH",
+   "vidyut": [
+    "uzyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "vasyAstam",
+   "vidyut": [
+    "uzyAstam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "vasyAsta",
+   "vidyut": [
+    "uzyAsta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "vasyAsam",
+   "vidyut": [
+    "uzyAsam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "vasyAsva",
+   "vidyut": [
+    "uzyAsva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1160",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "vasyAsma",
+   "vidyut": [
+    "uzyAsma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "acarIt",
+   "vidyut": [
+    "acArId",
+    "acArIt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "acarizwAm",
+   "vidyut": [
+    "acArizwAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "acarizuH",
+   "vidyut": [
+    "acArizuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "acarIH",
+   "vidyut": [
+    "acArIH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "acarizwam",
+   "vidyut": [
+    "acArizwam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "acarizwa",
+   "vidyut": [
+    "acArizwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "acarizam",
+   "vidyut": [
+    "acArizam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "acarizva",
+   "vidyut": [
+    "acArizva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0640",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "acarizma",
+   "vidyut": [
+    "acArizma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "avarDsyat",
+   "vidyut": [
+    "avarDizyata",
+    "avartsyad",
+    "avartsyat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "avarDsyatas",
+   "vidyut": [
+    "avarDizyetAm",
+    "avartsyatAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "avarDsyaJ",
+   "vidyut": [
+    "avarDizyanta",
+    "avartsyan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "avarDsyas",
+   "vidyut": [
+    "avarDizyaTAH",
+    "avartsyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "avarDsyaTas",
+   "vidyut": [
+    "avarDizyeTAm",
+    "avartsyatam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "avarDsyaTa",
+   "vidyut": [
+    "avarDizyaDvam",
+    "avartsyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "avarDsyam",
+   "vidyut": [
+    "avarDizye",
+    "avartsyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "avarDsyavas",
+   "vidyut": [
+    "avarDizyAvahi",
+    "avartsyAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0863",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "avarDsyamas",
+   "vidyut": [
+    "avarDizyAmahi",
+    "avartsyAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "atizyati",
+   "vidyut": [
+    "asizyate",
+    "asizyati"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "atizyataH",
+   "vidyut": [
+    "asizyataH",
+    "asizyete"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "atizyanti",
+   "vidyut": [
+    "asizyante",
+    "asizyanti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "atizyasi",
+   "vidyut": [
+    "asizyase",
+    "asizyasi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "atizyaTaH",
+   "vidyut": [
+    "asizyaTaH",
+    "asizyeTe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "atizyaTa",
+   "vidyut": [
+    "asizyaDve",
+    "asizyaTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "atizyAmi",
+   "vidyut": [
+    "asizyAmi",
+    "asizye"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "atizyAvaH",
+   "vidyut": [
+    "asizyAvaH",
+    "asizyAvahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "atizyAmaH",
+   "vidyut": [
+    "asizyAmaH",
+    "asizyAmahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "Atizyat",
+   "vidyut": [
+    "Asizyad",
+    "Asizyat",
+    "Asizyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "AtizyatAm",
+   "vidyut": [
+    "AsizyatAm",
+    "AsizyetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "Atizyan",
+   "vidyut": [
+    "Asizyan",
+    "Asizyanta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "AtizyaH",
+   "vidyut": [
+    "AsizyaH",
+    "AsizyaTAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "Atizyatam",
+   "vidyut": [
+    "Asizyatam",
+    "AsizyeTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "Atizyata",
+   "vidyut": [
+    "AsizyaDvam",
+    "Asizyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "Atizyam",
+   "vidyut": [
+    "Asizyam",
+    "Asizye"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "AtizyAva",
+   "vidyut": [
+    "AsizyAva",
+    "AsizyAvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.1029",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "AtizyAma",
+   "vidyut": [
+    "AsizyAma",
+    "AsizyAmahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "jahAna",
+   "vidyut": [
+    "jaGAna"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "jahnatuH",
+   "vidyut": [
+    "jaGnatuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "jahnuH",
+   "vidyut": [
+    "jaGnuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "jahaniTa",
+   "vidyut": [
+    "jaGanTa",
+    "jaGaniTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "jahnaTuH",
+   "vidyut": [
+    "jaGnaTuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "jahna",
+   "vidyut": [
+    "jaGna"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "jahAna",
+   "vidyut": [
+    "jaGAna",
+    "jaGana"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "jahniva",
+   "vidyut": [
+    "jaGniva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0002",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "jahnima",
+   "vidyut": [
+    "jaGnima"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "bravizyati",
+   "vidyut": [
+    "vakzyate",
+    "vakzyati"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "bravizyataH",
+   "vidyut": [
+    "vakzyataH",
+    "vakzyete"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "bravizyanti",
+   "vidyut": [
+    "vakzyante",
+    "vakzyanti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "bravizyasi",
+   "vidyut": [
+    "vakzyase",
+    "vakzyasi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "bravizyaTaH",
+   "vidyut": [
+    "vakzyaTaH",
+    "vakzyeTe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "bravizyaTa",
+   "vidyut": [
+    "vakzyaDve",
+    "vakzyaTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "bravizyAmi",
+   "vidyut": [
+    "vakzyAmi",
+    "vakzye"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "bravizyAvaH",
+   "vidyut": [
+    "vakzyAvaH",
+    "vakzyAvahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "bravizyAmaH",
+   "vidyut": [
+    "vakzyAmaH",
+    "vakzyAmahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "bravitA",
+   "vidyut": [
+    "vaktA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "bravitArO",
+   "vidyut": [
+    "vaktArO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "bravitAraH",
+   "vidyut": [
+    "vaktAraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "bravitAsi",
+   "vidyut": [
+    "vaktAse",
+    "vaktAsi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "bravitAsTaH",
+   "vidyut": [
+    "vaktAsATe",
+    "vaktAsTaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "bravitAsTa",
+   "vidyut": [
+    "vaktADve",
+    "vaktAsTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "bravitAsmi",
+   "vidyut": [
+    "vaktAhe",
+    "vaktAsmi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "bravitAsvaH",
+   "vidyut": [
+    "vaktAsvaH",
+    "vaktAsvahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "bravitAsmaH",
+   "vidyut": [
+    "vaktAsmaH",
+    "vaktAsmahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "bubrAva",
+   "vidyut": [
+    "Uce",
+    "uvAca"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "bubruvatuH",
+   "vidyut": [
+    "UcAte",
+    "UcatuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "bubruvuH",
+   "vidyut": [
+    "Ucire",
+    "UcuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "bubraviTa",
+   "vidyut": [
+    "Ucize",
+    "uvaciTa",
+    "uvakTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "bubruvaTuH",
+   "vidyut": [
+    "UcATe",
+    "UcaTuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "bubruva",
+   "vidyut": [
+    "Uca",
+    "UciDve"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "bubrAva",
+   "vidyut": [
+    "Uce",
+    "uvAca",
+    "uvaca"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "bubruviva",
+   "vidyut": [
+    "Uciva",
+    "Ucivahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "liT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "bubruvima",
+   "vidyut": [
+    "Ucima",
+    "Ucimahe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "abrAvIt",
+   "vidyut": [
+    "avocad",
+    "avocat",
+    "avocata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "abrAvizwAm",
+   "vidyut": [
+    "avocatAm",
+    "avocetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "abrAvizuH",
+   "vidyut": [
+    "avocan",
+    "avocanta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "abrAvIH",
+   "vidyut": [
+    "avocaH",
+    "avocaTAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "abrAvizwam",
+   "vidyut": [
+    "avocatam",
+    "avoceTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "abrAvizwa",
+   "vidyut": [
+    "avocaDvam",
+    "avocata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "abrAvizam",
+   "vidyut": [
+    "avocam",
+    "avoce"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "abrAvizva",
+   "vidyut": [
+    "avocAva",
+    "avocAvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "abrAvizma",
+   "vidyut": [
+    "avocAma",
+    "avocAmahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "brUyAt",
+   "vidyut": [
+    "ucyAd",
+    "ucyAt",
+    "vakzIzwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "brUyAstAm",
+   "vidyut": [
+    "ucyAstAm",
+    "vakzIyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "brUyAsuH",
+   "vidyut": [
+    "ucyAsuH",
+    "vakzIran"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "brUyAH",
+   "vidyut": [
+    "ucyAH",
+    "vakzIzWAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "brUyAstam",
+   "vidyut": [
+    "ucyAstam",
+    "vakzIyAsTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "brUyAsta",
+   "vidyut": [
+    "ucyAsta",
+    "vakzIDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "brUyAsam",
+   "vidyut": [
+    "ucyAsam",
+    "vakzIya"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "brUyAsva",
+   "vidyut": [
+    "ucyAsva",
+    "vakzIvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "brUyAsma",
+   "vidyut": [
+    "ucyAsma",
+    "vakzImahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "abravizyat",
+   "vidyut": [
+    "avakzyad",
+    "avakzyat",
+    "avakzyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "abravizyatAm",
+   "vidyut": [
+    "avakzyatAm",
+    "avakzyetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "abravizyan",
+   "vidyut": [
+    "avakzyan",
+    "avakzyanta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "abravizyaH",
+   "vidyut": [
+    "avakzyaH",
+    "avakzyaTAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "abravizyatam",
+   "vidyut": [
+    "avakzyatam",
+    "avakzyeTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "abravizyata",
+   "vidyut": [
+    "avakzyaDvam",
+    "avakzyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "abravizyam",
+   "vidyut": [
+    "avakzyam",
+    "avakzye"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "abravizyAva",
+   "vidyut": [
+    "avakzyAva",
+    "avakzyAvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0039",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "abravizyAma",
+   "vidyut": [
+    "avakzyAma",
+    "avakzyAmahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "SeTAH",
+   "vidyut": [
+    "Seze"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "SItAm",
+   "vidyut": [
+    "SetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "SIAtAm",
+   "vidyut": [
+    "SayAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "SIatAm",
+   "vidyut": [
+    "SeratAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "SIzva",
+   "vidyut": [
+    "Sezva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "SIATAm",
+   "vidyut": [
+    "SayATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "SIDvam",
+   "vidyut": [
+    "SeDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "loT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "SIAmahE",
+   "vidyut": [
+    "SayAmahE"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "aSIta",
+   "vidyut": [
+    "aSeta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "aSIAtAm",
+   "vidyut": [
+    "aSayAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "aSIata",
+   "vidyut": [
+    "aSerata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "aSITAH",
+   "vidyut": [
+    "aSeTAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "aSIATAm",
+   "vidyut": [
+    "aSayATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "aSIDvam",
+   "vidyut": [
+    "aSeDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "aSI",
+   "vidyut": [
+    "aSayi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "aSIvahi",
+   "vidyut": [
+    "aSevahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "aSImahi",
+   "vidyut": [
+    "aSemahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "SIta",
+   "vidyut": [
+    "SayIta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "SIyAtAm",
+   "vidyut": [
+    "SayIyAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "SIran",
+   "vidyut": [
+    "SayIran"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "SITAH",
+   "vidyut": [
+    "SayITAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "SIyATAm",
+   "vidyut": [
+    "SayIyATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "SIDvam",
+   "vidyut": [
+    "SayIDvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "SIya",
+   "vidyut": [
+    "SayIya"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "SIvahi",
+   "vidyut": [
+    "SayIvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "02.0026",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "SImahi",
+   "vidyut": [
+    "SayImahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0001",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "juhuatu",
+   "vidyut": [
+    "juhvatu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0001",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "juhuhi",
+   "vidyut": [
+    "juhuDi",
+    "juhutAd",
+    "juhutAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0001",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "ajuhut",
+   "vidyut": [
+    "ajuhod",
+    "ajuhot"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0001",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "ajuhuH",
+   "vidyut": [
+    "ajuhoH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0001",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "ajuhuam",
+   "vidyut": [
+    "ajuhavam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "dadAtu",
+   "vidyut": [
+    "dadatAm",
+    "dadatu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "dadAhi",
+   "vidyut": [
+    "datsva",
+    "dattAd",
+    "dattAt",
+    "dehi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "dadAtam",
+   "vidyut": [
+    "dadATAm",
+    "dattam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "dadAta",
+   "vidyut": [
+    "dadDvam",
+    "datta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "dadAyAt",
+   "vidyut": [
+    "dadIta",
+    "dadyAd",
+    "dadyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "dadAyAtAm",
+   "vidyut": [
+    "dadIyAtAm",
+    "dadyAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "dadAyuH",
+   "vidyut": [
+    "dadIran",
+    "dadyuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "dadAyAH",
+   "vidyut": [
+    "dadITAH",
+    "dadyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "dadAyAtam",
+   "vidyut": [
+    "dadIyATAm",
+    "dadyAtam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "dadAyAta",
+   "vidyut": [
+    "dadIDvam",
+    "dadyAta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "dadAyAm",
+   "vidyut": [
+    "dadIya",
+    "dadyAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "dadAyAva",
+   "vidyut": [
+    "dadIvahi",
+    "dadyAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "dadAyAma",
+   "vidyut": [
+    "dadImahi",
+    "dadyAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "dAyAt",
+   "vidyut": [
+    "dAsIzwa",
+    "deyAd",
+    "deyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "dAyAstAm",
+   "vidyut": [
+    "dAsIyAstAm",
+    "deyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "dAyAsuH",
+   "vidyut": [
+    "dAsIran",
+    "deyAsuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "dAyAH",
+   "vidyut": [
+    "dAsIzWAH",
+    "deyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "dAyAstam",
+   "vidyut": [
+    "dAsIyAsTAm",
+    "deyAstam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "dAyAsta",
+   "vidyut": [
+    "dAsIDvam",
+    "deyAsta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "dAyAsam",
+   "vidyut": [
+    "dAsIya",
+    "deyAsam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "dAyAsva",
+   "vidyut": [
+    "dAsIvahi",
+    "deyAsva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0010",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "dAyAsma",
+   "vidyut": [
+    "dAsImahi",
+    "deyAsma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "dattaH",
+   "vidyut": [
+    "DattaH",
+    "daDAte"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "datTaH",
+   "vidyut": [
+    "DatTaH",
+    "daDATe"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "datTa",
+   "vidyut": [
+    "DadDve",
+    "DatTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "daDAtu",
+   "vidyut": [
+    "daDatAm",
+    "daDatu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "daDAhi",
+   "vidyut": [
+    "Datsva",
+    "DattAd",
+    "DattAt",
+    "Dehi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "daDAtam",
+   "vidyut": [
+    "Dattam",
+    "daDATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "loT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "daDAta",
+   "vidyut": [
+    "DadDvam",
+    "Datta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "adattAm",
+   "vidyut": [
+    "aDattAm",
+    "adaDAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "adattam",
+   "vidyut": [
+    "aDattam",
+    "adaDATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "adatta",
+   "vidyut": [
+    "aDadDvam",
+    "aDatta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "daDAyAt",
+   "vidyut": [
+    "daDIta",
+    "daDyAd",
+    "daDyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "daDAyAtAm",
+   "vidyut": [
+    "daDIyAtAm",
+    "daDyAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "daDAyuH",
+   "vidyut": [
+    "daDIran",
+    "daDyuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "daDAyAH",
+   "vidyut": [
+    "daDITAH",
+    "daDyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "daDAyAtam",
+   "vidyut": [
+    "daDIyATAm",
+    "daDyAtam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "daDAyAta",
+   "vidyut": [
+    "daDIDvam",
+    "daDyAta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "daDAyAm",
+   "vidyut": [
+    "daDIya",
+    "daDyAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "daDAyAva",
+   "vidyut": [
+    "daDIvahi",
+    "daDyAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "daDAyAma",
+   "vidyut": [
+    "daDImahi",
+    "daDyAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "DAyAt",
+   "vidyut": [
+    "DAsIzwa",
+    "DeyAd",
+    "DeyAt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "DAyAstAm",
+   "vidyut": [
+    "DAsIyAstAm",
+    "DeyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "DAyAsuH",
+   "vidyut": [
+    "DAsIran",
+    "DeyAsuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "DAyAH",
+   "vidyut": [
+    "DAsIzWAH",
+    "DeyAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "DAyAstam",
+   "vidyut": [
+    "DAsIyAsTAm",
+    "DeyAstam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "DAyAsta",
+   "vidyut": [
+    "DAsIDvam",
+    "DeyAsta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "DAyAsam",
+   "vidyut": [
+    "DAsIya",
+    "DeyAsam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "DAyAsva",
+   "vidyut": [
+    "DAsIvahi",
+    "DeyAsva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0011",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "DAyAsma",
+   "vidyut": [
+    "DAsImahi",
+    "DeyAsma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0002",
+    "lakara": "loT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "biBIatu",
+   "vidyut": [
+    "biByatu"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0002",
+    "lakara": "laG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "abiBIt",
+   "vidyut": [
+    "abiBed",
+    "abiBet"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0002",
+    "lakara": "laG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "abiBIH",
+   "vidyut": [
+    "abiBeH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "03.0002",
+    "lakara": "laG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "abiBIam",
+   "vidyut": [
+    "abiBayam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "MSyet",
+   "vidyut": [
+    "naSyed",
+    "naSyet"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "MSyetAm",
+   "vidyut": [
+    "naSyetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "MSyeyuH",
+   "vidyut": [
+    "naSyeyuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "MSyeH",
+   "vidyut": [
+    "naSyeH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "MSyetam",
+   "vidyut": [
+    "naSyetam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "MSyeta",
+   "vidyut": [
+    "naSyeta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "MSyeyam",
+   "vidyut": [
+    "naSyeyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "MSyeva",
+   "vidyut": [
+    "naSyeva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "MSyema",
+   "vidyut": [
+    "naSyema"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "anaSat",
+   "vidyut": [
+    "anASId",
+    "anASIt",
+    "anaSId",
+    "anaSIt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "anaSatAm",
+   "vidyut": [
+    "anASizwAm",
+    "anaSizwAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "anaSan",
+   "vidyut": [
+    "anASizuH",
+    "anaSizuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "anaSaH",
+   "vidyut": [
+    "anASIH",
+    "anaSIH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "anaSatam",
+   "vidyut": [
+    "anASizwam",
+    "anaSizwam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "anaSata",
+   "vidyut": [
+    "anASizwa",
+    "anaSizwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "anaSam",
+   "vidyut": [
+    "anASizam",
+    "anaSizam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "anaSAva",
+   "vidyut": [
+    "anASizva",
+    "anaSizva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "04.0091",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "anaSAma",
+   "vidyut": [
+    "anASizma",
+    "anaSizma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "asOzIt",
+   "vidyut": [
+    "asAvId",
+    "asAvIt",
+    "asozwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "asOzwAm",
+   "vidyut": [
+    "asAvizwAm",
+    "asozAtAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "asOzuH",
+   "vidyut": [
+    "asAvizuH",
+    "asozata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "asOzIH",
+   "vidyut": [
+    "asAvIH",
+    "asozWAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "asOzwam",
+   "vidyut": [
+    "asAvizwam",
+    "asozATAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "asOzwa",
+   "vidyut": [
+    "asAvizwa",
+    "asoQvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "asOzam",
+   "vidyut": [
+    "asAvizam",
+    "asozi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "asOzva",
+   "vidyut": [
+    "asAvizva",
+    "asozvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "05.0001",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "asOzma",
+   "vidyut": [
+    "asAvizma",
+    "asozmahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "06.0160",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "avikzAn",
+   "vidyut": [
+    "avikzan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "06.0160",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "avikzAm",
+   "vidyut": [
+    "avikzam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "jYAati",
+   "vidyut": [
+    "jYAti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "jYAataH",
+   "vidyut": [
+    "jYAtaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "jYAanti",
+   "vidyut": [
+    "jYAnti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "jYAasi",
+   "vidyut": [
+    "jYAsi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "jYAaTaH",
+   "vidyut": [
+    "jYATaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "jYAaTa",
+   "vidyut": [
+    "jYATa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "jYAAmi",
+   "vidyut": [
+    "jYAmi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "jYAAvaH",
+   "vidyut": [
+    "jYAvaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "laT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "jYAAmaH",
+   "vidyut": [
+    "jYAmaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "jYezyati",
+   "vidyut": [
+    "jYizyati"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "jYezyataH",
+   "vidyut": [
+    "jYizyataH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "jYezyanti",
+   "vidyut": [
+    "jYizyanti"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "jYezyasi",
+   "vidyut": [
+    "jYizyasi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "jYezyaTaH",
+   "vidyut": [
+    "jYizyaTaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "jYezyaTa",
+   "vidyut": [
+    "jYizyaTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "jYezyAmi",
+   "vidyut": [
+    "jYizyAmi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "jYezyAvaH",
+   "vidyut": [
+    "jYizyAvaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "jYezyAmaH",
+   "vidyut": [
+    "jYizyAmaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "jYAet",
+   "vidyut": [
+    "jYed",
+    "jYet"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "jYAetAm",
+   "vidyut": [
+    "jYetAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "jYAeyuH",
+   "vidyut": [
+    "jYeyuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "jYAeH",
+   "vidyut": [
+    "jYeH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "jYAetam",
+   "vidyut": [
+    "jYetam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "jYAeta",
+   "vidyut": [
+    "jYeta"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "jYAeyam",
+   "vidyut": [
+    "jYeyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "jYAeva",
+   "vidyut": [
+    "jYeva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "liG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "jYAema",
+   "vidyut": [
+    "jYema"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "jYAitA",
+   "vidyut": [
+    "jYitA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "jYAitArO",
+   "vidyut": [
+    "jYitArO"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "jYAitAraH",
+   "vidyut": [
+    "jYitAraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "jYAitAsi",
+   "vidyut": [
+    "jYitAsi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "jYAitAsTaH",
+   "vidyut": [
+    "jYitAsTaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "jYAitAsTa",
+   "vidyut": [
+    "jYitAsTa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "jYAitAsmi",
+   "vidyut": [
+    "jYitAsmi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "jYAitAsvaH",
+   "vidyut": [
+    "jYitAsvaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luT",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "jYAitAsmaH",
+   "vidyut": [
+    "jYitAsmaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "ajYIt",
+   "vidyut": [
+    "ajYAsId",
+    "ajYAsIt"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "ajYizwAm",
+   "vidyut": [
+    "ajYAsizwAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "ajYizuH",
+   "vidyut": [
+    "ajYAsizuH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "ajYIH",
+   "vidyut": [
+    "ajYAsIH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "ajYizwam",
+   "vidyut": [
+    "ajYAsizwam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "ajYizwa",
+   "vidyut": [
+    "ajYAsizwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "ajYizam",
+   "vidyut": [
+    "ajYAsizam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "ajYizva",
+   "vidyut": [
+    "ajYAsizva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "luG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "ajYizma",
+   "vidyut": [
+    "ajYAsizma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "ajYezyat",
+   "vidyut": [
+    "ajYizyad",
+    "ajYizyat"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "ajYezyatAm",
+   "vidyut": [
+    "ajYizyatAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "ajYezyan",
+   "vidyut": [
+    "ajYizyan"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "ajYezyaH",
+   "vidyut": [
+    "ajYizyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "ajYezyatam",
+   "vidyut": [
+    "ajYizyatam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "ajYezyata",
+   "vidyut": [
+    "ajYizyata"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "ajYezyam",
+   "vidyut": [
+    "ajYizyam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "ajYezyAva",
+   "vidyut": [
+    "ajYizyAva"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "01.0923",
+    "lakara": "lRG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "ajYezyAma",
+   "vidyut": [
+    "ajYizyAma"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 1
+   },
+   "engine": "grahyAt",
+   "vidyut": [
+    "gfhyAd",
+    "gfhyAt",
+    "grahIzIzwa"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 2
+   },
+   "engine": "grahyAstAm",
+   "vidyut": [
+    "gfhyAstAm",
+    "grahIzIyAstAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 3,
+    "vacana": 3
+   },
+   "engine": "grahyAsuH",
+   "vidyut": [
+    "gfhyAsuH",
+    "grahIzIran"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 1
+   },
+   "engine": "grahyAH",
+   "vidyut": [
+    "gfhyAH",
+    "grahIzIzWAH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 2
+   },
+   "engine": "grahyAstam",
+   "vidyut": [
+    "gfhyAstam",
+    "grahIzIyAsTAm"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 2,
+    "vacana": 3
+   },
+   "engine": "grahyAsta",
+   "vidyut": [
+    "gfhyAsta",
+    "grahIzIDvam",
+    "grahIzIQvam"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 1
+   },
+   "engine": "grahyAsam",
+   "vidyut": [
+    "gfhyAsam",
+    "grahIzIya"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 2
+   },
+   "engine": "grahyAsva",
+   "vidyut": [
+    "gfhyAsva",
+    "grahIzIvahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "tinanta",
+   "request": {
+    "dhatu": "09.0071",
+    "lakara": "AsIrliG",
+    "purusha": 1,
+    "vacana": 3
+   },
+   "engine": "grahyAsma",
+   "vidyut": [
+    "gfhyAsma",
+    "grahIzImahi"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.0381",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "paWitiH",
+   "vidyut": [
+    "pawwiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    },
+    "linga": "pulliṅga",
+    "krt": "ktvA"
+   },
+   "engine": "dfStvA",
+   "vidyut": [
+    "dfzwvA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "kala": "BUta",
+     "artha": "karman"
+    },
+    "linga": "pulliṅga",
+    "krt": "kta"
+   },
+   "engine": "dfStaH",
+   "vidyut": [
+    "dfzwaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "kala": "BUta",
+     "artha": "karman"
+    },
+    "linga": "pulliṅga",
+    "krt": "kta"
+   },
+   "engine": "dfSttaH",
+   "vidyut": [
+    "dfzwaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "tavya"
+   },
+   "engine": "draStavyaH",
+   "vidyut": [
+    "drazwavyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "tavya"
+   },
+   "engine": "draSttavvyaH",
+   "vidyut": [
+    "drazwavyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "tavya"
+   },
+   "engine": "draStavvyaH",
+   "vidyut": [
+    "drazwavyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "krt": "Rvultfc"
+    },
+    "linga": "pulliṅga",
+    "krt": "tfc"
+   },
+   "engine": "draStA",
+   "vidyut": [
+    "drazwA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "krt": "Rvultfc"
+    },
+    "linga": "pulliṅga",
+    "krt": "tfc"
+   },
+   "engine": "draSttA",
+   "vidyut": [
+    "drazwA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "pulliṅga",
+    "krt": "GaY"
+   },
+   "engine": "dfSaH",
+   "vidyut": [
+    "darSaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "dfStiH",
+   "vidyut": [
+    "dfzwiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1143",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "dfSttiH",
+   "vidyut": [
+    "dfzwiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "03.0010",
+    "vivaksha": {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    },
+    "linga": "pulliṅga",
+    "krt": "ktvA"
+   },
+   "engine": "daTtvA",
+   "vidyut": [
+    "dattvA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.0923",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "jYitiH",
+   "vidyut": [
+    "jYAtiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1164",
+    "vivaksha": {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    },
+    "linga": "pulliṅga",
+    "krt": "ktvA"
+   },
+   "engine": "oditvA",
+   "vidyut": [
+    "uditvA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1164",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "uditiH",
+   "vidyut": [
+    "uttiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "06.0092",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "pulliṅga",
+    "krt": "GaY"
+   },
+   "engine": "liKaH",
+   "vidyut": [
+    "leKaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "06.0092",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "liKitiH",
+   "vidyut": [
+    "liktiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1141",
+    "vivaksha": {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    },
+    "linga": "pulliṅga",
+    "krt": "ktvA"
+   },
+   "engine": "tyajtvA",
+   "vidyut": [
+    "tyaktvA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.1141",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "pulliṅga",
+    "krt": "GaY"
+   },
+   "engine": "tyAjaH",
+   "vidyut": [
+    "tyAgaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "01.0979",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "patitiH",
+   "vidyut": [
+    "pattiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    },
+    "linga": "pulliṅga",
+    "krt": "ktvA"
+   },
+   "engine": "corItvA",
+   "vidyut": [
+    "corayitvA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "kala": "vartamAna",
+     "samAnADikaraRa": "apraTamA"
+    },
+    "linga": "pulliṅga",
+    "krt": "SAnac"
+   },
+   "engine": "coryamARaH",
+   "vidyut": [
+    "corayamARaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "kala": "vartamAna",
+     "samAnADikaraRa": "apraTamA"
+    },
+    "linga": "pulliṅga",
+    "krt": "SAnac"
+   },
+   "engine": "coryyamARaH",
+   "vidyut": [
+    "corayamARaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "anIyar"
+   },
+   "engine": "coryaRIyaH",
+   "vidyut": [
+    "coraRIyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "anIyar"
+   },
+   "engine": "coryyaRIyaH",
+   "vidyut": [
+    "coraRIyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "tavya"
+   },
+   "engine": "corItavyaH",
+   "vidyut": [
+    "corayitavyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "krt": "kftya"
+    },
+    "linga": "pulliṅga",
+    "krt": "tavya"
+   },
+   "engine": "corItavvyaH",
+   "vidyut": [
+    "corayitavyaH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "krt": "Rvultfc"
+    },
+    "linga": "pulliṅga",
+    "krt": "tfc"
+   },
+   "engine": "corItA",
+   "vidyut": [
+    "corayitA"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "pulliṅga",
+    "krt": "ac"
+   },
+   "engine": "coryaH",
+   "vidyut": [
+    "coraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "pulliṅga",
+    "krt": "ac"
+   },
+   "engine": "coryyaH",
+   "vidyut": [
+    "coraH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "krdanta",
+   "request": {
+    "dhatu": "10.0001",
+    "vivaksha": {
+     "artha": "BAva"
+    },
+    "linga": "strīliṅga",
+    "krt": "ktin"
+   },
+   "engine": "corItiH",
+   "vidyut": [
+    "cortiH"
+   ],
+   "note": ""
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "garga",
+    "taddhitArtha": "apatya",
+    "pratyaya": "iY"
+   },
+   "engine": "gArggiH",
+   "vidyut": [
+    "gArgiH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "aSvapati",
+    "taddhitArtha": "apatya",
+    "pratyaya": "aR"
+   },
+   "engine": "ASSvapataH",
+   "vidyut": [
+    "ASvapataH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "dakza",
+    "taddhitArtha": "apatya",
+    "pratyaya": "iY"
+   },
+   "engine": "dAkzziH",
+   "vidyut": [
+    "dAkziH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "kuru",
+    "taddhitArtha": "apatya",
+    "pratyaya": "Rya"
+   },
+   "engine": "kOravvyaH",
+   "vidyut": [
+    "kOravyaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "buddhi",
+    "taddhitArtha": "asti",
+    "pratyaya": "aR"
+   },
+   "engine": "bOdddhaH",
+   "vidyut": [
+    "bOddDaH",
+    "bOddhaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "mfd",
+    "taddhitArtha": "vikAra",
+    "pratyaya": "mayaw"
+   },
+   "engine": "mfdmayaH",
+   "vidyut": [
+    "mfnmayaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "mfd",
+    "taddhitArtha": "vikAra",
+    "pratyaya": "mayaw"
+   },
+   "engine": "mfddmayaH",
+   "vidyut": [
+    "mfnmayaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "suvarRa",
+    "taddhitArtha": "vikAra",
+    "pratyaya": "aY"
+   },
+   "engine": "sOvarRRaH",
+   "vidyut": [
+    "sOvarRaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "suvarRa",
+    "taddhitArtha": "vikAra",
+    "pratyaya": "mayaw"
+   },
+   "engine": "suvarRRamayaH",
+   "vidyut": [
+    "suvarRamayaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "agni",
+    "taddhitArtha": "devatA",
+    "pratyaya": "aR"
+   },
+   "engine": "AggnaH",
+   "vidyut": [
+    "AgnaH"
+   ],
+   "note": "Vidyut lists one branch of an optional rule at times (e.g. 8.4.45 vā)"
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "grAma",
+    "taddhitArtha": "Seza",
+    "pratyaya": "Iya"
+   },
+   "engine": "grAmIyaH",
+   "vidyut": [],
+   "note": ""
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "rAzwra",
+    "taddhitArtha": "Seza",
+    "pratyaya": "iya"
+   },
+   "engine": "rAzwriyaH",
+   "vidyut": [],
+   "note": ""
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "rAzwra",
+    "taddhitArtha": "Seza",
+    "pratyaya": "iya"
+   },
+   "engine": "rAzwwriyaH",
+   "vidyut": [],
+   "note": ""
+  },
+  {
+   "family": "taddhita",
+   "request": {
+    "stem": "mATura",
+    "taddhitArtha": "Bava",
+    "pratyaya": "Iya"
+   },
+   "engine": "mATurIyaH",
+   "vidyut": [],
+   "note": ""
+  }
+ ]
+}

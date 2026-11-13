@@ -35,6 +35,7 @@ need_gold() {
 }
 
 start_apps() {
+  page="${1:-practice}"              # what the browser opens: practice (अभ्यास tab) | home
   busy() { lsof -ti "tcp:$1" >/dev/null 2>&1; }
   trap 'kill 0' EXIT INT TERM       # closing this window stops the servers
 
@@ -50,7 +51,7 @@ start_apps() {
 
   Home      http://127.0.0.1:${API_PORT}/
   Lab       http://127.0.0.1:${API_PORT}/lab
-  अभ्यास    http://127.0.0.1:${API_PORT}/practice
+  अभ्यास    http://127.0.0.1:${WEB_PORT}/practice   (sanskritabhyas.in drills · engine + Vidyut)
   संशोधनम्  http://127.0.0.1:${API_PORT}/review
   सूत्र-व्याप्तिः http://127.0.0.1:${API_PORT}/coverage   (confident sūtras · recipe-free derivation)
   पाठः      http://127.0.0.1:${API_PORT}/pages/learn.html
@@ -69,7 +70,7 @@ EOF
   while [ "$j" -lt 90 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${WEB_PORT}/"; do
     j=$((j + 1)); sleep 1
   done
-  open "http://127.0.0.1:${API_PORT}/"
+  if [ "$page" = home ]; then open "http://127.0.0.1:${API_PORT}/"; else open "http://127.0.0.1:${WEB_PORT}/practice"; fi
   wait
   exit 0
 }
@@ -96,8 +97,11 @@ while :; do
 
    पाणिनि-यन्त्रम् — Pāṇini Engine
 
-   1  Start the local apps    Lab · Practice · Review · Learn · full UI   [Enter]
+   1  Start the local apps    opens अभ्यास (practice)                    [Enter]
+   h  Start, open the hub     Lab · Review · Learn · full UI
    2  Open the local home     (servers must already be running)
+   p  Open अभ्यास             (servers must already be running)
+   b  Rebuild practice bank   engine + Vidyut cross-check (~2 h, background-safe)
 
    3  Run all tests
    4  Verb accuracy          vs ashtadhyayi.com (455k forms, ~2 min)
@@ -118,8 +122,11 @@ EOF
   printf '   Choose: '
   read -r choice
   case "${choice:-1}" in
-    1) start_apps ;;
+    1) start_apps practice ;;
+    h|H) start_apps home ;;
     2) open "http://127.0.0.1:${API_PORT}/" ;;
+    p|P) open "http://127.0.0.1:${WEB_PORT}/practice" ;;
+    b|B) if [ -x .venv/bin/python ]; then .venv/bin/python -m tools.build_abhyasa_bank; else echo "needs .venv with vidyut"; fi; pause ;;
     3) "$PY" -m pytest -q -p no:cacheprovider; pause ;;
     4) need_gold && "$PY" -m bench.ashtadhyayi_gold; pause ;;
     5) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind subanta; pause ;;
@@ -151,5 +158,6 @@ done
 
 case "${1:-}" in
   menu|--menu|-m) show_menu ;;
-  *) start_apps ;;
+  home|hub) start_apps home ;;
+  *) start_apps practice ;;
 esac
