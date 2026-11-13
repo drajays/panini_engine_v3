@@ -5046,6 +5046,537 @@
      "3.1.26"
     ]
    }
+  },
+  "vadArTa": {
+   "BAsana": {
+    "forms": [
+     "BAsana"
+    ],
+    "sutras": [
+     "1.3.47"
+    ]
+   },
+   "upasamBAzA": {
+    "forms": [
+     "upasamBAzA"
+    ],
+    "sutras": [
+     "1.3.47"
+    ]
+   },
+   "jYAna": {
+    "forms": [
+     "jYAna"
+    ],
+    "sutras": [
+     "1.3.36",
+     "1.3.47"
+    ]
+   },
+   "yatna": {
+    "forms": [
+     "yatna"
+    ],
+    "sutras": [
+     "1.3.47"
+    ]
+   },
+   "vimati": {
+    "forms": [
+     "vimati"
+    ],
+    "sutras": [
+     "1.3.47"
+    ]
+   },
+   "upamantraRa": {
+    "forms": [
+     "upamantraRezu"
+    ],
+    "sutras": [
+     "1.3.47"
+    ]
+   }
+  },
+  "vyaktavAk": {
+   "vyaktavAc": {
+    "forms": [
+     "vyaktavAcAm",
+     "vyaktavAcAM"
+    ],
+    "sutras": [
+     "1.3.48",
+     "1.3.49",
+     "1.3.50"
+    ]
+   }
+  },
+  "samuccAraRa": {
+   "samuccAraRa": {
+    "forms": [
+     "samuccAraRe"
+    ],
+    "sutras": [
+     "1.3.48",
+     "1.3.49",
+     "1.3.50"
+    ]
+   }
+  },
+  "vipralApa": {
+   "vipralApa": {
+    "forms": [
+     "vipralApe"
+    ],
+    "sutras": [
+     "1.3.50"
+    ]
+   }
+  },
+  "karmakatva": {
+   "akarmaka": {
+    "forms": [
+     "akarmakAt"
+    ],
+    "sutras": [
+     "1.3.26",
+     "1.3.27",
+     "1.3.28",
+     "1.3.29",
+     "1.3.35",
+     "1.3.45",
+     "1.3.49",
+     "1.3.85",
+     "1.3.88",
+     "3.2.148",
+     "3.2.149"
+    ]
+   }
+  },
+  "BujArTa": {
+   "anavana": {
+    "forms": [
+     "anavane"
+    ],
+    "sutras": [
+     "1.3.66"
+    ]
+   }
+  }
+ },
+ "meta": {
+  "artha": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta",
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "कर्तृकर्मभावादिः प्रत्ययार्थः",
+   "gloss_en": "the sense a pratyaya is taught in: agent, object, action, instrument, locus"
+  },
+  "kala": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta",
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "कालः (भूतः, वर्तमानः, भविष्यन्, पूर्वकालः)",
+   "gloss_en": "the time meant"
+  },
+  "kartrabhiprAya": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "Yit root (1.3.72) or Nic Term (1.3.74)"
+   ],
+   "gloss_dev": "क्रियाफलं कर्तारं गच्छति",
+   "gloss_en": "the fruit of the act goes to the agent"
+  },
+  "krt": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "कृत्य-ण्वुल्तृचोः विकल्पः",
+   "gloss_en": "which kṛt family (kṛtya, ṇvul/tṛc) the speaker takes"
+  },
+  "kriyArTA": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "क्रियार्था क्रिया",
+   "gloss_en": "the act is for the sake of another act"
+  },
+  "samAnADikaraRa": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "अप्रथमासमानाधिकरणम्",
+   "gloss_en": "the participle agrees with a noun not in the first case"
+  },
+  "sambodhana": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "सम्बोधनम्",
+   "gloss_en": "address (vocative sense)"
+  },
+  "lakzaRahetu": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "लक्षणं हेतुश्च",
+   "gloss_en": "mark or cause as the sense of śatṛ/śānac"
+  },
+  "tAcCIlyAdi": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "ताच्छील्यवयोवचनशक्तिषु",
+   "gloss_en": "habit, age, capability"
+  },
+  "akfcCra": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "अकृच्छ्रम्",
+   "gloss_en": "without difficulty"
+  },
+  "amitra": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "अमित्रम्",
+   "gloss_en": "enemy as object"
+  },
+  "yajYasaMyoga": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "यज्ञसंयोगः",
+   "gloss_en": "connection with a sacrifice"
+  },
+  "praSaMsA": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta",
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "प्रशंसा",
+   "gloss_en": "praise"
+  },
+  "hetutAcCIlyAnulomya": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "हेतुताच्छील्यानुलोम्यानि",
+   "gloss_en": "cause, habit, compliance"
+  },
+  "linga": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "krdanta",
+    "subanta"
+   ],
+   "requires": [],
+   "gloss_dev": "लिङ्गम्",
+   "gloss_en": "the gender of the word"
+  },
+  "taddhitArtha": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "तद्धितार्थः",
+   "gloss_en": "the sense a taddhita pratyaya is taught in"
+  },
+  "arthaViSeSa": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "अर्थविशेषः",
+   "gloss_en": "a particular sense inside a taddhita frame"
+  },
+  "abhiDeya": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "अभिधेयम्",
+   "gloss_en": "what the word names (human, not-for-sale)"
+  },
+  "jAtiBeda": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "subanta"
+   ],
+   "requires": [],
+   "gloss_dev": "मनुष्यजातिः",
+   "gloss_en": "the stem names a human tribe"
+  },
+  "svaBeda": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "subanta"
+   ],
+   "requires": [],
+   "gloss_dev": "स्वशब्दस्य ज्ञातिधनार्थत्वम्",
+   "gloss_en": "sva as kinsman or wealth"
+  },
+  "antaraBeda": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "subanta"
+   ],
+   "requires": [],
+   "gloss_dev": "अन्तरशब्दस्य बहिर्योगोपसंव्यानार्थत्वम्",
+   "gloss_en": "antara as outside or inner garment"
+  },
+  "kArakaArTa": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "subanta",
+    "samasa"
+   ],
+   "requires": [],
+   "gloss_dev": "कारकविवक्षा",
+   "gloss_en": "the role the speaker gives the noun"
+  },
+  "jIvikArTa": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "जीविकार्थः",
+   "gloss_en": "livelihood sense"
+  },
+  "nityatA": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "नित्यत्वम्",
+   "gloss_en": "what is always so"
+  },
+  "bhavizyat": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "अभविष्यत्",
+   "gloss_en": "the sense is not the future"
+  },
+  "ekavacana": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "एकवचनम्",
+   "gloss_en": "yuṣmad/asmad speaks of one person"
+  },
+  "vikAraBeda": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "विकारविशेषः",
+   "gloss_en": "which modification the speaker means"
+  },
+  "apatyaBeda": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "taddhita"
+   ],
+   "requires": [],
+   "gloss_dev": "गोत्रं युवा वा",
+   "gloss_en": "descendant: gotra or yuvan"
+  },
+  "tAcCIlya": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "ताच्छील्यम्",
+   "gloss_en": "habitual agent"
+  },
+  "AtmamAna": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "आत्ममानः",
+   "gloss_en": "the agent is self-regarded"
+  },
+  "samAnakartfka": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "समानकर्तृकत्वम्",
+   "gloss_en": "the two acts share one agent"
+  },
+  "icCA": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta",
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "इच्छा",
+   "gloss_en": "wish (san)"
+  },
+  "hetumat": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta",
+    "krdanta"
+   ],
+   "requires": [],
+   "gloss_dev": "हेतुमान्",
+   "gloss_en": "the prompting agent (ṇic)"
+  },
+  "vadArTa": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta",
+    "krdanta"
+   ],
+   "requires": [
+    "dhātu vad"
+   ],
+   "gloss_dev": "भासनादिषु वदः",
+   "gloss_en": "the sense of vad: shining, addressing, knowing, effort, dissent, inviting"
+  },
+  "vyaktavAk": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "dhātu vad"
+   ],
+   "gloss_dev": "व्यक्तवाचः कर्तारः",
+   "gloss_en": "the speakers have articulate speech"
+  },
+  "samuccAraRa": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "dhātu vad"
+   ],
+   "gloss_dev": "सहोच्चारणम्",
+   "gloss_en": "they speak together"
+  },
+  "vipralApa": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "dhātu vad"
+   ],
+   "gloss_dev": "विप्रलापः",
+   "gloss_en": "they speak contradicting one another"
+  },
+  "karmakatva": {
+   "kind": "context",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "dhātu vad",
+    "upasarga anu"
+   ],
+   "gloss_dev": "अकर्मकत्वम्",
+   "gloss_en": "the verb is used with no object meant"
+  },
+  "BujArTa": {
+   "kind": "intent",
+   "default": null,
+   "applies_to": [
+    "tinanta"
+   ],
+   "requires": [
+    "dhātu Buj of the rudhādi class (07.0017)"
+   ],
+   "gloss_dev": "भुजोऽनवने",
+   "gloss_en": "Buj in a sense other than protecting"
   }
  }
 }

@@ -140,6 +140,65 @@ VOCABULARY = {
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
     # the sanādi senses: 3.1.7 san / 3.1.8 kyac / 3.1.9 kāmyac — the wish (icCAyAm); 3.1.26 ṇic — the prompting agent (hetumati)
     "icCA": {"icCA": ["icCAyAM"]}, "hetumat": {"hetumat": ["hetumati"]},
+    # AMENDMENT 30 pilot, the pada sūtras 1.3.47 – 50, 1.3.66 (each word is the sūtra's own; Kāśikā 1.3.47 – 50, 66 glosses them)
+    # 1.3.47: the six senses in which vad takes ātmanepada
+    "vadArTa": {"BAsana": ["BAsana"], "upasamBAzA": ["upasamBAzA"], "jYAna": ["jYAna"], "yatna": ["yatna"], "vimati": ["vimati"],
+                "upamantraRa": ["upamantraRezu"]},
+    # 1.3.48 – 50: facts of the sentence (context): the speakers are articulate-voiced beings, they speak together, they contradict one another
+    "vyaktavAk": {"vyaktavAc": ["vyaktavAcAm", "vyaktavAcAM"]},
+    "samuccAraRa": {"samuccAraRa": ["samuccAraRe"]},
+    "vipralApa": {"vipralApa": ["vipralApe"]},
+    # 1.3.49 akarmakāt: the verb is used with no object meant
+    "karmakatva": {"akarmaka": ["akarmakAt"]},
+    # 1.3.66: Buj of the rudhādi class in a sense other than protecting (the tudādi Buj, kauṭilya, is another root, told apart by its dhātu id)
+    "BujArTa": {"anavana": ["anavane"]},
+}
+
+# AMENDMENT 30 rule 4: what each key is. kind: intent (the speaker's choice, explored or fixed) | context (a fact of the sentence or of the stem:
+# supplied by the caller, never explored). default None = the unmarked value: the key is not set. applies_to: the entry points that may use it.
+# requires: what the derivation must contain for the key to mean anything (informational). Glosses in Sanskrit and English.
+_I, _C = "intent", "context"
+KEY_META: dict[str, tuple] = {
+    # key: (kind, applies_to, requires, gloss_dev, gloss_en)
+    "artha": (_I, ["tinanta", "krdanta"], [], "कर्तृकर्मभावादिः प्रत्ययार्थः", "the sense a pratyaya is taught in: agent, object, action, instrument, locus"),
+    "kala": (_I, ["tinanta", "krdanta"], [], "कालः (भूतः, वर्तमानः, भविष्यन्, पूर्वकालः)", "the time meant"),
+    "kartrabhiprAya": (_I, ["tinanta"], ["Yit root (1.3.72) or Nic Term (1.3.74)"], "क्रियाफलं कर्तारं गच्छति", "the fruit of the act goes to the agent"),
+    "krt": (_I, ["krdanta"], [], "कृत्य-ण्वुल्तृचोः विकल्पः", "which kṛt family (kṛtya, ṇvul/tṛc) the speaker takes"),
+    "kriyArTA": (_I, ["krdanta"], [], "क्रियार्था क्रिया", "the act is for the sake of another act"),
+    "samAnADikaraRa": (_C, ["krdanta"], [], "अप्रथमासमानाधिकरणम्", "the participle agrees with a noun not in the first case"),
+    "sambodhana": (_I, ["krdanta"], [], "सम्बोधनम्", "address (vocative sense)"),
+    "lakzaRahetu": (_I, ["krdanta"], [], "लक्षणं हेतुश्च", "mark or cause as the sense of śatṛ/śānac"),
+    "tAcCIlyAdi": (_I, ["krdanta"], [], "ताच्छील्यवयोवचनशक्तिषु", "habit, age, capability"),
+    "akfcCra": (_I, ["krdanta"], [], "अकृच्छ्रम्", "without difficulty"),
+    "amitra": (_I, ["krdanta"], [], "अमित्रम्", "enemy as object"),
+    "yajYasaMyoga": (_I, ["krdanta"], [], "यज्ञसंयोगः", "connection with a sacrifice"),
+    "praSaMsA": (_I, ["krdanta", "taddhita"], [], "प्रशंसा", "praise"),
+    "hetutAcCIlyAnulomya": (_I, ["krdanta"], [], "हेतुताच्छील्यानुलोम्यानि", "cause, habit, compliance"),
+    "linga": (_C, ["krdanta", "subanta"], [], "लिङ्गम्", "the gender of the word"),
+    "taddhitArtha": (_I, ["taddhita"], [], "तद्धितार्थः", "the sense a taddhita pratyaya is taught in"),
+    "arthaViSeSa": (_I, ["taddhita"], [], "अर्थविशेषः", "a particular sense inside a taddhita frame"),
+    "abhiDeya": (_C, ["taddhita"], [], "अभिधेयम्", "what the word names (human, not-for-sale)"),
+    "jAtiBeda": (_C, ["subanta"], [], "मनुष्यजातिः", "the stem names a human tribe"),
+    "svaBeda": (_C, ["subanta"], [], "स्वशब्दस्य ज्ञातिधनार्थत्वम्", "sva as kinsman or wealth"),
+    "antaraBeda": (_C, ["subanta"], [], "अन्तरशब्दस्य बहिर्योगोपसंव्यानार्थत्वम्", "antara as outside or inner garment"),
+    "kArakaArTa": (_I, ["subanta", "samasa"], [], "कारकविवक्षा", "the role the speaker gives the noun"),
+    "jIvikArTa": (_I, ["taddhita"], [], "जीविकार्थः", "livelihood sense"),
+    "nityatA": (_I, ["taddhita"], [], "नित्यत्वम्", "what is always so"),
+    "bhavizyat": (_C, ["taddhita"], [], "अभविष्यत्", "the sense is not the future"),
+    "ekavacana": (_C, ["taddhita"], [], "एकवचनम्", "yuṣmad/asmad speaks of one person"),
+    "vikAraBeda": (_I, ["taddhita"], [], "विकारविशेषः", "which modification the speaker means"),
+    "apatyaBeda": (_I, ["taddhita"], [], "गोत्रं युवा वा", "descendant: gotra or yuvan"),
+    "tAcCIlya": (_I, ["krdanta"], [], "ताच्छील्यम्", "habitual agent"),
+    "AtmamAna": (_C, ["krdanta"], [], "आत्ममानः", "the agent is self-regarded"),
+    "samAnakartfka": (_C, ["krdanta"], [], "समानकर्तृकत्वम्", "the two acts share one agent"),
+    "icCA": (_I, ["tinanta", "krdanta"], [], "इच्छा", "wish (san)"),
+    "hetumat": (_I, ["tinanta", "krdanta"], [], "हेतुमान्", "the prompting agent (ṇic)"),
+    "vadArTa": (_I, ["tinanta", "krdanta"], ["dhātu vad"], "भासनादिषु वदः", "the sense of vad: shining, addressing, knowing, effort, dissent, inviting"),
+    "vyaktavAk": (_C, ["tinanta"], ["dhātu vad"], "व्यक्तवाचः कर्तारः", "the speakers have articulate speech"),
+    "samuccAraRa": (_C, ["tinanta"], ["dhātu vad"], "सहोच्चारणम्", "they speak together"),
+    "vipralApa": (_C, ["tinanta"], ["dhātu vad"], "विप्रलापः", "they speak contradicting one another"),
+    "karmakatva": (_C, ["tinanta"], ["dhātu vad", "upasarga anu"], "अकर्मकत्वम्", "the verb is used with no object meant"),
+    "BujArTa": (_I, ["tinanta"], ["dhātu Buj of the rudhādi class (07.0017)"], "भुजोऽनवने", "Buj in a sense other than protecting"),
 }
 # AMENDMENT 27 allow-list: sūtras that may ask taddhitArtha=svArTa (Kāśikā: "svārthe"); extend only with the Kāśikā line cited in the sūtra's file
 SVARTHIKA = ["5.1.58", "5.4.7", "5.4.8", "5.4.13", "5.4.14", "5.4.15", "5.4.23", "5.4.27", "5.4.28", "5.4.29", "5.4.34", "5.4.38", "5.4.39"]
@@ -163,6 +222,11 @@ def build() -> dict:
             schema["keys"][key][value] = {"forms": forms, "sutras": cited}
     # AMENDMENT 27: the svārthika sūtras name no sense; the Kāśikā (5.3.1, "svārthe") supplies it. One value, an explicit allow-list, a Kāśikā citation.
     schema["keys"].setdefault("taddhitArtha", {})["svArTa"] = {"forms": ["svArTe"], "sutras": sorted(SVARTHIKA, key=order), "kashika": "5.3.1"}
+    missing = set(schema["keys"]) - set(KEY_META)
+    if missing:
+        raise SystemExit(f"keys without KEY_META: {sorted(missing)}")
+    schema["meta"] = {k: {"kind": kind, "default": None, "applies_to": applies, "requires": requires, "gloss_dev": gd, "gloss_en": ge}
+                      for k, (kind, applies, requires, gd, ge) in KEY_META.items() if k in schema["keys"]}
     return schema
 
 
