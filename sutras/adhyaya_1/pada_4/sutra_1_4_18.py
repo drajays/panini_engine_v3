@@ -43,7 +43,7 @@ _REGISTRY_BHA_INDICES = "1.4.18_bha_anga_indices"
 # so *Iya*'s *Ī*-*ādi* fails ``yaci_onset_loose``; *śikṣ* *yaci* includes dīrgha *ac* here.
 # Long-vowel *ac* onsets not present in the engine’s ``pratyahara.AC`` bitvector.
 _DĪRGHĀC_FIRST = frozenset({"A", "I", "U"})
-_SIBILANT_H = frozenset({"S", "z", "s", "h"})
+_SIBILANT_H = frozenset({"z", "s"})      # su (loc. pl.) only; Sas keeps its yaci vowel a once its it-S goes
 _META_GENERIC_TADDHITA_AVAYAVA = "prakriya_taddhita_avayava"
 _META_P004_A_CA_PHAYA = "caPhaya_taddhita_frame"
 
