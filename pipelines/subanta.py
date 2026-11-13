@@ -434,6 +434,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.127",  # अर्वणस्त्रसावनञः — arvan→arvantr (tṛ for n) except before su; the resolver orders it against 6.4.8 (para)
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
+    "6.3.46",   # आन्महतः समानाधिकरणजातीययोः — mahat as a samānādhikaraṇa pūrvapada: mahā (maharṣi), before the seam's sandhi
     "6.3.128",  # विश्वस्य वसुराटोः — viśva + rāj (a padas lexicon stem): ā before the rāṭ it will become, ahead of su-lopa (6.1.68)
     "6.1.68",
     "6.4.1",

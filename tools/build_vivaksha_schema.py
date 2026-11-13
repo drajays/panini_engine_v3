@@ -114,7 +114,7 @@ VOCABULARY = {
                       "samavAya": ["samavAye"], "lavana": ["lavane"], "hiMsA": ["hiMsAyAm"],
                       "jAnapadAKyA": ["jAnapadAKyAyAm"], "dAru": ["dAruRi"], "karmavyatihAra": ["karmavyatihAre"], "vandita": ["vandite"],
                       "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"],
-                      "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},
+                      "cArTa": ["arTe"], "samAhAra": ["samAhAre"], "anyapadArTa": ["anyapadArTe"], "samIpa": ["samIpa"], "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},
     # 5.3.98 – 99: who or what is meant when the kan is taken away (lup)
     "abhiDeya": {"manuzya": ["manuzye"], "apaRya": ["apaRye"]},
     # 4.1.65 – 66: the stem names a human tribe / class (manuzya-jAteH): ūṅ after u-final (kuru → kurūḥ)

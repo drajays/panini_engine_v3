@@ -9,8 +9,8 @@ Kāśikā 8.4.12: "एकाजुत्तरपदं यस्य स एक�
 नकारस्य णकार आदेशो भवति। वृत्रहणौ, वृत्रहणः।"
 
 Reads the samāsa seam off the varṇas (``samasa_purva_v`` / ``samasa_uttara_v``, set by the pada merge from the Terms'
-``samasa_purvapada`` / ``samasa_uttarapada`` tags). Slice: the pratipadika-final n (vṛtrahaṇau); the num and vibhakti n
-(kṣīrapāṇi, kṣīrapeṇa) are not yet read.
+``samasa_purvapada`` / ``samasa_uttarapada`` tags). The pratipadika-final n (vṛtrahaṇau), the n of nuṃ (``num_v``, set by 7.1.72: kṣīrapāṇi) and the n of a
+sup (``sup_v``, set by the pada merge: kṣīrapeṇa).
 """
 from __future__ import annotations
 
@@ -32,7 +32,9 @@ def _target(state: State):
         if sum(v.slp1 in _VOWELS for v in t.varnas if "samasa_uttara_v" in v.tags) != 1:     # ekāc
             continue
         for vi, v in enumerate(t.varnas):
-            if v.slp1 != "n" or "samasa_uttara_v" not in v.tags or "natva_done" in v.tags or "pratipadika_anta_v" not in v.tags:
+            if v.slp1 != "n" or "natva_done" in v.tags:
+                continue
+            if not (("samasa_uttara_v" in v.tags and "pratipadika_anta_v" in v.tags) or "num_v" in v.tags or "sup_v" in v.tags):    # prātipadikānta / num / vibhakti
                 continue
             for u in reversed(t.varnas[:vi]):
                 if u.slp1 in _NIMITTA:
@@ -52,8 +54,9 @@ def act(state: State) -> State:
     ti, vi = _target(state)
     t = state.terms[ti]
     before = "".join(v.slp1 for v in t.varnas)
+    v_old = t.varnas[vi]
     r = mk("R")
-    r.tags |= {"natva_done", "samasa_uttara_v"}
+    r.tags |= {"natva_done"} | (v_old.tags & {"samasa_uttara_v", "sup_v", "num_v"})
     t.varnas[vi] = r
     state.meta["__why_now_dev__"] = (
         f"एकाच् उत्तरपद (काशिका ८।४।१२): पूर्वपदस्थ निमित्त से उत्तरपद का प्रातिपदिकान्त न → ण; {before} → {''.join(v.slp1 for v in t.varnas)}।")

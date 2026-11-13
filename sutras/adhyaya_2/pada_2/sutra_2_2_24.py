@@ -6,6 +6,7 @@ Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=22024):
   denote another entity’s meaning.
 
 Fires when any Term carries the ``bahuvrIhi`` tag (structural environment).
+Kāśikā: अनेकं सुबन्तमन्यपदार्थे वर्तमानं सह समस्यते, बहुव्रीहिश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -13,15 +14,34 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-def cond(state: State) -> bool:
+def _old_cond(state: State) -> bool:
     if not any("bahuvrIhi" in t.tags for t in state.terms):
         return False
     return not bool(state.samjna_registry.get("2.2.24_anekam_anyapadartha"))
 
 
-def act(state: State) -> State:
+def _old_act(state: State) -> State:
     state.samjna_registry["2.2.24_anekam_anyapadartha"] = True
     return state
+
+
+from engine.samasa_attach import run, mark
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    """Several members that together name something else (anyapadārtha, the speaker's vivakṣā)."""
+    idx = run(state, "2.2.24")
+    return idx if idx is not None and vivaksita(state, "arthaViSeSa", "anyapadArTa") else None
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    return mark(state, s, "bahuvrihi", "2.2.24") if s is not None else _old_act(state)
 
 
 SUTRA = SutraRecord(

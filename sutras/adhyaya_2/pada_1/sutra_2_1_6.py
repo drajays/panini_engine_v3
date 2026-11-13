@@ -10,6 +10,7 @@ a minimal, auditable *samāsa* assignment used by demos like **adhistri**:
 We do not attempt full semantic parsing; the pipeline arms
 ``meta['avyayibhava_recipe']=True``.
 Pāṭha: ashtadhyayi.com data.txt row i=21006 (Art. 14).
+Kāśikā: विभक्त्यादिष्वर्थेषु यदव्ययं वर्तते, तत् समर्थन सुबन्तेन सह समस्यते, अव्ययीभावश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -19,17 +20,39 @@ from engine.state import State
 TAG_AVYAYIBHAVA: str = "avyayibhava"
 
 
-def cond(state: State) -> bool:
+def _old_cond(state: State) -> bool:
     return bool(state.meta.get("avyayibhava_recipe")) and not state.samjna_registry.get("2_1_6_avyayibhava")
 
 
-def act(state: State) -> State:
+def _old_act(state: State) -> State:
     # Structural mark for downstream samāsa steps (upasarjana/pūrvanipāta) + 1.1.41.
     for t in state.terms:
         if "samasa_member" in t.tags or "anga" in t.tags:
             t.tags.add(TAG_AVYAYIBHAVA)
     state.samjna_registry["2_1_6_avyayibhava"] = True
     state.meta["avyayibhava_kind"] = "2.1.6"
+    return state
+
+
+from engine.samasa_attach import pair, mark
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    """An avyaya pūrvapada (upa, adhi, prati) and a following subanta, in the sense of samīpa / vibhakti …: the speaker's vivakṣā."""
+    return pair(state, "2.1.6", purva=lambda t: "avyaya" in t.tags) if vivaksita(state, "arthaViSeSa", "samIpa") else None
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    if s is None:
+        return _old_act(state)
+    state = mark(state, list(s), TAG_AVYAYIBHAVA, "2.1.6")
+    state.terms[s[0]].tags.add("upasarjana")
     return state
 
 
@@ -44,6 +67,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "अव्ययम् / विभक्ति-समीप-समृद्धि…",
     why_dev        = "अव्यय-पूर्वकः समासः (अव्ययीभाव) — demo arm meta.",
     anuvritti_from = ("2.1.5",),
+    apavada_of     = ("2.2.18",),      # a prādi in a sense of 2.1.6 (upa + kumbha, samīpa) is an avyayībhāva, not the nitya tatpuruṣa
     cond           = cond,
     act            = act,
 )

@@ -54,10 +54,12 @@ def act(state: State) -> State:
         if anga.varnas[k].slp1 in {"a", "i", "u", "f", "x", "A", "I", "U", "F", "X", "e", "E", "o", "O"}:
             j = k
             break
+    n = mk("n")
+    n.tags.add("num_v")                  # the n of nuṃ (8.4.12 prātipadikānta-num-vibhaktiṣu)
     if j is None:
-        anga.varnas.append(mk("n"))
+        anga.varnas.append(n)
     else:
-        anga.varnas.insert(j + 1, mk("n"))
+        anga.varnas.insert(j + 1, n)
     anga.meta["num_agama_done"] = True
     return state
 

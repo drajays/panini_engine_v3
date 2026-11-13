@@ -5,26 +5,28 @@ Padaccheda: विशेषणम् विशेष्येण बहुलम
 
 Adjective with adjective (visesana+visesya) bahula karmadharaya.
 Pāṭha: ashtadhyayi.com data.txt row i=21057 (Art. 14).
+Kāśikā: विशेषणवाचि सुबन्तं विशेष्यवाचिना समानाधिकरणेन सुबन्तेन सह बहुलं समस्यते, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.samasa_attach import pair, run, mark, name
 
-_GATE_KEY: str = "2_1_57_visesana_bahulam"
+
+def _site(state: State):
+    return pair(state, "2.1.57", same_vib=True, purva=lambda t: "lex:viSezaRa" in t.tags)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return any("karmadharaya" in t.tags for t in state.terms)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["karmadharaya_kind"]             = "2.1.57"
-    return state
+    s = _site(state)
+    if s is None:
+        return state
+    return mark(state, list(s), "tatpurusha", "2.1.57")
 
 
 SUTRA = SutraRecord(

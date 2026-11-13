@@ -5,33 +5,28 @@ Padaccheda: जातेः अ-स्त्री-विषयात् अ-य
 
 जातेरस्त्रीविषयादयोपधात् (4.1.63)
 Pāṭha: ashtadhyayi.com data.txt row i=41063 (Art. 14).
+Kāśikā: जातिवाचि यत् प्रातिपदिकं न च स्त्रियामेव नियतमस्त्रीविषयमयकारोपधं च, तस्मात् स्त्रियां ङीष् प्रत्ययो भवति।
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine       import SutraType, SutraRecord, register_sutra, origin
 from engine.state import State
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 
-_GATE_KEY: str = "4_1_63_jAterastrI_63"
+def _wanted(t) -> bool:
+    """a jāti word not confined to the feminine and not ending in a vowel-ya cluster: the lexical fact lex:jAti (kukkuṭa, sūkara, brāhmaṇa)."""
+    return bool(t.varnas) and "upasarjana" not in t.tags and "lex:jAti" in t.tags
+
+def _site(state: State):
+    return strI_site(state, _wanted)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.63", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.63"
-    return state
+    return append_stri(state, "NIz") if _site(state) is not None else state
 
 
 SUTRA = SutraRecord(
@@ -45,6 +40,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "जातेः अ-स्त्री-विषयात् अ-य-उपधात्",
     why_dev               = "(सूत्रम् 4.1.63) जातेरस्त्रीविषयादयोपधात्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of = ("4.1.4",),
     cond                  = cond,
     act                   = act,
 )

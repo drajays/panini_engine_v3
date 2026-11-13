@@ -12,6 +12,7 @@ Narrow v3 (**वृकभयम्** ``…/separated_prakriyas/prakriya_39_*.jso
 
 No ``varṇa`` mutation (recipe gate only).
 Pāṭha: ashtadhyayi.com data.txt row i=21037 (Art. 14).
+Kāśikā: पञ्चम्यन्तं सुबन्तं भयशब्देन सुबन्तेन सह समस्यते विभाषा, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -23,7 +24,7 @@ def _samasa_adhikara_open(state: State) -> bool:
     return any(e.get("id") == "2.1.3" for e in state.adhikara_stack)
 
 
-def _site(state: State) -> bool:
+def _old_site(state: State) -> bool:
     if not _samasa_adhikara_open(state):
         return False
     if not state.meta.get("prakriya_39_paYcamI_compound_vidhi_note"):
@@ -37,15 +38,33 @@ def _site(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
-    return _site(state)
+def _old_cond(state: State) -> bool:
+    return _old_site(state)
 
 
-def act(state: State) -> State:
-    if not _site(state):
+def _old_act(state: State) -> State:
+    if not _old_site(state):
         return state
     state.samjna_registry["2.1.37_paYcamI_bhayena_prakriya_39"] = True
     return state
+
+
+from engine.samasa_attach import pair, run, mark, name
+
+
+def _site(state: State):
+    return pair(state, "2.1.37", vib="paYcamI", uttara_names=frozenset({"Baya"}))
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    if s is None:
+        return _old_act(state)
+    return mark(state, list(s), "tatpurusha", "2.1.37")
 
 
 SUTRA = SutraRecord(

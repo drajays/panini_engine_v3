@@ -50,7 +50,18 @@ def _find(state: State):
     return 0
 
 
+def _purva(state: State):
+    """The pūrvapada mahat of a compound whose members stand in one vibhakti (samānādhikaraṇa), uttarapada after it (docs/SAMASA_MACHINE.md)."""
+    for t in state.terms[:-1]:
+        if {"samasa_purvapada", "samAnADikaraRa"} <= t.tags and (t.meta.get("upadesha_slp1") or "") == "mahat" and not t.meta.get("6_3_46_An_done") \
+                and t.varnas and t.varnas[-1].slp1 == "t":
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
+    if _purva(state) is not None:
+        return True
     # Glass-box arming: pipeline must opt-in.
     if not state.meta.get("An_mahat_recipe"):
         return False
@@ -58,6 +69,11 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    t = _purva(state)
+    if t is not None:
+        t.varnas[-1] = mk("A")
+        t.meta["6_3_46_An_done"] = True
+        return state
     if _find(state) is None:
         return state
     left = state.terms[0]

@@ -73,8 +73,11 @@ def pada_merge(state: State) -> None:
             if src:
                 t.varnas[0].tags.add(f"tin_src_{src}")
     for t in terms:
-        if "an_pratipadika" in t.tags and t.varnas and t.varnas[-1].slp1 == "n":
+        if ("an_pratipadika" in t.tags or {"samasa_purvapada", "prātipadika"} <= t.tags) and t.varnas and t.varnas[-1].slp1 == "n":
             t.varnas[-1].tags.add("pratipadika_anta_v")      # 8.2.7 reads "the n that ends the prātipadika" inside the merged pada (paYcan + nAm)
+        if "sup" in t.tags and t.kind == "pratyaya":
+            for v in t.varnas:           # 8.4.12 reads "vibhakti": the n of a sup, after the merge
+                v.tags.add("sup_v")
         if "dhatu" in t.tags and "abhyasa" not in t.tags:
             for v in t.varnas:           # 8.2.76–79 need "the dhātu's r/v" after the merge
                 v.tags.add("dhatu_v")

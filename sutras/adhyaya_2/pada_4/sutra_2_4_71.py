@@ -52,8 +52,13 @@ def _dhatu_internal_sup(state: State) -> list[int]:
             if any("sanadi" in t.tags and "dhatu" in t.tags and t.kind == "pratyaya" for t in state.terms[i + 1:])]
 
 
+def _samasa_internal_sup(state: State) -> list[int]:
+    """A sup that stands after a samāsa member (the compound is a prātipadika, 1.2.46): the vākya's own sups go (rājñaḥ puruṣaḥ → rājapuruṣa)."""
+    return [i for i in state_live_sup_indexes(state) if i > 0 and "samasa_member" in state.terms[i - 1].tags]
+
+
 def cond(state: State) -> bool:
-    if _dhatu_internal_sup(state):
+    if _dhatu_internal_sup(state) or _samasa_internal_sup(state):
         return True
     if not state.meta.get("luk_2_4_71_recipe"):
         return False
@@ -63,7 +68,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    idxs = _dhatu_internal_sup(state) or state_live_sup_indexes(state)
+    idxs = _dhatu_internal_sup(state) or _samasa_internal_sup(state) or state_live_sup_indexes(state)
     if not idxs:
         return state
     for i in idxs:

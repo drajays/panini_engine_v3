@@ -5,26 +5,28 @@ Padaccheda: सप्तमी शौण्डैः
 
 saunda etc. with saptami forms tatpurusha compound.
 Pāṭha: ashtadhyayi.com data.txt row i=21040 (Art. 14).
+Kāśikā: सप्तम्यन्तं शौण्डादिभिः सह समस्यते, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.samasa_attach import pair, run, mark, name
+_SAUNDADI = frozenset({"SORqa", "DUrta", "kitava", "vyAqa", "pravIRa", "saMvIta", "antar", "aDi", "pawu", "aDipawu", "paRqita", "kuSala", "capala", "nipuRa"})   # Kāśikā's śauṇḍādi list
 
-_GATE_KEY: str = "2_1_40_saptami_saunda"
+def _site(state: State):
+    return pair(state, "2.1.40", vib="saptamI", uttara_names=_SAUNDADI)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return any("tatpurusha" in t.tags for t in state.terms)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["tatpurusha_kind"]             = "2.1.40"
-    return state
+    s = _site(state)
+    if s is None:
+        return state
+    return mark(state, list(s), "tatpurusha", "2.1.40")
 
 
 SUTRA = SutraRecord(

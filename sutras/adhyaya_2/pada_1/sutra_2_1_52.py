@@ -5,25 +5,30 @@ Padaccheda: संख्या-पूर्वः द्विगुः
 
 samkhya-purva (numeral-first) compound is called dvigu.
 Pāṭha: ashtadhyayi.com data.txt row i=21052 (Art. 14).
+Kāśikā: तद्धितार्थोत्तरपदसमाहारे चेत्यत्र यः संख्यापूर्वः समासः स द्विगुसंज्ञो भवति।
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_GATE_KEY: str = "2_1_52_samkhya_dvigu"
+
+def _members(state: State):
+    """The members of a tatpuruṣa that a taddhitārtha-uttarapada-samāhāra vidhi (2.1.51) made, whose pūrvapada is a saṅkhyā."""
+    if state.meta.get("samasa_vidhi") != "2.1.51" or "dvigu" in state.meta.get("samasa_kind", ""):
+        return []
+    ms = [t for t in state.terms if "samasa_member" in t.tags]
+    return ms if ms and "lex:saNKyA" in ms[0].tags else []
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return any("samasa_member" in t.tags for t in state.terms)
+    return bool(_members(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["dvigu_kind"]             = "2.1.52"
+    for t in _members(state):
+        t.tags |= {"dvigu", "lex:dvigu"}
+    state.meta["samasa_kind"] = "tatpurusha dvigu"
     return state
 
 

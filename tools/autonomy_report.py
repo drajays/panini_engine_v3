@@ -53,7 +53,7 @@ class Run:
 from engine.scheduler import effective_candidates  # noqa: E402,F401  (C2 moved it into the engine)
 
 
-def run_autonomously(state: Any, expected: str, case: str, budget: int, *, stop_before_tripadi: bool = False) -> Run:
+def run_autonomously(state: Any, expected: str, case: str, budget: int, *, stop_before_tripadi: bool = False, stop_when=None) -> Run:
     from engine import apply_rule
     from engine.resolver import resolve_with_reason
     from engine.core_loop import apply_pratishedhas, note_tripadi_progress, open_adhikaras
@@ -61,6 +61,9 @@ def run_autonomously(state: Any, expected: str, case: str, budget: int, *, stop_
 
     result = Run(case=case, expected=expected)
     for _ in range(budget):
+        if stop_when is not None and stop_when(state):      # a stage that ends before the loop is exhausted (the samāsa stem: its sups are gone)
+            result.outcome = "stem"
+            break
         open_adhikaras(state)
         state = apply_pratishedhas(state)
         candidates = enumerate_candidates(state) + operational_paribhasha_candidates(state)

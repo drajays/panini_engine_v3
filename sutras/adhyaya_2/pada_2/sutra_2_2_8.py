@@ -15,6 +15,7 @@ Engine (narrow, mechanically blind):
   and tags a Term with ``sasthi_samasa`` indicating the genitive tatpuruṣa
   context.  Gate is raised on first fire.
 Pāṭha: ashtadhyayi.com data.txt row i=22008 (Art. 14).
+Kāśikā: षष्ठ्यन्तं सुबन्तं समर्थेन सुबन्तेन सह समस्यते, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -22,16 +23,34 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-def cond(state: State) -> bool:
+def _old_cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_8_sasthi_gate") is True:
         return False
     return any("sasthi_samasa" in t.tags for t in state.terms)
 
 
-def act(state: State) -> State:
+def _old_act(state: State) -> State:
     state.paribhasha_gates["2_2_8_sasthi_gate"] = True
     state.samjna_registry["2_2_8_sasthi_tatpurusa"] = True
     return state
+
+
+from engine.samasa_attach import pair, run, mark, name
+
+
+def _site(state: State):
+    return pair(state, "2.2.8", vib="zazWI")
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    if s is None:
+        return _old_act(state)
+    return mark(state, list(s), "tatpurusha", "2.2.8")
 
 
 SUTRA = SutraRecord(

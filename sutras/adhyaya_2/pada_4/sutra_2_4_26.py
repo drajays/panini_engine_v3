@@ -5,28 +5,33 @@ Padaccheda: पर-वत् लिङ्गम् द्वन्द्व-त�
 
 dvandva and tatpurusha take gender of the latter member.
 Pāṭha: ashtadhyayi.com data.txt row i=24026 (Art. 14).
+Kāśikā: उत्तरपदलिङ्गं द्वन्द्वतत्पुरुषयोर्विधीयते।
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_GATE_KEY: str = "2_4_26_paravat_linga"
+_LINGA = ("pulliṅga", "strīliṅga", "napuṃsaka")
+
+
+def _site(state: State):
+    """The uttarapada of a tatpuruṣa / dvandva that does not yet have its compound liṅga: it is that of the last member (para)."""
+    if state.meta.get("samasa_kind", "").split(" ")[0] not in ("tatpurusha", "dvandva"):
+        return None
+    last = next((t for t in reversed(state.terms) if "samasa_uttarapada" in t.tags), None)
+    if last is None or any(x.startswith("samasa_linga:") for x in last.tags):
+        return None
+    return last if any(x in last.tags for x in _LINGA) else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return any(
-        "dvandva_samasa" in t.tags or "samasa_member" in t.tags
-        for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["samasa_kind"]             = "2.4.26"
+    t = _site(state)
+    t.tags.add("samasa_linga:" + next(x for x in _LINGA if x in t.tags))
     return state
 
 

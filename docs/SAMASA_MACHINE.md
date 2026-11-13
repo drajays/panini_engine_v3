@@ -36,3 +36,14 @@ boundary after the merge; 7.2.101 follow-ups once a compound stem keeps its part
   one-Term `lex:` shape, so 5.4.69's block is exercised on the two-Term tape only; unifying them is the real machine.
 - Deriving su / ati as karmapravacanīya of honour (1.4.93 – 96 are gate-only): `lex:pUjana` is an input.
 - Bahuvrīhi / dvandva / avyayībhāva shapes; accent (6.2) over the seam.
+
+## Slice 2 (done): the vākya → compound, end to end
+`chain.samasa(members, **vivaksha)` (members: stem, vibhakti, vacana[, lex tags[, liṅga]]) builds the tape of `engine/tape_init/samasa.py`
+(stem Term + sup Term per member, the sup carrying `vib:<name>`), runs the loop (phase adhikāra `samasa` = 2.1.3), and stops when the sups are gone
+(2.4.71, its new samāsa branch) and the liṅga is given (2.4.17 dvigu, 2.4.18 avyayībhāva, 2.4.26 para). The result is a `Stem` with `.parts`
+(pūrvapada(s) | uttarapada): `chain.sup` rebuilds the two-Term tape (`samasa_purvapada` / `samasa_uttarapada`), `chain.strI` follows the last member.
+- Vidhi sūtras (all through `engine/samasa_attach.py`: `pair` / `run` / `mark`): 2.1.6 (+ apavāda of 2.2.18), 2.1.24, 2.1.36, 2.1.37, 2.1.40, 2.1.51 (+ saṃjñā 2.1.52),
+  2.1.57, 2.2.8, 2.2.18 (prādi / ku on the vākya), 2.2.24 (anyapadārtha vivakṣā), 2.2.29 (cārtha vivakṣā). The old recipe arms stay beside them.
+- Seam readers now fed by the machine: 5.4.69 (surājā, atirājā), 6.3.46 (mahat → mahā: maharṣiḥ via 6.1.87 + 1.1.51), 8.2.7 on the pūrvapada n (rājapuruṣaḥ),
+  8.4.12 for the pratipadika-final, nuṃ (`num_v`, kṣīrapāṇi) and sup (`sup_v`, kṣīrapeṇa) n.
+- Open: S158 – S164 of docs/SHORTCUT_LEDGER.md (vibhāṣā of the samāsa itself, pratiṣedhas 2.2.10 ff., 2.4.82/83, samāhāra dvandva, jātīya, 2.1.1 samarthaḥ).

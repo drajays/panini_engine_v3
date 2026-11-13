@@ -5,33 +5,29 @@ Padaccheda: संहित-शफ-लक्षण-वाम-आदेः च
 
 संहितशफलक्षणवामादेश्च (4.1.70)
 Pāṭha: ashtadhyayi.com data.txt row i=41070 (Art. 14).
+Kāśikā: संहित शफ लक्षण वाम इत्येवमादेः प्रातिपदिकादूरूत्तरपदात् स्त्रियामूङ् प्रत्ययो भवति।
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine       import SutraType, SutraRecord, register_sutra, origin
 from engine.state import State
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 
-_GATE_KEY: str = "4_1_70_saMhitaSaP_70"
+def _wanted(t) -> bool:
+    """a compound whose last member is ūru and whose first member is saṃhita, śapha, lakṣaṇa, vāma …: ūṅ (the comparison is not meant)."""
+    f = "".join(v.slp1 for v in t.varnas)
+    return f.endswith("Uru") and f[:-3] in ("saMhita", "Sapa", "lakzaRa", "vAma", "sahita", "saha")
+
+def _site(state: State):
+    return strI_site(state, _wanted)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.70", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.70"
-    return state
+    return append_stri(state, "UN") if _site(state) is not None else state
 
 
 SUTRA = SutraRecord(

@@ -13,7 +13,8 @@ Narrow v3:
 **Edition note:** Some OCR JSONs label this *pāṭha* as **2.1.50**; in *ashtadhyayi-com* **2.1.50** is
 *दिक्संख्ये संज्ञायाम्* — different rule.
 
-No ``varṇa`` mutation (recipe gate only).
+Real branch (docs/SAMASA_MACHINE.md slice 2): a saṅkhyā pūrvapada and a samānādhikaraṇa uttarapada, vivakṣā samāhāra → tatpuruṣa.
+Kāśikā: तद्धितार्थे विषय उत्तरपदे च परतः समाहारे चाभिधेये दिक्संख्ये समानाधिकरणेन सुपा सह समस्येते, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -25,7 +26,7 @@ def _samasa_adhikara_open(state: State) -> bool:
     return any(e.get("id") == "2.1.3" for e in state.adhikara_stack)
 
 
-def _site(state: State) -> bool:
+def _old_site(state: State) -> bool:
     if not _samasa_adhikara_open(state):
         return False
     note_ok = bool(state.meta.get("prakriya_42_taddhitartha_samAhAra_note")) or bool(
@@ -45,15 +46,34 @@ def _site(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
-    return _site(state)
+def _old_cond(state: State) -> bool:
+    return _old_site(state)
 
 
-def act(state: State) -> State:
-    if not _site(state):
+def _old_act(state: State) -> State:
+    if not _old_site(state):
         return state
     state.samjna_registry["2.1.51_taddhitartha_samAhAra_prakriya_42"] = True
     return state
+
+
+from engine.samasa_attach import pair, run, mark, name
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    return pair(state, "2.1.51", same_vib=True, purva=lambda t: "lex:saNKyA" in t.tags) if vivaksita(state, "arthaViSeSa", "samAhAra") else None
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    if s is None:
+        return _old_act(state)
+    return mark(state, list(s), "tatpurusha", "2.1.51")
 
 
 SUTRA = SutraRecord(

@@ -37,7 +37,16 @@ def _gati_before_krdanta(state: State) -> list[int]:
     return []
 
 
+def _vakya_site(state: State):
+    """Two padas of the vākya, the first a prādi (pra, ati, su …) or ku: they stand as one tatpuruṣa, always (nityam). The prādi gaṇa is the Gaṇapāṭha's."""
+    from engine import gana
+    from engine.samasa_attach import pair, name
+    return pair(state, "2.2.18", purva=lambda t: name(t) == "ku" or gana.in_gana("prAdiH", name(t)))
+
+
 def cond(state: State) -> bool:
+    if _vakya_site(state) is not None:
+        return True
     if _gati_before_krdanta(state):
         return True
     if state.paribhasha_gates.get(_GATE_KEY) is True:
@@ -46,6 +55,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    v = _vakya_site(state)
+    if v is not None:
+        from engine.samasa_attach import mark
+        return mark(state, list(v), "tatpurusha", "2.2.18")
     sites = _gati_before_krdanta(state)
     for g in sites:
         state.terms[g].tags |= {"samasa_member", "samasa_purvapada", "tatpurusha"}

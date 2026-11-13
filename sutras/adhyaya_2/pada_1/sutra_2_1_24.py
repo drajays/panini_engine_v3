@@ -11,6 +11,7 @@ Example: *kṛṣṇam śritaḥ* → *kṛṣṇaśritaḥ* ("devoted to Kṛ�
 v3 narrow slice: gate-marks the tatpuruṣa compound with key
 ``2_1_24_dvitiya_shrita``.
 Pāṭha: ashtadhyayi.com data.txt row i=21024 (Art. 14).
+Kāśikā: द्वितीयान्तं सुबन्तं श्रितादिभिः सह समस्यते, तत्पुरुषश्च समासो भवति।
 """
 from __future__ import annotations
 
@@ -24,7 +25,7 @@ _SHRITA_SET: frozenset[str] = frozenset({
 })
 
 
-def cond(state: State) -> bool:
+def _old_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     for t in state.terms:
@@ -33,11 +34,29 @@ def cond(state: State) -> bool:
     return False
 
 
-def act(state: State) -> State:
+def _old_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["tatpurusha_kind"]     = "2.1.24"
     return state
+
+
+from engine.samasa_attach import pair, run, mark, name
+_SRITA = frozenset({"Srita", "atIta", "patita", "gata", "atyasta", "prApta", "Apanna"})   # the sūtra's own list
+
+def _site(state: State):
+    return pair(state, "2.1.24", vib="dvitIyA", uttara_names=_SRITA)
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _old_cond(state)
+
+
+def act(state: State) -> State:
+    s = _site(state)
+    if s is None:
+        return _old_act(state)
+    return mark(state, list(s), "tatpurusha", "2.1.24")
 
 
 SUTRA = SutraRecord(
