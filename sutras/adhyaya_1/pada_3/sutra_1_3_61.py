@@ -1,20 +1,14 @@
 """
-1.3.61  म्रियतेर्लुङ्लिङोश्च  —  VIDHI
+1.3.61  म्रियतेर्लुङ्लिङोश्च  —  VIDHI (niyama)
 
-*Padaccheda:* *mriyateḥ* (षष्ठी-एकवचन) / *luṅ-liṅoḥ* (सप्तमी-द्विवचन) / *ca*.
+*Padaccheda:* *mriyateḥ* / *luṅ-liṅoḥ* / *ca*; anuvṛtti *śitaḥ* (1.3.60), *ātmanepadam* (1.3.12).
 
-*Anuvṛtti:* ātmanepada from 1.3.12.
+Kāśikā 1.3.61: "ङित्त्वादात्मनेपदमत्र सिद्धमेवेति नियमार्थमिदं वचनम्। म्रियतेर्लुङ्लिङोः शितश्चात्मनेपदं भवति,
+अन्यत्र न भवति। अमृत। मृषीष्ट। शितः खल्वपि — म्रियते … नियमः किमर्थः? मरिष्यति। अमरिष्यत्।"
 
-*Content:* The root mṛ (to die; √mṛ class 6) takes ātmanepada endings also in
-the luṅ (aorist) and liṅ (optative/potential) lākāras, in addition to the
-other lākāras already covered. The word "ca" includes the other lākāras
-already given by the general rule (śit context from 1.3.60 etc). In practice
-mṛ always takes ātmanepada. For example: amṛta (luṅ), mriyeta (liṅ).
-
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) idempotency
-stamp "Atmanepada_1_3_61" is absent, (c) a dhātu Term whose upadesha_slp1 is
-in _MR_ROOTS carries either "luN_lakara" or "liN_lakara" tag. No arm flags
-(CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Engine: ``mfN`` is ṅit, so 1.3.12 licenses ātmanepada; this niyama withdraws the licence unless the lakāra is
+luṅ, āśīrliṅ, or a śit one (sārvadhātuka). So liṭ/luṭ/lṛṭ/lṛṅ → licence off → 1.3.78 gives parasmaipada
+(mamāra, mariṣyati). Reads the lakāra tag on the dhātu Term; writes the licence key 1.3.78's gate reads.
 Pāṭha: ashtadhyayi.com data.txt row i=13061 (Art. 14).
 """
 from __future__ import annotations
@@ -22,39 +16,31 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-# Module-level frozensets (CONSTITUTION Art. 13.3)
-_MR_ROOTS: frozenset[str] = frozenset({"mf", "mfY", "mriya"})
-_LAKARA:   frozenset[str] = frozenset({"luN_lakara", "liN_lakara"})
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import ATMANE_LICENSE_META_KEY
 
-_REGISTRY_KEY = "1_3_61_mf_luN_liN"
-_STAMP_KEY    = "Atmanepada_1_3_61"
+# the sārvadhātuka lakāras (laṭ loṭ laṅ vidhiliṅ) take śap/śyan/…: a śit follows (3.1.68 / 3.4.113)
+_SIT_LAKARA = frozenset({"lat_derivation", "lot_derivation", "lag_derivation", "lig_derivation"})
+
+_ROOT = "mfN"
+_NOT_NIYAMA = _SIT_LAKARA | {"lug_derivation", "asirlig_derivation"}
 
 
-def _find(state: State):
-    if state.meta.get(_STAMP_KEY):
-        return None
-    if state.meta.get("pada") == "Atmanepada":
-        return None
+def _dhatu(state: State):
     for t in state.terms:
-        if "dhatu" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in _MR_ROOTS and bool(_LAKARA & t.tags):
+        if "dhatu" in t.tags:
             return t
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    d = _dhatu(state)
+    return (d is not None and "kartari" in d.tags and (d.meta.get("upadesha_slp1") or "") == _ROOT
+            and not (_NOT_NIYAMA & d.tags) and d.meta.get(ATMANE_LICENSE_META_KEY) is True)
 
 
 def act(state: State) -> State:
-    t = _find(state)
-    if t is None:
-        return state
-    state.meta["pada"]     = "Atmanepada"
-    state.meta[_STAMP_KEY] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
+    _dhatu(state).meta[ATMANE_LICENSE_META_KEY] = False
+    state.samjna_registry["1_3_61_mf_niyama"] = True
     return state
 
 

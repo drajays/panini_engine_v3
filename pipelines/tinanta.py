@@ -2911,12 +2911,13 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
             t.tags.add("emit_Ric_tape")
             break
     state = apply_rule("3.1.26", state)
+    state = apply_rule("1.3.74", state)     # णिचश्च: the pada comes from the sūtra, not from this function's name
     state = run_it_prakarana(state)
     state = apply_rule("7.3.37", state)
     _nic_merge(state)
     state = apply_rule("3.1.32", state)
     state = P00_lac_lat_attach(state)
-    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    tin_adesha = _select_tin_adesha("laT", "atmane" if state.meta.get("pada") == "Atmanepada" else "parasmai", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
@@ -4057,6 +4058,8 @@ def _bootstrap_tinanta_derivation(
     state = _attach_upasargas(state, upasargas)
 
     if nic_recipe and lakara == "laT":
+        from engine.vivaksha import set_vivaksha
+        set_vivaksha(state, kartrabhiprAya="kartraBiprAya")    # the nic_recipe request is the kartrabhiprāya reading of 1.3.74
         return _derive_laT_nic_atmane(state, purusha, vacana), gana, None, True
 
     if san_recipe and lakara == "laT":
@@ -4068,6 +4071,8 @@ def _bootstrap_tinanta_derivation(
         state = apply_rule("1.3.12", state)
         state = apply_rule("1.3.19", state)  # विपराभ्यां जेः
         state = apply_rule("1.3.72", state)  # स्वरितञितः कर्त्रभिप्राये
+        for sid in ("1.3.60", "1.3.61", "1.3.91", "1.3.92"):   # pada rules that read dhātu + lakāra off the tape
+            state = apply_rule(sid, state)
         state = apply_rule("1.3.78", state)
 
     pada_key = pada if pada in ("parasmai", "atmane") else _resolve_pada_from_gate(state)

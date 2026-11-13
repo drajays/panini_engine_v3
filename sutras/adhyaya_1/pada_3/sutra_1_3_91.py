@@ -1,76 +1,60 @@
 """
-1.3.91  द्युद्भ्यो लुङि  —  VIDHI
+1.3.91  द्युद्भ्यो लुङि  —  VIBHASHA
 
-*Padaccheda:* *dyu-dbhyaḥ* (पञ्चमी-बहुवचन) / *luṅi* (सप्तमी-एकवचन).
+*Padaccheda:* *dyudbhyaḥ* / *luṅi*; anuvṛtti *vā* (1.3.90), *kartari parasmaipadam* (1.3.78).
+(The old file read this as "ātmanepada" — wrong: the roots are already ātmanepadī; the sūtra gives them an
+optional *parasmaipada*.)
 
-*Anuvṛtti:* ātmanepada from 1.3.12.
+Kāśikā 1.3.91: "अनुदात्तेत्त्वान्नित्यमेवात्मनेपदे प्राप्ते, द्युतादिभ्यो लुङि वा परस्मैपदं भवति। व्यद्युतत्,
+व्यद्योतिष्ट। अलुठत्, अलोठिष्ट। लुङीति किम्? द्योतते।"
 
-*Content:* The roots of the dyu group (dyu etc.) take ātmanepada endings
-when the luṅ (aorist) lakāra is used. For example: adyota — aorist of dyut.
-
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) idempotency
-stamp "Atmanepada_1_3_91" is absent, (c) a dhātu Term carries the tag
-"dyu_usage" AND the tag "lUN_lakAra".
-No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
-Pāṭha: ashtadhyayi.com data.txt row i=13091 (Art. 14).
+Engine: the dhātu Term carries the dhātupāṭha antargaṇa ``द्युतादिः`` (tape init) and the luṅ lakāra tag; the
+rule makes the dhātu ubhayapadī for this derivation (``kartari_atmanepada_licensed='ubhaya'``), which 1.3.78's
+gate reads. VIBHASHA, default off: derive() keeps the ātmanepada reading; the other is reached through
+``engine.vikalpa.explore`` / ``derive_all_readings``. Pāṭha: ashtadhyayi.com data.txt row i=13091 (Art. 14).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-# Module-level frozensets for dyu-group roots (CONSTITUTION Art. 13.3)
-_DYU_ROOTS: frozenset[str] = frozenset({
-    "dyu", "dyuta~", "dyut",
-    "snu", "snuta~",
-    "kzu", "kzuta~",
-})
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import ATMANE_LICENSE_META_KEY
 
-_REGISTRY_KEY = "1_3_91_dyu_lUN_atmanepada"
-_STAMP_KEY    = "Atmanepada_1_3_91"
+_ANTARGANA = "द्युतादिः"
 
 
-def _find(state: State):
-    if state.meta.get(_STAMP_KEY):
-        return None
-    if state.meta.get("pada") == "Atmanepada":
-        return None
+def _dhatu(state: State):
     for t in state.terms:
-        if "dhatu" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        # Match either explicit dyu roots or the dyu_usage tag
-        if (up in _DYU_ROOTS or "dyu_usage" in t.tags) and "lUN_lakAra" in t.tags:
+        if "dhatu" in t.tags:
             return t
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    d = _dhatu(state)
+    return (d is not None and "kartari" in d.tags and "lug_derivation" in d.tags
+            and _ANTARGANA in d.meta.get("antarganas", ()) and d.meta.get(ATMANE_LICENSE_META_KEY) is True)
 
 
 def act(state: State) -> State:
-    t = _find(state)
-    if t is None:
-        return state
-    state.meta["pada"]     = "Atmanepada"
-    state.meta[_STAMP_KEY] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
+    _dhatu(state).meta[ATMANE_LICENSE_META_KEY] = "ubhaya"
+    state.samjna_registry["1_3_91_dyut_lUN_parasmai_vA"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="1.3.91",
-    sutra_type=SutraType.VIDHI,
+    sutra_type=SutraType.VIBHASHA,
     r1_form_identity_exempt=True,
+    vibhasha_default=False,
     text_slp1='dyudByo luNi',
     text_dev='द्युद्भ्यो लुङि',
     samagra_slp1="dyudByaH luNi kartari parasmEpadam vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev="द्युद्भ्यः लुङि कर्तरि परस्मैपदम् वा",
     padaccheda_dev="द्युद्भ्यः (पञ्चमी-बहुवचन) / लुङि (सप्तमी-एकवचन)",
     why_dev=(
-        "द्यु-गण-धातूनां लुङि-लकारे आत्मनेपदम् — "
-        "adyota इत्यादि; "
+        "द्युतादि-धातूनां लुङि वा परस्मैपदम् — "
+        "vyadyutat / vyadyotizwa; "
         "१.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
     ),
     anuvritti_from=("1.3.12",),

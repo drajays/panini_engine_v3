@@ -1,18 +1,15 @@
 """
 1.3.60  शदेः शितः  —  VIDHI
 
-*Padaccheda:* *śadeḥ* (षष्ठी-एकवचन) / *śitaḥ* (षष्ठी-एकवचन).
+*Padaccheda:* *śadeḥ* / *śitaḥ*; anuvṛtti *ātmanepadam* (1.3.12).
 
-*Anuvṛtti:* ātmanepada from 1.3.12.
+Kāśikā 1.3.60: "शद्ऌ शातने (धा० पा० १८५५) परस्मैपदी, तस्मादात्मनेपदं विधीयते। शदिर्यः शित्, शिद्भावी शितो वा
+संबन्धी, तस्मादात्मनेपदं भवति। शीयते … शित इति किम्? अशत्स्यत्। शत्स्यति। शिशत्सति।"
 
-*Content:* The root śad (to fall, perish; √śad class 1/6) takes ātmanepada
-endings when followed by a śit suffix (a suffix marked with the anubandha ś).
-For example: śīyate (from śad + yak = śīyate, the passive is śit).
-
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) idempotency
-stamp "Atmanepada_1_3_60" is absent, (c) a dhātu Term whose upadesha_slp1 is
-in _SAD_ROOTS carries the tag "Sit_pratyaya". No arm flags (CONSTITUTION Art. 13).
-r1_form_identity_exempt=True.
+Engine: the dhātu is ``Sadx~`` (the parasmaipadī śad). A śit is on the way when the lakāra is sārvadhātuka
+(laṭ/loṭ/laṅ/vidhiliṅ — the lakāra tag tape init puts on the dhātu Term, not a caller pada). ``act`` licenses
+ātmanepada on the dhātu (``kartari_atmanepada_licensed``), which 1.3.78's gate reads to pick the pada before
+the tiṅ ādeśa. Not śit (liṭ/lṛṭ/lṛṅ/luṅ/luṭ/āśīrliṅ): no fire, parasmaipada stays.
 Pāṭha: ashtadhyayi.com data.txt row i=13060 (Art. 14).
 """
 from __future__ import annotations
@@ -20,38 +17,30 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-# Module-level frozensets (CONSTITUTION Art. 13.3)
-_SAD_ROOTS: frozenset[str] = frozenset({"Sad", "Sada"})
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import ATMANE_LICENSE_META_KEY
 
-_REGISTRY_KEY = "1_3_60_Sad_Sit"
-_STAMP_KEY    = "Atmanepada_1_3_60"
+# the sārvadhātuka lakāras (laṭ loṭ laṅ vidhiliṅ) take śap/śyan/…: a śit follows (3.1.68 / 3.4.113)
+_SIT_LAKARA = frozenset({"lat_derivation", "lot_derivation", "lag_derivation", "lig_derivation"})
+
+_ROOT = "Sadx~"
 
 
-def _find(state: State):
-    if state.meta.get(_STAMP_KEY):
-        return None
-    if state.meta.get("pada") == "Atmanepada":
-        return None
+def _dhatu(state: State):
     for t in state.terms:
-        if "dhatu" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in _SAD_ROOTS and "Sit_pratyaya" in t.tags:
+        if "dhatu" in t.tags:
             return t
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    d = _dhatu(state)
+    return (d is not None and "kartari" in d.tags and (d.meta.get("upadesha_slp1") or "") == _ROOT
+            and bool(_SIT_LAKARA & d.tags) and d.meta.get(ATMANE_LICENSE_META_KEY) is not True)
 
 
 def act(state: State) -> State:
-    t = _find(state)
-    if t is None:
-        return state
-    state.meta["pada"]     = "Atmanepada"
-    state.meta[_STAMP_KEY] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
+    _dhatu(state).meta[ATMANE_LICENSE_META_KEY] = True
+    state.samjna_registry["1_3_60_Sad_Sit_Atmanepada"] = True
     return state
 
 
