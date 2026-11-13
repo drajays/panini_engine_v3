@@ -701,5 +701,25 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794564425.0419478
+ },
+ {
+  "id": "abhyasa-parity-2",
+  "agent": "cursor",
+  "scope": [
+   "core/abhyasa.py",
+   "core/vyutpatti.py",
+   "tools/abhyasa_vidyut.py",
+   "webui/abhyasa.py",
+   "webui/static/abhyasa.js",
+   "webui/templates/practice.html",
+   "tests/unit/test_abhyasa.py",
+   "tests/unit/test_vyutpatti.py",
+   "docs/ABHYASA_PLAN.md",
+   "docs/HANDOVER_ABHYASA.md"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1794584834.854172
  }
 ]

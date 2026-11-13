@@ -2493,11 +2493,11 @@
 },
 {
 "id": "6.3.93",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "6.3.94",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "6.3.95",
@@ -2517,7 +2517,7 @@
 },
 {
 "id": "6.3.128",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "6.3.138",
@@ -3489,7 +3489,7 @@
 },
 {
 "id": "7.3.35",
-"status": "unexercised"
+"status": "pending_structural"
 },
 {
 "id": "7.3.36",
@@ -4121,7 +4121,7 @@
 },
 {
 "id": "8.3.22",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "8.3.23",
