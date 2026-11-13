@@ -1,0 +1,2973 @@
+{
+  "metadata": {
+    "title": "Kṛt Pratyayas and Their Pāṇinian Meanings — Most Extensive Reference (Aṣṭādhyāyī Adhyāya 3 & Siddhānta Kaumudī 65, 66, 68)",
+    "version": "3.0.0",
+    "authority_sources": [
+      "Pāṇini — Aṣṭādhyāyī (3.1.91–3.4.117)",
+      "Vāmana-Jayāditya — Kāśikāvṛtti",
+      "Bhaṭṭoji Dīkṣita — Siddhānta Kaumudī: 65. कृत्यप्रकरणम् (https://ashtadhyayi.com/kaumudi/65), 66. पूर्वकृदन्तप्रकरणम् (https://ashtadhyayi.com/kaumudi/66), 68. उत्तरकृदन्तप्रकरणम् (https://ashtadhyayi.com/kaumudi/68)"
+    ],
+    "transliteration_schemes": ["Devanāgarī", "IAST", "SLP1"],
+    "total_pratyayas": 78,
+    "kaumudi_prakaranas": [
+      {
+        "chapter_number": 65,
+        "title_devanagari": "कृदन्ते कृत्यप्रकरणम्",
+        "title_iast": "kṛdante kṛtyaprakaraṇam",
+        "kaumudi_sutra_range": "2829–2878",
+        "ashtadhyayi_core_range": "3.1.91–3.1.132",
+        "url": "https://ashtadhyayi.com/kaumudi/65"
+      },
+      {
+        "chapter_number": 66,
+        "title_devanagari": "पूर्वकृदन्तप्रकरणम्",
+        "title_iast": "pūrvakṛdantaprakaraṇam",
+        "kaumudi_sutra_range": "2895–2944+",
+        "ashtadhyayi_core_range": "3.1.133–3.2.188",
+        "url": "https://ashtadhyayi.com/kaumudi/66"
+      },
+      {
+        "chapter_number": 68,
+        "title_devanagari": "उत्तरकृदन्तप्रकरणम्",
+        "title_iast": "uttarakṛdantaprakaraṇam",
+        "kaumudi_sutra_range": "3169–3218+",
+        "ashtadhyayi_core_range": "3.3.1–3.4.76",
+        "url": "https://ashtadhyayi.com/kaumudi/68"
+      }
+    ],
+    "governing_sutras": [
+      {
+        "sutra_id": "3.1.91",
+        "devanagari": "धातोः",
+        "iast": "dhātoḥ",
+        "role": "Adhikāra (3.1.91–3.4.117): All suffixes introduced here attach directly after a verb root (dhātu).",
+        "url": "https://ashtadhyayi.com/sutraani/3/1/91"
+      },
+      {
+        "sutra_id": "3.1.93",
+        "devanagari": "कृदतिङ्",
+        "iast": "kṛdatiṅ",
+        "role": "Saṃjñā: Any pratyaya introduced under 3.1.91 that is not a finite verb ending (tiṅ) is called kṛt.",
+        "url": "https://ashtadhyayi.com/sutraani/3/1/93"
+      },
+      {
+        "sutra_id": "3.1.94",
+        "devanagari": "वाऽसरूपोऽस्त्रियाम्",
+        "iast": "vā'sarūpo'striyām",
+        "role": "Paribhāṣā: Except in the striyām section (3.3.94+), a non-homophonous apavāda optionally blocks its utsarga.",
+        "url": "https://ashtadhyayi.com/sutraani/3/1/94"
+      },
+      {
+        "sutra_id": "3.1.95",
+        "devanagari": "कृत्याः",
+        "iast": "kṛtyāḥ",
+        "role": "Adhikāra (3.1.95–3.1.132): Defines the 7-suffix Kṛtya sub-domain before ṇvultṛcau.",
+        "url": "https://ashtadhyayi.com/sutraani/3/1/95"
+      },
+      {
+        "sutra_id": "3.4.67",
+        "devanagari": "कर्तरि कृत्",
+        "iast": "kartari kṛt",
+        "role": "Default Kāraka: Unless specified otherwise, a kṛt pratyaya denotes the agent (kartṛ).",
+        "url": "https://ashtadhyayi.com/sutraani/3/4/67"
+      },
+      {
+        "sutra_id": "3.4.70",
+        "devanagari": "तयोरेव कृत्यक्तखलर्थाः",
+        "iast": "tayoreva kṛtyaktakhalarthāḥ",
+        "role": "Kāraka Override: Kṛtya, kta, and khalartha suffixes denote only bhāva (action) or karma (object).",
+        "url": "https://ashtadhyayi.com/sutraani/3/4/70"
+      },
+      {
+        "sutra_id": "3.4.113",
+        "devanagari": "तिङ्शित्सार्वधातुकम्",
+        "iast": "tiṅśitsārvadhātukam",
+        "role": "Saṃjñā: Tiṅ and śit kṛt suffixes are sārvadhātuka.",
+        "url": "https://ashtadhyayi.com/sutraani/3/4/113"
+      },
+      {
+        "sutra_id": "3.4.114",
+        "devanagari": "आर्धधातुकं शेषः",
+        "iast": "ārdhadhātukaṃ śeṣaḥ",
+        "role": "Saṃjñā: All remaining kṛt suffixes (non-śit) are ārdhadhātuka.",
+        "url": "https://ashtadhyayi.com/sutraani/3/4/114"
+      }
+    ]
+  },
+  "paninian_meaning_taxonomy": {
+    "artha_varga": {
+      "kartr": {
+        "label": "Kartṛ (Agent)",
+        "description": "Suffixes denoting the doer/agent of the action.",
+        "representative_pratyayas": ["ṇvul", "tṛc", "aṇ", "ṭa", "khac", "kvip", "ktavatu", "śatṛ", "śānac", "ṣvun", "thakan", "ṇyuṭ", "vun", "ṇa"]
+      },
+      "bhava_and_karma": {
+        "label": "Bhāva & Karma (Abstract Action & Object)",
+        "description": "Suffixes denoting the abstract action (intransitive) or direct object (transitive).",
+        "representative_pratyayas": ["ktin", "ghañ", "lyuṭ", "kta", "tavyat", "tavya", "anīyar", "yat", "ṇyat", "kyap", "kelimar", "ṇac", "inuṇ"]
+      },
+      "kala": {
+        "label": "Kāla (Tense / Time)",
+        "description": "Suffixes anchored to past, present, or future time.",
+        "representative_pratyayas": ["kta", "ktavatu", "kvasu", "kānac", "śatṛ", "śānac", "ini (3.3.3)"]
+      },
+      "avyaya_sambandha": {
+        "label": "Avyaya / Sambandha (Indeclinable Relations)",
+        "description": "Indeclinable suffixes expressing purpose, prior sequence, or repetition.",
+        "representative_pratyayas": ["tumun", "ktvā", "lyap", "ṇamul", "tosun", "kasun"]
+      }
+    },
+    "karaka": {
+      "kartr": "Agent / Doer (कर्तृ — 3.4.67 कर्तरि कृत्)",
+      "karma": "Patient / Direct Object (कर्मन् — 3.4.70, 3.2.1)",
+      "bhava": "Abstract Action / State (भाव — 3.3.18, 3.4.70)",
+      "karana": "Instrument / Means (करण — 3.3.117 करणाधिकरणयोश्च)",
+      "adhikarana": "Locus / Place or Time of Action (अधिकरण — 3.3.117)",
+      "sampradana": "Recipient (सम्प्रदान — 3.4.73 दाशगोघ्नौ सम्प्रदाने)",
+      "apadana": "Source / Point of Departure (अपादान — 3.4.74 भीमादयोऽपादाने)"
+    },
+    "kala": {
+      "bhuta": "Past time (भूत — 3.2.84)",
+      "vartamana": "Present / Ongoing time (वर्तमान — 3.2.123–124)",
+      "bhavishyat": "Future time (भविष्यत् — 3.3.3–15)",
+      "sarvakala": "Timeless / Habitual / General (सर्वकाल)"
+    },
+    "special_arthas": {
+      "krtya_modal": "Necessity (आवश्यकता 3.3.170–171), Capability (शक् 3.3.172), Worthiness (अर्ह 3.3.169), Obligation/Debt (आधमर्ण्य 3.3.170)",
+      "tacchilya": "Habitual disposition (तच्छील्य), innate duty (तद्धर्म), skill/excellence (तत्साधुकारिन्) — 3.2.134",
+      "khalartha": "Ease (ईषत्/सुकर), difficulty (दुष्कर), or slightness (ईषदसमाप्ति) — 3.3.126–127",
+      "purvakala": "Prior action by the same agent (समानकर्तृकयोः पूर्वकाले — 3.4.21)",
+      "kriyaya_kriyarthayam": "Action for the sake of another action / Infinitive of purpose (क्रियायां क्रियार्थायाम् — 3.3.10, 3.3.158)",
+      "karmavyatihara": "Reciprocal action (कर्मव्यतिहारे — 3.3.43)",
+      "abhividhi": "Inclusive limit / extent (अभिविधौ — 3.3.44)",
+      "silpin": "Artisan / professional skill (शिल्पिनि — 3.1.145–146)",
+      "asih": "Benediction / blessing (आशिषि — 3.1.150)"
+    }
+  },
+  "morphophonemic_auxiliary_rules": {
+    "krt_natva_8_4_29_to_34": [
+      { "sutra_id": "8.4.29", "sutra": "कृत्यचः", "effect": "n -> ṇ in a kṛt suffix after a vowel when preceded by r/ṣ in an upasarga (e.g., प्रयाणीयम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/29" },
+      { "sutra_id": "8.4.30", "sutra": "णेर्विभाषा", "effect": "Optional ṇatva in kṛt after ṇyanta (प्रयापणीयम् / प्रयापनीयम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/30" },
+      { "sutra_id": "8.4.31", "sutra": "हलश्च इजुपधात्", "effect": "Optional ṇatva after consonant-initial roots with penultimate ic (प्रकोपणीयम् / प्रकोपनीयम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/31" },
+      { "sutra_id": "8.4.32", "sutra": "इजादेः सनुमः", "effect": "Mandatory ṇatva after ic-initial roots taking num (प्रेङ्खणीयम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/32" },
+      { "sutra_id": "8.4.33", "sutra": "वा निंसनिक्षनिन्दाम्", "effect": "Optional ṇatva for niṃs, nikṣ, nind (प्रणिंसितव्यम् / प्रनिंसितव्यम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/33" },
+      { "sutra_id": "8.4.34", "sutra": "न भाभूपूकमिगमिप्यायीवेपाम्", "effect": "Prohibits ṇatva for bhā, bhū, pū, kam, gam, pyāyī, vep (प्रभानीयम्, प्रभवनीयम्).", "url": "https://ashtadhyayi.com/sutraani/8/4/34" }
+    ],
+    "kutva_7_3_52_to_62": [
+      { "sutra_id": "7.3.52", "sutra": "चजोः कु घिण्ण्यतोः", "effect": "c/j -> k/g before gh-it and ṇyat (पाकः, त्यागः, पाक्यम्, मार्ग्यः).", "url": "https://ashtadhyayi.com/sutraani/7/3/52" },
+      { "sutra_id": "7.3.59", "sutra": "न क्वादेः", "effect": "Blocks kutva for kvādi roots (गर्ज्यम्).", "url": "https://ashtadhyayi.com/sutraani/7/3/59" },
+      { "sutra_id": "7.3.60", "sutra": "अजिव्रज्योश्च", "effect": "Blocks kutva for aj and vraj (समाजः, परिव्राजः).", "url": "https://ashtadhyayi.com/sutraani/7/3/60" }
+    ]
+  },
+  "krtya_subsystem": {
+    "domain_range": "3.1.95–3.1.132",
+    "core_set": ["tavyat", "tavya", "anīyar", "yat", "kyap", "ṇyat", "kelimar"],
+    "adhikara_hierarchy": [
+      { "sutra_id": "3.1.91", "sutra": "धातोः (dhātoḥ)", "scope": "Macro-domain: attaches to a verb root (dhātu)." },
+      { "sutra_id": "3.1.93", "sutra": "कृदतिङ् (kṛdatiṅ)", "scope": "Kṛt domain: non-tiṅ suffixes after a dhātu." },
+      { "sutra_id": "3.1.95", "sutra": "कृत्याः (kṛtyāḥ)", "scope": "Kṛtya sub-domain up to 3.1.132 (before ṇvultṛcau)." },
+      { "sutra_id": "3.4.70", "sutra": "तयोरेव कृत्यक्तखलर्थाः (tayoreva kṛtyaktakhalarthāḥ)", "scope": "Assigns bhāva (intransitive) or karma (transitive), overriding 3.4.67." }
+    ],
+    "ya_suffix_decision_tree": [
+      {
+        "priority": 1,
+        "pratyaya": "kyap",
+        "sutra_id": "3.1.106–121",
+        "condition": "Lexical exception list (e.g., i, stu, śās, vṛ, dṛ, juṣ; vad/bhū/han with supi; ṛ-upadha roots excluding kḷp/cṛt; bhṛñ asaṃjñāyām; mṛj optionally).",
+        "guna_vriddhi": "Blocked (k-it via 1.1.5)",
+        "example": "स्तु + क्यप् = स्तुत्यः"
+      },
+      {
+        "priority": 2,
+        "pratyaya": "yat",
+        "sutra_id": "3.1.97–105",
+        "condition": "Vowel-ending roots (ajanta) excluding ṛ/ṝ; plus labial-ending short-a roots (3.1.98), śak/sah (3.1.99), gad/mad/car/yam anupasarge (3.1.100).",
+        "guna_vriddhi": "Guṇa applied (7.3.84); ā -> e (6.4.65)",
+        "example": "नी + यत् = नेयम्; जि + यत् = जेयम्; शप् + यत् = शप्यम्"
+      },
+      {
+        "priority": 3,
+        "pratyaya": "ṇyat",
+        "sutra_id": "3.1.124",
+        "condition": "Roots ending in ṛ, ṝ, or any consonant (ṛhalanta).",
+        "guna_vriddhi": "Vṛddhi applied (ṇ-it via 7.2.115–116)",
+        "example": "कृ + ण्यत् = कार्यम्; पठ् + ण्यत् = पाठ्यम्"
+      }
+    ],
+    "syntactic_agreement_rules": {
+      "kartr_agent": {
+        "cases": ["tṛtīyā (3rd / Instrumental — 2.3.18)", "ṣaṣṭhī (6th / Genitive — 2.3.71)"],
+        "example": "मया / मम ग्रन्थः पठितव्यः (The book must be read by me.)"
+      },
+      "karma_object_transitive": {
+        "case": "prathamā (1st / Nominative)",
+        "agreement": "Matches object in gender, number, and case.",
+        "examples": [
+          "ग्रन्थः पठितव्यः (masculine)",
+          "कथा पठितव्या (feminine)",
+          "पुस्तकम् पठितव्यम् (neuter)"
+        ]
+      },
+      "bhava_action_intransitive": {
+        "case": "prathamā (1st / Nominative)",
+        "agreement": "Always napuṃsaka ekavacana (neuter singular).",
+        "example": "बालकेन शायितव्यम् (The boy should sleep.)"
+      }
+    }
+  },
+  "pratyayas": [
+    {
+      "id": "tavyat",
+      "devanagari": "तव्यत्",
+      "iast": "tavyat",
+      "slp1": "tavyat",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "तव्य", "iast": "tavya", "slp1": "tavya" },
+      "it_markers": [
+        { "varna": "त्", "sutra": "1.3.3", "effect": "T-it: svarita accent on final syllable (तित्स्वरितम् 6.1.185)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "tit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa of ik vowel (7.3.84 / 7.3.86)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35); aniṭ dhātus do not (7.2.10)",
+        "notes": "Universal scope; Vārttika on 3.1.96: वसेस्तव्यत्कर्तरिणिच्च -> वास्तव्यः."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.96", "sutra_devanagari": "तव्यत्तव्यानीयरः", "sutra_iast": "tavyattavyānīyaraḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/96" },
+        { "sutra_id": "3.3.171", "sutra_devanagari": "कृत्याश्च", "sutra_iast": "kṛtyāśca", "url": "https://ashtadhyayi.com/sutraani/3/3/171" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "आवश्यकता, अर्हता, शक्-अर्थे, भावकर्मणोः (३.४.७०)",
+        "artha_english": "Action (bhāva) or object (karma) in the sense of obligation, fitness, or potentiality ('to be done', 'must be done').",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective); bhāve is napuṃsaka ekavacana"
+      },
+      "examples": [
+        { "dhatu": "पठ्", "derived_form": "पठितव्यम्", "iast": "paṭhitavyam", "meaning": "to be read" },
+        { "dhatu": "एध्", "derived_form": "एधितव्यम्", "iast": "edhitavyam", "meaning": "ought to prosper" },
+        { "dhatu": "वस्", "derived_form": "वास्तव्यः", "iast": "vāstavyaḥ", "meaning": "inhabitant (kartari ṇic Vārttika)" }
+      ]
+    },
+    {
+      "id": "tavya",
+      "devanagari": "तव्य",
+      "iast": "tavya",
+      "slp1": "tavya",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "तव्य", "iast": "tavya", "slp1": "tavya" },
+      "it_markers": [],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa of ik vowel (7.3.84 / 7.3.86)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35)",
+        "notes": "Universal scope; differs from tavyat only in Vedic pitch accent (non-tit)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.96", "sutra_devanagari": "तव्यत्तव्यानीयरः", "sutra_iast": "tavyattavyānīyaraḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/96" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "आवश्यकता, अर्हता, भावकर्मणोः",
+        "artha_english": "Ought to be done, fit to be done (identical in morphology to tavyat, differing in Vedic accent).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कर्तव्यम्", "iast": "kartavyam", "meaning": "to be done" },
+        { "dhatu": "चि", "derived_form": "चेतव्यः", "iast": "cetavyaḥ", "meaning": "to be gathered" }
+      ]
+    },
+    {
+      "id": "aniyar",
+      "devanagari": "अनीयर्",
+      "iast": "anīyar",
+      "slp1": "anIyar",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "अनीय", "iast": "anīya", "slp1": "anIya" },
+      "it_markers": [
+        { "varna": "र्", "sutra": "1.3.3", "effect": "R-it: penultimate udātta accent (6.1.217)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "rit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa of ik vowel (7.3.84 / 7.3.86)",
+        "it_agama": "No iṭ (vowel-initial suffix)",
+        "notes": "Universal scope; subject to ṇatva under 8.4.29–34 (प्रयाणीयम्, प्रभवनीयम्)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.96", "sutra_devanagari": "तव्यत्तव्यानीयरः", "sutra_iast": "tavyattavyānīyaraḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/96" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "आवश्यकता, अर्हता, शक्-अर्थे, भावकर्मणोः",
+        "artha_english": "Action (bhāva) or object (karma) in the sense of worthy or deserving.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "पूज्", "derived_form": "पूजनीयः", "iast": "pūjanīyaḥ", "meaning": "worthy of worship" },
+        { "dhatu": "कृ", "derived_form": "करणीयः", "iast": "karaṇīyaḥ", "meaning": "fit to be done" },
+        { "dhatu": "पठ्", "derived_form": "पठनीयम्", "iast": "paṭhanīyam", "meaning": "readable" }
+      ]
+    },
+    {
+      "id": "yat",
+      "devanagari": "यत्",
+      "iast": "yat",
+      "slp1": "yat",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "य", "iast": "ya", "slp1": "ya" },
+      "it_markers": [
+        { "varna": "त्", "sutra": "1.3.3", "effect": "T-it: svarita accent (6.1.185)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "tit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); ā becomes e before yat (ईद्यति 6.4.65); o becomes av before y (6.1.79)",
+        "it_agama": "None",
+        "notes": "Applies to ajanta (3.1.97), poradupadha (3.1.98), śaki-sah (3.1.99), gad-mad-car-yam anupasarge (3.1.100)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.97", "sutra_devanagari": "अचो यत्", "sutra_iast": "aco yat", "url": "https://ashtadhyayi.com/sutraani/3/1/97" },
+        { "sutra_id": "3.1.98", "sutra_devanagari": "पोरदुपधात्", "sutra_iast": "poradupadhāt", "url": "https://ashtadhyayi.com/sutraani/3/1/98" },
+        { "sutra_id": "3.1.99", "sutra_devanagari": "शकिसहोश्च", "sutra_iast": "śakisahośca", "url": "https://ashtadhyayi.com/sutraani/3/1/99" },
+        { "sutra_id": "3.1.100", "sutra_devanagari": "गदमदचरयमश्चानुपसर्गे", "sutra_iast": "gadamadacarayamaścānupasarge", "url": "https://ashtadhyayi.com/sutraani/3/1/100" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva", "karaṇa (3.1.102 वह्यम्)"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "अर्हता, योग्यता, भावकर्मणोः",
+        "artha_english": "Action or object (potential/passive participle) after roots ending in vowels (excluding ṛ/ṝ) and specific labial/listed roots.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "जि", "derived_form": "जेयम्", "iast": "jeyam", "meaning": "to be conquered" },
+        { "dhatu": "दा", "derived_form": "देयम्", "iast": "deyam", "meaning": "to be given" },
+        { "dhatu": "लभ्", "derived_form": "लभ्यम्", "iast": "labhyam", "meaning": "attainable" }
+      ]
+    },
+    {
+      "id": "nyat",
+      "devanagari": "ण्यत्",
+      "iast": "ṇyat",
+      "slp1": "Ryat",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "य", "iast": "ya", "slp1": "ya" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi of final ac or penultimate a (7.2.115–116)." },
+        { "varna": "त्", "sutra": "1.3.3", "effect": "T-it: svarita accent (6.1.185)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "ṇit", "tit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116); c/j -> k/g (चजोः कु घिण्ण्यतोः 7.3.52)",
+        "it_agama": "None",
+        "notes": "Applies to roots ending in ṛ, ṝ, or a consonant (3.1.124)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.124", "sutra_devanagari": "ऋहलोर्ण्यत्", "sutra_iast": "ṛhalorṇyat", "url": "https://ashtadhyayi.com/sutraani/3/1/124" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "आवश्यकता, अर्हता, भावकर्मणोः",
+        "artha_english": "Action or object after roots ending in ṛ, ṝ, or consonants.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कार्यम्", "iast": "kāryam", "meaning": "to be done / work" },
+        { "dhatu": "पठ्", "derived_form": "पाठ्यम्", "iast": "pāṭhyam", "meaning": "to be read" },
+        { "dhatu": "त्यज्", "derived_form": "त्याग्यम्", "iast": "tyāgyam", "meaning": "to be abandoned" }
+      ]
+    },
+    {
+      "id": "kyap",
+      "devanagari": "क्यप्",
+      "iast": "kyap",
+      "slp1": "kyap",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "य", "iast": "ya", "slp1": "ya" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5); triggers tuk augment after short vowel (6.1.71)." },
+        { "varna": "प्", "sutra": "1.3.3", "effect": "P-it: anudātta accent (3.1.4); triggers tuk (6.1.71)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "kit", "pit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None; tuk augment added after short final vowel (6.1.71)",
+        "notes": "Lexical exception list (3.1.106–121): i, stu, śās, vṛ, dṛ, juṣ, bhṛñ, mṛj, etc."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.106", "sutra_devanagari": "वदः सुपि क्यप् च", "sutra_iast": "vadaḥ supi kyap ca", "url": "https://ashtadhyayi.com/sutraani/3/1/106" },
+        { "sutra_id": "3.1.108", "sutra_devanagari": "हनस्त च", "sutra_iast": "hanasta ca", "url": "https://ashtadhyayi.com/sutraani/3/1/108" },
+        { "sutra_id": "3.1.109", "sutra_devanagari": "एतिस्तुशास्वृदृजुषः क्यप्", "sutra_iast": "etistuśāsvṛdṛjuṣaḥ kyap", "url": "https://ashtadhyayi.com/sutraani/3/1/109" },
+        { "sutra_id": "3.1.110", "sutra_devanagari": "ऋदुपधाच्चाकॢपिचृतेः", "sutra_iast": "ṛdupadhāccāklṛpicṛteḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/110" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "bhaviṣyat / vidhi",
+        "artha_sanskrit": "अर्हता, आवश्यकता, भावकर्मणोः",
+        "artha_english": "Worthy/fit to be done (weak-grade -ya for specific roots like i, stu, śās, vṛ, dṛ, juṣ).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "स्तु", "derived_form": "स्तुत्यः", "iast": "stutyaḥ", "meaning": "praiseworthy" },
+        { "dhatu": "शास्", "derived_form": "शिष्यः", "iast": "śiṣyaḥ", "meaning": "disciple" },
+        { "dhatu": "हन्", "upapada": "ब्रह्मन्", "derived_form": "ब्रह्महत्या", "iast": "brahmahatyā", "meaning": "brahmanicide (3.1.108)" }
+      ]
+    },
+    {
+      "id": "kelimar",
+      "devanagari": "केलिमर्",
+      "iast": "kelimar",
+      "slp1": "kelimar",
+      "kaumudi_chapter": 65,
+      "stripped_form": { "devanagari": "एलिम", "iast": "elima", "slp1": "elima" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "र्", "sutra": "1.3.3", "effect": "R-it: penultimate udātta accent (6.1.217)." }
+      ],
+      "category": "kṛtya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "kṛtya", "ārdhadhātuka", "kit", "rit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Introduced by Vārttika on 3.1.96 (केलिमर उपसंख्यानम्)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.96", "sutra_devanagari": "तव्यत्तव्यानीयरः (वार्त्तिकम् - केलिमर उपसंख्यानम्)", "sutra_iast": "tavyattavyānīyaraḥ (Vārttika: kelimara upasaṃkhyānam)", "url": "https://ashtadhyayi.com/sutraani/3/1/96" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्मणि भावे च (सुकरत्वम्)",
+        "artha_english": "Denotes an action that easily or naturally reaches completion (e.g., pac, bhid).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "पच्", "derived_form": "पचेलिमाः (माषाः)", "iast": "pacelimāḥ", "meaning": "easily cooked" },
+        { "dhatu": "भिद्", "derived_form": "भिदेलिमाः (सरलाः)", "iast": "bhidelimāḥ", "meaning": "easy to be split" }
+      ]
+    },
+    {
+      "id": "nvul",
+      "devanagari": "ण्वुल्",
+      "iast": "ṇvul",
+      "slp1": "Rvul",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अक", "iast": "aka", "slp1": "aka" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." },
+        { "varna": "ल्", "sutra": "1.3.3", "effect": "L-it: accent immediately before suffix (6.1.193)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit", "lit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116); vu -> aka (7.1.1); yug augment after ā-ending roots (7.3.33)",
+        "it_agama": "None",
+        "notes": "General agentive noun suffix; also used in future purpose (3.3.10: कृष्णं दर्शको याति)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.133", "sutra_devanagari": "ण्वुल्तृचौ", "sutra_iast": "ṇvultṛcau", "url": "https://ashtadhyayi.com/sutraani/3/1/133" },
+        { "sutra_id": "3.3.10", "sutra_devanagari": "तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम्", "sutra_iast": "tumunṇvulau kriyāyāṃ kriyārthāyām", "url": "https://ashtadhyayi.com/sutraani/3/3/10" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ", "karma (bahulam: पादहारकः)"],
+        "kala": "sarvakāla / bhaviṣyat (3.3.10)",
+        "artha_sanskrit": "कर्तरि सामान्ये (३.४.६७), क्रियायां क्रियार्थायां च (३.३.१०)",
+        "artha_english": "Agent / Doer (kartā) of the action.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -ikā via 7.3.44)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कारकः / कारिका", "iast": "kārakaḥ / kārikā", "meaning": "doer" },
+        { "dhatu": "दा", "derived_form": "दायकः", "iast": "dāyakaḥ", "meaning": "giver" },
+        { "dhatu": "हन्", "derived_form": "घातकः", "iast": "ghātakaḥ", "meaning": "slayer" }
+      ]
+    },
+    {
+      "id": "trc",
+      "devanagari": "तृच्",
+      "iast": "tṛc",
+      "slp1": "tfc",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "तृ", "iast": "tṛ", "slp1": "tf" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84 / 7.3.86)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35)",
+        "notes": "Forms ṛ-ending agentive nouns (naptr-adi lengthening 6.4.11)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.133", "sutra_devanagari": "ण्वुल्तृचौ", "sutra_iast": "ṇvultṛcau", "url": "https://ashtadhyayi.com/sutraani/3/1/133" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि सामान्ये (३.४.६७)",
+        "artha_english": "Agent / Doer (kartā) of the action.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -trī via 4.1.5)"
+      },
+      "examples": [
+        { "dhatu": "दा", "derived_form": "दाता", "iast": "dātā", "meaning": "giver" },
+        { "dhatu": "कृ", "derived_form": "कर्ता / कर्त्री", "iast": "kartā / kartrī", "meaning": "doer" }
+      ]
+    },
+    {
+      "id": "lyu",
+      "devanagari": "ल्यु",
+      "iast": "lyu",
+      "slp1": "lyu",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अन", "iast": "ana", "slp1": "ana" },
+      "it_markers": [
+        { "varna": "ल्", "sutra": "1.3.8", "effect": "L-it: accent before suffix (6.1.193)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "lit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); yu replaced by ana (7.1.1)",
+        "it_agama": "None",
+        "notes": "Applies to nandādi gaṇa (3.1.134)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.134", "sutra_devanagari": "नन्दिग्रहिपचादिभ्यो ल्युणिन्यचः", "sutra_iast": "nandigrahipacādibhyo lyuṇinyacaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/134" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (नन्द्यादिगणेभ्यः)",
+        "artha_english": "Agentive suffix for the nandādi group of roots.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga / strīliṅga (-nā / -nī)"
+      },
+      "examples": [
+        { "dhatu": "नन्द् (णन्दि)", "derived_form": "नन्दनः", "iast": "nandanaḥ", "meaning": "one who delights" },
+        { "dhatu": "सूद्", "upapada": "मधु", "derived_form": "मधुसूदनः", "iast": "madhusūdanaḥ", "meaning": "slayer of Madhu" }
+      ]
+    },
+    {
+      "id": "nini",
+      "devanagari": "णिनि",
+      "iast": "ṇini",
+      "slp1": "Rini",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "इन्", "iast": "in", "slp1": "in" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." },
+        { "varna": "इ", "sutra": "1.3.2", "effect": "Uccāraṇārtha; elided." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Produces -in stems (grahādi, tācchīlya, āvaśyaka)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.134", "sutra_devanagari": "नन्दिग्रहिपचादिभ्यो ल्युणिन्यचः", "sutra_iast": "nandigrahipacādibhyo lyuṇinyacaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/134" },
+        { "sutra_id": "3.2.78", "sutra_devanagari": "सुप्यजातौ णिनिस्ताच्छील्ये", "sutra_iast": "supyajātav ṇinistācchīlye", "url": "https://ashtadhyayi.com/sutraani/3/2/78" },
+        { "sutra_id": "3.3.170", "sutra_devanagari": "आवश्यकाधमर्ण्ययोर्णिनिः", "sutra_iast": "āvaśyakādhamarṇyayorṇiniḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/170" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla / bhūta / bhaviṣyat",
+        "artha_sanskrit": "कर्तरि (ग्रहादिभ्यः), ताच्छील्ये (३.२.७८), अवश्यकाधमर्ण्ययोः (३.३.१७०)",
+        "artha_english": "Agent (kartā) for specific root groups (grahādi); habitual doer with an upapada; one who must do or owes.",
+        "upapada": "Optional or required depending on sūtra",
+        "gender_and_declension": "in-anta triliṅga (fem. -inī via 4.1.5)"
+      },
+      "examples": [
+        { "dhatu": "ग्रह्", "derived_form": "ग्राही (ग्राहिन्)", "iast": "grāhī", "meaning": "one who grasps" },
+        { "dhatu": "स्था", "derived_form": "स्थायी", "iast": "sthāyī", "meaning": "standing / enduring" }
+      ]
+    },
+    {
+      "id": "ac",
+      "devanagari": "अच्",
+      "iast": "ac",
+      "slp1": "ac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84 / 7.3.86)",
+        "it_agama": "None",
+        "notes": "Applies to pacādi ākṛtigaṇa (3.1.134), harateranudyamane (3.2.9), arhaḥ (3.2.12), śeteḥ (3.2.15)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.134", "sutra_devanagari": "नन्दिग्रहिपचादिभ्यो ल्युणिन्यचः", "sutra_iast": "nandigrahipacādibhyo lyuṇinyacaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/134" },
+        { "sutra_id": "3.2.9", "sutra_devanagari": "हरतेरनुद्यमनेऽच्", "sutra_iast": "harateranudyamane'c", "url": "https://ashtadhyayi.com/sutraani/3/2/9" },
+        { "sutra_id": "3.2.15", "sutra_devanagari": "अधिकरणे शेतेः", "sutra_iast": "adhikaraṇe śeteḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/15" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (पचादिगणेभ्यः)",
+        "artha_english": "Agent (kartā) for specific root groups (pacādi).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -ā via 4.1.4)"
+      },
+      "examples": [
+        { "dhatu": "पच्", "derived_form": "पचः", "iast": "pacaḥ", "meaning": "cook" },
+        { "dhatu": "चर्", "derived_form": "चराचरः", "iast": "carācaraḥ", "meaning": "moving repeatedly (reduplicated Vārttika)" },
+        { "dhatu": "शी", "upapada": "ख", "derived_form": "खशयः", "iast": "khaśayaḥ", "meaning": "dwelling in the sky (3.2.15)" }
+      ]
+    },
+    {
+      "id": "ka",
+      "devanagari": "क",
+      "iast": "ka",
+      "slp1": "ka",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5); deletes final ā of root (6.4.64)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); final ā elided (6.4.64)",
+        "it_agama": "None",
+        "notes": "Applies to igupadha/jñā/prī/kṝ (3.1.135), ātaścopasarge (3.1.136), gehe kaḥ (3.1.144), āto'nupasarge (3.2.3), pre dājñaḥ (3.2.6)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.135", "sutra_devanagari": "इगुपधज्ञाप्रीकिरः कः", "sutra_iast": "igupadhajñāprīkiraḥ kaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/135" },
+        { "sutra_id": "3.1.136", "sutra_devanagari": "आतश्चोपसर्गे", "sutra_iast": "ātaścopasarge", "url": "https://ashtadhyayi.com/sutraani/3/1/136" },
+        { "sutra_id": "3.1.144", "sutra_devanagari": "गेहे कः", "sutra_iast": "gehe kaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/144" },
+        { "sutra_id": "3.2.3", "sutra_devanagari": "आतोऽनुपसर्गे कः", "sutra_iast": "āto'nupasarge kaḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/3" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (इगुपध-ज्ञा-प्री-कॄ-धातुभ्यः, आतश्चोपसर्गे, आतोऽनुपसर्गे कर्मण्युपपदे च)",
+        "artha_english": "Agent (kartā) after roots with penultimate i, u, ṛ, ḷ; also after ā-ending roots with upasarga or karma upapada.",
+        "upapada": "Required in 3.2.3 (karma upapada)",
+        "gender_and_declension": "triliṅga (fem. -ā)"
+      },
+      "examples": [
+        { "dhatu": "बुध्", "derived_form": "बुधः", "iast": "budhaḥ", "meaning": "wise person" },
+        { "dhatu": "ग्ला", "upapada": "सु", "derived_form": "सुग्लः", "iast": "suglaḥ", "meaning": "weary (3.1.136)" },
+        { "dhatu": "दा", "upapada": "गो", "derived_form": "गोदः", "iast": "godaḥ", "meaning": "giver of cows (3.2.3)" }
+      ]
+    },
+    {
+      "id": "sha",
+      "devanagari": "श",
+      "iast": "śa",
+      "slp1": "Sa",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "श्", "sutra": "1.3.8", "effect": "Ś-it: sārvadhātuka (3.4.113), triggers vikaraṇa śap." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "sārvadhātuka",
+      "samjna_tags": ["kṛt", "sārvadhātuka", "śit"],
+      "anga_operations": {
+        "guna_vriddhi": "Sārvadhātuka guṇa + vikaraṇa",
+        "it_agama": "None",
+        "notes": "Applies to pā/ghrā/dhmā/dheṭ/dṛś (3.1.137), limp/vind/dhāri etc. (3.1.138), dā/dhā optionally (3.1.139)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.137", "sutra_devanagari": "पाघ्राध्माधेट्दृशः शः", "sutra_iast": "pāghrādhmādheṭdṛśaḥ śaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/137" },
+        { "sutra_id": "3.1.138", "sutra_devanagari": "अनुपसर्गाल्लिम्पविन्दधारिपारिवेद्युदेजिचेतिसातिसाहिभ्यश्च", "sutra_iast": "anupasargāllimpavindadhāripārividyudejicetisātisāhibhyaśca", "url": "https://ashtadhyayi.com/sutraani/3/1/138" },
+        { "sutra_id": "3.1.139", "sutra_devanagari": "ददातिदधात्योर्विभाषा", "sutra_iast": "dadātidhātyorvibhāṣā", "url": "https://ashtadhyayi.com/sutraani/3/1/139" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (पा-घ्रा-ध्मा-धेट्-दृश्-लिम्पादिभ्यः)",
+        "artha_english": "Agentive suffix after pā, ghrā, dhmā, dheṭ, dṛś, and anupasarga limpādi roots.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -ī via 4.1.41)"
+      },
+      "examples": [
+        { "dhatu": "पा (पिव्)", "derived_form": "पिबः", "iast": "pibaḥ", "meaning": "drinker" },
+        { "dhatu": "लिप्", "derived_form": "लिम्पः", "iast": "limpaḥ", "meaning": "anointer" },
+        { "dhatu": "दा", "derived_form": "ददः", "iast": "dadaḥ", "meaning": "giver (3.1.139)" }
+      ]
+    },
+    {
+      "id": "na",
+      "devanagari": "ण",
+      "iast": "ṇa",
+      "slp1": "Ra",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116); yug augment after ā (7.3.33)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Applies to jvalādi/kasanta (3.1.140), śyādvyadhāsrū... (3.1.141), du-nī (3.1.142), grah optionally (3.1.143)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.140", "sutra_devanagari": "ज्वलितिकसन्तेभ्यो णः", "sutra_iast": "jvalitikasantebhyo ṇaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/140" },
+        { "sutra_id": "3.1.141", "sutra_devanagari": "श्याद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च", "sutra_iast": "śyādvyadhāsrusaṃsrvatīṇavasā'vahṛlihaśliṣaśvasaśca", "url": "https://ashtadhyayi.com/sutraani/3/1/141" },
+        { "sutra_id": "3.1.142", "sutra_devanagari": "दुन्योरनुपसर्गे", "sutra_iast": "dunyoranupasarge", "url": "https://ashtadhyayi.com/sutraani/3/1/142" },
+        { "sutra_id": "3.1.143", "sutra_devanagari": "विभाषा ग्रहः", "sutra_iast": "vibhāṣā grahaḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/143" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (ज्वलादि-श्याद्यादि-दु-नी-ग्रह-धातुभ्यः)",
+        "artha_english": "Agentive vṛddhi suffix for jvalādi, śyādi, du, nī, and optionally grah.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga / triliṅga"
+      },
+      "examples": [
+        { "dhatu": "ज्वल्", "derived_form": "ज्वालः", "iast": "jvālaḥ", "meaning": "flame / blazing" },
+        { "dhatu": "व्यध्", "derived_form": "व्याधः", "iast": "vyādhaḥ", "meaning": "hunter" },
+        { "dhatu": "ग्रह्", "derived_form": "ग्राहः", "iast": "grāhaḥ", "meaning": "crocodile / seizer (3.1.143)" }
+      ]
+    },
+    {
+      "id": "svun",
+      "devanagari": "ष्वुन्",
+      "iast": "ṣvun",
+      "slp1": "zvun",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अक", "iast": "aka", "slp1": "aka" },
+      "it_markers": [
+        { "varna": "ष्", "sutra": "1.3.6", "effect": "Ṣ-it: feminine takes ṅīṣ (षिद्गौरादिभ्यश्च 4.1.41 -> -kī)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṣit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); vu -> aka (7.1.1)",
+        "it_agama": "None",
+        "notes": "Vārttika restricts to nṛt, khan, rañj (नृतिखनिरञ्जिभ्य एव)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.145", "sutra_devanagari": "शिल्पिनि ष्वुन्", "sutra_iast": "śilpini ṣvun", "url": "https://ashtadhyayi.com/sutraani/3/1/145" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "शिल्पिनि कर्तरि (क्रियाकौशलवति)",
+        "artha_english": "Artisan / skilled performer (śilpin) of the action.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -kī via 4.1.41)"
+      },
+      "examples": [
+        { "dhatu": "नृत्", "derived_form": "नर्तकः / नर्तकी", "iast": "nartakaḥ / nartakī", "meaning": "dancer" },
+        { "dhatu": "खन्", "derived_form": "खनकः / खनकी", "iast": "khanakaḥ / khanakī", "meaning": "digger / miner" }
+      ]
+    },
+    {
+      "id": "thakan",
+      "devanagari": "थकन्",
+      "iast": "thakan",
+      "slp1": "Takan",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "थक", "iast": "thaka", "slp1": "Taka" },
+      "it_markers": [
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "ā-substitution for gai (आदेच उपदेशेऽशिति 6.1.45)",
+        "it_agama": "None",
+        "notes": "Specific to gai (sing) in śilpin sense (3.1.146)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.146", "sutra_devanagari": "गस्थकन्", "sutra_iast": "gasthakan", "url": "https://ashtadhyayi.com/sutraani/3/1/146" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "शिल्पिनि कर्तरि (गायतेः)",
+        "artha_english": "Skilled singer / chanter (from gai).",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga / triliṅga"
+      },
+      "examples": [
+        { "dhatu": "गै", "derived_form": "गाथकः", "iast": "gāthakaḥ", "meaning": "singer / chanter" }
+      ]
+    },
+    {
+      "id": "nyut",
+      "devanagari": "ण्युट्",
+      "iast": "ṇyuṭ",
+      "slp1": "Ryuw",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अन", "iast": "ana", "slp1": "ana" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." },
+        { "varna": "ट्", "sutra": "1.3.3", "effect": "Ṭ-it: feminine takes ṅīp (4.1.15)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit", "ṭit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116); yu -> ana (7.1.1); yug after ā (7.3.33)",
+        "it_agama": "None",
+        "notes": "Applies to gai (3.1.147) and hā (3.1.148)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.147", "sutra_devanagari": "ण्युट् च", "sutra_iast": "ṇyuṭ ca", "url": "https://ashtadhyayi.com/sutraani/3/1/147" },
+        { "sutra_id": "3.1.148", "sutra_devanagari": "हश्च व्रीहिकालयोः", "sutra_iast": "haśca vrīhikālayoḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/148" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "शिल्पिनि कर्तरि (गायतेः ३.१.१४७), व्रीहिकालयोश्च (हा-धातोः ३.१.१४८)",
+        "artha_english": "Skilled singer (gāyana); or rice/year (hāyana).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -nī via 4.1.15)"
+      },
+      "examples": [
+        { "dhatu": "गै", "derived_form": "गायनः / गायनी", "iast": "gāyanaḥ / gāyanī", "meaning": "singer" },
+        { "dhatu": "हा", "derived_form": "हायनः", "iast": "hāyanaḥ", "meaning": "year / a kind of rice" }
+      ]
+    },
+    {
+      "id": "vun",
+      "devanagari": "वुन्",
+      "iast": "vun",
+      "slp1": "vun",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अक", "iast": "aka", "slp1": "aka" },
+      "it_markers": [
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); vu -> aka (7.1.1)",
+        "it_agama": "None",
+        "notes": "Applies to pru/sṛ/lū in samabhihāra (3.1.149) and any dhātu in āśīḥ/blessing (3.1.150)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.149", "sutra_devanagari": "प्रुसृल्वः समभिहारे वुन्", "sutra_iast": "prusṛlvaḥ samabhihāre vun", "url": "https://ashtadhyayi.com/sutraani/3/1/149" },
+        { "sutra_id": "3.1.150", "sutra_devanagari": "आशिषि च", "sutra_iast": "āśiṣi ca", "url": "https://ashtadhyayi.com/sutraani/3/1/150" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "समभिहारे (साधुकारित्वे ३.१.१४९), आशिषि च (३.१.१५०)",
+        "artha_english": "Skilled/frequent agent (3.1.149), or agent in a benediction/blessing ('may he live!' — 3.1.150).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "प्रु", "derived_form": "प्रवकः", "iast": "pravakaḥ", "meaning": "frequent/skilled leaper" },
+        { "dhatu": "जीव्", "derived_form": "जीवकः", "iast": "jīvakaḥ", "meaning": "may he live! (benediction)" },
+        { "dhatu": "नन्द्", "derived_form": "नन्दकः", "iast": "nandakaḥ", "meaning": "may he rejoice!" }
+      ]
+    },
+    {
+      "id": "an_karma",
+      "devanagari": "अण्",
+      "iast": "aṇ",
+      "slp1": "aR",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.3", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Obligatorily forms an upapada samāsa (2.2.19); also used in kriyārthā kriyā (3.3.12)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.1", "sutra_devanagari": "कर्मण्यण्", "sutra_iast": "karmaṇyaṇ", "url": "https://ashtadhyayi.com/sutraani/3/2/1" },
+        { "sutra_id": "3.2.2", "sutra_devanagari": "ह्वावामश्च", "sutra_iast": "hvāvāmaśca", "url": "https://ashtadhyayi.com/sutraani/3/2/2" },
+        { "sutra_id": "3.3.12", "sutra_devanagari": "अण् कर्मणि च", "sutra_iast": "aṇ karmaṇi ca", "url": "https://ashtadhyayi.com/sutraani/3/3/12" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla / bhaviṣyat (3.3.12)",
+        "artha_sanskrit": "कर्मण्युपपदे कर्तरि",
+        "artha_english": "Agent (kartā) when combined with a preceding object (upapada).",
+        "upapada": "karma (direct object)",
+        "gender_and_declension": "triliṅga (fem. -ī via 4.1.15)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "upapada": "कुम्भम्", "derived_form": "कुम्भकारः", "iast": "kumbhakāraḥ", "meaning": "potter" },
+        { "dhatu": "वे (वा)", "upapada": "तन्तु", "derived_form": "तन्तुवायः", "iast": "tantuvāyaḥ", "meaning": "weaver (3.2.2)" }
+      ]
+    },
+    {
+      "id": "ta",
+      "devanagari": "ट",
+      "iast": "ṭa",
+      "slp1": "wa",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ट्", "sutra": "1.3.7", "effect": "Ṭ-it: feminine takes ṅīp (4.1.15)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṭit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to car (3.2.16–17), sṛ (3.2.18–19), kṛ in hetu/tācchīlya/ānulomya & divādi list (3.2.20–22)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.16", "sutra_devanagari": "चरेष्टः", "sutra_iast": "careṣṭaḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/16" },
+        { "sutra_id": "3.2.18", "sutra_devanagari": "पुरोऽग्रतोऽग्रेषु सर्तेः", "sutra_iast": "puro'grato'greṣu sarteḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/18" },
+        { "sutra_id": "3.2.20", "sutra_devanagari": "कृञो हेतुताच्छील्यानुलोम्येषु", "sutra_iast": "kṛño hetutācchīlyānulomyeṣu", "url": "https://ashtadhyayi.com/sutraani/3/2/20" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (चरेः अधिकरणे, सर्तेः पुरः-अग्रतः-अग्रेषु, कृञो हेतु-ताच्छील्य-आनुलोम्येषु)",
+        "artha_english": "Agent (kartā) moving or acting in a specific location (with car), going ahead (with sṛ), or causing/habitually doing (with kṛ).",
+        "upapada": "adhikaraṇa / listed upapada",
+        "gender_and_declension": "triliṅga (fem. -ī via 4.1.15)"
+      },
+      "examples": [
+        { "dhatu": "चर्", "upapada": "कुरु", "derived_form": "कुरुचरः / कुरुचरी", "iast": "kurucaraḥ / kurucarī", "meaning": "moving in Kuru" },
+        { "dhatu": "कृ", "upapada": "यशस्", "derived_form": "यशस्करी", "iast": "yaśaskarī", "meaning": "fame-producing (3.2.20)" },
+        { "dhatu": "कृ", "upapada": "दिवा", "derived_form": "दिवाकरः", "iast": "divākaraḥ", "meaning": "sun (3.2.21)" }
+      ]
+    },
+    {
+      "id": "in_upapada",
+      "devanagari": "इन्",
+      "iast": "in",
+      "slp1": "in",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "इ", "iast": "i", "slp1": "i" },
+      "it_markers": [
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "nit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "No guṇa/vṛddhi (blocked by specific nipātana / kṛt rules)",
+        "it_agama": "None",
+        "notes": "Applies to kṛ with stamba/śakṛt (3.2.24), hṛ with dṛti/nātha (3.2.25), grah/bhṛ in phalegrahi/ātmambhari (3.2.26)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.24", "sutra_devanagari": "स्तम्बशकृतोरिन्", "sutra_iast": "stambaśakṛtorin", "url": "https://ashtadhyayi.com/sutraani/3/2/24" },
+        { "sutra_id": "3.2.25", "sutra_devanagari": "हरतेर्दृतिनाथयोः पशौ", "sutra_iast": "haraterdṛtināthayoḥ paśau", "url": "https://ashtadhyayi.com/sutraani/3/2/25" },
+        { "sutra_id": "3.2.26", "sutra_devanagari": "फलेग्रहिरात्मम्भरिश्च", "sutra_iast": "phalegrahirātmambhariśca", "url": "https://ashtadhyayi.com/sutraani/3/2/26" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि विशिष्टोपपदे (व्रीहि-वत्स-पशु-फलादिषु)",
+        "artha_english": "Agentive -i suffix in specific upapada compounds (producing sheaves, bearing fruit, nourishing oneself).",
+        "upapada": "stamba, śakṛt, dṛti, nātha, phala, ātman",
+        "gender_and_declension": "puṃliṅga (i-stem)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "upapada": "स्तम्ब", "derived_form": "स्तम्बकरिः", "iast": "stambakariḥ", "meaning": "rice (forming sheaves)" },
+        { "dhatu": "ग्रह्", "upapada": "फल", "derived_form": "फलेग्रहिः", "iast": "phalegrahiḥ", "meaning": "fruit-bearing tree" },
+        { "dhatu": "भृ", "upapada": "आत्मन्", "derived_form": "आत्मम्भरिः", "iast": "ātmambhariḥ", "meaning": "selfish (nourishing oneself)" }
+      ]
+    },
+    {
+      "id": "tak",
+      "devanagari": "टक्",
+      "iast": "ṭak",
+      "slp1": "wak",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ट्", "sutra": "1.3.7", "effect": "Ṭ-it: feminine takes ṅīp (4.1.15)." },
+        { "varna": "क्", "sutra": "1.3.3", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṭit", "kit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to gā and pā (3.2.8)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.8", "sutra_devanagari": "गापोष्टक्", "sutra_iast": "gāpoṣṭak", "url": "https://ashtadhyayi.com/sutraani/3/2/8" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्मण्युपपदे कर्तरि (गा-पा-धातुभ्यः)",
+        "artha_english": "Agentive suffix after gā (sing) and pā (drink) when a karma upapada precedes.",
+        "upapada": "karma",
+        "gender_and_declension": "triliṅga (fem. -ī)"
+      },
+      "examples": [
+        { "dhatu": "गा (गै)", "upapada": "साम", "derived_form": "सामगः", "iast": "sāmagaḥ", "meaning": "Sāmaveda chanter" },
+        { "dhatu": "पा", "upapada": "सुरा", "derived_form": "सुरापी", "iast": "surāpī", "meaning": "liquor drinker (fem.)" }
+      ]
+    },
+    {
+      "id": "khac",
+      "devanagari": "खच्",
+      "iast": "khac",
+      "slp1": "Kac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ख्", "sutra": "1.3.8", "effect": "Kh-it: triggers mum augment (6.3.67) and shortening of upapada (6.3.66)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "khit", "cit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84 / 7.3.86)",
+        "it_agama": "None",
+        "notes": "Upapada takes mum (anusvāra/m) per 6.3.67."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.38", "sutra_devanagari": "प्रियवशे वदः खच्", "sutra_iast": "priyavaśe vadaḥ khac", "url": "https://ashtadhyayi.com/sutraani/3/2/38" },
+        { "sutra_id": "3.2.39", "sutra_devanagari": "द्विषत्परयोस्तापेः", "sutra_iast": "dviṣatparayostāpeḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/39" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि विशिष्टोपपदे (प्रियंवदः, परंतपः)",
+        "artha_english": "Agent (kartā) speaking sweet or submissive words (with priya/vaśa), or tormenting foes (3.2.39).",
+        "upapada": "Specific lexical upapada (priya, vaśa, etc.)",
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "वद्", "upapada": "प्रिय", "derived_form": "प्रियंवदः", "iast": "priyaṃvadaḥ", "meaning": "sweet-spoken" },
+        { "dhatu": "तप् (णिच्)", "upapada": "पर", "derived_form": "परंतपः", "iast": "paraṃtapaḥ", "meaning": "tormentor of foes" }
+      ]
+    },
+    {
+      "id": "khas",
+      "devanagari": "खश्",
+      "iast": "khaś",
+      "slp1": "KaS",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ख्", "sutra": "1.3.8", "effect": "Kh-it: mum augment (6.3.67) and shortening of upapada (6.3.66)." },
+        { "varna": "श्", "sutra": "1.3.3", "effect": "Ś-it: sārvadhātuka (3.4.113), triggers vikaraṇa." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "sārvadhātuka",
+      "samjna_tags": ["kṛt", "sārvadhātuka", "khit", "śit", "upapada"],
+      "anga_operations": {
+        "guna_vriddhi": "Sārvadhātuka vikaraṇa + guṇa",
+        "it_agama": "None",
+        "notes": "Upapada receives mum (6.3.67)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.28", "sutra_devanagari": "एजेः खश्", "sutra_iast": "ejeḥ khaś", "url": "https://ashtadhyayi.com/sutraani/3/2/28" },
+        { "sutra_id": "3.2.29", "sutra_devanagari": "नासिकास्तनयोर्ध्माधेटोः", "sutra_iast": "nāsikāstanayordhmādheṭoḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/29" },
+        { "sutra_id": "3.2.83", "sutra_devanagari": "आत्ममाने खश्च", "sutra_iast": "ātmamāne khaśca", "url": "https://ashtadhyayi.com/sutraani/3/2/83" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (अङ्ग-एजः, नासिका-स्तन-धेटः, आत्ममाने च)",
+        "artha_english": "Agent with specific upapadas (ej causatives, dhmā/dheṭ, man in self-esteem).",
+        "upapada": "Specific lexical upapada",
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "एज् (णिच्)", "upapada": "जन", "derived_form": "जनमेजयः", "iast": "janamejayaḥ", "meaning": "Janamejaya" },
+        { "dhatu": "धेट्", "upapada": "स्तन", "derived_form": "स्तनन्धयः / स्तनन्धयी", "iast": "stanandhayaḥ / stanandhayī", "meaning": "breast-feeding infant (3.2.29)" }
+      ]
+    },
+    {
+      "id": "kvip",
+      "devanagari": "क्विप्",
+      "iast": "kvip",
+      "slp1": "kvip",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "∅ (अप्रत्ययलोपः)", "iast": "∅ (zero)", "slp1": "" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "व्", "sutra": "6.1.67", "effect": "V-it: complete elision of v via वेरपृक्तस्य (6.1.67)." },
+        { "varna": "इ", "sutra": "1.3.2", "effect": "Uccāraṇārtha; elided." },
+        { "varna": "प्", "sutra": "1.3.3", "effect": "P-it: anudātta; triggers tuk augment (6.1.71)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "pit", "sarvāpahārī"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None; tuk augment after short final vowel (6.1.71)",
+        "notes": "Zero-morpheme suffix (sarvāpahārī lopa); retains pratyayalakṣaṇa (1.1.62)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.61", "sutra_devanagari": "सत्सूद्विषद्रुहदुहयुजविदभिदच्छिदजिनिराजामुपसर्गेऽपि क्विप्", "sutra_iast": "satsūdviṣadruhaduhayujavidabhidacchidajinirājāmupasarge'pi kvip", "url": "https://ashtadhyayi.com/sutraani/3/2/61" },
+        { "sutra_id": "3.2.76", "sutra_devanagari": "क्विप् च", "sutra_iast": "kvip ca", "url": "https://ashtadhyayi.com/sutraani/3/2/76" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ", "bhāva (3.3.94+ / Vārttika)"],
+        "kala": "sarvakāla / bhūta / vartamāna / bhaviṣyat",
+        "artha_sanskrit": "कर्तरि सामान्ये, उपपदेऽनुपपदे च, सर्वधातुभ्यः (३.२.७६)",
+        "artha_english": "Agent (kartā) with zero-suffix realization.",
+        "upapada": "Optional (often with upapada or upasarga)",
+        "gender_and_declension": "triliṅga / root-noun"
+      },
+      "examples": [
+        { "dhatu": "सद्", "upapada": "उप + नि", "derived_form": "उपनिषत्", "iast": "upaniṣat", "meaning": "sitting near (Upaniṣad)" },
+        { "dhatu": "कृ", "upapada": "सु", "derived_form": "सुकृत्", "iast": "sukṛt", "meaning": "well-doer" },
+        { "dhatu": "विद्", "upapada": "वेद", "derived_form": "वेदवित्", "iast": "vedavit", "meaning": "knower of the Vedas" }
+      ]
+    },
+    {
+      "id": "kvin",
+      "devanagari": "क्विन्",
+      "iast": "kvin",
+      "slp1": "kvin",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "∅ (अप्रत्ययलोपः)", "iast": "∅ (zero)", "slp1": "" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "व्", "sutra": "6.1.67", "effect": "Elided via वेरपृक्तस्य (6.1.67)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "nit", "sarvāpahārī"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); kutva on c/j/h (8.2.62)",
+        "it_agama": "None",
+        "notes": "Zero-morpheme suffix differing from kvip by nit accent and 8.2.62 kutva."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.58", "sutra_devanagari": "स्पृशोऽनुदके क्विन्", "sutra_iast": "spṛśo'nudake kvin", "url": "https://ashtadhyayi.com/sutraani/3/2/58" },
+        { "sutra_id": "3.2.59", "sutra_devanagari": "ऋत्विग्दधृक्स्रग्दिगुष्णिगञ्चुयुजिक्रुञ्चां च", "sutra_iast": "ṛtvigdadṛksragdiguṣṇigañcuyujikruñcāṃ ca", "url": "https://ashtadhyayi.com/sutraani/3/2/59" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (स्पृश्, यज्, अञ्च्, युज् आदिभ्यः)",
+        "artha_english": "Agentive zero-suffix for specific roots (spṛś, yaj, añc, yuj, etc.).",
+        "upapada": "Specific upapadas",
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "स्पृश्", "upapada": "घृत", "derived_form": "घृतस्पृक्", "iast": "ghṛtaspṛk", "meaning": "touching ghee" },
+        { "dhatu": "यज्", "upapada": "ऋतु", "derived_form": "ऋत्विक्", "iast": "ṛtvik", "meaning": "sacrificial priest" }
+      ]
+    },
+    {
+      "id": "nvi",
+      "devanagari": "ण्वि",
+      "iast": "ṇvi",
+      "slp1": "Rvi",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "∅ (अप्रत्ययलोपः)", "iast": "∅ (zero)", "slp1": "" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." },
+        { "varna": "व्", "sutra": "6.1.67", "effect": "Elided via वेरपृक्तस्य (6.1.67)." },
+        { "varna": "इ", "sutra": "1.3.2", "effect": "Uccāraṇārtha; elided." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit", "sarvāpahārī"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Zero-suffix that causes vṛddhi."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.62", "sutra_devanagari": "भजो ण्विः", "sutra_iast": "bhajo ṇviḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/62" },
+        { "sutra_id": "3.2.64", "sutra_devanagari": "वहश्च", "sutra_iast": "vahaśca", "url": "https://ashtadhyayi.com/sutraani/3/2/64" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (भज्, वह् आदिभ्यः उपपदे)",
+        "artha_english": "Agentive vṛddhi zero-suffix for bhaj, vah, etc.",
+        "upapada": "karma / specific upapada",
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "भज्", "upapada": "अर्ध", "derived_form": "अर्धभाक्", "iast": "ardhabhāk", "meaning": "sharer of half" }
+      ]
+    },
+    {
+      "id": "vit",
+      "devanagari": "विट्",
+      "iast": "viṭ",
+      "slp1": "viw",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "∅ (अप्रत्ययलोपः)", "iast": "∅ (zero)", "slp1": "" },
+      "it_markers": [
+        { "varna": "व्", "sutra": "6.1.67", "effect": "Elided via वेरपृक्तस्य (6.1.67)." },
+        { "varna": "ट्", "sutra": "1.3.3", "effect": "Ṭ-it; triggers ā-substitution for jan/san/khan (6.4.41)." }
+      ],
+      "category": "upapada_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṭit", "sarvāpahārī"],
+      "anga_operations": {
+        "guna_vriddhi": "Nasal of jan/san/khan -> ā (6.4.41)",
+        "it_agama": "None",
+        "notes": "Applies to jan, san, khan, kram, gam (3.2.67)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.67", "sutra_devanagari": "जनसनखनक्रमगमो विट्", "sutra_iast": "janasanakhanakramagamo viṭ", "url": "https://ashtadhyayi.com/sutraani/3/2/67" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (जन्, सन्, खन्, क्रम्, गम् धातुभ्यः)",
+        "artha_english": "Agentive zero-suffix for jan, san, khan, kram, gam.",
+        "upapada": "upapada",
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "जन्", "upapada": "अब्", "derived_form": "अब्जाः", "iast": "abjāḥ", "meaning": "born in water (lotus)" },
+        { "dhatu": "सन्", "upapada": "गो", "derived_form": "गोषाः", "iast": "goṣāḥ", "meaning": "giver of cows" }
+      ]
+    },
+    {
+      "id": "kta",
+      "devanagari": "क्त",
+      "iast": "kta",
+      "slp1": "kta",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "त", "iast": "ta", "slp1": "ta" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5); triggers samprasāraṇa for vacādi/grahādi (6.1.15–16)." }
+      ],
+      "category": "niṣṭhā",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "niṣṭhā", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35), with exceptions (7.2.15)",
+        "samprasarana": "Yes, for vacādi and grahādi (6.1.15–16)",
+        "notes": "Called niṣṭhā by 1.1.26."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.102", "sutra_devanagari": "निष्ठा", "sutra_iast": "niṣṭhā", "url": "https://ashtadhyayi.com/sutraani/3/2/102" },
+        { "sutra_id": "3.4.70", "sutra_devanagari": "तयोरेव कृत्यक्तखलर्थाः", "sutra_iast": "tayoreva kṛtyaktakhalarthāḥ", "url": "https://ashtadhyayi.com/sutraani/3/4/70" },
+        { "sutra_id": "3.4.72", "sutra_devanagari": "गत्यर्थाकर्मकश्लिषशीङ्स्थासवसजनरुहजीर्यतिभ्यश्च", "sutra_iast": "gatyarthākarmakaśliṣaśīṅsthāsavasajanaruhajīryatibhyaśca", "url": "https://ashtadhyayi.com/sutraani/3/4/72" },
+        { "sutra_id": "3.3.114", "sutra_devanagari": "नपुंसके भावे क्तः", "sutra_iast": "napuṃsake bhāve ktaḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/114" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva", "kartṛ (3.4.72 / 3.2.188)"],
+        "kala": "bhūta (past) or vartamāna (3.2.187–188)",
+        "artha_sanskrit": "भूते कर्मणि भावे च (३.४.७०), गत्यर्थाकर्मकादिभ्यः कर्तरि च (३.४.७२), वर्तमाने मतिबुद्ध्याद्यर्थेभ्यः (३.२.१८८)",
+        "artha_english": "Past time (bhūta) denoting object (karma) or action (bhāva); also active for motion/intransitive roots.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (adjective); napuṃsaka ekavacana in bhāva (3.3.114)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कृतम् / कृतः", "iast": "kṛtam / kṛtaḥ", "meaning": "done / made" },
+        { "dhatu": "गम्", "derived_form": "गतः", "iast": "gataḥ", "meaning": "gone (3.4.72)" },
+        { "dhatu": "हस्", "derived_form": "हसितम्", "iast": "hasitam", "meaning": "laughter (3.3.114)" }
+      ]
+    },
+    {
+      "id": "ktavatu",
+      "devanagari": "क्तवतु",
+      "iast": "ktavatu",
+      "slp1": "ktavatu",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "तवत्", "iast": "tavat", "slp1": "tavat" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "उ", "sutra": "1.3.2", "effect": "U-it: triggers num augment in strong cases (7.1.70)." }
+      ],
+      "category": "niṣṭhā",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "niṣṭhā", "ārdhadhātuka", "kit", "ugit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "Same as kta",
+        "samprasarana": "Same as kta",
+        "notes": "Called niṣṭhā by 1.1.26."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.102", "sutra_devanagari": "निष्ठा", "sutra_iast": "niṣṭhā", "url": "https://ashtadhyayi.com/sutraani/3/2/102" },
+        { "sutra_id": "3.4.67", "sutra_devanagari": "कर्तरि कृत्", "sutra_iast": "kartari kṛt", "url": "https://ashtadhyayi.com/sutraani/3/4/67" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "bhūta",
+        "artha_sanskrit": "भूते कर्तरि (३.२.१०२, ३.४.६७)",
+        "artha_english": "Past time (bhūta) denoting the agent (kartā).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (masc. -vān, fem. -vatī via 4.1.6, neut. -vat)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कृतवान् / कृतवती", "iast": "kṛtavān / kṛtavatī", "meaning": "he/she did" },
+        { "dhatu": "पठ्", "derived_form": "पठितवान्", "iast": "paṭhitavān", "meaning": "has read" }
+      ]
+    },
+    {
+      "id": "kvasu",
+      "devanagari": "क्वसु",
+      "iast": "kvasu",
+      "slp1": "kvasu",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "वस्", "iast": "vas", "slp1": "vas" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "उ", "sutra": "1.3.2", "effect": "U-it: ugit num augment (7.1.70); samprasāraṇa in weak cases (6.4.131)." }
+      ],
+      "category": "bhūta_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "ugit", "liṭ_ādeśa"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); triggers liṭ reduplication (abhyāsa)",
+        "it_agama": "Valādi iṭ for vas under 7.2.67",
+        "notes": "Substitute for liṭ (parokṣa bhūta) in Parasmaipada."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.107", "sutra_devanagari": "क्वसुश्च", "sutra_iast": "kvasuśca", "url": "https://ashtadhyayi.com/sutraani/3/2/107" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "bhūta (parokṣa — remote past, substituting liṭ)",
+        "artha_sanskrit": "परोक्षे भूते लिटः स्थाने (परस्मैपदे)",
+        "artha_english": "Remote past (liṭ) denoting the agent (kartā).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (masc. -vān, fem. -uṣī, neut. -vat)"
+      },
+      "examples": [
+        { "dhatu": "विद्", "derived_form": "विद्वान्", "iast": "vidvān", "meaning": "one who knows / learned" },
+        { "dhatu": "सद्", "derived_form": "सेदिवान्", "iast": "sedivān", "meaning": "having seated" }
+      ]
+    },
+    {
+      "id": "kanac",
+      "devanagari": "कानच्",
+      "iast": "kānac",
+      "slp1": "kAnac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "आन", "iast": "āna", "slp1": "Ana" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "bhūta_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "cit", "liṭ_ādeśa"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); triggers liṭ reduplication (abhyāsa)",
+        "it_agama": "None",
+        "notes": "Substitute for liṭ in Ātmanepada."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.106", "sutra_devanagari": "लिटः कानज्वा", "sutra_iast": "liṭaḥ kānajvā", "url": "https://ashtadhyayi.com/sutraani/3/2/106" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ", "karma", "bhāva"],
+        "kala": "bhūta (parokṣa, substituting liṭ)",
+        "artha_sanskrit": "परोक्षे भूते लिटः स्थाने (आत्मनेपदे)",
+        "artha_english": "Perfect middle/passive participle (substituting Ātmanepada liṭ).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -ānā)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "चक्राणः", "iast": "cakrāṇaḥ", "meaning": "having done for oneself" },
+        { "dhatu": "शी", "derived_form": "शिश्यानः", "iast": "śiśyānaḥ", "meaning": "having lain down" }
+      ]
+    },
+    {
+      "id": "satr",
+      "devanagari": "शतृ",
+      "iast": "śatṛ",
+      "slp1": "Satf",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अत्", "iast": "at", "slp1": "at" },
+      "it_markers": [
+        { "varna": "श्", "sutra": "1.3.8", "effect": "Ś-it: sārvadhātuka (3.4.113); triggers gaṇa-vikaraṇa." },
+        { "varna": "ऋ", "sutra": "1.3.2", "effect": "Ṛ-it: ugit num augment in strong cases (7.1.70)." }
+      ],
+      "category": "sat",
+      "dhatu_domain": "sārvadhātuka",
+      "samjna_tags": ["kṛt", "sat", "sārvadhātuka", "śit", "ugit", "laṭ_ādeśa"],
+      "anga_operations": {
+        "guna_vriddhi": "Sārvadhātuka vikaraṇa + guṇa",
+        "it_agama": "None (unless lṛṭ sya)",
+        "notes": "Called sat by 3.2.127. Substitutes laṭ (3.2.124) or lṛṭ (3.3.14) in Parasmaipada."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.124", "sutra_devanagari": "लटः शतृशानचावप्रथमासमानाधिकरणे", "sutra_iast": "laṭaḥ śatṛśānacāvaprathamāsamānādhikaraṇe", "url": "https://ashtadhyayi.com/sutraani/3/2/124" },
+        { "sutra_id": "3.2.127", "sutra_devanagari": "तौ सत्", "sutra_iast": "tau sat", "url": "https://ashtadhyayi.com/sutraani/3/2/127" },
+        { "sutra_id": "3.3.14", "sutra_devanagari": "लृटः सद्वा", "sutra_iast": "lṛṭaḥ sadvā", "url": "https://ashtadhyayi.com/sutraani/3/3/14" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "vartamāna (laṭ) / bhaviṣyat (lṛṭ)",
+        "artha_sanskrit": "वर्तमाने लटः स्थाने (अप्रथमासमानाधिकरणे परस्मैपदे), लक्षणे, भविष्यति च",
+        "artha_english": "Present continuous action (laṭ) for Parasmaipada agents ('while reading').",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -antī / -atī via 4.1.6)"
+      },
+      "examples": [
+        { "dhatu": "पठ्", "derived_form": "पठन् / पठन्ती", "iast": "paṭhan / paṭhantī", "meaning": "while reading" },
+        { "dhatu": "गम्", "derived_form": "गच्छन्", "iast": "gacchan", "meaning": "going" }
+      ]
+    },
+    {
+      "id": "sanac",
+      "devanagari": "शानच्",
+      "iast": "śānac",
+      "slp1": "SAnac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "आन", "iast": "āna", "slp1": "Ana" },
+      "it_markers": [
+        { "varna": "श्", "sutra": "1.3.8", "effect": "Ś-it: sārvadhātuka (3.4.113); muk augment after a-ending aṅga (7.2.82)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "sat",
+      "dhatu_domain": "sārvadhātuka",
+      "samjna_tags": ["kṛt", "sat", "sārvadhātuka", "śit", "cit", "laṭ_ādeśa"],
+      "anga_operations": {
+        "guna_vriddhi": "Sārvadhātuka vikaraṇa + muk augment (-māna) after a-ending base (7.2.82)",
+        "it_agama": "None",
+        "notes": "Called sat by 3.2.127. Substitutes laṭ (or lṛṭ) in Ātmanepada, or karma/bhāva with yak."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.124", "sutra_devanagari": "लटः शतृशानचावप्रथमासमानाधिकरणे", "sutra_iast": "laṭaḥ śatṛśānacāvaprathamāsamānādhikaraṇe", "url": "https://ashtadhyayi.com/sutraani/3/2/124" },
+        { "sutra_id": "3.2.128", "sutra_devanagari": "पूङ्यजोः शानन्", "sutra_iast": "pūṅyajoḥ śānan", "url": "https://ashtadhyayi.com/sutraani/3/2/128" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ", "karma (with yak)", "bhāva (with yak)"],
+        "kala": "vartamāna / bhaviṣyat",
+        "artha_sanskrit": "वर्तमाने लटः स्थाने (आत्मनेपदे / कर्मणि / भावे)",
+        "artha_english": "Present continuous action (laṭ) for Ātmanepada agents ('while serving') or passive.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -ānā / -mānā)"
+      },
+      "examples": [
+        { "dhatu": "सेव्", "derived_form": "सेवमानः", "iast": "sevamānaḥ", "meaning": "while serving" },
+        { "dhatu": "कृ", "derived_form": "क्रियमाणः", "iast": "kriyamāṇaḥ", "meaning": "being done (passive)" }
+      ]
+    },
+    {
+      "id": "canas",
+      "devanagari": "चानश्",
+      "iast": "cānaś",
+      "slp1": "cAnaS",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "आन", "iast": "āna", "slp1": "Ana" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.7", "effect": "C-it: antodātta accent (6.1.163)." },
+        { "varna": "श्", "sutra": "1.3.3", "effect": "Ś-it: sārvadhātuka (3.4.113)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "sārvadhātuka",
+      "samjna_tags": ["kṛt", "sārvadhātuka", "cit", "śit"],
+      "anga_operations": {
+        "guna_vriddhi": "Sārvadhātuka vikaraṇa + muk (7.2.82)",
+        "it_agama": "None",
+        "notes": "Introduced in 3.2.129."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.129", "sutra_devanagari": "ताच्छील्यवयोवचनशक्तिषु चानश्", "sutra_iast": "tācchīlyavayovacanaśaktiṣu cānaś", "url": "https://ashtadhyayi.com/sutraani/3/2/129" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "vartamāna / sarvakāla",
+        "artha_sanskrit": "ताच्छील्य-वयोवचन-शक्तिषु",
+        "artha_english": "Habitual disposition (tācchīlya), age-designation (vayovacana), or capability (śakti).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "मण्ड्", "derived_form": "मण्डमानः", "iast": "maṇḍamānaḥ", "meaning": "fond of adorning oneself" }
+      ]
+    },
+    {
+      "id": "trn",
+      "devanagari": "तृन्",
+      "iast": "tṛn",
+      "slp1": "tfn",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "तृ", "iast": "tṛ", "slp1": "tf" },
+      "it_markers": [
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197); governs accusative object (2.3.69)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84 / 7.3.86)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35)",
+        "notes": "Morphologically identical to tṛc, but syntactically governs dvitīyā vibhakti (2.3.69)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.135", "sutra_devanagari": "तृन्", "sutra_iast": "tṛn", "url": "https://ashtadhyayi.com/sutraani/3/2/135" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु (३.२.१३४–१३५)",
+        "artha_english": "Agent characterized by habit (tācchīlya), innate duty (taddharma), or skill (tatsādhukārin).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -trī)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कर्ता (कटान्)", "iast": "kartā (kaṭān)", "meaning": "habitual/skilled maker (of mats)" }
+      ]
+    },
+    {
+      "id": "isnuc",
+      "devanagari": "इष्णुच्",
+      "iast": "iṣṇuc",
+      "slp1": "izRuc",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "इष्णु", "iast": "iṣṇu", "slp1": "izRu" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None (vowel-initial)",
+        "notes": "Applies to alamkṛ, sah, vṛdh, car, etc. (3.2.136)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.136", "sutra_devanagari": "अलङ्कृञ्निराकृञ्प्रजनोत्पचोत्पतोन्मदरुच्यपत्रपवृतुवृधुसहचर इष्णुच्", "sutra_iast": "alaṅkṛñnirākṛñprajanotpacotpatoṃmadarucyapatrapavṛtuvṛdhusahacara iṣṇuc", "url": "https://ashtadhyayi.com/sutraani/3/2/136" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually or naturally disposed to the action.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "सह्", "derived_form": "सहिष्णुः", "iast": "sahiṣṇuḥ", "meaning": "tolerant / enduring" },
+        { "dhatu": "चर्", "derived_form": "चरिष्णुः", "iast": "cariṣṇuḥ", "meaning": "moving / wandering" }
+      ]
+    },
+    {
+      "id": "ksnu",
+      "devanagari": "क्स्नु",
+      "iast": "ksnu",
+      "slp1": "ksnu",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "स्नु", "iast": "snu", "slp1": "snu" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to glā, ji, sthā, bhū (3.2.139)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.139", "sutra_devanagari": "ग्लाजिस्थश्च ग्स्नुः", "sutra_iast": "glājisthaśca gsnuḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/139" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually prone to conquering, standing, etc.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "जि", "derived_form": "जिष्णुः", "iast": "jiṣṇuḥ", "meaning": "victorious by nature" },
+        { "dhatu": "स्था", "derived_form": "स्थास्नुः", "iast": "sthāsnuḥ", "meaning": "stable / stationary" }
+      ]
+    },
+    {
+      "id": "ghinun",
+      "devanagari": "घिनुण्",
+      "iast": "ghinuṇ",
+      "slp1": "GinuR",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "इन्", "iast": "in", "slp1": "in" },
+      "it_markers": [
+        { "varna": "घ्", "sutra": "1.3.8", "effect": "Gh-it: triggers kutva on c/j (7.3.52)." },
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "ण्", "sutra": "1.3.3", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ghit", "ṇit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116); c/j -> k/g (7.3.52)",
+        "it_agama": "None",
+        "notes": "Applies to śamādi roots (3.2.141) and sampṛcādi (3.2.142)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.141", "sutra_devanagari": "शमित्यष्टाभ्यो घिनुण्", "sutra_iast": "śamityaṣṭābhyo ghinuṇ", "url": "https://ashtadhyayi.com/sutraani/3/2/141" },
+        { "sutra_id": "3.2.142", "sutra_devanagari": "सम्पृचानुरुधाङ्ममाङ्यसपरिसृसंसृजपरिदेविशंकृप्वसिवदिभ्यश्च", "sutra_iast": "sampṛcānurudhāṅyamāṅyasaparisṛsaṃsṛjaparideviśaṃkṛpvasivadibhyaśca", "url": "https://ashtadhyayi.com/sutraani/3/2/142" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually disposed to (calmness, speech, contact, etc.).",
+        "upapada": null,
+        "gender_and_declension": "in-anta triliṅga (fem. -inī)"
+      },
+      "examples": [
+        { "dhatu": "शम्", "derived_form": "शमी (शमिन्)", "iast": "śamī", "meaning": "calm by nature" },
+        { "dhatu": "वद्", "derived_form": "वादी (वादिन्)", "iast": "vādī", "meaning": "speaker / disputant" }
+      ]
+    },
+    {
+      "id": "ukan",
+      "devanagari": "उकञ्",
+      "iast": "ukañ",
+      "slp1": "ukaY",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "उक", "iast": "uka", "slp1": "uka" },
+      "it_markers": [
+        { "varna": "ञ्", "sutra": "1.3.3", "effect": "Ñ-it: vṛddhi (7.2.115–116) and ādyudātta accent (6.1.197)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ñit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Applies to laṣ, pat, pad, sthā, bhū, vṛṣ, han, kam, gam, śṝ (3.2.154)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.154", "sutra_devanagari": "लषपतपदस्थाभूवृषहनकमगमशॄभ्य उकञ्", "sutra_iast": "laṣapatapadasthābhūvṛṣahanakamagamaśṝbhya ukañ", "url": "https://ashtadhyayi.com/sutraani/3/2/154" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually prone to (falling, desiring, going, striking, etc.).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "भू", "derived_form": "भावुकः", "iast": "bhāvukaḥ", "meaning": "prosperous / tending to become" },
+        { "dhatu": "हन्", "derived_form": "घातुकः", "iast": "ghātukaḥ", "meaning": "destructive" }
+      ]
+    },
+    {
+      "id": "yuc",
+      "devanagari": "युच्",
+      "iast": "yuc",
+      "slp1": "yuc",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अन", "iast": "ana", "slp1": "ana" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya / bhāva",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); yu -> ana (7.1.1)",
+        "it_agama": "None",
+        "notes": "Used in tācchīlya (3.2.148–151) and feminine abstract nouns (3.3.107–109)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.148", "sutra_devanagari": "चलनशब्दार्थादकर्मकाद्युच्", "sutra_iast": "calanaśabdārthādakarmakādyuc", "url": "https://ashtadhyayi.com/sutraani/3/2/148" },
+        { "sutra_id": "3.3.107", "sutra_devanagari": "ण्यासश्रन्थो युच्", "sutra_iast": "nyāsaśrantho yuc", "url": "https://ashtadhyayi.com/sutraani/3/3/107" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ (3.2.148)", "bhāva (3.3.107)"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील्ये (चलन-शब्दार्थात् अकर्मकात्), स्त्रियां भावे च (३.३.१०७)",
+        "artha_english": "Habitual agent (for motion/sound intransitive roots); feminine abstract noun (for ṇyanta, ās, śranth).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga in tācchīlya; strīliṅga (-nā) in 3.3.107"
+      },
+      "examples": [
+        { "dhatu": "चल्", "derived_form": "चलनः", "iast": "calanaḥ", "meaning": "moving by nature (3.2.148)" },
+        { "dhatu": "कारि (कृ+णिच्)", "derived_form": "कारणा", "iast": "kāraṇā", "meaning": "causing to do (3.3.107)" }
+      ]
+    },
+    {
+      "id": "aluc",
+      "devanagari": "आलुच्",
+      "iast": "āluc",
+      "slp1": "Aluc",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "आलु", "iast": "ālu", "slp1": "Alu" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to spṛh, gṛh, pat, day, nidrā (3.2.158)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.158", "sutra_devanagari": "स्पृहिगृहिपतिदयिनिद्रातन्द्राश्रद्धाभ्य आलुच्", "sutra_iast": "spṛhigṛhipatidayinidrātandrāśraddhābhya āluc", "url": "https://ashtadhyayi.com/sutraani/3/2/158" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually inclined to (desiring, sleeping, showing compassion, etc.).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "दया", "derived_form": "दयालुः", "iast": "dayāluḥ", "meaning": "compassionate" },
+        { "dhatu": "निद्रा", "derived_form": "निद्रालुः", "iast": "nidrāluḥ", "meaning": "sleepy" }
+      ]
+    },
+    {
+      "id": "kvarap",
+      "devanagari": "क्वरप्",
+      "iast": "kvarap",
+      "slp1": "kvarap",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "वर", "iast": "vara", "slp1": "vara" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "प्", "sutra": "1.3.3", "effect": "P-it: anudātta accent (3.1.4)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "pit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Fem. takes ṅīp with r->d substitution (4.1.7)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.163", "sutra_devanagari": "इण्नश्जिसर्तिभ्यः क्वरप्", "sutra_iast": "iṇnaśjisartibhyaḥ kvarap", "url": "https://ashtadhyayi.com/sutraani/3/2/163" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Prone to / characterized by (going, perishing, conquering, flowing).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -varī)"
+      },
+      "examples": [
+        { "dhatu": "नश्", "derived_form": "नश्वरः / नश्वरी", "iast": "naśvaraḥ / naśvarī", "meaning": "perishable" },
+        { "dhatu": "इ (इण्)", "derived_form": "इत्वरः / इत्वरी", "iast": "itvaraḥ / itvarī", "meaning": "swift-going" }
+      ]
+    },
+    {
+      "id": "ktri",
+      "devanagari": "क्त्रि",
+      "iast": "ktri",
+      "slp1": "ktri",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "त्रि", "iast": "tri", "slp1": "tri" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Always followed by map (4.4.20) to form -trima."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.88", "sutra_devanagari": "ड्वितः क्त्रिः", "sutra_iast": "ḍvitaḥ ktriḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/88" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "karma (with map)"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "ड्वितो धातोः (भावसाधने निर्वृत्तेऽर्थे)",
+        "artha_english": "Resulting from or produced by the action (from roots with ḍu as an it-marker).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (with -ma -> -trima)"
+      },
+      "examples": [
+        { "dhatu": "कृ (डुकृञ्)", "derived_form": "कृत्रिमः", "iast": "kṛtrimaḥ", "meaning": "artificial / made" },
+        { "dhatu": "पच् (डुपचष्)", "derived_form": "पक्त्रिमः", "iast": "paktrimaḥ", "meaning": "ripened / cooked" }
+      ]
+    },
+    {
+      "id": "itra",
+      "devanagari": "इत्र",
+      "iast": "itra",
+      "slp1": "itra",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "इत्र", "iast": "itra", "slp1": "itra" },
+      "it_markers": [],
+      "category": "kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to artti, lū, dhū, sū, khan, sah, car (3.2.184) and pu (3.2.185)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.184", "sutra_devanagari": "अर्त्तिलूधूसूखनसहचर इत्रः", "sutra_iast": "arttilūdhūsūkhanasahacara itraḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/184" },
+        { "sutra_id": "3.2.185", "sutra_devanagari": "पुवः संज्ञायाम्", "sutra_iast": "puvaḥ saṃjñāyām", "url": "https://ashtadhyayi.com/sutraani/3/2/185" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karaṇa"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "करणे (साधन-अर्थे)",
+        "artha_english": "Instrument or means by which the action is performed.",
+        "upapada": null,
+        "gender_and_declension": "napuṃsaka (neuter)"
+      },
+      "examples": [
+        { "dhatu": "खन्", "derived_form": "खनित्रम्", "iast": "khanitram", "meaning": "spade / digging tool" },
+        { "dhatu": "पू", "derived_form": "पवित्रम्", "iast": "pavitram", "meaning": "purifier / strainer" }
+      ]
+    },
+    {
+      "id": "stran",
+      "devanagari": "ष्ट्रन्",
+      "iast": "ṣṭran",
+      "slp1": "ztran",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "त्र", "iast": "tra", "slp1": "tra" },
+      "it_markers": [
+        { "varna": "ष्", "sutra": "1.3.6", "effect": "Ṣ-it: feminine takes ṅīṣ (4.1.41)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṣit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to dā, nī, śās, yu, yuj, stu, tud, etc. (3.2.182)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.182", "sutra_devanagari": "दाम्नीशसयुयुजस्तुतुदसिसिचमिहपतदशनहः करणे", "sutra_iast": "dāmnīśasayuyujastutudasisicamihapatadaśanahaḥ karaṇe", "url": "https://ashtadhyayi.com/sutraani/3/2/182" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karaṇa"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "करणे",
+        "artha_english": "Instrument/tool for performing the action.",
+        "upapada": null,
+        "gender_and_declension": "napuṃsaka / strīliṅga (-trī via 4.1.41)"
+      },
+      "examples": [
+        { "dhatu": "नी", "derived_form": "नेत्रम्", "iast": "netram", "meaning": "eye" },
+        { "dhatu": "शास्", "derived_form": "शास्त्रम्", "iast": "śāstram", "meaning": "scripture / treatise" }
+      ]
+    },
+    {
+      "id": "ghan",
+      "devanagari": "घञ्",
+      "iast": "ghañ",
+      "slp1": "GaY",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "घ्", "sutra": "1.3.8", "effect": "Gh-it: c/j -> k/g (7.3.52)." },
+        { "varna": "ञ्", "sutra": "1.3.3", "effect": "Ñ-it: vṛddhi (7.2.115–116) and ādyudātta accent (6.1.197)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ghit", "ñit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116); c/j -> k/g (7.3.52); sphur/sphul ā -> ā (6.1.47); rañj nalopa (6.4.27)",
+        "it_agama": "None",
+        "notes": "Primary abstract action noun (bhāva) suffix forming masculine nouns (3.3.18) and non-agent kāraka (3.3.19)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.18", "sutra_devanagari": "भावे", "sutra_iast": "bhāve", "url": "https://ashtadhyayi.com/sutraani/3/3/18" },
+        { "sutra_id": "3.3.19", "sutra_devanagari": "अकर्तरि च कारके संज्ञायाम्", "sutra_iast": "akartari ca kārake saṃjñāyām", "url": "https://ashtadhyayi.com/sutraani/3/3/19" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "karma", "karaṇa", "adhikaraṇa", "sampradāna", "apādāna"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे (३.३.१८), अकर्तरि कारके संज्ञायाम् (३.३.१९)",
+        "artha_english": "Abstract action (bhāva) forming masculine nouns; or any non-agent kāraka when forming a conventional noun.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga (masculine)"
+      },
+      "examples": [
+        { "dhatu": "पठ्", "derived_form": "पाठः", "iast": "pāṭhaḥ", "meaning": "reading / lesson" },
+        { "dhatu": "पच्", "derived_form": "पाकः", "iast": "pākaḥ", "meaning": "cooking" },
+        { "dhatu": "युज्", "derived_form": "योगः", "iast": "yogaḥ", "meaning": "union / yoga" }
+      ]
+    },
+    {
+      "id": "nac",
+      "devanagari": "णच्",
+      "iast": "ṇac",
+      "slp1": "Rac",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116), blocked in karmavyatihāra by न कर्मव्यतिहारे (7.3.6)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "strīliṅga_bhāva_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi blocked by 7.3.6; followed by añ (5.4.14) and ṅīṣ (-ī)",
+        "it_agama": "None",
+        "notes": "Denotes reciprocal action in feminine abstract nouns (3.3.43)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.43", "sutra_devanagari": "कर्मव्यतिहारे णच् स्त्रियाम्", "sutra_iast": "karmavyatihāre ṇac striyām", "url": "https://ashtadhyayi.com/sutraani/3/3/43" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्मव्यतिहारे स्त्रियां भावे",
+        "artha_english": "Reciprocal action (mutual reviling, laughing, etc.) forming feminine abstract nouns.",
+        "upapada": "vi + ā (upasargas)",
+        "gender_and_declension": "strīliṅga (-ī via 5.4.14 + 4.1.15)"
+      },
+      "examples": [
+        { "dhatu": "क्रुश्", "upapada": "वि + आ", "derived_form": "व्यावक्रोशी", "iast": "vyāvakrośī", "meaning": "mutual reviling" },
+        { "dhatu": "हस्", "upapada": "वि + आ", "derived_form": "व्यावहासी", "iast": "vyāvahāsī", "meaning": "mutual laughing" }
+      ]
+    },
+    {
+      "id": "inun",
+      "devanagari": "इनुण्",
+      "iast": "inuṇ",
+      "slp1": "inuR",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "इन्", "iast": "in", "slp1": "in" },
+      "it_markers": [
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "ण्", "sutra": "1.3.3", "effect": "Ṇ-it: vṛddhi (7.2.115–116)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṇit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Denotes inclusive extent/limit in abstract action (3.3.44)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.44", "sutra_devanagari": "अभिविधौ भाव इनुण्", "sutra_iast": "abhividhau bhāva inuṇ", "url": "https://ashtadhyayi.com/sutraani/3/3/44" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "अभिविधौ भावे",
+        "artha_english": "Abstract action denoting inclusive limit / all-pervasiveness (abhividhi).",
+        "upapada": null,
+        "gender_and_declension": "in-anta"
+      },
+      "examples": [
+        { "dhatu": "कथ् / स्प् (संराविन्)", "derived_form": "संराविणम् (अभिविधौ)", "iast": "saṃrāviṇam", "meaning": "all-pervasive shouting" }
+      ]
+    },
+    {
+      "id": "ap_bhava",
+      "devanagari": "अप्",
+      "iast": "ap",
+      "slp1": "ap",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "प्", "sutra": "1.3.3", "effect": "P-it: anudātta accent (3.1.4); blocks vṛddhi (only guṇa)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "pit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Blocks ghañ for ṛ-ending and u/ū-ending roots (3.3.57) and grah/vṛ/dṛ/gam (3.3.58)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.57", "sutra_devanagari": "ऋदोरप्", "sutra_iast": "ṛdorap", "url": "https://ashtadhyayi.com/sutraani/3/3/57" },
+        { "sutra_id": "3.3.58", "sutra_devanagari": "ग्रहवृदृनिश्चिगमश्च", "sutra_iast": "grahavṛdṛniścigamaśca", "url": "https://ashtadhyayi.com/sutraani/3/3/58" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे, अकर्तरि कारके च",
+        "artha_english": "Abstract action or non-agent kāraka for ṛ/u/ū-ending roots (apavāda to ghañ).",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "करः", "iast": "karaḥ", "meaning": "hand / tax / doing" },
+        { "dhatu": "गम्", "derived_form": "गमः", "iast": "gamaḥ", "meaning": "going" }
+      ]
+    },
+    {
+      "id": "ac_bhava",
+      "devanagari": "अच् (भावे)",
+      "iast": "ac (bhāve)",
+      "slp1": "ac",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to i/ī-ending roots (3.3.56)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.56", "sutra_devanagari": "एरच्", "sutra_iast": "erac", "url": "https://ashtadhyayi.com/sutraani/3/3/56" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे अकर्तरि कारके च (इवर्णान्तेभ्यः)",
+        "artha_english": "Abstract action or non-agent kāraka from i/ī-ending roots.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "चि", "derived_form": "चयः", "iast": "cayaḥ", "meaning": "collection / heap" },
+        { "dhatu": "जि", "derived_form": "जयः", "iast": "jayaḥ", "meaning": "victory" }
+      ]
+    },
+    {
+      "id": "lyut",
+      "devanagari": "ल्युट्",
+      "iast": "lyuṭ",
+      "slp1": "lyuw",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अन", "iast": "ana", "slp1": "ana" },
+      "it_markers": [
+        { "varna": "ल्", "sutra": "1.3.8", "effect": "L-it: accent before suffix (6.1.193)." },
+        { "varna": "ट्", "sutra": "1.3.3", "effect": "Ṭ-it: feminine takes ṅīp (4.1.15)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "lit", "ṭit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); yu -> ana (7.1.1)",
+        "it_agama": "None",
+        "notes": "Neuter action nouns (3.3.115) and instrument/locus nouns (3.3.117)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.115", "sutra_devanagari": "ल्युट् च", "sutra_iast": "lyuṭ ca", "url": "https://ashtadhyayi.com/sutraani/3/3/115" },
+        { "sutra_id": "3.3.117", "sutra_devanagari": "करणाधिकरणयोश्च", "sutra_iast": "karaṇādhikaraṇayośca", "url": "https://ashtadhyayi.com/sutraani/3/3/117" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "karaṇa", "adhikaraṇa"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "नपुंसके भावे (३.३.११५), करणाधिकरणयोश्च (३.३.११७)",
+        "artha_english": "Abstract action (bhāva) or instrument/location (karaṇa/adhikaraṇa).",
+        "upapada": null,
+        "gender_and_declension": "napuṃsaka (neuter)"
+      },
+      "examples": [
+        { "dhatu": "गम्", "derived_form": "गमनम्", "iast": "gamanam", "meaning": "going (bhāva)" },
+        { "dhatu": "दृश्", "derived_form": "दर्शनम्", "iast": "darśanam", "meaning": "seeing / eye" },
+        { "dhatu": "अस् (आस्)", "derived_form": "आसनम्", "iast": "āsanam", "meaning": "seat (adhikaraṇa)" }
+      ]
+    },
+    {
+      "id": "ktin",
+      "devanagari": "क्तिन्",
+      "iast": "ktin",
+      "slp1": "ktin",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "ति", "iast": "ti", "slp1": "ti" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "strīliṅga_bhāva_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "No iṭ (7.2.9)",
+        "notes": "Primary feminine action-noun suffix (3.3.94)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.94", "sutra_devanagari": "स्त्रियां क्तिन्", "sutra_iast": "striyāṃ ktin", "url": "https://ashtadhyayi.com/sutraani/3/3/94" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "स्त्रियां भावे अकर्तरि कारके च",
+        "artha_english": "Abstract action (bhāva) forming feminine nouns.",
+        "upapada": null,
+        "gender_and_declension": "strīliṅga (feminine i-stem)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कृतिः", "iast": "kṛtiḥ", "meaning": "action / creation" },
+        { "dhatu": "मन्", "derived_form": "मतिः", "iast": "matiḥ", "meaning": "thought / intellect" },
+        { "dhatu": "गम्", "derived_form": "गतिः", "iast": "gatiḥ", "meaning": "motion / course" }
+      ]
+    },
+    {
+      "id": "a_striyam",
+      "devanagari": "अ (स्त्रियाम्)",
+      "iast": "a (striyām)",
+      "slp1": "a",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [],
+      "category": "strīliṅga_bhāva_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); followed by ṭāp (-ā)",
+        "it_agama": "None",
+        "notes": "Applies to ṇyanta/desiderative (3.3.102) and guru-upadha halanta roots (3.3.103)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.102", "sutra_devanagari": "अ प्रत्ययात्", "sutra_iast": "a pratyayāt", "url": "https://ashtadhyayi.com/sutraani/3/3/102" },
+        { "sutra_id": "3.3.103", "sutra_devanagari": "गुरोश्च हलः", "sutra_iast": "gurośca halaḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/103" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "स्त्रियां भावे (प्रत्ययान्तेभ्यः गुरूपधेभ्यश्च हलन्तेभ्यः)",
+        "artha_english": "Feminine abstract noun from derived roots or heavy-vowel consonant-ending roots.",
+        "upapada": null,
+        "gender_and_declension": "strīliṅga (-ā via ṭāp 4.1.4)"
+      },
+      "examples": [
+        { "dhatu": "चिकीर्ष (कृ+सन्)", "derived_form": "चिकीर्षा", "iast": "cikīrṣā", "meaning": "desire to do (3.3.102)" },
+        { "dhatu": "ईह्", "derived_form": "ईहा", "iast": "īhā", "meaning": "effort / desire (3.3.103)" }
+      ]
+    },
+    {
+      "id": "khal",
+      "devanagari": "खल्",
+      "iast": "khal",
+      "slp1": "Kal",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "ख्", "sutra": "1.3.8", "effect": "Kh-it: mum augment on upapada (6.3.67); shortening of upapada (6.3.66)." },
+        { "varna": "ल्", "sutra": "1.3.3", "effect": "L-it: accent before suffix (6.1.193)." }
+      ],
+      "category": "khalartha",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "khit", "lit", "khalartha"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Denotes karma or bhāva (3.4.70) with īṣat, duṣ, su as upapadas."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.126", "sutra_devanagari": "ईषद्-दुःसुषु कृच्छाकृच्छार्थेषु खल्", "sutra_iast": "īṣadduḥsuṣu kṛcchrākṛcchrārtheṣu khal", "url": "https://ashtadhyayi.com/sutraani/3/3/126" },
+        { "sutra_id": "3.4.70", "sutra_devanagari": "तयोरेव कृत्यक्तखलर्थाः", "sutra_iast": "tayoreva kṛtyaktakhalarthāḥ", "url": "https://ashtadhyayi.com/sutraani/3/4/70" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["karma", "bhāva"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "ईषत्-दुः-सु-उपपदेषु कृच्छ्राकृच्छ्रार्थयोः कर्मणि भावे च",
+        "artha_english": "Easy (su), difficult (duḥ), or slightly/easily (īṣat) to be done.",
+        "upapada": "īṣat, duḥ, su",
+        "gender_and_declension": "triliṅga (adjective)"
+      },
+      "examples": [
+        { "dhatu": "कृ", "upapada": "सु", "derived_form": "सुकरः", "iast": "sukaraḥ", "meaning": "easy to do" },
+        { "dhatu": "कृ", "upapada": "दुस्", "derived_form": "दुष्करः", "iast": "duṣkaraḥ", "meaning": "difficult to do" }
+      ]
+    },
+    {
+      "id": "tumun",
+      "devanagari": "तुमुन्",
+      "iast": "tumun",
+      "slp1": "tumun",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "तुम्", "iast": "tum", "slp1": "tum" },
+      "it_markers": [
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha; elided." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84 / 7.3.86)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35)",
+        "notes": "Indeclinable (1.1.39)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.10", "sutra_devanagari": "तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम्", "sutra_iast": "tumunṇvulau kriyāyāṃ kriyārthāyām", "url": "https://ashtadhyayi.com/sutraani/3/3/10" },
+        { "sutra_id": "3.3.158", "sutra_devanagari": "समानकर्तृकेषु तुमुन्", "sutra_iast": "samānakartṛkeṣu tumun", "url": "https://ashtadhyayi.com/sutraani/3/3/158" },
+        { "sutra_id": "3.3.167", "sutra_devanagari": "कालसमयवेलासु तुमुन्", "sutra_iast": "kālasamayavelāsu tumun", "url": "https://ashtadhyayi.com/sutraani/3/3/167" },
+        { "sutra_id": "3.4.65", "sutra_devanagari": "शकधृषज्ञाग्लाघटरभलभक्रमसहार्हास्त्यर्थेषु तुमुन्", "sutra_iast": "śakadhṛṣajñāglāghaṭarabhalabhakramasahārhāstyartheṣu tumun", "url": "https://ashtadhyayi.com/sutraani/3/4/65" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva (purposive)"],
+        "kala": "bhaviṣyat",
+        "artha_sanskrit": "क्रियायां क्रियार्थायाम् (३.३.१०), इच्छार्थकेषु समानकर्तृकेषु (३.३.१५८), शकधृषादिषु (३.४.६५)",
+        "artha_english": "Purpose / Intention (kriyārthā kriyā — 'in order to').",
+        "upapada": "Another verb or time-noun",
+        "gender_and_declension": "avyaya (indeclinable, 1.1.39)"
+      },
+      "examples": [
+        { "dhatu": "पठ्", "derived_form": "पठितुम्", "iast": "paṭhitum", "meaning": "in order to read" },
+        { "dhatu": "भू", "derived_form": "भवितुम्", "iast": "bhavitum", "meaning": "in order to be" },
+        { "dhatu": "भुज्", "derived_form": "भोक्तुम्", "iast": "bhoktum", "meaning": "to eat (इच्छति भोक्तुम्)" }
+      ]
+    },
+    {
+      "id": "ktva",
+      "devanagari": "क्त्वा",
+      "iast": "ktvā",
+      "slp1": "ktvA",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "त्वा", "iast": "tvā", "slp1": "tvA" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "Seṭ dhātus take iṭ (7.2.35), with exceptions (7.2.50–56)",
+        "notes": "Indeclinable (1.1.40). Replaced by lyap when preceded by an upasarga/avyaya compound (7.1.37)."
+      },
+      "sutras": [
+        { "sutra_id": "3.4.21", "sutra_devanagari": "समानकर्तृकयोः पूर्वकाले", "sutra_iast": "samānakartṛkayoḥ pūrvakāle", "url": "https://ashtadhyayi.com/sutraani/3/4/21" },
+        { "sutra_id": "3.4.18", "sutra_devanagari": "अलङ्खल्वोः प्रतिषेधयोः प्राचां क्त्वा", "sutra_iast": "alaṅkhalvoḥ pratiṣedhayoḥ prācāṃ ktvā", "url": "https://ashtadhyayi.com/sutraani/3/4/18" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva (subordinate action)"],
+        "kala": "pūrvakāla (prior to main verb)",
+        "artha_sanskrit": "समानकर्तृकयोः पूर्वकाले (३.४.२१), अलं-खलु-प्रतिषेधयोः (३.४.१८)",
+        "artha_english": "Prior action (pūrvakāla) performed by the same agent ('having done').",
+        "upapada": null,
+        "gender_and_declension": "avyaya (indeclinable, 1.1.40)"
+      },
+      "examples": [
+        { "dhatu": "भुज्", "derived_form": "भुक्त्वा", "iast": "bhuktvā", "meaning": "having eaten" },
+        { "dhatu": "कृ", "derived_form": "कृत्वा", "iast": "kṛtvā", "meaning": "having done" }
+      ]
+    },
+    {
+      "id": "lyap",
+      "devanagari": "ल्यप्",
+      "iast": "lyap",
+      "slp1": "lyap",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "य", "iast": "ya", "slp1": "ya" },
+      "it_markers": [
+        { "varna": "ल्", "sutra": "1.3.8", "effect": "L-it: accent before suffix (6.1.193)." },
+        { "varna": "प्", "sutra": "1.3.3", "effect": "P-it: anudātta; triggers tuk augment after short final vowel (6.1.71)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "lit", "pit", "ktvā_ādeśa"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (sthānivadbhāva of ktvā); short-vowel tuk (6.1.71)",
+        "it_agama": "None",
+        "notes": "Replaces ktvā when the root has a prefix (upasarga) or non-nañ compound (7.1.37)."
+      },
+      "sutras": [
+        { "sutra_id": "3.4.21", "sutra_devanagari": "समानकर्तृकयोः पूर्वकाले", "sutra_iast": "samānakartṛkayoḥ pūrvakāle", "url": "https://ashtadhyayi.com/sutraani/3/4/21" },
+        { "sutra_id": "7.1.37", "sutra_devanagari": "समासेऽनञ्पूर्वे क्त्वो ल्यप्", "sutra_iast": "samāse'nañpūrve ktvo lyap", "url": "https://ashtadhyayi.com/sutraani/7/1/37" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva (subordinate action)"],
+        "kala": "pūrvakāla",
+        "artha_sanskrit": "समानकर्तृकयोः पूर्वकाले (उपसर्गपूर्वक-समासे क्त्वा-स्थाने)",
+        "artha_english": "Prior action (pūrvakāla) when the root has a prefix (upasarga).",
+        "upapada": "upasarga / non-nañ pūrvapada",
+        "gender_and_declension": "avyaya (indeclinable)"
+      },
+      "examples": [
+        { "dhatu": "गम्", "upapada": "आ", "derived_form": "आगम्य / आगत्य", "iast": "āgamya / āgatya", "meaning": "having come" },
+        { "dhatu": "कृ", "upapada": "प्र", "derived_form": "प्रकृत्य", "iast": "prakṛtya", "meaning": "having begun" }
+      ]
+    },
+    {
+      "id": "namul",
+      "devanagari": "णमुल्",
+      "iast": "ṇamul",
+      "slp1": "Ramul",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अम्", "iast": "am", "slp1": "am" },
+      "it_markers": [
+        { "varna": "ण्", "sutra": "1.3.7", "effect": "Ṇ-it: vṛddhi (7.2.115–116); yug augment after ā (7.3.33)." },
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "ल्", "sutra": "1.3.3", "effect": "L-it: accent before suffix (6.1.193)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "ṇit", "lit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (7.2.115–116)",
+        "it_agama": "None",
+        "notes": "Often reduplicated (8.1.4) to express repetition."
+      },
+      "sutras": [
+        { "sutra_id": "3.4.22", "sutra_devanagari": "आभीक्ष्ण्ये णमुल् च", "sutra_iast": "ābhīkṣṇye ṇamul ca", "url": "https://ashtadhyayi.com/sutraani/3/4/22" },
+        { "sutra_id": "3.4.26", "sutra_devanagari": "स्वादुमि णमुल्", "sutra_iast": "svādumi ṇamul", "url": "https://ashtadhyayi.com/sutraani/3/4/26" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva (adverbial)"],
+        "kala": "pūrvakāla / ābhīkṣṇya",
+        "artha_sanskrit": "आभीक्ष्ण्ये (पौनःपुन्ये), पूर्वकाले, स्वादुमाद्युपपदे च",
+        "artha_english": "Repeated action (ābhīkṣṇya) or simultaneous manner.",
+        "upapada": "Optional or specific upapada",
+        "gender_and_declension": "avyaya (indeclinable, 1.1.39)"
+      },
+      "examples": [
+        { "dhatu": "स्मृ", "derived_form": "स्मारं स्मारम्", "iast": "smāraṃ smāram", "meaning": "remembering repeatedly" },
+        { "dhatu": "कृ", "upapada": "स्वादु", "derived_form": "स्वादुङ्कारम्", "iast": "svāduṅkāram", "meaning": "having made sweet" }
+      ]
+    },
+    {
+      "id": "tosun",
+      "devanagari": "तोसुन्",
+      "iast": "tosun",
+      "slp1": "tosun",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "तोस्", "iast": "tos", "slp1": "tos" },
+      "it_markers": [
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None (7.2.9)",
+        "notes": "Primarily Vedic infinitive (3.4.16)."
+      },
+      "sutras": [
+        { "sutra_id": "3.4.16", "sutra_devanagari": "भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनोभ्यस्तोसुन्", "sutra_iast": "bhāvalakṣaṇe stheṇkṛñvadicarihutamijanobhyastosun", "url": "https://ashtadhyayi.com/sutraani/3/4/16" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva"],
+        "kala": "Vedic infinitive / bhāvalakṣaṇa",
+        "artha_sanskrit": "छन्दसि भावलक्षणे (आ-पुरा-आदिभिः सह)",
+        "artha_english": "Vedic infinitive denoting action as a mark/condition.",
+        "upapada": null,
+        "gender_and_declension": "avyaya (indeclinable, 1.1.40)"
+      },
+      "examples": [
+        { "dhatu": "इ (इण्)", "upapada": "उत्", "derived_form": "उदेतोः", "iast": "udetoḥ", "meaning": "until/before rising (Vedic)" }
+      ]
+    },
+    {
+      "id": "kasun",
+      "devanagari": "कसुन्",
+      "iast": "kasun",
+      "slp1": "kasun",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अस्", "iast": "as", "slp1": "as" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "avyaya_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "avyaya", "ārdhadhātuka", "kit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Vedic infinitive after sṛp and tṛd (3.4.17)."
+      },
+      "sutras": [
+        { "sutra_id": "3.4.17", "sutra_devanagari": "सृपितृदोः कसुन्", "sutra_iast": "sṛpitṛdoḥ kasun", "url": "https://ashtadhyayi.com/sutraani/3/4/17" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva"],
+        "kala": "Vedic infinitive",
+        "artha_sanskrit": "छन्दसि भावलक्षणे (सृप्-तृद्-धातुभ्याम्)",
+        "artha_english": "Vedic infinitive from sṛp and tṛd.",
+        "upapada": null,
+        "gender_and_declension": "avyaya (indeclinable, 1.1.40)"
+      },
+      "examples": [
+        { "dhatu": "सृप्", "upapada": "वि", "derived_form": "विसृपः", "iast": "visṛpaḥ", "meaning": "to glide/move (Vedic)" }
+      ]
+    },
+    {
+      "id": "athuc",
+      "devanagari": "अथुच्",
+      "iast": "athuc",
+      "slp1": "aTuc",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अथु", "iast": "athu", "slp1": "aTu" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to roots with ṭu as anubandha (3.3.89)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.89", "sutra_devanagari": "ट्वितोऽथुच्", "sutra_iast": "ṭvito'thuc", "url": "https://ashtadhyayi.com/sutraani/3/3/89" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे (ट्वितो धातुभ्यः)",
+        "artha_english": "Abstract action/state noun from roots tagged with ṭu in the Dhātupāṭha.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "वेप् (टुवेपृ)", "derived_form": "वेपथुः", "iast": "vepathuḥ", "meaning": "tremor" },
+        { "dhatu": "श्वि (टुओश्वि)", "derived_form": "श्वयथुः", "iast": "śvayathuḥ", "meaning": "swelling" }
+      ]
+    },
+    {
+      "id": "nan",
+      "devanagari": "नङ्",
+      "iast": "naṅ",
+      "slp1": "naN",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "न", "iast": "na", "slp1": "na" },
+      "it_markers": [
+        { "varna": "ङ्", "sutra": "1.3.3", "effect": "Ṅ-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṅit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to yaj, yāc, yat, vicch, pracch, rakṣ (3.3.90)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.90", "sutra_devanagari": "यजयाचयतविच्छप्रच्छरक्षो नङ्", "sutra_iast": "yajayācayatavicchapraccharakṣo naṅ", "url": "https://ashtadhyayi.com/sutraani/3/3/90" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे अकर्तरि कारके च (यजादिभ्यः)",
+        "artha_english": "Action/state noun from yaj, yāc, yat, vicch, pracch, rakṣ.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "यज्", "derived_form": "यज्ञः", "iast": "yajñaḥ", "meaning": "sacrifice" },
+        { "dhatu": "प्रच्छ्", "derived_form": "प्रश्नः", "iast": "praśnaḥ", "meaning": "question" }
+      ]
+    },
+    {
+      "id": "ki",
+      "devanagari": "कि",
+      "iast": "ki",
+      "slp1": "ki",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "इ", "iast": "i", "slp1": "i" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5); deletes ā of root (6.4.64)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); final ā elided (6.4.64)",
+        "it_agama": "None",
+        "notes": "Applies to ghu-roots (dā/dhā) with upasarga (3.3.92) and karma upapada (3.3.93)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.92", "sutra_devanagari": "उपसर्गे घोः किः", "sutra_iast": "upasarge ghoḥ kiḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/92" },
+        { "sutra_id": "3.3.93", "sutra_devanagari": "कर्मण्यधिकरणे च", "sutra_iast": "karmaṇyadhikaraṇe ca", "url": "https://ashtadhyayi.com/sutraani/3/3/93" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka", "adhikaraṇa (3.3.93)"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे अकर्तरि कारके अधिकरणे च (घु-संज्ञकेभ्यः)",
+        "artha_english": "Action/locus noun from ghu-roots (dā, dhā) with upasarga or karma upapada.",
+        "upapada": "upasarga or karma",
+        "gender_and_declension": "puṃliṅga (masc. i-stem)"
+      },
+      "examples": [
+        { "dhatu": "धा", "upapada": "वि", "derived_form": "विधिः", "iast": "vidhiḥ", "meaning": "rule / injunction" },
+        { "dhatu": "धा", "upapada": "उदक", "derived_form": "उदधिः", "iast": "udadhiḥ", "meaning": "ocean (3.3.93)" }
+      ]
+    },
+    {
+      "id": "unadi_note",
+      "devanagari": "उणादयः",
+      "iast": "uṇādayaḥ",
+      "slp1": "uRAdayaH",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "उण् आदि", "iast": "uṇ etc.", "slp1": "uR Adi" },
+      "it_markers": [],
+      "category": "uṇādi_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "uṇādi"],
+      "anga_operations": {
+        "guna_vriddhi": "Rule-specific per Uṇādi Sūtrapāṭha",
+        "it_agama": "Rule-specific",
+        "notes": "Classified as kṛt-like in saṃjñā/saṃskāra (3.3.1; 3.4.75)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.1", "sutra_devanagari": "उणादयो बहुलम्", "sutra_iast": "uṇādayo bahulam", "url": "https://ashtadhyayi.com/sutraani/3/3/1" },
+        { "sutra_id": "3.4.75", "sutra_devanagari": "ताभ्यामन्यत्रोणादयः", "sutra_iast": "tābhyāmanyatroṇādayaḥ", "url": "https://ashtadhyayi.com/sutraani/3/4/75" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ", "karma", "karaṇa", "sampradāna", "apādāna", "adhikaraṇa"],
+        "kala": "vartamāna / bhūta (3.3.2)",
+        "artha_sanskrit": "बहुलं संज्ञाछन्दसोः, ताभ्यामन्यत्रापि कारके (३.४.७५)",
+        "artha_english": "Diverse Uṇādi suffixes forming conventional nouns (saṃjñā) across all kārakas.",
+        "upapada": null,
+        "gender_and_declension": "varies by suffix"
+      },
+      "examples": [
+        { "dhatu": "कृ", "derived_form": "कारुः", "iast": "kāruḥ", "meaning": "artisan (uṇ)" },
+        { "dhatu": "वा", "derived_form": "वायुः", "iast": "vāyuḥ", "meaning": "wind (uṇ)" }
+      ]
+    },
+    {
+      "id": "ghurac",
+      "devanagari": "घुरच्",
+      "iast": "ghurac",
+      "slp1": "Gurac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "उर", "iast": "ura", "slp1": "ura" },
+      "it_markers": [
+        { "varna": "घ्", "sutra": "1.3.8", "effect": "Gh-it: triggers kutva on c/j (7.3.52)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ghit", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84); c/j -> k/g (7.3.52)",
+        "it_agama": "None",
+        "notes": "Applies to bhañj, bhās, mid (3.2.161)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.161", "sutra_devanagari": "भञ्जभासमिदो घुरच्", "sutra_iast": "bhañjabhāsamido ghurac", "url": "https://ashtadhyayi.com/sutraani/3/2/161" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually prone to breaking, shining, or being soft/affectionate.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "भञ्ज्", "derived_form": "भङ्गुरः", "iast": "bhaṅguraḥ", "meaning": "fragile" },
+        { "dhatu": "भास्", "derived_form": "भासुरः", "iast": "bhāsuraḥ", "meaning": "resplendent" }
+      ]
+    },
+    {
+      "id": "kurac",
+      "devanagari": "कुरच्",
+      "iast": "kurac",
+      "slp1": "kurac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "उर", "iast": "ura", "slp1": "ura" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to vid, bhid, chid (3.2.162)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.162", "sutra_devanagari": "विदिभिदिच्छिदेः कुरच्", "sutra_iast": "vidibhidicchideḥ kurac", "url": "https://ashtadhyayi.com/sutraani/3/2/162" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually knowing, splitting, or cutting.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "भिद्", "derived_form": "भिदुरः", "iast": "bhiduraḥ", "meaning": "brittle / apt to split" }
+      ]
+    },
+    {
+      "id": "kmarac",
+      "devanagari": "क्मरच्",
+      "iast": "kmarac",
+      "slp1": "kmarac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "मर", "iast": "mara", "slp1": "mara" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to sṛ, ghas, ad (3.2.160)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.160", "sutra_devanagari": "सृघस्यदः क्मरच्", "sutra_iast": "sṛghasyadaḥ kmarac", "url": "https://ashtadhyayi.com/sutraani/3/2/160" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually moving or voracious.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "घस्", "derived_form": "घस्मरः", "iast": "ghasmaraḥ", "meaning": "gluttonous / voracious" }
+      ]
+    },
+    {
+      "id": "sakan",
+      "devanagari": "षाकन्",
+      "iast": "ṣākan",
+      "slp1": "zAkan",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "आक", "iast": "āka", "slp1": "Aka" },
+      "it_markers": [
+        { "varna": "ष्", "sutra": "1.3.6", "effect": "Ṣ-it: feminine takes ṅīṣ (4.1.41)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ṣit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to jalp, bhikṣ, kuṭṭ, lunṭ, vṛ (3.2.155)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.155", "sutra_devanagari": "जल्पभिक्षकुट्टलुण्टवृङः षाकन्", "sutra_iast": "jalpabhikṣakuṭṭaluṇṭavṛṅaḥ ṣākan", "url": "https://ashtadhyayi.com/sutraani/3/2/155" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually chattering, begging, cutting, plundering, or choosing.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -kī via 4.1.41)"
+      },
+      "examples": [
+        { "dhatu": "जल्प्", "derived_form": "जल्पाकः / जल्पाकी", "iast": "jalpākaḥ / jalpākī", "meaning": "talkative" }
+      ]
+    },
+    {
+      "id": "vukan",
+      "devanagari": "वुकञ्",
+      "iast": "vukañ",
+      "slp1": "vukaY",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अक", "iast": "aka", "slp1": "aka" },
+      "it_markers": [
+        { "varna": "उ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." },
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it marker." },
+        { "varna": "ञ्", "sutra": "1.3.3", "effect": "Ñ-it: vṛddhi (7.2.115–116) and ādyudātta accent (6.1.197)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "ñit"],
+      "anga_operations": {
+        "guna_vriddhi": "Vṛddhi (ñit); vu -> aka (7.1.1)",
+        "it_agama": "None",
+        "notes": "Applies to prajū etc. (3.2.156–157)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.156", "sutra_devanagari": "प्रजोरिनिः", "sutra_iast": "prajor iniḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/156" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitual agent.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "प्र-जू", "derived_form": "प्रजवी", "iast": "prajavī", "meaning": "swift" }
+      ]
+    },
+    {
+      "id": "ktnu",
+      "devanagari": "क्नु",
+      "iast": "knu",
+      "slp1": "knu",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "नु", "iast": "nu", "slp1": "nu" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5)",
+        "it_agama": "None",
+        "notes": "Applies to tras, gṛdh, dhṛṣ, kṣip (3.2.140)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.140", "sutra_devanagari": "त्रसिगृधिधृषिक्षिपेः क्नुः", "sutra_iast": "trasigṛdhidhṛṣikṣipeḥ knuḥ", "url": "https://ashtadhyayi.com/sutraani/3/2/140" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitually prone to trembling, coveting, daring, or throwing.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "धृष्", "derived_form": "धृष्णुः", "iast": "dhṛṣṇuḥ", "meaning": "bold / daring" },
+        { "dhatu": "गृध्", "derived_form": "गृध्नुः", "iast": "gṛdhnuḥ", "meaning": "greedy" }
+      ]
+    },
+    {
+      "id": "varac",
+      "devanagari": "वरच्",
+      "iast": "varac",
+      "slp1": "varac",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "वर", "iast": "vara", "slp1": "vara" },
+      "it_markers": [
+        { "varna": "च्", "sutra": "1.3.3", "effect": "C-it: antodātta accent (6.1.163)." }
+      ],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "cit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to sthā, īś, bhās, pis, kas (3.2.175)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.175", "sutra_devanagari": "स्थेशभासपिसकसो वरच्", "sutra_iast": "stheśabhāsapisakaso varac", "url": "https://ashtadhyayi.com/sutraani/3/2/175" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Habitual/inherent agent (standing, ruling, shining, going).",
+        "upapada": null,
+        "gender_and_declension": "triliṅga (fem. -varī via 4.1.7)"
+      },
+      "examples": [
+        { "dhatu": "ईश्", "derived_form": "ईश्वरः", "iast": "īśvaraḥ", "meaning": "lord / ruler" },
+        { "dhatu": "स्था", "derived_form": "स्थावरः", "iast": "sthāvaraḥ", "meaning": "immovable" }
+      ]
+    },
+    {
+      "id": "ru",
+      "devanagari": "रु",
+      "iast": "ru",
+      "slp1": "ru",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "रु", "iast": "ru", "slp1": "ru" },
+      "it_markers": [],
+      "category": "tācchīlya",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to bhī, hrī, bhṛ, etc. (3.2.174)."
+      },
+      "sutras": [
+        { "sutra_id": "3.2.174", "sutra_devanagari": "भीह्रीभृहुमदजनधनदरिद्राजागरां क्रुक्लुकनौ", "sutra_iast": "bhīhrībhṛhumadajanadhanadaridrājāgarāṃ kruklukanau", "url": "https://ashtadhyayi.com/sutraani/3/2/174" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "तच्छील-तद्धर्म-तत्साधुकारिषु",
+        "artha_english": "Timid, bashful, etc.",
+        "upapada": null,
+        "gender_and_declension": "triliṅga"
+      },
+      "examples": [
+        { "dhatu": "भी", "derived_form": "भीरुः", "iast": "bhīruḥ", "meaning": "timid / fearful" }
+      ]
+    },
+    {
+      "id": "in_bhavishyat",
+      "devanagari": "इनि (भविष्यति)",
+      "iast": "ini (bhaviṣyati)",
+      "slp1": "ini",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "इन्", "iast": "in", "slp1": "in" },
+      "it_markers": [
+        { "varna": "इ", "sutra": "1.3.2", "effect": "Uccāraṇārtha." }
+      ],
+      "category": "bhaviṣyat_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Future-sense suffix after gamyādi roots (3.3.3)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.3", "sutra_devanagari": "भविष्यति गम्यादयः", "sutra_iast": "bhaviṣyati gamyādayaḥ", "url": "https://ashtadhyayi.com/sutraani/3/3/3" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "bhaviṣyat",
+        "artha_sanskrit": "भविष्यति काले कर्तरि (गम्यादिभ्यः)",
+        "artha_english": "Agent who is about to or will perform the action in the future.",
+        "upapada": null,
+        "gender_and_declension": "in-anta triliṅga (fem. -inī)"
+      },
+      "examples": [
+        { "dhatu": "गम्", "derived_form": "गामी (गामिन्)", "iast": "gāmī", "meaning": "about to go" },
+        { "dhatu": "भा", "derived_form": "भावी (भाविन्)", "iast": "bhāvī", "meaning": "future / destined to be" }
+      ]
+    },
+    {
+      "id": "snan",
+      "devanagari": "नन्",
+      "iast": "nan",
+      "slp1": "nan",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "न", "iast": "na", "slp1": "na" },
+      "it_markers": [
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84)",
+        "it_agama": "None",
+        "notes": "Applies to svap (3.3.91)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.91", "sutra_devanagari": "स्वपो नन्", "sutra_iast": "svapo nan", "url": "https://ashtadhyayi.com/sutraani/3/3/91" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["bhāva", "akartṛ_kāraka"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "भावे अकर्तरि कारके च (स्वप्-धातोः)",
+        "artha_english": "Action/state noun from svap (sleep).",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "स्वप्", "derived_form": "स्वप्नः", "iast": "svapnaḥ", "meaning": "sleep / dream" }
+      ]
+    },
+    {
+      "id": "ghinun_bhava",
+      "devanagari": "घ",
+      "iast": "gha",
+      "slp1": "Ga",
+      "kaumudi_chapter": 68,
+      "stripped_form": { "devanagari": "अ", "iast": "a", "slp1": "a" },
+      "it_markers": [
+        { "varna": "घ्", "sutra": "1.3.8", "effect": "Gh-it: triggers kutva on c/j (7.3.52)." }
+      ],
+      "category": "bhāva_kāraka_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "ghit"],
+      "anga_operations": {
+        "guna_vriddhi": "Guṇa (7.3.84) without vṛddhi; c/j -> k/g (7.3.52)",
+        "it_agama": "None",
+        "notes": "Applies to masculine conventional nouns denoting non-agent kāraka (3.3.118)."
+      },
+      "sutras": [
+        { "sutra_id": "3.3.118", "sutra_devanagari": "पुंसि संज्ञायां घः प्रायेण", "sutra_iast": "puṃsi saṃjñāyāṃ ghaḥ prāyeṇa", "url": "https://ashtadhyayi.com/sutraani/3/3/118" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["akartṛ_kāraka (karma/karaṇa/adhikaraṇa)"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "पुंसि संज्ञायां घः प्रायेण (३.३.११८)",
+        "artha_english": "Masculine conventional noun denoting a non-agent kāraka.",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "तर्", "upapada": "प्र", "derived_form": "प्रतरः", "iast": "prataraḥ", "meaning": "crossing / ford" }
+      ]
+    },
+    {
+      "id": "kyun",
+      "devanagari": "क्युन्",
+      "iast": "kyun",
+      "slp1": "kyun",
+      "kaumudi_chapter": 66,
+      "stripped_form": { "devanagari": "अन", "iast": "ana", "slp1": "ana" },
+      "it_markers": [
+        { "varna": "क्", "sutra": "1.3.8", "effect": "K-it: blocks guṇa/vṛddhi (1.1.5)." },
+        { "varna": "न्", "sutra": "1.3.3", "effect": "N-it: ādyudātta accent (6.1.197)." }
+      ],
+      "category": "sādhāraṇa_kṛt",
+      "dhatu_domain": "ārdhadhātuka",
+      "samjna_tags": ["kṛt", "ārdhadhātuka", "kit", "nit"],
+      "anga_operations": {
+        "guna_vriddhi": "Blocked (1.1.5); yu -> ana (7.1.1)",
+        "it_agama": "None",
+        "notes": "Applies to vrīhi/kāla words (3.1.148)."
+      },
+      "sutras": [
+        { "sutra_id": "3.1.148", "sutra_devanagari": "हश्च व्रीहिकालयोः", "sutra_iast": "haśca vrīhikālayoḥ", "url": "https://ashtadhyayi.com/sutraani/3/1/148" }
+      ],
+      "paninian_meanings": {
+        "karaka": ["kartṛ"],
+        "kala": "sarvakāla",
+        "artha_sanskrit": "कर्तरि (व्रीहि-काल-वाचकयोः)",
+        "artha_english": "Agentive suffix forming words for rice or time (e.g., hāyana).",
+        "upapada": null,
+        "gender_and_declension": "puṃliṅga"
+      },
+      "examples": [
+        { "dhatu": "हा", "derived_form": "हायनः", "iast": "hāyanaḥ", "meaning": "year / a kind of rice" }
+      ]
+    }
+  ]
+}
