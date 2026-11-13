@@ -1,7 +1,9 @@
 """
 3.1.37  दयायासश्च  —  VIDHI
-Kāśikā 3.1.37: दय, अय, आस → लिटि परत आम् (दयाञ्चक्रे, पलायाञ्चक्रे, आसाञ्चक्रे)
+Kāśikā 3.1.37: "एतेभ्यश्च लिटि परत आम् प्रत्ययो भवति। दयाञ्चक्रे। पलायाञ्चक्रे। आसाञ्चक्रे।"
 Ām goes before the liṭ placeholder (2.4.81 then luk's the liṭ); the anuprayoga is 3.1.40.
+
+Pāṭha: ashtadhyayi.com data.txt row i=31037 (Art. 14).
 """
 from __future__ import annotations
 

@@ -47,6 +47,7 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     r1_form_identity_exempt=True,
     vibhasha_default=False,
+    vibhasha_scope=cond,           # offered only where the rule's own site exists (no phantom option on every derivation)
     text_slp1='dyudByo luNi',
     text_dev='द्युद्भ्यो लुङि',
     samagra_slp1="dyudByaH luNi kartari parasmEpadam vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
