@@ -115,3 +115,13 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S145 | 7.4.48 | the aṅga ap and its tadanta svap are named by stem (_APAH); the samāsa machine does not yet say that a stem ends in the word ap | the samāsa machine's members (S126) | open |
 | S146 | 8.4.39 | the kṣubhnādi ākṛtigaṇa is the two roots the engine can derive (kṣubh, tṛp), named by upadeśa | the Kāśikā gaṇa list as a gaṇapāṭha input | open |
 | S147 | 8.3.111 | only the dhātu-initial ādeśa s (6.1.64) is barred; the sāt half (अग्निसात्) waits on 5.4.52, which is gate-only | 5.4.52 as a real taddhita, then sāt as a pratyaya s | open |
+| S148 | 1.3.60, 1.3.61 | 'śit' is stood in for by the sārvadhātuka lakāra tags (laṭ, loṭ, laṅ, vidhi-liṅ) at the pada step | a real śit reading once the vikaraṇa is on the tape when pada is chosen | open |
+| S149 | 1.3.74 (nic_recipe) | `nic_recipe=True` stands in for the kartrabhiprāya vivakṣā (written at tape init via tape_init.with_vivaksha) | the caller or Amendment 30 open vivakṣā supplies kartrabhiprAya | open |
+| S150 | 1.3.91, 1.3.92 | reuse the licence value "ubhaya" (`kartari_atmanepada_licensed`) to flip the 1.3.78 gate | pada decided from the tape by the loop | open |
+| S151 | 1.3.48 / 1.3.50 | 1.3.48 steps aside for 1.3.50 by importing 1.3.50's scope (stands in for vipratiṣedha 1.4.2); 1.3.48's samagra does not name vipralApa | a real vipratiṣedha mechanism | open |
+| S152 | 1.3.47-50, 1.3.66 (recipe) | five apply_rule calls hard-coded in the tinanta bootstrap; `_resolve_pada_from_gate` honours `meta['pada_by_sense']` over the 1.3.78 gate | the loop decides pada; scanner offers these sūtras | open |
+| S153 | 3.1.38 | `adanta_pratijna_3_1_38` flag carries 'videradantatvapratijYanAt' (vid takes no guṇa before ām) | model vid's a-final form | open |
+| S154 | 5.4.69 | `lex:pUjana` (su/ati in the honour sense) is a caller input; 1.4.93-96 are gate-only; no pipeline builds the two-Term su + rājan tape | the samāsa machine + 1.4.93-96 | open |
+| S155 | 8.4.64 | requires the two yam to be savarṇa (narrower than the sūtra text) so that agnyA keeps its n; the Kāśikā examples are all identical-letter clusters | the literal condition once the n-clusters are modelled | open |
+| S156 | 6.4.62 | ajanta aṅgas only, wired into the karmaṇi lṛṭ recipe only (han / grah / dṛś and lṛṅ, sīyuṭ, tāsi not routed) | 7.2.116 + 7.3.32 branch and the other lakāra routes | open |
+| S157 | Amendment 30 explorer | `explore_vivaksha` clears scheduler._EFFECTIVE_MEMO so a cached cond cannot hide an asked key; a non-empty vivakṣā forces the recipe path (the loop's start tape cannot carry it yet) | loop tape init carries the vivakṣā | open |
