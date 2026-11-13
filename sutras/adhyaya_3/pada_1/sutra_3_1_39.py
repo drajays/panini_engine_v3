@@ -1,48 +1,46 @@
 """
-3.1.39  भीह्रीभृहुवां श्लुवच्च  —  VIDHI
+3.1.39  भीह्रीभृहुवां श्लुवच्च  —  VIBHASHA
 
-Padaccheda: भी-ह्री-भृ-हुवाम् श्लु-वत् च
+Kāśikā: "… एतेभ्यो लिटि परत आम् प्रत्ययो भवत्यन्यतरस्याम्, श्लाविव चास्मिन् कार्यं भवति। किं पुनस्तत्? द्वित्वमित्त्वं च। बिभयाञ्चकार, बिभाय। जिह्रयाञ्चकार, जिह्राय। बिभराञ्चकार, बभार। जुहवाञ्चकार, जुहाव॥"
+Ām goes before the liṭ placeholder (3.1.35 insert_am); "as if before ślu" (ślāviva) is the atideśa: the dhātu takes the
+``slu_replaced_sap`` marker that 6.1.10 (dvitva) and 7.4.76 (bhṛñām it) read -> bibhayāñcakāra, bibharāñcakāra.
 
-Krt suffix rule from dhatu: भीह्रीभृहुवां श्लुवच्च (39)
 Pāṭha: ashtadhyayi.com data.txt row i=31039 (Art. 14).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from sutras.adhyaya_3.pada_1.sutra_3_1_35 import am_site, insert_am
 
-_GATE_KEY: str = "3_1_39_BIhrIBfhuvAM_39"
+LISTED = frozenset({"YiBI", "hrI", "quBfY", "hu"})   # the sūtra's own list (dhātupāṭha upadeśa)
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.39", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return am_site(state, LISTED) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.39"
-    return state
+    li = am_site(state, LISTED)
+    if li is None:
+        return state
+    state.terms[li - 1].meta["slu_replaced_sap"] = True      # ślāviva: the ślu-kārya (dvitva, ittva) follows
+    return insert_am(state, li)
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.39",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
     text_slp1             = "BIhrIBfhuvAM Sluvacca",
     text_dev              = "भीह्रीभृहुवां श्लुवच्च",
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BI-hrI-Bf-huvAm Sluvat ca liwi Am anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भी-ह्री-भृ-हुवाम् श्लुवत् च लिटि आम् अन्यतरस्याम्",
+    samagra_slp1          = "BI-hrI-Bf-huvAm Sluvat ca liwi Am anyatarasyAm",
+    samagra_dev           = "भी-ह्री-भृ-हुवाम् श्लुवत् च लिटि आम् अन्यतरस्याम्",
     padaccheda_dev        = "भी-ह्री-भृ-हुवाम् श्लु-वत् च",
-    why_dev               = "धातोः [भीह्रीभृहुवां श्लुवच्च]-प्रत्ययः विहितः (३.१.39)।",
-    anuvritti_from        = ('3.1.1',),
+    why_dev               = "भी-ह्री-भृ-हु-धातोः लिटि विकल्पेन आम्, श्लौ इव द्वित्वम् (बिभयाञ्चकार)।",
+    anuvritti_from        = ('3.1.35',),
+    vibhasha_default      = True,
+    vibhasha_scope        = cond,
     cond                  = cond,
     act                   = act,
 )
-
 register_sutra(SUTRA)

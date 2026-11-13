@@ -709,7 +709,8 @@ def _it_agama(state: State) -> State:
     state = apply_rule("7.2.39", state)   # na liṅi — the prohibitions first (Art. 21), then:
     state = apply_rule("7.2.40", state)   # sici ca parasmaipadeṣu
     state = apply_rule("7.2.38", state)   # वृतो वा: वरिता / वरीता
-    return apply_rule("7.2.58", state)
+    state = apply_rule("7.2.58", state)
+    return apply_rule("6.4.48", state)    # ato lopa before the iṭ: gopāya + iṭ → gopāyitā (3.1.31)
 
 
 def _needs_am_lit(state: State) -> bool:
@@ -718,8 +719,9 @@ def _needs_am_lit(state: State) -> bool:
     d = next((t for t in state.terms if "dhatu" in t.tags), None)
     from sutras.adhyaya_3.pada_1.sutra_3_1_37 import LISTED as L37
     from sutras.adhyaya_3.pada_1.sutra_3_1_38 import LISTED as L38
+    from sutras.adhyaya_3.pada_1.sutra_3_1_39 import LISTED as L39
     return d is not None and (bool(d.meta.get("sanadi_pratyayanta"))      # 3.1.35
-                              or (d.meta.get("upadesha_slp1") or "").strip() in L37 | L38     # 3.1.37 / 3.1.38 (optional: the plain liṭ is the other reading)
+                              or (d.meta.get("upadesha_slp1") or "").strip() in L37 | L38 | L39     # 3.1.37 / 3.1.38 (optional: the plain liṭ is the other reading)
                               or ijadi_gurumat_anrcchah("".join(v.slp1 for v in d.varnas)))
 
 
@@ -739,18 +741,30 @@ def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state.meta["lakara"] = "liT"
     state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
-    for _sid in ("3.1.35", "3.1.36", "3.1.37", "3.1.38"):     # pratyayānta चोरि / ijādi gurumān एध / दय-अय-आस् / उष-विद-जागृ (vā) + आम्
+    for _sid in ("3.1.35", "3.1.36", "3.1.37", "3.1.38", "3.1.39"):     # (3.1.39 भी-ह्री-भृ-हु) pratyayānta चोरि / ijādi gurumān एध / दय-अय-आस् / उष-विद-जागृ (vā) + आम्
         state = apply_rule(_sid, state)
     if not any((t.meta.get("upadesha_slp1") or "") == "Am" for t in state.terms):
         return _derive_lit(state, pada_key, purusha, vacana, attached=True)     # 3.1.38 declined: the plain liṭ (विवेद)
     state = apply_rule("3.4.114", state)     # ām is ārdhadhātuka (śeṣa)
+    state = apply_rule("6.4.48", state)      # ato lopa of gopāya before ām (3.1.35 after 3.1.31)
     state = apply_rule("6.4.55", state)      # णेः अय् before ām: चोरयाम्
+    if any(t.meta.get("slu_replaced_sap") for t in state.terms):     # 3.1.39 ślāviva: dvitva + ittva (बिभयाञ्चकार)
+        state = apply_rule("6.1.10", state)
+        state = P00_abhyasa_trim(state)
+        state = apply_rule("7.4.62", state)
+        state = apply_rule("7.4.76", state)
+        state = apply_rule("7.4.59", state)
     if not any(t.meta.get("adanta_pratijna_3_1_38") for t in state.terms):     # विदाञ्चकार: no guṇa (KV 3.1.38)
         state = apply_rule("7.3.84", state)  # sārvadhātukārdhadhātukayoḥ: guṇa of an ik-final dhātu (बिभयाम्)
         state = apply_rule("7.3.86", state)  # pugantalaghūpadhasya (ओषाम्)
         state = apply_rule("1.1.51", state)  # raṇ-rapara (जागरा)
+        state = apply_rule("6.1.78", state)  # eco 'yavāyāvaḥ before the ac of ām: juhavām (3.1.39)
     state = apply_rule("2.4.81", state)
-    stem = state.terms[-1]
+    if any("abhyasa" in t.tags for t in state.terms):     # 3.1.39: the abhyāsa Term stays; jaś / car (8.4.54) on it: बिभयाम्
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("8.4.54", state)
+    stem = Term(kind="prakriti", varnas=[v for t in state.terms for v in t.varnas],
+                tags=set(state.terms[-1].tags), meta=dict(state.terms[-1].meta))      # abhyāsa (if any) + the āmanta stem
     before = state.flat_slp1()
     from sutras.adhyaya_3.pada_1.sutra_3_1_40 import pick_anuprayoga
     anu = pick_anuprayoga(state)
@@ -1735,6 +1749,7 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5",  state)
     state = apply_rule("6.4.51", state)    # णेरनिटि before aniṭ yāsuṭ: छोट्यात्, चोर्यात्
+    state = apply_rule("6.4.48", state)    # ato lopa of gopāya before the ārdhadhātuka yāsuṭ (3.1.31): gopāyyāt
     state = apply_rule("6.1.45", state)    # ग्लायात्
     state.meta["ashir_7_4_25_recipe"] = True
     state = apply_rule("7.4.25", state)    # ज्रीयात्, चीयात्
@@ -1866,7 +1881,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # 6.1.66: 'y' of [i,y] drops before HAL-initial tiṅ (t,s,m,v,…)
         state = apply_rule("6.1.66", state)
 
-    if gana == 9:
+    if gana in (3, 9):       # gaṇa 3: abhyasta ā-roots, dā / dhā lose the ā before the ṅit yāsuṭ (dadyāt, dadhyāt)
         # the ṅit yāsuṭ / sīyuṭ is now next to श्ना: 6.4.113 ई हल्यघोः (क्रीणीयात्),
         # 6.4.112 श्नाभ्यस्तयोरातः before a vowel (क्रीणीत)
         state = apply_rule("6.4.113", state)
@@ -2881,6 +2896,33 @@ def _curadi_nic(state: State) -> State:
     state.emit_structural("__MERGE__", form_before=before, form_after=state.flat_slp1(),
                           why_dev="३.१.३२ सनाद्यन्ता धातवः — धातु + णिच् = नूतनधातुः।",
                           type_label="धातु-मेलनम्")
+    return apply_rule("3.1.32", state)
+
+
+def _AYA_ROOTS() -> frozenset:
+    from sutras.adhyaya_3.pada_1.sutra_3_1_28 import LISTED
+    return LISTED
+
+
+def _aya_dhatu(state: State) -> State:
+    """3.1.28 gupū-dhūp-… āyaḥ (sārvadhātuka) / 3.1.31 (ārdhadhātuka, vā) → laghūpadha guṇa (7.3.86) → 3.1.32 dhātu + Aya is one
+    dhātu: गोपाय. The new dhātu is parasmaipadī: the anubandha (ātmanepada of paṇ, pan) is spent on the bare root (Kāśikā 3.1.28)."""
+    state = apply_rule("3.1.28", state)
+    state = apply_rule("3.1.31", state)
+    di = next((i for i, t in enumerate(state.terms) if "dhatu" in t.tags), None)
+    if di is None or not any((t.meta.get("upadesha_slp1") or "") == "Aya" for t in state.terms):
+        return state
+    state = P00_guna_rapara_ayadi(state)      # laghūpadha guṇa (gup → gop), as before ṇic
+    dh = state.terms[di]
+    prayoga = dh.tags & {"kartari", "karmani", "bhave"} or {"kartari"}
+    vivaksha = {t for t in dh.tags if t.endswith("_derivation") or t == "ashis"}
+    before = state.flat_slp1()
+    stem = [v for t in state.terms[di:] for v in t.varnas]
+    state.terms = state.terms[:di] + [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga | vivaksha,
+                        meta={"upadesha_slp1": "".join(v.slp1 for v in stem), "gana": 1,
+                              "ayanta": True, "sanadi_pratyayanta": True, "anit_dhatu": False, "set_dhatu": True})]
+    state.emit_structural("__MERGE__", form_before=before, form_after=state.flat_slp1(),
+                          why_dev="३.१.३२ सनाद्यन्ता धातवः — धातु + आय = नूतनधातुः।", type_label="धातु-मेलनम्")
     return apply_rule("3.1.32", state)
 
 
@@ -4073,6 +4115,8 @@ def _bootstrap_tinanta_derivation(
         # conjugated with śap like any bhvādi root: चोरयति, ताडयति.
         state = _curadi_nic(state)
         gana = 1
+    elif (row.get("upadesha_slp1") or "").strip() in _AYA_ROOTS():
+        state = _aya_dhatu(state)
     state = _attach_upasargas(state, upasargas)
 
     if nic_recipe and lakara == "laT":

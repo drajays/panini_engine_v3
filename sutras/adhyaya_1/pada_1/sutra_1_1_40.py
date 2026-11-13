@@ -52,8 +52,19 @@ def _eligible_pairs(state: State):
         yield ai, pi
 
 
+def _derived_stems(state: State):
+    """A derived kṛdanta stem (one prātipadika Term carrying its origin record, 1.2.46) whose only pratyaya is ktvā / tosun / kasun /
+    tumun: gatvā, paṭhitvā, bhavitum — avyaya, so 2.4.82 lops the sup (never *gatvāḥ*)."""
+    for t in state.terms:
+        if "prātipadika" not in t.tags or "avyaya" in t.tags:
+            continue
+        origin = {x.split(":", 1)[1] for x in t.tags if x.startswith("origin_pratyaya:")}
+        if origin and origin <= _TARGET_ORIG:
+            yield t
+
+
 def cond(state: State) -> bool:
-    return next(_eligible_pairs(state), None) is not None
+    return next(_eligible_pairs(state), None) is not None or next(_derived_stems(state), None) is not None
 
 
 def act(state: State) -> State:
@@ -63,6 +74,8 @@ def act(state: State) -> State:
         anga.tags.add("avyaya")
         pr.tags.add("avyaya")
         pr.meta[META_1_1_40_DONE] = True
+    for t in list(_derived_stems(state)):
+        t.tags.add("avyaya")
     state.paribhasha_gates["1.1.40_ktvA_tosun_kasun"] = True
     return state
 

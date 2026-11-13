@@ -100,6 +100,17 @@ def _han_vadh_site(state: State) -> int | None:
     return None
 
 
+def _aya_site(state: State) -> int | None:
+    """The dhātu made by 3.1.28 / 3.1.31 (gopāya …) ends in a: lopa before an ārdhadhātuka (gopāyitā, gopāyām)."""
+    for i, ang in enumerate(state.terms):
+        if "dhatu" not in ang.tags or not ang.meta.get("ayanta") or ang.meta.get("6_4_48_a_lopa_done"):
+            continue
+        if _final_a_pop_index(ang) is not None and (_ardhadhatuka_follows(state.terms, i)
+                                                    or any("ashir_liG" in u.tags for u in state.terms[i + 1:])):    # āśīr-liṅ's tiṅ is ārdhadhātuka (3.4.116)
+            return i
+    return None
+
+
 def _ktic_krt_follows(terms: list, ang_i: int) -> bool:
     if ang_i + 1 >= len(terms):
         return False
@@ -150,6 +161,9 @@ def _site(state: State) -> int | None:
     if site is not None:
         return site
     site = _yang_varac_site(state)
+    if site is not None:
+        return site
+    site = _aya_site(state)
     if site is not None:
         return site
     return _ktic_site(state)

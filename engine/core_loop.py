@@ -184,9 +184,18 @@ LOOP_CLASSES: frozenset[tuple[int, str, str]] = frozenset({
 })
 
 
+def _AM_LIT_ROOTS() -> frozenset:
+    from sutras.adhyaya_3.pada_1.sutra_3_1_37 import LISTED as L37
+    from sutras.adhyaya_3.pada_1.sutra_3_1_38 import LISTED as L38
+    from sutras.adhyaya_3.pada_1.sutra_3_1_39 import LISTED as L39
+    return L37 | L38 | L39
+
+
 def _loop_routed(row: dict, lakara: str, prayoga: str, pada: str | None, upasargas, san_recipe: bool, nic_recipe: bool) -> bool:
     if prayoga != "kartari" or upasargas or san_recipe or nic_recipe:
         return False
+    if lakara == "liT" and (row.get("upadesha_slp1") or "").strip() in _AM_LIT_ROOTS():
+        return False        # S169: the loop's start tape has no [dhātu][liṭ] to put ām before (3.1.37-39); these roots take the recipe
     label = row.get("pada_label_dev", "")
     asked = pada or ("parasmai" if "परस्मैपदी" in label else "atmane" if "आत्मनेपदी" in label else None)
     return (row.get("gana"), lakara, asked) in LOOP_CLASSES

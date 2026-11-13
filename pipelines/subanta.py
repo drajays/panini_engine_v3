@@ -396,6 +396,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.14",
     "1.1.23",  # बहुगणवतुडति संख्या — the laukika numerals the Kāśikā names (ṣaṣ, pañcan, saptan, aṣṭan, navan, daśan) …
     "1.1.24",  # ष्णान्ता षट् — … get the saṃjñā ṣaṭ (tag zat_samjna), read by 7.1.22, 7.1.55, 4.1.10
+    "1.1.40",  # क्त्वातोसुन्कसुनः — a ktvā / tumun-anta kṛdanta stem is avyaya, so 2.4.82 lops its sup (gatvā, never *gatvāḥ*)
     "2.4.82",  # अव्ययादाप्सुपः — the sup after an avyaya (a taddhitānta 1.1.38 gave the saṃjñā: tatra, kutaḥ) is luk'd
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",

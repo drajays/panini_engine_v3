@@ -36,7 +36,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _site(state):
         return state
-    ikz, am = state.terms[-3], state.terms[-2]
+    ikz, am = state.terms[-3], state.terms[-2]       # an abhyāsa Term (3.1.39 ślāviva dvitva) stays before the merged stem
     del state.terms[-3:]
     merged = Term(
         kind="prakriti",

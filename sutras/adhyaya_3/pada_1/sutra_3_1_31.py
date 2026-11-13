@@ -1,46 +1,40 @@
 """
-3.1.31  आयादय आर्धधातुके वा  —  VIDHI
+3.1.31  आयादय आर्धधातुके वा  —  VIBHASHA
 
-Padaccheda: आय्-आदयः आर्धधातुके वा
+Kāśikā: "आर्धधातुकविषय आर्धधातुकविवक्षायामायादयः प्रत्यया वा भवन्ति। गोप्ता, गोपायिता।"
+Narrow: the āya of 3.1.28 (gupū, dhūp, vicch, paṇ, pan) in an ārdhadhātuka lakāra; īyaṅ (3.1.29), ṇiṅ (3.1.30) not yet.
+Same insertion as 3.1.28 (`insert_aya`); the vā is the vibhāṣā machinery (engine.vikalpa): taken -> gopāyitā, declined -> gopitā.
 
-Krt suffix rule from dhatu: आयादय आर्धद्धातुके वा (31)
 Pāṭha: ashtadhyayi.com data.txt row i=31031 (Art. 14).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
-
-_GATE_KEY: str = "3_1_31_AyAdaya_31"
+from sutras.adhyaya_3.pada_1.sutra_3_1_28 import _ARDHA, aya_site, insert_aya
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.31", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return aya_site(state, _ARDHA) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.31"
-    return state
+    i = aya_site(state, _ARDHA)
+    return state if i is None else insert_aya(state, i)
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.31",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
     text_slp1             = 'AyAdaya ArDaDAtuke vA',
     text_dev              = 'आयादय आर्धधातुके वा',
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AyAdayaH ArDaDAtuke vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AyAdayaH ArDaDAtuke vA",
     samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आयादयः आर्धधातुके वा",
     padaccheda_dev        = "आय्-आदयः आर्धधातुके वा",
-    why_dev               = "धातोः [आयादय आर्धद्धातुके वा]-प्रत्ययः विहितः (३.१.31)।",
-    anuvritti_from        = ('3.1.1',),
+    why_dev               = "आर्धधातुके आयादयो वा (गोप्ता, गोपायिता)।",
+    anuvritti_from        = ('3.1.28',),
+    vibhasha_default      = False,      # the plain ārdhadhātuka is the first reading: gopitā (the vā adds gopāyitā)
+    vibhasha_scope        = cond,
     cond                  = cond,
     act                   = act,
 )
