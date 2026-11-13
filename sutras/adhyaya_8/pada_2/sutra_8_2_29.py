@@ -84,6 +84,24 @@ _SKOH = frozenset({"s", "k", "K", "g", "G", "N"})          # सकारः and
 _JHAL = frozenset("kKgGcCjJwWqQtTdDpPbBzsSh")
 
 
+def _inner_cluster(vs) -> int | None:
+    """झलि परतो यः संयोगः (Kāśikā 8.2.29: lagnaḥ, magnaḥ, taṣṭaḥ; maṅktā = mas-n-j-t-ā): a cluster that starts with s or k
+    and has, at or after its third place, a jhal that follows a sub-saṃyoga of two or more letters (s-j|t: lasj-ta; s-n|j-t: masnj-ta).
+    A lone s-jhal (asti) is no saṃyoga, so it stays; the end-of-pada case is below."""
+    i = 0
+    while i < len(vs):
+        if vs[i].slp1 not in HAL or (i and vs[i - 1].slp1 in HAL):
+            i += 1
+            continue
+        m = i
+        while m < len(vs) and vs[m].slp1 in HAL:
+            m += 1
+        if vs[i].slp1 in ("s", "k") and m < len(vs) and any(v.slp1 in _JHAL for v in vs[i + 2:m]):
+            return i
+        i = m
+    return None
+
+
 def _find_final_cluster(state: State) -> int | None:
     """स्कोः संयोगाद्योरन्ते च: in the pada (a single merged term, inside the tripāḍī) whose end is a
     consonant cluster, a saṃyoga-initial sakāra or kavarga letter before a jhal drops — भूयास्स्त् → भूयात्,
@@ -91,6 +109,9 @@ def _find_final_cluster(state: State) -> int | None:
     if not state.tripadi_zone or len(state.terms) != 1:
         return None
     vs = state.terms[0].varnas
+    inner = _inner_cluster(vs)
+    if inner is not None:
+        return inner
     k = len(vs)
     while k > 0 and vs[k - 1].slp1 in HAL:
         k -= 1
@@ -104,6 +125,8 @@ def _find_final_cluster(state: State) -> int | None:
 def cond(state: State) -> bool:
     if _find_final_cluster(state) is not None:
         return True
+    if state.tripadi_zone and len(state.terms) == 1:      # a merged pada with no such cluster: nothing to do (the gate-setter below is pre-merge only)
+        return False
     # Recipe paths fire pre-merge (before tripadi zone opens).
     if state.meta.get("ashir_8_2_29_recipe") or state.meta.get("liG_ad_8_2_29_suw_recipe"):
         return bool(state.terms)

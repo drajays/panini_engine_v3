@@ -3,33 +3,40 @@
 
 Padaccheda: संयोग-आदेः आतः धातोः यण्-वतः
 
-संयोगादेरातो धातोर्यण्वतः (8.2.43)
+A saṃyogādi, ā-final dhātu with a yaṇ takes na for the niṣṭhā's t: mlā+ta → mlāna, dyā → dyāna, prā → prāṇa (8.4.1); snāta has no yaṇ, yāta no saṃyoga.
+Kāśikā 8.2.43: संयोगादिर्यो धातुराकारान्तो यण्वान्, तस्मादुत्तरस्य निष्ठातकारस्य नकारादेशो भवति।
 Pāṭha: ashtadhyayi.com data.txt row i=82043 (Art. 14).
+The niṣṭhā-ta and its dhātu are read by sutras/adhyaya_8/pada_2/_nistha.py (loose tape or merged kṛdanta pada).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from sutras.adhyaya_8.pada_2 import _nistha as N
 
-_GATE_KEY: str = "8_2_43_saMyogAder_43"
+
+def _sites(state: State):
+    out = []
+    for s in N.free(state):
+        p = s.pre
+        if len(p) >= 3 and p[-1].slp1 == "A" and N.is_hal(p[0]) and N.is_hal(p[1]) and any(v.slp1 in "yrlv" for v in p):
+            out.append(s)
+    return out
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.43", gate_key=_GATE_KEY)
+    return bool(_sites(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.43"
+    _sites(state)[0].put("n")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.2.43",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    r1_form_identity_exempt = False,
     text_slp1             = "saMyogAderAto DAtoryaRvataH",
     text_dev              = "संयोगादेरातो धातोर्यण्वतः",
     samagra_slp1          = "padasya pUrvatrAsidDam saMyogAdeH AtaH DAtoH yaRvataH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

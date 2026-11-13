@@ -3,33 +3,35 @@
 
 Padaccheda: क्षायः मः
 
-क्षायो मः (8.2.53)
+kṣai takes ma for the niṣṭhā's t: kṣā+ta → kṣāma.
+Kāśikā 8.2.53: क्षैधातोरुत्तरस्य निष्ठातकारस्य मकारादेशो भवति। क्षामः। क्षामवान्॥
 Pāṭha: ashtadhyayi.com data.txt row i=82053 (Art. 14).
+The niṣṭhā-ta and its dhātu are read by sutras/adhyaya_8/pada_2/_nistha.py (loose tape or merged kṛdanta pada).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from sutras.adhyaya_8.pada_2 import _nistha as N
 
-_GATE_KEY: str = "8_2_53_kzAyo_53"
+
+def _sites(state: State):
+    return [s for s in N.free(state) if s.root == "kzE"]
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.53", gate_key=_GATE_KEY)
+    return bool(_sites(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.53"
+    _sites(state)[0].put("m")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.2.53",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    r1_form_identity_exempt = False,
     text_slp1             = "kzAyo maH",
     text_dev              = "क्षायो मः",
     samagra_slp1          = "padasya pUrvatrAsidDam kzAyaH maH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

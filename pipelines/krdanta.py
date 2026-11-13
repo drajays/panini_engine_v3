@@ -716,7 +716,11 @@ def derive_krdanta_stem(dhatu_ref: str, *, upapada: tuple[str, str] | None = Non
     s.phase = "upadesha"
     run = run_autonomously(s, "", dhatu_ref if isinstance(dhatu_ref, str) else dhatu_ref.slp1, 300, stop_before_tripadi=True)
     st = run.state
-    return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)), dict(st.meta.get("vikalpa_multi") or {})
+    tags = set(origin.record_from_terms(st.terms))
+    k = len(st.terms) - 1
+    if k > 0 and "nistha" in st.terms[k].tags and st.terms[k].varnas and st.terms[k - 1].tags & {"dhatu"}:
+        tags.add(f"nistha_t_at:{sum(len(t.varnas) for t in st.terms[:k])}:{sum(len(t.varnas) for t in st.terms[:k - 1])}")      # 8.2.42-57 read where the niṣṭhā's ta stands in the stem, directly after the dhātu
+    return "".join(v.slp1 for t in st.terms for v in t.varnas), tags, dict(st.meta.get("vikalpa_multi") or {})
 
 
 def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pulliṅga", *, upapada: tuple[str, str] | None = None, **vivaksha: str) -> State:
@@ -727,6 +731,15 @@ def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pul
     vivaksha.setdefault("linga", {"strīliṅga": "strI", "napuṃsaka": "napuMsaka", "pulliṅga": "puM"}[linga])
     stem, origin_tags, multi = derive_krdanta_stem(dhatu_ref, upapada=upapada, **vivaksha)
     s = build_initial_state(stem, vibhakti, vacana, linga, derived_pratipadika=True)
+    mark = next((g for g in origin_tags if g.startswith("nistha_t_at:")), None)
+    if mark:                                    # the varṇa-level history of the stem: its dhātu's letters and the niṣṭhā's ta (sutras/adhyaya_8/pada_2/_nistha.py)
+        origin_tags = origin_tags - {mark}
+        at, dh0 = (int(x) for x in mark.split(":")[1:])
+        vs = s.terms[0].varnas
+        if at < len(vs) and vs[at].slp1 == "t":
+            vs[at].tags.add("nistha_t_v")
+            for v in vs[dh0:at]:
+                v.tags.add("dhatu_v")
     s.terms[0].tags |= origin_tags
     if multi:
         s.meta["vikalpa_multi"] = multi          # the kṛt's own side-by-side choice (3.1.96 …) stays visible to explore()

@@ -575,6 +575,11 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.2.8",    # na NisambudDyoH — the prohibition is settled before 8.2.7 (Art. 21 Ladder 1)
     "8.2.7",    # nalopaH prAtipadikAntasya — rAjan/Atman-final n-lopa at pada-end
     "8.2.23",   # संयोगान्तस्य लोपः — pada-final cluster loses its last letter (भवान्त् → भवान्)
+    "8.2.29",   # skoH saMyogAdyorante ca — lagna (lasj+ta), magna: the cluster-initial s before a jhal
+    "8.2.57",   # na DyAKyApUmUrcCimadAm — the prohibition first (Art. 21): dhyāta, khyāta, pūrta, mūrta, matta
+    "8.2.42", "8.2.43", "8.2.44", "8.2.45", "8.2.46",   # niṣṭhā-ta → na: bhinna, mlāna, lūna, līna, kṣīṇa
+    "8.2.51", "8.2.52", "8.2.53",   # śuṣka, pakva, kṣāma
+    "8.2.56",   # nud, vid, und, trā, ghrā, hrī: na vibhāṣā (vinna / vitta)
     "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
     "8.2.80",   # adaso'ser dAd u do maH — d → m, following vowel → u/U
     "8.2.81",   # eta Id bahuvacane — e → I (amI), d → m

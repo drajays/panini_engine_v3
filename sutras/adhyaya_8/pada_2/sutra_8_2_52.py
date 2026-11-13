@@ -3,33 +3,35 @@
 
 Padaccheda: पचः वः
 
-पचो वः (8.2.52)
+pac takes va for the niṣṭhā's t: pac+ta → pakva.
+Kāśikā 8.2.52: पचेर्धातोरुत्तरस्य निष्ठातकारस्य वकारादेशो भवति। पक्वः। पक्ववान्॥
 Pāṭha: ashtadhyayi.com data.txt row i=82052 (Art. 14).
+The niṣṭhā-ta and its dhātu are read by sutras/adhyaya_8/pada_2/_nistha.py (loose tape or merged kṛdanta pada).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from sutras.adhyaya_8.pada_2 import _nistha as N
 
-_GATE_KEY: str = "8_2_52_paco_52"
+
+def _sites(state: State):
+    return [s for s in N.free(state) if s.root == "qupacaz"]
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.52", gate_key=_GATE_KEY)
+    return bool(_sites(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.52"
+    _sites(state)[0].put("v")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.2.52",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    r1_form_identity_exempt = False,
     text_slp1             = "paco vaH",
     text_dev              = "पचो वः",
     samagra_slp1          = "padasya pUrvatrAsidDam pacaH vaH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

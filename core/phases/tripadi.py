@@ -38,6 +38,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.2.27",   # hrasvād aṅgāt — sic-s drops after a short aṅga before jhal (अकृत)
     "8.2.28",   # iṭa īṭi — sic-s drops after iṭ before īṭ (अवधीत्, अपारीत्)
     "8.2.26",   # jhalo jhali — sic's s between jhals drops (अपाक्ताम्, अपक्त)
+    "8.2.29",   # skoḥ saṃyogādyor ante ca — cluster-initial s/k before a jhal or at pada end (masnj-ta → manj-ta, tak-ṣ-ṭa → taṣṭa)
     "8.2.36",   # व्रश्च…च्छशां षः — dhātu-final श्/छ्/(सृज्…) → ष् (apavāda of 8.2.30)
     "8.2.62",   # kvinpratyayasya kuḥ — dṛś/diś/spṛś/prāñc: the stem's last letter → ku (prāṅkṣu)
     "8.2.30",   # coḥ kuḥ — c/j → k/g before jhal or at pada-end (पच्+ता → पक्ता)
