@@ -234,7 +234,10 @@ def _build_dhatu_term(row: dict, prayoga: str = "kartari", lakara: str = "laT") 
 
 
 def _resolve_pada_from_gate(state: State) -> str:
-    """Read 1.3.78 paribhāṣā gate to determine pada (recipe layer only)."""
+    """Read 1.3.78 paribhāṣā gate to determine pada (recipe layer only). A pada an ātmanepada sūtra of 1.3.12–77 set on the
+    state (``meta['pada']``, AMENDMENT 30: 1.3.47–50, 1.3.66) is the sūtra's decision and takes precedence over the śeṣa default."""
+    if state.meta.get("pada") == "Atmanepada":
+        return "atmane"
     gate = state.paribhasha_gates.get("prayoga_1_3_78_seza_kartari_parasmaipada", {})
     if isinstance(gate, dict) and gate.get("active"):
         return "parasmai"
@@ -4051,6 +4054,7 @@ def _bootstrap_tinanta_derivation(
     nic_recipe: bool = False,
     purusha: int = 3,
     vacana: int = 1,
+    vivaksha: dict | None = None,
 ) -> tuple[State, int, str | None, bool]:
     """
     STAGE 0–2: dhātupātha → tape init → it-lopa → (kartari) pada-nirṇaya.
@@ -4061,7 +4065,7 @@ def _bootstrap_tinanta_derivation(
     from engine.tape_init.tinanta import build_tinanta_recipe_state
 
     gana: int = row.get("gana", 1)
-    state = build_tinanta_recipe_state(row, lakara, prayoga)
+    state = build_tinanta_recipe_state(row, lakara, prayoga, vivaksha)
     state = P01_samjna_dhatu_class(state)
     state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
     if gana == 10:
@@ -4085,7 +4089,7 @@ def _bootstrap_tinanta_derivation(
         state = apply_rule("1.3.12", state)
         state = apply_rule("1.3.19", state)  # विपराभ्यां जेः
         state = apply_rule("1.3.72", state)  # स्वरितञितः कर्त्रभिप्राये
-        for sid in ("1.3.60", "1.3.61", "1.3.91", "1.3.92"):   # pada rules that read dhātu + lakāra off the tape
+        for sid in ("1.3.60", "1.3.61", "1.3.91", "1.3.92", "1.3.47", "1.3.48", "1.3.49", "1.3.50", "1.3.66"):   # pada rules that read dhātu + lakāra off the tape (1.3.60/61/91/92) or the vivakṣā (AMENDMENT 30: 1.3.47-50, 1.3.66; with none they decline)
             state = apply_rule(sid, state)
         state = apply_rule("1.3.78", state)
 
@@ -4316,6 +4320,7 @@ def derive(
     pada: str | None = None,    # "parasmai" | "atmane" | None (auto-detect)
     san_recipe: bool = False,   # True → desiderative (sanādi) spine
     nic_recipe: bool = False,   # True → Ṇic causative spine
+    vivaksha: dict | None = None,   # AMENDMENT 30: {key: value}, the request's vivakṣā, placed on the tape at init (every key of data/inputs/vivaksha_schema.json)
 ) -> State:
     """
     Derive a tiṅanta form via the Aṣṭādhyāyī.
@@ -4360,6 +4365,7 @@ def derive(
         pada=pada,
         san_recipe=san_recipe,
         nic_recipe=nic_recipe,
+        vivaksha=vivaksha,
     )
 
 

@@ -42,8 +42,9 @@ def dhatu_karmakatva() -> dict[str, str]:
     return json.loads(_KARMAKATVA.read_text(encoding="utf-8"))["values"]
 
 
-def _record_vivaksha(state: State, prayoga: str) -> State:
-    set_vivaksha(state, artha=_PRAYOGA_ARTHA.get(prayoga))
+def _record_vivaksha(state: State, prayoga: str, extra: dict | None = None) -> State:
+    """The prayoga's artha, then the request's own vivakṣā (AMENDMENT 30: derive(vivaksha=...)); an explicit artha wins."""
+    set_vivaksha(state, **{"artha": _PRAYOGA_ARTHA.get(prayoga), **(extra or {})})
     return state
 
 
@@ -101,7 +102,7 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
     )
 
 
-def build_tinanta_recipe_state(row: dict, lakara: str, prayoga: str) -> State:
+def build_tinanta_recipe_state(row: dict, lakara: str, prayoga: str, vivaksha: dict | None = None) -> State:
     """
     Recipe entry bootstrap — same structural tags/meta as autonomous tape init.
 
@@ -115,7 +116,7 @@ def build_tinanta_recipe_state(row: dict, lakara: str, prayoga: str) -> State:
             "prayoga": prayoga,
         },
         trace=[],
-    ), prayoga)
+    ), prayoga, vivaksha)
 
 
 def _base_dhatu_term(upadesha_slp1: str, prayoga: str, lakara: str) -> Term:

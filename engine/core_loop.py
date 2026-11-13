@@ -212,6 +212,7 @@ def derive_autonomous_tinanta(
     pada: str | None = None,
     san_recipe: bool = False,
     nic_recipe: bool = False,
+    vivaksha: dict | None = None,
 ) -> State:
     """
     Autonomous tinanta derivation entry.
@@ -235,7 +236,8 @@ def derive_autonomous_tinanta(
         return run_sapadasaptadhyayi(state)
 
     row = _dhatu_row_by_upadesha(upadesha_slp1)
-    if _loop_routed(row, lakara, prayoga, pada, upasargas, san_recipe, nic_recipe):
+    # a request that carries vivakṣā takes the recipe path, whose bootstrap puts it on the tape (the loop's start tape has none yet)
+    if not vivaksha and _loop_routed(row, lakara, prayoga, pada, upasargas, san_recipe, nic_recipe):
         return derive_tinanta_by_loop(upadesha_slp1, lakara, purusha, vacana, pada)
     state, gana, pada_key, complete = _bootstrap_tinanta_derivation(
         row,
@@ -247,6 +249,7 @@ def derive_autonomous_tinanta(
         nic_recipe=nic_recipe,
         purusha=purusha,
         vacana=vacana,
+        vivaksha=vivaksha,
     )
     if complete:
         return state
