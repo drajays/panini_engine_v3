@@ -1,48 +1,45 @@
 """
-3.1.38  उषविदजागृभ्योऽन्यतरस्याम्  —  VIDHI
-
-Padaccheda: उष-विद-जागृभ्यः अन्यतरस्याम्
-
-Krt suffix rule from dhatu: उषविदजागृभ्योऽन्यतरस्याम् (38)
-Pāṭha: ashtadhyayi.com data.txt row i=31038 (Art. 14).
+3.1.38  उषविदजागृभ्योऽन्यतरस्याम्  —  VIBHASHA
+Kāśikā 3.1.38: उष, विद, जागृ → लिटि परतोऽन्यतरस्याम् आम् (ओषाञ्चकार, उवोष; विदाञ्चकार, विवेद; जागराञ्चकार, जजागार)
+Ām goes before the liṭ placeholder (2.4.81 then luk's the liṭ); the anuprayoga is 3.1.40.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from sutras.adhyaya_3.pada_1.sutra_3_1_35 import am_site, insert_am
 
-_GATE_KEY: str = "3_1_38_uzavidajAgfB_38"
+LISTED = frozenset({"uza~", "vida~", "jAgf"})   # the sūtra's own list (dhātupāṭha upadeśa)
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.38", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return am_site(state, LISTED) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.38"
-    return state
+    li = am_site(state, LISTED)
+    if li is None:
+        return state
+    d = state.terms[li - 1]
+    if (d.meta.get("upadesha_slp1") or "").strip() == "vida~":
+        # ponytail: KV "विदेरदन्तत्वप्रतिज्ञानाद् आमि गुणो न भवति" is carried as a flag the ām path reads; SHORTCUT_LEDGER
+        d.meta["adanta_pratijna_3_1_38"] = True
+    return insert_am(state, li)
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.38",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = 'uzavidajAgfByonyatarasyAm',
-    text_dev              = 'उषविदजागृभ्योऽन्यतरस्याम्',
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH uza-vida-jAgfByaH anyatarasyAm liwi Am",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उष-विद-जागृभ्यः अन्यतरस्याम् लिटि आम्",
+    sutra_type            = SutraType.VIBHASHA,
+    text_slp1             = "uzavidajAgfByonyatarasyAm",
+    text_dev              = "उषविदजागृभ्योऽन्यतरस्याम्",
+    samagra_slp1          = "uza-vida-jAgfByaH anyatarasyAm liwi Am",
+    samagra_dev           = "उष-विद-जागृभ्यः अन्यतरस्याम् लिटि आम्",
     padaccheda_dev        = "उष-विद-जागृभ्यः अन्यतरस्याम्",
-    why_dev               = "धातोः [उषविदजागृभ्योऽन्यतरस्याम्]-प्रत्ययः विहितः (३.१.38)।",
-    anuvritti_from        = ('3.1.1',),
+    why_dev               = "उष-विद-जागृ-धातोः लिटि विकल्पेन आम्।",
+    anuvritti_from        = ('3.1.35',),
+    vibhasha_default      = True,
+    vibhasha_scope        = cond,
     cond                  = cond,
     act                   = act,
 )
-
 register_sutra(SUTRA)

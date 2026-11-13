@@ -24,6 +24,15 @@ def _site(state: State) -> bool:
     return "prātipadika" in t.tags and bool(t.meta.get("am_anta_2_4_81"))   # ām-anta, liṭ luk'd (2.4.81)
 
 
+ANUPRAYOGA = ("qukfY", "BU", "asa~")      # kṛñ, and by the ca bhū / as (KV: kṛbhvastayaḥ — पाचयाञ्चकार, पाचयाम्बभूव, पाचयामास)
+
+
+def pick_anuprayoga(state: State) -> str:
+    """The reading of 3.1.40's list: which of kṛ / bhū / as follows ām (every one is an output: engine.vikalpa)."""
+    from engine.vikalpa import policy_pick
+    return ANUPRAYOGA[policy_pick(state, "3.1.40", len(ANUPRAYOGA))]
+
+
 def cond(state: State) -> bool:
     return _site(state)
 

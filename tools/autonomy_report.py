@@ -148,7 +148,7 @@ def _tinanta_attach(state: Any, lakara: str, pada_key: str, purusha: int, vacana
         # the lakāra's own it-letter (loṭ's ṭ, laṅ/luṅ/liṅ's ṅ) goes *before* 3.4.78 puts a tiṅ in its place, and
         # the ādeśa inherits that it-ness (1.1.56) — which is how a ṅit lakāra's tiṅ blocks guṇa (1.1.5)
         if lakara == "liT":                # ijādi gurumān (3.1.36): ām, liṭ luk (2.4.81), then kṛ + liṭ (3.1.40, anuprayoga)
-            for sid in ("3.1.35", "3.1.36", "6.4.55", "2.4.81", "3.1.40"):      # 3.1.35: ām after a ṇijanta/pratyayānta dhātu
+            for sid in ("3.1.35", "3.1.36", "3.1.37", "6.4.55", "2.4.81", "3.1.40"):      # 3.1.35: ām after a ṇijanta/pratyayānta dhātu
                 state = apply_rule(sid, state)
         state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)

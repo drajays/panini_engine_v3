@@ -27,19 +27,32 @@ from engine.krt_eligibility import krt_insertion_eligible
 _GATE_KEY: str = "3_1_35_kAspratyayAd_35"
 
 
-def _site(state: State) -> int | None:
-    """कास्प्रत्ययादाममन्त्रे लिटि: after कास् or a pratyayānta dhātu (ṇic, san, …,
-    3.1.32), liṭ takes ām — returns the index of the liṭ term."""
+def am_site(state: State, listed: frozenset, *, pratyayanta: bool = False) -> int | None:
+    """The liṭ term that takes ām: right after a dhātu named in ``listed`` (the sūtra's own list)
+    or, for 3.1.35, after a pratyayānta dhātu (ṇic, san, …: 3.1.32).  3.1.37/38/39 reuse this."""
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
-        pratyayanta = t.meta.get("sanadi_pratyayanta") or \
-            (t.meta.get("upadesha_slp1") or "").strip() in {"kAsf~", "kAs", "daya~", "aya~", "Asa~"}   # + 3.1.37 दयायासश्च (आसाञ्चक्रे, KV)
+        hit = (pratyayanta and t.meta.get("sanadi_pratyayanta")) or \
+            (t.meta.get("upadesha_slp1") or "").strip() in listed
         nxt = state.terms[i + 1]
-        if pratyayanta and (nxt.meta.get("upadesha_slp1") or "").strip() == "liT":
+        if hit and (nxt.meta.get("upadesha_slp1") or "").strip() == "liT":
             return i + 1
         return None
     return None
+
+
+def insert_am(state: State, li: int) -> State:
+    state.terms.insert(li, Term(kind="pratyaya", varnas=list(parse_slp1_upadesha_sequence("Am")),
+                                tags={"pratyaya", "upadesha"}, meta={"upadesha_slp1": "Am"}))
+    return state
+
+
+_KAS = frozenset({"kAsf~", "kAs"})
+
+
+def _site(state: State) -> int | None:
+    return am_site(state, _KAS, pratyayanta=True)
 
 
 def cond(state: State) -> bool:
@@ -48,11 +61,8 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     li = _site(state)
-    if li is None:
-        return state
-    state.terms.insert(li, Term(kind="pratyaya", varnas=list(parse_slp1_upadesha_sequence("Am")),
-                                tags={"pratyaya", "upadesha"}, meta={"upadesha_slp1": "Am"}))
-    return state
+    return state if li is None else insert_am(state, li)
+
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.35",

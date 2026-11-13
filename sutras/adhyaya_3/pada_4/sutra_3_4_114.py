@@ -103,6 +103,8 @@ def cond(state: State) -> bool:
     pr2 = _sic_luG_term(state)
     if pr2 is not None and "ardhadhatuka" not in pr2.tags:
         return True
+    if _am_term(state) is not None:
+        return True
     if _sya_lrt_term(state) is not None:
         return True
     if _sya_lRG_term(state) is not None:
@@ -110,7 +112,19 @@ def cond(state: State) -> bool:
     return False
 
 
+def _am_term(state: State):
+    """3.1.35-39 *ām* after a dhātu: neither tiṅ nor śit, hence ārdhadhātuka (7.3.84 guṇa: बिभयाञ्चकार, जागराञ्चकार)."""
+    for t in state.terms:
+        if t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "Am" and "ardhadhatuka" not in t.tags:
+            return t
+    return None
+
+
 def act(state: State) -> State:
+    am = _am_term(state)
+    if am is not None:
+        am.tags.add("ardhadhatuka")
+        state.samjna_registry["3.4.114_ardhadhatuka_Am"] = True
     pr_tasi = _tasi_lut_term(state)
     if pr_tasi is not None:
         pr_tasi.tags.add("ardhadhatuka")

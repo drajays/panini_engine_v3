@@ -1,48 +1,37 @@
 """
 3.1.37  दयायासश्च  —  VIDHI
-
-Padaccheda: दय-अय-आसः च
-
-Krt suffix rule from dhatu: दयायासश्च (37)
-Pāṭha: ashtadhyayi.com data.txt row i=31037 (Art. 14).
+Kāśikā 3.1.37: दय, अय, आस → लिटि परत आम् (दयाञ्चक्रे, पलायाञ्चक्रे, आसाञ्चक्रे)
+Ām goes before the liṭ placeholder (2.4.81 then luk's the liṭ); the anuprayoga is 3.1.40.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from sutras.adhyaya_3.pada_1.sutra_3_1_35 import am_site, insert_am
 
-_GATE_KEY: str = "3_1_37_dayAyAsaSca_37"
+LISTED = frozenset({"daya~", "aya~", "Asa~"})   # the sūtra's own list (dhātupāṭha upadeśa)
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.37", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return am_site(state, LISTED) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.37"
-    return state
+    li = am_site(state, LISTED)
+    return state if li is None else insert_am(state, li)
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.37",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "dayAyAsaSca",
     text_dev              = "दयायासश्च",
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH dayAyAsaH ca liwi Am",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दयायासः च लिटि आम्",
+    samagra_slp1          = "dayAyAsaH ca liwi Am",
+    samagra_dev           = "दयायासः च लिटि आम्",
     padaccheda_dev        = "दय-अय-आसः च",
-    why_dev               = "धातोः [दयायासश्च]-प्रत्ययः विहितः (३.१.37)।",
-    anuvritti_from        = ('3.1.1',),
+    why_dev               = "दय-अय-आस्-धातोः लिटि आम् (आसाञ्चक्रे)।",
+    anuvritti_from        = ('3.1.35',),
     cond                  = cond,
     act                   = act,
 )
-
 register_sutra(SUTRA)

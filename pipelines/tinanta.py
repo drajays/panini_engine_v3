@@ -713,7 +713,10 @@ def _needs_am_lit(state: State) -> bool:
     """3.1.36 इजादेश्च गुरुमतोऽनृच्छः — decided on the dhātu's own varṇas."""
     from sutras.adhyaya_3.pada_1.sutra_3_1_36 import ijadi_gurumat_anrcchah
     d = next((t for t in state.terms if "dhatu" in t.tags), None)
+    from sutras.adhyaya_3.pada_1.sutra_3_1_37 import LISTED as L37
+    from sutras.adhyaya_3.pada_1.sutra_3_1_38 import LISTED as L38
     return d is not None and (bool(d.meta.get("sanadi_pratyayanta"))      # 3.1.35
+                              or (d.meta.get("upadesha_slp1") or "").strip() in L37 | L38     # 3.1.37 / 3.1.38 (optional: the plain liṭ is the other reading)
                               or ijadi_gurumat_anrcchah("".join(v.slp1 for v in d.varnas)))
 
 
@@ -733,14 +736,24 @@ def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state.meta["lakara"] = "liT"
     state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
-    state = apply_rule("3.1.35", state)      # pratyayānta: चोरि + आम्
-    state = apply_rule("3.1.36", state)      # ijādi gurumān: एध + आम्
+    for _sid in ("3.1.35", "3.1.36", "3.1.37", "3.1.38"):     # pratyayānta चोरि / ijādi gurumān एध / दय-अय-आस् / उष-विद-जागृ (vā) + आम्
+        state = apply_rule(_sid, state)
+    if not any((t.meta.get("upadesha_slp1") or "") == "Am" for t in state.terms):
+        return _derive_lit(state, pada_key, purusha, vacana, attached=True)     # 3.1.38 declined: the plain liṭ (विवेद)
+    state = apply_rule("3.4.114", state)     # ām is ārdhadhātuka (śeṣa)
     state = apply_rule("6.4.55", state)      # णेः अय् before ām: चोरयाम्
+    if not any(t.meta.get("adanta_pratijna_3_1_38") for t in state.terms):     # विदाञ्चकार: no guṇa (KV 3.1.38)
+        state = apply_rule("7.3.84", state)  # sārvadhātukārdhadhātukayoḥ: guṇa of an ik-final dhātu (बिभयाम्)
+        state = apply_rule("7.3.86", state)  # pugantalaghūpadhasya (ओषाम्)
+        state = apply_rule("1.1.51", state)  # raṇ-rapara (जागरा)
     state = apply_rule("2.4.81", state)
     stem = state.terms[-1]
     before = state.flat_slp1()
-    kf = derive("qukfY", "liT", "kartari", purusha, vacana, pada=pada_key)
-    state.trace.extend(kf.trace)             # कृ's own prakriyā, step by step
+    from sutras.adhyaya_3.pada_1.sutra_3_1_40 import pick_anuprayoga
+    anu = pick_anuprayoga(state)
+    # kṛ takes the main root's pada (1.3.63 आम्प्रत्ययवत् कृञोऽनुप्रयोगस्य); bhū / as are parasmaipadī of their own
+    kf = derive(anu, "liT", "kartari", purusha, vacana, pada=pada_key if anu == "qukfY" else "parasmai")
+    state.trace.extend(kf.trace)             # the anuprayoga's own prakriyā, step by step
     state.terms = [Term(kind="prakriti", varnas=list(stem.varnas) + [v for t in kf.terms for v in t.varnas],
                         tags={"pada", "anga"}, meta={"upadesha_slp1": stem.meta.get("upadesha_slp1", "")})]
     state.emit_structural(
@@ -763,15 +776,16 @@ def _lit_thal_guna(state: State) -> State:
     return apply_rule("1.1.51", state)
 
 
-def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int, *, attached: bool = False) -> State:
     """
     Derive a liṭ (perfect / parokṣa) form starting from the post-1.3.78 state.
     Implements the full 9-cell bhū liṭ parasmaipada pipeline.
     """
     state.meta["lakara"] = "liT"
     # ── Stage 3: liṭ attachment ──────────────────────────────────────────────
-    state.meta["liT_lakara_recipe"] = True
-    state = apply_rule("3.2.115", state)
+    if not attached:        # _derive_lit_am has already placed the liṭ (3.2.115)
+        state.meta["liT_lakara_recipe"] = True
+        state = apply_rule("3.2.115", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
