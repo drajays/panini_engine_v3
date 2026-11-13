@@ -1,0 +1,488 @@
+{
+ "3:parasmai": {
+  "roots": [
+   "Gf",
+   "hf",
+   "YiBI",
+   "quDAY",
+   "Basa~",
+   "sf",
+   "gA",
+   "Riji~r"
+  ],
+  "loop_errors": {
+   "laT": [
+    12,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    18,
+    72
+   ],
+   "laG": [
+    14,
+    72
+   ],
+   "liG": [
+    9,
+    72
+   ],
+   "AsIrliG": [
+    9,
+    72
+   ],
+   "luG": [
+    9,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "4:parasmai": {
+  "roots": [
+   "lupa~",
+   "RaSa~",
+   "vfSa~",
+   "RaBa~",
+   "muha~",
+   "zRasu~",
+   "ranja~",
+   "yasu~"
+  ],
+  "loop_errors": {
+   "laT": [
+    9,
+    72
+   ],
+   "liT": [
+    9,
+    72
+   ],
+   "luT": [
+    9,
+    72
+   ],
+   "lRT": [
+    9,
+    72
+   ],
+   "loT": [
+    9,
+    72
+   ],
+   "laG": [
+    9,
+    72
+   ],
+   "liG": [
+    9,
+    72
+   ],
+   "AsIrliG": [
+    9,
+    72
+   ],
+   "luG": [
+    18,
+    72
+   ],
+   "lRG": [
+    9,
+    72
+   ]
+  }
+ },
+ "5:parasmai": {
+  "roots": [
+   "fDu~",
+   "aha~",
+   "SiY",
+   "Sakx~",
+   "ciri",
+   "pf",
+   "ri",
+   "tfpa~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    15,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    0,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    9,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "7:parasmai": {
+  "roots": [
+   "Banjo~",
+   "Buja~",
+   "Bidi~r",
+   "u~tfdi~r",
+   "undI~",
+   "hisi~",
+   "pfcI~",
+   "tfha~"
+  ],
+  "loop_errors": {
+   "laT": [
+    3,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    1,
+    72
+   ],
+   "laG": [
+    5,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    0,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "9:parasmai": {
+  "roots": [
+   "mfda~",
+   "kzuBa~",
+   "skuY",
+   "jyA",
+   "Kaca~",
+   "pluza~",
+   "guDa~",
+   "u~Drasa~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    0,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    9,
+    72
+   ],
+   "luG": [
+    0,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "8:parasmai": {
+  "roots": [
+   "GfRu~",
+   "qukfY",
+   "tanu~",
+   "kzaRu~",
+   "fRu~",
+   "kziRu~",
+   "zaRu~",
+   "tfRu~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    3,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    0,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "6:parasmai": {
+  "roots": [
+   "tuwa~",
+   "kfqa~",
+   "uCI~",
+   "Gura~",
+   "ri",
+   "Bfqa~",
+   "kaqa~",
+   "cila~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    9,
+    72
+   ],
+   "luT": [
+    27,
+    72
+   ],
+   "lRT": [
+    27,
+    72
+   ],
+   "loT": [
+    0,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    27,
+    72
+   ],
+   "lRG": [
+    9,
+    72
+   ]
+  }
+ },
+ "10:parasmai": {
+  "roots": [
+   "tutTa",
+   "zUda~",
+   "grAma",
+   "SfDu~",
+   "banDa~",
+   "punsa~",
+   "puTa~",
+   "pisi~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    0,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    0,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    0,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ },
+ "1:parasmai": {
+  "roots": [
+   "gala~",
+   "vaha~",
+   "Karva~",
+   "Pakka~",
+   "rOqf~",
+   "carca~",
+   "maza~",
+   "RIva~"
+  ],
+  "loop_errors": {
+   "laT": [
+    0,
+    72
+   ],
+   "liT": [
+    0,
+    72
+   ],
+   "luT": [
+    9,
+    72
+   ],
+   "lRT": [
+    0,
+    72
+   ],
+   "loT": [
+    0,
+    72
+   ],
+   "laG": [
+    0,
+    72
+   ],
+   "liG": [
+    0,
+    72
+   ],
+   "AsIrliG": [
+    0,
+    72
+   ],
+   "luG": [
+    12,
+    72
+   ],
+   "lRG": [
+    0,
+    72
+   ]
+  }
+ }
+}

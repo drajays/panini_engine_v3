@@ -144,6 +144,10 @@ def practice_page():
     return render_template("practice.html", nav_active="practice", cov=coverage_report(SUTRA_REGISTRY))
 
 
+from webui.abhyasa import bp as _abhyasa_bp  # noqa: E402 — /api/abhyasa/* (docs/ABHYASA_PLAN.md)
+app.register_blueprint(_abhyasa_bp)
+
+
 _DOCS = _ROOT / "docs"
 
 
