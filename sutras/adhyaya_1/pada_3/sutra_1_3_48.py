@@ -5,43 +5,37 @@
 
 *Anuvṛtti:* ātmanepada from 1.3.12; vad (vadaḥ) from 1.3.47.
 
-*Content:* [The root vad takes ātmanepada] in the context of samuccāraṇa
-(distinct/clear joint utterance) of vyaktavāc (distinct/articulate speech).
-This covers pronouncing or articulating words/sounds distinctly in unison or
-in sequence — e.g., a teacher and student chanting together.
+*Content:* vad takes ātmanepada when articulate-voiced speakers speak together (samuccāraṇa): saṃpravadante brāhmaṇāḥ.
 
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) the
-idempotency stamp "Atmanepada_1_3_48" is absent, and (c) a dhātu Term
-whose upadesha_slp1 is in _VAD_ROOTS and which carries the tag
-"samuccArana_usage" (indicating the samuccāraṇa context).
-No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
-no surface phonological change occurs here.
-Pāṭha: ashtadhyayi.com data.txt row i=13048 (Art. 14).
+*Engine (AMENDMENT 30):* two context facts of the sentence, ``vyaktavAk`` and ``samuccAraRa`` (supplied by the caller, never explored),
+read through ``vivaksita``. Kāśikā: व्यक्तवाचामिति किम्? ... संप्रवदन्ति कुक्कुटाः. समुच्चारणे इति किम्? ब्राह्मणो वदति।
+The case of mutual contradiction (vipralāpa) belongs to the later 1.3.50, which makes this ātmanepada optional there (Kāśikā 1.3.50:
+प्राप्तविभाषेयम्; vipratiṣedhe paraṃ kāryam 1.4.2): this sūtra therefore declines when vipralāpa is meant and 1.3.50 decides.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com data.txt row i = 13048.
+  Source #2 — Kāśikā 1.3.48: व्यक्तवाचां समुच्चारणं सहोच्चारणम् ... संप्रवदन्ते ब्राह्मणाः। संप्रवदन्ते क्षत्रियाः।
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
+from sutras.adhyaya_1.pada_3.sutra_1_3_50 import scope as vipralapa_case
 
-# Module-level frozensets (CONSTITUTION Art. 13.3)
-_VAD_ROOTS: frozenset[str] = frozenset({"vada~", "vad"})
-
-_REGISTRY_KEY = "1_3_48_vad_samuccArana"
+_REGISTRY_KEY = "1_3_48_vyaktavAcAM_samuccAraRa"
 _STAMP_KEY    = "Atmanepada_1_3_48"
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("pada") == "Atmanepada":
+    if state.meta.get("pada") == "Atmanepada" or state.meta.get(_STAMP_KEY):
         return False
-    if state.meta.get(_STAMP_KEY):
+    if not any("dhatu" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "vada~" and t.meta.get("gana") == 1
+               for t in state.terms):
         return False
-    for t in state.terms:
-        if "dhatu" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in _VAD_ROOTS and "samuccArana_usage" in t.tags:
-            return True
-    return False
+    if not (vivaksita(state, "vyaktavAk", "vyaktavAc") and vivaksita(state, "samuccAraRa", "samuccAraRa")):
+        return False
+    return not vipralapa_case(state)       # the later 1.3.50 takes the vipralāpa case (vipratiṣedha 1.4.2); its own scope says which
 
 
 def act(state: State) -> State:
@@ -62,7 +56,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="व्यक्त-वाचाम् (षष्ठी-बहुवचन) / समुच्चारणे (सप्तमी-एकवचन)",
     why_dev=(
         "व्यक्तवाचां समुच्चारणे वद्-धातोः आत्मनेपदम् — "
-        "वाचां सम्यक् स्पष्टोच्चारणे वदते इत्यादि; "
+        "संप्रवदन्ते ब्राह्मणाः; "
         "१.३.४७ इत्यतः वदः, १.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
     ),
     anuvritti_from=("1.3.12", "1.3.47"),

@@ -3,40 +3,43 @@
 
 *Padaccheda:* *vibhāṣā* (अव्यय) / *vipralāpe* (सप्तमी-एकवचन).
 
-*Anuvṛtti:* ātmanepada from 1.3.12.
+*Anuvṛtti:* ātmanepada 1.3.12; vadaḥ 1.3.47; vyaktavācām samuccāraṇe 1.3.48.
 
-*Content:* Optionally (vibhāṣā) [ātmanepada applies] in the sense of
-vipralāpa (deceptive speech / talking falsely / misleading talk).
-When a root is used in the sense of deceptive or misleading speech,
-ātmanepada is optionally available — the speaker may choose either
-ātmanepada or parasmaipada.
+*Content:* when articulate speakers speak together contradicting one another (vipralāpa), vad takes ātmanepada optionally:
+vipravadante sāṃvatsarāḥ / vipravadanti sāṃvatsarāḥ. Kāśikā: प्राप्तविभाषेयम्, the option on what 1.3.48 would give.
 
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) the
-idempotency stamp "Atmanepada_vibhASA_1_3_50" is absent, and (c) a dhātu
-Term carries the tag "vipralApa_usage".
-No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
-no surface phonological change occurs here.
-vibhasha_default=True: the optional ātmanepada form is taken by default.
-Pāṭha: ashtadhyayi.com data.txt row i=13050 (Art. 14).
+*Engine (AMENDMENT 30):* the three context facts ``vyaktavAk``, ``samuccAraRa``, ``vipralApa`` (read through ``vivaksita``) are its scope; within it
+the sūtra is a vibhāṣā, so ``vikalpa.explore`` shows both readings. Its firing is the ātmanepada reading; declining leaves 1.3.78's parasmaipada.
+1.3.48 steps aside in this case and this later sūtra decides (vipratiṣedha, 1.4.2).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com data.txt row i = 13050.
+  Source #2 — Kāśikā 1.3.50: विप्रवदन्ते सांवत्सराः, विप्रवदन्ति सांवत्सराः। विप्रवदन्ते मौहूर्ताः, विप्रवदन्ति मौहूर्ताः।
+              विप्रलाप इति किम्? संप्रवदन्ते ब्राह्मणाः। व्यक्तवाचामित्येव — विप्रवदन्ति शकुनयः।
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 _REGISTRY_KEY = "1_3_50_vipralApa_vibhASA"
 _STAMP_KEY    = "Atmanepada_vibhASA_1_3_50"
 
 
+def scope(state: State) -> bool:
+    """The vipralāpa case: vad, articulate speakers, speaking together, contradicting."""
+    if not any("dhatu" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "vada~" and t.meta.get("gana") == 1
+               for t in state.terms):
+        return False
+    return (vivaksita(state, "vyaktavAk", "vyaktavAc") and vivaksita(state, "samuccAraRa", "samuccAraRa")
+            and vivaksita(state, "vipralApa", "vipralApa"))
+
+
 def cond(state: State) -> bool:
-    if state.meta.get("pada") == "Atmanepada":
+    if state.meta.get("pada") == "Atmanepada" or state.meta.get(_STAMP_KEY):
         return False
-    if state.meta.get(_STAMP_KEY):
-        return False
-    return any(
-        "dhatu" in t.tags and "vipralApa_usage" in t.tags
-        for t in state.terms
-    )
+    return scope(state)
 
 
 def act(state: State) -> State:
@@ -50,6 +53,7 @@ SUTRA = SutraRecord(
     sutra_id="1.3.50",
     sutra_type=SutraType.VIBHASHA,
     vibhasha_default=True,
+    vibhasha_scope=scope,
     r1_form_identity_exempt=True,
     text_slp1='viBAzA vipralApe',
     text_dev='विभाषा विप्रलापे',
@@ -57,11 +61,11 @@ SUTRA = SutraRecord(
     samagra_dev="विभाषा विप्रलापे आत्मनेपदम् वदः व्यक्तवाचां समुच्चारणे",
     padaccheda_dev="विभाषा (अव्यय) / विप्रलापे (सप्तमी-एकवचन)",
     why_dev=(
-        "विप्रलाप-अर्थे धातोः प्रयोगे विभाषा आत्मनेपदम् — "
-        "vipralApate / vipralApati इत्यादि; "
-        "१.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
+        "विप्रलापे व्यक्तवाचां समुच्चारणे वद्-धातोः विभाषा आत्मनेपदम् — "
+        "विप्रवदन्ते / विप्रवदन्ति सांवत्सराः; "
+        "१.३.४७-४८ इत्यतः वदः व्यक्तवाचां समुच्चारणे, १.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
     ),
-    anuvritti_from=("1.3.12",),
+    anuvritti_from=("1.3.12", "1.3.47", "1.3.48"),
     cond=cond,
     act=act,
 )
