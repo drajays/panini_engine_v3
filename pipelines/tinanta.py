@@ -236,7 +236,7 @@ def _build_dhatu_term(row: dict, prayoga: str = "kartari", lakara: str = "laT") 
 def _resolve_pada_from_gate(state: State) -> str:
     """Read 1.3.78 paribhāṣā gate to determine pada (recipe layer only). A pada an ātmanepada sūtra of 1.3.12–77 set on the
     state (``meta['pada']``, AMENDMENT 30: 1.3.47–50, 1.3.66) is the sūtra's decision and takes precedence over the śeṣa default."""
-    if state.meta.get("pada") == "Atmanepada":
+    if state.meta.get("pada_by_sense") and state.meta.get("pada") == "Atmanepada":
         return "atmane"
     gate = state.paribhasha_gates.get("prayoga_1_3_78_seza_kartari_parasmaipada", {})
     if isinstance(gate, dict) and gate.get("active"):

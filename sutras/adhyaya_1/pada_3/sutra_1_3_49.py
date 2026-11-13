@@ -40,6 +40,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     state.meta["pada"]     = "Atmanepada"
     state.meta[_STAMP_KEY] = True
+    state.meta["pada_by_sense"] = True      # a sense-gated decision: the recipe resolver lets it override the 1.3.78 gate
     state.samjna_registry[_REGISTRY_KEY] = True
     return state
 
