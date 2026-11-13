@@ -62,11 +62,21 @@ So the `/practice` tab mirrors sanskritabhyas menu for menu; RKMVU's sentence wr
 | पसंदीदा शब्द | ✓ (localStorage) | |
 | सुप् / तिङ् / कृत् / तद्धित प्रत्यय lists | ✓ प्रत्ययाः view (4.1.2, 3.4.78) | |
 | शब्दों का आकार (font size) | ✓ अ− / अ+ | |
-| भाषा (13 UI languages) | ◐ हिन्दी / English / संस्कृतम् only | |
+| two menus अभ्यासाः / रूपाणि (exact items of the Sanskrit UI) + a `#route` per page | ✓ (`#abhyasa/noun`, `#word/rAma/pulliṅga`, `#dhatu/08.0010/kartari/parasmai/laT`, `#krdanta/…`, `#taddhita/yaY`, `#namadhatu/putra/kyac`, `#list/pronoun`, `#pratyaya/tin` …) | |
+| धातुरूपाणि page: every lakāra at once, prayoga/pada tabs, तुलना of lakāras, sanādi, two upasargas, कृदन्तरूपाणि link | ✓ | engine (verified tables, else live 10 s) › Vidyut › — |
+| कृदन्तरूपाणि page: each kṛt पुं / स्त्री / नपुं / अव्ययम् (liṅga per sūtra: ल्युट् नपुं, क्तिन् स्त्री, घञ् पुं) | ✓ + per-row engine check | bank (engine ∩ Vidyut) › Vidyut |
+| तद्धितान्तरूपाणि by pratyaya (अण् … दा, अन्याः) | ✓ teaching sūtras (4.1.76–5.4.160) + their gaṇa (gaṇapāṭha) + Kāśikā udāharaṇas; any stem + pratyaya | bank › Vidyut |
+| नामधातवः: any prātipadika + क्यच् / क्यङ् / काम्यच्, all lakāras | ✓ (क्विप् not yet) | Vidyut only (badged) |
+| सर्वनामानि list grouped by ending + liṅga | ✓ from the सर्वादि gaṇa (1.1.27) | |
+| सङ्ख्यापदानि list 1–100 (blocks of 20) + शत … कोटि | ✓ `data/practice/sankhya.json` (6.3.47–49 forms) | |
+| तिङ् / कृत् / तद्धित् प्रत्ययाः pages | ✓ tiṅ: 3.4.78 table + per-lakāra sūtras + भू/एध् forms; kṛt: per pratyaya across popular roots | |
+| word page: अन्याः (other liṅgas), तुलना with words of the same ending (one per declension pattern) | ✓ | |
+| T/F as toggle switches | ✓ | |
+| भाषा (13 UI languages) | ◐ संस्कृतम् (default) / हिन्दी / English | |
 | खोज (whole-site search) | ◐ list search only; site search is `/sutras` + `/reader` | |
-| अनुरोधित शब्द रूप (request a word) | ✗ (any stem can be typed in the शब्दः filter instead) | |
-| multiple upasargas (अनु + आङ् …), gati words | ✗ one upasarga at a time | |
-| verb "comparison of all lakāras" page | ◐ use the view's lakāra selector; side-by-side lakāras not yet | |
+| अनुरोधित शब्द रूप (request a word) | ✓ every searched word gets a table at once; the list keeps them | |
+| multiple upasargas (अनु + आङ् …), gati words | ◐ two upasargas on the dhātu page; gati words ✗ | |
+| verb "comparison of all lakāras" page | ✓ तुलना on the dhātu page | |
 | layout styles (4Col / CSV) | ✗ | |
 
 Extras beyond sanskritabhyas: every answer has source badges (यन्त्रम् / विद्युत् / मुद्रितम्); "प्रक्रिया" opens the engine's
@@ -195,6 +205,12 @@ organic rule-based mechanism."
   generic `pipelines.subanta.derive("asmad")` is still wrong beyond 1/1 (§6).
 
 ## 7. Log (newest at top)
+
+- **2026-11-13 21:30 [cursor]** — Owner: all of sanskritabhyas's Noun/Verb/Kridanta/Taddhitanta/NaamDhatu/Pronoun/Number/
+  Pratyaya/Sandhi pages, "always backed by our engine and Vidyut — engine primary, Vidyut second, kośa third". Built: two
+  menus + routes, dhātu page, kṛdanta page, taddhita pratyaya pages, nāmadhātu form, sarvanāma / saṅkhyā lists, tiṅ / kṛt
+  pratyaya pages, word page (अन्याः, तुलना), T/F toggles; `_agree` now falls back Vidyut › kośa (badged). Tests 107 pass.
+  Found: Vidyut gives ण्वुल् strī *गामका* (गामिका, 7.3.44) — shown Vidyut-only, so not taught as engine-verified.
 
 - **2026-11-13 15:45 [cursor]** — §8 built: search bar, व्युत्पत्ति tree (kośa proposals → Vidyut / Kāśikā / uṇādi /
   engine verification, recursive), asmad/yuṣmad via their own pipeline. Tests: `tests/unit/test_vyutpatti.py` (7).

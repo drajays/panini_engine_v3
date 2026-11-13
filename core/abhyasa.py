@@ -289,10 +289,14 @@ def _agree(engine: str | None, v: list[str] | None, c: list[str] | None, strict:
         if srcs:
             alts = [x for x in v if x in c or not c] if c else v
             return {"primary": engine, "accepted": list(dict.fromkeys([engine, *alts])), "sources": ["engine", *srcs]}
-    if strict or not v:
+    if strict:
         return None
-    return {"primary": v[0], "accepted": v, "sources": ["vidyut"] + (["corpus"] if set(v) & set(c) else []),
-            "engine": engine}
+    if v:                                        # second: Vidyut (badged: the engine is not ready here)
+        return {"primary": v[0], "accepted": v, "sources": ["vidyut"] + (["corpus"] if set(v) & set(c) else []),
+                "engine": engine}
+    if c:                                        # third: the printed kośa paradigm alone
+        return {"primary": c[0], "accepted": c, "sources": ["corpus"], "engine": engine}
+    return None
 
 
 def _sub_state(stem: str, linga: str, vb: int, vc: int):
@@ -958,7 +962,11 @@ def grade_compose(sentence_id: str, answer_slp1: list[str]) -> dict[str, Any]:
 
 def catalog() -> dict[str, Any]:
     meta = bank().get("meta", {})
-    return {"levels": LEVELS, "drills": DRILLS, "families": FAMILIES, "family_order": list(FAMILIES), "lakara": LAKARA, "prayoga": PRAYOGA,
+    return {"lakara_order": list(LAKARA), "krt_order": list(KRT_DEV),
+            "purusha_dev": {"1": "उत्तम", "2": "मध्यम", "3": "प्रथम"}, "vacana_dev": {"1": "एक", "2": "द्वि", "3": "बहु"},
+            "krt_linga": {k: [{"pum": "पुं", "stri": "स्त्री", "napum": "नपुं"}[x] for x in v] for k, v in KRT_LINGA.items()}
+            | {k: ["अव्ययम्"] for k in AVYAYA_KRT},
+            "levels": LEVELS, "drills": DRILLS, "families": FAMILIES, "family_order": list(FAMILIES), "lakara": LAKARA, "prayoga": PRAYOGA,
             "gana": GANA, "upasarga": [{"slp1": u, "dev": dev(u)} for u in UPASARGA], "sanadi": SANADI,
             "linga": LINGA, "vibhakti": VIBHAKTI, "krt": KRT_DEV, "taddhita": TADDHITA_DEV, "lipi": LIPIS,
             "sandhi_rules": sorted({(x["rule"], x["rule_dev"]) for x in bank_items("sandhi")}),
@@ -984,6 +992,205 @@ def question(family: str, drill: str, level: int = 1, filters: dict[str, Any] | 
              "varna": varna_question, "pratyahara": pratyahara_question, "it": it_question,
              "vakya": vakya_question}[family](drill, rng, level, f)
     return {"family": family, "drill": drill, "level": level, "seed": seed, **q}
+
+
+# ── sanskritabhyas's रूपाणि pages: dhātu, kṛdanta, taddhita, sarvanāma, saṅkhyā, pratyaya lists ────────
+# Source order everywhere: our engine first, Vidyut second, the kośa / printed paradigm third (owner, 2026-11-13).
+
+def dhatu_info(ref: str) -> dict[str, Any]:
+    d = next((x for x in dhatu_pool() if x["ref"] == ref), None)
+    if d is None:
+        raise LookupError(f"unknown dhātu {ref}")
+    pl = d["pada"] or ""
+    padas = ["parasmai", "atmane"] if "उभय" in pl else ["atmane"] if "आत्मने" in pl else ["parasmai"]
+    return {**d, "gana_dev": GANA[d["gana"]], "padas": padas,
+            "title": f"{d['dev']} — {d['upadesha'] and dev(d['upadesha'])} {d['artha']} — {GANA[d['gana']]}"}
+
+
+AVYAYA_KRT = {"ktvA", "tumun", "lyap", "Ramul"}
+KRT_LINGA = {  # the liṅga a kṛt is taught or used in (3.3.94 ktin striyām, 3.3.115 lyuṭ napuṃsake, 3.3.18 ghañ bhāve puṃsi …)
+    "lyuw": ["napum"], "ktin": ["stri"], "GaY": ["pum"], "ap": ["pum"], "ac": ["pum", "stri"],
+}
+
+
+def krdanta_view(ref: str, sanadi: str = "", prefix: str = "") -> dict[str, Any]:
+    """कृदन्तरूपाणि of one dhātu: every kṛt, पुं / स्त्री / नपुं prathamā ekavacana. Engine forms from the bank where the
+    engine and Vidyut agreed; the rest Vidyut's (badged), each with an engine check on request."""
+    d = dhatu_info(ref)
+    san = [s for s in sanadi.split("+") if s]
+    pre = [p for p in prefix.split("+") if p]
+    krts = KRTS + (["lyap"] if pre else [])
+    v = vidyut({"op": "krt", "upadesha": d["upadesha"], "path_id": ref, "krts": krts, "sanadi": san, "prefixes": pre}) or {}
+    banked = {x["krt"]: x for x in bank_items("krdanta") if x["ref"] == ref} if not (san or pre) else {}
+    rows = []
+    for k in krts:
+        vv = v.get(k) or {}
+        allv = {f for fs in vv.values() for f in fs}
+        eng = banked.get(k)
+        srcs = ["engine", "vidyut"] if eng and set(eng["forms"]) & allv else (["vidyut"] if allv else [])
+        if not srcs:
+            continue
+        cols = {lg: vv.get(lg) or [] for lg in KRT_LINGA.get(k, ["pum", "stri", "napum"])}
+        if k in AVYAYA_KRT:
+            cols = {"avyaya": vv.get("pum") or vv.get("napum") or []}
+        rows.append({"krt": k, "krt_dev": KRT_DEV.get(k, dev(k)), "is_avyaya": k in AVYAYA_KRT, "sources": srcs,
+                     **{c: [dev(f) for f in fs] for c, fs in cols.items()},
+                     "want": next((fs for fs in cols.values() if fs), []),
+                     "engine_form": dev(eng["forms"][0]) if eng else "", "steps": (eng or {}).get("steps", [])})
+    head = (dev("+".join(pre)) + " + " if pre else "") + d["dev"] + (" + " + SANADI.get(sanadi, sanadi) if sanadi else "")
+    return {"ref": ref, "title": f"{head} — {d['artha']} — {d['gana_dev']}", "rows": rows, "dhatu": d}
+
+
+def krt_table(krt: str, limit: int = 30) -> dict[str, Any]:
+    """कृत् प्रत्ययाः → one kṛt across the popular dhātus (engine-banked first, then Vidyut)."""
+    rows = []
+    for d in popular_roots()[:limit]:
+        r = next((x for x in krdanta_view(d["ref"])["rows"] if x["krt"] == krt), None)
+        if r:
+            rows.append({"ref": d["ref"], "dhatu_dev": d["dev"], "artha": d["artha"], **r})
+    return {"krt": krt, "krt_dev": KRT_DEV.get(krt, dev(krt)), "rows": rows}
+
+
+@cache
+def _gana_by_sutra() -> dict[str, list[dict]]:
+    try:
+        g = json.loads((ROOT / "data" / "inputs" / "ganapatha_full.json").read_text(encoding="utf-8"))["ganas"]
+    except FileNotFoundError:
+        return {}
+    out: dict[str, list[dict]] = {}
+    for name, e in g.items():
+        out.setdefault(e.get("sutra", ""), []).append({"name": name.split("#")[0], "members": e.get("members", [])})
+    return out
+
+
+def _key(sid: str) -> tuple[int, ...]:
+    return tuple(int(x) for x in sid.split(".")[:3] if x.isdigit())
+
+
+@cache
+def taddhita_names() -> list[str]:
+    return (vidyut({"op": "names"}) or {}).get("taddhita") or list(TADDHITA_DEV)
+
+
+def taddhita_page(pratyaya: str) -> dict[str, Any]:
+    """तद्धित् प्रत्यय → the sūtras that teach it (4.1.76–5.4.160), their gaṇas and Kāśikā udāharaṇas."""
+    import re as _re
+    from core.vyutpatti import _kashika, _registry, _status
+    name = TADDHITA_DEV.get(pratyaya) or dev(pratyaya)
+    pat = _re.compile(rf"(^|[\sऽ]){_re.escape(name)}(?![\u0900-\u097F])")
+    sutras = []
+    for sid, text in sorted(_registry().items(), key=lambda kv: _key(kv[0])):
+        if (4, 1, 76) <= _key(sid) <= (5, 4, 160) and pat.search(text):
+            sutras.append({"id": sid, "text": text, "engine": _status().get(sid, ""),
+                           "ganas": [{"name": g["name"], "members": g["members"][:80],
+                                      "members_dev": [dev(m) for m in g["members"][:80] if _re.fullmatch(r"[a-zA-Z~]+", m)]}
+                                     for g in _gana_by_sutra().get(sid, [])],
+                           "examples": (_kashika().get(sid, {}).get("ex") or [])[:6]})
+    banked = [{"stem": x["stem"], "stem_dev": dev(x["stem"]), "forms_dev": [dev(f) for f in x["forms"]], "artha": x["artha"]}
+              for x in bank_items("taddhita") if x["pratyaya"] == pratyaya]
+    return {"pratyaya": pratyaya, "dev": name, "sutras": sutras[:40], "engine_items": banked}
+
+
+def taddhita_view(stem: str, pratyaya: str) -> dict[str, Any]:
+    out = {}
+    for lg in LINGA:
+        v = vidyut({"op": "taddhita", "stem": stem, "names": [pratyaya], "linga": lg}) or {}
+        out[lg] = [dev(f) for f in v.get(pratyaya, [])]
+    eng = next((x for x in bank_items("taddhita") if x["stem"] == stem and x["pratyaya"] == pratyaya), None)
+    return {"stem": stem, "stem_dev": dev(stem), "pratyaya": pratyaya, "pratyaya_dev": TADDHITA_DEV.get(pratyaya) or dev(pratyaya),
+            "forms": out, "engine_form": dev(eng["forms"][0]) if eng else "", "steps": (eng or {}).get("steps", []),
+            "sources": ["engine", "vidyut"] if eng else (["vidyut"] if any(out.values()) else [])}
+
+
+def pronoun_list() -> list[dict[str, Any]]:
+    """सर्वनामानि: the सर्वादि gaṇa (1.1.27, gaṇapāṭha) by ending and liṅga, + भवत्."""
+    try:
+        g = json.loads((ROOT / "data" / "inputs" / "ganapatha_full.json").read_text(encoding="utf-8"))["ganas"]["sarvAdiH"]["members"]
+    except (FileNotFoundError, KeyError):
+        g = [s for s, _ in PRONOUNS]
+    stems = [("Bavat" if m == "Bavatu" else m) for m in g if not m.startswith("q") and m not in ("eka", "dvi")]
+    rows = []
+    for s in dict.fromkeys(stems):
+        lingas = ["pulliṅga"] if s in ("asmad", "yuzmad") else ["pulliṅga", "strīliṅga", "napuṃsaka"]
+        if s == "Bavat":
+            lingas = ["pulliṅga"]
+        for lg in lingas:
+            shown = s[:-1] + "A" if lg == "strīliṅga" and s.endswith("a") else s
+            last = shown[-1]
+            letter = dev(last) if last in "aAiIuUfF" else dev(last + "a")
+            group = "त्रिषु लिङ्गेषु समानम्" if s in ("asmad", "yuzmad") else f"{letter}कारान्त {LINGA[lg]}"
+            rows.append({"stem": s, "linga": lg, "dev": dev(shown), "group": group})
+    rows.append({"stem": "BavatI", "linga": "strīliṅga", "dev": "भवती", "group": "ईकारान्त स्त्रीलिङ्गम्"})
+    return rows
+
+
+@cache
+def number_list() -> list[dict[str, Any]]:
+    d = json.loads((ROOT / "data" / "practice" / "sankhya.json").read_text(encoding="utf-8"))["numbers"]
+    out = []
+    for n, stems, lgs in d:
+        block = "१ – २०" if n <= 20 else "२१ – ४०" if n <= 40 else "४१ – ६०" if n <= 60 else "६१ – ८०" if n <= 80 else \
+            "८१ – १००" if n <= 100 else "शतात् परम्"
+        for s in stems:
+            for c in lgs:
+                short = {"pulliṅga": "पुं", "strīliṅga": "स्त्री", "napuṃsaka": "नपुं"}[_LG[c]]
+                out.append({"n": n, "stem": s, "linga": _LG[c], "dev": dev(s) + (f"-{short}" if len(lgs) > 1 else ""),
+                            "block": block})
+    return out
+
+
+TIN_SUTRAS = {  # lakāra → the sūtras that teach it and shape its endings (3.4.77 ff.), for the तिङ् प्रत्यय page
+    "laT": ["3.2.123", "3.4.78", "7.1.3"], "liT": ["3.2.115", "3.4.81", "3.4.82"], "luT": ["3.3.15", "2.4.85"],
+    "lRT": ["3.3.13"], "loT": ["3.3.162", "3.4.85", "3.4.86", "3.4.87", "3.4.89", "3.4.90", "3.4.92"],
+    "laG": ["3.2.111", "3.4.99", "3.4.100", "3.4.101"], "liG": ["3.3.161", "3.4.102", "3.4.103", "3.4.107", "3.4.108"],
+    "AsIrliG": ["3.3.173", "3.4.104", "3.4.116"], "luG": ["3.2.110", "3.1.43", "3.1.44"], "lRG": ["3.3.139"],
+}
+TIN_UPADESHA = {"parasmai": ["tip", "tas", "Ji", "sip", "Tas", "Ta", "mip", "vas", "mas"],
+                "atmane": ["ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiN"]}
+
+
+def tin_page() -> dict[str, Any]:
+    """तिङ् प्रत्ययाः: the eighteen (3.4.78), and per lakāra the sūtras that shape them, illustrated by भू and एध्."""
+    from core.vyutpatti import _registry, _status
+    lak = []
+    for k, sids in TIN_SUTRAS.items():
+        ex = {}
+        for ref, pada in (("01.0001", "parasmai"), ("01.0002", "atmane")):
+            try:
+                p = verb_paradigm(ref, k, "kartari", "", "", "", True, 4.0)
+                ex[pada] = {c["key"]: dev(c["primary"]) for c in p["cells"]}
+            except LookupError:
+                ex[pada] = {}
+        lak.append({"lakara": k, "dev": LAKARA[k], "sutras": [{"id": s, "text": _registry().get(s, ""), "engine": _status().get(s, "")}
+                                                               for s in sids], "examples": ex})
+    return {"upadesha": {p: [{"slp1": x, "dev": dev(x)} for x in xs] for p, xs in TIN_UPADESHA.items()},
+            "sutras": [{"id": s, "text": _registry().get(s, "")} for s in ("3.4.78", "1.4.99", "1.4.100", "3.4.79", "3.4.80")],
+            "lakaras": lak}
+
+
+def similar(stem: str, linga: str, n: int = 8) -> list[dict[str, Any]]:
+    """तुलना: stems of the same ending whose paradigms differ — one representative per declension pattern."""
+    import os.path
+    c = corpus()
+    seen, out = set(), [{"stem": stem, "linga": linga, "dev": dev(stem)}]
+    common = [x for x in [*POPULAR_NOUNS, *((p, _LG[g]) for p, gs in PRONOUNS for g in gs)] if x in c]
+    rest = sorted((k for k in c if k not in common), key=lambda k: (len(k[0]), k[0]))
+    for s, lg in [*common, *rest]:
+        cells = c[(s, lg)]
+        if s == stem or not s.endswith(stem[-1:]) or len(out) > n:
+            continue
+        sig = tuple(f[0][len(os.path.commonprefix([f[0], s])):] if f else "" for f in cells) + (lg,)
+        if sig in seen:
+            continue
+        seen.add(sig)
+        out.append({"stem": s, "linga": lg, "dev": dev(s)})
+    return out
+
+
+def homonyms(stem: str, linga: str) -> list[dict[str, Any]]:
+    """अन्याः: the same stem in its other liṅgas (printed paradigms)."""
+    return [{"stem": stem, "linga": lg, "dev": dev(stem), "linga_dev": LINGA[lg]} for lg in LINGA
+            if lg != linga and (stem, lg) in corpus()]
 
 
 @cache

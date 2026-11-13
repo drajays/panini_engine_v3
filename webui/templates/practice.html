@@ -2,7 +2,21 @@
 {% block title %}अभ्यासः — पाणिनि-यन्त्रम्{% endblock %}
 {% block head_extra %}
 <style>
-  .ab-fams button,.ab-views button,.ab-opt,.ab-btns button,.ab-list button,.ab-tf .bt button,.ab-star{color:var(--ink)}
+  .ab-fams button,.ab-views button,.ab-opt,.ab-btns button,.ab-list button,.ab-tf .bt button,.ab-star,.ab-dd>button,#fs-,#fs\+{color:var(--ink)}
+  .ab-bar{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin:.4rem 0}
+  .ab-bar .ab-search{flex:1;margin:0}
+  .ab-dd{position:relative}
+  .ab-dd>button{border:1px solid var(--line);background:var(--bg-panel);border-radius:8px;padding:.35rem .8rem;cursor:pointer;font-family:var(--dev);font-size:15px}
+  .ab-ddm{display:none;position:absolute;z-index:20;top:110%;left:0;min-width:230px;background:var(--bg-panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.12);padding:.3rem 0}
+  .ab-ddm.open{display:block}
+  .ab-ddm a{display:block;padding:.35rem 1rem;font-family:var(--dev);font-size:16px;color:var(--ink);text-decoration:none}
+  .ab-ddm a:hover{background:var(--bg-subtle)}
+  .ab-ddm hr{border:none;border-top:1px solid var(--line-soft);margin:.3rem 0}
+  .tg{width:70px;height:30px;border-radius:15px;border:1px solid var(--line);background:var(--bg-subtle);position:relative;cursor:pointer}
+  .tg span{position:absolute;top:2px;left:20px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);transition:left .15s}
+  .tg.yes{background:#7cbf7c}.tg.yes span{left:41px}.tg.yes span::after{content:"✓"}
+  .tg.no{background:#d9665e}.tg.no span{left:2px}.tg.no span::after{content:"✗"}
+  .tg span::after{display:block;text-align:center;line-height:26px;font-weight:700;color:#333}
   .ab-fams{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 .6rem}
   .ab-fams button,.ab-views button{border:1px solid var(--line);background:var(--bg-panel);border-radius:999px;padding:.25rem .8rem;cursor:pointer;font-family:var(--dev);font-size:15px}
   .ab-fams button.on,.ab-views button.on{background:var(--accent);color:#fff !important;border-color:var(--accent)}
@@ -71,24 +85,20 @@
 {% block content %}
 <div class="panel">
   <h1>अभ्यासः <span class="muted" style="font-size:14px;font-weight:400" data-l="sub">every answer is derived by our engine, checked with Vidyut and the printed paradigms</span></h1>
-  <form id="sf" class="ab-search no-print" role="search">
-    <input id="sq" autocomplete="off" spellcheck="false" placeholder="शब्द रूप अथवा प्रातिपदिक खोजें — गार्गी · gArgI · रामस्य · गमन" aria-label="खोजें">
-    <select id="sl" aria-label="लिङ्गम्"><option value="">लिङ्गम् — स्वतः</option><option value="pulliṅga">पुंलिङ्गम्</option><option value="strīliṅga">स्त्रीलिङ्गम्</option><option value="napuṃsaka">नपुंसकलिङ्गम्</option></select>
-    <button type="submit">खोजें / रूप बनाएँ</button>
-  </form>
-  <div class="ab-fams" id="fams" role="tablist" aria-label="विषयाः"></div>
-  <div class="ab-views no-print">
-    <button data-v="practice" class="on" data-l="v_practice">अभ्यास</button>
-    <button data-v="list" data-l="v_list">सूचियाँ</button>
-    <button data-v="compare" data-l="v_compare">तुलना</button>
-    <button data-v="fav" data-l="v_fav">पसंदीदा ★</button>
-    <button data-v="pratyaya" data-l="v_pratyaya">प्रत्ययाः</button>
-    <span class="sp"></span>
+  <div class="ab-bar no-print">
+    <div class="ab-dd"><button type="button" id="m-abh">✎ अभ्यासाः ▾</button><div class="ab-ddm" id="mm-abh"></div></div>
+    <div class="ab-dd"><button type="button" id="m-rup">☰ रूपाणि ▾</button><div class="ab-ddm" id="mm-rup"></div></div>
+    <form id="sf" class="ab-search" role="search">
+      <input id="sq" autocomplete="off" spellcheck="false" placeholder="शब्दरूपाणि प्रातिपदिकानि वा अन्विष्यत — गार्गी · gArgI · रामस्य" aria-label="अन्वेषणम्">
+      <select id="sl" aria-label="लिङ्गम्"><option value="">लिङ्गम् — स्वतः</option><option value="pulliṅga">पुंलिङ्गम्</option><option value="strīliṅga">स्त्रीलिङ्गम्</option><option value="napuṃsaka">नपुंसकलिङ्गम्</option></select>
+      <button type="submit">अन्विष्यत</button>
+    </form>
     <span class="ab-score" id="score"></span>
-    <button id="fs-" title="छोटा / smaller">अ−</button><button id="fs+" title="बड़ा / larger">अ+</button>
-    <select id="ui-lang" aria-label="language"><option value="hi">हिन्दी</option><option value="en">English</option><option value="sa">संस्कृतम्</option></select>
+    <button id="fs-" type="button" title="अल्पः / smaller">अ−</button><button id="fs+" type="button" title="पृथुः / larger">अ+</button>
+    <select id="ui-lang" aria-label="भाषा"><option value="sa">संस्कृतम्</option><option value="hi">हिन्दी</option><option value="en">English</option></select>
     <select id="sch" aria-label="उत्तर-लिपिः"><option value="devanagari">देवनागरी</option><option value="iast">IAST</option><option value="slp1">SLP1</option><option value="hk">HK</option></select>
   </div>
+  <p class="muted" id="crumb" style="margin:.2rem 0 .6rem"></p>
   <div id="view"></div>
 </div>
 <div class="panel" id="why" hidden></div>

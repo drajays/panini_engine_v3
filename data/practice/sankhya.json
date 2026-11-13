@@ -1,0 +1,30 @@
+{
+ "_doc": "सङ्ख्यापदानि 1–100 (+ शत, सहस्र …) for the सङ्ख्या list. Lexical list of stems only: the compound numerals follow 6.3.47 (द्व्यष्टनः सङ्ख्यायामबहुव्रीह्यशीत्योः), 6.3.48 (त्रेस्त्रयः), 6.3.49 (विभाषा चत्वारिंशत्प्रभृतौ सर्वेषाम्) and 6.3.76 (एकादिश्चैकस्य चादुक्, ऊन-/एकोन- forms). Every form shown is derived by the engine and checked with Vidyut (engine first, Vidyut second, kośa third). liṅga: 1–4 all three; 5–19 (nānta) pulliṅga cell set; -ti / -at decades strīliṅga; śata, sahasra napuṃsaka.",
+ "numbers": [
+  [1, ["eka"], "pSN"], [2, ["dvi"], "pSN"], [3, ["tri"], "pSN"], [4, ["catur"], "pSN"],
+  [5, ["paYcan"], "p"], [6, ["zaz"], "p"], [7, ["saptan"], "p"], [8, ["azwan"], "p"], [9, ["navan"], "p"], [10, ["daSan"], "p"],
+  [11, ["ekAdaSan"], "p"], [12, ["dvAdaSan"], "p"], [13, ["trayodaSan"], "p"], [14, ["caturdaSan"], "p"], [15, ["paYcadaSan"], "p"],
+  [16, ["zoqaSan"], "p"], [17, ["saptadaSan"], "p"], [18, ["azwAdaSan"], "p"], [19, ["navadaSan"], "p"], [19, ["UnaviMSati", "ekonaviMSati"], "S"],
+  [20, ["viMSati"], "S"], [21, ["ekaviMSati"], "S"], [22, ["dvAviMSati"], "S"], [23, ["trayoviMSati"], "S"], [24, ["caturviMSati"], "S"],
+  [25, ["paYcaviMSati"], "S"], [26, ["zaqviMSati"], "S"], [27, ["saptaviMSati"], "S"], [28, ["azwAviMSati"], "S"],
+  [29, ["navaviMSati", "UnatriMSat", "ekonatriMSat"], "S"], [30, ["triMSat"], "S"], [31, ["ekatriMSat"], "S"], [32, ["dvAtriMSat"], "S"],
+  [33, ["trayastriMSat"], "S"], [34, ["catustriMSat"], "S"], [35, ["paYcatriMSat"], "S"], [36, ["zawtriMSat"], "S"], [37, ["saptatriMSat"], "S"],
+  [38, ["azwAtriMSat"], "S"], [39, ["navatriMSat", "ekonacatvAriMSat"], "S"], [40, ["catvAriMSat"], "S"],
+  [41, ["ekacatvAriMSat"], "S"], [42, ["dvicatvAriMSat", "dvAcatvAriMSat"], "S"], [43, ["tricatvAriMSat", "trayaScatvAriMSat"], "S"],
+  [44, ["catuScatvAriMSat"], "S"], [45, ["paYcacatvAriMSat"], "S"], [46, ["zawcatvAriMSat"], "S"], [47, ["saptacatvAriMSat"], "S"],
+  [48, ["azwacatvAriMSat", "azwAcatvAriMSat"], "S"], [49, ["navacatvAriMSat", "ekonapaYcASat"], "S"], [50, ["paYcASat"], "S"],
+  [51, ["ekapaYcASat"], "S"], [52, ["dvipaYcASat", "dvApaYcASat"], "S"], [53, ["tripaYcASat", "trayaHpaYcASat"], "S"], [54, ["catuzpaYcASat"], "S"],
+  [55, ["paYcapaYcASat"], "S"], [56, ["zawpaYcASat"], "S"], [57, ["saptapaYcASat"], "S"], [58, ["azwapaYcASat", "azwApaYcASat"], "S"],
+  [59, ["navapaYcASat", "ekonazazwi"], "S"], [60, ["zazwi"], "S"], [61, ["ekazazwi"], "S"], [62, ["dvizazwi", "dvAzazwi"], "S"],
+  [63, ["trizazwi", "trayaHzazwi"], "S"], [64, ["catuHzazwi"], "S"], [65, ["paYcazazwi"], "S"], [66, ["zawzazwi"], "S"], [67, ["saptazazwi"], "S"],
+  [68, ["azwazazwi", "azwAzazwi"], "S"], [69, ["navazazwi", "ekonasaptati"], "S"], [70, ["saptati"], "S"], [71, ["ekasaptati"], "S"],
+  [72, ["dvisaptati", "dvAsaptati"], "S"], [73, ["trisaptati", "trayaHsaptati"], "S"], [74, ["catuHsaptati"], "S"], [75, ["paYcasaptati"], "S"],
+  [76, ["zawsaptati"], "S"], [77, ["saptasaptati"], "S"], [78, ["azwasaptati", "azwAsaptati"], "S"], [79, ["navasaptati", "ekonASIti"], "S"],
+  [80, ["aSIti"], "S"], [81, ["ekASIti"], "S"], [82, ["dvyaSIti"], "S"], [83, ["tryaSIti"], "S"], [84, ["caturaSIti"], "S"], [85, ["paYcASIti"], "S"],
+  [86, ["zaqaSIti"], "S"], [87, ["saptASIti"], "S"], [88, ["azwASIti"], "S"], [89, ["navASIti", "ekonanavati"], "S"], [90, ["navati"], "S"],
+  [91, ["ekanavati"], "S"], [92, ["dvinavati", "dvAnavati"], "S"], [93, ["trinavati", "trayonavati"], "S"], [94, ["caturnavati"], "S"],
+  [95, ["paYcanavati"], "S"], [96, ["zaRRavati"], "S"], [97, ["saptanavati"], "S"], [98, ["azwanavati", "azwAnavati"], "S"],
+  [99, ["navanavati"], "S"], [99, ["ekonaSata"], "N"], [100, ["Sata"], "N"], [1000, ["sahasra"], "N"], [10000, ["ayuta"], "N"],
+  [100000, ["lakza"], "N"], [10000000, ["kowi"], "S"]
+ ]
+}

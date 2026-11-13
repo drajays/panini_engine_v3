@@ -9,7 +9,7 @@
   const pick = a => a[Math.floor(Math.random() * a.length)];
   const KEY = "abhyasa.v1";
   let CAT = null, cur = null;
-  let S = {fam: "noun", view: "practice", opts: {}, score: {}, fav: [], cmp: [], scale: 1, lang: "hi"};
+  let S = {fam: "noun", opts: {}, score: {}, fav: [], cmp: [], requested: [], scale: 1, lang: "sa"};
   try { S = {...S, ...JSON.parse(localStorage.getItem(KEY) || "{}")}; } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 
@@ -31,7 +31,7 @@
          empty: "किमपि नास्ति", fallback: "यत्र यन्त्रं न्यूनं तत्र विद्युद्रूपाणि अपि", loading: "सिध्यति…"},
   };
   const t = k => (T[S.lang] || T.hi)[k] || T.hi[k] || k;
-  const SRC = {engine: "यन्त्रम्", vidyut: "विद्युत्", corpus: "मुद्रितम्", "vidyut-lipi": "विद्युत्-लिपिः"};
+  const SRC = {engine: "यन्त्रम्", vidyut: "विद्युत्", corpus: "कोशः", "vidyut-lipi": "विद्युत्-लिपिः"};  // order of authority
   const badges = srcs => !srcs || !srcs.length ? "" : `<span class="ab-src" title="answer sources">${srcs.map(s => `<span class="${esc(s)}">${esc(SRC[s] || s)}</span>`).join("")}${srcs.includes("engine") ? "" : `<span class="only">यन्त्रं न्यूनम्</span>`}</span>`;
   const D = s => Transliterate.fromSLP1(s || "", "devanagari");
   const norm = s => (s || "").normalize("NFC").replace(/[\s'ऽ।॥,.]/g, "");
@@ -52,25 +52,53 @@
     $("ui-lang").value = S.lang;
   }
 
-  // ── shell ──────────────────────────────────────────────────────────────────────────────────────
-  function fams() {
-    $("fams").innerHTML = CAT.family_order.map(k => [k, CAT.families[k]]).map(([k, f]) =>
-      `<button role="tab" data-f="${k}" class="${k === S.fam ? "on" : ""}" title="${esc(f.en)}">${esc(f.dev)}</button>`).join("");
-    $("fams").querySelectorAll("button").forEach(b => b.onclick = () => { S.fam = b.dataset.f; save(); fams(); render(); });
+  // ── shell: the two menus of sanskritabhyas (अभ्यासाः, रूपाणि) and one #route per page ─────────
+  const MENU_ABH = [["noun", "नामपदानि"], ["verb", "क्रियापदानि"], ["krdanta", "कृदन्तरूपाणि"], ["taddhita", "तद्धितान्तरूपाणि"],
+    ["pronoun", "सर्वनामानि"], ["number", "सङ्ख्यापदानि"], ["sandhi", "सन्धयः"], "-", ["varna:svara", "स्वरयुक्त-व्यञ्जनानि"],
+    ["varna:samyukta", "संयुक्त-व्यञ्जनानि"], ["varna:lipi", "लिपयः"], ["namadhatu", "नामधातवः"], "-",
+    ["pratyahara", "प्रत्याहाराः"], ["it", "इत्संज्ञा"], ["vakya", "वाक्याभ्यासः"]];
+  const MENU_RUP = [["list/noun", "शब्दरूपाणि"], ["list/verb", "धातुरूपाणि"], ["list/krdanta", "कृदन्तरूपाणि"],
+    ["list/taddhita", "तद्धितान्तरूपाणि"], ["namadhatu", "नामधातवः"], ["list/pronoun", "सर्वनामानि"], ["list/number", "सङ्ख्यापदानि"], "-",
+    ["search", "अन्वेषणम्"], ["fav", "इष्टशब्दाः"], ["requested", "अनुरोधितानि शब्दरूपाणि"], ["compare", "तुलना"], "-",
+    ["pratyaya/sup", "सुप् प्रत्ययाः"], ["pratyaya/tin", "तिङ् प्रत्ययाः"], ["pratyaya/krt", "कृत् प्रत्ययाः"], ["pratyaya/taddhita", "तद्धित् प्रत्ययाः"],
+    "-", ["lipi", "लिपिः"]];
+  function menus() {
+    const item = pre => x => x === "-" ? "<hr>" : `<a href="#${pre}${x[0]}">${esc(x[1])}</a>`;
+    $("mm-abh").innerHTML = MENU_ABH.map(item("abhyasa/")).join("");
+    $("mm-rup").innerHTML = MENU_RUP.map(item("")).join("");
+    document.querySelectorAll(".ab-dd > button").forEach(b => b.onclick = e => { e.stopPropagation(); const m = b.nextElementSibling, o = m.classList.contains("open");
+      document.querySelectorAll(".ab-ddm").forEach(x => x.classList.remove("open")); if (!o) m.classList.add("open"); });
+    document.addEventListener("click", () => document.querySelectorAll(".ab-ddm").forEach(x => x.classList.remove("open")));
   }
-  document.querySelectorAll(".ab-views button[data-v]").forEach(b => b.onclick = () => {
-    S.view = b.dataset.v; save();
-    document.querySelectorAll(".ab-views button[data-v]").forEach(x => x.classList.toggle("on", x === b)); render();
-  });
+  const go = h => { if (decodeURIComponent(location.hash.slice(1)) !== h) location.hash = h; else render(); };
+  const route = () => (decodeURIComponent(location.hash.slice(1)) || "abhyasa/noun").split("/");
   $("fs-").onclick = () => { S.scale = Math.max(.8, +(S.scale - .1).toFixed(1)); save(); applyChrome(); };
   $("fs+").onclick = () => { S.scale = Math.min(1.8, +(S.scale + .1).toFixed(1)); save(); applyChrome(); };
   $("ui-lang").onchange = e => { S.lang = e.target.value; save(); applyChrome(); render(); };
 
   function render() {
-    $("why").hidden = true; score();
-    document.querySelectorAll(".ab-views button[data-v]").forEach(x => x.classList.toggle("on", x.dataset.v === S.view));
-    ({practice: viewPractice, list: viewList, compare: viewCompare, fav: viewFav, pratyaya: viewPratyaya, search: viewSearch}[S.view] || viewPractice)();
+    $("why").hidden = true;
+    const [a, b, c, d, e] = route();
+    const label = [...MENU_ABH, ...MENU_RUP].find(x => x !== "-" && (x[0] === b && a === "abhyasa" || x[0] === [a, b].filter(Boolean).join("/") || x[0] === a));
+    $("crumb").textContent = label ? (a === "abhyasa" ? "अभ्यासाः › " : "रूपाणि › ") + label[1] : "";
+    if (a === "abhyasa") {
+      const [fam, mode] = (b || "noun").split(":");
+      S.fam = CAT.families[fam] ? fam : "noun";
+      if (S.fam === "varna") opt("varna").filters.mode = mode || opt("varna").filters.mode || "svara";
+      save(); score(); return viewPractice();
+    }
+    score();
+    const views = {
+      list: () => ({noun: () => viewList("noun"), verb: () => viewList("verb"), krdanta: () => viewList("krdanta"), taddhita: viewTaddhitaList,
+                    pronoun: viewPronounList, number: viewNumberList}[b] || (() => viewList("noun")))(),
+      word: () => viewWordPage(b, c || "pulliṅga"), dhatu: () => viewDhatu(b, c, d, e), krdanta: () => viewKrdanta(b),
+      taddhita: () => viewTaddhitaPage(b), namadhatu: () => viewNamadhatu(b, c),
+      search: () => { if (b) S.search = {q: b, linga: c || ""}; return viewSearch(); },
+      fav: viewFav, requested: viewRequested, compare: viewCompare, pratyaya: () => viewPratyaya(b || "sup"), lipi: viewLipi,
+    };
+    return (views[a] || (() => go("abhyasa/noun")))();
   }
+  window.addEventListener("hashchange", render);
 
   // ── options panel (विकल्प), as sanskritabhyas: level, drill types, family filters ───────────────
   function sel(name, items, val, any = true) {
@@ -194,10 +222,10 @@
 
   function drawTF(q) {
     $("qbody").innerHTML = `<div class="ab-tf">${q.statements.map((s, i) => `<div>${esc(s.label)} = <b>${esc(s.form.dev)}</b> <span class="res" id="tf${i}"></span></div>
-      <div class="bt" data-i="${i}"><button data-v="1">सही</button><button data-v="0">गलत</button></div>`).join("")}</div>`;
+      <div><button type="button" class="tg" data-i="${i}" role="switch" aria-checked="mixed" title="सत्यम् / असत्यम्"><span></span></button></div>`).join("")}</div>`;
     const ans = {};
-    $("qbody").querySelectorAll(".bt").forEach(d => d.querySelectorAll("button").forEach(b => b.onclick = () => {
-      ans[d.dataset.i] = b.dataset.v === "1"; d.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b)); }));
+    $("qbody").querySelectorAll(".tg").forEach(b => b.onclick = () => { const i = b.dataset.i; ans[i] = ans[i] === undefined ? true : !ans[i];
+      b.classList.toggle("yes", ans[i]); b.classList.toggle("no", !ans[i]); b.setAttribute("aria-checked", String(ans[i])); });
     const mark = reveal => q.statements.map((s, i) => { const ok = ans[i] === s.answer;
       $("tf" + i).className = "res " + (reveal || ok ? "good" : "bad");
       $("tf" + i).innerHTML = (ok ? "✓" : "✗") + (s.answer ? "" : ` → ${esc(s.correct_dev)}`) + badges(s.sources); return ok; });
@@ -321,24 +349,17 @@
     box.innerHTML = `<p class="muted">${t("loading")}</p>`;
     const p = await post("/api/abhyasa/paradigm", spec);
     if (p.error) { box.innerHTML = `<p class="ab-note">${esc(p.error)}</p>`; return; }
-    const verbCtl = spec.family === "verb" ? `<div class="pk-bar">${sel("lakara", Object.entries(CAT.lakara), spec.lakara || "laT", false)}${sel("prayoga", Object.entries(CAT.prayoga), spec.prayoga || "kartari", false)}
+    const verbCtl = spec.family === "verb" ? `<div class="pk-bar">${sel("lakara", CAT.lakara_order.map(k => [k, CAT.lakara[k]]), spec.lakara || "laT", false)}${sel("prayoga", Object.entries(CAT.prayoga), spec.prayoga || "kartari", false)}
       ${sel("pada", [["parasmai", "परस्मैपदम्"], ["atmane", "आत्मनेपदम्"]], spec.pada)}${sel("prefix", CAT.upasarga.map(u => [u.slp1, u.dev]), spec.prefix)}${sel("sanadi", Object.entries(CAT.sanadi), spec.sanadi)}</div>` : "";
     box.innerHTML = `<div class="ab-btns" style="margin:0 0 .5rem"><button id="w-fav">${isFav(p) ? "★" : "☆"} ${t("fav")}</button><button id="w-cmp">${t("addCmp")}</button><button class="go" id="w-pr">${t("practiceThis")}</button></div>${verbCtl}<div id="wt"></div>`;
     showTable(p, $("wt"));
     box.querySelectorAll(".pk-bar [data-f]").forEach(c => c.onchange = () => { spec[c.dataset.f] = c.value; viewWord(spec, box); });
     $("w-fav").onclick = () => { toggleFav(p); $("w-fav").textContent = `${isFav(p) ? "★" : "☆"} ${t("fav")}`; };
     $("w-cmp").onclick = () => { const s = specOf(p); if (!S.cmp.some(x => idOf(x) === idOf(s))) S.cmp = [...S.cmp.slice(-5), s]; save(); $("w-cmp").textContent = "✓"; };
-    $("w-pr").onclick = () => { const fam = spec.family === "verb" ? "verb" : S.fam; const o = opt(fam);
-      if (fam === "verb") { o.filters.dhatu = spec.ref; o.filters.lakara = [spec.lakara || "laT"]; } else { o.filters.stem = spec.stem; o.filters.linga = spec.linga; }
-      S.fam = fam; S.view = "practice"; save(); fams(); render(); };
+    $("w-pr").onclick = () => practiseWord(spec);
   }
 
-  function viewList() {
-    const fam = S.fam;
-    if (fam === "varna") return viewLipi();
-    if (!["noun", "pronoun", "number", "verb", "krdanta", "namadhatu"].includes(fam)) {
-      $("view").innerHTML = `<p class="muted">${t("empty")} — see <a href="/shabdarupa">शब्दरूपाणि</a> · <a href="/dhaturupa">धातुरूपाणि</a> · <a href="/sutras">सूत्राणि</a></p>`; return;
-    }
+  function viewList(fam) {
     $("view").innerHTML = `<div class="ab-grid"><div class="ab-card"><div class="pk-bar"><label>${t("search")}<input id="lq" class="ab-in" style="min-width:160px"></label>
       ${["noun", "pronoun", "number"].includes(fam) ? `<label>अन्तः${sel("anta", [["ajanta", "अजन्तः"], ["halanta", "हलन्तः"], ...("a A i I u U f o k c j t d n p B m r l v S z s h".split(" ").map(x => [x, D(x) + " (केवल)"]))], "")}</label><label>लिङ्गम्${sel("linga", Object.entries(CAT.linga), "")}</label>` : ""}</div>
       <div class="ab-list" id="ll"></div></div><div class="ab-card" id="lw"><p class="muted">← शब्दं चिनुत</p></div></div>`;
@@ -348,8 +369,9 @@
       const rows = await get("/api/abhyasa/list?" + qs);
       $("ll").innerHTML = rows.map((r, i) => `<button data-i="${i}">${esc(r.dev)}<small>${esc(r.linga ? CAT.linga[r.linga] : r.gana || "")} ${esc((r.artha || "").slice(0, 40))}</small></button>`).join("") || t("empty");
       $("ll").querySelectorAll("button").forEach(b => b.onclick = () => { const r = rows[+b.dataset.i];
-        const spec = r.ref ? {family: "verb", ref: r.ref, lakara: "laT", prayoga: "kartari"} : r.pratyaya ? {family: "namadhatu", stem: r.stem, pratyaya: r.pratyaya} : {family: "noun", stem: r.stem, linga: r.linga};
-        viewWord(spec, $("lw")); });
+        if (r.ref) return go(fam === "krdanta" ? `krdanta/${r.ref}` : `dhatu/${r.ref}`);
+        viewWord({family: "noun", stem: r.stem, linga: r.linga}, $("lw"));
+        $("lw").insertAdjacentHTML("afterbegin", `<p><a href="#word/${esc(r.stem)}/${esc(r.linga)}">↗ ${esc(r.dev)} — शब्दरूपाणि (पूर्णम्)</a></p>`); });
     };
     $("lq").oninput = () => { clearTimeout($("lq")._t); $("lq")._t = setTimeout(load, 250); };
     $("view").querySelectorAll(".pk-bar select").forEach(s => s.onchange = load); load();
@@ -378,7 +400,7 @@
     $("fl").querySelectorAll("button[data-i]").forEach(b => b.onclick = () => viewWord({...S.fav[+b.dataset.i]}, $("fw")));
   }
 
-  function viewPratyaya() {
+  function viewSup() {
     const SUP = [["सुँ", "औ", "जस्"], ["अम्", "औट्", "शस्"], ["टा", "भ्याम्", "भिस्"], ["ङे", "भ्याम्", "भ्यस्"], ["ङसिँ", "भ्याम्", "भ्यस्"], ["ङस्", "ओस्", "आम्"], ["ङि", "ओस्", "सुप्"]];
     const TIN = [["तिप्", "तस्", "झि", "त", "आताम्", "झ"], ["सिप्", "थस्", "थ", "थास्", "आथाम्", "ध्वम्"], ["मिप्", "वस्", "मस्", "इट्", "वहि", "महिङ्"]];
     $("view").innerHTML = `<div class="ab-card"><h3>सुप् प्रत्ययाः — <a href="/sutra/4.1.2">4.1.2</a> स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप्</h3>
@@ -391,10 +413,12 @@
 
   // ── शब्द खोजें: any word → its table (even beyond the lists) and its व्युत्पत्ति ─────────────────
   $("sf").onsubmit = e => { e.preventDefault(); const q = $("sq").value.trim(); if (!q) return;
-    S.search = {q, linga: $("sl").value}; S.view = "search"; save(); render(); };
+    S.requested = [q, ...(S.requested || []).filter(x => x !== q)].slice(0, 60); save();
+    go(`search/${q}/${$("sl").value}`); };
 
   async function viewSearch() {
-    const s = S.search || {}; if (!s.q) { S.view = "practice"; return viewPractice(); }
+    const s = S.search || {};
+    if (!s.q) { $("view").innerHTML = `<p class="muted">ऊर्ध्वं शब्दं लिखत — type a word above (गार्गी, रामस्य, गमन …)</p>`; return; }
     $("sq").value = s.q; $("sl").value = s.linga || "";
     $("view").innerHTML = `<p class="muted">${t("loading")}</p>`;
     const r = await post("/api/abhyasa/search", {q: s.q, linga: s.linga || ""});
@@ -407,7 +431,7 @@
         ${r.roots.length ? `<p>धातुः: ${r.roots.map((d, i) => `<a href="#" data-r="${i}">${esc(d.dev)} (${esc(d.gana)}, ${esc(d.artha)})</a>`).join(" · ")}</p>` : ""}
         <div id="sw"></div></div>
       <div class="ab-card vy"><h3 style="margin:.2rem 0">व्युत्पत्तिः <span class="muted" style="font-size:12px;font-family:var(--body)">kośas propose · Kāśikā / uṇādi / Vidyut / our engine verify</span></h3><div id="vy"><p class="muted">${t("loading")}</p></div></div></div>`;
-    const open = (stem, linga) => { S.search = {q: D(stem), linga}; save(); render(); };
+    const open = (stem, linga) => go(`search/${D(stem)}/${linga}`);
     $("s-lg").onchange = e => open(r.stem, e.target.value);
     $("view").querySelectorAll("[data-fo]").forEach(a => a.onclick = ev => { ev.preventDefault(); const f = r.form_of[+a.dataset.fo]; open(f.stem, f.linga); });
     $("view").querySelectorAll("[data-n]").forEach(b => b.onclick = () => { const n = r.nouns[+b.dataset.n]; open(n.stem, n.linga); });
@@ -460,7 +484,186 @@
     });
   }
 
+  // ── रूपाणि pages (as sanskritabhyas): word, dhātu, kṛdanta, taddhita, nāmadhātu, sarvanāma, saṅkhyā, pratyaya ─
+  function practiseWord(spec) {
+    const fam = spec.family === "verb" ? "verb" : S.fam === "pronoun" || S.fam === "number" ? S.fam : "noun", o = opt(fam);
+    if (fam === "verb") { o.filters.dhatu = spec.ref; o.filters.lakara = [spec.lakara || "laT"]; } else { o.filters.stem = spec.stem; o.filters.linga = spec.linga; }
+    save(); go(`abhyasa/${fam}`);
+  }
+  const card = (h, body) => `<div class="ab-card" style="margin-bottom:.8rem">${h ? `<h3 style="margin:.1rem 0 .5rem">${h}</h3>` : ""}${body}</div>`;
+  const chips = (items, attr) => `<div class="ab-list" style="max-height:none">${items.map((x, i) => `<button ${attr}="${i}">${esc(x.dev)}${x.sub ? `<small>${esc(x.sub)}</small>` : ""}</button>`).join("")}</div>`;
+  const srcRow = (srcs) => badges(srcs);
+
+  async function viewWordPage(stem, linga) {
+    $("view").innerHTML = `<div class="ab-grid" style="grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)"><div class="ab-card" id="wp"></div><div id="wside"></div></div>`;
+    viewWord({family: "noun", stem, linga, vidyut_fallback: true}, $("wp"));
+    const r = await post("/api/abhyasa/similar", {stem, linga});
+    $("wside").innerHTML = card("अन्याः", r.homonyms.length ? chips(r.homonyms.map(h => ({dev: h.dev, sub: h.linga_dev})), "data-h") : `<p class="muted">—</p>`) +
+      card(`तुलना <button type="button" id="cmp-all" style="font-size:12px">सर्वेषां तुलना ›</button>`, chips(r.similar.map(x => ({dev: x.dev, sub: CAT.linga[x.linga]})), "data-s")) +
+      card("व्युत्पत्तिः", `<a href="#search/${esc(D(stem))}/${esc(linga)}">${esc(D(stem))} — कथं सिद्धम्? ›</a>`);
+    $("wside").querySelectorAll("[data-h]").forEach(b => b.onclick = () => { const h = r.homonyms[+b.dataset.h]; go(`word/${h.stem}/${h.linga}`); });
+    $("wside").querySelectorAll("[data-s]").forEach(b => b.onclick = () => { const x = r.similar[+b.dataset.s]; go(`word/${x.stem}/${x.linga}`); });
+    $("cmp-all").onclick = () => { S.cmp = r.similar.map(x => ({family: "noun", stem: x.stem, linga: x.linga, title: `${x.dev} (${CAT.linga[x.linga]})`})); save(); go("compare"); };
+  }
+
+  async function viewDhatu(ref, prayoga, pada, lakara) {
+    const info = await get(`/api/abhyasa/dhatu/${encodeURIComponent(ref)}`);
+    if (info.error) { $("view").innerHTML = `<p class="ab-note">${esc(info.error)}</p>`; return; }
+    const st = S.dhatuView = {ref, prayoga: prayoga || "kartari", pada: pada || info.padas[0], lakara: lakara || "", sanadi: "", prefix: "", cmp: false, ...(S.dhatuView && S.dhatuView.ref === ref ? {sanadi: S.dhatuView.sanadi, prefix: S.dhatuView.prefix} : {})};
+    const tabs = [...info.padas.map(pd => ["kartari", pd]), ["karmani", "atmane"]];
+    const up = (st.prefix || "").split("+");
+    $("view").innerHTML = card(`${esc(info.dev)} — ${esc(info.artha)} — ${esc(info.gana_dev)}`, `
+      <div class="ab-btns" style="margin:0 0 .5rem">${tabs.map(([pr, pd]) => `<button type="button" data-tab="${pr}/${pd}" class="${st.prayoga === pr && st.pada === pd ? "go" : ""}">${esc(CAT.prayoga[pr])} प्रयोगः — ${pd === "parasmai" ? "परस्मै" : "आत्मने"} पदम्</button>`).join("")}
+        <button type="button" id="d-cmp">तुलना</button><a href="#krdanta/${esc(ref)}"><button type="button">कृदन्तरूपाणि ›</button></a>
+        <button type="button" id="d-pr">अभ्यासाः</button><button type="button" id="d-fav">☆ इष्टशब्देषु योजयतु</button></div>
+      <div class="pk-bar"><label>लकारः${sel("lakara", CAT.lakara_order.map(k => [k, CAT.lakara[k]]), st.lakara)}</label><label>सनादि प्रत्ययाः${sel("sanadi", Object.entries(CAT.sanadi), st.sanadi)}</label>
+        <label>उपसर्गः १${sel("u1", CAT.upasarga.map(u => [u.slp1, u.dev]), up[0] || "")}</label><label>उपसर्गः २${sel("u2", CAT.upasarga.map(u => [u.slp1, u.dev]), up[1] || "")}</label></div>
+      <div id="dt" class="ab-grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>`);
+    $("view").querySelectorAll("[data-tab]").forEach(b => b.onclick = () => go(`dhatu/${ref}/${b.dataset.tab}${st.lakara ? "/" + st.lakara : ""}`));
+    $("view").querySelectorAll(".pk-bar [data-f]").forEach(c => c.onchange = () => {
+      const v = c.value; if (c.dataset.f === "lakara") return go(`dhatu/${ref}/${st.prayoga}/${st.pada}${v ? "/" + v : ""}`);
+      if (c.dataset.f === "sanadi") st.sanadi = v; else { const u = [...$("view").querySelectorAll('[data-f="u1"],[data-f="u2"]')].map(x => x.value).filter(Boolean); st.prefix = u.join("+"); }
+      save(); viewDhatu(ref, st.prayoga, st.pada, st.lakara); });
+    $("d-pr").onclick = () => practiseWord({family: "verb", ref, lakara: st.lakara || "laT"});
+    $("d-fav").onclick = () => { const s = {family: "verb", ref, lakara: st.lakara || "laT", prayoga: st.prayoga, pada: st.pada, sanadi: st.sanadi, prefix: st.prefix, title: `${info.dev} — ${info.gana_dev}`};
+      if (!S.fav.some(f => idOf(f) === idOf(s))) S.fav.push(s); save(); $("d-fav").textContent = "★ ✓"; };
+    const laks = st.lakara ? [st.lakara] : CAT.lakara_order, got = {};
+    const draw = () => {
+      if (st.cmp) {
+        const keys = ["3-1", "3-2", "3-3", "2-1", "2-2", "2-3", "1-1", "1-2", "1-3"], lab = k => `${CAT.purusha_dev[k[0]]} ${CAT.vacana_dev[k[2]]}`;
+        $("dt").style.display = "block";
+        $("dt").innerHTML = `<table class="ab-tbl"><tr><th></th>${laks.map(l => `<th>${esc(CAT.lakara[l])}</th>`).join("")}</tr>${keys.map(k => `<tr><th>${esc(lab(k))}</th>${laks.map(l => { const c = ((got[l] || {}).cells || []).find(x => x.key === k); return `<td>${c ? esc(c.accepted.map(D).join(" / ")) : "…"}</td>`; }).join("")}</tr>`).join("")}</table>`;
+        return;
+      }
+      $("dt").style.display = "";
+      $("dt").innerHTML = laks.map(l => `<div class="ab-card"><b>${esc(CAT.lakara[l])} लकारः</b><div id="dt-${l}">${got[l] ? "" : `<p class="muted">${t("loading")}</p>`}</div></div>`).join("");
+      laks.forEach(l => { if (got[l]) showTable({...got[l], title: ""}, $(`dt-${l}`)); });
+    };
+    $("d-cmp").onclick = () => { st.cmp = !st.cmp; draw(); };
+    draw();
+    for (const l of laks) {
+      got[l] = await post("/api/abhyasa/paradigm", {family: "verb", ref, lakara: l, prayoga: st.prayoga, pada: st.prayoga === "kartari" ? st.pada : "", sanadi: st.sanadi, prefix: st.prefix, vidyut_fallback: true});
+      if (got[l].error) got[l] = {cells: [], rows: [], cols: [], title: got[l].error};
+      if (S.dhatuView !== st) return;
+      draw();
+    }
+  }
+
+  async function viewKrdanta(ref) {
+    const st = S.krdView && S.krdView.ref === ref ? S.krdView : (S.krdView = {ref, sanadi: "", prefix: ""});
+    $("view").innerHTML = `<p class="muted">${t("loading")}</p>`;
+    const r = await post("/api/abhyasa/krdanta_view", st);
+    if (r.error) { $("view").innerHTML = `<p class="ab-note">${esc(r.error)}</p>`; return; }
+    const col = (row, k) => row[k] ? esc(row[k].join(" / ")) : "";
+    $("view").innerHTML = card(`${esc(r.title)} — कृदन्तरूपाणि`, `
+      <div class="pk-bar"><label>सनादि प्रत्ययाः${sel("sanadi", Object.entries(CAT.sanadi), st.sanadi)}</label><label>उपसर्गः${sel("prefix", CAT.upasarga.map(u => [u.slp1, u.dev]), st.prefix)}</label>
+        <a href="#dhatu/${esc(ref)}"><button type="button">धातुरूपाणि ›</button></a></div>
+      <table class="ab-tbl"><tr><th>कृत् प्रत्ययः</th><th>पुंलिङ्गम्</th><th>स्त्रीलिङ्गम्</th><th>नपुंसकलिङ्गम्</th><th>अव्ययम्</th><th></th></tr>
+      ${r.rows.map((x, i) => `<tr><th>${esc(x.krt_dev)}</th><td>${col(x, "pum")}</td><td>${col(x, "stri")}</td><td>${col(x, "napum")}</td><td>${col(x, "avyaya")}</td>
+        <td>${srcRow(x.sources)} ${x.sources.includes("engine") ? "" : `<button type="button" class="ab-eng" data-k="${i}" style="font-size:12px">यन्त्रेण परीक्ष्यताम्</button><span id="ke-${i}"></span>`}</td></tr>`).join("")}</table>`);
+    $("view").querySelectorAll(".pk-bar [data-f]").forEach(c => c.onchange = () => { st[c.dataset.f] = c.value; save(); viewKrdanta(ref); });
+    $("view").querySelectorAll(".ab-eng").forEach(b => b.onclick = async () => {
+      const x = r.rows[+b.dataset.k], out = $(`ke-${b.dataset.k}`); b.disabled = true; out.textContent = " …";
+      const lg = x.napum && !x.pum ? "napuṃsaka" : x.stri && !x.pum ? "strīliṅga" : "pulliṅga";
+      const e = await post("/api/abhyasa/vyutpatti/engine", {kind: "krdanta", pratyaya: x.krt, linga: lg, word: "", want: x.want || [], dhatu_ref: ref});
+      out.innerHTML = e.error ? ` ✗ ${esc(e.error)}` : e.match ? ` <span class="ab-src"><span class="engine">यन्त्रम् ✓ ${esc(e.form_dev)}</span></span>`
+        : ` <span class="ab-src"><span class="only">यन्त्रम् ✗ ${esc([...new Set(e.tried.flatMap(t_ => (t_.got || []).map(g => g.form_dev)))].join(" / ") || "—")}</span></span>`; });
+  }
+
+  async function viewTaddhitaList() {
+    const names = await get("/api/abhyasa/taddhita_names");
+    const MAIN = ["aR", "aY", "iY", "Rya", "yaY", "WaY", "Wak", "Qak", "QaY", "Rini", "itac", "yat", "Ca", "tva", "tal", "vatup", "mayaw", "matup", "ini", "tasil", "TAl", "tral", "dA"];
+    const main = MAIN.map(m => names.find(n => n.slp1 === m)).filter(Boolean), rest = names.filter(n => !MAIN.includes(n.slp1));
+    $("view").innerHTML = card("तद्धितान्तरूपाणि — प्रत्ययाः", chips(main, "data-m")) + card("अन्याः", chips(rest, "data-o"));
+    $("view").querySelectorAll("[data-m]").forEach(b => b.onclick = () => go(`taddhita/${main[+b.dataset.m].slp1}`));
+    $("view").querySelectorAll("[data-o]").forEach(b => b.onclick = () => go(`taddhita/${rest[+b.dataset.o].slp1}`));
+  }
+
+  async function viewTaddhitaPage(p) {
+    $("view").innerHTML = `<p class="muted">${t("loading")}</p>`;
+    const r = await get(`/api/abhyasa/taddhita_page/${encodeURIComponent(p)}`);
+    if (r.error) { $("view").innerHTML = `<p class="ab-note">${esc(r.error)}</p>`; return; }
+    $("view").innerHTML = `<div class="ab-grid" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)"><div>` +
+      card(`${esc(r.dev)} — तद्धितान्तरूपाणि`, `<form id="tv-f" class="pk-bar"><label>प्रातिपदिकम्<input id="tv-s" class="ab-in" style="min-width:160px" placeholder="गर्ग / garga"></label><button>रूपाणि</button></form>
+        ${r.engine_items.length ? `<p>यन्त्र-सिद्धानि: ${r.engine_items.map(x => `<a href="#" data-st="${esc(x.stem)}">${esc(x.stem_dev)} → ${esc(x.forms_dev.join(" / "))}</a>`).join(" · ")}</p>` : ""}`) +
+      r.sutras.map(s => card(`<a href="/sutra/${esc(s.id)}">${esc(s.id)}</a> ${esc(s.text)} <span class="ab-src"><span class="${s.engine === "working" || s.engine === "confident" ? "engine" : "only"}">यन्त्रम्: ${esc(s.engine || "—")}</span></span>`,
+        `${s.ganas.map(g => `<p class="muted" style="margin:.2rem 0">गणः ${esc(g.name)}:</p><div>${g.members_dev.map((m, i) => `<a href="#" data-st="${esc(g.members[i])}" style="margin-right:.5rem">${esc(m)}</a>`).join("")}</div>`).join("")}
+         ${s.examples.length ? `<p class="src" style="font-size:13px">काशिका: ${esc(s.examples.join(" · "))}</p>` : ""}`)).join("") +
+      `</div><div id="tv-out"></div></div>`;
+    const show = async stem => { $("tv-out").innerHTML = card("", `<p class="muted">${t("loading")}</p>`);
+      const v = await post("/api/abhyasa/taddhita_view", {stem, pratyaya: p});
+      $("tv-out").innerHTML = card(`${esc(v.stem_dev)} + ${esc(v.pratyaya_dev)} ${srcRow(v.sources)}`,
+        `<table class="ab-tbl">${Object.entries(v.forms).map(([lg, fs]) => `<tr><th>${esc(CAT.linga[lg])}</th><td>${esc(fs.join(" / ") || "—")}</td></tr>`).join("")}</table>
+         ${v.engine_form ? `<p>यन्त्रम्: <b>${esc(v.engine_form)}</b></p>` : ""}${(v.steps || []).length ? `<ol class="ab-steps">${v.steps.map(x => `<li><a href="/sutra/${esc(x[0])}">${esc(x[0])}</a> ${esc(x[1])} → ${esc(x[2])}</li>`).join("")}</ol>` : ""}
+         <p><a href="#search/${esc(D(v.stem))}">${esc(v.stem_dev)} — व्युत्पत्तिः ›</a></p>`); };
+    $("view").querySelectorAll("[data-st]").forEach(a => a.onclick = ev => { ev.preventDefault(); show(a.dataset.st); });
+    $("tv-f").onsubmit = ev => { ev.preventDefault(); const s_ = toSlp($("tv-s").value); if (s_) show(s_); };
+  }
+
+  async function viewNamadhatu(stem, pratyaya) {
+    const EX = [["putra", "kyac"], ["kfzRa", "kyaN"], ["putra", "kAmyac"], ["yaSas", "kAmyac"], ["mAtf", "kyac"], ["haMsa", "kyaN"],
+                ["Dana", "kAmyac"], ["ojas", "kyaN"], ["Syena", "kyac"], ["samiD", "kyac"], ["udaka", "kyac"], ["kim", "kAmyac"]];
+    const PR = {kyac: "क्यच्", kyaN: "क्यङ्", kAmyac: "काम्यच्"};
+    $("view").innerHTML = card("नामधातवः", `<form id="nd-f" class="pk-bar"><label>प्रातिपदिकम्<input id="nd-s" class="ab-in" style="min-width:160px" value="${esc(stem ? D(stem) : "")}"></label>
+      <label>प्रत्ययः<select id="nd-p">${Object.entries(PR).map(([k, v]) => `<option value="${k}" ${k === pratyaya ? "selected" : ""}>${v}</option>`).join("")}</select></label><button>धातुरूपाणि</button></form>
+      <p>उदाहरणानि: ${EX.map(([s_, p_]) => `<a href="#namadhatu/${s_}/${p_}">${esc(D(s_))} + ${PR[p_]}</a>`).join(" · ")}</p>
+      <p class="ab-note">नामधातुः यन्त्रे अद्यापि न — Vidyut's forms (second source), badged; the engine does not derive nāmadhātus yet.</p>`) + `<div id="nd-out" class="ab-grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))"></div>`;
+    $("nd-f").onsubmit = ev => { ev.preventDefault(); const s_ = toSlp($("nd-s").value); if (s_) go(`namadhatu/${s_}/${$("nd-p").value}`); };
+    if (!stem) return;
+    $("nd-out").innerHTML = `<p class="muted">${t("loading")}</p>`;
+    const r = await post("/api/abhyasa/namadhatu_view", {stem, pratyaya: pratyaya || "kyac"});
+    if (r.error) { $("nd-out").innerHTML = `<p class="ab-note">${esc(r.error)}</p>`; return; }
+    $("nd-out").innerHTML = r.filter(p_ => p_.cells.length).map(p_ => `<div class="ab-card" id="nd-${p_.lakara}"></div>`).join("") || `<p class="muted">${t("empty")}</p>`;
+    r.filter(p_ => p_.cells.length).forEach(p_ => showTable({...p_, title: `${p_.lakara_dev} लकारः`}, $(`nd-${p_.lakara}`)));
+  }
+
+  async function viewPronounList() {
+    const rows = await get("/api/abhyasa/pronoun_list");
+    const groups = [...new Set(rows.map(r => r.group))];
+    $("view").innerHTML = card("सर्वनामानि — सूचिः <small class='muted'>(सर्वादि गणः, 1.1.27)</small>", groups.map(g =>
+      `<p style="margin:.6rem 0 .2rem"><b>${esc(g)}</b></p>${chips(rows.filter(r => r.group === g).map(r => ({dev: r.dev})), `data-g${groups.indexOf(g)}`)}`).join(""));
+    groups.forEach((g, gi) => { const rs = rows.filter(r => r.group === g);
+      $("view").querySelectorAll(`[data-g${gi}]`).forEach(b => b.onclick = () => { const r = rs[+b.getAttribute(`data-g${gi}`)]; go(`word/${r.stem}/${r.linga}`); }); });
+  }
+
+  async function viewNumberList() {
+    const rows = await get("/api/abhyasa/number_list");
+    const blocks = [...new Set(rows.map(r => r.block))];
+    $("view").innerHTML = card("सङ्ख्यापदानि — सूचिः", blocks.map((bl, bi) => `<p style="margin:.6rem 0 .2rem"><b>${esc(bl)}</b></p>${chips(rows.filter(r => r.block === bl), `data-b${bi}`)}`).join(""));
+    blocks.forEach((bl, bi) => { const rs = rows.filter(r => r.block === bl);
+      $("view").querySelectorAll(`[data-b${bi}]`).forEach(b => b.onclick = () => { const r = rs[+b.getAttribute(`data-b${bi}`)]; go(`word/${r.stem}/${r.linga}`); }); });
+  }
+
+  async function viewPratyaya(kind) {
+    if (kind === "sup") return viewSup();
+    if (kind === "taddhita") return viewTaddhitaList();
+    if (kind === "krt") {
+      const ks = CAT.krt_order.map(k => [k, CAT.krt[k]]);
+      $("view").innerHTML = card("कृत् प्रत्ययाः — सूचिः", chips(ks.map(([k, v]) => ({dev: v, sub: (CAT.krt_linga[k] || ["पुं", "स्त्री", "नपुं"]).join(" · ")})), "data-k")) + `<div id="kt"></div>`;
+      $("view").querySelectorAll("[data-k]").forEach(b => b.onclick = async () => { const [k, v] = ks[+b.dataset.k]; $("kt").innerHTML = card(v, `<p class="muted">${t("loading")}</p>`);
+        const r = await get(`/api/abhyasa/krt_table/${encodeURIComponent(k)}`);
+        $("kt").innerHTML = card(`${esc(r.krt_dev)} — धातवः`, `<table class="ab-tbl"><tr><th>धातुः</th><th>पुं</th><th>स्त्री</th><th>नपुं</th><th>अव्ययम्</th><th></th></tr>${r.rows.map(x =>
+          `<tr><th><a href="#krdanta/${esc(x.ref)}">${esc(x.dhatu_dev)}</a> <small class="muted">${esc(x.artha)}</small></th><td>${esc((x.pum || []).join(" / "))}</td><td>${esc((x.stri || []).join(" / "))}</td><td>${esc((x.napum || []).join(" / "))}</td><td>${esc((x.avyaya || []).join(" / "))}</td><td>${srcRow(x.sources)}</td></tr>`).join("")}</table>`); });
+      return;
+    }
+    $("view").innerHTML = `<p class="muted">${t("loading")}</p>`;
+    const r = await get("/api/abhyasa/tin_page");
+    const ex = (e, keys) => keys.map(k => esc(e[k] || "—")).join(" · ");
+    $("view").innerHTML = card(`तिङ् प्रत्ययाः — ${r.sutras.map(s => `<a href="/sutra/${esc(s.id)}" title="${esc(s.text)}">${esc(s.id)}</a>`).join(" · ")}`,
+      `<table class="ab-tbl"><tr><th></th><th colspan="3">परस्मैपदम्</th><th colspan="3">आत्मनेपदम्</th></tr>${[0, 1, 2].map(i => `<tr><th>${["प्रथमः", "मध्यमः", "उत्तमः"][i]}</th>${
+        [...r.upadesha.parasmai.slice(i * 3, i * 3 + 3), ...r.upadesha.atmane.slice(i * 3, i * 3 + 3)].map(x => `<td>${esc(x.dev)}</td>`).join("")}</tr>`).join("")}</table>`) +
+      r.lakaras.map(l => card(`${esc(l.dev)} लकारः`, `<p>${l.sutras.map(s => `<a href="/sutra/${esc(s.id)}">${esc(s.id)}</a> ${esc(s.text)}`).join(" · ")}</p>
+        <table class="ab-tbl"><tr><th></th><th>परस्मै (भू)</th><th>आत्मने (एध्)</th></tr>${[["3", "प्रथमः"], ["2", "मध्यमः"], ["1", "उत्तमः"]].map(([pu, lab]) =>
+          `<tr><th>${lab}</th><td>${ex(l.examples.parasmai || {}, [`${pu}-1`, `${pu}-2`, `${pu}-3`])}</td><td>${ex(l.examples.atmane || {}, [`${pu}-1`, `${pu}-2`, `${pu}-3`])}</td></tr>`).join("")}</table>`)).join("");
+  }
+
+  function viewRequested() {
+    const rq = S.requested || [];
+    $("view").innerHTML = card("अनुरोधितानि शब्दरूपाणि <small class='muted'>(searched words; any word gets a table)</small>", rq.length ? chips(rq.map(q => ({dev: q})), "data-q") : `<p class="muted">${t("empty")}</p>`);
+    $("view").querySelectorAll("[data-q]").forEach(b => b.onclick = () => go(`search/${rq[+b.dataset.q]}`));
+  }
+
   // ── boot ──────────────────────────────────────────────────────────────────────────────────────
-  get("/api/abhyasa/catalog").then(c => { CAT = c; if (!CAT.families[S.fam]) S.fam = "noun"; applyChrome(); fams(); render(); })
+  get("/api/abhyasa/catalog").then(c => { CAT = c; if (!CAT.families[S.fam]) S.fam = "noun"; applyChrome(); menus(); render(); })
     .catch(e => { $("view").innerHTML = `<p class="ab-note">catalog: ${esc(e)}</p>`; });
 })();

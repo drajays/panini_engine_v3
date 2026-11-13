@@ -127,11 +127,87 @@ def vyutpatti_engine():
     q = request.get_json(force=True) or {}
     try:
         r = engine_check(q["kind"], q.get("base") or "", q["pratyaya"], q.get("linga") or "pulliṅga", q["word"],
-                         q.get("dhatu_ref") or "", tuple(q.get("sutras") or ()))
+                         q.get("dhatu_ref") or "", tuple(q.get("sutras") or ()), tuple(q.get("want") or ()))
     except Exception as ex:  # noqa: BLE001 — the engine's own gap is the answer
         return _err(ex, 422)
     st = r.pop("state", None)
     return jsonify({**r, **({"derivation": _pack(st)} if st is not None else {})})
+
+
+def _call(fn, *a, **kw):
+    try:
+        return jsonify(fn(*a, **kw))
+    except (KeyError, LookupError, ValueError) as ex:
+        return _err(ex, 404)
+
+
+@bp.get("/api/abhyasa/dhatu/<ref>")
+def dhatu(ref):
+    return _call(A.dhatu_info, ref)
+
+
+@bp.post("/api/abhyasa/krdanta_view")
+def krdanta_view():
+    q = request.get_json(force=True) or {}
+    return _call(A.krdanta_view, q.get("ref", ""), q.get("sanadi") or "", q.get("prefix") or "")
+
+
+@bp.get("/api/abhyasa/krt_table/<krt>")
+def krt_table(krt):
+    return _call(A.krt_table, krt)
+
+
+@bp.get("/api/abhyasa/taddhita_page/<pratyaya>")
+def taddhita_page(pratyaya):
+    return _call(A.taddhita_page, pratyaya)
+
+
+@bp.get("/api/abhyasa/taddhita_names")
+def taddhita_names():
+    return jsonify([{"slp1": n, "dev": A.TADDHITA_DEV.get(n) or A.dev(n)} for n in A.taddhita_names()])
+
+
+@bp.post("/api/abhyasa/taddhita_view")
+def taddhita_view():
+    q = request.get_json(force=True) or {}
+    return _call(A.taddhita_view, q.get("stem", ""), q.get("pratyaya", ""))
+
+
+@bp.get("/api/abhyasa/pronoun_list")
+def pronoun_list():
+    return jsonify(A.pronoun_list())
+
+
+@bp.get("/api/abhyasa/number_list")
+def number_list():
+    return jsonify(A.number_list())
+
+
+@bp.get("/api/abhyasa/tin_page")
+def tin_page():
+    return jsonify(A.tin_page())
+
+
+@bp.post("/api/abhyasa/similar")
+def similar():
+    q = request.get_json(force=True) or {}
+    return jsonify({"similar": A.similar(q.get("stem", ""), q.get("linga") or "pulliṅga"),
+                    "homonyms": A.homonyms(q.get("stem", ""), q.get("linga") or "pulliṅga")})
+
+
+@bp.post("/api/abhyasa/namadhatu_view")
+def namadhatu_view():
+    """नामधातु: any prātipadika + क्यच् / क्यङ् / काम्यच् (Vidyut; the engine has no nāmadhātu yet), every lakāra."""
+    q = request.get_json(force=True) or {}
+    out = []
+    for lak in A.LAKARA:
+        try:
+            p = A.namadhatu_paradigm(q.get("stem", ""), q.get("pratyaya") or "kyac", lak)
+        except (KeyError, ValueError) as ex:
+            return _err(ex)
+        out.append({"lakara": lak, "lakara_dev": A.LAKARA[lak], **p,
+                    "cells": [{**c, "dev": A.dev(c["primary"]), "accepted_dev": [A.dev(a) for a in c["accepted"]]} for c in p["cells"]]})
+    return jsonify(out)
 
 
 @bp.get("/api/abhyasa/gaps")

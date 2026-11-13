@@ -9,6 +9,17 @@ Read this before touching `/practice` or any `abhyasa` file. Full plan, parity t
    dhātu, using the kośa base in `~/subhastini` — "kośas propose, rules verify".
 3. Launch from **`Panini Engine.command`** (double-click opens http://127.0.0.1:5050/practice).
 
+## Source order (owner, 2026-11-13 21:16)
+**Our engine first, Vidyut second, kośa (printed ashtadhyayi.com paradigm / Subhastini kośas) third.** Every form shows
+its source badges in that order (यन्त्रम् · विद्युत् · कोशः); anything without यन्त्रम् carries "यन्त्रं न्यूनम्".
+
+## Pages (hash routes on /practice — mirror sanskritabhyas.in)
+`#abhyasa/<family>` drills · `#list/{noun,verb,krdanta,taddhita,pronoun,number}` · `#word/<stem>/<liṅga>` ·
+`#dhatu/<pāṭha id>[/<prayoga>/<pada>/<lakāra>]` · `#krdanta/<id>` · `#taddhita/<pratyaya>` · `#namadhatu/<stem>/<pratyaya>` ·
+`#search/<word>[/<liṅga>]` · `#fav` · `#requested` · `#compare` · `#pratyaya/{sup,tin,krt,taddhita}` · `#lipi`.
+New API: `/api/abhyasa/{dhatu/<id>, krdanta_view, krt_table/<k>, taddhita_page/<p>, taddhita_names, taddhita_view,
+pronoun_list, number_list, tin_page, similar, namadhatu_view}`; data `data/practice/sankhya.json`.
+
 ## Rule for every answer (do not break)
 The answer is **our engine's form**, accepted when Vidyut and/or the printed ashtadhyayi.com paradigm agree. Where the
 engine cannot derive yet (yaṅ/yaṅluk/sanādi stacks, nāmadhātu, unbanked kṛts) the drill shows Vidyut's form **badged
@@ -41,11 +52,8 @@ changed; nothing here may be imported by `engine/ sutras/ phonology/ pipelines/`
 - kṛt avyayas declined (*gatvAH*: 1.1.40 + 2.4.82); Śatṛ/tṛc vivakṣā gives the bare root; matup / ḍhak senses.
 - Speed: adādi `tinanta.derive` ~5 s/cell (ada~ laṭ 47 s). Homograph upadeśas resolve to the first row.
 
-## State of git (17:40)
-- Commit `7a490e65` on branch **`cursor/abhyasa-shala`** = practice tab + bank + launcher (made while a cherry-pick
-  blocked `main`). Not yet on `main`.
-- Search + व्युत्पत्ति (`core/vyutpatti.py`, its test, edits to abhyasa files) are in the main working tree, uncommitted.
-- Land both on `main` as cursor's files only (never sweep `docs/STATUS.md`, `scratch/`, `sig/loop_gauge.json`).
+## State of git
+All of it is on `main` (33e42236 + merge d390c2b0, then the sanskritabhyas-pages commit of 2026-11-13 night).
 
 ## How to check quickly
 `python3 -m pytest tests/unit/test_abhyasa.py tests/unit/test_vyutpatti.py tests/unit/test_webui_routes.py -q`

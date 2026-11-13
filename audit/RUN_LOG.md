@@ -245,6 +245,15 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-11-13 21:30  [cursor]  अभ्यास: every sanskritabhyas.in page (Noun/Verb/Kridanta/Taddhitanta/NaamDhatu/Pronoun/Number/Pratyaya/Sandhi)
+
+Owner: include all these pages, "always backed by our engine and Vidyut — engine primary, Vidyut second, kośa third".
+Two menus (अभ्यासाः / रूपाणि) + routes; dhātu page (all lakāras, prayoga/pada, तुलना, sanādi, 2 upasargas); kṛdanta page
+(liṅga per sūtra); taddhita pratyaya pages (teaching sūtras + gaṇapāṭha + Kāśikā); nāmadhātu (Vidyut, badged); सर्वादि
+list; सङ्ख्या 1–100 (`data/practice/sankhya.json`); tiṅ/kṛt pratyaya pages; word page (अन्याः, तुलना); T/F toggles;
+source fallback Vidyut › kośa. No engine file changed. Tests: test_abhyasa / test_vyutpatti / test_webui_routes 107 pass.
+Handover: docs/HANDOVER_ABHYASA.md.
+
 ### 2026-11-13 15:45  [cursor]  अभ्यास: शब्द खोजें + व्युत्पत्तिः (kośas propose, rules verify) — docs/ABHYASA_PLAN.md §8
 
 Owner: search like sanskritabhyas; shabdarūpa of words beyond the list (गार्गी); how a word is made from its dhātu; use

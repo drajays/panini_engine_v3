@@ -382,13 +382,13 @@ def explain(word: str, linga: str = "", depth: int = 2) -> dict[str, Any]:
 
 
 def engine_check(kind: str, base: str, pratyaya: str, linga: str, word: str, dhatu_ref: str = "",
-                 sutras: tuple[str, ...] = ()) -> dict[str, Any]:
+                 sutras: tuple[str, ...] = (), want_forms: tuple[str, ...] = ()) -> dict[str, Any]:
     """Our engine's own attempt at the proposal: every branch it can reach, and whether one is the word."""
     import contextlib
     import io
 
     from engine.vikalpa import explore
-    want = set((_nominatives(word, linga) or {}).get(linga, []))
+    want = set(want_forms) or set((_nominatives(word, linga) or {}).get(linga, []))
     if kind == "taddhita":
         from pipelines.taddhita_loop import derive_taddhita
         key = lambda x: tuple(int(n) for n in x.split(".")[:3] if n.isdigit())  # noqa: E731

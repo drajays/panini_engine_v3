@@ -122,6 +122,40 @@ def test_odd_one_out_never_picks_a_syncretic_form():
             assert q["answer"] != "rAmAByAm"
 
 
+def test_source_order_engine_then_vidyut_then_kosha():
+    """Owner (2026-11-13): engine first, Vidyut second, kośa third."""
+    assert A._agree("x", ["x"], ["x"], strict=True)["sources"] == ["engine", "vidyut", "corpus"]
+    assert A._agree(None, ["v"], ["k"], strict=False)["primary"] == "v"
+    assert A._agree(None, [], ["k"], strict=False) == {"primary": "k", "accepted": ["k"], "sources": ["corpus"], "engine": None}
+    assert A._agree(None, [], ["k"], strict=True) is None
+
+
+def test_pronoun_list_is_the_sarvadi_gana():
+    rows = A.pronoun_list()
+    stems = {r["stem"] for r in rows}
+    assert {"sarva", "tad", "yad", "idam", "adas", "asmad", "yuzmad", "Bavat"} <= stems
+    assert any(r["dev"] == "सर्वा" and r["linga"] == "strīliṅga" for r in rows)          # ṭāp shown on the a-stem
+    assert any(r["group"] == "त्रिषु लिङ्गेषु समानम्" for r in rows)
+
+
+def test_number_list_one_to_hundred():
+    rows = A.number_list()
+    ns = {r["n"] for r in rows}
+    assert set(range(1, 101)) <= ns
+    assert {r["dev"] for r in rows if r["n"] == 1} == {"एक-पुं", "एक-स्त्री", "एक-नपुं"}
+    assert any(r["stem"] == "dvAtriMSat" for r in rows)                                     # 6.3.47 dvi → dvā
+
+
+def test_taddhita_page_finds_the_teaching_sutra_and_its_gana():
+    p = A.taddhita_page("yaY")
+    s = next(x for x in p["sutras"] if x["id"] == "4.1.105")
+    assert s["text"] == "गर्गादिभ्यो यञ्" and any("garga" in g["members"] for g in s["ganas"])
+
+
+def test_krt_lingas_follow_the_sutras():
+    assert A.KRT_LINGA["lyuw"] == ["napum"] and A.KRT_LINGA["ktin"] == ["stri"] and "ktvA" in A.AVYAYA_KRT
+
+
 # ── the bank (when built) ─────────────────────────────────────────────────────────────────────────
 
 BANK = json.loads((ROOT / "data/practice/abhyasa_bank.json").read_text()) if (ROOT / "data/practice/abhyasa_bank.json").exists() else None
