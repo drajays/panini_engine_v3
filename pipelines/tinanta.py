@@ -698,6 +698,7 @@ def _it_agama(state: State) -> State:
     उपदेशेऽनुदात्तात् (which, when it holds, blocks 7.2.35: पक्ता, पक्ष्यते),
     then 7.2.58 गमेरिट् परस्मैपदेषु, which re-grants iṭ over that niṣedha."""
     state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला (ग्लाता)
+    state = apply_rule("7.1.60", state)   # मस्जिनशोर्झलि: num of masj / naś before the jhal ending, ahead of the iṭ question (maNktA, naMzwA)
     state = apply_rule("7.2.10", state)
     state = apply_rule("7.2.42", state)   # vṛto vā iṭ in ātmanepada liṅ / sic
     state = apply_rule("7.2.43", state)   # ṛtaś ca saṁyogādeḥ — likewise

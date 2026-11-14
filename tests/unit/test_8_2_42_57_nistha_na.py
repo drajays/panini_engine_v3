@@ -43,3 +43,11 @@ def test_liT_masj_num_then_skoH():
     assert "mamaNkTa" in [b[0] for b in branches]
     seen = next(s for surf, s in branches if surf == "mamaNkTa")
     assert "APPLIED" in seen["7.1.60"] and "APPLIED" in seen["8.2.29"]
+
+
+def test_luT_lRT_masj_num_before_iT_question():
+    """7.1.60 num precedes 7.2.10 in the shared _it_agama: maNktA / maNkzyati only, not *maktA / *makzyati."""
+    for lk, want in (("luT", "maNktA"), ("lRT", "maNkzyati")):
+        branches, err = run(("tinanta", "06.0151", lk, "kartari", 3, 1))
+        assert err is None and want in [b[0] for b in branches]
+        assert not {"maktA", "makzyati"} & {b[0] for b in branches}
