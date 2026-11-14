@@ -245,6 +245,14 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-11-14 09:20  [cursor]  Prakriyā visuals: coloured parts, merged ↔ split varṇas on click, target and change marked
+
+Owner: show the sub-parts (pada, abhyāsa, aṅga, saṃjñā …) by colour, dissect Devanāgarī into varṇas (र् आ म् अ = राम), mark which
+varṇa is the target and what replaced it, with arrows — everywhere. `webui/static/prakriya.js` (the one shared renderer) +
+`style.css`: role colours from the trace's `parts`; click a form or the "वर्णाः" switch → split varṇas with स्थानी struck and
+new varṇas boxed + a note (आदेशः / आगमः / द्वित्वम् / प्रत्ययः / लोपः); saṃjñā chips; legend; letters bar coloured. Display
+only. Checked on राम षष्ठी बहु and भू लिट् (बभूव). Not yet: docs/learn.html's own stepper.
+
 ### 2026-11-13 21:30  [cursor]  अभ्यास: every sanskritabhyas.in page (Noun/Verb/Kridanta/Taddhitanta/NaamDhatu/Pronoun/Number/Pratyaya/Sandhi)
 
 Owner: include all these pages, "always backed by our engine and Vidyut — engine primary, Vidyut second, kośa third".

@@ -20,6 +20,14 @@ its source badges in that order (यन्त्रम् · विद्यु�
 New API: `/api/abhyasa/{dhatu/<id>, krdanta_view, krt_table/<k>, taddhita_page/<p>, taddhita_names, taddhita_view,
 pronoun_list, number_list, tin_page, similar, namadhatu_view}`; data `data/practice/sankhya.json`.
 
+## Prakriyā visuals (owner, 2026-11-14) — `webui/static/prakriya.js` (+ `style.css` `.pk-r-*`, `.pk-v`, `.pk-del/.pk-ins`)
+Every derivation view (prakriyā page, शब्दरूप / धातुरूप tabs, अभ्यास explanations) now shows, per step:
+parts coloured by role from the trace's `parts` (धातुः, प्रकृतिः, अभ्यासः, विकरणम्, आगमः, प्रत्ययः/सुप्/तिङ्, उपसर्गः), the changed part
+bold-underlined; **click a form** (or the "वर्णाः" switch) to toggle संहितम् राम ↔ विभक्तम् र् आ म् अ, where the स्थानी is struck
+(red dashed) and new varṇas boxed (green), with a note "अ ⇒ आ स्थानी → आदेशः / + न् आगमः / + भ् ऊ द्वित्वम् (अभ्यासः) / … ⇒ ∅ लोपः";
+saṃjñā steps get a chip "संज्ञा: अङ्गम् ⇐ राम" (map `SAMJNA` in prakriya.js, display only). The varṇa diff is an LCS whose
+ties put insertions first. Display only — the engine's trace is not changed. Not yet: `docs/learn.html` has its own stepper.
+
 ## Rule for every answer (do not break)
 The answer is **our engine's form**, accepted when Vidyut and/or the printed ashtadhyayi.com paradigm agree. Where the
 engine cannot derive yet (yaṅ/yaṅluk/sanādi stacks, nāmadhātu, unbanked kṛts) the drill shows Vidyut's form **badged

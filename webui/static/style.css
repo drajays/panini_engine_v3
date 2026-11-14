@@ -1378,3 +1378,30 @@ table.matrix td.cell-fixed::after {
 .pk-inspect{margin-top:1rem;font-size:13px}.pk-inspect-out{margin-top:.4rem;line-height:1.6}
 .pk-whatif{border:2px dashed var(--danger);padding:.6rem;margin-top:1rem;border-radius:6px}
 .pk-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1rem}
+
+/* prakriyā parts and varṇas (prakriya.js): role colours, target (स्थानी) and new varṇas, merged ↔ split on click */
+.pk-part{padding:0 .1em;border-radius:3px;border-bottom:2px solid transparent}
+.pk-v{display:inline-block;margin:0 .06em;padding:0 .22em;border-radius:3px;border-bottom:2px solid transparent;line-height:1.5}
+.pk-r-dhatu{background:#fde7d2;border-bottom-color:#c46a1b}
+.pk-r-prakriti,.pk-r-pratipadika{background:#fff3c4;border-bottom-color:#a88400}
+.pk-r-abhyasa{background:#ebe3ff;border-bottom-color:#6b4fc6}
+.pk-r-vikarana{background:#dcefff;border-bottom-color:#2a7ab8}
+.pk-r-agama{background:#dcf5e3;border-bottom-color:#2f8f4e}
+.pk-r-pratyaya,.pk-r-krt,.pk-r-taddhita,.pk-r-stri{background:#ffe0e5;border-bottom-color:#b8364f}
+.pk-r-sup{background:#ffe3f3;border-bottom-color:#a3367a}
+.pk-r-tin{background:#e3e8ff;border-bottom-color:#3d5bb8}
+.pk-r-upasarga{background:#eeeeee;border-bottom-color:#777}
+.pk-r-pada,.pk-r-other{background:transparent}
+.pk-chg{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.pk-del{text-decoration:line-through;text-decoration-color:var(--danger);text-decoration-thickness:2px;outline:1.5px dashed var(--danger);outline-offset:1px}
+.pk-ins{outline:2px solid var(--success);outline-offset:1px;font-weight:700}
+.pk-arrow{color:var(--accent);font-weight:700;margin:0 .25em}
+.pk-fx{cursor:pointer}.pk-fx:hover{background:var(--bg-subtle);border-radius:4px}
+.pk-note{display:block;font-size:13px;margin-top:3px;color:var(--ink-dim)}
+.pk-note .pk-del,.pk-note .pk-ins{padding:0 .2em;border-radius:3px}
+.pk-sj{font-size:12px;border:1px dashed var(--accent);border-radius:6px;padding:0 .45em;margin:0 .35em;color:var(--ink-dim)}
+.pk-sj-t{color:var(--accent);font-family:var(--dev)}
+.pk-legend{font-size:12px;margin:.35rem 0;display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.pk-legend .pk-part{padding:0 .4em}
+.pk-letter[class*="pk-r-"]{border-bottom-width:3px}
+@media print{.pk-part,.pk-v{background:none!important}}

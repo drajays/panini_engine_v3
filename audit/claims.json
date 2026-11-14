@@ -721,5 +721,19 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794585674.4705868
+ },
+ {
+  "id": "prakriya-visual",
+  "agent": "cursor",
+  "scope": [
+   "webui/static/prakriya.js",
+   "webui/static/style.css",
+   "tests/unit/test_webui_routes.py",
+   "docs/HANDOVER_ABHYASA.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794626966.3408818
  }
 ]
