@@ -68,7 +68,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -82,7 +82,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -96,7 +96,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -116,11 +116,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -141,7 +142,7 @@
      1,
      "atmane"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -156,7 +157,7 @@
      1,
      "atmane"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -176,11 +177,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -200,11 +202,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -227,6 +230,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -247,7 +251,7 @@
      1,
      "atmane"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -265,6 +269,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -293,11 +298,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -311,11 +317,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -329,7 +336,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -343,7 +350,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -369,7 +376,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -576,7 +583,7 @@
      "pulliṅga",
      "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -590,7 +597,7 @@
      "pulliṅga",
      "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -797,11 +804,12 @@
      3,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -815,7 +823,7 @@
      3,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -829,15 +837,17 @@
      3,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]

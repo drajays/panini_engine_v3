@@ -52,6 +52,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -81,7 +82,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -105,7 +106,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -129,15 +130,17 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -167,7 +170,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -191,7 +194,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -215,11 +218,12 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -271,7 +275,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -295,11 +299,12 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -329,7 +334,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -353,15 +358,17 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -391,7 +398,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -415,15 +422,17 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -524,6 +533,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -557,8 +567,8 @@
     ]
    },
    {
-    "result": "pass",
-    "why": ""
+    "result": "fail",
+    "why": "declined reading kiMhmalayati is not produced at all (readings ['kimhmalayati'])"
    }
   ]
  },
@@ -576,8 +586,8 @@
     ]
    },
    {
-    "result": "pass",
-    "why": ""
+    "result": "fail",
+    "why": "declined reading kiMhnute is not produced at all (readings ['kimhnute'])"
    }
   ]
  },
@@ -596,6 +606,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -778,6 +789,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -899,7 +911,7 @@
      1,
      2
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -912,15 +924,17 @@
      1,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -957,6 +971,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1006,6 +1021,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1042,6 +1058,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -1070,6 +1087,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -1091,6 +1109,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1178,6 +1197,7 @@
    },
    {
     "result": "pass",
+    "kind": "declined",
     "why": ""
    },
    {
@@ -1206,6 +1226,7 @@
    },
    {
     "result": "pass",
+    "kind": "declined",
     "why": ""
    },
    {
@@ -1246,7 +1267,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -1266,7 +1287,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -1286,7 +1307,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -1295,21 +1316,11 @@
   ]
  },
  "8.4.65": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIBHASHA",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['utsTAtA'] ≠ expected utTAtum",
-    "spec": [
-     "tinanta2",
-     "01.1077",
-     "luT",
-     "kartari",
-     3,
-     1,
-     "{\"upasargas\": [\"ud\"]}"
-    ]
+    "result": "unrunnable"
    },
    {
     "result": "pass",
@@ -1328,7 +1339,7 @@
       ]
      ]
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -1343,7 +1354,7 @@
      1,
      "atmane"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -1357,7 +1368,7 @@
      2,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {

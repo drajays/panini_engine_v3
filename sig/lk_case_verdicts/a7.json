@@ -1,338 +1,4 @@
 {
- "7.1.36": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "readings ['vid', 'vidd', 'vidt', 'vit'] ≠ expected vidvAn",
-    "spec": [
-     "krdanta",
-     "02.0059",
-     "Satf",
-     "pulliṅga",
-     1,
-     1,
-     [
-      [
-       "artha",
-       "kartf"
-      ],
-      [
-       "kala",
-       "vartamAna"
-      ]
-     ]
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['vidO'] ≠ expected vidvAMsO",
-    "spec": [
-     "krdanta",
-     "02.0059",
-     "Satf",
-     "pulliṅga",
-     1,
-     2,
-     [
-      [
-       "artha",
-       "kartf"
-      ],
-      [
-       "kala",
-       "vartamAna"
-      ]
-     ]
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['vidaH'] ≠ expected vidvAMsaH",
-    "spec": [
-     "krdanta",
-     "02.0059",
-     "Satf",
-     "pulliṅga",
-     1,
-     3,
-     [
-      [
-       "artha",
-       "kartf"
-      ],
-      [
-       "kala",
-       "vartamAna"
-      ]
-     ]
-    ]
-   }
-  ]
- },
- "7.1.60": {
-  "grade": "confident",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "06.0151",
-     "luT",
-     "kartari",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "04.0091",
-     "luT",
-     "kartari",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "06.0151",
-     "liT",
-     "kartari",
-     2,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "04.0091",
-     "liT",
-     "kartari",
-     2,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.1.69": {
-  "grade": "working",
-  "type": "VIBHASHA",
-  "cases": [
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "01.1130",
-     "luG",
-     "karmani",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta2",
-     "01.1130",
-     "luG",
-     "karmani",
-     3,
-     1,
-     "{\"upasargas\": [\"pra\"]}"
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "unrunnable"
-   },
-   {
-    "result": "unrunnable"
-   }
-  ]
- },
- "7.1.71": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "readings ['yujaH'] ≠ expected yuYjaH",
-    "spec": [
-     "subanta",
-     "yuj",
-     "pulliṅga",
-     1,
-     3
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['yujO'] ≠ expected yuYjO",
-    "spec": [
-     "subanta",
-     "yuj",
-     "pulliṅga",
-     1,
-     2
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['yug', 'yugg', 'yugk', 'yuk'] ≠ expected yuN",
-    "spec": [
-     "subanta",
-     "yuj",
-     "pulliṅga",
-     1,
-     1
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "unrunnable"
-   }
-  ]
- },
- "7.1.74": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "unrunnable"
-   },
-   {
-    "result": "fail",
-    "why": "readings ['daDnA', 'dadDnA'] ≠ expected dadhnA",
-    "spec": [
-     "subanta",
-     "daDi",
-     "napuMsaka",
-     3,
-     1
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['grAmaRinA'] ≠ expected grAmaRyA",
-    "spec": [
-     "subanta",
-     "grAmaRi",
-     "napuMsaka",
-     3,
-     1
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['grAmaRinA'] ≠ expected grAmaRiNA",
-    "spec": [
-     "subanta",
-     "grAmaRi",
-     "napuMsaka",
-     3,
-     1
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.1.95": {
-  "grade": "FAIL",
-  "type": "ATIDESHA",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "readings ['kroSwuH', 'kroSwwuH'] ≠ expected kroSwA",
-    "spec": [
-     "subanta",
-     "kroSwu",
-     "pulliṅga",
-     1,
-     1
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['kroSwU', 'kroSwwU'] ≠ expected kroSwArO",
-    "spec": [
-     "subanta",
-     "kroSwu",
-     "pulliṅga",
-     1,
-     2
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['kroSwavaH', 'kroSwwavaH'] ≠ expected kroSwAraH",
-    "spec": [
-     "subanta",
-     "kroSwu",
-     "pulliṅga",
-     1,
-     3
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
  "7.2.9": {
   "grade": "UNRUNNABLE",
   "type": "VIDHI",
@@ -382,6 +48,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -486,6 +153,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -571,6 +239,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -583,324 +252,18 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "declined",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
-   }
-  ]
- },
- "7.3.36": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "readings ['pfayate'] ≠ expected arpayati",
-    "spec": [
-     "sanadi",
-     "03.0005",
-     "laT",
-     "kartari",
-     3,
-     1,
-     "nic_recipe",
-     "parasmai"
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['hrIayate'] ≠ expected hrepayati",
-    "spec": [
-     "sanadi",
-     "03.0003",
-     "laT",
-     "kartari",
-     3,
-     1,
-     "nic_recipe",
-     "parasmai"
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['dAayate'] ≠ expected dApayati",
-    "spec": [
-     "sanadi",
-     "01.1079",
-     "laT",
-     "kartari",
-     3,
-     1,
-     "nic_recipe",
-     "parasmai"
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.3.55": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "02.0002",
-     "liT",
-     "kartari",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "fail",
-    "why": "readings ['hihanizate'] ≠ expected jiGAMsati",
-    "spec": [
-     "sanadi",
-     "02.0002",
-     "laT",
-     "kartari",
-     3,
-     1,
-     "san_recipe",
-     "parasmai"
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.3.58": {
-  "grade": "FAIL",
-  "type": "VIBHASHA",
-  "cases": [
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "05.0005",
-     "liT",
-     "kartari",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "fail",
-    "why": "readings ['ciciizate'] ≠ expected cikIzati",
-    "spec": [
-     "sanadi",
-     "05.0005",
-     "laT",
-     "kartari",
-     3,
-     1,
-     "san_recipe",
-     "parasmai"
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.3.69": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "form BojyaH is right but 7.3.69 did not fire (trace status absent): another path made it",
-    "spec": [
-     "krdanta",
-     "07.0017",
-     "Ryat",
-     "pulliṅga",
-     1,
-     1,
-     [
-      [
-       "artha",
-       "BAva"
-      ],
-      [
-       "krt",
-       "kftya"
-      ]
-     ]
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['BojanIyaH', 'BojjyaH', 'BojjyyaH', 'BojyaH', 'BokktavvyaH', 'BoktavyaH'] ≠ expected BogyaH",
-    "spec": [
-     "krdanta",
-     "07.0017",
-     "Ryat",
-     "pulliṅga",
-     1,
-     1,
-     [
-      [
-       "krt",
-       "kftya"
-      ]
-     ]
-    ]
-   },
-   {
-    "result": "unrunnable"
-   }
-  ]
- },
- "7.3.73": {
-  "grade": "FAIL",
-  "type": "VIBHASHA",
-  "cases": [
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "02.0004",
-     "luG",
-     "kartari",
-     3,
-     1,
-     "atmane"
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "02.0005",
-     "luG",
-     "kartari",
-     3,
-     1,
-     "atmane"
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "fail",
-    "why": "readings ['alikzata', 'alikzzata', 'aliqDa', 'aliqqDa'] ≠ expected alIQa",
-    "spec": [
-     "tinanta",
-     "02.0006",
-     "luG",
-     "kartari",
-     3,
-     1,
-     "atmane"
-    ]
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.3.91": {
-  "grade": "FAIL",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "fail",
-    "why": "readings ['prOrRavad', 'prOrRavat'] ≠ expected prOrRot",
-    "spec": [
-     "tinanta2",
-     "02.0034",
-     "laG",
-     "kartari",
-     3,
-     1,
-     "{\"upasargas\": [\"pra\"]}"
-    ]
-   },
-   {
-    "result": "fail",
-    "why": "readings ['prOrRavaH'] ≠ expected prOrRoH",
-    "spec": [
-     "tinanta2",
-     "02.0034",
-     "laG",
-     "kartari",
-     2,
-     1,
-     "{\"upasargas\": [\"pra\"]}"
-    ]
-   },
-   {
-    "result": "pass",
-    "why": "",
-    "spec": [
-     "tinanta",
-     "02.0034",
-     "laG",
-     "kartari",
-     3,
-     1
-    ],
-    "mutation": "redundant",
-    "replaced_by": []
-   },
-   {
-    "result": "pass",
-    "why": ""
-   }
-  ]
- },
- "7.3.94": {
-  "grade": "UNRUNNABLE",
-  "type": "VIDHI",
-  "cases": [
-   {
-    "result": "unrunnable"
-   },
-   {
-    "result": "unrunnable"
    }
   ]
  },
@@ -997,6 +360,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1078,6 +442,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1110,6 +475,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -1133,8 +499,667 @@
     ]
    },
    {
+    "result": "fail",
+    "why": "declined reading mumukzate is not produced at all (readings ['mumucizate'])"
+   }
+  ]
+ },
+ "7.1.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['vid', 'vidd', 'vidt', 'vit'] ≠ expected vidvAn",
+    "spec": [
+     "krdanta",
+     "02.0059",
+     "Satf",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "artha",
+       "kartf"
+      ],
+      [
+       "kala",
+       "vartamAna"
+      ]
+     ]
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vidO'] ≠ expected vidvAMsO",
+    "spec": [
+     "krdanta",
+     "02.0059",
+     "Satf",
+     "pulliṅga",
+     1,
+     2,
+     [
+      [
+       "artha",
+       "kartf"
+      ],
+      [
+       "kala",
+       "vartamAna"
+      ]
+     ]
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vidaH'] ≠ expected vidvAMsaH",
+    "spec": [
+     "krdanta",
+     "02.0059",
+     "Satf",
+     "pulliṅga",
+     1,
+     3,
+     [
+      [
+       "artha",
+       "kartf"
+      ],
+      [
+       "kala",
+       "vartamAna"
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "7.1.60": {
+  "grade": "confident",
+  "type": "VIDHI",
+  "cases": [
+   {
     "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "06.0151",
+     "luT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "04.0091",
+     "luT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "06.0151",
+     "liT",
+     "kartari",
+     2,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "04.0091",
+     "liT",
+     "kartari",
+     2,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
     "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.1.69": {
+  "grade": "working",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "01.1130",
+     "luG",
+     "karmani",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta2",
+     "01.1130",
+     "luG",
+     "karmani",
+     3,
+     1,
+     "{\"upasargas\": [\"pra\"]}"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "7.1.71": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['yujaH'] ≠ expected yuYjaH",
+    "spec": [
+     "subanta",
+     "yuj",
+     "pulliṅga",
+     1,
+     3
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['yujO'] ≠ expected yuYjO",
+    "spec": [
+     "subanta",
+     "yuj",
+     "pulliṅga",
+     1,
+     2
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['yug', 'yugg', 'yugk', 'yuk'] ≠ expected yuN",
+    "spec": [
+     "subanta",
+     "yuj",
+     "pulliṅga",
+     1,
+     1
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "7.1.74": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['daDnA', 'dadDnA'] ≠ expected dadhnA",
+    "spec": [
+     "subanta",
+     "daDi",
+     "napuMsaka",
+     3,
+     1
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['grAmaRinA'] ≠ expected grAmaRyA",
+    "spec": [
+     "subanta",
+     "grAmaRi",
+     "napuMsaka",
+     3,
+     1
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['grAmaRinA'] ≠ expected grAmaRiNA",
+    "spec": [
+     "subanta",
+     "grAmaRi",
+     "napuMsaka",
+     3,
+     1
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.1.95": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kroSwuH', 'kroSwwuH'] ≠ expected kroSwA",
+    "spec": [
+     "subanta",
+     "kroSwu",
+     "pulliṅga",
+     1,
+     1
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kroSwU', 'kroSwwU'] ≠ expected kroSwArO",
+    "spec": [
+     "subanta",
+     "kroSwu",
+     "pulliṅga",
+     1,
+     2
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kroSwavaH', 'kroSwwavaH'] ≠ expected kroSwAraH",
+    "spec": [
+     "subanta",
+     "kroSwu",
+     "pulliṅga",
+     1,
+     3
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pfayate'] ≠ expected arpayati",
+    "spec": [
+     "sanadi",
+     "03.0005",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "nic_recipe",
+     "parasmai"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['hrIayate'] ≠ expected hrepayati",
+    "spec": [
+     "sanadi",
+     "03.0003",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "nic_recipe",
+     "parasmai"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['dAayate'] ≠ expected dApayati",
+    "spec": [
+     "sanadi",
+     "01.1079",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "nic_recipe",
+     "parasmai"
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "unproven",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.55": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0002",
+     "liT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "readings ['hihanizate'] ≠ expected jiGAMsati",
+    "spec": [
+     "sanadi",
+     "02.0002",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.58": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "05.0005",
+     "liT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "fail",
+    "why": "readings ['ciciizate'] ≠ expected cikIzati",
+    "spec": [
+     "sanadi",
+     "05.0005",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "declined reading cicIzati is not produced at all (readings ['ciciizate'])"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.69": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form BojyaH is right but 7.3.69 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "07.0017",
+     "Ryat",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "artha",
+       "BAva"
+      ],
+      [
+       "krt",
+       "kftya"
+      ]
+     ]
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['BojanIyaH', 'BojjyaH', 'BojjyyaH', 'BojyaH', 'BokktavvyaH', 'BoktavyaH'] ≠ expected BogyaH",
+    "spec": [
+     "krdanta",
+     "07.0017",
+     "Ryat",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "krt",
+       "kftya"
+      ]
+     ]
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "7.3.73": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0004",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0005",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "readings ['alikzata', 'alikzzata', 'aliqDa', 'aliqqDa'] ≠ expected alIQa",
+    "spec": [
+     "tinanta",
+     "02.0006",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.91": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['prOrRavad', 'prOrRavat'] ≠ expected prOrRot",
+    "spec": [
+     "tinanta2",
+     "02.0034",
+     "laG",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"pra\"]}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['prOrRavaH'] ≠ expected prOrRoH",
+    "spec": [
+     "tinanta2",
+     "02.0034",
+     "laG",
+     "kartari",
+     2,
+     1,
+     "{\"upasargas\": [\"pra\"]}"
+    ]
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0034",
+     "laG",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "7.3.94": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
    }
   ]
  }

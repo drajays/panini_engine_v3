@@ -1,0 +1,900 @@
+{
+ "4.1.16": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "garga",
+     "",
+     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vatsa",
+     "",
+     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.17": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['gArgI', 'gArggI'] ≠ expected gArgyAyaRI",
+    "spec": [
+     "chain",
+     "gArgya",
+     "origin_pratyaya:yaY,origin_it:Y",
+     "strI:|sup:1,1"
+    ]
+   }
+  ]
+ },
+ "4.1.20": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "kumAra",
+     "lex:prathamavayas",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "kizora",
+     "lex:prathamavayas",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "barkara",
+     "lex:prathamavayas",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.21": {
+  "grade": "confident",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "triloka",
+     "lex:dvigu",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "paYcapUla",
+     "lex:dvigu",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "daSapUla",
+     "lex:dvigu",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.39": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['SvetA'] ≠ expected SyenI",
+    "spec": [
+     "chain",
+     "Sveta",
+     "lex:varRavacana",
+     "strI:|sup:1,1"
+    ]
+   }
+  ]
+ },
+ "4.1.44": {
+  "grade": "working",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "laGu",
+     "lex:guRavacana",
+     "strI:@4.1.44=1|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "paWu",
+     "lex:guRavacana",
+     "strI:@4.1.44=1|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "mfdu",
+     "lex:guRavacana",
+     "strI:@4.1.44=1|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.45": {
+  "grade": "working",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "bahu",
+     "",
+     "strI:@4.1.45=1|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.48": {
+  "grade": "confident",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "gopa",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "gaRaka",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "mahAmAtra",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.49": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "indra",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "AcArya",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "varuRa",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "Bava",
+     "lex:puMyoga",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "hima",
+     "lex:puMyoga,lex:mahattva",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "unproven",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.58": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form SUrpaRaKA is right but 4.1.58 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "SUrpanaKa",
+     "lex:saMjYA",
+     "strI:|sup:1,1"
+    ]
+   },
+   {
+    "result": "pass",
+    "kind": "unproven",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.63": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "tawa",
+     "lex:jAti",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "form kzatriyA is right but 4.1.63 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "kzatriya",
+     "lex:jAti",
+     "strI:|sup:1,1"
+    ]
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "kukkuwa",
+     "lex:jAti",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sUkara",
+     "lex:jAti",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.65": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "dAkzi",
+     "",
+     "strI:jAtiBeda=manuzyajAti|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "plAkzi",
+     "",
+     "strI:jAtiBeda=manuzyajAti|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.68": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "paNgu",
+     "",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.70": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vAmaUru",
+     "",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "saMhitaUru",
+     "",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "readings ['SaPoruH'] ≠ expected SaPorUH",
+    "spec": [
+     "chain",
+     "SaPaUru",
+     "",
+     "strI:|sup:1,1"
+    ]
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "lakzaRaUru",
+     "",
+     "strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.87": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['strAyam', 'strAyamm', 'sttrAyamm'] ≠ expected strERam",
+    "spec": [
+     "chain",
+     "strI",
+     "",
+     "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['pOMsam', 'pOMsamm'] ≠ expected pOMsnam",
+    "spec": [
+     "chain",
+     "puMs",
+     "",
+     "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "4.1.93": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form gArgyaH is right but 4.1.93 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "garga",
+     "",
+     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.94": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form gArgyAyaRaH is right but 4.1.94 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "gArgya",
+     "origin_pratyaya:yaY,origin_it:Y",
+     "taddhita:taddhitArtha=apatya;apatyaBeda=yuvan|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.114": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['vAsizWiH', 'vAsizwWiH'] ≠ expected vAsizWaH",
+    "spec": [
+     "chain",
+     "vasizWa",
+     "lex:fzi",
+     "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.115": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['dvEmAtraH', 'dvEmAttraH', 'dvEmAttrraH'] ≠ expected dvEmAturaH",
+    "spec": [
+     "chain",
+     "dvimAtf",
+     "",
+     "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.116": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kAnnyaH', 'kAnnyyaH', 'kAnyaH'] ≠ expected kAnInaH",
+    "spec": [
+     "chain",
+     "kanyA",
+     "",
+     "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.168": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form pAYcAlaH is right but 4.1.168 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "paYcAla",
+     "",
+     "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.172": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form kOravyaH is right but 4.1.172 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "kuru",
+     "",
+     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.1.175": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kAmbojiH'] ≠ expected kambojaH",
+    "spec": [
+     "chain",
+     "kamboja",
+     "lex:janapadakzatriya",
+     "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.2.7": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form kAleyam is right but 4.2.7 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "kali",
+     "",
+     "taddhita:taddhitArtha=dfzwa|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "4.2.16": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['BrAzwraH', 'BrAzwwraH'] ≠ expected BrAzwrAH",
+    "spec": [
+     "chain",
+     "BrAzwra",
+     "",
+     "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.2.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pitA'] ≠ expected pitfvyaH",
+    "spec": [
+     "chain",
+     "pitf",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['mAtA'] ≠ expected mAtulaH",
+    "spec": [
+     "chain",
+     "mAtf",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.2.38": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form BEkzam is right but 4.2.38 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "BikzA",
+     "",
+     "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "4.2.61": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kramaH'] ≠ expected kramakaH",
+    "spec": [
+     "chain",
+     "krama",
+     "",
+     "taddhita:taddhitArtha=aDyAyin|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.2.68": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "kuSAmba",
+     "",
+     "taddhita:taddhitArtha=nirvfta|strI:|sup:1,1"
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   }
+  ]
+ },
+ "4.2.81": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pAYYcAlaH', 'pAYcAlaH'] ≠ expected paYcAlAH",
+    "spec": [
+     "chain",
+     "paYcAla",
+     "",
+     "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.2.107": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form pOrvaSAlaH is right but 4.2.107 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "pUrvaSAlA",
+     "",
+     "taddhita:taddhitArtha=Bava|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "4.3.82": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form aSmamayam is right but 4.3.82 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "aSman",
+     "",
+     "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "4.4.41": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form DArmikaH is right but 4.4.41 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "Darma",
+     "",
+     "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,420 @@
+{
+ "5.1.115": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['brAhmaRaH', 'brAhmmaRaH'] ≠ expected brAhmaRavat",
+    "spec": [
+     "chain",
+     "brAhmaRa",
+     "",
+     "taddhita:taddhitArtha=tulya|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.1.116": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['maTurAH'] ≠ expected maTurAvat",
+    "spec": [
+     "chain",
+     "maTurA",
+     "",
+     "taddhita:taddhitArtha=iva|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.1.119": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "go",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "go",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,strIliṅga"
+    ]
+   }
+  ]
+ },
+ "5.1.123": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "Sukla",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.1.124": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "brAhmaRa",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.1.126": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "saKi",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.1.128": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "purohita",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.1.131": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "spec": [
+     "chain",
+     "Suci",
+     "",
+     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.2.23": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['hyOgoDoham', 'hyOgoDohamm', 'hyogoDohamayam', 'hyogoDohamayamm'] ≠ expected hEyaNgavInam",
+    "spec": [
+     "chain",
+     "hyogoDoha",
+     "",
+     "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.3.9": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pariH'] ≠ expected paritaH",
+    "spec": [
+     "chain",
+     "pari",
+     "",
+     "taddhita:taddhitArtha=dik|sup:1,1,pulliṅga"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['aBiH'] ≠ expected aBitaH",
+    "spec": [
+     "chain",
+     "aBi",
+     "",
+     "taddhita:taddhitArtha=dik|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.3.14": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['ayam', 'ayamm'] ≠ expected iha",
+    "spec": [
+     "chain",
+     "idam",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kaH'] ≠ expected kuha",
+    "spec": [
+     "chain",
+     "kim",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.3.16": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['idAnIm', 'idAnImm'] ≠ expected etarhi",
+    "spec": [
+     "chain",
+     "idam",
+     "",
+     "taddhita:taddhitArtha=kAle|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.3.56": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pacatitamaH'] ≠ expected pacatitarAm",
+    "spec": [
+     "chain",
+     "pacati",
+     "",
+     "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.3.60": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['praSassyatamaH', 'praSasyatamaH'] ≠ expected SreyAn",
+    "spec": [
+     "chain",
+     "praSasya",
+     "",
+     "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.3.68": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['paWudeSIyaH', 'paWudeSSyaH', 'paWudeSyaH', 'paWukalpaH', 'paWukalppaH'] ≠ expected bahupawuH",
+    "spec": [
+     "chain",
+     "paWu",
+     "",
+     "taddhita:taddhitArtha=IzadasamApti|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.11": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kyatamaH'] ≠ expected kiMtarAm",
+    "spec": [
+     "chain",
+     "kim",
+     "",
+     "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.42": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['bahuH'] ≠ expected bahuSaH",
+    "spec": [
+     "chain",
+     "bahu",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.50": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['SukklaH', 'SukkllaH', 'SuklaH'] ≠ expected SuklIBavati",
+    "spec": [
+     "chain",
+     "Sukla",
+     "",
+     "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.74": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['arDaH', 'ardDaH'] ≠ expected arDarcaH",
+    "spec": [
+     "chain",
+     "arDarc",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.107": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['upaSarad', 'upaSaradd', 'upaSaradt', 'upaSarat'] ≠ expected upaSaradam",
+    "spec": [
+     "chain",
+     "upaSarad",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,napuṃsaka"
+    ]
+   }
+  ]
+ },
+ "5.4.138": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['dvipAd', 'dvipAdd', 'dvipAdt', 'dvipAt'] ≠ expected dvipaH",
+    "spec": [
+     "chain",
+     "dvipAd",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.148": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['utkAkudaH', 'uttkAkudaH'] ≠ expected utkAkut",
+    "spec": [
+     "chain",
+     "utkAkuda",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vikAkudaH'] ≠ expected vikAkut",
+    "spec": [
+     "chain",
+     "vikAkuda",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ },
+ "5.4.150": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['suhfdayaH'] ≠ expected suhft",
+    "spec": [
+     "chain",
+     "suhfdaya",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['duhfdayaH'] ≠ expected durhft",
+    "spec": [
+     "chain",
+     "duhfdaya",
+     "",
+     "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+    ]
+   }
+  ]
+ }
+}

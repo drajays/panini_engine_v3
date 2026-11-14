@@ -186,10 +186,10 @@ def _derive(spec: tuple):
 
 def _derive_chain(spec: tuple):
     """("chain", stem_slp1, "lexical,tags", "stage|stage|sup:vib,vac[,linga]") — pipelines.chain stages (strI / taddhita / krt-free) ending in a sup;
-    stage = name[:k=v;k=v] (the vivakṣā). The sūtras the stem-stage loops applied are put on the final State's trace as APPLIED (the sup stage is a fresh State)."""
+    stage = name[:k=v;k=v] (the vivakṣā). The stem-stage loops' own traces are put in front of the final State's trace (the sup stage is a fresh State)."""
     from pipelines import chain
     st = chain.Stem(spec[1], frozenset(t for t in spec[2].split(",") if t))
-    fired: list[str] = []
+    fired: list[dict] = []
     res = None
     for stage in spec[3].split("|"):
         name, _, arg = stage.partition(":")
@@ -197,9 +197,14 @@ def _derive_chain(spec: tuple):
             a = arg.split(",")
             res = chain.sup(st, int(a[0]), int(a[1]), *a[2:3])
         else:
-            st = getattr(chain, name)(st, **dict(p.split("=", 1) for p in arg.split(";") if p))
-            fired += st.trace[-1][1]
-    res.trace = [{"sutra_id": s, "status": "APPLIED"} for s in fired] + list(res.trace)
+            kv = dict(p.split("=", 1) for p in arg.split(";") if p)
+            pick = {k[1:]: v == "1" for k, v in kv.items() if k.startswith("@")}       # "@4.1.44=1": take that vibhāṣā (0: decline it) — the stage loops do not fork under explore()
+            from engine import vikalpa
+            with vikalpa.choose(pick):
+                st = getattr(chain, name)(st, **{k: v for k, v in kv.items() if not k.startswith("@")})
+            from tools import autonomy_report
+            fired += [e for e in autonomy_report.LAST_RUN.state.trace if e.get("sutra_id")]     # the stage loop's own trace: APPLIED / BLOCKED / VIBHASHA-DECLINED as it happened
+    res.trace = fired + list(res.trace)
     return res
 
 

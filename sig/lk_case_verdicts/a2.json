@@ -60,6 +60,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -83,6 +84,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -147,7 +149,7 @@
      "[[\"kfzRa\", 2, 1], [\"Srita\", 1, 1]]",
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -158,7 +160,7 @@
      "[[\"grAma\", 2, 1], [\"gata\", 1, 1]]",
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -382,7 +384,7 @@
      "[[\"rAjan\", 6, 1], [\"puruza\", 1, 1]]",
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]

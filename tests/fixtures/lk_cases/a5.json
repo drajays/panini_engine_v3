@@ -3,270 +3,412 @@
   {
    "text": "brāhmaṇa + vati (tena tulyaṃ kriyā ced vatiḥ)",
    "expected_iast": "brāhmaṇavat",
-   "expected": null,
+   "expected": "brAhmaRavat",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "brAhmaRa",
+    "",
+    "taddhita:taddhitArtha=tulya|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.1.115 (exact word)"
   }
  ],
  "5.1.116": [
   {
    "text": "mathurā + vati (tatra tasyeva)",
    "expected_iast": "mathurāvat",
-   "expected": null,
+   "expected": "maTurAvat",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "maTurA",
+    "",
+    "taddhita:taddhitArtha=iva|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.1.116 (exact word)"
   }
  ],
  "5.1.119": [
   {
    "text": "go + tva + su (tasya bhāvaḥ)",
    "expected_iast": "gotvam",
-   "expected": null,
+   "expected": "gotvam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "go",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.119 (exact word)"
   },
   {
    "text": "go + tal + ṭāp + su (tasya bhāvaḥ)",
    "expected_iast": "gotā",
-   "expected": null,
+   "expected": "gotA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "go",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,strIliṅga"
+   ],
+   "source": "kaumudi 5.1.119 (exact word)"
   }
  ],
  "5.1.123": [
   {
    "text": "śukla + ṣyañ + su (varṇadṛḍhādibhyaḥ)",
    "expected_iast": "śauklyam",
-   "expected": null,
+   "expected": "SOklyam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "Sukla",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.123 (exact word)"
   }
  ],
  "5.1.124": [
   {
    "text": "brāhmaṇa + ṣyañ + su (karmaṇi ca)",
    "expected_iast": "brāhmaṇyam",
-   "expected": null,
+   "expected": "brAhmaRyam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "brAhmaRa",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.124 (exact word)"
   }
  ],
  "5.1.126": [
   {
    "text": "sakhi + ya + su (sakhyur yaḥ)",
    "expected_iast": "sakhyam",
-   "expected": null,
+   "expected": "saKyam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "saKi",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.126 (exact word)"
   }
  ],
  "5.1.128": [
   {
    "text": "purohita + yak + su",
    "expected_iast": "paurohityam",
-   "expected": null,
+   "expected": "pOrohityam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "purohita",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.128 (exact word)"
   }
  ],
  "5.1.131": [
   {
    "text": "śuci + aṇ + su (igantācca laghupūrvāt)",
    "expected_iast": "śaucam",
-   "expected": null,
+   "expected": "SOcam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "Suci",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 5.1.131 (exact word)"
   }
  ],
  "5.2.23": [
   {
    "text": "hyas + go + khañ + su (haiyaṅgavīna)",
    "expected_iast": "haiyaṅgavīnam",
-   "expected": null,
+   "expected": "hEyaNgavInam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "hyogoDoha",
+    "",
+    "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
+   ],
+   "source": "bhashya 5.2.23 (exact word)"
   }
  ],
  "5.3.9": [
   {
    "text": "pari + tasil (paryabhibhyāṃ ca)",
    "expected_iast": "paritaḥ",
-   "expected": null,
+   "expected": "paritaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "pari",
+    "",
+    "taddhita:taddhitArtha=dik|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.3.9 (exact word)"
   },
   {
    "text": "abhi + tasil (paryabhibhyāṃ ca)",
    "expected_iast": "abhitaḥ",
-   "expected": null,
+   "expected": "aBitaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "aBi",
+    "",
+    "taddhita:taddhitArtha=dik|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.3.9 (exact word)"
   }
  ],
  "5.3.14": [
   {
    "text": "idam + ha (itarābhyo'pi dṛśyante)",
    "expected_iast": "iha",
-   "expected": null,
+   "expected": "iha",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "idam",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "bhashya 5.3.14 (exact word)"
   },
   {
    "text": "kim + ha (itarābhyo'pi dṛśyante)",
    "expected_iast": "kuha",
-   "expected": null,
+   "expected": "kuha",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kim",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.3.13 (exact word) [neighbouring sutra]"
   }
  ],
  "5.3.16": [
   {
    "text": "idam + rhil (idamo rhil)",
    "expected_iast": "etarhi",
-   "expected": null,
+   "expected": "etarhi",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "idam",
+    "",
+    "taddhita:taddhitArtha=kAle|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.3.16 (exact word)"
   }
  ],
  "5.3.56": [
   {
    "text": "pacati + tarap + ām (tiṅaśca)",
    "expected_iast": "pacatitarām",
-   "expected": null,
+   "expected": "pacatitarAm",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "pacati",
+    "",
+    "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.3.57 (exact word) [neighbouring sutra]"
   }
  ],
  "5.3.60": [
   {
    "text": "praśasya + īyasun + su (śra-ādeśa)",
    "expected_iast": "śreyān",
-   "expected": null,
+   "expected": "SreyAn",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "praSasya",
+    "",
+    "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.3.60 (exact word)"
   }
  ],
  "5.3.68": [
   {
    "text": "paṭu + bahuc (purastāt)",
    "expected_iast": "bahupaṭuḥ",
-   "expected": null,
+   "expected": "bahupawuH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "paWu",
+    "",
+    "taddhita:taddhitArtha=IzadasamApti|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.3.68 (exact word)"
   }
  ],
  "5.4.11": [
   {
    "text": "kim + tarap + ām (kimettiṅavyayaghād ām)",
    "expected_iast": "kiṃtarām",
-   "expected": null,
+   "expected": "kiMtarAm",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kim",
+    "",
+    "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.4.11 (exact word)"
   }
  ],
  "5.4.42": [
   {
    "text": "bahu + śas (kārakād anyatarasyām)",
    "expected_iast": "bahuśaḥ",
-   "expected": null,
+   "expected": "bahuSaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "bahu",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.4.42 (exact word)"
   }
  ],
  "5.4.50": [
   {
    "text": "aśukla + cvi + bhū + laṭ (abhūtatadbhāve)",
    "expected_iast": "śuklībhavati",
-   "expected": null,
+   "expected": "SuklIBavati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "Sukla",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 5.4.50 (exact word)"
   }
  ],
  "5.4.74": [
   {
    "text": "ardha + ṛc + a (ṛkpūrabdhūḥpathām ānakṣe)",
    "expected_iast": "ardharcaḥ",
-   "expected": null,
+   "expected": "arDarcaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "arDarc",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.4.74 (exact word)"
   }
  ],
  "5.4.107": [
   {
    "text": "upa + śarad + ṭac (avyayībhāve śaratprabhṛtibhyaḥ)",
    "expected_iast": "upaśaradam",
-   "expected": null,
+   "expected": "upaSaradam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "upaSarad",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,napuṃsaka"
+   ],
+   "source": "kashika 5.4.107 (exact word)"
   }
  ],
  "5.4.138": [
   {
    "text": "dvi + pāda (bahuvrīhi, pādasya lopaḥ)",
    "expected_iast": "dvipaḥ",
-   "expected": null,
+   "expected": "dvipaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "dvipAd",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.4.140 (word dvipAt) [neighbouring sutra]"
   }
  ],
  "5.4.148": [
   {
    "text": "ud + kākuda + su (bahuvrīhi, antyalopa)",
    "expected_iast": "utkākut",
-   "expected": null,
+   "expected": "utkAkut",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "utkAkuda",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.4.148 (exact word)"
   },
   {
    "text": "vi + kākuda + su (bahuvrīhi, antyalopa)",
    "expected_iast": "vikākut",
-   "expected": null,
+   "expected": "vikAkut",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "vikAkuda",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 5.4.148 (exact word)"
   }
  ],
  "5.4.150": [
   {
    "text": "su + hṛdaya + su (mitre)",
    "expected_iast": "suhṛt",
-   "expected": null,
+   "expected": "suhft",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "suhfdaya",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": null,
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
   },
   {
    "text": "dus + hṛdaya + su (amitre)",
    "expected_iast": "durhṛt",
-   "expected": null,
+   "expected": "durhft",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "duhfdaya",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": null,
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
   }
  ]
 }

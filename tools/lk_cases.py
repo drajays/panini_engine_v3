@@ -96,7 +96,7 @@ def check(sid: str, c: dict, typ: str) -> dict:
         return {"result": "fail", "why": f"declined reading {c['expected']} is not produced at all (readings {sorted({s for s, _ in branches})})"}
     if kind == "excluded" and giving:
         return {"result": "fail", "why": f"excluded form {c['expected']} is produced"}
-    return {"result": "pass", "kind": kind or "untyped", "why": ""}
+    return {"result": "pass", "kind": kind or ("produced" if giving else "unproven"), "why": ""}     # produced: the form arises with the sūtra not applied · unproven: never produced, passes only vacuously
 
 
 def grade(rows: list[dict], cases: list[dict]) -> str:
@@ -104,7 +104,7 @@ def grade(rows: list[dict], cases: list[dict]) -> str:
     if any(r["result"] == "fail" for r in runs):
         return "FAIL"
     pos = [(r, c) for r, c in zip(rows, cases) if c["positive"] and r["result"] == "pass"]
-    neg = [r for r, c in zip(rows, cases) if not c["positive"] and r["result"] == "pass" and r.get("kind") in ("declined", "excluded")]   # an untyped negative is weak: it can pass by never being produced
+    neg = [r for r, c in zip(rows, cases) if not c["positive"] and r["result"] == "pass" and r.get("kind") in ("produced", "declined", "excluded")]   # an unproven negative (never produced, no declared kind) is weak
     if len(pos) >= 3 and len(neg) >= 2 and len({c["expected"] for _, c in pos}) >= 3 and all(c.get("source") for _, c in pos):
         return "confident"
     return "working" if pos else ("UNRUNNABLE" if not runs else "NO_POSITIVE")
@@ -115,17 +115,19 @@ def run_all(filters: list[str]) -> None:
     from engine import SUTRA_REGISTRY
     fx = load()
     OUTD.mkdir(exist_ok=True)
+    done: set = set()
     prev = {}
     for f in OUTD.glob("a*.json"):
         prev.update(json.loads(f.read_text(encoding="utf-8")))
     for sid in sorted(fx, key=_key):
         if filters and not any(sid == f or sid.startswith(f + ".") for f in filters):
             continue
+        done.add(sid)
         typ = SUTRA_REGISTRY[sid].sutra_type.name
         rows = [check(sid, c, typ) for c in fx[sid]]
         prev[sid] = {"grade": grade(rows, fx[sid]), "type": typ, "cases": rows}
         print(sid, prev[sid]["grade"], flush=True)
-    for a in {k.split(".")[0] for k in prev}:
+    for a in {k.split(".")[0] for k in done}:          # write only the adhyāyas this run touched: parallel runs per adhyāya never clobber each other
         (OUTD / f"a{a}.json").write_text(json.dumps({k: v for k, v in prev.items() if k.startswith(a + ".")}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 

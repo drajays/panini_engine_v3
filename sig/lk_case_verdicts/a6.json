@@ -31,6 +31,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    },
    {
@@ -43,15 +44,17 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -83,10 +86,12 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -106,11 +111,12 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "declined",
     "why": ""
    },
    {
@@ -124,15 +130,17 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -152,7 +160,7 @@
      3,
      2
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -166,7 +174,7 @@
      3,
      1
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -180,15 +188,17 @@
      3,
      3
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -211,6 +221,7 @@
    },
    {
     "result": "pass",
+    "kind": "declined",
     "why": ""
    },
    {
@@ -225,7 +236,7 @@
      2,
      "atmane"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -239,11 +250,12 @@
      1,
      2
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]

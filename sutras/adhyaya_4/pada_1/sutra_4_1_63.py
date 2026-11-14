@@ -15,7 +15,13 @@ from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 
 def _wanted(t) -> bool:
     """a jāti word not confined to the feminine and not ending in a vowel-ya cluster: the lexical fact lex:jAti (kukkuṭa, sūkara, brāhmaṇa)."""
-    return bool(t.varnas) and "upasarjana" not in t.tags and "lex:jAti" in t.tags
+    if not t.varnas or "upasarjana" in t.tags or "lex:jAti" not in t.tags:
+        return False
+    word = "".join(v.slp1 for v in t.varnas)
+    yopadha = len(t.varnas) >= 2 and t.varnas[-2].slp1 == "y"        # ayopadhāt: kṣatriyā, not kṣatriyī
+    return not yopadha or word in _YOPADHA_OK
+
+_YOPADHA_OK = frozenset({"haya", "gavaya", "mukaya", "matsya", "manuzya"})      # Kāśikā 4.1.63 vārttika: hayagavayamukayamatsyamanuṣyāṇām apratiṣedhaḥ
 
 def _site(state: State):
     return strI_site(state, _wanted)

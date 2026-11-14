@@ -3,386 +3,1057 @@
   {
    "text": "gārgya + ṅīp (yañaśca)",
    "expected_iast": "gārgī",
-   "expected": null,
+   "expected": "gArgI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "garga",
+    "",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|strI:|sup:1,1"
+   ],
+   "source": "ashtadhyayi.com derivation (4.1.16)"
+  },
+  {
+   "text": "vatsa+yaY+NIp = vAtsI (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vAtsI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vatsa",
+    "",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.16 (exact word)",
+   "added": true
+  },
+  {
+   "text": "aja+wAp: not yañanta, NIp absent",
+   "expected_iast": null,
+   "expected": "ajA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "aja",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "nyaas 4.1.17 (word ajAdAccApatye) [neighbouring sutra]",
+   "added": true
+  },
+  {
+   "text": "kuru+ṇya: not yañ, wAp",
+   "expected_iast": null,
+   "expected": "kOravyA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "kuru",
+    "",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.19 (word kOravyAyaRI) [neighbouring sutra]",
+   "added": true
   }
  ],
  "4.1.17": [
   {
    "text": "gārgya + ṣpha + ṅīṣ (prācāṃ ṣpha taddhitaḥ)",
    "expected_iast": "gārgyāyaṇī",
-   "expected": null,
+   "expected": "gArgyAyaRI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "gArgya",
+    "origin_pratyaya:yaY,origin_it:Y",
+    "strI:|sup:1,1"
+   ],
+   "source": "ashtadhyayi.com derivation (4.1.17)"
   }
  ],
  "4.1.20": [
   {
    "text": "kumāra + ṅīp (vayasi prathame)",
    "expected_iast": "kumārī",
-   "expected": null,
+   "expected": "kumArI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kumAra",
+    "lex:prathamavayas",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.20 (exact word)"
+  },
+  {
+   "text": "kizora (Kāśikā)",
+   "expected_iast": null,
+   "expected": "kizorI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kizora",
+    "lex:prathamavayas",
+    "strI:|sup:1,1"
+   ],
+   "source": null,
+   "added": true,
+   "disputed": "positive form not found in the sources"
+  },
+  {
+   "text": "barkara (Kāśikā)",
+   "expected_iast": null,
+   "expected": "barkarI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "barkara",
+    "lex:prathamavayas",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.20 (exact word)",
+   "added": true
+  },
+  {
+   "text": "kumāra without the first-age sense: wAp",
+   "expected_iast": null,
+   "expected": "kumArA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "kumAra",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "negative case: the sūtra's own condition (Kāśikā 4.1.20)",
+   "added": true
+  },
+  {
+   "text": "sthavira: not first age (prathama iti kim)",
+   "expected_iast": null,
+   "expected": "sTavirA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "sTavira",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.20 (exact word)",
+   "added": true
   }
  ],
  "4.1.21": [
   {
    "text": "triloka + ṅīp (dvigoḥ)",
    "expected_iast": "trilokī",
-   "expected": null,
+   "expected": "trilokI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "triloka",
+    "lex:dvigu",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.21 (exact word)"
+  },
+  {
+   "text": "paYcapUla (Kāśikā)",
+   "expected_iast": null,
+   "expected": "paYcapUlI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paYcapUla",
+    "lex:dvigu",
+    "strI:|sup:1,1"
+   ],
+   "source": "ashtadhyayi.com derivation (4.1.21)",
+   "added": true
+  },
+  {
+   "text": "daśapūla (Kāśikā)",
+   "expected_iast": null,
+   "expected": "daSapUlI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daSapUla",
+    "lex:dvigu",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.21 (exact word)",
+   "added": true
+  },
+  {
+   "text": "aja is not a dvigu",
+   "expected_iast": null,
+   "expected": "ajA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "aja",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.21 (word ajAditvAttriPalA)",
+   "added": true
+  },
+  {
+   "text": "kumāra is not a dvigu",
+   "expected_iast": null,
+   "expected": "kumArA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "kumAra",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "negative case: the sūtra's own condition (Kāśikā 4.1.21)",
+   "added": true
   }
  ],
  "4.1.39": [
   {
    "text": "śyeta + ṅīp (varṇād anudāttāt... n-ādeśa)",
    "expected_iast": "śyenī",
-   "expected": null,
+   "expected": "SyenI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "Sveta",
+    "lex:varRavacana",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.39 (exact word)"
   }
  ],
  "4.1.44": [
   {
    "text": "laghu + ṅīṣ (optional)",
    "expected_iast": "laghvī",
-   "expected": null,
+   "expected": "laGvI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "laGu",
+    "lex:guRavacana",
+    "strI:@4.1.44=1|sup:1,1"
+   ],
+   "source": null,
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
   },
   {
    "text": "laghu (without ṅīṣ)",
    "expected_iast": "laghuḥ",
-   "expected": null,
+   "expected": "laGuH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "laGu",
+    "lex:guRavacana",
+    "strI:@4.1.44=0|sup:1,1"
+   ],
+   "source": null,
+   "note": "owner case: the optional/declined reading — the sūtra must not apply in the branch that gives it",
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
+  },
+  {
+   "text": "paṭu (Kāśikā)",
+   "expected_iast": null,
+   "expected": "paWvI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "paWu",
+    "lex:guRavacana",
+    "strI:@4.1.44=1|sup:1,1"
+   ],
+   "source": null,
+   "added": true,
+   "disputed": "positive form not found in the sources"
+  },
+  {
+   "text": "mṛdu (Kāśikā)",
+   "expected_iast": null,
+   "expected": "mfdvI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mfdu",
+    "lex:guRavacana",
+    "strI:@4.1.44=1|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.44 (exact word)",
+   "added": true
+  },
+  {
+   "text": "paṭu, the vā declined (paṭuḥ)",
+   "expected_iast": null,
+   "expected": "paWuH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "paWu",
+    "lex:guRavacana",
+    "strI:@4.1.44=0|sup:1,1"
+   ],
+   "source": "negative case: the sūtra's own condition (Kāśikā 4.1.44)",
+   "added": true
   }
  ],
  "4.1.45": [
   {
    "text": "bahu + ṅīṣ (optional)",
    "expected_iast": "bahvī",
-   "expected": null,
+   "expected": "bahvI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "bahu",
+    "",
+    "strI:@4.1.45=1|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.45 (exact word)"
   },
   {
    "text": "bahu (without ṅīṣ)",
    "expected_iast": "bahuḥ",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "bahuH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "bahu",
+    "",
+    "strI:@4.1.45=0|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.45 (exact word)",
+   "note": "owner case: the optional/declined reading — the sūtra must not apply in the branch that gives it"
   }
  ],
  "4.1.48": [
   {
    "text": "gopa + ṅīṣ (puṃyogād ākhyāyām)",
    "expected_iast": "gopī",
-   "expected": null,
+   "expected": "gopI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "gopa",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.48 (exact word)"
+  },
+  {
+   "text": "gaṇaka (Kāśikā)",
+   "expected_iast": null,
+   "expected": "gaRakI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "gaRaka",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.48 (exact word)",
+   "added": true
+  },
+  {
+   "text": "mahāmātra (Kāśikā)",
+   "expected_iast": null,
+   "expected": "mahAmAtrI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mahAmAtra",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.48 (exact word)",
+   "added": true
+  },
+  {
+   "text": "devadatta: not puṃyoga (puṃyogāt kim)",
+   "expected_iast": null,
+   "expected": "devadattA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "devadatta",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.48 (exact word)",
+   "added": true
+  },
+  {
+   "text": "yajñadatta: not puṃyoga",
+   "expected_iast": null,
+   "expected": "yajYadattA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "yajYadatta",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.48 (exact word)",
+   "added": true
   }
  ],
  "4.1.49": [
   {
    "text": "indra + ānuk + ṅīṣ",
    "expected_iast": "indrāṇī",
-   "expected": null,
+   "expected": "indrARI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "indra",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.49 (exact word)"
   },
   {
    "text": "ācārya + ānuk + ṅīṣ",
    "expected_iast": "ācāryāṇī",
-   "expected": null,
+   "expected": "AcAryARI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "AcArya",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": null,
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
+  },
+  {
+   "text": "varuṇa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "varuRAnI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "varuRa",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "balamanorama 4.1.49 (exact word)",
+   "added": true
+  },
+  {
+   "text": "bhava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "BavAnI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Bava",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "balamanorama 4.1.49 (exact word)",
+   "added": true
+  },
+  {
+   "text": "hima in the sense of great snow (vārttika)",
+   "expected_iast": null,
+   "expected": "himAnI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "hima",
+    "lex:puMyoga,lex:mahattva",
+    "strI:|sup:1,1"
+   ],
+   "source": "bhashya 4.1.49 (exact word)",
+   "added": true
+  },
+  {
+   "text": "hima without mahattva: no Anuk",
+   "expected_iast": null,
+   "expected": "himA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "hima",
+    "lex:puMyoga",
+    "strI:|sup:1,1"
+   ],
+   "source": "vartika 4.1.49 (word himAraRyayormahattve)",
+   "added": true
   }
  ],
  "4.1.58": [
   {
    "text": "śūrpanakha + ṭāp (saṃjñāyām ṅīṣ blocked)",
    "expected_iast": "śūrpaṇakhā",
-   "expected": null,
+   "expected": "SUrpaRaKA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "SUrpanaKa",
+    "lex:saMjYA",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.58 (exact word)"
   },
   {
    "text": "śūrpanakha + ṅīṣ (erroneous ṅīṣ in saṃjñā)",
    "expected_iast": "śūrpaṇakhī",
-   "expected": null,
+   "expected": "SUrpaRaKI",
    "positive": false,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "SUrpanaKa",
+    "lex:saMjYA",
+    "strI:|sup:1,1"
+   ],
+   "source": "padamanjari 4.1.58 (word SUrpaRaKIti)",
+   "note": "owner case: the optional/declined reading — the sūtra must not apply in the branch that gives it"
   }
  ],
  "4.1.63": [
   {
    "text": "taṭa + ṅīṣ (jāter astrīviṣayāt)",
    "expected_iast": "taṭī",
-   "expected": null,
+   "expected": "tawI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "tawa",
+    "lex:jAti",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.63 (exact word)"
   },
   {
    "text": "kṣatriya + ṭāp (yopadhā blocks ṅīṣ)",
    "expected_iast": "kṣatriyā",
-   "expected": null,
+   "expected": "kzatriyA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kzatriya",
+    "lex:jAti",
+    "strI:|sup:1,1"
+   ],
+   "source": "bhashya 4.1.63 (exact word)"
+  },
+  {
+   "text": "kukkuṭa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "kukkuwI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kukkuwa",
+    "lex:jAti",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.63 (exact word)",
+   "added": true
+  },
+  {
+   "text": "sūkara (Kāśikā)",
+   "expected_iast": null,
+   "expected": "sUkarI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sUkara",
+    "lex:jAti",
+    "strI:|sup:1,1"
+   ],
+   "source": "kashika 4.1.63 (exact word)",
+   "added": true
+  },
+  {
+   "text": "muṇḍa is not jāti (jāteḥ kim)",
+   "expected_iast": null,
+   "expected": "muRqA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "muRqa",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.63 (exact word)",
+   "added": true
   }
  ],
  "4.1.65": [
   {
    "text": "dākṣi + ṅīṣ (itaḥ manuṣyajāteḥ)",
    "expected_iast": "dākṣī",
-   "expected": null,
+   "expected": "dAkzI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "dAkzi",
+    "",
+    "strI:jAtiBeda=manuzyajAti|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.65 (exact word)"
+  },
+  {
+   "text": "plākṣi (Kāśikā)",
+   "expected_iast": null,
+   "expected": "plAkzI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "plAkzi",
+    "",
+    "strI:jAtiBeda=manuzyajAti|sup:1,1"
+   ],
+   "source": "kashika 4.1.65 (exact word)",
+   "added": true
+  },
+  {
+   "text": "dākṣi without manuṣyajāti vivakṣā",
+   "expected_iast": null,
+   "expected": "dAkziH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "dAkzi",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "negative case: the sūtra's own condition (Kāśikā 4.1.65)",
+   "added": true
+  },
+  {
+   "text": "tittiri not manuṣyajāti",
+   "expected_iast": null,
+   "expected": "tittiriH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "tittiri",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.65 (exact word)",
+   "added": true
   }
  ],
  "4.1.68": [
   {
    "text": "paṅgu + ūṅ",
    "expected_iast": "paṅgū",
-   "expected": null,
+   "expected": "paNgUH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "paNgu",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.68 (exact word)"
+  },
+  {
+   "text": "bahu: not paṅgu",
+   "expected_iast": null,
+   "expected": "bahuH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "bahu",
+    "",
+    "strI:@4.1.45=0|sup:1,1"
+   ],
+   "source": "balamanorama 4.1.69 (word bahuvrIhiH) [neighbouring sutra]",
+   "added": true
   }
  ],
  "4.1.70": [
   {
    "text": "vāma + ūru + ūṅ",
    "expected_iast": "vāmoru",
-   "expected": null,
+   "expected": "vAmorUH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "vAmaUru",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.70 (exact word)"
+  },
+  {
+   "text": "saṃhitorū (Kāśikā)",
+   "expected_iast": null,
+   "expected": "saMhitorUH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMhitaUru",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.70 (exact word)",
+   "added": true
+  },
+  {
+   "text": "śaphorū (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SaPorUH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SaPaUru",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.70 (exact word)",
+   "added": true
+  },
+  {
+   "text": "lakṣaṇorū (Kāśikā)",
+   "expected_iast": null,
+   "expected": "lakzaRorUH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "lakzaRaUru",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.70 (exact word)",
+   "added": true
+  },
+  {
+   "text": "paṅgu: not Uru-uttarapada",
+   "expected_iast": null,
+   "expected": "paNgUH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "paNgu",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.1.68 (exact word) [neighbouring sutra]",
+   "added": true
   }
  ],
  "4.1.87": [
   {
    "text": "strī + nañ + su (bhavanāt)",
    "expected_iast": "straiṇam",
-   "expected": null,
+   "expected": "strERam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "strI",
+    "",
+    "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+   ],
+   "source": "bhashya 4.1.87 (exact word)"
   },
   {
    "text": "puṃs + snañ + su",
    "expected_iast": "pauṃsnam",
-   "expected": null,
+   "expected": "pOMsnam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "puMs",
+    "",
+    "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+   ],
+   "source": "bhashya 4.1.87 (exact word)"
   }
  ],
  "4.1.93": [
   {
    "text": "garga + yañ + su (eko gotre)",
    "expected_iast": "gārgyaḥ",
-   "expected": null,
+   "expected": "gArgyaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "garga",
+    "",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.93 (exact word)"
   }
  ],
  "4.1.94": [
   {
    "text": "gārgya + phak + su (gotrād yūny astriyām)",
    "expected_iast": "gārgyāyaṇaḥ",
-   "expected": null,
+   "expected": "gArgyAyaRaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "gArgya",
+    "origin_pratyaya:yaY,origin_it:Y",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=yuvan|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.94 (exact word)"
   }
  ],
  "4.1.114": [
   {
    "text": "vasiṣṭha + aṇ + su (ṛṣyandhaka...)",
    "expected_iast": "vāsiṣṭhaḥ",
-   "expected": null,
+   "expected": "vAsizWaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "vasizWa",
+    "lex:fzi",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "bhashya 4.1.114 (exact word)"
   }
  ],
  "4.1.115": [
   {
    "text": "dvimātṛ + aṇ + su (mātur ut)",
    "expected_iast": "dvaimāturaḥ",
-   "expected": null,
+   "expected": "dvEmAturaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "dvimAtf",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.115 (exact word)"
   }
  ],
  "4.1.116": [
   {
    "text": "kanyā + aṇ + su (kanīna-ādeśa)",
    "expected_iast": "kānīnaḥ",
-   "expected": null,
+   "expected": "kAnInaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kanyA",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 4.1.116 (exact word)"
   }
  ],
  "4.1.168": [
   {
    "text": "pañcāla + añ + su (janapada-kṣatriya)",
    "expected_iast": "pāñcālaḥ",
-   "expected": null,
+   "expected": "pAYcAlaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "paYcAla",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.168 (exact word)"
   }
  ],
  "4.1.172": [
   {
    "text": "kuru + ṇya + su",
    "expected_iast": "kauravyaḥ",
-   "expected": null,
+   "expected": "kOravyaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kuru",
+    "",
+    "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.172 (exact word)"
   }
  ],
  "4.1.175": [
   {
    "text": "kamboja + añ + luk (kambojāl luk)",
    "expected_iast": "kambojaḥ",
-   "expected": null,
+   "expected": "kambojaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kamboja",
+    "lex:janapadakzatriya",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.1.175 (exact word)"
   }
  ],
  "4.2.7": [
   {
    "text": "kali + aṇ + su (dṛṣṭaṃ sāma)",
    "expected_iast": "kāleyam",
-   "expected": null,
+   "expected": "kAleyam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kali",
+    "",
+    "taddhita:taddhitArtha=dfzwa|sup:1,1,napuṃsaka"
+   ],
+   "source": "bhashya 4.2.7 (exact word)"
   }
  ],
  "4.2.16": [
   {
    "text": "bhrāṣṭra + aṇ + Jas (saṃskṛtaṃ bhakṣāḥ)",
    "expected_iast": "bhrāṣṭrāḥ",
-   "expected": null,
+   "expected": "BrAzwrAH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "BrAzwra",
+    "",
+    "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 4.2.16 (word BrAzwrA)"
   }
  ],
  "4.2.36": [
   {
    "text": "pitṛ + vyat + su (pitṛvya)",
    "expected_iast": "pitṛvyaḥ",
-   "expected": null,
+   "expected": "pitfvyaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "pitf",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "bhashya 4.2.36 (exact word)"
   },
   {
    "text": "mātṛ + ḍulac + su (mātula)",
    "expected_iast": "mātulaḥ",
-   "expected": null,
+   "expected": "mAtulaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "mAtf",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,pulliṅga"
+   ],
+   "source": "bhashya 4.2.36 (exact word)"
   }
  ],
  "4.2.38": [
   {
    "text": "bhikṣā + aṇ + su (samūhe)",
    "expected_iast": "bhaikṣam",
-   "expected": null,
+   "expected": "BEkzam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "BikzA",
+    "",
+    "taddhita:taddhitArtha=samUha|sup:1,1,napuṃsaka"
+   ],
+   "source": "kaumudi 4.2.38 (exact word)"
   }
  ],
  "4.2.61": [
   {
    "text": "krama + vun + su (tad adhīte tad veda)",
    "expected_iast": "kramakaḥ",
-   "expected": null,
+   "expected": "kramakaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "krama",
+    "",
+    "taddhita:taddhitArtha=aDyAyin|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.2.61 (exact word)"
   }
  ],
  "4.2.68": [
   {
    "text": "kuśāmba + aṇ + ṅīp (tena nirvṛttam)",
    "expected_iast": "kauśāmbī",
-   "expected": null,
+   "expected": "kOSAmbI",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "kuSAmba",
+    "",
+    "taddhita:taddhitArtha=nirvfta|strI:|sup:1,1"
+   ],
+   "source": "kaumudi 4.2.68 (exact word)"
   }
  ],
  "4.2.81": [
   {
    "text": "pañcāla + lup + Jas (janapade lup)",
    "expected_iast": "pañcālāḥ",
-   "expected": null,
+   "expected": "paYcAlAH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "paYcAla",
+    "",
+    "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
+   ],
+   "source": "kashika 4.2.81 (exact word)"
   }
  ],
  "4.2.107": [
   {
    "text": "pūrvaśālā + ña + su (dikpūrvapadād asaṃjñāyāṃ ñaḥ)",
    "expected_iast": "paurvaśālaḥ",
-   "expected": null,
+   "expected": "pOrvaSAlaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "pUrvaSAlA",
+    "",
+    "taddhita:taddhitArtha=Bava|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.2.107 (exact word)"
   }
  ],
  "4.3.82": [
   {
    "text": "aśman + mayaṭ + su (mayaṭ ca)",
    "expected_iast": "aśmamayam",
-   "expected": null,
+   "expected": "aSmamayam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "aSman",
+    "",
+    "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
+   ],
+   "source": null,
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
   }
  ],
  "4.4.41": [
   {
    "text": "dharma + ṭhak + su (dharmaṃ carati)",
    "expected_iast": "dhārmikaḥ",
-   "expected": null,
+   "expected": "DArmikaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "chain",
+    "Darma",
+    "",
+    "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
+   ],
+   "source": "kaumudi 4.4.41 (exact word)"
   }
  ]
 }

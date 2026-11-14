@@ -47,10 +47,12 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -119,10 +121,12 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -143,7 +147,7 @@
      1,
      "{\"upasargas\": [\"pari\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -158,7 +162,7 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -173,11 +177,12 @@
      1,
      "{\"upasargas\": [\"ava\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -185,10 +190,12 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -209,7 +216,7 @@
      1,
      "{\"upasargas\": [\"sam\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -224,7 +231,7 @@
      1,
      "{\"upasargas\": [\"ava\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -239,7 +246,7 @@
      1,
      "{\"upasargas\": [\"pra\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -254,11 +261,12 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -266,10 +274,12 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -314,7 +324,7 @@
      3,
      "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vadArTa\": \"vimati\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -329,11 +339,12 @@
      1,
      "{\"upasargas\": [\"upa\"], \"vivaksha\": {\"vadArTa\": \"upamantraRa\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -351,7 +362,7 @@
      1,
      "{\"vivaksha\": {\"vadArTa\": \"BAsana\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -414,11 +425,12 @@
      1,
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -436,7 +448,7 @@
      2,
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -451,11 +463,12 @@
      3,
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -485,7 +498,7 @@
      1,
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -503,7 +516,7 @@
      1,
      "{}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -554,11 +567,12 @@
      1,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -576,7 +590,7 @@
      2,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -591,7 +605,7 @@
      3,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    }
   ]
@@ -624,7 +638,7 @@
      1,
      "{\"upasargas\": [\"anu\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -639,7 +653,7 @@
      1,
      "{\"upasargas\": [\"parA\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -647,10 +661,12 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -671,7 +687,7 @@
      1,
      "{\"upasargas\": [\"pari\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -679,6 +695,7 @@
    },
    {
     "result": "pass",
+    "kind": "unproven",
     "why": ""
    }
   ]
@@ -699,7 +716,7 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -714,7 +731,7 @@
      1,
      "{\"upasargas\": [\"A\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -729,11 +746,12 @@
      1,
      "{\"upasargas\": [\"pari\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
@@ -741,6 +759,7 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
@@ -761,7 +780,7 @@
      1,
      "{\"upasargas\": [\"upa\"]}"
     ],
-    "mutation": "redundant",
+    "mutation": "indeterminate",
     "replaced_by": []
    },
    {
@@ -769,10 +788,12 @@
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    },
    {
     "result": "pass",
+    "kind": "produced",
     "why": ""
    }
   ]
