@@ -15,8 +15,9 @@ const Prakriya = (() => {
   const STATUS = {APPLIED: ["प्रयुक्तम्", "applied"], APPLIED_VACUOUS: ["शून्यप्रयुक्तम्", "applied, no change"], AUDIT: ["निरीक्षितम्", "checked"],
     BLOCKED: ["निवारितम्", "blocked"], SKIPPED: ["अतिक्रान्तम्", "not applicable"], DEFINED: ["परिभाषितम्", "defined"], VACUOUS: ["शून्यम्", "no effect"],
     DECLINED: ["विकल्पेन न", "optional, declined"]};
+  const devOf = slp => String(slp || "").split("~").map((c, k, a) => (c ? Transliterate.fromSLP1(c, "devanagari") : "") + (k < a.length - 1 ? "ँ" : "")).join("");  // anunāsika ~ → ँ
   const fmt = (slp, dev) => pref.script === "slp1" ? slp : pref.script === "iast" ? Transliterate.fromSLP1(slp, "iast")
-    : pref.script === "varna" ? Transliterate.slp1ToVarnas(slp) : (dev || Transliterate.fromSLP1(slp, "devanagari"));   // varna: vyañjana with halanta, svara apart
+    : pref.script === "varna" ? Transliterate.slp1ToVarnas(slp) : (dev || devOf(slp));   // varna: vyañjana with halanta, svara apart
   let LK = null;                                                 // Laghukaumudī sūtra ids, fetched once
   const lk = () => { if (!LK) { LK = new Set(); fetch("/api/lk-sutras").then(r => r.json()).then(a => { LK = new Set(a); window.dispatchEvent(new Event("prakriya-change")); }).catch(() => {}); } return LK; };
 
@@ -100,6 +101,26 @@ const Prakriya = (() => {
     return `<span class="pk-note">${runs.slice(0, 3).map(r => r.del.length && r.ins.length ? `<span class="pk-del">${esc(v(r.del))}</span> ⇒ <span class="pk-ins">${esc(v(r.ins))}</span> <i>स्थानी → आदेशः</i>`
       : r.ins.length ? `+ <span class="pk-ins">${esc(v(r.ins))}</span> <i>${INS[r.role] || "योजनम्"}</i>` : `<span class="pk-del">${esc(v(r.del))}</span> ⇒ ∅ <i>लोपः</i>`).join(" · ")}</span>`;
   }
+  /* 1.3.9's own record: "तिप् — प् → पित् (१.३.३)" → chips upadeśa | letter → class (sūtra) */
+  const itParse = s => {
+    const m = String(s.why_now_dev || "").match(/\):\s*(.+?)\s+—\s+(.+?)।/);
+    if (!m) return null;
+    const items = m[2].split(/,\s*/).map(x => { const k = x.match(/^(.+?)\s*→\s*(.+?)\s*\((.+?)\)$/); return k ? {letter: k[1], name: k[2], sutra: k[3]} : {letter: x, name: "", sutra: ""}; });
+    return {upadesha: m[1], items};
+  };
+  function itChips(s) {
+    const r = itParse(s); if (!r) return "";
+    return `<div class="pk-itrec"><span class="pk-sj">उपदेशः <b>${esc(r.upadesha)}</b></span>${r.items.map(x =>
+      `<span class="pk-itx"><span class="pk-v pk-del">${esc(x.letter)}</span> ${x.name ? `→ <b>${esc(x.name)}</b>` : ""} ${x.sutra ? `<small>(${esc(x.sutra)})</small>` : ""}</span>`).join("")}</div>`;
+  }
+  function itLedger(t) {
+    const rows = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
+    if (!rows.length) return "";
+    return `<details class="pk-ledger"${pref.depth === "beginner" ? "" : " open"}><summary>इत्संज्ञा-कोशः — ${rows.length} ${pref.gloss === "en" ? "upadeśas with it-letters in this derivation" : "उपदेशाः"}</summary>
+      <table class="pk-ledger-t"><tr><th>उपदेशः</th><th>इत्-वर्णाः → संज्ञा (सूत्रम्)</th><th>लोपः</th></tr>${rows.map(({i, r}) =>
+        `<tr><td class="dev"><b>${esc(r.upadesha)}</b></td><td>${r.items.map(x => `${esc(x.letter)} → <b>${esc(x.name)}</b> <small>${esc(x.sutra)}</small>`).join(" · ")}</td><td><a href="#s-${i + 1}">${i + 1}</a></td></tr>`).join("")}</table></details>`;
+  }
+
   /* a saṃjñā step: which part the name falls on */
   function samjnaChip(s, parts) {
     const m = SAMJNA[s.sutra_id]; if (!m && s.sutra_type !== "SAMJNA") return "";
@@ -116,14 +137,14 @@ const Prakriya = (() => {
   function rowsFor(t) {
     const all = t.map((s, i) => ({s, i}));
     if (pref.depth === "shastriya") return all;
-    if (pref.depth === "beginner") return all.filter(({s}) => milestone(s));
     const out = []; let grp = null;
     for (const r of all) {
       if (!applied(r.s)) continue;
+      if (pref.depth === "beginner" && !isIt(r.s)) { grp = null; if (milestone(r.s)) out.push(r); continue; }
       if (isIt(r.s)) { if (!grp) { grp = {s: r.s, i: r.i, group: []}; out.push(grp); } grp.group.push(r.s); continue; }
       grp = null; out.push(r);
     }
-    return out;
+    return pref.depth === "beginner" ? out.filter(r => !r.group || r.group.some(x => x.sutra_id === "1.3.9" && changes(x))) : out;
   }
 
   function gloss(s) {
@@ -137,9 +158,16 @@ const Prakriya = (() => {
   function row({s, i, group}, ctx) {
     const st = STATUS[s.status] || [s.status, s.status], id = "s-" + (i + 1), deep = pref.depth === "shastriya";
     const star = lk().has(s.sutra_id) && pref.depth !== "beginner" ? `<span class="pk-lk" title="Laghukaumudī sūtra">★</span>` : "";
-    if (group) return `<li class="pk-step pk-applied" id="${id}"><a class="pk-no" href="#${id}">${i + 1}</a><div class="pk-main">
-      <div><b class="dev">इत्संज्ञा-लोपः</b> <span class="pk-tag">1.3.2–1.3.9</span> <span class="muted">${group.length} steps</span></div>
-      <div class="pk-gloss">${esc(pref.gloss === "en" ? "markers (it) are named and removed from the affix and root" : "उपदेशे इत्-वर्णानां संज्ञा लोपश्च")}</div></div></li>`;
+    if (group) {
+      const lopa = [...group].reverse().find(x => x.sutra_id === "1.3.9" && changes(x));
+      const li = lopa ? ctx.t.indexOf(lopa) : -1;
+      const named = [...new Set(group.filter(x => x.sutra_id !== "1.3.9").map(x => x.sutra_id))];
+      return `<li class="pk-step pk-applied pk-itgrp" id="${id}"><a class="pk-no" href="#${id}">${i + 1}</a><div class="pk-main">
+      <div><b class="dev">इत्संज्ञा-लोपः</b> <span class="pk-tag">${named.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(" · ") || "1.3.2–1.3.8"} → <a href="/sutra/1.3.9">1.3.9</a></span>
+        ${lopa ? `<span class="pk-form pk-fx dev" data-i="${li}" title="क्लिक् — संहितम् ↔ वर्णविभागः">${formHtml(lopa, ctx.pb[li], ctx.pa[li] || ctx.pb[li], pref.split !== ctx.open.has(li))}</span>` : ""}</div>
+      ${lopa ? itChips(lopa) : ""}
+      <div class="pk-gloss">${esc(pref.gloss === "en" ? "it-letters of the upadeśa are named (1.3.2–1.3.8) and removed (1.3.9); the record (kit, ṅit, pit …) stays for later rules" : "उपदेशे इत्-वर्णानां संज्ञा (१.३.२–१.३.८), तस्य लोपः (१.३.९); इत्-अभिलेखः (कित्, ङित्, पित् …) परसूत्रेभ्यः स्थिरः")}</div></div></li>`;
+    }
     const why = s.status === "BLOCKED" ? s.gate_reason : s.status === "SKIPPED" ? s.skip_reason : "";
     const sch = deep ? `
       <div class="pk-sch">${s._sutra_text_dev ? `<span class="dev">${esc(s._sutra_text_dev)}</span>` : ""}
@@ -174,7 +202,7 @@ const Prakriya = (() => {
     const t = d.trace || [], L = t[t.length - 1];
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
     const sel = (id, opts, v) => `<select id="${id}">${opts.map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${l}</option>`).join("")}</select>`;
-    const ctx = {pb: [], pa: [], open: new Set()};
+    const ctx = {pb: [], pa: [], open: new Set(), t};
     let last = null;                                              // parts of the tape before each step, after each applied step
     t.forEach((s, i) => { const p = parseParts(s.parts);
       ctx.pb[i] = last && joined(last) === String(s.form_before || "").replace(/\s/g, "") ? last : null;
@@ -189,7 +217,7 @@ const Prakriya = (() => {
       <label>वर्णाः ${sel("pk-split", [["0", "संहितम् · merged (राम)"], ["1", "विभक्तम् · split (र् आ म् अ)"]], pref.split ? "1" : "0")}</label>
       <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
-      <div class="pk-legend"></div><p class="muted pk-count"></p><ol class="pk-list"></ol>
+      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
         <div class="pk-inspect-out" aria-live="polite"></div></div>`;
     const q = s => el.querySelector(s);
@@ -200,6 +228,7 @@ const Prakriya = (() => {
       const rows = rowsFor(t);
       q(".pk-list").innerHTML = rows.map(r => row(r, ctx)).join("") || "<li class='muted'>—</li>";
       q(".pk-legend").innerHTML = legend();
+      q(".pk-ledger-box").innerHTML = itLedger(t);
       q(".pk-count").textContent = pref.depth === "beginner" ? `${rows.length} milestones (of ${t.length} rule checks). Choose Kaumudī or Śāstrīya for more.`
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
       q(".pk-result").innerHTML = `${esc(d.title || "")} ${d.surface ? `→ <b>${esc(fmt(d.surface.slp1, d.surface.dev))}</b>` : ""}`;

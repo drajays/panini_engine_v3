@@ -735,5 +735,19 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794626966.3408818
+ },
+ {
+  "id": "it-visual",
+  "agent": "cursor",
+  "scope": [
+   "webui/static/prakriya.js",
+   "webui/static/style.css",
+   "docs/IT_PRAKARANA_EVERYWHERE.md",
+   "docs/HANDOVER_ABHYASA.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794628525.755479
  }
 ]

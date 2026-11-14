@@ -1405,3 +1405,8 @@ table.matrix td.cell-fixed::after {
 .pk-legend .pk-part{padding:0 .4em}
 .pk-letter[class*="pk-r-"]{border-bottom-width:3px}
 @media print{.pk-part,.pk-v{background:none!important}}
+.pk-itgrp{background:#fbf8ef}
+.pk-itrec{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.25rem 0;font-family:var(--dev)}
+.pk-itx{font-size:14px}
+.pk-ledger{margin:.4rem 0;font-size:13px}.pk-ledger summary{cursor:pointer;color:var(--accent)}
+.pk-ledger-t{border-collapse:collapse;margin-top:.3rem}.pk-ledger-t td,.pk-ledger-t th{border:1px solid var(--line-soft);padding:.15rem .5rem;text-align:left}

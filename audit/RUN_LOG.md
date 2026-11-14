@@ -245,6 +245,16 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-11-14 10:10  [cursor]  It-saṃjñā made visible everywhere; engine plan for it-prakaraṇa on every āgama / ādeśa
+
+Owner: 1.3.2–1.3.9 must name and delete it-letters every time a pratyaya / āgama / ādeśa enters, with a register later
+sūtras use, and every change must be visible (recurring ones summarised). Display (prakriya.js): each इत्संज्ञा-लोपः group
+shows the upadeśa, it-letter → class (sūtra) and the struck letters, also in the Beginner view; "इत्संज्ञा-कोशः" table per
+derivation; anunāsika ~ rendered ँ. Engine audit + design: **docs/IT_PRAKARANA_EVERYWHERE.md** — ~20 āgama sūtras splice
+bare letters (नुट् 7.1.54, इट् 7.2.35 …), 6.4.88 / 7.1.52 pre-tag their own its, वुक्'s उच्चारणार्थ उ is recorded as "इत् (1.3.3)",
+records vanish at pada merge. Proposed: utter as taught → 1.3.x judge → 1.3.9 record (+ state ledger) → 1.1.46/47 place.
+Awaiting owner: who runs the migration (touches 1.1.46, 1.3.x).
+
 ### 2026-11-14 09:20  [cursor]  Prakriyā visuals: coloured parts, merged ↔ split varṇas on click, target and change marked
 
 Owner: show the sub-parts (pada, abhyāsa, aṅga, saṃjñā …) by colour, dissect Devanāgarī into varṇas (र् आ म् अ = राम), mark which
