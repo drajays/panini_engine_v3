@@ -133,3 +133,20 @@ san (3.1.5-7) recipe, laṭ only · yaṅ 3.1.22 recipe (loluv/popuv/yAyAvar), l
 - **G5 anukaraṇa + nipāta + upasarga entries** (1.1.68) so any word can enter the machine.
 - **G6 subanta-as-base** (sup kept) for nāmadhātu / taddhita / samāsa.
 - **G7 completeness gate**: for each type above a gold list of (derivation path, form, licensing sūtra); a type with no gold list is "unclaimed", never "done".
+
+## 10. The 13-box prakriyā-paddhati chart — critical reading (2026-11-14)
+Source read directly: `~/vyakaran to be done/प्रक्रियापद्धति_ - Flow Chart.pdf` (1 page). Its boxes match brain `graph/machine_l0_l2.json` L2_process s1–s13 exactly: direct ādeśa? → it-lopa → āgama? → it-lopa → ādeśa? → it-lopa → āgama? (2nd) → it-lopa → āgama-kārya → pratyaya-nirmāṇa → pratyaya-nimittaka kārya → ac-sandhi kārya → tripāḍī kārya → done. (Four diamonds each followed by "do X" are folded into one box each in the 13 count.)
+
+**What it is.** A teaching order for what to do *after one pratyaya is attached* (Pushpa's dhātvadhikārīya prakriyā). Good as an *expected-order invariant*; not proven as an execution model.
+
+**Problems with using it as "the driver" (as pasted):**
+1. **Two axes mixed.** Boxes 1–9 are classified by *kind of operation* (ādeśa / āgama / it-lopa); boxes 11–13 are classified by *prakaraṇa* (aṅga-kārya, saṃhitā, tripāḍī). A sūtra's box is therefore a derived label (sūtra_type + position), not "the sūtras of that prakaraṇa". The pasted line "activate only the sūtras of that stage's prakaraṇa" does not type-check. Plan §L3 already says blocks come from adhikāra heads and `cond()` is final; keep that, treat the boxes as an *ordering/eligibility hint*.
+2. **Per pratyaya, not per word.** One tiṅanta passes the chart several times (ṇic, san, vikaraṇa, tiṅ…); the chart does not say whether kārya of an inner pratyaya runs before the next pratyaya attaches or after all attach (W4: aṅga per pratyaya). Needs its own card; sanādi stacking (G1) is the test.
+3. **Pratyaya-only.** No sup/taddhita/samāsa/strī paths, no vikalpa fork, no L1 cycle re-entry, no sthānivat/atideśa, no vipratiṣedha/antaraṅga inside a box. Art. 21 still decides *within* a box.
+4. **Box 10 pratyaya-nirmāṇa is undefined** in the chart (formation of the pratyaya's final shape?) — card needed before code.
+5. Brain note stays true: mapping of Pushpa's "13 sopāna" to these 13 boxes is a **hypothesis** until card C-13.
+6. The pasted claim "PDF text extracted" is not what happened (pdftotext failed; the list came from the brain JSON). Now checked against the PDF itself: boxes agree.
+
+**Adopt / adapt / reject.** Adopt as the *glass-box stage label* of every trace step and as an order invariant. Adapt: label sūtras by (kind, prakaraṇa) → box; the stage never picks the winner. Reject: stage as sole scheduler, or a block fires without `cond()` / `apply_rule`.
+
+**P4a (new, before any scheduler change, no behaviour change):** a *stage-monotonicity audit* — map each applied sūtra in the 364 shipped derivations to a box, per pratyaya pass, and report every out-of-order step with its sūtra pair and Art. 21 reason (vipratiṣedha, antaraṅga, siddha/asiddha). Expected violations are the evidence for what the chart omits; zero-violation boxes are safe to enforce. Output: `docs/STAGE_AUDIT.md`, cards C-13 / C-L2-1…13 updated from it.
