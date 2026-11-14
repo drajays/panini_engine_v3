@@ -6,7 +6,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: vyavasthā/saṃjñā vivakṣā for pūrva etc. is not an input of subanta derive(); the rule is tag-driven (docs/OPEN_FAILURES.md 1.1.34)"
   },
   {
    "text": "pūrva + Jas (vyavasthā, non-saṃjñā, optional non-sarvanāman)",
@@ -14,7 +15,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: vyavasthā/saṃjñā vivakṣā for pūrva etc. is not an input of subanta derive(); the rule is tag-driven (docs/OPEN_FAILURES.md 1.1.34)"
   },
   {
    "text": "uttara + Jas (vyavasthā, non-saṃjñā, sarvanāman)",
@@ -22,7 +24,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: vyavasthā/saṃjñā vivakṣā for pūrva etc. is not an input of subanta derive(); the rule is tag-driven (docs/OPEN_FAILURES.md 1.1.34)"
   },
   {
    "text": "uttara + Jas (saṃjñā / non-vyavasthā, sarvanāman blocked)",
@@ -30,41 +33,67 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: vyavasthā/saṃjñā vivakṣā for pūrva etc. is not an input of subanta derive(); the rule is tag-driven (docs/OPEN_FAILURES.md 1.1.34)"
   }
  ],
  "1.1.59": [
   {
    "text": "kṛ + liṭ + atus (yaṇ ac-ādeśa sthānivat for dvirvacana)",
    "expected_iast": "cakratuḥ",
-   "expected": null,
+   "expected": "cakratuH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "liT",
+    "kartari",
+    3,
+    2,
+    "{}"
+   ],
+   "source": "Kāśikā 1.1.59 (cakratuḥ: yaṇ sthānivat, dvirvacana)"
   },
   {
    "text": "dā + liṭ + atus (ā-lopa ac-ādeśa sthānivat for dvirvacana)",
    "expected_iast": "dadatuḥ",
-   "expected": null,
+   "expected": "dadatuH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1079",
+    "liT",
+    "kartari",
+    3,
+    2,
+    "{}"
+   ],
+   "source": "Kāśikā 1.1.59 (dadatuḥ)"
   },
   {
    "text": "pat + liṭ + atus (a-lopa ac-ādeśa sthānivat)",
    "expected_iast": "petatuḥ",
-   "expected": null,
+   "expected": "petatuH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0979",
+    "liT",
+    "kartari",
+    3,
+    2,
+    "{}"
+   ],
+   "source": "Kāśikā 1.1.59 (petatuḥ)"
   },
   {
    "text": "kṛ + liṭ + atus (erroneous reduplication of yaṇ)",
    "expected_iast": "carkratuḥ",
-   "expected": null,
+   "expected": "carkratuH",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's carkratuḥ is the wrong form (no sthānivat); an engine negative needs a context where 1.1.59 must not act: none sourced"
   }
  ],
  "1.2.2": [
@@ -74,7 +103,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: iṭ after vij as ṅidvat: ud+vij + tṛc/tumun needs a kṛdanta entry with upasarga ud (krdanta spec has none)"
   },
   {
    "text": "ud + vij + tumun (iṭ behaves as ṅit, guṇa blocked)",
@@ -82,7 +112,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: iṭ after vij as ṅidvat: ud+vij + tṛc/tumun needs a kṛdanta entry with upasarga ud (krdanta spec has none)"
   },
   {
    "text": "ud + vij + tṛc (guṇa applied erroneously)",
@@ -90,7 +121,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: iṭ after vij as ṅidvat: ud+vij + tṛc/tumun needs a kṛdanta entry with upasarga ud (krdanta spec has none)"
   }
  ],
  "1.2.3": [
@@ -100,7 +132,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ūrṇu iṭ ṅidvat vibhāṣā: ūrṇu + tṛc needs a kṛdanta entry with upasarga pra"
   },
   {
    "text": "pra + ūrṇu + tṛc (iṭ not ṅit, guṇa applied)",
@@ -108,7 +141,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ūrṇu iṭ ṅidvat vibhāṣā: ūrṇu + tṛc needs a kṛdanta entry with upasarga pra"
   },
   {
    "text": "pra + ūrṇu + liṭ + ṇal (optionally ṅit)",
@@ -116,7 +150,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ūrṇu iṭ ṅidvat vibhāṣā: ūrṇu + tṛc needs a kṛdanta entry with upasarga pra"
   }
  ],
  "1.2.26": [
@@ -126,7 +161,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ktvā kit-vibhāṣā: tools.exercise_audit krdanta spec for ktvā is not accepted by derive_krdanta (IndexError); needs the (dhatu, ktvA, …) spec shape"
   },
   {
    "text": "likh + ktvā (non-kit, guṇa applied)",
@@ -134,7 +170,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ktvā kit-vibhāṣā: tools.exercise_audit krdanta spec for ktvā is not accepted by derive_krdanta (IndexError); needs the (dhatu, ktvA, …) spec shape"
   },
   {
    "text": "dyut + ktvā (ral-anta, u-upadhā, halādi, kit optional)",
@@ -142,7 +179,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ktvā kit-vibhāṣā: tools.exercise_audit krdanta spec for ktvā is not accepted by derive_krdanta (IndexError); needs the (dhatu, ktvA, …) spec shape"
   },
   {
    "text": "sev + ktvā (not i/u-upadhā, kit blocked)",
@@ -150,7 +188,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ktvā kit-vibhāṣā: tools.exercise_audit krdanta spec for ktvā is not accepted by derive_krdanta (IndexError); needs the (dhatu, ktvA, …) spec shape"
   }
  ],
  "1.2.62": [
@@ -160,7 +199,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: chandas / laukika dual of viśākhā: no vedic-vs-laukika vivakṣā key"
   },
   {
    "text": "viśākhā + au (laukika, dual retained)",
@@ -168,7 +208,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: chandas / laukika dual of viśākhā: no vedic-vs-laukika vivakṣā key"
   }
  ],
  "1.2.64": [
@@ -178,7 +219,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ekaśeṣa vṛtti: no entry point (samāsa machine covers compounds, not ekaśeṣa)"
   },
   {
    "text": "rāma + rāma + Jas (sarūpa ekaśeṣa)",
@@ -186,7 +228,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ekaśeṣa vṛtti: no entry point (samāsa machine covers compounds, not ekaśeṣa)"
   },
   {
    "text": "rāma + kṛṣṇa + au (virūpa ekaśeṣa blocked)",
@@ -194,7 +237,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ekaśeṣa vṛtti: no entry point (samāsa machine covers compounds, not ekaśeṣa)"
   }
  ],
  "1.2.70": [
@@ -204,7 +248,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: pitā mātrā ekaśeṣa: no entry point for ekaśeṣa"
   },
   {
    "text": "mātṛ + pitṛ + au (optional non-ekaśeṣa dvandva)",
@@ -212,151 +257,449 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: pitā mātrā ekaśeṣa: no entry point for ekaśeṣa"
   }
  ],
  "1.3.14": [
   {
    "text": "vi + ati + lū + laṭ (karmavyatihāra, ātmanepada)",
    "expected_iast": "vyatilunīte",
-   "expected": null,
+   "expected": "vyatilunIte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0016",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.14 (vyatilunate/vyatipunate)"
   },
   {
    "text": "vi + ati + lū + laṭ (parasmaipada in karmavyatihāra blocked)",
    "expected_iast": "vyatilunāti",
-   "expected": null,
+   "expected": "vyatilunAti",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 1.3.14 (karmavyatihāra iti kim? lunanti)",
+   "note": "parasmaipada in karmavyatihāra is a wrong form; replaced by the stronger negative below"
+  },
+  {
+   "text": "vi+ati+lū laṭ prathama-bahu karmavyatihāra",
+   "expected_iast": "vyatilunate",
+   "expected": "vyatilunate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "09.0016",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.14 (vyatilunate)"
+  },
+  {
+   "text": "vi+ati+pū laṭ prathama-bahu karmavyatihāra",
+   "expected_iast": "vyatipunate",
+   "expected": "vyatipunate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "09.0014",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.14 (vyatipunate)"
+  },
+  {
+   "text": "lū laṭ prathama-bahu (no karmavyatihāra)",
+   "expected_iast": "lunanti",
+   "expected": "lunanti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0016",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.14 (karmavyatihāra iti kim? lunanti)"
+  },
+  {
+   "text": "pū laṭ prathama-bahu (no karmavyatihāra)",
+   "expected_iast": "punanti",
+   "expected": "punanti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0014",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.14 (karmavyatihāra iti kim? lunanti (same for pū))"
   }
  ],
  "1.3.15": [
   {
    "text": "vi + ati + gam + laṭ (gati-artha blocks ātmanepada)",
    "expected_iast": "vyatigacchanti",
-   "expected": null,
+   "expected": "vyatigacCanti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1137",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.15 (vyatigacchanti)"
   },
   {
    "text": "vi + ati + han + laṭ (hiṃsā-artha blocks ātmanepada)",
    "expected_iast": "vyatighnanti",
-   "expected": null,
+   "expected": "vyatiGnanti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "02.0002",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.15 (vyatighnanti)"
   },
   {
    "text": "vi + ati + gam + laṭ (ātmanepada erroneously applied)",
    "expected_iast": "vyatigacchante",
-   "expected": null,
+   "expected": "vyatigacCante",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "wrong form (ātmanepada); covered by the vyatilunate negative below"
   },
   {
    "text": "vi + ati + han + laṭ (ātmanepada erroneously applied)",
    "expected_iast": "vyatighnante",
-   "expected": null,
+   "expected": "vyatiGnante",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "wrong form; covered below"
+  },
+  {
+   "text": "vi+ati+sṛ laṭ prathama-bahu karmavyatihāra",
+   "expected_iast": "vyatisarpanti",
+   "expected": "vyatisarpanti",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1138",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.15 (vyatisarpanti (gatyartha))",
+   "note": "sṛp 01.1138 stands for sarpati"
+  },
+  {
+   "text": "vi+ati+hiṃs laṭ prathama-bahu karmavyatihāra",
+   "expected_iast": "vyatihiMsanti",
+   "expected": "vyatihiMsanti",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "07.0019",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.15 (hiṃsārthebhyaḥ vyatihiṃsanti)"
+  },
+  {
+   "text": "vi+ati+lū laṭ karmavyatihāra (not gati/hiṃsā: ātmanepada stays)",
+   "expected_iast": "vyatilunate",
+   "expected": "vyatilunate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0016",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.14 (vyatilunate)",
+   "note": "1.3.15 must not apply to lū"
+  },
+  {
+   "text": "vi+ati+pū laṭ karmavyatihāra (not gati/hiṃsā)",
+   "expected_iast": "vyatipunate",
+   "expected": "vyatipunate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0014",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
+   ],
+   "source": "Kāśikā 1.3.14 (vyatipunate)"
   }
  ],
  "1.3.18": [
   {
    "text": "pari + krī + laṭ (ātmanepada)",
    "expected_iast": "parikrīṇīte",
-   "expected": null,
+   "expected": "parikrIRIte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 1.3.18 (parikrīṇīte)"
   },
   {
    "text": "vi + krī + laṭ (ātmanepada)",
    "expected_iast": "vikrīṇīte",
-   "expected": null,
+   "expected": "vikrIRIte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"vi\"]}"
+   ],
+   "source": "Kāśikā 1.3.18 (vikrīṇīte)"
   },
   {
    "text": "ava + krī + laṭ (ātmanepada)",
    "expected_iast": "avakrīṇīte",
-   "expected": null,
+   "expected": "avakrIRIte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ava\"]}"
+   ],
+   "source": "Kāśikā 1.3.18 (avakrīṇīte)"
   },
   {
    "text": "krī + laṭ (no pari/vi/ava, parasmaipada)",
    "expected_iast": "krīṇāti",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "krIRAti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.18 (aparyādi: krīṇāti)"
   },
   {
    "text": "krī + laṭ (no pari/vi/ava, ātmanepada blocked)",
    "expected_iast": "krīṇīte",
-   "expected": null,
+   "expected": "krIRIte",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "ātmanepada-blocked wrong form; the negative below uses the correct form with 1.3.18 not applied"
+  },
+  {
+   "text": "krī laṭ without pari/vi/ava: sūtra does not apply",
+   "expected_iast": "krIRAti",
+   "expected": "krIRAti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.18 (paryādayaḥ upasargāḥ gṛhyante; bahuvi krīṇāti vanam)"
+  },
+  {
+   "text": "abhi+krī laṭ (not pari/vi/ava)",
+   "expected_iast": "aBikrIRAti",
+   "expected": "aBikrIRAti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "09.0001",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 1.3.18 (paryādi only)",
+   "note": "expected derived by engine; no DB attestation: do not count as a sourced positive"
   }
  ],
  "1.3.22": [
   {
    "text": "sam + sthā + laṭ (ātmanepada)",
    "expected_iast": "saṃtiṣṭhate",
-   "expected": null,
+   "expected": "saMtizWate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"sam\"]}"
+   ],
+   "source": "Kāśikā 1.3.22 (saMtizWate)"
   },
   {
    "text": "ava + sthā + laṭ (ātmanepada)",
    "expected_iast": "avatiṣṭhate",
-   "expected": null,
+   "expected": "avatizWate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ava\"]}"
+   ],
+   "source": "Kāśikā 1.3.22 (avatizWate)"
   },
   {
    "text": "pra + sthā + laṭ (ātmanepada)",
    "expected_iast": "pratiṣṭhate",
-   "expected": null,
+   "expected": "pratizWate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 1.3.22 (pratizWate)"
   },
   {
    "text": "vi + sthā + laṭ (ātmanepada)",
    "expected_iast": "vitiṣṭhate",
-   "expected": null,
+   "expected": "vitizWate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"vi\"]}"
+   ],
+   "source": "Kāśikā 1.3.22 (vitizWate)"
   },
   {
    "text": "sthā + laṭ (unprefixed, parasmaipada)",
    "expected_iast": "tiṣṭhati",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "tizWati",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.22 (unprefixed tiṣṭhati)"
   },
   {
    "text": "sthā + laṭ (unprefixed, ātmanepada blocked)",
    "expected_iast": "tiṣṭhate",
-   "expected": null,
+   "expected": "tizWate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "wrong form; the unprefixed tiṣṭhati negative covers it"
+  },
+  {
+   "text": "sthā laṭ unprefixed: sūtra does not apply",
+   "expected_iast": "tizWati",
+   "expected": "tizWati",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.22 (sam-ava-pra-vi pūrvāt)"
+  },
+  {
+   "text": "ud+sthā laṭ (ut not in the list)",
+   "expected_iast": "uttizWati",
+   "expected": "uttizWati",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 1.3.22 (sam ava pra vi only)",
+   "note": "engine-derived expected; sourced only by the sūtra's closed upasarga list"
   }
  ],
  "1.3.32": [
@@ -366,7 +709,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: gandhanādi senses have no vivakṣā key; ut+kṛ is derived (utkurute) but 1.3.32 is not a pada-by-sense sūtra in the bootstrap"
   },
   {
    "text": "pra + kṛ + laṭ (without gandhana etc., parasmaipada)",
@@ -374,7 +718,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: gandhanādi senses have no vivakṣā key; ut+kṛ is derived (utkurute) but 1.3.32 is not a pada-by-sense sūtra in the bootstrap"
   }
  ],
  "1.3.45": [
@@ -384,7 +729,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: jñā akarmaka: karmakatva vivakṣā reaches derive() but jñā 09.0043 gives jānāti (1.3.45 not wired; Kāśikā: jānīte)"
   },
   {
    "text": "jñā + laṭ (sakarmaka, parasmaipada)",
@@ -392,41 +738,83 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: jñā akarmaka: karmakatva vivakṣā reaches derive() but jñā 09.0043 gives jānāti (1.3.45 not wired; Kāśikā: jānīte)"
   }
  ],
  "1.3.47": [
   {
    "text": "vi + pra + vad + laṭ (vimati/bhāsana, ātmanepada)",
    "expected_iast": "vipravadante",
-   "expected": null,
+   "expected": "vipravadante",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vadArTa\": \"vimati\"}}"
+   ],
+   "source": "Kāśikā 1.3.47 (vipravadante)"
   },
   {
    "text": "upa + vad + laṭ (upamantraṇa, ātmanepada)",
    "expected_iast": "upavadate",
-   "expected": null,
+   "expected": "upavadate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"], \"vivaksha\": {\"vadArTa\": \"upamantraRa\"}}"
+   ],
+   "source": "Kāśikā 1.3.47 (upavadate)"
   },
   {
    "text": "vad + laṭ (ordinary speaking, parasmaipada)",
    "expected_iast": "vadati",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "vadati",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.47 (ordinary: vadati)"
   },
   {
    "text": "vad + laṭ (ordinary speaking, ātmanepada blocked)",
    "expected_iast": "vadate",
-   "expected": null,
+   "expected": "vadate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's vadate is the barred (non-sense) form; negative above"
+  },
+  {
+   "text": "vad laṭ bhāsana",
+   "expected_iast": "vadate",
+   "expected": "vadate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"vivaksha\": {\"vadArTa\": \"BAsana\"}}"
+   ],
+   "source": "Kāśikā 1.3.47 (vadate cārvī lokāyate)"
   }
  ],
  "1.3.53": [
@@ -436,7 +824,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ud+car sakarmaka: no sakarmaka vivakṣā wired"
   },
   {
    "text": "ut + car + laṭ (akarmaka, parasmaipada)",
@@ -444,7 +833,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ud+car sakarmaka: no sakarmaka vivakṣā wired"
   },
   {
    "text": "ut + car + laṭ (akarmaka, ātmanepada blocked)",
@@ -452,7 +842,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ud+car sakarmaka: no sakarmaka vivakṣā wired"
   }
  ],
  "1.3.54": [
@@ -462,7 +853,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: sam+car tṛtīyāyukta: no vivakṣā key for tṛtīyā-yoga"
   },
   {
    "text": "sam + car + laṭ (no tṛtīyā, parasmaipada)",
@@ -470,7 +862,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: sam+car tṛtīyāyukta: no vivakṣā key for tṛtīyā-yoga"
   },
   {
    "text": "sam + car + laṭ (no tṛtīyā, ātmanepada blocked)",
@@ -478,7 +871,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: sam+car tṛtīyāyukta: no vivakṣā key for tṛtīyā-yoga"
   }
  ],
  "1.3.55": [
@@ -488,7 +882,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: sam+dāṇ tṛtīyā in caturthyartha: no vivakṣā key"
   },
   {
    "text": "sam + dāṇ + laṭ (non-caturthyartha, parasmaipada)",
@@ -496,75 +891,171 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: sam+dāṇ tṛtīyā in caturthyartha: no vivakṣā key"
   }
  ],
  "1.3.60": [
   {
    "text": "śad + laṭ (śit affix, ātmanepada)",
    "expected_iast": "śīyate",
-   "expected": null,
+   "expected": "SIyate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0991",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.60 (śīyate)"
   },
   {
    "text": "śad + lṛṭ (non-śit affix, parasmaipada)",
    "expected_iast": "śatsyati",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "Satsyati",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0991",
+    "lRT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.60 (śit iti kim? śatsyati)"
   },
   {
    "text": "śad + laṭ (śit affix, parasmaipada blocked)",
    "expected_iast": "śīyati",
-   "expected": null,
+   "expected": "SIyati",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's śīyati is the barred form; negatives below"
+  },
+  {
+   "text": "śad laṭ prathama-dvi",
+   "expected_iast": "SIyete",
+   "expected": "SIyete",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0991",
+    "laT",
+    "kartari",
+    3,
+    2,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.60 (śīyate, śīyete, śīyante)"
+  },
+  {
+   "text": "śad laṭ prathama-bahu",
+   "expected_iast": "SIyante",
+   "expected": "SIyante",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0991",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.60 (śīyante)"
+  },
+  {
+   "text": "śad lṛṅ (non-śit)",
+   "expected_iast": "aSatsyat",
+   "expected": "aSatsyat",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0991",
+    "lRG",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.60 (aśatsyat)"
   }
  ],
  "1.3.61": [
   {
    "text": "mṛ + laṭ (śit, ātmanepada)",
    "expected_iast": "mriyate",
-   "expected": null,
+   "expected": "mriyate",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 1.3.61 (mriyate)",
+   "note": "unrunnable as a positive: niyama 1.3.61 is SKIPPED when ātmanepada is already licensed (by design); ātmanepada forms are kept as documentation"
   },
   {
    "text": "mṛ + luṅ (ātmanepada)",
    "expected_iast": "amṛta",
-   "expected": null,
+   "expected": "amfta",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 1.3.61 (amṛta)",
+   "note": "unrunnable as a positive: niyama 1.3.61 is SKIPPED when ātmanepada is already licensed (by design); ātmanepada forms are kept as documentation"
   },
   {
    "text": "mṛ + āśīrliṅ (ātmanepada)",
    "expected_iast": "mṛṣīṣṭa",
-   "expected": null,
+   "expected": "mfzIzwa",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 1.3.61 (mṛṣīṣṭa)",
+   "note": "unrunnable as a positive: niyama 1.3.61 is SKIPPED when ātmanepada is already licensed (by design); ātmanepada forms are kept as documentation"
   },
   {
    "text": "mṛ + lṛṭ (non-śit/luṅ/liṅ, parasmaipada)",
    "expected_iast": "mariṣyati",
-   "expected": null,
+   "expected": "marizyati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "06.0139",
+    "lRT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.61 (nyamaḥ: mariṣyati)",
+   "note": "niyama: it applies exactly here, barring ātmanepada outside luṅ/liṅ/śit"
   },
   {
    "text": "mṛ + lṛṭ (ātmanepada blocked)",
    "expected_iast": "mariṣyate",
-   "expected": null,
+   "expected": "marizyate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's mariṣyate is the barred form; negative below"
+  },
+  {
+   "text": "mṛ lṛṅ (non-śit)",
+   "expected_iast": "amarizyat",
+   "expected": "amarizyat",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "06.0139",
+    "lRG",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.61 (amariṣyat)",
+   "note": "niyama: it applies exactly here, barring ātmanepada outside luṅ/liṅ/śit"
   }
  ],
  "1.3.62": [
@@ -574,7 +1065,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: san_recipe derives eeDizate for eD (should be edidhiṣate): sanādi pada recipe broken"
   },
   {
    "text": "bhū + san + laṭ (parasmaipada transferred from bhū)",
@@ -582,7 +1074,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: san_recipe derives eeDizate for eD (should be edidhiṣate): sanādi pada recipe broken"
   },
   {
    "text": "edh + san + laṭ (parasmaipada blocked)",
@@ -590,7 +1083,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: san_recipe derives eeDizate for eD (should be edidhiṣate): sanādi pada recipe broken"
   }
  ],
  "1.3.63": [
@@ -600,7 +1094,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ām + kṛ anuprayoga: no entry point with ām-pada transfer in the harness"
   },
   {
    "text": "īh + ām + kṛ + liṭ (ātmanepada transferred to kṛ)",
@@ -608,7 +1103,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ām + kṛ anuprayoga: no entry point with ām-pada transfer in the harness"
   },
   {
    "text": "edh + ām + kṛ + liṭ (parasmaipada kṛ blocked)",
@@ -616,33 +1112,83 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: ām + kṛ anuprayoga: no entry point with ām-pada transfer in the harness"
   }
  ],
  "1.3.66": [
   {
    "text": "bhuj + laṭ (anavana / eating, ātmanepada)",
    "expected_iast": "bhuṅkte",
-   "expected": null,
+   "expected": "BuNkte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "07.0017",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
+   ],
+   "source": "Kāśikā 1.3.66 (bhuṅkte)"
   },
   {
    "text": "bhuj + laṭ (avana / protecting, parasmaipada)",
    "expected_iast": "bhunakti",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "Bunakti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "07.0017",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.66 (anavana iti kim? bhunaktyenam agnir āhitaḥ)"
   },
   {
    "text": "bhuj + laṭ (avana / protecting, ātmanepada blocked)",
    "expected_iast": "bhuṅkte",
-   "expected": null,
+   "expected": "BuNkte",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's bhuṅkte is the barred form here; negative above"
+  },
+  {
+   "text": "bhuj laṭ prathama-dvi anavana",
+   "expected_iast": "BuYjAte",
+   "expected": "BuYjAte",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "07.0017",
+    "laT",
+    "kartari",
+    3,
+    2,
+    "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
+   ],
+   "source": "Kāśikā 1.3.66 (bhuṅkte, bhuñjāte, bhuñjate)"
+  },
+  {
+   "text": "bhuj laṭ prathama-bahu anavana",
+   "expected_iast": "BuYjate",
+   "expected": "BuYjate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "07.0017",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
+   ],
+   "source": "Kāśikā 1.3.66 (bhuñjate)"
   }
  ],
  "1.3.74": [
@@ -652,7 +1198,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: nic_recipe kṛ gives kfayate (should be kārayate): the ṇic recipe is wrong for kṛ"
   },
   {
    "text": "kṛ + ṇic + laṭ (parābhiprāya, parasmaipada)",
@@ -660,111 +1207,278 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: nic_recipe kṛ gives kfayate (should be kārayate): the ṇic recipe is wrong for kṛ"
   }
  ],
  "1.3.79": [
   {
    "text": "anu + kṛ + laṭ (parasmaipada even if kartrabhiprāya)",
    "expected_iast": "anukaroti",
-   "expected": null,
+   "expected": "anukaroti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"anu\"]}"
+   ],
+   "source": "Kāśikā 1.3.79 (anukaroti)",
+   "note": "owner expected anukurute is the ātmanepada the sūtra bars; Kāśikā: anukaroti"
   },
   {
    "text": "parā + kṛ + laṭ (parasmaipada)",
    "expected_iast": "parākaroti",
-   "expected": null,
+   "expected": "parAkaroti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"parA\"]}"
+   ],
+   "source": "Kāśikā 1.3.79 (parākaroti)"
   },
   {
    "text": "anu + kṛ + laṭ (ātmanepada blocked)",
    "expected_iast": "anukurute",
-   "expected": null,
+   "expected": "anukurute",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's anukurute is the barred form; negative below"
+  },
+  {
+   "text": "kṛ laṭ unprefixed (1.3.79 does not apply)",
+   "expected_iast": "karoti",
+   "expected": "karoti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.79 (anu parā ity evaṃpūrvāt)"
+  },
+  {
+   "text": "ud+kṛ laṭ (not anu/parā)",
+   "expected_iast": "utkurute",
+   "expected": "utkurute",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 1.3.32 (gandhana-adi ātmanepada; ut is not anu/parā)",
+   "note": "utkurute: Kāśikā 1.3.32 (utkurute); 1.3.79 must not apply"
   }
  ],
  "1.3.82": [
   {
    "text": "pari + mṛṣ + laṭ (parasmaipada)",
    "expected_iast": "parimṛṣyati",
-   "expected": null,
+   "expected": "parimfzyati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "04.0060",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 1.3.82 (parimṛṣyati)"
   },
   {
    "text": "pari + mṛṣ + laṭ (ātmanepada blocked)",
    "expected_iast": "parimṛṣyate",
-   "expected": null,
+   "expected": "parimfzyate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's parimṛṣyate is the barred form"
+  },
+  {
+   "text": "ā+mṛṣ laṭ (not pari)",
+   "expected_iast": "Amfzyate",
+   "expected": "Amfzyate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "04.0060",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"A\"]}"
+   ],
+   "source": "Kāśikā 1.3.82 (parer iti kim? āmṛṣyate)"
   }
  ],
  "1.3.83": [
   {
    "text": "vi + ram + laṭ (parasmaipada)",
    "expected_iast": "viramati",
-   "expected": null,
+   "expected": "viramati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"vi\"]}"
+   ],
+   "source": "Kāśikā 1.3.83 (viramati)"
   },
   {
    "text": "ā + ram + laṭ (parasmaipada)",
    "expected_iast": "āramati",
-   "expected": null,
+   "expected": "Aramati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"A\"]}"
+   ],
+   "source": "Kāśikā 1.3.83 (Aramati)"
   },
   {
    "text": "pari + ram + laṭ (parasmaipada)",
    "expected_iast": "pariramati",
-   "expected": null,
+   "expected": "pariramati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 1.3.83 (pariramati)"
   },
   {
    "text": "ram + laṭ (unprefixed, ātmanepada)",
    "expected_iast": "ramate",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "ramate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.83 (unprefixed ramate)"
   },
   {
    "text": "vi + ram + laṭ (ātmanepada blocked)",
    "expected_iast": "viramate",
-   "expected": null,
+   "expected": "viramate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's viramate is the barred form"
+  },
+  {
+   "text": "abhi+ram laṭ (not vi/ā/pari)",
+   "expected_iast": "aBiramate",
+   "expected": "aBiramate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 1.3.83 (etebhya iti kim? abhiramate)"
   }
  ],
  "1.3.84": [
   {
    "text": "upa + ram + laṭ (akarmaka, parasmaipada)",
    "expected_iast": "uparamati",
-   "expected": null,
+   "expected": "uparamati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"]}"
+   ],
+   "source": "Kāśikā 1.3.84 (devadattam uparamati)"
   },
   {
    "text": "upa + ram + laṭ (akarmaka, ātmanepada blocked)",
    "expected_iast": "uparamate",
-   "expected": null,
+   "expected": "uparamate",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's uparamate is the barred form"
+  },
+  {
+   "text": "ram laṭ unprefixed (1.3.84 does not apply)",
+   "expected_iast": "ramate",
+   "expected": "ramate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{}"
+   ],
+   "source": "Kāśikā 1.3.84 (upāc ca: only after upa)"
+  },
+  {
+   "text": "abhi+ram laṭ (not upa)",
+   "expected_iast": "aBiramate",
+   "expected": "aBiramate",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.0989",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 1.3.83 (abhiramate)"
   }
  ],
  "1.3.91": [
@@ -774,7 +1488,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
   },
   {
    "text": "dyut + luṅ (optional ātmanepada)",
@@ -782,7 +1497,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
   },
   {
    "text": "dyut + laṭ (outside luṅ, parasmaipada blocked)",
@@ -790,7 +1506,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
   }
  ],
  "1.3.92": [
@@ -800,7 +1517,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   },
   {
    "text": "vṛt + lṛṭ (optional ātmanepada)",
@@ -808,7 +1526,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   },
   {
    "text": "vṛt + san + laṭ (optional parasmaipada)",
@@ -816,7 +1535,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   },
   {
    "text": "vṛt + san + laṭ (optional ātmanepada)",
@@ -824,7 +1544,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   },
   {
    "text": "vṛt + laṭ (outside sya/san, parasmaipada blocked)",
@@ -832,33 +1553,48 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   }
  ],
  "1.4.8": [
   {
    "text": "bhūpati + ṅe (samāsa, ghi applies)",
    "expected_iast": "bhūpataye",
-   "expected": null,
+   "expected": "BUpataye",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "subanta",
+    "BUpati",
+    "pulliNga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.8 (bhūpataye: samāse ghi)"
   },
   {
    "text": "pati + ṅe (asamāsa, ghi blocked)",
    "expected_iast": "patye",
-   "expected": null,
+   "expected": "patye",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "subanta",
+    "pati",
+    "pulliNga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.8 (patiḥ samāsa eva: patye)",
+   "note": "engine gives pataye (ghi-saṃjñā for asamāsa pati): GAP 1.4.8"
   },
   {
    "text": "pati + ṅe (asamāsa, ghi erroneously applied)",
    "expected_iast": "pataye",
-   "expected": null,
+   "expected": "pataye",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "owner's negative (pataye erroneously) is the engine's current wrong output; covered by the patye positive"
   }
  ],
  "1.4.15": [
@@ -868,7 +1604,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: pada-saṃjñā before kyaṅ: rājan + kyaṅ nāmadhātu needs the cycle entry (chain.nama_dhatu) in the harness"
   },
   {
    "text": "rājan + kyaṅ + laṭ (n retained erroneously)",
@@ -876,7 +1613,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: pada-saṃjñā before kyaṅ: rājan + kyaṅ nāmadhātu needs the cycle entry (chain.nama_dhatu) in the harness"
   },
   {
    "text": "rājan + ya + su (non-kya, pada-saṃjñā blocked)",
@@ -884,7 +1622,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: pada-saṃjñā before kyaṅ: rājan + kyaṅ nāmadhātu needs the cycle entry (chain.nama_dhatu) in the harness"
   }
  ],
  "1.4.21": [
@@ -894,7 +1633,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: bahuṣu bahuvacanam: the number is an input of derive(); the sūtra only names it"
   },
   {
    "text": "rāma + au (dvitva, bahuvacana blocked)",
@@ -902,7 +1642,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: bahuṣu bahuvacanam: the number is an input of derive(); the sūtra only names it"
   }
  ],
  "1.4.105": [
@@ -912,7 +1653,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: yuṣmad upapada madhyama: no upapada entry for pac + yuṣmad"
   },
   {
    "text": "pac + laṭ (yuṣmad upapada, prathama puruṣa blocked)",
@@ -920,7 +1662,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: yuṣmad upapada madhyama: no upapada entry for pac + yuṣmad"
   }
  ],
  "1.4.107": [
@@ -930,7 +1673,8 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: asmad upapada uttama: no upapada entry for pac + asmad"
   },
   {
    "text": "pac + laṭ (asmad upapada, prathama puruṣa blocked)",
@@ -938,7 +1682,8 @@
    "expected": null,
    "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "note": "unrunnable: asmad upapada uttama: no upapada entry for pac + asmad"
   }
  ]
 }

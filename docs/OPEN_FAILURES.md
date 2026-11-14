@@ -46,3 +46,17 @@ entry hand the subanta scanner a Term list; then 6.4.24 at kvin (the term-0 limi
 - **neuter ik-stem sambuddhi** (vAri, maDu 8-1): only `vAre`/`maDo`; missing `vAri`/`maDu` (7.1.23 luk, 1.1.63 blocks guṇa) — PDF note [52]: guṇa is the pakṣa via the anityatva of 1.1.63. Wrong-form class: the primary reading is absent.
 - **7.1.24 identity am→am** (Pala 2-1, 8-1): SKIPPED; the PDF uses it to bar 7.1.23.
 - **6.4.3 nāmi** (rAma/Pala 6-3: 7.3.102 lengthens first, same form; mAlA/nadI/vaDU 6-3: already long, vacuous).
+
+## LK case gate, adhyāya 1 + 2 (2026-11-14; tools/lk_cases, fixtures tests/fixtures/lk_cases/a1,a2)
+| Sūtra | State | Cause found | What is needed |
+|---|---|---|---|
+| 1.3.14 / 1.3.15 | FAIL | derive() never reads the karmavyatihāra vivakṣā (arthaViSeSa=karmavyatihAra): 1.3.14 reads a tag `karmavyatihAra_usage` that nothing sets, 1.3.15 never runs: `vyatilunAti` for expected `vyatilunate` | rewrite 1.3.14 on `vivaksita`, wire 1.3.14/15 into the bootstrap pada list; 1.3.15 needs gatyartha/hiṃsārtha root classes |
+| 1.3.32 45 53 54 55 | UNRUNNABLE | no sense / sakarmaka / tṛtīyā-yoga vivakṣā keys; 1.3.45 jñā gives jānāti (not wired) | add keys (AMENDMENT 25 schema) + rewrite as pada-by-sense sūtras like 1.3.66 |
+| 1.3.62 / 1.3.74 | UNRUNNABLE | `san_recipe` gives `eeDizate` (should be edidhiṣate), `nic_recipe` on kṛ gives `kfayate` (should be kārayate) | the sanādi recipes are broken for these roots (V4_CYCLE: sanādi laṭ only, recipe) |
+| 1.3.91 / 1.3.92 | UNRUNNABLE | luṅ of dyut lacks the ātmanepada reading adyotiṣṭa; lṛṭ of vṛt gives vartiṣyati (iṭ) — parasmaipada must be aniṭ vartsyati (7.2.59) | 1.3.91/92 optional reading + 7.2.59 |
+| 1.3.82 | note | ā+mṛṣ gives āmṛṣyati; Kāśikā āmṛṣyate (DP mṛṣa~ is labelled ubhayapadī, divādi) | check the DP label / 1.3.12 svaritet for mṛṣ |
+| 1.1.59, 1.4.8, 2.4.62 | FAIL | the sūtra is never recorded in the trace for cakratuḥ/dadatuḥ/petatuḥ, bhūpataye, aṅgāḥ (forms right: another path makes them); 1.4.8 also gives `pataye` for asamāsa pati (Kāśikā: patye) | atideśa/saṃjñā sūtras must be invoked; 1.4.8 asamāsa condition |
+| 2.4.78 / 2.4.79 | FAIL | luṅ of ghrā lacks the sic-luk reading `aghrAt`; tan ātmane lacks `atata` | 2.4.78/79 vibhāṣā reading in the luṅ spine |
+| 2.4.49 | FAIL | iṅ + liṭ gives `aDIye`, Kāśikā adhijage (gāṅ ādeśa) | 2.4.49 in the liṭ spine |
+| 2.1.x / 2.2.x | see sig/lk_case_verdicts/a2.json | samāsa machine slice 2 covers 2.1.6/24/36/37/40/51/52/57, 2.2.8/18/24/29, 2.4.17/18/26/71 only; others leave the members un-compounded | slice 3 |
+| 1.2.x, 1.4.15/21/105/107, 2.3.x, 2.4.84 | UNRUNNABLE | no harness entry (kṛdanta with upasarga, ekaśeṣa, upapada yuṣmad/asmad, kāraka→vibhakti) — reasons are in each case's `note` | harness entry points (tools/exercise_audit `_derive`), not engine rules |

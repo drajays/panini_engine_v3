@@ -1,48 +1,29 @@
 """
 1.3.22  समवप्रविभ्यः स्थः  —  VIDHI
 
-*Padaccheda:* *sam-ava-pra-vi-bhyaḥ* (पञ्चमी) / *sthaḥ* (षष्ठी).
-
-*Anuvṛtti:* ātmanepada from 1.3.12.
-
-*Content:* For the root sthā (to stand/be established) preceded by any of the
-prefixes sam, ava, pra, or vi, ātmanepada endings are prescribed.
-
-*Engine:* cond checks (a) pada not already "Atmanepada", (b) a dhātu Term whose
-upadesha_slp1 is in _STHA_ROOTS, (c) any tag from _STHA_PREFIXES present on
-that dhātu, and (d) idempotency guard "Atmanepada_1_3_22" absent from meta.
-No arm flags (CONSTITUTION Art. 13).
-r1_form_identity_exempt=True because no surface phonological change occurs here.
+समवप्रविभ्यः स्थः — ṣṭhā (zWA) after sam / ava / pra / vi takes ātmanepada: saṃtiṣṭhate, avatiṣṭhate, pratiṣṭhate, vitiṣṭhate (Kāśikā 1.3.22).
+Engine: reads the dhātu's upadeśa and the upasargas before it off the tape (engine/pada_ctx.py); decides the pada; the recipe resolver lets this
+decision override the 1.3.78 gate (meta pada_by_sense). No arm flags (Art. 13).
 Pāṭha: ashtadhyayi.com data.txt row i=13022 (Art. 14).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.pada_ctx import decide, pada_site
 from engine.state import State
 
-_STHA_ROOTS: frozenset[str] = frozenset({"zwA"})
-_STHA_PREFIXES: frozenset[str] = frozenset({"sam_prefix", "ava_prefix", "pra_prefix", "vi_prefix"})
-_REGISTRY_KEY = "1_3_22_sam_ava_pra_vi_zwA"
+_ROOTS: frozenset[str] = frozenset(['zWA'])
+_UPASARGAS: frozenset[str] = frozenset(['ava', 'pra', 'sam', 'vi'])
+_REGISTRY_KEY = "1_3_22_pada"
+_STAMP_KEY = "Atmanepada_1_3_22"
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("pada") == "Atmanepada":
-        return False
-    if state.meta.get("Atmanepada_1_3_22"):
-        return False
-    return any(
-        "dhatu" in t.tags
-        and (t.meta.get("upadesha_slp1") or "").strip() in _STHA_ROOTS
-        and bool(_STHA_PREFIXES & t.tags)
-        for t in state.terms
-    )
+    return pada_site(state, _ROOTS, _UPASARGAS, _STAMP_KEY)
 
 
 def act(state: State) -> State:
-    state.meta["pada"] = "Atmanepada"
-    state.meta["Atmanepada_1_3_22"] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
-    return state
+    return decide(state, "Atmanepada", _STAMP_KEY, _REGISTRY_KEY)
 
 
 SUTRA = SutraRecord(
@@ -53,10 +34,7 @@ SUTRA = SutraRecord(
     samagra_slp1="sam-ava-pra-viByaH sTaH Atmanepadam",
     samagra_dev="सम्-अव-प्र-विभ्यः स्थः आत्मनेपदम्",
     padaccheda_dev="सम्-अव-प्र-वि-भ्यः (पञ्चमी) / स्थः (षष्ठी)",
-    why_dev=(
-        "सम्-अव-प्र-वि-पूर्वकस्य स्था-धातोः आत्मनेपदं भवति; "
-        "१.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
-    ),
+    why_dev="सम्-अव-प्र-विभ्यः उत्तरात् स्था-धातोः आत्मनेपदम् — संतिष्ठते, अवतिष्ठते, प्रतिष्ठते, वितिष्ठते (काशिका १.३.२२)।",
     anuvritti_from=("1.3.12",),
     cond=cond,
     act=act,

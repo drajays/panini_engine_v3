@@ -1,58 +1,29 @@
 """
 1.3.84  उपाच्च  —  VIDHI
 
-*Padaccheda:* *upāt* (पञ्चमी-एकवचन) / *ca*.
-
-*Anuvṛtti:* ātmanepada from 1.3.12; ram from 1.3.83; ca = "also".
-
-*Content:* The root ram (√ram, to delight/enjoy) preceded by the prefix upa
-also takes ātmanepada endings — extending 1.3.83. For example: uparamate —
-he rests/desists.
-
-*Engine:* cond checks (a) pada is not already "Atmanepada", (b) idempotency
-stamp "Atmanepada_1_3_84" is absent, (c) a dhātu Term whose upadesha_slp1 is
-in _RAM_ROOTS carries the tag "upa_prefix".
-No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+उपाच्च — ram (ramu~) after upa takes PARASMAIPADA: uparamati (devadattam uparamati = he makes stop) (Kāśikā 1.3.84).
+Engine: reads the dhātu's upadeśa and the upasargas before it off the tape (engine/pada_ctx.py); decides the pada; the recipe resolver lets this
+decision override the 1.3.78 gate (meta pada_by_sense). No arm flags (Art. 13).
 Pāṭha: ashtadhyayi.com data.txt row i=13084 (Art. 14).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.pada_ctx import decide, pada_site
 from engine.state import State
 
-# Module-level frozensets (CONSTITUTION Art. 13.3)
-_RAM_ROOTS: frozenset[str] = frozenset({"rama~", "ram"})
-
-_REGISTRY_KEY = "1_3_84_upa_ram_atmanepada"
-_STAMP_KEY    = "Atmanepada_1_3_84"
-
-
-def _find(state: State):
-    if state.meta.get(_STAMP_KEY):
-        return None
-    if state.meta.get("pada") == "Atmanepada":
-        return None
-    for t in state.terms:
-        if "dhatu" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in _RAM_ROOTS and "upa_prefix" in t.tags:
-            return t
-    return None
+_ROOTS: frozenset[str] = frozenset(['ramu~'])
+_UPASARGAS: frozenset[str] = frozenset(['upa'])
+_REGISTRY_KEY = "1_3_84_pada"
+_STAMP_KEY = "Parasmaipada_1_3_84"
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return pada_site(state, _ROOTS, _UPASARGAS, _STAMP_KEY)
 
 
 def act(state: State) -> State:
-    t = _find(state)
-    if t is None:
-        return state
-    state.meta["pada"]     = "Atmanepada"
-    state.meta[_STAMP_KEY] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
-    return state
+    return decide(state, "Parasmaipada", _STAMP_KEY, _REGISTRY_KEY)
 
 
 SUTRA = SutraRecord(
@@ -64,11 +35,7 @@ SUTRA = SutraRecord(
     samagra_slp1="upAt ca kartari parasmEpadam ramaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev="उपात् च कर्तरि परस्मैपदम् रमः",
     padaccheda_dev="उपात् (पञ्चमी-एकवचन) / च",
-    why_dev=(
-        "उप-पूर्वकस्य रम्-धातोः अपि आत्मनेपदम् — "
-        "uparamate इत्यादि; "
-        "१.३.८३ इत्यस्य विस्तारः; १.३.१२ इत्यतः आत्मनेपदम् अनुवर्तते।"
-    ),
+    why_dev="उपात् उत्तरात् रम्-धातोः परस्मैपदम् — उपरमति (काशिका १.३.८४)।",
     anuvritti_from=("1.3.12", "1.3.83"),
     cond=cond,
     act=act,

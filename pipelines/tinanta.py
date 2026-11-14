@@ -238,6 +238,8 @@ def _resolve_pada_from_gate(state: State) -> str:
     state (``meta['pada']``, AMENDMENT 30: 1.3.47–50, 1.3.66) is the sūtra's decision and takes precedence over the śeṣa default."""
     if state.meta.get("pada_by_sense") and state.meta.get("pada") == "Atmanepada":
         return "atmane"
+    if state.meta.get("pada_by_sense") and state.meta.get("pada") == "Parasmaipada":
+        return "parasmai"
     gate = state.paribhasha_gates.get("prayoga_1_3_78_seza_kartari_parasmaipada", {})
     if isinstance(gate, dict) and gate.get("active"):
         return "parasmai"
@@ -2679,7 +2681,9 @@ def _jYA_apa_check(state: State) -> bool:
 
 
 def _krI_with_upasarga_check(state: State) -> bool:
-    """P009 tape: upasarga + ``krI`` *dhātu* (3.1.81 śnā; ātmanepada by 1.3.72 svarita-ñit)."""
+    """P009 tape: upasarga + ``krI`` *dhātu* (3.1.81 śnā; ātmanepada by 1.3.18 pari/vi/ava, or 1.3.72 svarita-ñit): only when a sūtra chose ātmanepada (abhi + krī stays parasmaipada)."""
+    if state.meta.get("pada") != "Atmanepada":
+        return False
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
@@ -3042,7 +3046,9 @@ def _dyut_vi_check(state: State) -> bool:
 
 
 def _kf_with_upasarga_check(state: State) -> bool:
-    """P011 tape: upasarga + ``kf`` *dhātu* (gana 8 tanādi; 3.1.79 u-vikaraṇa; ātmanepada)."""
+    """P011 tape: upasarga + ``kf`` *dhātu* (gana 8 tanādi; 3.1.79 u-vikaraṇa; ātmanepada). Not when 1.3.79 anu/parā + kṛ decided parasmaipada."""
+    if state.meta.get("pada") == "Parasmaipada":
+        return False
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
@@ -4134,7 +4140,11 @@ def _bootstrap_tinanta_derivation(
         state = apply_rule("1.3.12", state)
         state = apply_rule("1.3.19", state)  # विपराभ्यां जेः
         state = apply_rule("1.3.72", state)  # स्वरितञितः कर्त्रभिप्राये
+        for sid in ("1.3.18", "1.3.22"):     # upasarga + root ātmanepada (krī after pari/vi/ava; ṣṭhā after sam/ava/pra/vi): read off the tape (engine/pada_ctx.py)
+            state = apply_rule(sid, state)
         for sid in ("1.3.60", "1.3.61", "1.3.91", "1.3.92", "1.3.47", "1.3.48", "1.3.49", "1.3.50", "1.3.66"):   # pada rules that read dhātu + lakāra off the tape (1.3.60/61/91/92) or the vivakṣā (AMENDMENT 30: 1.3.47-50, 1.3.66; with none they decline)
+            state = apply_rule(sid, state)
+        for sid in ("1.3.79", "1.3.82", "1.3.83", "1.3.84"):   # parasmaipada by upasarga + root (apavāda of the ātmanepada above): kṛ after anu/parā, mṛṣ after pari, ram after vi/ā/pari/upa
             state = apply_rule(sid, state)
         state = apply_rule("1.3.78", state)
 

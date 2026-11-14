@@ -156,10 +156,51 @@ def _derive(spec: tuple):
     if spec[0] == "tinanta":
         from pipelines.tinanta import derive
         return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **({"pada": spec[6]} if len(spec) > 6 else {}))
+    if spec[0] == "tinanta2":      # ("tinanta2", dhatu, lakara, prayoga, purusha, vacana, '{"upasargas": [...], "pada": ..., "vivaksha": {...}}') — derive() kwargs as JSON (hashable)
+        from pipelines.tinanta import derive
+        return derive(spec[1], spec[2], spec[3], spec[4], spec[5], **json.loads(spec[6]))
+    if spec[0] == "samasa":        # ("samasa", '[[stem, vibhakti, vacana, ...], ...]', '{vivaksha}') — the compound stem the loop leaves, before any sup
+        from engine.tape_init.samasa import build_samasa_state
+        from pipelines.chain import _samasa_done
+        from tools.autonomy_report import run_autonomously
+        ms = [tuple(m) for m in json.loads(spec[1])]
+        s = build_samasa_state(ms, **json.loads(spec[2]))
+        s.phase = "upadesha"
+        return run_autonomously(s, "", "".join(m[0] for m in ms), 300, stop_before_tripadi=True, stop_when=_samasa_done).state
+    if spec[0] == "krdanta2":      # ("krdanta2", dhatu, vibhakti, vacana, linga, '{derive_krdanta kwargs as JSON: "upapada": [word, role], vivakṣā keys}') — the upapada a kṛt needs
+        from pipelines import chain
+        kw = json.loads(spec[5])
+        if "upapada" in kw:
+            kw["upapada"] = tuple(kw["upapada"])
+        st = chain.krt(spec[1], **kw)                    # the stem's sūtras live in the loop run, not in the sup State: put them on the trace as APPLIED
+        res = chain.sup(st, spec[2], spec[3], spec[4])
+        res.trace = [{"sutra_id": s, "status": "APPLIED"} for s in st.trace[-1][1]] + list(res.trace)
+        return res
     if spec[0] == "vakya":
         from pipelines.pada_samhita import join_tripadi
         return join_tripadi(spec[1], spec[2])
+    if spec[0] == "chain":
+        return _derive_chain(spec)
     raise ValueError(spec[0])
+
+
+def _derive_chain(spec: tuple):
+    """("chain", stem_slp1, "lexical,tags", "stage|stage|sup:vib,vac[,linga]") — pipelines.chain stages (strI / taddhita / krt-free) ending in a sup;
+    stage = name[:k=v;k=v] (the vivakṣā). The sūtras the stem-stage loops applied are put on the final State's trace as APPLIED (the sup stage is a fresh State)."""
+    from pipelines import chain
+    st = chain.Stem(spec[1], frozenset(t for t in spec[2].split(",") if t))
+    fired: list[str] = []
+    res = None
+    for stage in spec[3].split("|"):
+        name, _, arg = stage.partition(":")
+        if name == "sup":
+            a = arg.split(",")
+            res = chain.sup(st, int(a[0]), int(a[1]), *a[2:3])
+        else:
+            st = getattr(chain, name)(st, **dict(p.split("=", 1) for p in arg.split(";") if p))
+            fired += st.trace[-1][1]
+    res.trace = [{"sutra_id": s, "status": "APPLIED"} for s in fired] + list(res.trace)
+    return res
 
 
 def _derive_loop(spec: tuple):

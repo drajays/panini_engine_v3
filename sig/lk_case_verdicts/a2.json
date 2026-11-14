@@ -1,0 +1,606 @@
+{
+ "2.4.49": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['aDIye'] ≠ expected aDijage",
+    "spec": [
+     "tinanta2",
+     "02.0041",
+     "liT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"aDi\"]}"
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.62": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form aNgAH is right but 2.4.62 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "aNga",
+     "pulliNga",
+     1,
+     3
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.78": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['aGrAsId', 'aGrAsIt'] ≠ expected aGrAt",
+    "spec": [
+     "tinanta2",
+     "01.1075",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{}"
+    ]
+   },
+   {
+    "result": "pass",
+    "why": ""
+   }
+  ]
+ },
+ "2.4.79": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['atanizwa'] ≠ expected atata",
+    "spec": [
+     "tinanta2",
+     "08.0001",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\"}"
+    ]
+   },
+   {
+    "result": "pass",
+    "why": ""
+   }
+  ]
+ },
+ "2.1.14": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form aBiagni is right but 2.1.14 did not fire (trace status absent): another path made it",
+    "spec": [
+     "samasa",
+     "[[\"aBi\", 1, 1], [\"agni\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "form pratiagni is right but 2.1.14 did not fire (trace status absent): another path made it",
+    "spec": [
+     "samasa",
+     "[[\"prati\", 1, 1], [\"agni\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.20": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['paYcannadIs'] ≠ expected paYcannadI",
+    "spec": [
+     "samasa",
+     "[[\"paYcan\", 1, 1], [\"nadI\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['dvisyamunAs'] ≠ expected dviyamunA",
+    "spec": [
+     "samasa",
+     "[[\"dvi\", 1, 1], [\"yamunA\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.24": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"kfzRa\", 2, 1], [\"Srita\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "redundant",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"grAma\", 2, 1], [\"gata\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "redundant",
+    "replaced_by": []
+   }
+  ]
+ },
+ "2.1.30": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['SaNkulAKaRqas'] ≠ expected SaNkulAKaRqa",
+    "spec": [
+     "samasa",
+     "[[\"SaNkulA\", 3, 1], [\"KaRqa\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['DAnyaArTas'] ≠ expected DAnyaarTa",
+    "spec": [
+     "samasa",
+     "[[\"DAnya\", 3, 1], [\"arTa\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.32": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['haryAtrAtas'] ≠ expected haritrAta",
+    "spec": [
+     "samasa",
+     "[[\"hari\", 3, 1], [\"trAta\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['naKaABinnas'] ≠ expected naKaBinna",
+    "spec": [
+     "samasa",
+     "[[\"naKa\", 3, 1], [\"Binna\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.40": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['akzeSoRqas'] ≠ expected akzaSauRqa",
+    "spec": [
+     "samasa",
+     "[[\"akza\", 7, 1], [\"SauRqa\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.50": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['saptanfzayas'] ≠ expected saptanfzi",
+    "spec": [
+     "samasa",
+     "[[\"saptan\", 1, 1], [\"fzi\", 1, 3]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['pUrvasizukAmaSamIs'] ≠ expected pUrvaizukAmaSamI",
+    "spec": [
+     "samasa",
+     "[[\"pUrva\", 1, 1], [\"izukAmaSamI\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.1.52": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['paYcangOs'] ≠ expected paYcango",
+    "spec": [
+     "samasa",
+     "[[\"paYcan\", 1, 1], [\"go\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.55": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['GanasSyAmas'] ≠ expected GanaSyAma",
+    "spec": [
+     "samasa",
+     "[[\"Gana\", 1, 1], [\"SyAma\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['SastrasSyAmAs'] ≠ expected SastraSyAmA",
+    "spec": [
+     "samasa",
+     "[[\"Sastra\", 1, 1], [\"SyAmA\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.1.57": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['nIlasutpalas'] ≠ expected nIlautpala",
+    "spec": [
+     "samasa",
+     "[[\"nIla\", 1, 1], [\"utpala\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.1": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pUrvaskAyasya'] ≠ expected pUrvakAya",
+    "spec": [
+     "samasa",
+     "[[\"pUrva\", 1, 1], [\"kAya\", 6, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['aparaskAyasya'] ≠ expected aparakAya",
+    "spec": [
+     "samasa",
+     "[[\"apara\", 1, 1], [\"kAya\", 6, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.2": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['arDaspippalyas'] ≠ expected arDapippalI",
+    "spec": [
+     "samasa",
+     "[[\"arDa\", 1, 1], [\"pippalI\", 6, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.4": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['prAptasjIvikAm'] ≠ expected prAptajIvikA",
+    "spec": [
+     "samasa",
+     "[[\"prApta\", 1, 1], [\"jIvikA\", 2, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "fail",
+    "why": "readings ['ApannasjIvikAm'] ≠ expected ApannajIvikA",
+    "spec": [
+     "samasa",
+     "[[\"Apanna\", 1, 1], [\"jIvikA\", 2, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.8": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"rAjan\", 6, 1], [\"puruza\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "redundant",
+    "replaced_by": []
+   }
+  ]
+ },
+ "2.2.31": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['dantarAjana'] ≠ expected dantarAjan",
+    "spec": [
+     "samasa",
+     "[[\"danta\", 6, 1], [\"rAjan\", 1, 1]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.2.32": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['harisharO'] ≠ expected harihara",
+    "spec": [
+     "samasa",
+     "[[\"hari\", 1, 1], [\"hara\", 1, 2]]",
+     "{}"
+    ]
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.2.33": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['ISaskfzRO'] ≠ expected ISakfzRa",
+    "spec": [
+     "samasa",
+     "[[\"ISa\", 1, 1], [\"kfzRa\", 1, 2]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.35": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kaRWekAlas'] ≠ expected kaRWakAla",
+    "spec": [
+     "samasa",
+     "[[\"kaRWa\", 7, 1], [\"kAla\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.2.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kftaskftyas'] ≠ expected kftakftya",
+    "spec": [
+     "samasa",
+     "[[\"kfta\", 1, 1], [\"kftya\", 1, 1]]",
+     "{}"
+    ]
+   }
+  ]
+ },
+ "2.3.2": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.3.13": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.3.16": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.3.18": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.3.28": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.3.47": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.1": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.2": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.17": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.26": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.29": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.31": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.4.84": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
+   }
+  ]
+ }
+}
