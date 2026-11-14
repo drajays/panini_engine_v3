@@ -1,0 +1,410 @@
+{
+ "_doc": "Neelesh Bodas, प्रक्रियापद्धति: (5 Dec 2015) worked examples as gold: form + first-occurrence sutra order. Teaching aid, not authority (Art. 23): cited sutra numbers corrected against the Kashika; see docs/PRAKRIYA_PADDHATI_CROSSCHECK.md",
+ "items": [
+  {
+   "id": "pp1.1a",
+   "kind": "subanta",
+   "args": [
+    "rAma",
+    3,
+    3,
+    "pulliṅga"
+   ],
+   "expected": [
+    "rAmEH"
+   ],
+   "order": [
+    [
+     "7.1.9",
+     "6.1.88"
+    ]
+   ],
+   "note": "stage1 ādeśa bhis->ais 7.1.9"
+  },
+  {
+   "id": "pp1.1b",
+   "kind": "subanta",
+   "args": [
+    "Pala",
+    1,
+    3,
+    "napuṃsaka"
+   ],
+   "expected": [
+    "PalAni"
+   ],
+   "order": [
+    [
+     "7.1.20",
+     "7.1.72"
+    ],
+    [
+     "7.1.72",
+     "6.4.8"
+    ]
+   ],
+   "note": "jas->Si (st1); num 7.1.72 (src 7.2.72) (st2); 6.4.8 (st5)"
+  },
+  {
+   "id": "pp1.2b",
+   "kind": "tinanta",
+   "args": [
+    "01.0001",
+    "laG",
+    "kartari",
+    3,
+    1
+   ],
+   "expected": [
+    "aBavat"
+   ],
+   "order": [
+    [
+     "6.4.71",
+     "3.4.78"
+    ]
+   ],
+   "note": "aT 6.4.71 before tiP adesha? (stage2 before 3) "
+  },
+  {
+   "id": "pp1.2c",
+   "kind": "krdanta",
+   "args": [
+    "01.0381",
+    1,
+    1,
+    "pulliṅga",
+    {
+     "kala": "pUrvakAla",
+     "samAnakartfka": "samAnakartfka"
+    }
+   ],
+   "expected": [
+    "paWitvA"
+   ],
+   "order": [
+    [
+     "7.2.35",
+     "1.3.3"
+    ]
+   ],
+   "note": "it agama 7.2.35 (src 7.2.25)"
+  },
+  {
+   "id": "pp4.1",
+   "kind": "tinanta",
+   "args": [
+    "01.0001",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "expected": [
+    "Bavati"
+   ],
+   "order": [
+    [
+     "3.4.78",
+     "3.1.68"
+    ]
+   ],
+   "note": "lakara -> tip (st3) -> sap (st4 vikarana)"
+  },
+  {
+   "id": "pp4.3",
+   "kind": "tinanta",
+   "args": [
+    "01.0381",
+    "lRT",
+    "kartari",
+    3,
+    3
+   ],
+   "expected": [
+    "paWizyanti"
+   ],
+   "order": [
+    [
+     "3.4.78",
+     "3.1.33"
+    ],
+    [
+     "3.1.33",
+     "7.2.35"
+    ]
+   ],
+   "note": "sya 3.1.33 then it 7.2.35 (src 7.2.25)"
+  },
+  {
+   "id": "pp5.2",
+   "kind": "tinanta",
+   "args": [
+    "02.0060",
+    "lRT",
+    "kartari",
+    3,
+    3
+   ],
+   "expected": [
+    "BavizyantI",
+    "Bavizyanti"
+   ],
+   "order": [
+    [
+     "2.4.52",
+     "7.3.84"
+    ]
+   ],
+   "note": "as->BU 2.4.52; guna 7.3.84"
+  },
+  {
+   "id": "pp5.3/6.1",
+   "kind": "tinanta",
+   "args": [
+    "08.0010",
+    "loT",
+    "kartari",
+    3,
+    1,
+    "atmane"
+   ],
+   "expected": [
+    "kurutAm"
+   ],
+   "order": [
+    [
+     "3.1.79",
+     "7.3.84"
+    ],
+    [
+     "3.4.79",
+     "3.4.90"
+    ]
+   ],
+   "note": "kr+loT ta: u 3.1.79; guna; ta->tAm 3.4.79,3.4.90"
+  },
+  {
+   "id": "pp6.2",
+   "kind": "tinanta",
+   "args": [
+    "01.0381",
+    "laT",
+    "kartari",
+    3,
+    3
+   ],
+   "expected": [
+    "paWanti"
+   ],
+   "order": [
+    [
+     "3.1.68",
+     "7.1.3"
+    ]
+   ],
+   "note": "sap then jho'ntah 7.1.3"
+  },
+  {
+   "id": "pp6.3",
+   "kind": "tinanta",
+   "args": [
+    "01.0001",
+    "liG",
+    "kartari",
+    3,
+    1
+   ],
+   "expected": [
+    "Bavet"
+   ],
+   "order": [
+    [
+     "3.4.103",
+     "3.4.107"
+    ],
+    [
+     "3.4.107",
+     "7.2.79"
+    ],
+    [
+     "7.2.79",
+     "7.2.80"
+    ],
+    [
+     "7.2.80",
+     "3.4.100"
+    ],
+    [
+     "3.4.100",
+     "6.1.66"
+    ]
+   ],
+   "note": "yasut 3.4.103, sut 3.4.107, 7.2.79, 7.2.80, 3.4.100, 6.1.66"
+  },
+  {
+   "id": "pp7.1",
+   "kind": "subanta",
+   "args": [
+    "rAma",
+    4,
+    1,
+    "pulliṅga"
+   ],
+   "expected": [
+    "rAmAya"
+   ],
+   "order": [
+    [
+     "7.1.13",
+     "7.3.102"
+    ]
+   ],
+   "note": "nge->ya 7.1.13; dirgha 7.3.102"
+  },
+  {
+   "id": "pp7.3",
+   "kind": "tinanta",
+   "args": [
+    "01.0381",
+    "laT",
+    "kartari",
+    1,
+    1
+   ],
+   "expected": [
+    "paWAmi"
+   ],
+   "order": [
+    [
+     "3.1.68",
+     "7.3.101"
+    ]
+   ],
+   "note": "7.3.101"
+  },
+  {
+   "id": "pp8.2",
+   "kind": "tinanta",
+   "args": [
+    "01.0381",
+    "liG",
+    "kartari",
+    3,
+    1
+   ],
+   "expected": [
+    "paWet"
+   ],
+   "order": [
+    [
+     "3.4.103",
+     "6.1.87"
+    ]
+   ],
+   "note": "-> paWet 6.1.87"
+  },
+  {
+   "id": "pp8.3",
+   "kind": "subanta",
+   "args": [
+    "muni",
+    2,
+    1,
+    "pulliṅga"
+   ],
+   "expected": [
+    "munim"
+   ],
+   "order": [],
+   "note": "ami purvah 6.1.107"
+  },
+  {
+   "id": "pp9.1",
+   "kind": "subanta",
+   "args": [
+    "rAma",
+    3,
+    1,
+    "pulliṅga"
+   ],
+   "expected": [
+    "rAmeRa"
+   ],
+   "order": [
+    [
+     "7.1.12",
+     "6.1.87"
+    ],
+    [
+     "6.1.87",
+     "8.4.2"
+    ]
+   ],
+   "note": "ta->ina 7.1.12; guna 6.1.87; natva 8.4.2 (tripadi)"
+  },
+  {
+   "id": "pp9.2",
+   "kind": "subanta",
+   "args": [
+    "sADu",
+    1,
+    1,
+    "pulliṅga"
+   ],
+   "expected": [
+    "sADuH"
+   ],
+   "order": [
+    [
+     "8.2.66",
+     "8.3.15"
+    ]
+   ],
+   "note": "ruttva 8.2.66, visarga 8.3.15"
+  },
+  {
+   "id": "pp9.3",
+   "kind": "subanta",
+   "args": [
+    "marut",
+    3,
+    2,
+    "pulliṅga"
+   ],
+   "expected": [
+    "marudByAm"
+   ],
+   "order": [],
+   "note": "jashtva 8.4.53 (src 8.4.52)"
+  },
+  {
+   "id": "pp3.1",
+   "kind": "krdanta",
+   "args": [
+    "08.0010",
+    1,
+    1,
+    "pulliṅga",
+    {
+     "krt": "Rvultfc",
+     "kala": "vartamAna"
+    }
+   ],
+   "expected": [
+    "kArakaH"
+   ],
+   "order": [
+    [
+     "1.3.7",
+     "7.1.1"
+    ],
+    [
+     "7.1.1",
+     "7.2.115"
+    ]
+   ],
+   "note": "kr+Rvul: cutU, yuvoranAkau 7.1.1 (st3), vrddhi 7.2.115"
+  }
+ ]
+}

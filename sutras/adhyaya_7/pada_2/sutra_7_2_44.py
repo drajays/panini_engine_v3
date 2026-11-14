@@ -13,6 +13,7 @@ from engine.state import State
 from phonology    import HAL
 
 _BLOCKS = ("7.2.35",)      # the iṭ-less branch
+_NOT_UDIT = frozenset({"BU~"})     # 2.4.52 stamps the bhū it puts for as with the dhātupāṭha spelling BU~; that ~ is not an ū-it (bhū is not ūdit: bhaviṣyanti, not *BUsyaJi)
 _NAMES = frozenset({"svf", "sUN", "sU", "DUY"})     # svarati, sūti, sūyati, dhūñ; every other root is ūdit
 
 
@@ -22,7 +23,7 @@ def site(state: State, names, first=None, ud: bool = False):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if not (up.replace("~", "") in names or (ud and "U~" in up)):
+        if not (up.replace("~", "") in names or (ud and "U~" in up and up not in _NOT_UDIT)):
             continue
         for u in state.terms[i + 1:]:
             if "ardhadhatuka" in u.tags and u.varnas and (u.varnas[0].slp1 == first if first else u.varnas[0].slp1 in HAL and u.varnas[0].slp1 not in ("y", "h")):
