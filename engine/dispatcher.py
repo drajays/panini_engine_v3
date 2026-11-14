@@ -395,7 +395,22 @@ def apply_rule(
         _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
         if rec.operates_on_samjna_of and form_changed:
             _mark_samjna_licensors(sutra_id, frozenset(rec.operates_on_samjna_of), new_state)
-    return _finish_apply_rule(prev_sutra, sutra_id, new_state)
+    new_state = _finish_apply_rule(prev_sutra, sutra_id, new_state)
+    return _it_prakarana_on_new_agama(sutra_id, new_state)
+
+
+def _it_prakarana_on_new_agama(sutra_id: str, state: "State") -> "State":
+    """An āgama a vidhi has just uttered (``engine.agama``) is an upadeśa: the it-prakaraṇa judges it at once — its
+    it-letters named and deleted before any other rule sees the term, wherever the vidhi was applied from."""
+    from engine.agama import close_judged, pending_segments
+    if not pending_segments(state):
+        return state
+    from pipelines.it_prakarana import IT_PRAKARANA_SEQUENCE, run_it_prakarana
+    if sutra_id in IT_PRAKARANA_SEQUENCE:
+        return state
+    state = run_it_prakarana(state)
+    close_judged(state)
+    return state
 
 
 def _mark_samjna_licensors(sutra_id: str, samjna_ids: frozenset, state: State) -> None:

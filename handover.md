@@ -1,5 +1,8 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-11-15 — cursor: इट् āgama through 1.3.2–1.3.9
+Claim `it-agama-iw` (COORDINATOR for `engine/dispatcher.py`). New `engine/agama.py`; 7.2.35 utters `iw`; 1.3.3/1.3.9 judge the segment; dispatcher post-hook runs the it-prakaraṇa on every newly uttered āgama. See `docs/IT_PRAKARANA_EVERYWHERE.md` §Shipped. Next: नुट् cluster.
+
 ## SESSION 2026-11-13 — cursor: अभ्यासशाला (/practice = sanskritabhyas.in's features, engine-keyed)
 **Short handover for agents: `docs/HANDOVER_ABHYASA.md`** (files, rules, engine gaps, git state, next).
 Owner made sanskritabhyas.in/hi the main reference for the अभ्यास tab. Plan, parity checklist, answer-key rule, engine

@@ -1,6 +1,9 @@
 """
 7.2.35  आर्धधातुकस्येड् वलादेः  —  VIDHI
 
+The āgama is uttered as taught, **इट्** (``engine.agama.utter_into``): its ट् is named it by 1.3.3 and deleted by
+1.3.9 (the dispatcher runs the it-prakaraṇa on every newly uttered āgama), leaving इ — ṭit, so the first avayava (1.1.46).
+
 Narrow v3: prepend **i** (iṭ āgama) on the **kṛt** ``Term`` so it stands
 immediately before a following pratyaya that begins with a **velar-class**
 (varga) obstruent — approximated as the first pratyaya letter in ``HAL`` but
@@ -26,6 +29,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.agama import utter_into
 from engine.state import State
 from phonology    import HAL, mk
 from phonology.pratyahara import YAN
@@ -178,39 +182,37 @@ def cond(state: State) -> bool:
     return _val_initial(pr.varnas[0].slp1)
 
 
+def _utter_it(state: State, t) -> None:
+    """इट् as taught — इ + ट् — at the head of the ārdhadhātuka (ṭit: ādyavayava, 1.1.46); its ट् is then named by
+    हलन्त्यम् and deleted by तस्य लोपः like any upadeśa's (``engine.agama``)."""
+    utter_into(state, t, 0, "iw")[0].tags.add("it_agama")
+
+
 def act(state: State) -> State:
     j = _ardhadhatuka_vikarana_index(state)
     if j is not None:
         t = state.terms[j]
-        it_v = mk("i")
-        it_v.tags.add("it_agama")
-        t.varnas.insert(0, it_v)
+        _utter_it(state, t)
         t.meta["it_agama_7_2_35_done"] = True
         t.tags -= {"kngiti", "kngiti_by_jhal_1_2_9_12"} if "kngiti_by_jhal_1_2_9_12" in t.tags else set()   # no longer jhal-initial
         return state
     j = _lut_tasi_vikaranha_index(state)
     if j is not None:
         t = state.terms[j]
-        it_v = mk("i")
-        it_v.tags.add("it_agama")
-        t.varnas.insert(0, it_v)
+        _utter_it(state, t)
         t.meta["it_agama_7_2_35_done"] = True
         return state
     # General liṭ-tiṅ arm
     j = _lit_tin_index(state)
     if j is not None:
         t = state.terms[j]
-        it_v = mk("i")
-        it_v.tags.add("it_agama")
-        t.varnas.insert(0, it_v)
+        _utter_it(state, t)
         t.meta["it_agama_7_2_35_done"] = True
         return state
     pr = _target_term(state)
     if pr is None:
         return state
-    it_v = mk("i")
-    it_v.tags.add("it_agama")
-    pr.varnas.insert(0, it_v)
+    _utter_it(state, pr)
     pr.meta["it_agama_7_2_35_done"] = True
     return state
 

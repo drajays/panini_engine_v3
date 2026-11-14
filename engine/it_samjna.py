@@ -118,11 +118,14 @@ def it_lopa_already_done(t: Any) -> bool:
     if not done:
         return False
     up, residue = done
-    return (
-        up == (t.meta.get("upadesha_slp1") or "").strip()
-        # an āgama grown into the term (7.2.35's iṭ) is not part of the upadeśa residue
-        and residue == "".join(v.slp1 for v in t.varnas if "it_agama" not in v.tags)
-    )
+    return up == (t.meta.get("upadesha_slp1") or "").strip() and residue == upadesha_residue(t)
+
+
+def upadesha_residue(t: Any) -> str:
+    """The term's own letters after its it-lopa — an āgama grown into it (इट्, नुट् …, ``engine.agama``) is not part of
+    its upadeśa."""
+    from engine.agama import is_agama_letter
+    return "".join(v.slp1 for v in t.varnas if not is_agama_letter(v))
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -235,6 +238,32 @@ def record_it_lopa(term: Any, removed: List[Tuple[int, Any]], n_before: int) -> 
     return out
 
 
+META_AGAMA_RECORDS = "agama_it_records"
+
+
+def record_agama_it_lopa(host: Any, upadesha: str, removed: List[Tuple[int, Any]], seg_len: int) -> List[dict]:
+    """The it-records of an āgama uttered inside ``host`` (``engine.agama``): same fields as ``record_it_lopa``, kept in
+    ``host.meta["agama_it_records"]`` and never as the host's own it-names (इट् makes the āgama ṭit, not आथाम्)."""
+    out: List[dict] = []
+    for k, (idx, v) in enumerate(removed):
+        kind = _kind_of(v.tags)
+        name = it_name(v.slp1, kind)
+        out.append({
+            "letters": v.slp1, "letters_dev": _letters_dev([v]),
+            "sutra": CANDIDATE_TAG_SUTRA.get(kind) if kind else None,
+            "position": "antya" if idx == seg_len - 1 else "adi" if idx == 0 else "madhya",
+            "name": name, "name_dev": it_name_dev(name) if name else None,
+            "upadesha": upadesha, "agama": upadesha,
+        })
+    if out:
+        host.meta[META_AGAMA_RECORDS] = list(host.meta.get(META_AGAMA_RECORDS) or ()) + out
+    return out
+
+
+def agama_it_records(term: Any) -> List[dict]:
+    return list(term.meta.get(META_AGAMA_RECORDS) or ())
+
+
 def inherit_it_records(adesha: Any, records: Iterable[dict], *, sutra_id: str,
                        drop: FrozenSet[str] = frozenset()) -> None:
     """**1.1.56** — copy the sthānin's it-records onto the ādeśa, kept distinct from its own."""
@@ -289,6 +318,10 @@ __all__ = [
     "it_name",
     "it_name_dev",
     "record_it_lopa",
+    "record_agama_it_lopa",
+    "agama_it_records",
+    "upadesha_residue",
+    "META_AGAMA_RECORDS",
     "inherit_it_records",
     "it_records",
     "it_names",

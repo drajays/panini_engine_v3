@@ -47,7 +47,8 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.it_phonetic import IT_LOPA_TAGS
-from engine.it_samjna import META_IT_LOPA_LOG, META_LOPA_DONE, record_it_lopa
+from engine.agama import SEG_DONE, seg_tag, seg_upadesha, segments
+from engine.it_samjna import META_IT_LOPA_LOG, META_LOPA_DONE, record_agama_it_lopa, record_it_lopa, upadesha_residue
 from engine.state  import State
 from phonology.joiner import slp1_to_devanagari
 from phonology.pratyahara import is_dirgha
@@ -75,6 +76,7 @@ def cond(state: State) -> bool:
     return any(_has_it_varna(t) for t in state.terms)
 
 
+
 def _it_samjna_exhausted(state: State, ti: int) -> bool:
     """No sūtra of 1.3.2–1.3.8 still has an unmarked *it* candidate in ``terms[ti]``."""
     from sutras.adhyaya_1.pada_3 import (
@@ -97,10 +99,16 @@ def act(state: State) -> State:
         removed: list[str] = []
         removed_at: list[tuple[int, object]] = []
         n_before = len(t.varnas)
+        segs = segments(t)                                   # āgamas uttered in this term (engine.agama): judged as their own upadeśa
+        seg_removed: dict[str, list[tuple[int, object]]] = {}
         new_varnas = []
         for j, v in enumerate(t.varnas):
             if not (v.tags & IT_LOPA_TAGS):
                 new_varnas.append(v)
+                continue
+            sg = seg_tag(v)
+            if sg:
+                seg_removed.setdefault(sg, []).append((segs[sg].index(j), v))
                 continue
             removed_at.append((j, v))
             # Dhātu upadeśa: anunāsika vowel (१.३.२) — *it* is the nasal
@@ -173,12 +181,19 @@ def act(state: State) -> State:
                 f"{r['letters_dev']} → {r['name_dev'] or 'इत्'} ({_dev_digits(r['sutra'] or '')})"
                 for r in recs
             ))
+        for sg, rem in seg_removed.items():
+            up = seg_upadesha(sg)
+            recs = record_agama_it_lopa(t, up, rem, len(segs[sg]))
+            new_log.extend(dict(r, term_index=ti) for r in recs)
+            summary.append(slp1_to_devanagari([v for _k, v in sorted(
+                [(k, t.varnas[k]) for k in segs[sg]], key=lambda kv: kv[0])]) + " (आगमः) — " + ", ".join(
+                f"{r['letters_dev']} → {r['name_dev'] or 'इत्'} ({_dev_digits(r['sutra'] or '')})" for r in recs))
         t.varnas = new_varnas
+        for v in new_varnas:                                 # an āgama whose it-letters are gone is not judged again
+            if seg_tag(v):
+                v.tags.add(SEG_DONE)
         if ti in exhausted:
-            t.meta[META_LOPA_DONE] = (
-                (t.meta.get("upadesha_slp1") or "").strip(),
-                "".join(v.slp1 for v in new_varnas),
-            )
+            t.meta[META_LOPA_DONE] = ((t.meta.get("upadesha_slp1") or "").strip(), upadesha_residue(t))
     if new_log:
         state.meta[META_IT_LOPA_LOG] = list(state.meta.get(META_IT_LOPA_LOG) or ()) + new_log
     state.meta["__why_now_dev__"] = (

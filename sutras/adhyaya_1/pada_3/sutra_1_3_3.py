@@ -37,6 +37,7 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.it_samjna import TAG_HALANTYAM, it_lopa_already_done, register_candidate_tag
 from engine.state  import State, Term
 from phonology     import HAL, TUSMA
+from phonology.joiner import slp1_to_devanagari
 from phonology.varna import parse_slp1_upadesha_sequence
 
 from sutras.adhyaya_1.pada_3.sutra_1_3_4 import tusma_final_vibhakti
@@ -108,10 +109,23 @@ def _eligible(t: Term, state: State) -> bool:
     return True
 
 
+def _segment_finals(t: Term) -> list[int]:
+    """An āgama uttered inside ``t`` (``engine.agama``) is an upadeśa of its own: its final hal, not yet named."""
+    from engine.agama import SEG_DONE, segments
+    out = []
+    for idxs in segments(t).values():
+        if any(SEG_DONE in t.varnas[k].tags for k in idxs):
+            continue
+        v = t.varnas[idxs[-1]]
+        if v.slp1 in HAL and not v.tags & {"it", "it_candidate_halantyam", "it_candidate_irit"}:
+            out.append(idxs[-1])
+    return out
+
+
 def term_candidates(state: State, ti: int) -> list[int]:
-    """Varṇa index of the final hal of ``terms[ti]`` if it still has to be named *it*."""
+    """Varṇa index of the final hal of ``terms[ti]`` (and of each āgama uttered in it) still to be named *it*."""
     t = state.terms[ti]
-    return [len(t.varnas) - 1] if _eligible(t, state) else []
+    return ([len(t.varnas) - 1] if _eligible(t, state) else []) + _segment_finals(t)
 
 
 def _eligible_terms(state: State):
@@ -140,10 +154,18 @@ def cond(state: State) -> bool:
             and vs[2].slp1 == "T"
         ):
             return True
-    return next(_eligible_terms(state), None) is not None
+    return next(_eligible_terms(state), None) is not None or any(_segment_finals(t) for t in state.terms)
 
 
 def act(state: State) -> State:
+    from engine.agama import seg_tag, seg_upadesha
+    named = []
+    for i, t in enumerate(state.terms):
+        for k in _segment_finals(t):
+            t.varnas[k].tags.add("it_candidate_halantyam")
+            named.append(f"{slp1_to_devanagari(parse_slp1_upadesha_sequence(seg_upadesha(seg_tag(t.varnas[k]))))} (आगमः) — {t.varnas[k].dev}")
+    if named:
+        state.meta["__why_now_dev__"] = "उपदेशे अन्त्यं हल् इत्: " + "; ".join(named) + "। (१.३.३)"
     for i, t in _eligible_terms(state):
         t.varnas[-1].tags.add("it_candidate_halantyam")
         # Back-compat: keep the historical index-only key expected by some tests.

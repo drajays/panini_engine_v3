@@ -78,3 +78,27 @@ Not "start now". The change is mostly mechanical for nuṭ but (1) two design po
 1. **3.2.141 / vuk-type u:** default = Bhāṣya (Kaumudī "अनुबन्ध इति भाष्यम्"): the u is an anubandha (it-marker), so the vibhāṣā readings both hold. The Kāśikā / Nyāsa / Padamañjarī reading (u uccāraṇārtha → only hrasva) is recorded as an explicit alternative, not the default.
 2. **1.1.46 ādyantau ṭakitau** stays a **paribhāṣā** read by each āgama sūtra (the sthāna of the āgama), never an acting vidhi sūtra and never called via apply_rule from inside another act.
 Consequence: the nuṭ cluster (7.1.54/55 + readers 6.4.3/4/6/7) can be claimed as one coordinated job; order = name it-letters → place by 1.1.46 reading → 1.3.9 lopa, extending `state.meta["it_lopa_log"]`.
+
+
+## Shipped 2026-11-15 (cursor) — इट् cluster
+
+Owner screenshot on `/dhaturupa` (स्कुन्द् + स + आथाम् → bare इ) is the go-ahead. Implemented option (a) of §R2 as a
+**segment inside the host**, not a separate Term:
+
+1. `engine/agama.py` — `utter_into(state, term, at, upadesha)` puts the taught letters at the 1.1.46 position the vidhi
+   already chooses; tags them `agama_seg:<upadeśa>#n`. UCCARANARTHA table (cited) drops the उ of नुट्/तुक्/वुक्… before
+   utterance. `pending_segments` / `close_judged` / `is_agama_letter`.
+2. 7.2.35 — four insert branches call `_utter_it` → `utter_into(..., "iw")`; the leftover इ keeps the grandfathered
+   `it_agama` tag so the ~20 readers keep working.
+3. 1.3.3 — `_segment_finals` names the final hal of every unjudged āgama segment; why_now names "इट् (आगमः) — ट्".
+4. 1.3.9 — deletes segment its, writes them via `record_agama_it_lopa` into `host.meta["agama_it_records"]` and
+   `state.meta["it_lopa_log"]` with `agama=<upadeśa>` (the host never becomes `it:wit`); marks the leftover segment
+   letters `agama_it_done`. Summary: "इट् (आगमः) — ट् → टित् (१.३.३)".
+5. `engine/it_samjna.it_lopa_already_done` / `upadesha_residue` ignore āgama letters in the host's residue.
+6. Dispatcher post-hook (`_it_prakarana_on_new_agama`): after any non-1.3.x `apply_rule` that left a pending segment,
+   runs `pipelines.it_prakarana.run_it_prakarana` (sequence lives in pipelines/, no bare sūtra-id literals in engine/).
+   Covers every recipe call site and the loop in one place.
+7. Focused test: `tests/unit/test_it_prakarana_agama.py` (स्कुन्दिषाथाम् / भविष्यति). Hindi hint for 7.2.35 cleaned.
+
+**Not yet:** नुट् (7.1.54/55 + 6.4.3/4/6/7 readers) — next cluster; वुक्/सुट् self-tagging; the rest of the bare-letter list.
+Sig / notes-audit / brain-mirror / upadeśa-input failures on this HEAD are the same on bare `main` (pre-existing).
