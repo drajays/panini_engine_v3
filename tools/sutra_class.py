@@ -7,6 +7,12 @@ docs/SUTRA_COVERAGE_100_PLAN.md and of the per-phase "confident" list.
 "confident" is stricter than Art. 16's `implemented`: the exemption flag does NOT
 count as movement, a gate-only placeholder never counts, and tests must name the
 sūtra ≥5 times (proxy for ≥3 positive + ≥2 negative until test metadata exists).
+
+The LK case gate (tools/lk_cases.py) is that test metadata. For a sūtra it grades
+(any grade but UNRUNNABLE) the LK grade replaces the mention proxy: confident needs
+LK `confident`; an LK `FAIL` holds the sūtra at `working` at most. Invoked / moved
+still come only from the firing ledger — the gate never promotes a sūtra the ledger
+does not see firing (`make coverage` runs the held LK cases inside the suite).
 """
 from __future__ import annotations
 
@@ -44,10 +50,24 @@ def _placeholder(rec, src: str) -> bool:
         return "return samhita_gate_eligible" in src
 
 
+def _lk_grades() -> dict[str, str]:
+    from tools.lk_cases import verdicts
+    return {sid: v["grade"] for sid, v in verdicts().items() if v["grade"] != "UNRUNNABLE"}
+
+
+def _dates() -> tuple[str, str]:
+    """(firing ledger generated_at, newest LK verdict file) — both shown, so a stale ledger is visible."""
+    ledger = (load_ledger() or {}).get("generated_at", "none")
+    vs = sorted((ROOT / "sig/lk_case_verdicts").glob("a*.json"))
+    lk = max((datetime.fromtimestamp(p.stat().st_mtime, timezone.utc) for p in vs), default=None)
+    return ledger, lk.isoformat(timespec="seconds") if lk else "none"
+
+
 def rows() -> list[dict]:
     ledger = load_ledger() or {}
     invoked, moved = set(ledger.get("invoked", ())), set(ledger.get("moved", ()))
     cited, mentions = _cited_ids(), _test_mentions()
+    lk = _lk_grades()
     out = []
     for sid in sorted(SUTRA_REGISTRY, key=_key):
         rec = SUTRA_REGISTRY[sid]
@@ -59,17 +79,17 @@ def rows() -> list[dict]:
             placeholder=_placeholder(rec, src),
             stub_gloss=bool(_PLACEHOLDER_WHY.search(src)),
             invoked=sid in invoked, moved=sid in moved,
-            cited=sid in cited, mentions=mentions.get(sid, 0),
+            cited=sid in cited, mentions=mentions.get(sid, 0), lk_grade=lk.get(sid),
         )
+        tested = r["lk_grade"] == "confident" if r["lk_grade"] else r["mentions"] >= MIN_MENTIONS
         if typ in OPERATIONAL:
-            ok = r["invoked"] and r["moved"] and r["cited"] and not r["placeholder"] \
-                and r["mentions"] >= MIN_MENTIONS
+            ok = r["invoked"] and r["moved"] and r["cited"] and not r["placeholder"] and tested
             r["status"] = "confident" if ok else (
                 "working" if r["invoked"] and r["moved"] and not r["placeholder"] else
                 "placeholder" if r["placeholder"] else
                 "unexercised" if not r["invoked"] else "gate_only")
         else:  # structural / definitional: invoked, cited, tested, real cond
-            ok = r["invoked"] and r["cited"] and not r["placeholder"] and r["mentions"] >= 1
+            ok = r["invoked"] and r["cited"] and not r["placeholder"] and r["mentions"] >= 1 and r["lk_grade"] != "FAIL"
             r["status"] = "confident_structural" if ok else "pending_structural"
         out.append(r)
     return out
@@ -87,12 +107,16 @@ def main() -> None:
         if r["status"].startswith("confident"):
             by_pada[r["pada"]].append(r)
     n_conf = sum(len(v) for v in by_pada.values())
+    ledger_at, lk_at = _dates()
     L = ["# Sūtras the engine does confidently (generated — do not edit)", "",
          f"Generated {datetime.now(timezone.utc):%Y-%m-%d} by `python3 -m tools.sutra_class`. "
          f"**{n_conf} of {len(rs)}** are confident.", "",
+         f"Firing ledger `sig/firing_coverage.json`: {ledger_at} · LK verdicts `sig/lk_case_verdicts/`: {lk_at}"
+         + (" — **the ledger is older than the verdicts: run `make coverage`**" if ledger_at < lk_at else ""), "",
          "*Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a "
-         f"gate-only placeholder + named in tests ≥{MIN_MENTIONS}×. *(S)* = structural/definitional "
-         "class: invoked + cited + tested + real cond (class proof pending, plan §1).", "",
+         f"gate-only placeholder + tested: LK case gate `confident` where the gate grades the sūtra, else named in tests "
+         f"≥{MIN_MENTIONS}×; an LK `FAIL` caps it at working. *(S)* = structural/definitional "
+         "class: invoked + cited + tested + real cond, no LK `FAIL` (class proof pending, plan §1).", "",
          "| status | count |", "|---|---|"] + [f"| {k} | {v} |" for k, v in sorted(total.items())] + [""]
     pr = Counter(r["pada"] for r in rs)
     L += ["| pāda | confident | of |", "|---|---|---|"]

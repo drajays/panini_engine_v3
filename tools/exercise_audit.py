@@ -59,6 +59,12 @@ _KRT_VIV = {
 for _k in ("tavya", "yat", "Ryat", "kyap", "anIyar", "kelimar"):
     _KRT_VIV[_k] = [dict(krt="kftya"), dict(krt="kftya", artha="karman"), dict(krt="kftya", artha="BAva")]
 _KRT_DEFAULT = [dict(artha="kartf"), {}, dict(artha="BAva"), dict(artha="karman")]
+# a case that states a sense the harness never varies (arthaViSeSa=Bakzya for 7.3.69) is run with its own vivakṣā only
+_HARNESS_KEYS = {k for vs in [*_KRT_VIV.values(), _KRT_DEFAULT] for v in vs for k in v}
+
+
+def _own_sense(spec: tuple) -> set:
+    return {k for k, _ in spec[6]} if len(spec) > 6 and spec[6] else set()
 _PRAYOGA = {"Kartari": "kartari", "Karmani": "karmani", "Bhave": "bhave"}
 OK_STATUS = {"VIDHI": {"APPLIED"}, "VIBHASHA": {"APPLIED"}, "ATIDESHA": {"APPLIED"}, "NIPATANA": {"APPLIED"},
              "NIYAMA": {"APPLIED", "AUDIT", "VACUOUS", "APPLIED_VACUOUS"}}
@@ -264,7 +270,7 @@ def attempt(spec, expected: str, sid: str, typ: str) -> dict:
         specs += [("subanta", spec[1][:-1] + "s", l, spec[3], spec[4]) for l in _LINGA.values()]
     if spec[0] == "sanadi" and spec[3] == "kartari" and _ubhayapadi(spec[1]):
         specs += [spec[:7] + ("parasmai",), spec[:7] + ("atmane",)]
-    if spec[0] == "krdanta":                                 # the vivakṣā is the harness's choice of meaning for the pratyaya label
+    if spec[0] == "krdanta" and not (_own_sense(spec) - _HARNESS_KEYS):     # the vivakṣā is the harness's choice of meaning for the pratyaya label
         specs = [spec[:6] + (tuple(sorted(v.items())),) for v in _KRT_VIV.get(spec[2], _KRT_DEFAULT)]
     if spec[0] == "tinanta" and spec[3] == "kartari" and _ubhayapadi(spec[1]):      # an ubhayapadī root has both padas; a strictly one-pada root is NOT forced (a real disagreement stays a FAIL)
         specs += [spec + ("parasmai",), spec + ("atmane",)]

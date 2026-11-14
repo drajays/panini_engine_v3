@@ -62,9 +62,12 @@ lab:   ## local test panel → http://127.0.0.1:8000/lab (Vidyut column needs .v
 ui:
 	./"Panini Engine.command"
 
-coverage:
-	python3 -m tools.firing_coverage
-	python3 -m tools.firing_coverage --report
+coverage:   ## firing ledger (Art. 16) over the suite, the held LK case grades included (LK=1)
+	LK=1 $(PYTHON) -m tools.firing_coverage -n8 -p no:cacheprovider
+	$(PYTHON) -m tools.firing_coverage --report
+
+lk:         ## LK case gate summary: grades + FAIL sūtras by sub-kind (rerun: python3 -m tools.lk_cases run <ids>)
+	$(PYTHON) -m tools.lk_cases summary
 
 confident:   ## per-phase list of sūtras done with confidence → docs/CONFIDENT_SUTRAS.md
 	python3 -m tools.sutra_class

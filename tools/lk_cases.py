@@ -2,6 +2,7 @@
 
     python3 -m tools.lk_cases init  ~/lk_unexercised_tests.json   # owner JSON -> tests/fixtures/lk_cases.json (skeleton; spec filled later)
     python3 -m tools.lk_cases run [7.1 4.1.41 ...]                # run the cases -> sig/lk_case_verdicts/aN.json
+    python3 -m tools.lk_cases summary                             # grades + FAIL sūtras by sub-kind (engine_error, not_fired, mismatch, …)
 
 Case = {text, expected (SLP1), positive, spec (tools.exercise_audit tuple, or null = not yet machine-runnable), source (citation)}.
   positive: expected ∈ the vikalpa readings AND the sūtra is APPLIED in the branch that gives it (exercise_audit.attempt).
@@ -61,7 +62,7 @@ def _mutate(sid, spec, expected):
     keep = rec.cond
     object.__setattr__(rec, "cond", lambda state: False)
     try:
-        mut, err = run(spec)
+        mut, err = run.__wrapped__(spec)        # run() is lru_cached: the cached reading is the unmutated one
     finally:
         object.__setattr__(rec, "cond", keep)
     if err or not any(_norm(s) == _norm(expected) for s, _ in mut):
@@ -72,7 +73,29 @@ def _mutate(sid, spec, expected):
     return ("redundant" if rep else "indeterminate"), rep       # indeterminate: the form survives but no other rule shows up in the trace (cond-only sūtra, or its act is also done elsewhere)
 
 
-def check(sid: str, c: dict, typ: str) -> dict:
+def sub_kind(why: str) -> str:
+    """Why a runnable case failed — reporting only, never a grade input:
+    engine_error · not_fired (form right, the sūtra is not in that branch's trace) · mismatch (form wrong) ·
+    over_applied (a negative: the sūtra fired) · over_generated (an excluded form is produced)."""
+    if why.startswith("engine error"):
+        return "engine_error"
+    if "did not fire" in why:
+        return "not_fired"
+    if "applied in a branch" in why:
+        return "over_applied"
+    if why.startswith("excluded form"):
+        return "over_generated"
+    return "mismatch"
+
+
+def check(sid: str, c: dict, typ: str, mutate: bool = True) -> dict:
+    r = _check(sid, c, typ, mutate)
+    if r["result"] == "fail":
+        r["sub"] = sub_kind(r.get("why", ""))
+    return r
+
+
+def _check(sid: str, c: dict, typ: str, mutate: bool = True) -> dict:
     from tools.exercise_audit import attempt, run, _norm, OK_STATUS, _DEFAULT_OK
     if not c.get("spec") or not c.get("expected"):
         return {"result": "unrunnable"}
@@ -80,7 +103,7 @@ def check(sid: str, c: dict, typ: str) -> dict:
     if c["positive"]:
         r = attempt(spec, c["expected"], sid, typ)
         out = {"result": "pass" if r["ok"] else "fail", "why": r.get("why", ""), "spec": r.get("spec")}
-        if r["ok"]:
+        if r["ok"] and mutate:
             out["mutation"], out["replaced_by"] = _mutate(sid, tuple(r["spec"]), c["expected"])
         return out
     branches, err = run(spec)
@@ -89,11 +112,11 @@ def check(sid: str, c: dict, typ: str) -> dict:
     ok = OK_STATUS.get(typ, _DEFAULT_OK)
     giving = [(s, seen) for s, seen in branches if _norm(s) == _norm(c["expected"])]
     fired = [s for s, seen in giving if any(x in ok for x in seen.get(sid, ()))]
-    kind = c.get("kind")          # "declined": the form IS produced, by a branch where the sūtra is declined/blocked · "excluded": a wrong form, never produced
+    kind = c.get("kind")          # "declined": the form IS produced, by a branch where the sūtra is declined/blocked · "produced": the form IS produced, the sūtra not applying · "excluded": a wrong form, never produced
     if fired:
         return {"result": "fail", "why": f"{sid} applied in a branch giving {c['expected']}"}
-    if kind == "declined" and not giving:
-        return {"result": "fail", "why": f"declined reading {c['expected']} is not produced at all (readings {sorted({s for s, _ in branches})})"}
+    if kind in ("declined", "produced") and not giving:      # "produced": the form must arise, by a route without the sūtra (वारिणा beside 7.1.74)
+        return {"result": "fail", "why": f"{kind} reading {c['expected']} is not produced at all (readings {sorted({s for s, _ in branches})})"}
     if kind == "excluded" and giving:
         return {"result": "fail", "why": f"excluded form {c['expected']} is produced"}
     return {"result": "pass", "kind": kind or ("produced" if giving else "unproven"), "why": ""}     # produced: the form arises with the sūtra not applied · unproven: never produced, passes only vacuously
@@ -129,10 +152,34 @@ def run_all(filters: list[str]) -> None:
         print(sid, prev[sid]["grade"], flush=True)
     for a in {k.split(".")[0] for k in done}:          # write only the adhyāyas this run touched: parallel runs per adhyāya never clobber each other
         (OUTD / f"a{a}.json").write_text(json.dumps({k: v for k, v in prev.items() if k.startswith(a + ".")}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    summary()
+
+
+def verdicts() -> dict:
+    out: dict = {}
+    for f in sorted(OUTD.glob("a*.json")):
+        out.update(json.loads(f.read_text(encoding="utf-8")))
+    return out
+
+
+def summary() -> None:
+    """Grades, and each FAIL sūtra under the sub-kinds of its failing cases (a sūtra may sit under several)."""
+    from collections import Counter, defaultdict
+    v = verdicts()
+    print("grades:", dict(Counter(r["grade"] for r in v.values())))
+    by_sub = defaultdict(list)
+    for sid in sorted(v, key=_key):
+        if v[sid]["grade"] == "FAIL":
+            for s in sorted({c.get("sub") or sub_kind(c.get("why", "")) for c in v[sid]["cases"] if c["result"] == "fail"}):
+                by_sub[s].append(sid)
+    for s, ids in sorted(by_sub.items()):
+        print(f"FAIL/{s}: {len(ids)}  {' '.join(ids)}")
 
 
 if __name__ == "__main__":
     if sys.argv[1] == "init":
         init(sys.argv[2])
+    elif sys.argv[1] == "summary":
+        summary()
     else:
         run_all(sys.argv[2:])
