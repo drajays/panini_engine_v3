@@ -78,6 +78,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.4.39",   # kṣubhnādiṣu ca — no ṇatva in kṣubhnā, tṛpnu: same tag
     "8.4.1",    # raṣābhyāṃ no ṇaḥ samānapade — r/ṣ/ṛ + n (+ vowel) → ṇ
     "8.4.2",    # aṭkupvāṅnumvyavāye'pi — the same across aṭ/ku/pu (स्तृणोति, क्रीणाति)
+    "8.4.14", "8.4.15", "8.4.16",   # across the upasarga | dhātu seam: ṇopadeśa dhātu, hinu/mīnā, loṭ āni (प्रणमति, प्रहिणोति, प्रवपाणि)
     "8.4.44",   # śāt — no ścutva for a tavarga after ś (aśnāti): tags, 8.4.40 passes over
     "8.4.40",   # stoḥ ścunā ścuḥ — dental next to a palatal → palatal (जज्ञे, राज्ञा)
     "8.4.41",   # ṣṭunā ṣṭuḥ — ṣ+t→ṣ+ṭ (structural; arm-guarded for edge cases)
@@ -91,6 +92,9 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.4.55",   # khari ca — jhal→car before khar (idempotent: 8_4_55_khari_ca_done)
     "8.4.56",   # vāvasāne — jaś→car at pause (idempotent: gate)
     "8.4.58",   # anunāsika ca
+    "8.4.60",   # tor li — tavarga before l → l (तल्लयः, अग्निचिल्लुनाति)
+    "8.4.62",   # jhayo ho'nyatarasyām — h after a jhay → the varga's fourth, optionally (वाग्घसति / वाग् हसति)
+    "8.4.63",   # śaś cho'ṭi — pada-initial ś after a pada-final jhay, before aṭ → ch, optionally (वाक्छेते / वाक् शेते)
     "8.4.64", "8.4.65",   # halo yamāṃ yami lopaḥ / jharo jhari savarṇe — optional drop of the middle letter of a geminate cluster (cucyate beside cucyyate)
     "8.4.68",   # a-a padānte — trace marker (idempotent gate)
 )

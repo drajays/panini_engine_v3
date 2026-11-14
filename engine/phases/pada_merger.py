@@ -85,6 +85,9 @@ def pada_merge(state: State) -> None:
             if _tag in t.tags:           # the pūrvapada | uttarapada boundary survives the merge on the varṇas (8.4.12 reads it)
                 for v in t.varnas:
                     v.tags.add(_vt)
+        if "upasarga" in t.tags:         # the upasarga | dhātu seam is not samānapada: 8.4.14 – 8.4.16 read it (8.4.2 stops at it)
+            for v in t.varnas:
+                v.tags.add("upasarga_v")
         if "abhyasa" in t.tags:          # the abhyāsa is not the dhātu (8.2.37 एकाचो…)
             for v in t.varnas:
                 v.tags.add("abhyasa_v")

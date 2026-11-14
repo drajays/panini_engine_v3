@@ -30,8 +30,10 @@ from engine.state import State
 from phonology import mk
 from phonology.pratyahara import KHAR
 
-# jhal → car (antaratama).  c-varga and h are 8.2.30 / 8.2.31's; ś ṣ s are already car.
+# jhal → car (antaratama).  h is 8.2.31's; ś ṣ s are already car.  A c-varga stop that 8.2.30 left is the one 8.4.40 ścutva
+# made after it (अग्निचिद् + शेते → अग्निचिज्शेते → अग्निचिच्शेते, Kāśikā 8.4.63 अग्निचिच्छेते).
 _JHAL_CAR: dict[str, str] = {
+    "J": "c", "j": "c", "C": "c",
     "G": "k", "g": "k", "K": "k",
     "Q": "w", "q": "w", "W": "w",
     "D": "t", "d": "t", "T": "t",

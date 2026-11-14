@@ -103,6 +103,9 @@ def _find_target(state: State):
                 break
             if "samasa_purva_v" in v.tags and "samasa_uttara_v" in vm.tags:
                 break               # a samāsa's pūrvapada | uttarapada seam is not samānapada: 8.4.12 owns it
+            if vm.slp1 == "n" and "upasarga_v" in v.tags and "upasarga_v" not in vm.tags \
+                    and ({"dhatu_v", "pratyaya_start_v"} & vm.tags):
+                break               # an upasarga's r reaching the dhātu's n or a pratyaya's n is not samānapada: 8.4.14 – 8.4.16 own it
             if vm.slp1 == "n":
                 if m == k + 1:
                     # 8.4.1: adjacent *r* / *ṛ* / *ṣ* + *n*; *apī* of 8.4.2
