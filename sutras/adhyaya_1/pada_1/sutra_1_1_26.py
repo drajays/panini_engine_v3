@@ -15,7 +15,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-_TARGETS = frozenset({"kta", "ktavatu"})
+_TARGETS = frozenset({"kta", "ktavatu", "ktavatu~"})
 
 
 def _eligible(state: State):

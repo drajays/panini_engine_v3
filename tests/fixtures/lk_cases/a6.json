@@ -3,18 +3,99 @@
   {
    "text": "upa + eti (vṛddhi)",
    "expected_iast": "upaiti",
-   "expected": null,
+   "expected": "upEti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "02.0040",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"]}"
+   ],
+   "source": "Kāśikā 6.1.89 उपैति",
+   "owner": true
   },
   {
    "text": "upa + edhate (vṛddhi)",
    "expected_iast": "upaidhate",
-   "expected": null,
+   "expected": "upEDate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0002",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"]}"
+   ],
+   "source": "Kāśikā 6.1.89 (एधति) उपैधते; LK 6.1.89",
+   "owner": true
+  },
+  {
+   "text": "upa + eti (guṇa erroneously applied)",
+   "expected_iast": "upeti",
+   "expected": "upeti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "02.0040",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"]}"
+   ],
+   "source": "Kāśikā 6.1.89 vṛddhi, not guṇa (6.1.87)",
+   "owner": true,
+   "source_unverified_in_db_text": true
+  },
+  {
+   "text": "extra: viSvOhA",
+   "expected_iast": null,
+   "expected": "viSvOhA",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "viSvavAh",
+    "pulliṅga",
+    3,
+    1
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: svAH",
+   "expected_iast": null,
+   "expected": "svAH",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "sva",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "generic negative: 6.1.89 not in this derivation",
+   "owner": false
+  },
+  {
+   "text": "extra: pUrvAH",
+   "expected_iast": null,
+   "expected": "pUrvAH",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "pUrva",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "generic negative",
+   "owner": false
   },
   {
    "text": "pra + ūḍhaḥ (vṛddhi)",
@@ -22,71 +103,315 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
-  },
-  {
-   "text": "upa + eti (guṇa erroneously applied)",
-   "expected_iast": "upeti",
-   "expected": null,
-   "positive": false,
-   "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unmapped owner case"
   }
  ],
  "6.1.113": [
   {
    "text": "śivas + arcyaḥ (ato ror aplutād aplute)",
    "expected_iast": "śivo'rcyaḥ",
-   "expected": null,
+   "expected": "vfkzo'tra",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "vfkzaH",
+    "atra"
+   ],
+   "source": "Kāśikā 6.1.113 वृक्षोऽत्र",
+   "owner": true,
+   "note": "owner case 'Sivo'rcyaH' replaced by the Kāśikā's own vṛkṣo'tra"
+  },
+  {
+   "text": "extra: plakzo'tra",
+   "expected_iast": null,
+   "expected": "plakzo'tra",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "plakzaH",
+    "atra"
+   ],
+   "source": "Kāśikā 6.1.113 प्लक्षोऽत्र",
+   "owner": false
+  },
+  {
+   "text": "extra: agniratra",
+   "expected_iast": null,
+   "expected": "agniratra",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "agniH",
+    "atra"
+   ],
+   "source": "6.1.113 needs a-varṇa before ro: agniH has i",
+   "owner": false
+  },
+  {
+   "text": "extra: vfkzaHkaroti",
+   "expected_iast": null,
+   "expected": "vfkzaHkaroti",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "vfkzaH",
+    "karoti"
+   ],
+   "source": "6.1.113 needs a following (aplute) a: karoti has k",
+   "owner": false
   }
  ],
  "6.4.62": [
   {
    "text": "ci + lṛṭ + ta (optional ciṇvad-iṭ)",
    "expected_iast": "cāyiṣyate",
-   "expected": null,
+   "expected": "cAyizyate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "lRT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.4.62 (ciṇvad-iṭ, vā)",
+   "owner": true
   },
   {
    "text": "ci + lṛṭ + ta (without ciṇvad-iṭ)",
    "expected_iast": "ceṣyate",
-   "expected": null,
+   "expected": "cezyate",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "lRT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.4.62 (vā: without ciṇvat)",
+   "owner": true,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
+  },
+  {
+   "text": "extra: pArizyate",
+   "expected_iast": null,
+   "expected": "pArizyate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "03.0005",
+    "lRT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: cezyati",
+   "expected_iast": null,
+   "expected": "cezyati",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "lRT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "6.4.62 only bhāvakarma: kartari cezyati has no ciṇvat",
+   "owner": false
+  },
+  {
+   "text": "extra: vivijiTa",
+   "expected_iast": null,
+   "expected": "vivijiTa",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "07.0023",
+    "liT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "generic negative",
+   "owner": false
   }
  ],
  "6.4.63": [
   {
    "text": "dīṅ + liṭ + atus (yuṭ before aci kṅiti)",
    "expected_iast": "didīyāte",
-   "expected": null,
+   "expected": "didIyAte",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "04.0029",
+    "liT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 6.4.63 उपदिदीयाते (yuṭ before aci kṅiti)",
+   "owner": true
+  },
+  {
+   "text": "extra: didIye",
+   "expected_iast": null,
+   "expected": "didIye",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "04.0029",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: didIyire",
+   "expected_iast": null,
+   "expected": "didIyire",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "04.0029",
+    "liT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 6.4.63 उपदिदीयिरे",
+   "owner": false
+  },
+  {
+   "text": "extra: dIyate",
+   "expected_iast": null,
+   "expected": "dIyate",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "04.0029",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.4.63 अचीति किम्: before a consonant (ya) no yuṭ",
+   "owner": false
+  },
+  {
+   "text": "extra: vivijiTa",
+   "expected_iast": null,
+   "expected": "vivijiTa",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "07.0023",
+    "liT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "generic negative",
+   "owner": false
   }
  ],
  "6.4.107": [
   {
    "text": "su + laṭ + vas (optional u-lopa before m/v)",
    "expected_iast": "sunvaḥ",
-   "expected": null,
+   "expected": "sunvaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "05.0001",
+    "laT",
+    "kartari",
+    1,
+    2
+   ],
+   "source": "Kāśikā 6.4.107 सुन्वः",
+   "owner": true
   },
   {
    "text": "su + laṭ + vas (u retained)",
    "expected_iast": "sunuvaḥ",
-   "expected": null,
+   "expected": "sunuvaH",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "05.0001",
+    "laT",
+    "kartari",
+    1,
+    2
+   ],
+   "source": "Kāśikā 6.4.107 सुनुवः",
+   "owner": true,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
+  },
+  {
+   "text": "extra: tanvahe",
+   "expected_iast": null,
+   "expected": "tanvahe",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "08.0001",
+    "laT",
+    "kartari",
+    1,
+    2,
+    "atmane"
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: manvahe",
+   "expected_iast": null,
+   "expected": "manvahe",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0009",
+    "laT",
+    "kartari",
+    1,
+    2
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: vivijiTa",
+   "expected_iast": null,
+   "expected": "vivijiTa",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "07.0023",
+    "liT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "generic negative",
+   "owner": false
   }
  ]
 }

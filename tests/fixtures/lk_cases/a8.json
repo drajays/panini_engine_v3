@@ -3,364 +3,1204 @@
   {
    "text": "grāma + grāma (vīpsā, āmreḍita)",
    "expected_iast": "grāmo grāmaḥ",
-   "expected": null,
+   "expected": "grAmo grAmaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: dvitva-of-a-pada (āmreḍita) has no engine entry point"
   }
  ],
  "8.2.2": [
   {
    "text": "rājan + bhyām (nalopa asiddha for tuk etc.)",
    "expected_iast": "rājabhyām",
-   "expected": null,
+   "expected": "rAjaByAm",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "structural: 8.2.2 is an asiddha-statement (no APPLIED trace exists); needs class proof, not a firing test"
   },
   {
    "text": "vṛtrahan + bhyaḥ (nalopa before sups)",
    "expected_iast": "vṛtrahabhyaḥ",
-   "expected": null,
+   "expected": "vftrahaByaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "structural (see above)"
   }
  ],
  "8.2.19": [
   {
    "text": "parā + ay + laṭ (r → l before ay)",
    "expected_iast": "palāyate",
-   "expected": null,
+   "expected": "palAyate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0546",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"parA\"]}"
+   ],
+   "source": "Kāśikā 8.2.19 पलायते",
+   "owner": true
+  },
+  {
+   "text": "extra: palAyante",
+   "expected_iast": null,
+   "expected": "palAyante",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0546",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"parA\"]}"
+   ],
+   "source": "Kāśikā 8.2.19 पलायते (3pl)",
+   "owner": false,
+   "source_unverified_in_db_text": true
   },
   {
    "text": "parā + ay + laṭ (r retained erroneously)",
    "expected_iast": "parāyate",
-   "expected": null,
+   "expected": "parAyate",
    "positive": false,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0546",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"parA\"]}"
+   ],
+   "source": "owner wrong form: 8.2.19 makes r→l",
+   "owner": true
   }
  ],
  "8.2.43": [
   {
    "text": "drā + kta + su (t → n)",
    "expected_iast": "drāṇaḥ",
-   "expected": null,
+   "expected": "drARaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "02.0049",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.43 (saṃyogādi ā-anta yaṇvat; prad-rāṇaḥ)",
+   "owner": true
   },
   {
    "text": "mlā + kta + su (t → n)",
    "expected_iast": "mlānaḥ",
-   "expected": null,
+   "expected": "mlAnaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "01.1052",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.43 म्लानः",
+   "owner": true
+  },
+  {
+   "text": "extra: dyAnaH",
+   "expected_iast": null,
+   "expected": "dyAnaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1053",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: yAtaH",
+   "expected_iast": null,
+   "expected": "yAtaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "02.0044",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.43 संयोगादेरिति किम्: यातः",
+   "owner": false
+  },
+  {
+   "text": "extra: cyutaH",
+   "expected_iast": null,
+   "expected": "cyutaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "01.1108",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.43 आत इति किम्: च्युतः",
+   "owner": false
   }
  ],
  "8.2.44": [
   {
    "text": "lū + kta + su (t → n)",
    "expected_iast": "lūnaḥ",
-   "expected": null,
+   "expected": "lUnaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "09.0016",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.44 लूनः",
+   "owner": true
+  },
+  {
+   "text": "extra: DUnaH",
+   "expected_iast": null,
+   "expected": "DUnaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0020",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.44 धूनः",
+   "owner": false
+  },
+  {
+   "text": "extra: jInaH",
+   "expected_iast": null,
+   "expected": "jInaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0034",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.44 जीनः",
+   "owner": false
+  },
+  {
+   "text": "extra: pUtaH",
+   "expected_iast": null,
+   "expected": "pUtaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "09.0014",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "pUY is before lūñ in the list (not ल्वादि): pūtaḥ",
+   "owner": false
   }
  ],
  "8.2.45": [
   {
    "text": "bhuj + kta + su (odit, t → n)",
    "expected_iast": "bhugnaḥ",
-   "expected": null,
+   "expected": "BugnaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "06.0153",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "owner case; Kāśikā 8.2.45 lists ओदित् roots (bhuj kauṭilye is udit? unverified)",
+   "owner": true,
+   "note": "DB verification pending"
+  },
+  {
+   "text": "extra: hAnaH",
+   "expected_iast": null,
+   "expected": "hAnaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "03.0008",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: vAnaH",
+   "expected_iast": null,
+   "expected": "vAnaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1070",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: pakvaH",
+   "expected_iast": null,
+   "expected": "pakvaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "01.1151",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "pac is not odit: 8.2.52 not 8.2.45",
+   "owner": false
   }
  ],
  "8.2.51": [
   {
    "text": "śuṣ + kta + su (t → k)",
    "expected_iast": "śuṣkaḥ",
-   "expected": null,
+   "expected": "SuzkaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "04.0080",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.51 शुष्कः",
+   "owner": true
+  },
+  {
+   "text": "extra: SuzkavAn",
+   "expected_iast": null,
+   "expected": "SuzkavAn",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "04.0080",
+    "ktavatu",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "BUta"
+     ],
+     [
+      "artha",
+      "kartf"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.51 शुष्कवान्",
+   "owner": false
+  },
+  {
+   "text": "extra: pakvaH",
+   "expected_iast": null,
+   "expected": "pakvaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "01.1151",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "8.2.51 only after śuṣ",
+   "owner": false
+  },
+  {
+   "text": "extra: lUnaH",
+   "expected_iast": null,
+   "expected": "lUnaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "09.0016",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "8.2.51 only after śuṣ",
+   "owner": false
   }
  ],
  "8.2.52": [
   {
    "text": "pac + kta + su (t → v)",
    "expected_iast": "pakvaḥ",
-   "expected": null,
+   "expected": "pakvaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta",
+    "01.1151",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.52 पक्वः",
+   "owner": true
+  },
+  {
+   "text": "extra: pakvavAn",
+   "expected_iast": null,
+   "expected": "pakvavAn",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1151",
+    "ktavatu",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "BUta"
+     ],
+     [
+      "artha",
+      "kartf"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 8.2.52 पक्ववान्",
+   "owner": false
+  },
+  {
+   "text": "extra: SuzkaH",
+   "expected_iast": null,
+   "expected": "SuzkaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "04.0080",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "8.2.52 only after pac",
+   "owner": false
+  },
+  {
+   "text": "extra: lUnaH",
+   "expected_iast": null,
+   "expected": "lUnaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "09.0016",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "8.2.52 only after pac",
+   "owner": false
   }
  ],
  "8.2.84": [
   {
    "text": "āgaccha + bho + devadatta3 (pluta in dūrād dhūta)",
    "expected_iast": "devadattā3",
-   "expected": null,
+   "expected": "devadattA3",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: pluta (dūrāddhūte) has no engine entry point"
   }
  ],
  "8.3.4": [
   {
    "text": "sam + skartā (anunāsikāt paro'nusvāraḥ)",
    "expected_iast": "saṃskartā",
-   "expected": null,
+   "expected": "saMskartA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "sam",
+    "skartA"
+   ],
+   "source": "owner; Kāśikā 8.3.4 cites संस्स्कर्ता under 8.3.5 (sam+skartā)",
+   "owner": true
   },
   {
    "text": "kān + kān (anunāsikāt paro'nusvāraḥ)",
    "expected_iast": "kāṃskān",
-   "expected": null,
+   "expected": "kAMskAn",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kAn",
+    "kAn"
+   ],
+   "source": "Kāśikā 8.3.12 कांस्कान् (8.3.4 anusvāra after the ru)",
+   "owner": true,
+   "source_unverified_in_db_text": true
   }
  ],
  "8.3.5": [
   {
    "text": "sam + kṛ + suṭ + taḥ (samaḥ suṭi)",
    "expected_iast": "saṃskṛtaḥ",
-   "expected": null,
+   "expected": "saMsskartA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "sam",
+    "skartA"
+   ],
+   "source": "Kāśikā 8.3.5 संस्स्कर्ता",
+   "owner": true
   }
  ],
  "8.3.6": [
   {
    "text": "pum + kokila + su (ruḥ)",
    "expected_iast": "puṃskokilaḥ",
-   "expected": null,
+   "expected": "puMskokilaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "pum",
+    "kokilaH"
+   ],
+   "source": "owner; Kāśikā 8.3.6 पुंस्कामा / पुंस्पुत्रः",
+   "owner": true
+  },
+  {
+   "text": "extra: puMsputraH",
+   "expected_iast": null,
+   "expected": "puMsputraH",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "pum",
+    "putraH"
+   ],
+   "source": "Kāśikā 8.3.6 पुंस्पुत्रः",
+   "owner": false
+  },
+  {
+   "text": "extra: puMsPalam",
+   "expected_iast": null,
+   "expected": "puMsPalam",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "pum",
+    "Palam"
+   ],
+   "source": "Kāśikā 8.3.6 पुंस्फलम्",
+   "owner": false
   }
  ],
  "8.3.10": [
   {
    "text": "nṝn + pāhi (nṝn pe → ruḥ)",
    "expected_iast": "nṝṃḥ pāhi",
-   "expected": null,
+   "expected": "nfMHpAhi",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "nfn",
+    "pAhi"
+   ],
+   "source": "Kāśikā 8.3.10 नंृः पाहि",
+   "owner": true,
+   "source_unverified_in_db_text": true
+  },
+  {
+   "text": "extra: nfn Bojayati",
+   "expected_iast": null,
+   "expected": "nfn Bojayati",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "nfn",
+    "Bojayati"
+   ],
+   "source": "Kāśikā 8.3.10 प इति किम्: नॄन् भोजयति",
+   "owner": false,
+   "source_unverified_in_db_text": true
   }
  ],
  "8.3.12": [
   {
    "text": "kān + kān (kānāmreḍite)",
    "expected_iast": "kāṃskān",
-   "expected": null,
+   "expected": "kAMskAn",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kAn",
+    "kAn"
+   ],
+   "source": "Kāśikā 8.3.12 कांस्कानामन्त्रयते / कांस्कान् भोजयति",
+   "owner": true
   }
  ],
  "8.3.26": [
   {
    "text": "kim + hmalayati (optional m before hm)",
    "expected_iast": "kim hmalayati",
-   "expected": null,
+   "expected": "kimhmalayati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kim",
+    "hmalayati"
+   ],
+   "source": "Kāśikā 8.3.26 किम् ह्मलयति",
+   "owner": true
   },
   {
    "text": "kim + hmalayati (anusvāra before hm)",
    "expected_iast": "kiṃ hmalayati",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "kiMhmalayati",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "kim",
+    "hmalayati"
+   ],
+   "source": "Kāśikā 8.3.26 किं ह्मलयति",
+   "owner": true,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
   }
  ],
  "8.3.27": [
   {
    "text": "kim + hnute (optional n before hn)",
    "expected_iast": "kin hnute",
-   "expected": null,
+   "expected": "kinhnute",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kim",
+    "hnute"
+   ],
+   "source": "Kāśikā 8.3.27 किन् ह्नुते",
+   "owner": true
   },
   {
    "text": "kim + hnute (anusvāra before hn)",
    "expected_iast": "kiṃ hnute",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "kiMhnute",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "kim",
+    "hnute"
+   ],
+   "source": "Kāśikā 8.3.27 किं ह्नुते",
+   "owner": true,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
   }
  ],
  "8.3.31": [
   {
    "text": "san + śambhuḥ (optional tuk)",
    "expected_iast": "sañcchambhuḥ",
-   "expected": null,
+   "expected": "BavAYcCete",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "BavAn",
+    "Sete"
+   ],
+   "source": "Kāśikā 8.3.31 भवाञ्च्छेते (owner san śambhuḥ replaced)",
+   "owner": true
   },
   {
    "text": "san + śambhuḥ (without tuk)",
    "expected_iast": "sañśambhuḥ",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "BavAYSete",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "BavAn",
+    "Sete"
+   ],
+   "source": "owner: without tuk — Kāśikā gives only the tuk form for these; rejected as unattested (disputed)",
+   "owner": true
   }
  ],
  "8.3.32": [
   {
    "text": "pratyang + ātmā (ṅamuṭ āgama)",
    "expected_iast": "pratyaṅṅātmā",
-   "expected": null,
+   "expected": "pratyaNNAste",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "pratyaN",
+    "Aste"
+   ],
+   "source": "Kāśikā 8.3.32 प्रत्यङ्ङास्ते",
+   "owner": true
   },
   {
    "text": "san + acyutaḥ (ṅamuṭ āgama)",
    "expected_iast": "sannacyutaḥ",
-   "expected": null,
+   "expected": "kurvannAste",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kurvan",
+    "Aste"
+   ],
+   "source": "Kāśikā 8.3.32 कुर्वन्नास्ते",
+   "owner": true
   }
  ],
  "8.3.33": [
   {
    "text": "kim + u + āha (optional v)",
    "expected_iast": "kimvāha",
-   "expected": null,
+   "expected": "kimvAha",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: vaidika uñ-pragṛhya (kim u āha) not an engine entry point"
   }
  ],
  "8.3.38": [
   {
    "text": "payas + pāśam (so'padādau)",
    "expected_iast": "payaspāśam",
-   "expected": null,
+   "expected": "payaspASam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "payaH",
+    "pASam"
+   ],
+   "source": "Kāśikā 8.3.38 पयस्पाशम्",
+   "owner": true
   },
   {
    "text": "payas + kalpam (so'padādau)",
    "expected_iast": "payaskalpam",
-   "expected": null,
+   "expected": "payaskalpam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "payaH",
+    "kalpam"
+   ],
+   "source": "Kāśikā 8.3.38 पयस्कल्पम्",
+   "owner": true
+  },
+  {
+   "text": "extra: yaSaskalpam",
+   "expected_iast": null,
+   "expected": "yaSaskalpam",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "yaSaH",
+    "kalpam"
+   ],
+   "source": "Kāśikā 8.3.38 यशस्कल्पम्",
+   "owner": false
   }
  ],
  "8.3.39": [
   {
    "text": "sarpis + kalpam (iṇaḥ ṣaḥ)",
    "expected_iast": "sarpiṣkalpam",
-   "expected": null,
+   "expected": "sarpizkalpam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "sarpiH",
+    "kalpam"
+   ],
+   "source": "Kāśikā 8.3.39 सर्पिष्कल्पम्",
+   "owner": true
   },
   {
    "text": "sarpis + pāśam (iṇaḥ ṣaḥ)",
    "expected_iast": "sarpiṣpāśam",
-   "expected": null,
+   "expected": "sarpizpASam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "sarpiH",
+    "pASam"
+   ],
+   "source": "Kāśikā 8.3.39 सर्पिष्पाशम्",
+   "owner": true
+  },
+  {
+   "text": "extra: yajuzkalpam",
+   "expected_iast": null,
+   "expected": "yajuzkalpam",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "yajuH",
+    "kalpam"
+   ],
+   "source": "Kāśikā 8.3.39 यजुष्कल्पम्",
+   "owner": false
   }
  ],
  "8.3.48": [
   {
    "text": "kas + kaḥ (kaskādiṣu ca)",
    "expected_iast": "kaskaḥ",
-   "expected": null,
+   "expected": "kaskaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kaH",
+    "kaH"
+   ],
+   "source": "Kāśikā 8.3.48 कस्कः",
+   "owner": true
   },
   {
    "text": "kautsas + kutaḥ (kaskādiṣu ca)",
    "expected_iast": "kautsaskutaḥ",
-   "expected": null,
+   "expected": "kOtaskutaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "kOtsaH",
+    "kutaH"
+   ],
+   "source": "owner; Kāśikā 8.3.48 कौतस्कुतः (taddhita form, vākya approximation)",
+   "owner": true
   }
  ],
  "8.3.56": [
   {
    "text": "sah + tumun (ṣatva blocked for sāḍ)",
    "expected_iast": "soḍhum",
-   "expected": null,
+   "expected": "soQum",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: tumun entry for sah with ṣatva-blocking sāḍ not built (sah→soḍhum)"
   },
   {
    "text": "pari + sah + tṛc (ṣatva applied before sāḍ)",
    "expected_iast": "pariṣoḍhā",
-   "expected": null,
+   "expected": "pariSoQA",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: needs upasarga+tṛc kṛdanta spec"
+  },
+  {
+   "text": "extra: turAzAw",
+   "expected_iast": null,
+   "expected": "turAzAw",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "turAsAh",
+    "pulliṅga",
+    1,
+    1
+   ],
+   "source": "Kāśikā 8.3.56 तुराषाट्",
+   "owner": false
   }
  ],
  "8.3.67": [
   {
    "text": "abhi + stambh + laṭ (ṣatva)",
    "expected_iast": "abhiṣṭabhnāti",
-   "expected": null,
+   "expected": "aBizwaBnAti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0007",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 8.3.67 अभिष्टभ्नाति",
+   "owner": true
+  },
+  {
+   "text": "extra: paRizwaBnAti",
+   "expected_iast": null,
+   "expected": "paRizwaBnAti",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "09.0007",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 8.3.67 परिष्टभ्नाति",
+   "owner": false,
+   "source_unverified_in_db_text": true
+  },
+  {
+   "text": "extra: stamBnAti",
+   "expected_iast": null,
+   "expected": "stamBnAti",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "09.0007",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "8.3.67 needs an upasarga",
+   "owner": false
   }
  ],
  "8.3.76": [
   {
    "text": "nis + sphur + laṭ (optional ṣatva)",
    "expected_iast": "niṣphurati",
-   "expected": null,
+   "expected": "nizPurati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "06.0121",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"nis\"]}"
+   ],
+   "source": "Kāśikā 8.3.76 निष्फुरति",
+   "owner": true
   },
   {
    "text": "nis + sphur + laṭ (without ṣatva)",
    "expected_iast": "nisphurati",
-   "expected": null,
+   "expected": "nisPurati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "06.0121",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"nis\"]}"
+   ],
+   "source": "Kāśikā 8.3.76 निस्फुरति",
+   "owner": true
   }
  ],
  "8.3.87": [
   {
    "text": "abhi + as + liṅ (ṣatva before yac)",
    "expected_iast": "abhiṣyāt",
-   "expected": null,
+   "expected": "aBizyAt",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "02.0060",
+    "liG",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 8.3.87 अभिष्यात्",
+   "owner": true
+  },
+  {
+   "text": "extra: nizyAt",
+   "expected_iast": null,
+   "expected": "nizyAt",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "02.0060",
+    "liG",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ni\"]}"
+   ],
+   "source": "Kāśikā 8.3.87 निष्यात्",
+   "owner": false
+  },
+  {
+   "text": "extra: aBizanti",
+   "expected_iast": null,
+   "expected": "aBizanti",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "02.0060",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"aBi\"]}"
+   ],
+   "source": "Kāśikā 8.3.87 अभिषन्ति",
+   "owner": false
   },
   {
    "text": "prādur + as + liṅ",
@@ -368,173 +1208,531 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unmapped owner case"
   }
  ],
  "8.4.3": [
   {
    "text": "harī + vana + su (saṃjñāyāṃ ṇatva)",
    "expected_iast": "harīvaṇam",
-   "expected": null,
+   "expected": "harIvaRam",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: saṃjñāyām (nāma) vivakṣā for a compound stem; samāsa spec for 8.4.3 not built"
   }
  ],
  "8.4.12": [
   {
    "text": "vṛtra + han + ṭā (ekājuttarapade ṇaḥ)",
    "expected_iast": "vṛtraghṇā",
-   "expected": null,
+   "expected": "vftraGnA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "subanta",
+    "vftrahan",
+    "pulliṅga",
+    3,
+    1
+   ],
+   "source": "Kāśikā 8.4.12 वृत्रघ्ना (vṛtrahan, ekāc uttarapada)",
+   "owner": true,
+   "source_unverified_in_db_text": true
   },
   {
    "text": "śara + vana + am (ṇatva)",
    "expected_iast": "śaravaṇam",
-   "expected": null,
+   "expected": "SaravaRam",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: samāsa spec (śara+vana) not built"
+  },
+  {
+   "text": "extra: vftrahaRO",
+   "expected_iast": null,
+   "expected": "vftrahaRO",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "vftrahan",
+    "pulliṅga",
+    1,
+    2
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: vftrahaRaH",
+   "expected_iast": null,
+   "expected": "vftrahaRaH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "vftrahan",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: svAH",
+   "expected_iast": null,
+   "expected": "svAH",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "sva",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "generic negative",
+   "owner": false
+  },
+  {
+   "text": "extra: pUrvAH",
+   "expected_iast": null,
+   "expected": "pUrvAH",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "pUrva",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "generic negative",
+   "owner": false
   }
  ],
  "8.4.14": [
   {
    "text": "pra + nam + laṭ (upasargād asamāse'pi ṇopadeśasya)",
    "expected_iast": "praṇamati",
-   "expected": null,
+   "expected": "praRamati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1136",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.14 प्रणमति",
+   "owner": true
+  },
+  {
+   "text": "extra: pariRamati",
+   "expected_iast": null,
+   "expected": "pariRamati",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1136",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 8.4.14 परिणमति",
+   "owner": false
+  },
+  {
+   "text": "extra: namati",
+   "expected_iast": null,
+   "expected": "namati",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.1136",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "8.4.14 needs an upasarga",
+   "owner": false
   }
  ],
  "8.4.15": [
   {
    "text": "pra + hi + nu + laṭ (hinumīnā)",
    "expected_iast": "prahiṇoti",
-   "expected": null,
+   "expected": "prahiRoti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "05.0012",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.15 प्रहिणोति",
+   "owner": true
   },
   {
    "text": "pra + mī + nā + laṭ",
    "expected_iast": "pramīṇāti",
-   "expected": null,
+   "expected": "pramIRAti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "09.0004",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.15 प्रमीणाति",
+   "owner": true
+  },
+  {
+   "text": "extra: prahiRutaH",
+   "expected_iast": null,
+   "expected": "prahiRutaH",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "05.0012",
+    "laT",
+    "kartari",
+    3,
+    2,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.15 प्रहिणुतः",
+   "owner": false
+  },
+  {
+   "text": "extra: hinoti",
+   "expected_iast": null,
+   "expected": "hinoti",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "05.0012",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "8.4.15 needs an upasarga",
+   "owner": false
   }
  ],
  "8.4.16": [
   {
    "text": "pra + bhū + loṭ + āni (āni loṭ)",
    "expected_iast": "prabhavāṇi",
-   "expected": null,
+   "expected": "pravapARi",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1158",
+    "loT",
+    "kartari",
+    1,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.16 प्रवपाणि",
+   "owner": true
+  },
+  {
+   "text": "extra: pariyARi",
+   "expected_iast": null,
+   "expected": "pariyARi",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "02.0044",
+    "loT",
+    "kartari",
+    1,
+    1,
+    "{\"upasargas\": [\"pari\"]}"
+   ],
+   "source": "Kāśikā 8.4.16 परियाणि",
+   "owner": false
+  },
+  {
+   "text": "extra: pravapAni",
+   "expected_iast": null,
+   "expected": "pravapAni",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1158",
+    "loT",
+    "kartari",
+    1,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 8.4.16 लोडिति किम्: pravapAni is not a loṭ reading",
+   "owner": false
   }
  ],
  "8.4.43": [
   {
    "text": "san + ṣaṣṭhaḥ (toḥ ṣi — ṣṭutva blocked)",
    "expected_iast": "san ṣaṣṭhaḥ",
-   "expected": null,
+   "expected": "BavAnzaRqe",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "BavAn",
+    "zaRqe"
+   ],
+   "source": "Kāśikā 8.4.43 भवान् षण्डे",
+   "owner": true
+  },
+  {
+   "text": "extra: mahAnzaRqe",
+   "expected_iast": null,
+   "expected": "mahAnzaRqe",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "mahAn",
+    "zaRqe"
+   ],
+   "source": "Kāśikā 8.4.43 महान् षण्डे",
+   "owner": false
   },
   {
    "text": "san + ṣaṣṭhaḥ (ṣṭutva erroneously applied)",
    "expected_iast": "saṇ ṣaṣṭhaḥ",
-   "expected": null,
+   "expected": "saRzaRqe",
    "positive": false,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "BavAn",
+    "zaRqe"
+   ],
+   "source": "owner wrong form: ṣṭutva blocked (ṇ would be wrong)",
+   "owner": true
   }
  ],
  "8.4.49": [
   {
    "text": "ādarśa + su (śaro'ci — dvitva of ś before a blocked)",
    "expected_iast": "ādarśaḥ",
-   "expected": null,
+   "expected": "AdarSaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "subanta",
+    "AdarSa",
+    "pulliṅga",
+    1,
+    1
+   ],
+   "source": "Kāśikā 8.4.49 आदर्शः",
+   "owner": true
   },
   {
    "text": "ādarśa + su (dvitva of ś erroneously applied)",
    "expected_iast": "ādarśśaḥ",
-   "expected": null,
+   "expected": "AdarSSaH",
    "positive": false,
-   "spec": null,
-   "source": null
+   "spec": [
+    "subanta",
+    "AdarSa",
+    "pulliṅga",
+    1,
+    1
+   ],
+   "source": "Kāśikā 8.4.49: dvitva of ś blocked before ac",
+   "owner": true,
+   "source_unverified_in_db_text": true
   }
  ],
  "8.4.60": [
   {
    "text": "tad + layaḥ (tor li — parasavarṇa)",
    "expected_iast": "tallayaḥ",
-   "expected": null,
+   "expected": "tallayaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "tad",
+    "layaH"
+   ],
+   "source": "owner; Kāśikā 8.4.60 अग्निचिल्लुनाति (parasavarṇa)",
+   "owner": true
   },
   {
    "text": "vidvān + likhati (anunāsika l)",
    "expected_iast": "vidvāṃllikhati",
-   "expected": null,
+   "expected": "BavAMllunAti",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "BavAn",
+    "lunAti"
+   ],
+   "source": "Kāśikā 8.4.60 भवाँल्लुनाति",
+   "owner": true
+  },
+  {
+   "text": "extra: agnicillunAti",
+   "expected_iast": null,
+   "expected": "agnicillunAti",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "agnicit",
+    "lunAti"
+   ],
+   "source": "Kāśikā 8.4.60 अग्निचिल्लुनाति",
+   "owner": false
   }
  ],
  "8.4.61": [
   {
    "text": "ud + sthānam (udaḥ sthāstambhoḥ pūrvasya)",
    "expected_iast": "utthānam",
-   "expected": null,
+   "expected": "uttTAtA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1077",
+    "luT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 8.4.61 उत्त्थाता",
+   "owner": true
   },
   {
    "text": "ud + stambhanam",
    "expected_iast": "uttambhanam",
-   "expected": null,
+   "expected": "uttamBitA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0451",
+    "luT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 8.4.61 उत्तम्भिता",
+   "owner": true
   }
  ],
  "8.4.62": [
   {
    "text": "vāk + hariḥ (optional pūrvasavarṇa)",
    "expected_iast": "vāgghariḥ",
-   "expected": null,
+   "expected": "vAgGasati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "vAk",
+    "hasati"
+   ],
+   "source": "Kāśikā 8.4.62 वाग्घसति",
+   "owner": true
   },
   {
    "text": "vāk + hariḥ (without pūrvasavarṇa)",
    "expected_iast": "vāghariḥ",
-   "expected": null,
-   "positive": true,
+   "expected": "vAgGasati",
+   "positive": false,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "owner 'vāghariḥ' (without) is not what Kāśikā says: वाग् हसति (kept unsplit); disputed"
+  },
+  {
+   "text": "extra: vAghasati",
+   "expected_iast": null,
+   "expected": "vAghasati",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "vAk",
+    "hasati"
+   ],
+   "source": "Kāśikā 8.4.62 वाग् हसति",
+   "owner": false,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
+  },
+  {
+   "text": "extra: agniciddhasati",
+   "expected_iast": null,
+   "expected": "agniciddhasati",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "agnicit",
+    "hasati"
+   ],
+   "source": "Kāśikā 8.4.62 अग्निचिद्धसति",
+   "owner": false,
+   "source_unverified_in_db_text": true
   }
  ],
  "8.4.63": [
   {
    "text": "tad + śivaḥ (optional ś → ch)",
    "expected_iast": "tacchivaḥ",
-   "expected": null,
+   "expected": "vAkCete",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "vakya",
+    "vAk",
+    "Sete"
+   ],
+   "source": "Kāśikā 8.4.63 वाक्छेते",
+   "owner": true
+  },
+  {
+   "text": "extra: vAkSete",
+   "expected_iast": null,
+   "expected": "vAkSete",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "vAk",
+    "Sete"
+   ],
+   "source": "Kāśikā 8.4.63 वाक् शेते",
+   "owner": false,
+   "kind": "declined",
+   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
+  },
+  {
+   "text": "extra: agnicicCete",
+   "expected_iast": null,
+   "expected": "agnicicCete",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "agnicit",
+    "Sete"
+   ],
+   "source": "Kāśikā 8.4.63 अग्निचिच्छेते",
+   "owner": false
   },
   {
    "text": "tad + śivaḥ (without ch)",
@@ -542,17 +1740,87 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unmapped owner case"
   }
  ],
  "8.4.64": [
   {
    "text": "āditya + yam (optional yam-lopa)",
    "expected_iast": "ādityam",
-   "expected": null,
+   "expected": "Adityam",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: āditya+yam taddhita entry point missing"
+  },
+  {
+   "text": "extra: cucyaH",
+   "expected_iast": null,
+   "expected": "cucyaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.0591",
+    "Ryat",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "krt",
+      "kftya"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: mavyaH",
+   "expected_iast": null,
+   "expected": "mavyaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.0585",
+    "Ryat",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "krt",
+      "kftya"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: haryaH",
+   "expected_iast": null,
+   "expected": "haryaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.0592",
+    "Ryat",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "krt",
+      "kftya"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
   },
   {
    "text": "āditya + yam (yam retained)",
@@ -560,17 +1828,76 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unmapped owner case"
   }
  ],
  "8.4.65": [
   {
    "text": "ud + sthā + tumun (optional jhar-lopa)",
    "expected_iast": "utthātum",
-   "expected": null,
+   "expected": "utTAtum",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unrunnable: tumun kṛdanta of ud+sthā (owner case) has no entry point; Kāśikā 8.4.65 cites उत्थातुम्"
+  },
+  {
+   "text": "extra: skantavyaH",
+   "expected_iast": null,
+   "expected": "skantavyaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1134",
+    "tavya",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "krt",
+      "kftya"
+     ]
+    ]
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: kzunte",
+   "expected_iast": null,
+   "expected": "kzunte",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "07.0006",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "atmane"
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
+  },
+  {
+   "text": "extra: kfnTa",
+   "expected_iast": null,
+   "expected": "kfnTa",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "07.0010",
+    "laT",
+    "kartari",
+    2,
+    3
+   ],
+   "source": "ashtadhyayi.db derivation (audit DONE)",
+   "owner": false
   },
   {
    "text": "ud + sthā + tumun (jhar retained)",
@@ -578,7 +1905,9 @@
    "expected": null,
    "positive": true,
    "spec": null,
-   "source": null
+   "source": null,
+   "owner": true,
+   "note": "unmapped owner case"
   }
  ]
 }
