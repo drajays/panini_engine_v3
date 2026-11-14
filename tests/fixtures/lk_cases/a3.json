@@ -3,636 +3,1053 @@
   {
    "text": "putra + kāmyac + laṭ (icchāyām)",
    "expected_iast": "putrakāmyati",
-   "expected": null,
+   "expected": "putrakAmyati",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.9",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for kAmyac (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.10": [
   {
    "text": "putra + kyac + laṭ (upamānād ācāre)",
    "expected_iast": "putrīyati",
-   "expected": null,
+   "expected": "putrIyati",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.10",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for kyac upamāna (chain.nama_dhatu is kyac 3.1.8/icCA only) (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.14": [
   {
    "text": "kaṣṭa + kyaṅ + laṭ (kaṣṭāya kramaṇe)",
    "expected_iast": "kaṣṭāyate",
-   "expected": null,
+   "expected": "kazwAyate",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.14",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for kyaN (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.17": [
   {
    "text": "śabda + kyaṅ + laṭ (karaṇe)",
    "expected_iast": "śabdāyate",
-   "expected": null,
+   "expected": "SabdAyate",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.17",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for kyaN (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.23": [
   {
    "text": "kram + yaṅ + laṭ (kauṭilya in gati)",
    "expected_iast": "caṅkramyate",
-   "expected": null,
+   "expected": "caNkramyate",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.23",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for yaN beyond the recipe (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.27": [
   {
    "text": "kaṇḍū + yak + laṭ",
    "expected_iast": "kaṇḍūyati",
-   "expected": null,
+   "expected": "kaRqUyati",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.27",
+   "note": "unrunnable: no nāmadhātu/sanādi loop edge for yak (kaNqvAdi) (docs/PRAKARANA_MACHINE_PLAN.md §9, G1)"
   }
  ],
  "3.1.28": [
   {
    "text": "gup + āya + laṭ",
    "expected_iast": "gopāyati",
-   "expected": null,
+   "expected": "gopAyati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0461",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.28 (गोपायति)"
   },
   {
    "text": "dhūp + āya + laṭ",
    "expected_iast": "dhūpāyati",
-   "expected": null,
+   "expected": "DUpAyati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0462",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.28 (धूपायति)"
+  },
+  {
+   "text": "pan + Aya + laT (Kāśikā: पनायति)",
+   "expected_iast": "panāyati",
+   "expected": "panAyati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.0508",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.28 (पनायति)"
   }
  ],
  "3.1.31": [
   {
    "text": "gup + tṛc (āya optional in ārdhadhātuka)",
    "expected_iast": "gopāyitā",
-   "expected": null,
+   "expected": "gopAyitA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0461",
+    "luT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.31 (गोपायिता)"
   },
   {
    "text": "gup + tṛc (without āya)",
    "expected_iast": "goptā",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "goptA",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.0461",
+    "luT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.31 (गोप्ता): the branch without Aya",
+   "note": "owner case flipped to a negative: the vibhāṣā branch where 3.1.31 is declined"
   }
  ],
  "3.1.37": [
   {
    "text": "day + ām + kṛ + liṭ",
    "expected_iast": "dayāñcakre",
-   "expected": null,
+   "expected": "dayAYcakre",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0553",
+    "liT",
+    "kartari",
+    3,
+    1,
+    "atmane"
+   ],
+   "source": "Kāśikā 3.1.37 (दयाञ्चक्रे)"
   },
   {
    "text": "ās + ām + kṛ + liṭ",
    "expected_iast": "āsāñcakre",
-   "expected": null,
+   "expected": "AsAYcakre",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "02.0011",
+    "liT",
+    "kartari",
+    3,
+    1,
+    "atmane"
+   ],
+   "source": "Kāśikā 3.1.37 (आसाञ्चक्रे)"
   }
  ],
  "3.1.38": [
   {
    "text": "uṣ + ām + kṛ + liṭ (optional ām)",
    "expected_iast": "oṣāñcakāra",
-   "expected": null,
+   "expected": "ozAYcakAra",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0792",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.38 (ओषाञ्चकार)"
   },
   {
    "text": "uṣ + liṭ (without ām)",
    "expected_iast": "uvoṣa",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "uvoza",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.0792",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.38 (उवोष): the branch without Am",
+   "note": "owner case flipped to a negative: declined branch"
   }
  ],
  "3.1.39": [
   {
    "text": "bhī + ām + kṛ + liṭ (optional ślu-vat)",
    "expected_iast": "bibhayāñcakāra",
-   "expected": null,
+   "expected": "biBayAYcakAra",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "03.0002",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.39 (बिभयाञ्चकार)"
   },
   {
    "text": "bhī + liṭ (without ām)",
    "expected_iast": "bibhāya",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "biBAya",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "03.0002",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.39 (बिभाय): the branch without Am",
+   "note": "owner case flipped to a negative: declined branch"
   }
  ],
  "3.1.41": [
   {
    "text": "vid + ām + kṛ + loṭ (optional vidāṅkurvantu)",
    "expected_iast": "vidāṅkurvantu",
-   "expected": null,
+   "expected": "vidANkurvantu",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "02.0059",
+    "loT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.1.41 (विदाङ्कुर्वन्तु)"
   },
   {
    "text": "vid + loṭ (without ām)",
    "expected_iast": "vidantu",
-   "expected": null,
-   "positive": true,
-   "spec": null,
-   "source": null
+   "expected": "vidantu",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "02.0059",
+    "loT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.1.41 (विदन्तु)",
+   "note": "owner case flipped to a negative: 3.1.41 must not apply to the plain loT reading"
   }
  ],
  "3.1.60": [
   {
    "text": "pad + luṅ + ta (ciṇ replaces cli)",
    "expected_iast": "apādi",
-   "expected": null,
+   "expected": "apAdi",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "04.0065",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "atmane"
+   ],
+   "source": "Kāśikā 3.1.60 (उदपादि / समपादि): pad + luG + ta"
+  },
+  {
+   "text": "ud + pad + luG + ta (Kāśikā: उदपादि)",
+   "expected_iast": "udapādi",
+   "expected": "udapAdi",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "04.0065",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\", \"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 3.1.60 (उदपादि सस्यम्)"
+  },
+  {
+   "text": "ud + pad + luG + AtAm (ta iti kim)",
+   "expected_iast": "udapatsātām",
+   "expected": "udapatsAtAm",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "04.0065",
+    "luG",
+    "kartari",
+    3,
+    2,
+    "{\"pada\": \"atmane\", \"upasargas\": [\"ud\"]}"
+   ],
+   "source": "Kāśikā 3.1.60 (त इति किम्? उदपत्साताम्)"
   }
  ],
  "3.1.65": [
   {
    "text": "tap + luṅ + ta (anutāpa, ciṇ)",
    "expected_iast": "atāpi",
-   "expected": null,
+   "expected": "atApi",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.65",
+   "disputed": "Kāśikā 3.1.65 is a prohibition (नेति वर्तते): after tap the cli is NOT replaced by ciṇ in karmakartari / anutāpa (अतप्त तपस्तापसः, अन्ववातप्त पापेन कर्मणा); owner expected atāpi"
   }
  ],
  "3.1.70": [
   {
    "text": "bhrāś + laṭ (optional śyan)",
    "expected_iast": "bhrāśyate",
-   "expected": null,
+   "expected": "BrASyate",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0958",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (भ्राश्यते)"
   },
   {
    "text": "bhrāś + laṭ (śap)",
    "expected_iast": "bhrāśate",
-   "expected": null,
+   "expected": "BrASate",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.0958",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (भ्राशते): the śap branch",
+   "note": "owner case flipped to a negative: the branch where the optional śyan is declined"
+  },
+  {
+   "text": "kram + laT: krāmyati",
+   "expected_iast": "krāmyati",
+   "expected": "krAmyati",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "01.0545",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (क्राम्यति, क्रामति)"
+  },
+  {
+   "text": "kram + laT: krāmati (śap)",
+   "expected_iast": "krāmati",
+   "expected": "krAmati",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.0545",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (क्राम्यति, क्रामति)"
+  },
+  {
+   "text": "klam (divādi) + laT: klāmati by the vibhāṣā",
+   "expected_iast": "klāmati",
+   "expected": "klAmati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "04.0104",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (क्लाम्यति, क्लामति)"
+  },
+  {
+   "text": "tras (divādi) + laT: trasati by the vibhāṣā",
+   "expected_iast": "trasati",
+   "expected": "trasati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "04.0011",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.70 (त्रस्यति, त्रसति)"
   }
  ],
  "3.1.82": [
   {
    "text": "stambh + laṭ (optional śnu)",
    "expected_iast": "stabhnute",
-   "expected": null,
+   "expected": "staBnute",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.82",
+   "disputed": "owner expected staBnute (ātmanepada); Kāśikā 3.1.82 gives parasmaipada स्तभ्नाति / स्तभ्नोति; stambh is a sautra dhātu not in the Dhātupāṭha data"
   },
   {
    "text": "stambh + laṭ (śnā)",
    "expected_iast": "stabhnāti",
-   "expected": null,
+   "expected": "staBnAti",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.82 (स्तभ्नाति)",
+   "note": "unrunnable: stambh is a sautra dhātu (PLAN §9, G3); stunBu (09.0008) used instead below"
+  },
+  {
+   "text": "stunBu (09.0008) + laT: stuBnoti",
+   "expected_iast": "stubhnoti",
+   "expected": "stuBnoti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "09.0008",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.82 (स्तुभ्नोति; Vidyut stuBnoti as surface validator)"
   }
  ],
  "3.1.87": [
   {
    "text": "bhid + laṭ (karmakartari: karma behaves like kartṛ → yak + ātmanepada)",
    "expected_iast": "bhidyate",
-   "expected": null,
+   "expected": "Bidyate",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.87 (भिद्यते काष्ठं स्वयमेव)",
+   "note": "unrunnable: no karmakartari prayoga entry point"
   }
  ],
  "3.1.136": [
   {
    "text": "pra + sthā + ka + su (āt-anta with upasarga)",
    "expected_iast": "prasthaḥ",
-   "expected": null,
+   "expected": "prasTaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.136 (प्रस्थः)",
+   "note": "unrunnable: no upasarga-upapada kṛt entry for ka (the dhātu id for sTA is not resolvable by slp1 sTA)"
   }
  ],
  "3.1.144": [
   {
    "text": "grah + ka + su (gehe)",
    "expected_iast": "gṛhaḥ",
-   "expected": null,
+   "expected": "gfhaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.1.144 (गृहम् वेश्म)",
+   "note": "unrunnable: no vivakṣā key selects ka \"gehe\" (probe with an upapada gave junk)"
   }
  ],
  "3.2.58": [
   {
    "text": "ghṛta + spṛś + kvin + su (anudaka)",
    "expected_iast": "ghṛtaspṛk",
-   "expected": null,
+   "expected": "Gftaspfk",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.58 (घृतस्पृक्)",
+   "note": "unrunnable: kvin not selectable by any vivakṣā tried (artha=karman + upapada gave the ghañ stem GftasparSaH)"
   },
   {
    "text": "udaka + spṛś + kvin + su (udaka blocks kvin)",
    "expected_iast": "udakaspṛk",
-   "expected": null,
+   "expected": "udakaspfk",
    "positive": false,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.58 (अनुदक इति किम्? उदकस्पर्शः)",
+   "note": "unrunnable: owner case: udaka blocks kvin — wrong form udakaspfk; Kāśikā gives udakasparSaH as the form where kvin is blocked; see add"
   }
  ],
  "3.2.59": [
   {
    "text": "ṛtu + yaj + kvin + su",
    "expected_iast": "ṛtvik",
-   "expected": null,
+   "expected": "ftvik",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.59 (ऋत्विक्)",
+   "note": "unrunnable: kvin not selectable"
   },
   {
    "text": "sṛj + kvin + su",
    "expected_iast": "srak",
-   "expected": null,
+   "expected": "srak",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.59 (सृजेः कर्मणि क्विन् अमागमश्च: स्रक्)",
+   "note": "unrunnable: kvin not selectable"
   }
  ],
  "3.2.60": [
   {
    "text": "tad + dṛś + kañ + su (anālocane)",
    "expected_iast": "tādṛśaḥ",
-   "expected": null,
+   "expected": "tAdfSaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.60 (तादृशः)",
+   "note": "unrunnable: kañ/kvin with a tyadādi upapada not selectable (probe gave tyaddarSaH)"
   },
   {
    "text": "tad + dṛś + kvin + su (anālocane)",
    "expected_iast": "tādṛk",
-   "expected": null,
+   "expected": "tAdfk",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.60 (तादृक्)",
+   "note": "unrunnable: same"
   }
  ],
  "3.2.75": [
   {
    "text": "grā + vanip + su (anyebhyo'pi dṛśyante)",
    "expected_iast": "grāvā",
-   "expected": null,
+   "expected": "grAvA",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.75",
+   "disputed": "Kāśikā 3.2.75 cites suśarmā / agregāvā / vijāvā (manin, kvanip, vanip, vic); grāvā is not cited there"
   }
  ],
  "3.2.99": [
   {
    "text": "pra + jan + ḍa + su (upasarge saṃjñāyām)",
    "expected_iast": "prajā",
-   "expected": null,
+   "expected": "prajA",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.99 (प्रजाः)",
+   "note": "unrunnable: no vivakṣā selects Da after an upasarga upapada (probe gave prajAtA)"
   }
  ],
  "3.2.107": [
   {
    "text": "sad + kvasu + su (chandas / nipātana)",
    "expected_iast": "sedivān",
-   "expected": null,
+   "expected": "sedivAn",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.107",
+   "disputed": "Kāśikā 3.2.107 is छन्दसि लिटः क्वसुः and cites jakṣivān / papivān; sedivān is classical (3.2.108 bhāṣāyāṃ sadavasaśravaḥ) not 3.2.107"
   }
  ],
  "3.2.112": [
   {
    "text": "vas + lṛṭ + mas (abhijñāvacane smarasi/abhijānāsi)",
    "expected_iast": "vatsyāmaḥ",
-   "expected": null,
+   "expected": "vatsyAmaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.1160",
+    "lRT",
+    "kartari",
+    1,
+    3,
+    "{\"vivaksha\": {\"arthaViSeSa\": \"anadyatana\", \"kala\": \"BUta\"}}"
+   ],
+   "source": "Kāśikā 3.2.112 (अभिजानासि देवदत्त कश्मीरेषु वत्स्यामः)"
   }
  ],
  "3.2.177": [
   {
    "text": "bhrāj + kvip + su",
    "expected_iast": "bhrāṭ",
-   "expected": null,
+   "expected": "BrAw",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "01.0205",
+    1,
+    1,
+    "pulliṅga",
+    "{\"kala\": \"vartamAna\"}"
+   ],
+   "source": "Kāśikā 3.2.177 (विभ्राट्)"
   },
   {
    "text": "vidyut + kvip + su",
    "expected_iast": "vidyut",
-   "expected": null,
+   "expected": "vidyut",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.177 (विद्युत्)",
+   "note": "unrunnable: vidyut needs the upasarga vi + dyut; no entry"
   }
  ],
  "3.2.182": [
   {
    "text": "dā + ṣṭran + su (karaṇe)",
    "expected_iast": "dātram",
-   "expected": null,
+   "expected": "dAtram",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.182 (दात्रम्)",
+   "note": "unrunnable: no vivakṣā selects ṣṭran (probe artha=karaRa gave the lyuṭ stem dAnam)"
   },
   {
    "text": "nī + ṣṭran + su (karaṇe)",
    "expected_iast": "netram",
-   "expected": null,
+   "expected": "netram",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.182 (नेत्रम्)",
+   "note": "unrunnable: no vivakṣā selects ṣṭran (probe artha=karaRa gave the lyuṭ stem dAnam)"
   }
  ],
  "3.2.185": [
   {
    "text": "pū + ṣṭran + su (saṃjñāyām)",
    "expected_iast": "potram",
-   "expected": null,
+   "expected": "potram",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.2.185",
+   "disputed": "Kāśikā 3.2.185 is पूङ्पूञोः … इत्र: पवित्रम् (pavitram); potram is ṣṭran (3.2.183 / 3.2.182 list), not 3.2.185"
   }
  ],
  "3.3.1": [
   {
    "text": "kṛ + uṇ (kāru)",
    "expected_iast": "kāruḥ",
-   "expected": null,
+   "expected": "kAruH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.1 (कारुः)",
+   "note": "unrunnable: no uṇādi consumer in the engine (data/inputs/unadi_patha.json unread; PLAN §9 G2)"
   }
  ],
  "3.3.14": [
   {
    "text": "kṛ + śatṛ (lṛṭaḥ sad vā)",
    "expected_iast": "kariṣyan",
-   "expected": null,
+   "expected": "karizyan",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.14 (करिष्यन् देवदत्तः)",
+   "note": "unrunnable: no vivakṣā path to lṛṭ-śatṛ (kala=Bavizyat gave the stem kA)"
   }
  ],
  "3.3.41": [
   {
    "text": "ni + ci + ghañ + su (k-ādeśa in nivāsa/citi)",
    "expected_iast": "nikāyaḥ",
-   "expected": null,
+   "expected": "nikAyaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.41 (निकायः)",
+   "note": "unrunnable: upasarga-upapada kṛt entry missing for ni + ci"
   }
  ],
  "3.3.46": [
   {
    "text": "pra + lū + ghañ + su (lipsāyām)",
    "expected_iast": "pralāvaḥ",
-   "expected": null,
+   "expected": "pralAvaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.46",
+   "disputed": "Kāśikā 3.3.46 is प्र उपपदे ग्रहेर्घञ् लिप्सायाम् (प्रग्राहः); pralāvaḥ (lū) is not its example"
   }
  ],
  "3.3.56": [
   {
    "text": "ci + ac + su (er ac)",
    "expected_iast": "cayaḥ",
-   "expected": null,
+   "expected": "cayaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "05.0005",
+    1,
+    1,
+    "pulliṅga",
+    "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
+   ],
+   "source": "Kāśikā 3.3.56 (चयः)"
   },
   {
    "text": "ji + ac + su (er ac)",
    "expected_iast": "jayaḥ",
-   "expected": null,
+   "expected": "jayaH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "01.0642",
+    1,
+    1,
+    "pulliṅga",
+    "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
+   ],
+   "source": "Kāśikā 3.3.56 (जयः)"
   }
  ],
  "3.3.92": [
   {
    "text": "pra + dā + ki + su (upasarge ghoḥ kiḥ)",
    "expected_iast": "pradiḥ",
-   "expected": null,
+   "expected": "pradiH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.92 (प्रदिः)",
+   "note": "unrunnable: upasarga-upapada + ghu-saṃjñaka ki not selectable (probe gave praDAH)"
   }
  ],
  "3.3.97": [
   {
    "text": "av + ktin + su (ūti)",
    "expected_iast": "ūtiḥ",
-   "expected": null,
+   "expected": "UtiH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "01.0684",
+    1,
+    1,
+    "strīliṅga",
+    "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
+   ],
+   "source": "Kāśikā 3.3.97 (ऊतिः)"
   },
   {
    "text": "kīrt + ktin + su (kīrti)",
    "expected_iast": "kīrtiḥ",
-   "expected": null,
+   "expected": "kIrtiH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.97 (कीर्तिः)",
+   "note": "unrunnable: kIrt id not probed"
   }
  ],
  "3.3.101": [
   {
    "text": "iṣ + a + ṭāp (icchā)",
    "expected_iast": "icchā",
-   "expected": null,
+   "expected": "icCA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "06.0078",
+    1,
+    1,
+    "strīliṅga",
+    "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
+   ],
+   "source": "Kāśikā 3.3.101 (इच्छा)"
   }
  ],
  "3.3.103": [
   {
    "text": "īh + a + ṭāp (gurośca halaḥ)",
    "expected_iast": "īhā",
-   "expected": null,
+   "expected": "IhA",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "01.0719",
+    1,
+    1,
+    "strīliṅga",
+    "{\"artha\": \"BAva\", \"arthaViSeSa\": \"saMjYA\"}"
+   ],
+   "source": "Kāśikā 3.3.103 (ईहा)"
   }
  ],
  "3.3.107": [
   {
    "text": "kṛ + ṇic + yuc + ṭāp (nyāsaśrantho yuc)",
    "expected_iast": "kāraṇā",
-   "expected": null,
+   "expected": "kAraRA",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.107 (कारणा)",
+   "note": "unrunnable: Nic + yuc + strī not selectable (probe with hetumat gave kftiH)"
   }
  ],
  "3.3.113": [
   {
    "text": "rāj + bhūṣ + lyuṭ + su (kṛtyalyuṭo bahulam)",
    "expected_iast": "rājabhūṣaṇam",
-   "expected": null,
+   "expected": "rAjaBUzaRam",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "owner-supplied; Kāśikā 3.3.113 cites राजभोजनाः शालयः (rājabhūṣaṇam not found there)",
+   "note": "unrunnable: lyuṭ bahulam on a compound with an upapada: no entry point"
   }
  ],
  "3.3.121": [
   {
    "text": "likh + ghañ + su (halaśca)",
    "expected_iast": "lekhaḥ",
-   "expected": null,
+   "expected": "leKaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.121 (लेखः)",
+   "note": "unrunnable: no vivakṣā selects ghañ for karaṇa/puṃsi (probe artha=karaRa gave the lyuṭ stem leKanaH)"
   }
  ],
  "3.3.128": [
   {
    "text": "īṣat + pā + yuc + su (āto yuc)",
    "expected_iast": "īṣatpānaḥ",
-   "expected": null,
+   "expected": "IzatpAnaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.128 (ईषत्पानः)",
+   "note": "unrunnable: probe with upapada Izat gave IzatpAyuH (yuc without 7.1.1) — gap, no spec until upapada+ana path is fixed"
   },
   {
    "text": "duḥ + pā + yuc + su",
    "expected_iast": "duṣpānaḥ",
-   "expected": null,
+   "expected": "duzpAnaH",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.128 (दुष्पानः)",
+   "note": "unrunnable: same"
   }
  ],
  "3.3.131": [
   {
    "text": "āgam + laṭ (vartamānasāmīpye bhūte)",
    "expected_iast": "āgacchati",
-   "expected": null,
+   "expected": "AgacCati",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.131 (कदा देवदत्तागतोऽसि)",
+   "note": "unrunnable: no vivakṣā key for vartamānasāmīpya"
   }
  ],
  "3.3.156": [
   {
    "text": "vṛṣ + liṅ (hetuhetumatoḥ)",
    "expected_iast": "varṣet",
-   "expected": null,
+   "expected": "varzet",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta2",
+    "01.0803",
+    "liG",
+    "kartari",
+    3,
+    1,
+    "{\"vivaksha\": {\"hetutAcCIlyAnulomya\": \"hetu\"}}"
+   ],
+   "source": "owner-supplied vṛṣ + liṅ; Kāśikā 3.3.156 cites yāyāt / abhavet"
   }
  ],
  "3.3.167": [
   {
    "text": "bhuj + tumun (kāla/samaya/velā upapada)",
    "expected_iast": "bhoktum",
-   "expected": null,
+   "expected": "Boktum",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.3.167 (कालो भोक्तुम्)",
+   "note": "unrunnable: no tumun selection (probe gave kAlaBuk)"
   }
  ],
  "3.4.18": [
   {
    "text": "alam + kṛ + ktvā (alaṅkhalvoḥ pratiṣedhayoḥ)",
    "expected_iast": "alaṃ kṛtvā",
-   "expected": null,
+   "expected": "alaMkftvA",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.4.18 (अलं कृत्वा)",
+   "note": "unrunnable: probe gave alaNkftvA with 3.4.18 absent from the trace"
   }
  ],
  "3.4.22": [
   {
    "text": "bhuj + ṇamul (ābhīkṣṇya)",
    "expected_iast": "bhojaṃ bhojam",
-   "expected": null,
+   "expected": "BojaMBojam",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.4.22 (भोजं भोजम्)",
+   "note": "unrunnable: no ābhīkṣṇya vivakṣā key"
   }
  ],
  "3.4.27": [
   {
    "text": "anyathā + kṛ + ṇamul (siddhāprayoga)",
    "expected_iast": "anyathākāram",
-   "expected": null,
+   "expected": "anyaTAkAram",
    "positive": true,
    "spec": null,
-   "source": null
+   "source": "Kāśikā 3.4.27 (अन्यथाकारं भुङ्क्ते)",
+   "note": "unrunnable: no siddhāprayoga/Namul entry"
   }
  ],
  "3.4.70": [
   {
    "text": "kṛ + tavya + su (bhāve/karmaṇi)",
    "expected_iast": "kartavyam",
-   "expected": null,
+   "expected": "kartavyam",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "krdanta2",
+    "08.0010",
+    1,
+    1,
+    "napuṃsaka",
+    "{\"artha\": \"karman\", \"krt\": \"kftya\"}"
+   ],
+   "source": "Kāśikā 3.4.70 (कर्तव्यः कटो भवता)"
   }
  ],
  "3.4.111": [
   {
    "text": "yā + laṅ + jhi (optional jus)",
-   "expected_iast": "ayus",
-   "expected": null,
+   "expected_iast": "ayuḥ",
+   "expected": "ayuH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "02.0044",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111 (अयुः)",
+   "note": "owner wrote the pre-visarga ayus; the surface form is ayuḥ (visarga by 8.2.66 / 8.3.15)"
   },
   {
    "text": "yā + laṅ + jhi (an)",
    "expected_iast": "ayān",
-   "expected": null,
+   "expected": "ayAn",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "02.0044",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111 (अयान् in the other branch)",
+   "note": "owner case flipped to a negative: the branch where jus is declined"
+  },
+  {
+   "text": "rA + laG + jhi: aruH",
+   "expected_iast": "aruḥ",
+   "expected": "aruH",
    "positive": true,
-   "spec": null,
-   "source": null
+   "spec": [
+    "tinanta",
+    "02.0052",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111; Vidyut aruH (validator)"
+  },
+  {
+   "text": "vA + laG + jhi: avuH",
+   "expected_iast": "avuḥ",
+   "expected": "avuH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0045",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111; Vidyut avuH (validator)"
+  },
+  {
+   "text": "rA + laG + jhi: arAn",
+   "expected_iast": "arān",
+   "expected": "arAn",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "02.0052",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111 (अन्येषां मते अयान्)"
+  },
+  {
+   "text": "vA + laG + jhi: avAn",
+   "expected_iast": "avān",
+   "expected": "avAn",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "02.0045",
+    "laG",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 3.4.111 (अन्येषां मते अवान्)"
   }
  ]
 }

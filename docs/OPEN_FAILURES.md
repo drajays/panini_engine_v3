@@ -60,3 +60,29 @@ entry hand the subanta scanner a Term list; then 6.4.24 at kvin (the term-0 limi
 | 2.4.49 | FAIL | iṅ + liṭ gives `aDIye`, Kāśikā adhijage (gāṅ ādeśa) | 2.4.49 in the liṭ spine |
 | 2.1.x / 2.2.x | see sig/lk_case_verdicts/a2.json | samāsa machine slice 2 covers 2.1.6/24/36/37/40/51/52/57, 2.2.8/18/24/29, 2.4.17/18/26/71 only; others leave the members un-compounded | slice 3 |
 | 1.2.x, 1.4.15/21/105/107, 2.3.x, 2.4.84 | UNRUNNABLE | no harness entry (kṛdanta with upasarga, ekaśeṣa, upapada yuṣmad/asmad, kāraka→vibhakti) — reasons are in each case's `note` | harness entry points (tools/exercise_audit `_derive`), not engine rules |
+
+## LK case gate — adhyāya 3 (2026-11-14, tools/lk_cases, fixtures tests/fixtures/lk_cases/a3.json)
+Strict failures of runnable cases (never loosened). Source = Kāśikā text in the DB for each sūtra.
+
+| Sūtra | Case | Cause found | What is needed |
+|---|---|---|---|
+| 3.1.41 | vid + loṭ 3pl → vidāṅkurvantu | the loṭ pipeline derives only vidantu; nipātana (Ām, no guṇa, loṭ luk, anuprayoga kṛ) not performed | 3.1.41 nipātana path on the tiṅanta spine |
+| 3.1.60 | ud + pad + luṅ + ta → udapādi | with an upasarga (tinanta2 upasargas=['ud']) only udapatta arises; without it both apAdi/apatta arise | ciṇ vibhāṣā lost when upasargas are on the tape |
+| 3.2.112 | vas + lṛṭ 1pl with kala=BUta, arthaViSeSa=anadyatana → vatsyāmaḥ | form right, 3.2.112 absent from the trace (the vivakṣā is ignored) | selection of lṛṭ by the abhijñā-vacana upapada |
+| 3.2.177 | BrAj + kvip → bhrāṭ | engine gives BrAg/BrAk; 8.2.36 (j→ṣ for BrAj) does not see the kṛdanta stem (no dhatu_v tags on a derive_krdanta stem; only the niṣṭhā path tags them) | tag the dhātu varṇas on kṛdanta stems before the sup state, then 8.2.36/8.4.41 give BrAw |
+| 3.3.97 | av + ktin (strī, saṃjñā) → ūtiḥ | engine gives AvA/avitiḥ; ūti/yūti/jūti/sāti/heti/kīrti nipātana not implemented | 3.3.97 nipātana table |
+| 3.3.101 | iṣ + śa + ṭāp → icchā | engine gives izA/izitiḥ; iṣer śaḥ + yag-abhāva + cch (6.1.73) nipātana missing | 3.3.101 nipātana |
+| 3.3.103 | īh + a + ṭāp → īhā | form right, 3.3.103 not in the trace (made by another path) | route strī-bhāve 'a' through 3.3.103 |
+| 3.3.156 | vṛṣ + liṅ (hetu) → varṣet | form right, 3.3.156 not in the trace (liṅ reached without the sūtra) | hetuhetumadbhāva vivakṣā → 3.3.156 |
+| 3.4.70 | kṛ + tavya (karman) → kartavyam | form right, 3.4.70 not in the trace | 3.4.70 as the bhāva/karman restrictor for kṛtya |
+
+Unrunnable (no machine entry point): kāmyac/kyac-upamāna/kyaṅ/yaṅ/yak/śyan-less sanādi (3.1.9–3.1.27: PLAN §9 G1); stambh sautra (3.1.82, G3); karmakartari (3.1.87); kvin/kañ/ṣṭran/ghañ(karaṇa)/ki/tumun/ṇamul/Da/ka selection by vivakṣā (3.1.136/144, 3.2.58–60/99/182, 3.3.41/92/121/167, 3.4.22/27); uṇādi (3.3.1, G2); lṛṭ-śatṛ (3.3.14); sāmīpya (3.3.131); alam-ktvā (3.4.18).
+Disputed owner cases (Kāśikā disagrees): 3.1.65 (atāpi vs atapta), 3.1.82 (staBnute), 3.2.75 (grāvā), 3.2.107 (sedivān is 3.2.108), 3.2.185 (potram vs pavitram), 3.3.46 (pralāvaḥ).
+
+## LK case gate, adhyāyas 6–8 (2026-11-14; `tools/lk_cases`, fixtures `tests/fixtures/lk_cases/a6-a8.json`, verdicts `sig/lk_case_verdicts/a6-a8.json`)
+71 sūtras / 234 cases (204 machine-runnable): **3 confident** (6.4.63, 7.1.60, 8.2.43), **6 working** (6.4.62, 7.1.69, 8.2.44, 8.2.51, 8.2.52, 8.4.64), **52 FAIL**, **10 unrunnable**. A FAIL here means a sourced case (Kāśikā/LK/DB-attested) does not come out of the engine; no case was loosened.
+**44 of the 52 FAILs are stub-class sūtras** (`_GATE_KEY` gate + `anga_kind` marker, or `r1_form_identity_exempt`: the act records a marker and changes no letters), so "unexercised/working" in `sutra_class` was too generous for them: 6.4.107 7.1.36 7.1.71 7.1.74 7.1.95 7.2.12 7.2.20 7.2.56 7.2.98 7.3.36 7.3.69 7.3.91 7.4.5 7.4.24 7.4.42 7.4.43 7.4.57 8.2.19 8.3.4/5/6/10/12/26/27/31/32/38/39/48/56/67/76/87 8.4.12 8.4.14/15/16 8.4.43 8.4.49 8.4.60/61/62/63. Each needs a real cond/act (Kāśikā text in the case's `source`).
+Real-cond FAILs: 6.1.89 (upa+eDate gives upeDate: 6.1.94 wins; upa+eti stays upaeti — upasarga junction in `tinanta2`), 6.1.113 (join_tripadi does no sapādasaptādhyāyī visarga sandhi: vfkzaHatra), 7.2.101 (jarasau owner dual form wrong: 'jarasau' is not Sanskrit, case kept as source-checked failing), 7.3.55/7.3.58/7.3.73 (sanādi ātmanepada default for ubhayapadī roots / recipe flags only laṭ), 8.2.45 (bhuj kta gives BuktaH: Bujo~ 06.0153 is the kauṭilya root, not 'Buja~' 07.0017 — case spec to be re-pointed), 8.4.65 (utsTAtA: 8.4.61/65 not firing).
+Harness / entry-point gaps (cases `unrunnable`, spec null, each with a note): yaṅluk tiṅanta (7.3.94), cvi (7.4.26/27/32), ktin/uṇādi (7.2.9), pluta (8.2.84), āmreḍita dvitva (8.1.4), vaidika uñ (8.3.33), compounds with saṃjñā (8.4.3), 8.2.2 (asiddha-statement: class proof, not a firing test).
+Engine fix made: 1.1.26 `_TARGETS` lacked `ktavatu~` (the real upadeśa), so ktavatu's ta never got `nistha`: śuṣkavān, pakvavān, lūnavān, mlānavān (test `tests/unit/test_8_2_nistha_ktavatu.py`).
+Tool notes for `tools/lk_cases.py` (not edited): (1) mutation (cond→False) reports "redundant []" for sūtras the scanner reaches by another attribute (6.4.63, 6.4.62), so it proves nothing there; (2) a vibhāṣā's *declined* reading needs its own case kind (form arises AND sūtra not applied) — those cases are tagged `"kind": "declined"` and graded as negatives; (3) a wrong-form negative passes trivially when the form is not produced.
