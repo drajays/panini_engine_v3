@@ -246,6 +246,15 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15b — याट्/स्याट् through 1.3.x + 8.4.68 on subanta (claim `it-agama-yat-a68`)
+
+**What:** 7.3.113/114 utter yAw/syAw; 8.4.68 saṃvṛta mark + applied at end of subanta tripāḍī. रमायै trace now
+7.3.113 → 1.3.3 → 1.3.9 → 6.1.88 → … → 8.4.68. Tests: test_sutra_7_3_113 + test_it_prakarana_agama = 10 passed.
+
+**Next:** नुट् cluster; remaining bare-letter āgamas in IT_PRAKARANA_EVERYWHERE.md.
+
+
+
 ### [cursor] 2026-11-15 — इट् through 1.3.2–1.3.9 (claim `it-agama-iw`, coordinator for dispatcher)
 
 **What:** 7.2.35 now utters इट् as taught (`engine/agama.utter_into(..., "iw")`); 1.3.3 names its ट्; 1.3.9 deletes and records it under the āgama (`agama_it_records` / `it_lopa_log` with `agama=iw`), not as the host's `it:wit`. Dispatcher post-hook runs `pipelines.it_prakarana.run_it_prakarana` whenever a pending āgama segment remains after a non-1.3.x apply. Hindi hint for 7.2.35 cleaned. Focused test `tests/unit/test_it_prakarana_agama.py`. Plan: `docs/IT_PRAKARANA_EVERYWHERE.md` §Shipped.

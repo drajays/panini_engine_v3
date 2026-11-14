@@ -6,11 +6,9 @@
 अधिकारः  अङ्गस्य 6.4.1
 
 When the *aṅga* is **ā**‑banta (final SLP1 ``A``) but **not** tagged ``sarvanama``,
-before **Ne**: insert **yāṭ** residue **y** + **ā** before **e** (ṅ dropped).  The
-*aṅga* is **not** shortened here (contrast **7.3.114**).  **6.1.88** then applies
-to the **ā** + **e** contact (…**y** is intervening only in the varṇa stream;
-the operational *vṛddhi* pair is the **A** immediately before **e** in the
-pratyaya slice).
+before **ṅe**: utter **याट्** as taught (``engine.agama.utter_into``) as the ādyavayava of the
+vibhakti (ṭit, 1.1.46). 1.3.3 names ट् and 1.3.9 deletes it, leaving **या** before **ए**;
+**6.1.88** then does the **आ** + **ए** vṛddhi. The *aṅga* is **not** shortened here (contrast **7.3.114**).
 
 Mutually exclusive with **7.3.114** (*sarvanāmnaḥ syāṭ* …).
 
@@ -28,6 +26,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
+from engine.agama  import utter_into
 from engine.gates  import adhikara_in_effect
 from engine.ngit_sup_locator import indices_last_anga_before_ngit_sup
 from engine.state  import State, Term
@@ -79,10 +78,14 @@ def act(state: State) -> State:
     pr = state.terms[pj]
     up = pr.meta.get("upadesha_slp1")
     if up == "Ne":
-        pr.varnas = [mk("y"), mk("A"), mk("e")]
+        # ṅe after it-lopa is ए; याट् stands before it (ṭit → ādyavayava).
+        pr.varnas = [mk("e")]
+        utter_into(state, pr, 0, "yAw")
         pr.meta["upadesha_slp1"] = "yAe"
     elif up == "Ni":
-        pr.varnas = [mk("y"), mk("A"), mk("m")]
+        # same āgama before the locative residue म् (existing surface contract: याम्).
+        pr.varnas = [mk("m")]
+        utter_into(state, pr, 0, "yAw")
         pr.meta["upadesha_slp1"] = "yAm"
     else:
         return state

@@ -828,6 +828,8 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     _pada_merge(s)          # always: a single term (su already lopa'd) still becomes the pada (8.2.7 reads it)
 
     _scan_pool(tripadi_ids)
+    # 8.4.68 is ANUVADA (saṃvṛta restoration of short a) — not in the VIDHI tripāḍī pool above.
+    s = apply_rule("8.4.68", s)
     return s
 
 

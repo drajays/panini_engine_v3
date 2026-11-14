@@ -102,3 +102,17 @@ Owner screenshot on `/dhaturupa` (स्कुन्द् + स + आथाम�
 
 **Not yet:** नुट् (7.1.54/55 + 6.4.3/4/6/7 readers) — next cluster; वुक्/सुट् self-tagging; the rest of the bare-letter list.
 Sig / notes-audit / brain-mirror / upadeśa-input failures on this HEAD are the same on bare `main` (pre-existing).
+
+
+## Shipped 2026-11-15b (cursor) — याट् / स्याट् + 8.4.68
+
+Owner screenshot रमायै: engine jumped 7.3.113 → 6.1.88 with bare या (no ट्, no 1.3.x); Vidyut shows
+1.3.3 याट् → 1.3.9 या → 6.1.88 य्+ऐ → 8.4.68.
+
+1. **7.3.113** utters ``yAw`` via ``engine.agama``; dispatcher runs 1.3.3/1.3.9 (ट् → टित्, deleted).
+2. **7.3.114** same for ``syAw``.
+3. **8.4.68**: act tags short ``a`` as ``samvrta`` (Mahābhāṣya saṃvṛtāpratyāpatti); ``pipelines/subanta`` applies it
+   after the tripāḍī VIDHI pool (ANUVADA was excluded from that pool — tinanta already called it via recipe /
+   ``execute_tripadi_phase``).
+
+Still bare-letter (next): नुट् 7.1.54/55, तुक्, नुम्, मुक्, सुट्, युक्, ईट्, … (see §What is wrong).

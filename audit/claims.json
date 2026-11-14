@@ -765,10 +765,27 @@
    "core/i18n_hi.py"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [
    "engine/dispatcher.py"
   ],
   "updated": 1794687414.3149571
+ },
+ {
+  "id": "it-agama-yat-a68",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_7/pada_3/sutra_7_3_113.py",
+   "sutras/adhyaya_7/pada_3/sutra_7_3_114.py",
+   "sutras/adhyaya_8/pada_4/sutra_8_4_68.py",
+   "pipelines/subanta.py",
+   "tests/unit/test_sutra_7_3_113_yadap_ne.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1794700000.0
  }
 ]

@@ -39,6 +39,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.agama  import utter_into
 from engine.gates  import adhikara_in_effect
 from engine.ngit_sup_locator import indices_last_anga_before_ngit_sup
 from engine.state import State, Term
@@ -111,8 +112,9 @@ def act(state: State) -> State:
     anga.meta["hrasva_7_3_114_anga"] = True
     pr.meta["syat_7_3_114_agama"] = "syAw"
     pr.meta.setdefault("upadesha_slp1_original", pr.meta.get("upadesha_slp1", up))
-    # syāṭ (s y ā) + the ṅit sup's remainder: syAe, syAas, syAAm (6.1.101 / 6.1.88 then join them)
-    pr.varnas = [mk("s"), mk("y"), mk("A")] + list(parse_slp1_upadesha_sequence(rem))
+    # स्याट् as taught (ṭit → ādyavayava of the vibhakti); 1.3.3/1.3.9 delete ट्, leaving स्या + remainder.
+    pr.varnas = list(parse_slp1_upadesha_sequence(rem))
+    utter_into(state, pr, 0, "syAw")
     pr.meta["upadesha_slp1"] = "syA" + rem
     pr.meta["syat_7_3_114_done"] = True
     return state
