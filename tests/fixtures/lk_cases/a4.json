@@ -1,0 +1,388 @@
+{
+ "4.1.16": [
+  {
+   "text": "gārgya + ṅīp (yañaśca)",
+   "expected_iast": "gārgī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.17": [
+  {
+   "text": "gārgya + ṣpha + ṅīṣ (prācāṃ ṣpha taddhitaḥ)",
+   "expected_iast": "gārgyāyaṇī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.20": [
+  {
+   "text": "kumāra + ṅīp (vayasi prathame)",
+   "expected_iast": "kumārī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.21": [
+  {
+   "text": "triloka + ṅīp (dvigoḥ)",
+   "expected_iast": "trilokī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.39": [
+  {
+   "text": "śyeta + ṅīp (varṇād anudāttāt... n-ādeśa)",
+   "expected_iast": "śyenī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.44": [
+  {
+   "text": "laghu + ṅīṣ (optional)",
+   "expected_iast": "laghvī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "laghu (without ṅīṣ)",
+   "expected_iast": "laghuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.45": [
+  {
+   "text": "bahu + ṅīṣ (optional)",
+   "expected_iast": "bahvī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bahu (without ṅīṣ)",
+   "expected_iast": "bahuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.48": [
+  {
+   "text": "gopa + ṅīṣ (puṃyogād ākhyāyām)",
+   "expected_iast": "gopī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.49": [
+  {
+   "text": "indra + ānuk + ṅīṣ",
+   "expected_iast": "indrāṇī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ācārya + ānuk + ṅīṣ",
+   "expected_iast": "ācāryāṇī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.58": [
+  {
+   "text": "śūrpanakha + ṭāp (saṃjñāyām ṅīṣ blocked)",
+   "expected_iast": "śūrpaṇakhā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "śūrpanakha + ṅīṣ (erroneous ṅīṣ in saṃjñā)",
+   "expected_iast": "śūrpaṇakhī",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.63": [
+  {
+   "text": "taṭa + ṅīṣ (jāter astrīviṣayāt)",
+   "expected_iast": "taṭī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kṣatriya + ṭāp (yopadhā blocks ṅīṣ)",
+   "expected_iast": "kṣatriyā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.65": [
+  {
+   "text": "dākṣi + ṅīṣ (itaḥ manuṣyajāteḥ)",
+   "expected_iast": "dākṣī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.68": [
+  {
+   "text": "paṅgu + ūṅ",
+   "expected_iast": "paṅgū",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.70": [
+  {
+   "text": "vāma + ūru + ūṅ",
+   "expected_iast": "vāmoru",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.87": [
+  {
+   "text": "strī + nañ + su (bhavanāt)",
+   "expected_iast": "straiṇam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "puṃs + snañ + su",
+   "expected_iast": "pauṃsnam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.93": [
+  {
+   "text": "garga + yañ + su (eko gotre)",
+   "expected_iast": "gārgyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.94": [
+  {
+   "text": "gārgya + phak + su (gotrād yūny astriyām)",
+   "expected_iast": "gārgyāyaṇaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.114": [
+  {
+   "text": "vasiṣṭha + aṇ + su (ṛṣyandhaka...)",
+   "expected_iast": "vāsiṣṭhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.115": [
+  {
+   "text": "dvimātṛ + aṇ + su (mātur ut)",
+   "expected_iast": "dvaimāturaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.116": [
+  {
+   "text": "kanyā + aṇ + su (kanīna-ādeśa)",
+   "expected_iast": "kānīnaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.168": [
+  {
+   "text": "pañcāla + añ + su (janapada-kṣatriya)",
+   "expected_iast": "pāñcālaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.172": [
+  {
+   "text": "kuru + ṇya + su",
+   "expected_iast": "kauravyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.1.175": [
+  {
+   "text": "kamboja + añ + luk (kambojāl luk)",
+   "expected_iast": "kambojaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.7": [
+  {
+   "text": "kali + aṇ + su (dṛṣṭaṃ sāma)",
+   "expected_iast": "kāleyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.16": [
+  {
+   "text": "bhrāṣṭra + aṇ + Jas (saṃskṛtaṃ bhakṣāḥ)",
+   "expected_iast": "bhrāṣṭrāḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.36": [
+  {
+   "text": "pitṛ + vyat + su (pitṛvya)",
+   "expected_iast": "pitṛvyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mātṛ + ḍulac + su (mātula)",
+   "expected_iast": "mātulaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.38": [
+  {
+   "text": "bhikṣā + aṇ + su (samūhe)",
+   "expected_iast": "bhaikṣam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.61": [
+  {
+   "text": "krama + vun + su (tad adhīte tad veda)",
+   "expected_iast": "kramakaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.68": [
+  {
+   "text": "kuśāmba + aṇ + ṅīp (tena nirvṛttam)",
+   "expected_iast": "kauśāmbī",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.81": [
+  {
+   "text": "pañcāla + lup + Jas (janapade lup)",
+   "expected_iast": "pañcālāḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.2.107": [
+  {
+   "text": "pūrvaśālā + ña + su (dikpūrvapadād asaṃjñāyāṃ ñaḥ)",
+   "expected_iast": "paurvaśālaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.3.82": [
+  {
+   "text": "aśman + mayaṭ + su (mayaṭ ca)",
+   "expected_iast": "aśmamayam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "4.4.41": [
+  {
+   "text": "dharma + ṭhak + su (dharmaṃ carati)",
+   "expected_iast": "dhārmikaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

@@ -1,0 +1,944 @@
+{
+ "1.1.34": [
+  {
+   "text": "pūrva + Jas (vyavasthā, non-saṃjñā, sarvanāman)",
+   "expected_iast": "pūrve",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pūrva + Jas (vyavasthā, non-saṃjñā, optional non-sarvanāman)",
+   "expected_iast": "pūrvāḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "uttara + Jas (vyavasthā, non-saṃjñā, sarvanāman)",
+   "expected_iast": "uttare",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "uttara + Jas (saṃjñā / non-vyavasthā, sarvanāman blocked)",
+   "expected_iast": "uttare",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.1.59": [
+  {
+   "text": "kṛ + liṭ + atus (yaṇ ac-ādeśa sthānivat for dvirvacana)",
+   "expected_iast": "cakratuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dā + liṭ + atus (ā-lopa ac-ādeśa sthānivat for dvirvacana)",
+   "expected_iast": "dadatuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pat + liṭ + atus (a-lopa ac-ādeśa sthānivat)",
+   "expected_iast": "petatuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kṛ + liṭ + atus (erroneous reduplication of yaṇ)",
+   "expected_iast": "carkratuḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.2": [
+  {
+   "text": "ud + vij + tṛc (iṭ behaves as ṅit, guṇa blocked)",
+   "expected_iast": "udvijitā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ud + vij + tumun (iṭ behaves as ṅit, guṇa blocked)",
+   "expected_iast": "udvijitum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ud + vij + tṛc (guṇa applied erroneously)",
+   "expected_iast": "udvejitā",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.3": [
+  {
+   "text": "pra + ūrṇu + tṛc (iṭ as ṅit, guṇa blocked)",
+   "expected_iast": "prorṇuvitā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + ūrṇu + tṛc (iṭ not ṅit, guṇa applied)",
+   "expected_iast": "prorṇavitā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + ūrṇu + liṭ + ṇal (optionally ṅit)",
+   "expected_iast": "prorṇunāva",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.26": [
+  {
+   "text": "likh + ktvā (ral-anta, i-upadhā, halādi, kit optional)",
+   "expected_iast": "likhitvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "likh + ktvā (non-kit, guṇa applied)",
+   "expected_iast": "lekhitvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dyut + ktvā (ral-anta, u-upadhā, halādi, kit optional)",
+   "expected_iast": "dyutitvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sev + ktvā (not i/u-upadhā, kit blocked)",
+   "expected_iast": "sivitvā",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.62": [
+  {
+   "text": "viśākhā + au (chandas, optional ekavacana)",
+   "expected_iast": "viśākhā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "viśākhā + au (laukika, dual retained)",
+   "expected_iast": "viśākhe",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.64": [
+  {
+   "text": "rāma + rāma + au (sarūpa ekaśeṣa)",
+   "expected_iast": "rāmau",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "rāma + rāma + Jas (sarūpa ekaśeṣa)",
+   "expected_iast": "rāmāḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "rāma + kṛṣṇa + au (virūpa ekaśeṣa blocked)",
+   "expected_iast": "rāmau",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.2.70": [
+  {
+   "text": "mātṛ + pitṛ + au (pitā mātrā ekaśeṣa)",
+   "expected_iast": "pitarau",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mātṛ + pitṛ + au (optional non-ekaśeṣa dvandva)",
+   "expected_iast": "mātāpitarau",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.14": [
+  {
+   "text": "vi + ati + lū + laṭ (karmavyatihāra, ātmanepada)",
+   "expected_iast": "vyatilunīte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + ati + lū + laṭ (parasmaipada in karmavyatihāra blocked)",
+   "expected_iast": "vyatilunāti",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.15": [
+  {
+   "text": "vi + ati + gam + laṭ (gati-artha blocks ātmanepada)",
+   "expected_iast": "vyatigacchanti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + ati + han + laṭ (hiṃsā-artha blocks ātmanepada)",
+   "expected_iast": "vyatighnanti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + ati + gam + laṭ (ātmanepada erroneously applied)",
+   "expected_iast": "vyatigacchante",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + ati + han + laṭ (ātmanepada erroneously applied)",
+   "expected_iast": "vyatighnante",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.18": [
+  {
+   "text": "pari + krī + laṭ (ātmanepada)",
+   "expected_iast": "parikrīṇīte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + krī + laṭ (ātmanepada)",
+   "expected_iast": "vikrīṇīte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ava + krī + laṭ (ātmanepada)",
+   "expected_iast": "avakrīṇīte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "krī + laṭ (no pari/vi/ava, parasmaipada)",
+   "expected_iast": "krīṇāti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "krī + laṭ (no pari/vi/ava, ātmanepada blocked)",
+   "expected_iast": "krīṇīte",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.22": [
+  {
+   "text": "sam + sthā + laṭ (ātmanepada)",
+   "expected_iast": "saṃtiṣṭhate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ava + sthā + laṭ (ātmanepada)",
+   "expected_iast": "avatiṣṭhate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + sthā + laṭ (ātmanepada)",
+   "expected_iast": "pratiṣṭhate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + sthā + laṭ (ātmanepada)",
+   "expected_iast": "vitiṣṭhate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sthā + laṭ (unprefixed, parasmaipada)",
+   "expected_iast": "tiṣṭhati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sthā + laṭ (unprefixed, ātmanepada blocked)",
+   "expected_iast": "tiṣṭhate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.32": [
+  {
+   "text": "ut + kṛ + laṭ (gandhana/avakṣepaṇa etc., ātmanepada)",
+   "expected_iast": "utkurute",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + kṛ + laṭ (without gandhana etc., parasmaipada)",
+   "expected_iast": "prakaroti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.45": [
+  {
+   "text": "jñā + laṭ (akarmaka, ātmanepada)",
+   "expected_iast": "jānīte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "jñā + laṭ (sakarmaka, parasmaipada)",
+   "expected_iast": "jānāti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.47": [
+  {
+   "text": "vi + pra + vad + laṭ (vimati/bhāsana, ātmanepada)",
+   "expected_iast": "vipravadante",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "upa + vad + laṭ (upamantraṇa, ātmanepada)",
+   "expected_iast": "upavadate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vad + laṭ (ordinary speaking, parasmaipada)",
+   "expected_iast": "vadati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vad + laṭ (ordinary speaking, ātmanepada blocked)",
+   "expected_iast": "vadate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.53": [
+  {
+   "text": "ut + car + laṭ (sakarmaka, ātmanepada)",
+   "expected_iast": "uccarate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ut + car + laṭ (akarmaka, parasmaipada)",
+   "expected_iast": "uccarati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ut + car + laṭ (akarmaka, ātmanepada blocked)",
+   "expected_iast": "uccarate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.54": [
+  {
+   "text": "sam + car + laṭ (tṛtīyāyukta, ātmanepada)",
+   "expected_iast": "saṃcarate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sam + car + laṭ (no tṛtīyā, parasmaipada)",
+   "expected_iast": "saṃcarati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sam + car + laṭ (no tṛtīyā, ātmanepada blocked)",
+   "expected_iast": "saṃcarate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.55": [
+  {
+   "text": "sam + dāṇ + laṭ (tṛtīyā in caturthyartha, ātmanepada)",
+   "expected_iast": "saṃyacchate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sam + dāṇ + laṭ (non-caturthyartha, parasmaipada)",
+   "expected_iast": "saṃyacchati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.60": [
+  {
+   "text": "śad + laṭ (śit affix, ātmanepada)",
+   "expected_iast": "śīyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "śad + lṛṭ (non-śit affix, parasmaipada)",
+   "expected_iast": "śatsyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "śad + laṭ (śit affix, parasmaipada blocked)",
+   "expected_iast": "śīyati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.61": [
+  {
+   "text": "mṛ + laṭ (śit, ātmanepada)",
+   "expected_iast": "mriyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mṛ + luṅ (ātmanepada)",
+   "expected_iast": "amṛta",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mṛ + āśīrliṅ (ātmanepada)",
+   "expected_iast": "mṛṣīṣṭa",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mṛ + lṛṭ (non-śit/luṅ/liṅ, parasmaipada)",
+   "expected_iast": "mariṣyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mṛ + lṛṭ (ātmanepada blocked)",
+   "expected_iast": "mariṣyate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.62": [
+  {
+   "text": "edh + san + laṭ (ātmanepada transferred from edh)",
+   "expected_iast": "edidhayiṣate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhū + san + laṭ (parasmaipada transferred from bhū)",
+   "expected_iast": "bubhūṣati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "edh + san + laṭ (parasmaipada blocked)",
+   "expected_iast": "edidhayiṣati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.63": [
+  {
+   "text": "edh + ām + kṛ + liṭ (ātmanepada transferred to kṛ)",
+   "expected_iast": "edhayāñcakre",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "īh + ām + kṛ + liṭ (ātmanepada transferred to kṛ)",
+   "expected_iast": "īhāñcakre",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "edh + ām + kṛ + liṭ (parasmaipada kṛ blocked)",
+   "expected_iast": "edhayāñcakāra",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.66": [
+  {
+   "text": "bhuj + laṭ (anavana / eating, ātmanepada)",
+   "expected_iast": "bhuṅkte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhuj + laṭ (avana / protecting, parasmaipada)",
+   "expected_iast": "bhunakti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhuj + laṭ (avana / protecting, ātmanepada blocked)",
+   "expected_iast": "bhuṅkte",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.74": [
+  {
+   "text": "kṛ + ṇic + laṭ (kartrabhiprāya, ātmanepada)",
+   "expected_iast": "kārayate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kṛ + ṇic + laṭ (parābhiprāya, parasmaipada)",
+   "expected_iast": "kārayati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.79": [
+  {
+   "text": "anu + kṛ + laṭ (parasmaipada even if kartrabhiprāya)",
+   "expected_iast": "anukaroti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "parā + kṛ + laṭ (parasmaipada)",
+   "expected_iast": "parākaroti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "anu + kṛ + laṭ (ātmanepada blocked)",
+   "expected_iast": "anukurute",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.82": [
+  {
+   "text": "pari + mṛṣ + laṭ (parasmaipada)",
+   "expected_iast": "parimṛṣyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pari + mṛṣ + laṭ (ātmanepada blocked)",
+   "expected_iast": "parimṛṣyate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.83": [
+  {
+   "text": "vi + ram + laṭ (parasmaipada)",
+   "expected_iast": "viramati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ā + ram + laṭ (parasmaipada)",
+   "expected_iast": "āramati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pari + ram + laṭ (parasmaipada)",
+   "expected_iast": "pariramati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ram + laṭ (unprefixed, ātmanepada)",
+   "expected_iast": "ramate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + ram + laṭ (ātmanepada blocked)",
+   "expected_iast": "viramate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.84": [
+  {
+   "text": "upa + ram + laṭ (akarmaka, parasmaipada)",
+   "expected_iast": "uparamati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "upa + ram + laṭ (akarmaka, ātmanepada blocked)",
+   "expected_iast": "uparamate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.91": [
+  {
+   "text": "dyut + luṅ (optional parasmaipada)",
+   "expected_iast": "adyutat",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dyut + luṅ (optional ātmanepada)",
+   "expected_iast": "adyotiṣṭa",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dyut + laṭ (outside luṅ, parasmaipada blocked)",
+   "expected_iast": "dyotati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.3.92": [
+  {
+   "text": "vṛt + lṛṭ (optional parasmaipada)",
+   "expected_iast": "vartsyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vṛt + lṛṭ (optional ātmanepada)",
+   "expected_iast": "vartiṣyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vṛt + san + laṭ (optional parasmaipada)",
+   "expected_iast": "vivṛtsati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vṛt + san + laṭ (optional ātmanepada)",
+   "expected_iast": "vivartiṣate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vṛt + laṭ (outside sya/san, parasmaipada blocked)",
+   "expected_iast": "vartati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.4.8": [
+  {
+   "text": "bhūpati + ṅe (samāsa, ghi applies)",
+   "expected_iast": "bhūpataye",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pati + ṅe (asamāsa, ghi blocked)",
+   "expected_iast": "patye",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pati + ṅe (asamāsa, ghi erroneously applied)",
+   "expected_iast": "pataye",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.4.15": [
+  {
+   "text": "rājan + kyaṅ + laṭ (pada-saṃjñā triggers n-lopa)",
+   "expected_iast": "rājāyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "rājan + kyaṅ + laṭ (n retained erroneously)",
+   "expected_iast": "rājanyate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "rājan + ya + su (non-kya, pada-saṃjñā blocked)",
+   "expected_iast": "rājanyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.4.21": [
+  {
+   "text": "rāma + Jas (bahutva ≥ 3, bahuvacana)",
+   "expected_iast": "rāmāḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "rāma + au (dvitva, bahuvacana blocked)",
+   "expected_iast": "rāmāḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.4.105": [
+  {
+   "text": "pac + laṭ (yuṣmad upapada, madhyama puruṣa)",
+   "expected_iast": "pacasi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pac + laṭ (yuṣmad upapada, prathama puruṣa blocked)",
+   "expected_iast": "pacati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "1.4.107": [
+  {
+   "text": "pac + laṭ (asmad upapada, uttama puruṣa)",
+   "expected_iast": "pacāmi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pac + laṭ (asmad upapada, prathama puruṣa blocked)",
+   "expected_iast": "pacati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

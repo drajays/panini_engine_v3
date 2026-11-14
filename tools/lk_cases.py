@@ -1,7 +1,7 @@
 """tools/lk_cases.py — the LK case gate: do a sūtra's use-case tests prove it works?
 
     python3 -m tools.lk_cases init  ~/lk_unexercised_tests.json   # owner JSON -> tests/fixtures/lk_cases.json (skeleton; spec filled later)
-    python3 -m tools.lk_cases run [7.1 4.1.41 ...]                # run the cases -> sig/lk_case_verdicts.json
+    python3 -m tools.lk_cases run [7.1 4.1.41 ...]                # run the cases -> sig/lk_case_verdicts/aN.json
 
 Case = {text, expected (SLP1), positive, spec (tools.exercise_audit tuple, or null = not yet machine-runnable), source (citation)}.
   positive: expected ∈ the vikalpa readings AND the sūtra is APPLIED in the branch that gives it (exercise_audit.attempt).
@@ -17,8 +17,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FIX = ROOT / "tests/fixtures/lk_cases.json"
-OUT = ROOT / "sig/lk_case_verdicts.json"
+FIXD = ROOT / "tests/fixtures/lk_cases"          # one file per adhyāya (a1.json … a8.json): agents never share a file
+OUTD = ROOT / "sig/lk_case_verdicts"            # one file per adhyāya, same reason
 
 
 def _key(s: str):
@@ -27,15 +27,22 @@ def _key(s: str):
 
 def init(src: str) -> None:
     raw = json.loads(Path(src).read_text(encoding="utf-8"))
-    old = json.loads(FIX.read_text(encoding="utf-8")) if FIX.exists() else {}
+    old = load()
     out = {}
     for sid in sorted(raw, key=_key):
         have = {c["text"]: c for c in old.get(sid, [])}
         out[sid] = [have.get(c["spec"]) or {"text": c["spec"], "expected_iast": c["expected"], "expected": None, "positive": c["positive"],
                                            "spec": None, "source": None} for c in raw[sid]]
-    FIX.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    n = sum(len(v) for v in out.values())
-    print(f"{len(out)} sūtras, {n} cases -> {FIX.relative_to(ROOT)}")
+    for a in sorted({k.split(".")[0] for k in out}):
+        (FIXD / f"a{a}.json").write_text(json.dumps({k: v for k, v in out.items() if k.startswith(a + ".")}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"{len(out)} sūtras, {sum(len(v) for v in out.values())} cases -> {FIXD.relative_to(ROOT)}/")
+
+
+def load() -> dict:
+    out: dict = {}
+    for f in sorted(FIXD.glob("a*.json")):
+        out.update(json.loads(f.read_text(encoding="utf-8")))
+    return out
 
 
 def _norm_spec(spec):
@@ -97,8 +104,11 @@ def grade(rows: list[dict], cases: list[dict]) -> str:
 def run_all(filters: list[str]) -> None:
     import sutras  # noqa: F401
     from engine import SUTRA_REGISTRY
-    fx = json.loads(FIX.read_text(encoding="utf-8"))
-    prev = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    fx = load()
+    OUTD.mkdir(exist_ok=True)
+    prev = {}
+    for f in OUTD.glob("a*.json"):
+        prev.update(json.loads(f.read_text(encoding="utf-8")))
     for sid in sorted(fx, key=_key):
         if filters and not any(sid == f or sid.startswith(f + ".") for f in filters):
             continue
@@ -106,7 +116,8 @@ def run_all(filters: list[str]) -> None:
         rows = [check(sid, c, typ) for c in fx[sid]]
         prev[sid] = {"grade": grade(rows, fx[sid]), "type": typ, "cases": rows}
         print(sid, prev[sid]["grade"], flush=True)
-    OUT.write_text(json.dumps(prev, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    for a in {k.split(".")[0] for k in prev}:
+        (OUTD / f"a{a}.json").write_text(json.dumps({k: v for k, v in prev.items() if k.startswith(a + ".")}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

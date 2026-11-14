@@ -1,0 +1,272 @@
+{
+ "5.1.115": [
+  {
+   "text": "brāhmaṇa + vati (tena tulyaṃ kriyā ced vatiḥ)",
+   "expected_iast": "brāhmaṇavat",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.116": [
+  {
+   "text": "mathurā + vati (tatra tasyeva)",
+   "expected_iast": "mathurāvat",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.119": [
+  {
+   "text": "go + tva + su (tasya bhāvaḥ)",
+   "expected_iast": "gotvam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "go + tal + ṭāp + su (tasya bhāvaḥ)",
+   "expected_iast": "gotā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.123": [
+  {
+   "text": "śukla + ṣyañ + su (varṇadṛḍhādibhyaḥ)",
+   "expected_iast": "śauklyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.124": [
+  {
+   "text": "brāhmaṇa + ṣyañ + su (karmaṇi ca)",
+   "expected_iast": "brāhmaṇyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.126": [
+  {
+   "text": "sakhi + ya + su (sakhyur yaḥ)",
+   "expected_iast": "sakhyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.128": [
+  {
+   "text": "purohita + yak + su",
+   "expected_iast": "paurohityam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.1.131": [
+  {
+   "text": "śuci + aṇ + su (igantācca laghupūrvāt)",
+   "expected_iast": "śaucam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.2.23": [
+  {
+   "text": "hyas + go + khañ + su (haiyaṅgavīna)",
+   "expected_iast": "haiyaṅgavīnam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.9": [
+  {
+   "text": "pari + tasil (paryabhibhyāṃ ca)",
+   "expected_iast": "paritaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "abhi + tasil (paryabhibhyāṃ ca)",
+   "expected_iast": "abhitaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.14": [
+  {
+   "text": "idam + ha (itarābhyo'pi dṛśyante)",
+   "expected_iast": "iha",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kim + ha (itarābhyo'pi dṛśyante)",
+   "expected_iast": "kuha",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.16": [
+  {
+   "text": "idam + rhil (idamo rhil)",
+   "expected_iast": "etarhi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.56": [
+  {
+   "text": "pacati + tarap + ām (tiṅaśca)",
+   "expected_iast": "pacatitarām",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.60": [
+  {
+   "text": "praśasya + īyasun + su (śra-ādeśa)",
+   "expected_iast": "śreyān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.3.68": [
+  {
+   "text": "paṭu + bahuc (purastāt)",
+   "expected_iast": "bahupaṭuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.11": [
+  {
+   "text": "kim + tarap + ām (kimettiṅavyayaghād ām)",
+   "expected_iast": "kiṃtarām",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.42": [
+  {
+   "text": "bahu + śas (kārakād anyatarasyām)",
+   "expected_iast": "bahuśaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.50": [
+  {
+   "text": "aśukla + cvi + bhū + laṭ (abhūtatadbhāve)",
+   "expected_iast": "śuklībhavati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.74": [
+  {
+   "text": "ardha + ṛc + a (ṛkpūrabdhūḥpathām ānakṣe)",
+   "expected_iast": "ardharcaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.107": [
+  {
+   "text": "upa + śarad + ṭac (avyayībhāve śaratprabhṛtibhyaḥ)",
+   "expected_iast": "upaśaradam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.138": [
+  {
+   "text": "dvi + pāda (bahuvrīhi, pādasya lopaḥ)",
+   "expected_iast": "dvipaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.148": [
+  {
+   "text": "ud + kākuda + su (bahuvrīhi, antyalopa)",
+   "expected_iast": "utkākut",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vi + kākuda + su (bahuvrīhi, antyalopa)",
+   "expected_iast": "vikākut",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "5.4.150": [
+  {
+   "text": "su + hṛdaya + su (mitre)",
+   "expected_iast": "suhṛt",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dus + hṛdaya + su (amitre)",
+   "expected_iast": "durhṛt",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

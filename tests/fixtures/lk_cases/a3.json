@@ -1,0 +1,638 @@
+{
+ "3.1.9": [
+  {
+   "text": "putra + kāmyac + laṭ (icchāyām)",
+   "expected_iast": "putrakāmyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.10": [
+  {
+   "text": "putra + kyac + laṭ (upamānād ācāre)",
+   "expected_iast": "putrīyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.14": [
+  {
+   "text": "kaṣṭa + kyaṅ + laṭ (kaṣṭāya kramaṇe)",
+   "expected_iast": "kaṣṭāyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.17": [
+  {
+   "text": "śabda + kyaṅ + laṭ (karaṇe)",
+   "expected_iast": "śabdāyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.23": [
+  {
+   "text": "kram + yaṅ + laṭ (kauṭilya in gati)",
+   "expected_iast": "caṅkramyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.27": [
+  {
+   "text": "kaṇḍū + yak + laṭ",
+   "expected_iast": "kaṇḍūyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.28": [
+  {
+   "text": "gup + āya + laṭ",
+   "expected_iast": "gopāyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dhūp + āya + laṭ",
+   "expected_iast": "dhūpāyati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.31": [
+  {
+   "text": "gup + tṛc (āya optional in ārdhadhātuka)",
+   "expected_iast": "gopāyitā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "gup + tṛc (without āya)",
+   "expected_iast": "goptā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.37": [
+  {
+   "text": "day + ām + kṛ + liṭ",
+   "expected_iast": "dayāñcakre",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ās + ām + kṛ + liṭ",
+   "expected_iast": "āsāñcakre",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.38": [
+  {
+   "text": "uṣ + ām + kṛ + liṭ (optional ām)",
+   "expected_iast": "oṣāñcakāra",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "uṣ + liṭ (without ām)",
+   "expected_iast": "uvoṣa",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.39": [
+  {
+   "text": "bhī + ām + kṛ + liṭ (optional ślu-vat)",
+   "expected_iast": "bibhayāñcakāra",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhī + liṭ (without ām)",
+   "expected_iast": "bibhāya",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.41": [
+  {
+   "text": "vid + ām + kṛ + loṭ (optional vidāṅkurvantu)",
+   "expected_iast": "vidāṅkurvantu",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vid + loṭ (without ām)",
+   "expected_iast": "vidantu",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.60": [
+  {
+   "text": "pad + luṅ + ta (ciṇ replaces cli)",
+   "expected_iast": "apādi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.65": [
+  {
+   "text": "tap + luṅ + ta (anutāpa, ciṇ)",
+   "expected_iast": "atāpi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.70": [
+  {
+   "text": "bhrāś + laṭ (optional śyan)",
+   "expected_iast": "bhrāśyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhrāś + laṭ (śap)",
+   "expected_iast": "bhrāśate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.82": [
+  {
+   "text": "stambh + laṭ (optional śnu)",
+   "expected_iast": "stabhnute",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "stambh + laṭ (śnā)",
+   "expected_iast": "stabhnāti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.87": [
+  {
+   "text": "bhid + laṭ (karmakartari: karma behaves like kartṛ → yak + ātmanepada)",
+   "expected_iast": "bhidyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.136": [
+  {
+   "text": "pra + sthā + ka + su (āt-anta with upasarga)",
+   "expected_iast": "prasthaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.1.144": [
+  {
+   "text": "grah + ka + su (gehe)",
+   "expected_iast": "gṛhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.58": [
+  {
+   "text": "ghṛta + spṛś + kvin + su (anudaka)",
+   "expected_iast": "ghṛtaspṛk",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "udaka + spṛś + kvin + su (udaka blocks kvin)",
+   "expected_iast": "udakaspṛk",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.59": [
+  {
+   "text": "ṛtu + yaj + kvin + su",
+   "expected_iast": "ṛtvik",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sṛj + kvin + su",
+   "expected_iast": "srak",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.60": [
+  {
+   "text": "tad + dṛś + kañ + su (anālocane)",
+   "expected_iast": "tādṛśaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "tad + dṛś + kvin + su (anālocane)",
+   "expected_iast": "tādṛk",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.75": [
+  {
+   "text": "grā + vanip + su (anyebhyo'pi dṛśyante)",
+   "expected_iast": "grāvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.99": [
+  {
+   "text": "pra + jan + ḍa + su (upasarge saṃjñāyām)",
+   "expected_iast": "prajā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.107": [
+  {
+   "text": "sad + kvasu + su (chandas / nipātana)",
+   "expected_iast": "sedivān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.112": [
+  {
+   "text": "vas + lṛṭ + mas (abhijñāvacane smarasi/abhijānāsi)",
+   "expected_iast": "vatsyāmaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.177": [
+  {
+   "text": "bhrāj + kvip + su",
+   "expected_iast": "bhrāṭ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vidyut + kvip + su",
+   "expected_iast": "vidyut",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.182": [
+  {
+   "text": "dā + ṣṭran + su (karaṇe)",
+   "expected_iast": "dātram",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "nī + ṣṭran + su (karaṇe)",
+   "expected_iast": "netram",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.2.185": [
+  {
+   "text": "pū + ṣṭran + su (saṃjñāyām)",
+   "expected_iast": "potram",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.1": [
+  {
+   "text": "kṛ + uṇ (kāru)",
+   "expected_iast": "kāruḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.14": [
+  {
+   "text": "kṛ + śatṛ (lṛṭaḥ sad vā)",
+   "expected_iast": "kariṣyan",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.41": [
+  {
+   "text": "ni + ci + ghañ + su (k-ādeśa in nivāsa/citi)",
+   "expected_iast": "nikāyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.46": [
+  {
+   "text": "pra + lū + ghañ + su (lipsāyām)",
+   "expected_iast": "pralāvaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.56": [
+  {
+   "text": "ci + ac + su (er ac)",
+   "expected_iast": "cayaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ji + ac + su (er ac)",
+   "expected_iast": "jayaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.92": [
+  {
+   "text": "pra + dā + ki + su (upasarge ghoḥ kiḥ)",
+   "expected_iast": "pradiḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.97": [
+  {
+   "text": "av + ktin + su (ūti)",
+   "expected_iast": "ūtiḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kīrt + ktin + su (kīrti)",
+   "expected_iast": "kīrtiḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.101": [
+  {
+   "text": "iṣ + a + ṭāp (icchā)",
+   "expected_iast": "icchā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.103": [
+  {
+   "text": "īh + a + ṭāp (gurośca halaḥ)",
+   "expected_iast": "īhā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.107": [
+  {
+   "text": "kṛ + ṇic + yuc + ṭāp (nyāsaśrantho yuc)",
+   "expected_iast": "kāraṇā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.113": [
+  {
+   "text": "rāj + bhūṣ + lyuṭ + su (kṛtyalyuṭo bahulam)",
+   "expected_iast": "rājabhūṣaṇam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.121": [
+  {
+   "text": "likh + ghañ + su (halaśca)",
+   "expected_iast": "lekhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.128": [
+  {
+   "text": "īṣat + pā + yuc + su (āto yuc)",
+   "expected_iast": "īṣatpānaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "duḥ + pā + yuc + su",
+   "expected_iast": "duṣpānaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.131": [
+  {
+   "text": "āgam + laṭ (vartamānasāmīpye bhūte)",
+   "expected_iast": "āgacchati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.156": [
+  {
+   "text": "vṛṣ + liṅ (hetuhetumatoḥ)",
+   "expected_iast": "varṣet",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.3.167": [
+  {
+   "text": "bhuj + tumun (kāla/samaya/velā upapada)",
+   "expected_iast": "bhoktum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.4.18": [
+  {
+   "text": "alam + kṛ + ktvā (alaṅkhalvoḥ pratiṣedhayoḥ)",
+   "expected_iast": "alaṃ kṛtvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.4.22": [
+  {
+   "text": "bhuj + ṇamul (ābhīkṣṇya)",
+   "expected_iast": "bhojaṃ bhojam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.4.27": [
+  {
+   "text": "anyathā + kṛ + ṇamul (siddhāprayoga)",
+   "expected_iast": "anyathākāram",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.4.70": [
+  {
+   "text": "kṛ + tavya + su (bhāve/karmaṇi)",
+   "expected_iast": "kartavyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "3.4.111": [
+  {
+   "text": "yā + laṅ + jhi (optional jus)",
+   "expected_iast": "ayus",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "yā + laṅ + jhi (an)",
+   "expected_iast": "ayān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

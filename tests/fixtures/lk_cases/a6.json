@@ -1,0 +1,92 @@
+{
+ "6.1.89": [
+  {
+   "text": "upa + eti (vṛddhi)",
+   "expected_iast": "upaiti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "upa + edhate (vṛddhi)",
+   "expected_iast": "upaidhate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + ūḍhaḥ (vṛddhi)",
+   "expected_iast": "prauḍhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "upa + eti (guṇa erroneously applied)",
+   "expected_iast": "upeti",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "6.1.113": [
+  {
+   "text": "śivas + arcyaḥ (ato ror aplutād aplute)",
+   "expected_iast": "śivo'rcyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "6.4.62": [
+  {
+   "text": "ci + lṛṭ + ta (optional ciṇvad-iṭ)",
+   "expected_iast": "cāyiṣyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ci + lṛṭ + ta (without ciṇvad-iṭ)",
+   "expected_iast": "ceṣyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "6.4.63": [
+  {
+   "text": "dīṅ + liṭ + atus (yuṭ before aci kṅiti)",
+   "expected_iast": "didīyāte",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "6.4.107": [
+  {
+   "text": "su + laṭ + vas (optional u-lopa before m/v)",
+   "expected_iast": "sunvaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "su + laṭ + vas (u retained)",
+   "expected_iast": "sunuvaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

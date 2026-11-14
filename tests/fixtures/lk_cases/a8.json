@@ -1,0 +1,584 @@
+{
+ "8.1.4": [
+  {
+   "text": "grāma + grāma (vīpsā, āmreḍita)",
+   "expected_iast": "grāmo grāmaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.2": [
+  {
+   "text": "rājan + bhyām (nalopa asiddha for tuk etc.)",
+   "expected_iast": "rājabhyām",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vṛtrahan + bhyaḥ (nalopa before sups)",
+   "expected_iast": "vṛtrahabhyaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.19": [
+  {
+   "text": "parā + ay + laṭ (r → l before ay)",
+   "expected_iast": "palāyate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "parā + ay + laṭ (r retained erroneously)",
+   "expected_iast": "parāyate",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.43": [
+  {
+   "text": "drā + kta + su (t → n)",
+   "expected_iast": "drāṇaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mlā + kta + su (t → n)",
+   "expected_iast": "mlānaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.44": [
+  {
+   "text": "lū + kta + su (t → n)",
+   "expected_iast": "lūnaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.45": [
+  {
+   "text": "bhuj + kta + su (odit, t → n)",
+   "expected_iast": "bhugnaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.51": [
+  {
+   "text": "śuṣ + kta + su (t → k)",
+   "expected_iast": "śuṣkaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.52": [
+  {
+   "text": "pac + kta + su (t → v)",
+   "expected_iast": "pakvaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.2.84": [
+  {
+   "text": "āgaccha + bho + devadatta3 (pluta in dūrād dhūta)",
+   "expected_iast": "devadattā3",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.4": [
+  {
+   "text": "sam + skartā (anunāsikāt paro'nusvāraḥ)",
+   "expected_iast": "saṃskartā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kān + kān (anunāsikāt paro'nusvāraḥ)",
+   "expected_iast": "kāṃskān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.5": [
+  {
+   "text": "sam + kṛ + suṭ + taḥ (samaḥ suṭi)",
+   "expected_iast": "saṃskṛtaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.6": [
+  {
+   "text": "pum + kokila + su (ruḥ)",
+   "expected_iast": "puṃskokilaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.10": [
+  {
+   "text": "nṝn + pāhi (nṝn pe → ruḥ)",
+   "expected_iast": "nṝṃḥ pāhi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.12": [
+  {
+   "text": "kān + kān (kānāmreḍite)",
+   "expected_iast": "kāṃskān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.26": [
+  {
+   "text": "kim + hmalayati (optional m before hm)",
+   "expected_iast": "kim hmalayati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kim + hmalayati (anusvāra before hm)",
+   "expected_iast": "kiṃ hmalayati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.27": [
+  {
+   "text": "kim + hnute (optional n before hn)",
+   "expected_iast": "kin hnute",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kim + hnute (anusvāra before hn)",
+   "expected_iast": "kiṃ hnute",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.31": [
+  {
+   "text": "san + śambhuḥ (optional tuk)",
+   "expected_iast": "sañcchambhuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "san + śambhuḥ (without tuk)",
+   "expected_iast": "sañśambhuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.32": [
+  {
+   "text": "pratyang + ātmā (ṅamuṭ āgama)",
+   "expected_iast": "pratyaṅṅātmā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "san + acyutaḥ (ṅamuṭ āgama)",
+   "expected_iast": "sannacyutaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.33": [
+  {
+   "text": "kim + u + āha (optional v)",
+   "expected_iast": "kimvāha",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.38": [
+  {
+   "text": "payas + pāśam (so'padādau)",
+   "expected_iast": "payaspāśam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "payas + kalpam (so'padādau)",
+   "expected_iast": "payaskalpam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.39": [
+  {
+   "text": "sarpis + kalpam (iṇaḥ ṣaḥ)",
+   "expected_iast": "sarpiṣkalpam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "sarpis + pāśam (iṇaḥ ṣaḥ)",
+   "expected_iast": "sarpiṣpāśam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.48": [
+  {
+   "text": "kas + kaḥ (kaskādiṣu ca)",
+   "expected_iast": "kaskaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kautsas + kutaḥ (kaskādiṣu ca)",
+   "expected_iast": "kautsaskutaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.56": [
+  {
+   "text": "sah + tumun (ṣatva blocked for sāḍ)",
+   "expected_iast": "soḍhum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pari + sah + tṛc (ṣatva applied before sāḍ)",
+   "expected_iast": "pariṣoḍhā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.67": [
+  {
+   "text": "abhi + stambh + laṭ (ṣatva)",
+   "expected_iast": "abhiṣṭabhnāti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.76": [
+  {
+   "text": "nis + sphur + laṭ (optional ṣatva)",
+   "expected_iast": "niṣphurati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "nis + sphur + laṭ (without ṣatva)",
+   "expected_iast": "nisphurati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.3.87": [
+  {
+   "text": "abhi + as + liṅ (ṣatva before yac)",
+   "expected_iast": "abhiṣyāt",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "prādur + as + liṅ",
+   "expected_iast": "prāduḥṣyāt",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.3": [
+  {
+   "text": "harī + vana + su (saṃjñāyāṃ ṇatva)",
+   "expected_iast": "harīvaṇam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.12": [
+  {
+   "text": "vṛtra + han + ṭā (ekājuttarapade ṇaḥ)",
+   "expected_iast": "vṛtraghṇā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "śara + vana + am (ṇatva)",
+   "expected_iast": "śaravaṇam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.14": [
+  {
+   "text": "pra + nam + laṭ (upasargād asamāse'pi ṇopadeśasya)",
+   "expected_iast": "praṇamati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.15": [
+  {
+   "text": "pra + hi + nu + laṭ (hinumīnā)",
+   "expected_iast": "prahiṇoti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "pra + mī + nā + laṭ",
+   "expected_iast": "pramīṇāti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.16": [
+  {
+   "text": "pra + bhū + loṭ + āni (āni loṭ)",
+   "expected_iast": "prabhavāṇi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.43": [
+  {
+   "text": "san + ṣaṣṭhaḥ (toḥ ṣi — ṣṭutva blocked)",
+   "expected_iast": "san ṣaṣṭhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "san + ṣaṣṭhaḥ (ṣṭutva erroneously applied)",
+   "expected_iast": "saṇ ṣaṣṭhaḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.49": [
+  {
+   "text": "ādarśa + su (śaro'ci — dvitva of ś before a blocked)",
+   "expected_iast": "ādarśaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ādarśa + su (dvitva of ś erroneously applied)",
+   "expected_iast": "ādarśśaḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.60": [
+  {
+   "text": "tad + layaḥ (tor li — parasavarṇa)",
+   "expected_iast": "tallayaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vidvān + likhati (anunāsika l)",
+   "expected_iast": "vidvāṃllikhati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.61": [
+  {
+   "text": "ud + sthānam (udaḥ sthāstambhoḥ pūrvasya)",
+   "expected_iast": "utthānam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ud + stambhanam",
+   "expected_iast": "uttambhanam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.62": [
+  {
+   "text": "vāk + hariḥ (optional pūrvasavarṇa)",
+   "expected_iast": "vāgghariḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "vāk + hariḥ (without pūrvasavarṇa)",
+   "expected_iast": "vāghariḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.63": [
+  {
+   "text": "tad + śivaḥ (optional ś → ch)",
+   "expected_iast": "tacchivaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "tad + śivaḥ (without ch)",
+   "expected_iast": "tacśivaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.64": [
+  {
+   "text": "āditya + yam (optional yam-lopa)",
+   "expected_iast": "ādityam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "āditya + yam (yam retained)",
+   "expected_iast": "ādityyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "8.4.65": [
+  {
+   "text": "ud + sthā + tumun (optional jhar-lopa)",
+   "expected_iast": "utthātum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ud + sthā + tumun (jhar retained)",
+   "expected_iast": "utsthātum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}

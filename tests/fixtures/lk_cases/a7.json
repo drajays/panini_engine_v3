@@ -1,0 +1,472 @@
+{
+ "7.1.36": [
+  {
+   "text": "vid + śatṛ + su (vasu-ādeśa)",
+   "expected_iast": "vidvān",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.1.60": [
+  {
+   "text": "masj + tumun (num before jhal)",
+   "expected_iast": "maṅktum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "naś + tumun (num before jhal)",
+   "expected_iast": "naṃṣṭum",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.1.69": [
+  {
+   "text": "labh + ciṇ (optional num)",
+   "expected_iast": "alambhi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "labh + ciṇ (without num)",
+   "expected_iast": "alābhi",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "labh + ṇamul (optional num)",
+   "expected_iast": "lambham",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "labh + ṇamul (without num)",
+   "expected_iast": "lābham",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.1.71": [
+  {
+   "text": "yuj + Jas (asamāsa, num)",
+   "expected_iast": "yuñjaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "suyuj + Jas (samāsa, num blocked)",
+   "expected_iast": "suyujaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "suyuj + Jas (samāsa, num erroneously applied)",
+   "expected_iast": "suyuñjaḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.1.74": [
+  {
+   "text": "dadhīca + ṭā (optional puṃvadbhāva of bhāṣitapuṃska)",
+   "expected_iast": "dadhīcā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "dadhi + ṭā (standard napuṃsaka)",
+   "expected_iast": "dadhnā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.1.95": [
+  {
+   "text": "kroṣṭu + su (tṛjvat → kroṣṭṛ)",
+   "expected_iast": "kroṣṭā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kroṣṭu + au (tṛjvat → kroṣṭṛ)",
+   "expected_iast": "kroṣṭārau",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kroṣṭu + Jas (tṛjvat → kroṣṭṛ)",
+   "expected_iast": "kroṣṭāraḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "kroṣṭu + su (tṛjvat missed)",
+   "expected_iast": "kroṣṭuḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.9": [
+  {
+   "text": "dī + ti (iṭ blocked before ti)",
+   "expected_iast": "dītiḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "tan + tu (iṭ blocked before tu)",
+   "expected_iast": "tantuḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "tan + tu (iṭ erroneously inserted)",
+   "expected_iast": "tanituḥ",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.12": [
+  {
+   "text": "grah + san + laṭ (iṭ blocked in san)",
+   "expected_iast": "jighṛkṣati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "guh + san + laṭ (iṭ blocked in san)",
+   "expected_iast": "jughukṣati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "grah + san + laṭ (iṭ erroneously inserted)",
+   "expected_iast": "jighṛkṣiṣati",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.20": [
+  {
+   "text": "dṛṃh + kta + su (sthūlabalayoḥ, nipātana)",
+   "expected_iast": "dṛḍhaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.56": [
+  {
+   "text": "śam + ktvā (uditaḥ vā, optional iṭ)",
+   "expected_iast": "śamitvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "śam + ktvā (without iṭ)",
+   "expected_iast": "śāntvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.98": [
+  {
+   "text": "tvad + su (tvam)",
+   "expected_iast": "tvam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "mad + su (aham)",
+   "expected_iast": "aham",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.2.101": [
+  {
+   "text": "jarā + au (optional jaras)",
+   "expected_iast": "jarasau",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "jarā + au (without jaras)",
+   "expected_iast": "jare",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.36": [
+  {
+   "text": "ṛ + ṇic + laṭ (puk-āgama)",
+   "expected_iast": "arpayati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "hrī + ṇic + laṭ (puk-āgama)",
+   "expected_iast": "hrepayati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.55": [
+  {
+   "text": "han + liṭ + ṇal (kutva after abhyāsa)",
+   "expected_iast": "jaghāna",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "hi + san + laṭ (kutva after abhyāsa)",
+   "expected_iast": "jighīṣati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.58": [
+  {
+   "text": "ci + liṭ + ṇal (optional kutva)",
+   "expected_iast": "cikāya",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "ci + liṭ + ṇal (without kutva)",
+   "expected_iast": "cicāya",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.69": [
+  {
+   "text": "bhuj + ṇyat + su (bhakṣye, kutva blocked)",
+   "expected_iast": "bhojyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhuj + ṇyat + su (abhakṣye, kutva applies)",
+   "expected_iast": "bhogyam",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhuj + ṇyat + su (bhakṣye, kutva erroneously applied)",
+   "expected_iast": "bhogyam",
+   "expected": null,
+   "positive": false,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.73": [
+  {
+   "text": "duh + luṅ + ta (optional ksa-luk before dantya)",
+   "expected_iast": "adugdha",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "duh + luṅ + ta (without ksa-luk)",
+   "expected_iast": "adhukṣata",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.91": [
+  {
+   "text": "ūrṇu + laṅ + tip (guṇa before apṛkta)",
+   "expected_iast": "prorṇot",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.3.94": [
+  {
+   "text": "bhū + yaṅ + laṭ (optional īṭ before halādi pit sārvadhātuka)",
+   "expected_iast": "bobhavīti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "bhū + yaṅ + laṭ (without īṭ)",
+   "expected_iast": "bobhoti",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.5": [
+  {
+   "text": "sthā + caṅ + luṅ + tip (it-ādeśa)",
+   "expected_iast": "atiṣṭhipat",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.24": [
+  {
+   "text": "ā + i + āśīrliṅ + tip (hrasva)",
+   "expected_iast": "īyāt",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.26": [
+  {
+   "text": "śukla + cvi + bhū + laṭ (dīrgha before cvi)",
+   "expected_iast": "śuklībhavati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.27": [
+  {
+   "text": "mātṛ + cvi + bhū + laṭ (ṛ → rīṅ)",
+   "expected_iast": "mātrībhavati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.32": [
+  {
+   "text": "śukla + cvi + bhū + laṭ (a → ī)",
+   "expected_iast": "śuklībhavati",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.42": [
+  {
+   "text": "dhā + kta + su (dhā → hi before kt-ādi kit)",
+   "expected_iast": "hitaḥ",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.43": [
+  {
+   "text": "hā + ktvā (hā → hi before ktvā)",
+   "expected_iast": "hitvā",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ],
+ "7.4.57": [
+  {
+   "text": "muc + san + laṭ (akarmaka, optional guṇa)",
+   "expected_iast": "mokṣate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  },
+  {
+   "text": "muc + san + laṭ (without guṇa)",
+   "expected_iast": "mumukṣate",
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": null
+  }
+ ]
+}
