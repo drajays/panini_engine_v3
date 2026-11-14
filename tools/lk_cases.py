@@ -68,7 +68,8 @@ def _mutate(sid, spec, expected):
         return "sensitive", None
     a = {k for s, seen in base if _norm(s) == _norm(expected) for k in seen}
     b = {k for s, seen in mut if _norm(s) == _norm(expected) for k in seen}
-    return "redundant", sorted(b - a, key=_key)[:8]
+    rep = sorted(b - a, key=_key)[:8]
+    return ("redundant" if rep else "indeterminate"), rep       # indeterminate: the form survives but no other rule shows up in the trace (cond-only sūtra, or its act is also done elsewhere)
 
 
 def check(sid: str, c: dict, typ: str) -> dict:
@@ -86,8 +87,16 @@ def check(sid: str, c: dict, typ: str) -> dict:
     if err:
         return {"result": "fail", "why": f"engine error: {err}"}
     ok = OK_STATUS.get(typ, _DEFAULT_OK)
-    fired = [s for s, seen in branches if _norm(s) == _norm(c["expected"]) and any(x in ok for x in seen.get(sid, ()))]
-    return {"result": "fail" if fired else "pass", "why": f"{sid} applied in a branch giving {c['expected']}" if fired else ""}
+    giving = [(s, seen) for s, seen in branches if _norm(s) == _norm(c["expected"])]
+    fired = [s for s, seen in giving if any(x in ok for x in seen.get(sid, ()))]
+    kind = c.get("kind")          # "declined": the form IS produced, by a branch where the sūtra is declined/blocked · "excluded": a wrong form, never produced
+    if fired:
+        return {"result": "fail", "why": f"{sid} applied in a branch giving {c['expected']}"}
+    if kind == "declined" and not giving:
+        return {"result": "fail", "why": f"declined reading {c['expected']} is not produced at all (readings {sorted({s for s, _ in branches})})"}
+    if kind == "excluded" and giving:
+        return {"result": "fail", "why": f"excluded form {c['expected']} is produced"}
+    return {"result": "pass", "kind": kind or "untyped", "why": ""}
 
 
 def grade(rows: list[dict], cases: list[dict]) -> str:
@@ -95,7 +104,7 @@ def grade(rows: list[dict], cases: list[dict]) -> str:
     if any(r["result"] == "fail" for r in runs):
         return "FAIL"
     pos = [(r, c) for r, c in zip(rows, cases) if c["positive"] and r["result"] == "pass"]
-    neg = [r for r, c in zip(rows, cases) if not c["positive"] and r["result"] == "pass"]
+    neg = [r for r, c in zip(rows, cases) if not c["positive"] and r["result"] == "pass" and r.get("kind") in ("declined", "excluded")]   # an untyped negative is weak: it can pass by never being produced
     if len(pos) >= 3 and len(neg) >= 2 and len({c["expected"] for _, c in pos}) >= 3 and all(c.get("source") for _, c in pos):
         return "confident"
     return "working" if pos else ("UNRUNNABLE" if not runs else "NO_POSITIVE")
