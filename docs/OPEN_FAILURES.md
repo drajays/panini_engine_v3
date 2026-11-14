@@ -36,3 +36,13 @@ entry hand the subanta scanner a Term list; then 6.4.24 at kvin (the term-0 limi
 "dadat" with no vyutpatti record — it needs a krdanta entry point.
 
 - **8.2.76 (rvor upadhā dīrgha):** real for a dhātu's own r/v (gīḥ, gīrbhyām). Open: (a) a dhātu's s→ru (pipaṭhīḥ, sajūḥ) — the s's origin is lost at pada-merge, so ru is excluded; (b) gīrṣu — 1.4.18 tags the stem bha before `su` because `s` is in `_YACI_HAL` (pre-existing); (c) the scanner opens an adhikāra before contending rules (fixed 2026-11-12) but 6.4.1's late opening was the reason 6.4.127 never fired.
+
+## From the अ-इ-उकारान्त PDF gold (2026-11-14; `tests/regression/test_paddhati_subanta_ai_u.py`, detail `docs/AI_U_SUBANTA_GOLD.md`)
+28 strict xfails, none a wrong final form except the two vocatives. Each flips to a failure the day it is fixed.
+
+- **6.1.103 fuses 6.1.102** (rAma/muni/sADu 2-3): the act deletes the stem vowel and writes the long vowel + n itself; the PDF (and the Kāśikā order) has 6.1.102 first, then s→n. Needs 6.1.102's Sas branch for masculine ik-finals + 6.1.103 reduced to s→n.
+- **6.1.90 not seen for the sup's āṭ** (mati/Denu/nadI/vaDU 4-1, 5-1, 6-1): 7.3.112 inserts A inside the affix; 6.1.90 reads a separate `aTa_agama` Term. 6.1.88 gives the same ai. Fix = make 7.3.112's āṭ its own Term (as the verbal āṭ is).
+- **ā-stem ṅit-sups (S2)** (mAlA 3-1, 5-1, 6-1, 7-1): ṭāp stays a separate Term; 7.3.105/113/116 + 6.1.101 not walked (7.1.12 fires on the pre-ṭāp aṅga).
+- **neuter ik-stem sambuddhi** (vAri, maDu 8-1): only `vAre`/`maDo`; missing `vAri`/`maDu` (7.1.23 luk, 1.1.63 blocks guṇa) — PDF note [52]: guṇa is the pakṣa via the anityatva of 1.1.63. Wrong-form class: the primary reading is absent.
+- **7.1.24 identity am→am** (Pala 2-1, 8-1): SKIPPED; the PDF uses it to bar 7.1.23.
+- **6.4.3 nāmi** (rAma/Pala 6-3: 7.3.102 lengthens first, same form; mAlA/nadI/vaDU 6-3: already long, vacuous).

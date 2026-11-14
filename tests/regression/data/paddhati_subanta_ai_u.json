@@ -1,0 +1,1618 @@
+{
+ "_source": "Neelesh Bodas, अ-इ-उकारान्तशब्दा: (26 Nov 2015) — the सङ्क्षेपः tables at the end (+ body for Pala su). Teaching aid, Art. 23: a sūtra set, not an order; ids resolved from the PDF names via the sūtra table (never from its footnote numbers).",
+ "stems": {
+  "rAma": "pulliṅga",
+  "muni": "pulliṅga",
+  "sADu": "pulliṅga",
+  "mAlA": "strīliṅga",
+  "mati": "strīliṅga",
+  "nadI": "strīliṅga",
+  "Denu": "strīliṅga",
+  "vaDU": "strīliṅga",
+  "Pala": "napuṃsaka",
+  "vAri": "napuṃsaka",
+  "maDu": "napuṃsaka"
+ },
+ "forms": {
+  "muni": {
+   "1-1": [
+    "muniH"
+   ],
+   "1-2": [
+    "munI"
+   ],
+   "1-3": [
+    "munayaH"
+   ],
+   "2-1": [
+    "munim"
+   ],
+   "2-2": [
+    "munI"
+   ],
+   "2-3": [
+    "munIn"
+   ],
+   "3-1": [
+    "muninA"
+   ],
+   "3-2": [
+    "muniByAm"
+   ],
+   "3-3": [
+    "muniBiH"
+   ],
+   "4-1": [
+    "munaye"
+   ],
+   "4-2": [
+    "muniByAm"
+   ],
+   "4-3": [
+    "muniByaH"
+   ],
+   "5-1": [
+    "muneH"
+   ],
+   "5-2": [
+    "muniByAm"
+   ],
+   "5-3": [
+    "muniByaH"
+   ],
+   "6-1": [
+    "muneH"
+   ],
+   "6-2": [
+    "munyoH"
+   ],
+   "6-3": [
+    "munInAm"
+   ],
+   "7-1": [
+    "munO"
+   ],
+   "7-2": [
+    "munyoH"
+   ],
+   "7-3": [
+    "munizu"
+   ],
+   "8-1": [
+    "mune"
+   ]
+  },
+  "sADu": {
+   "1-1": [
+    "sADuH"
+   ],
+   "1-2": [
+    "sADU"
+   ],
+   "1-3": [
+    "sADavaH"
+   ],
+   "2-1": [
+    "sADum"
+   ],
+   "2-2": [
+    "sADU"
+   ],
+   "2-3": [
+    "sADUn"
+   ],
+   "3-1": [
+    "sADunA"
+   ],
+   "3-2": [
+    "sADuByAm"
+   ],
+   "3-3": [
+    "sADuBiH"
+   ],
+   "4-1": [
+    "sADave"
+   ],
+   "4-2": [
+    "sADuByAm"
+   ],
+   "4-3": [
+    "sADuByaH"
+   ],
+   "5-1": [
+    "sADoH"
+   ],
+   "5-2": [
+    "sADuByAm"
+   ],
+   "5-3": [
+    "sADuByaH"
+   ],
+   "6-1": [
+    "sADoH"
+   ],
+   "6-2": [
+    "sADvoH"
+   ],
+   "6-3": [
+    "sADUnAm"
+   ],
+   "7-1": [
+    "sADO"
+   ],
+   "7-2": [
+    "sADvoH"
+   ],
+   "7-3": [
+    "sADuzu"
+   ],
+   "8-1": [
+    "sADo"
+   ]
+  },
+  "mati": {
+   "1-1": [
+    "matiH"
+   ],
+   "1-2": [
+    "matI"
+   ],
+   "1-3": [
+    "matayaH"
+   ],
+   "2-1": [
+    "matim"
+   ],
+   "2-2": [
+    "matI"
+   ],
+   "2-3": [
+    "matIH"
+   ],
+   "3-1": [
+    "matyA"
+   ],
+   "3-2": [
+    "matiByAm"
+   ],
+   "3-3": [
+    "matiBiH"
+   ],
+   "4-1": [
+    "matyE",
+    "mataye"
+   ],
+   "4-2": [
+    "matiByAm"
+   ],
+   "4-3": [
+    "matiByaH"
+   ],
+   "5-1": [
+    "matyAH",
+    "mateH"
+   ],
+   "5-2": [
+    "matiByAm"
+   ],
+   "5-3": [
+    "matiByaH"
+   ],
+   "6-1": [
+    "matyAH",
+    "mateH"
+   ],
+   "6-2": [
+    "matyoH"
+   ],
+   "6-3": [
+    "matInAm"
+   ],
+   "7-1": [
+    "matyAm",
+    "matO"
+   ],
+   "7-2": [
+    "matyoH"
+   ],
+   "7-3": [
+    "matizu"
+   ],
+   "8-1": [
+    "mate"
+   ]
+  },
+  "Denu": {
+   "1-1": [
+    "DenuH"
+   ],
+   "1-2": [
+    "DenU"
+   ],
+   "1-3": [
+    "DenavaH"
+   ],
+   "2-1": [
+    "Denum"
+   ],
+   "2-2": [
+    "DenU"
+   ],
+   "2-3": [
+    "DenUH"
+   ],
+   "3-1": [
+    "DenvA"
+   ],
+   "3-2": [
+    "DenuByAm"
+   ],
+   "3-3": [
+    "DenuBiH"
+   ],
+   "4-1": [
+    "DenvE",
+    "Denave"
+   ],
+   "4-2": [
+    "DenuByAm"
+   ],
+   "4-3": [
+    "DenuByaH"
+   ],
+   "5-1": [
+    "DenvAH",
+    "DenoH"
+   ],
+   "5-2": [
+    "DenuByAm"
+   ],
+   "5-3": [
+    "DenuByaH"
+   ],
+   "6-1": [
+    "DenvAH",
+    "DenoH"
+   ],
+   "6-2": [
+    "DenvoH"
+   ],
+   "6-3": [
+    "DenUnAm"
+   ],
+   "7-1": [
+    "DenvAm",
+    "DenO"
+   ],
+   "7-2": [
+    "DenvoH"
+   ],
+   "7-3": [
+    "Denuzu"
+   ],
+   "8-1": [
+    "Deno"
+   ]
+  },
+  "vaDU": {
+   "1-1": [
+    "vaDUH"
+   ],
+   "1-2": [
+    "vaDvO"
+   ],
+   "1-3": [
+    "vaDvaH"
+   ],
+   "2-1": [
+    "vaDUm"
+   ],
+   "2-2": [
+    "vaDvO"
+   ],
+   "2-3": [
+    "vaDUH"
+   ],
+   "3-1": [
+    "vaDvA"
+   ],
+   "3-2": [
+    "vaDUByAm"
+   ],
+   "3-3": [
+    "vaDUBiH"
+   ],
+   "4-1": [
+    "vaDvE"
+   ],
+   "4-2": [
+    "vaDUByAm"
+   ],
+   "4-3": [
+    "vaDUByaH"
+   ],
+   "5-1": [
+    "vaDvAH"
+   ],
+   "5-2": [
+    "vaDUByAm"
+   ],
+   "5-3": [
+    "vaDUByaH"
+   ],
+   "6-1": [
+    "vaDvAH"
+   ],
+   "6-2": [
+    "vaDvoH"
+   ],
+   "6-3": [
+    "vaDUnAm"
+   ],
+   "7-1": [
+    "vaDvAm"
+   ],
+   "7-2": [
+    "vaDvoH"
+   ],
+   "7-3": [
+    "vaDUzu"
+   ],
+   "8-1": [
+    "vaDu"
+   ]
+  },
+  "mAlA": {
+   "1-1": [
+    "mAlA"
+   ],
+   "1-2": [
+    "mAle"
+   ],
+   "1-3": [
+    "mAlAH"
+   ],
+   "2-1": [
+    "mAlAm"
+   ],
+   "2-2": [
+    "mAle"
+   ],
+   "2-3": [
+    "mAlAH"
+   ],
+   "3-1": [
+    "mAlayA"
+   ],
+   "3-2": [
+    "mAlAByAm"
+   ],
+   "3-3": [
+    "mAlABiH"
+   ],
+   "4-1": [
+    "mAlAyE"
+   ],
+   "4-2": [
+    "mAlAByAm"
+   ],
+   "4-3": [
+    "mAlAByaH"
+   ],
+   "5-1": [
+    "mAlAyAH"
+   ],
+   "5-2": [
+    "mAlAByAm"
+   ],
+   "5-3": [
+    "mAlAByaH"
+   ],
+   "6-1": [
+    "mAlAyAH"
+   ],
+   "6-2": [
+    "mAlayoH"
+   ],
+   "6-3": [
+    "mAlAnAm"
+   ],
+   "7-1": [
+    "mAlAyAm"
+   ],
+   "7-2": [
+    "mAlayoH"
+   ],
+   "7-3": [
+    "mAlAsu"
+   ],
+   "8-1": [
+    "mAle"
+   ]
+  },
+  "vAri": {
+   "1-1": [
+    "vAri"
+   ],
+   "1-2": [
+    "vAriRI"
+   ],
+   "1-3": [
+    "vArIRi"
+   ],
+   "2-1": [
+    "vAri"
+   ],
+   "2-2": [
+    "vAriRI"
+   ],
+   "2-3": [
+    "vArIRi"
+   ],
+   "3-1": [
+    "vAriRA"
+   ],
+   "3-2": [
+    "vAriByAm"
+   ],
+   "3-3": [
+    "vAriBiH"
+   ],
+   "4-1": [
+    "vAriRe"
+   ],
+   "4-2": [
+    "vAriByAm"
+   ],
+   "4-3": [
+    "vAriByaH"
+   ],
+   "5-1": [
+    "vAriRaH"
+   ],
+   "5-2": [
+    "vAriByAm"
+   ],
+   "5-3": [
+    "vAriByaH"
+   ],
+   "6-1": [
+    "vAriRaH"
+   ],
+   "6-2": [
+    "vAriRoH"
+   ],
+   "6-3": [
+    "vArIRAm"
+   ],
+   "7-1": [
+    "vAriRi"
+   ],
+   "7-2": [
+    "vAriRoH"
+   ],
+   "7-3": [
+    "vArizu"
+   ],
+   "8-1": [
+    "vAri",
+    "vAre"
+   ]
+  },
+  "maDu": {
+   "1-1": [
+    "maDu"
+   ],
+   "1-2": [
+    "maDunI"
+   ],
+   "1-3": [
+    "maDUni"
+   ],
+   "2-1": [
+    "maDu"
+   ],
+   "2-2": [
+    "maDunI"
+   ],
+   "2-3": [
+    "maDUni"
+   ],
+   "3-1": [
+    "maDunA"
+   ],
+   "3-2": [
+    "maDuByAm"
+   ],
+   "3-3": [
+    "maDuBiH"
+   ],
+   "4-1": [
+    "maDune"
+   ],
+   "4-2": [
+    "maDuByAm"
+   ],
+   "4-3": [
+    "maDuByaH"
+   ],
+   "5-1": [
+    "maDunaH"
+   ],
+   "5-2": [
+    "maDuByAm"
+   ],
+   "5-3": [
+    "maDuByaH"
+   ],
+   "6-1": [
+    "maDunaH"
+   ],
+   "6-2": [
+    "maDunoH"
+   ],
+   "6-3": [
+    "maDUnAm"
+   ],
+   "7-1": [
+    "maDuni"
+   ],
+   "7-2": [
+    "maDunoH"
+   ],
+   "7-3": [
+    "maDuzu"
+   ],
+   "8-1": [
+    "maDu",
+    "maDo"
+   ]
+  }
+ },
+ "rows": [
+  {
+   "pratyaya": "su",
+   "cells": [
+    "1-1"
+   ],
+   "stems": [
+    "rAma",
+    "muni",
+    "sADu",
+    "mati",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": [
+    "8.2.66",
+    "8.3.15"
+   ]
+  },
+  {
+   "pratyaya": "su",
+   "cells": [
+    "1-1"
+   ],
+   "stems": [
+    "mAlA",
+    "nadI"
+   ],
+   "sutras": [
+    "6.1.68"
+   ]
+  },
+  {
+   "pratyaya": "su",
+   "cells": [
+    "1-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.23"
+   ]
+  },
+  {
+   "pratyaya": "su",
+   "cells": [
+    "1-1"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.24",
+    "6.1.107"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "rAma"
+   ],
+   "sutras": [
+    "6.1.88"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "6.1.102"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.1.18",
+    "6.1.87"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.19",
+    "6.1.87"
+   ]
+  },
+  {
+   "pratyaya": "au",
+   "cells": [
+    "1-2",
+    "2-2"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.19",
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "rAma"
+   ],
+   "sutras": [
+    "6.1.102"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "6.1.101"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "muni",
+    "mati",
+    "sADu",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.109",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.20",
+    "7.1.72",
+    "6.4.8"
+   ]
+  },
+  {
+   "pratyaya": "jas",
+   "cells": [
+    "1-3"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.20",
+    "7.1.73",
+    "6.4.8"
+   ]
+  },
+  {
+   "pratyaya": "am",
+   "cells": [
+    "2-1"
+   ],
+   "stems": [
+    "rAma",
+    "muni",
+    "sADu",
+    "mati",
+    "Denu",
+    "vaDU",
+    "mAlA",
+    "nadI"
+   ],
+   "sutras": [
+    "6.1.107"
+   ]
+  },
+  {
+   "pratyaya": "am",
+   "cells": [
+    "2-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.23"
+   ]
+  },
+  {
+   "pratyaya": "am",
+   "cells": [
+    "2-1"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.24"
+   ]
+  },
+  {
+   "pratyaya": "Sas",
+   "cells": [
+    "2-3"
+   ],
+   "stems": [
+    "rAma",
+    "muni",
+    "sADu"
+   ],
+   "sutras": [
+    "6.1.102",
+    "6.1.103"
+   ]
+  },
+  {
+   "pratyaya": "Sas",
+   "cells": [
+    "2-3"
+   ],
+   "stems": [
+    "mAlA",
+    "mati",
+    "nadI",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": [
+    "6.1.102"
+   ]
+  },
+  {
+   "pratyaya": "Sas",
+   "cells": [
+    "2-3"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.20",
+    "7.1.72",
+    "6.4.8"
+   ]
+  },
+  {
+   "pratyaya": "Sas",
+   "cells": [
+    "2-3"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.20",
+    "7.1.73",
+    "6.4.8"
+   ]
+  },
+  {
+   "pratyaya": "TA",
+   "cells": [
+    "3-1"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.12",
+    "6.1.87"
+   ]
+  },
+  {
+   "pratyaya": "TA",
+   "cells": [
+    "3-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.105",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "TA",
+   "cells": [
+    "3-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.3.120"
+   ]
+  },
+  {
+   "pratyaya": "TA",
+   "cells": [
+    "3-1"
+   ],
+   "stems": [
+    "mati",
+    "nadI",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": [
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "BAm",
+   "cells": [
+    "3-2",
+    "4-2",
+    "5-2"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.3.102"
+   ]
+  },
+  {
+   "pratyaya": "BAm",
+   "cells": [
+    "3-2",
+    "4-2",
+    "5-2"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "vAri",
+    "maDu",
+    "mAlA",
+    "mati",
+    "nadI",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": []
+  },
+  {
+   "pratyaya": "Bis",
+   "cells": [
+    "3-3"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.9"
+   ]
+  },
+  {
+   "pratyaya": "Bis",
+   "cells": [
+    "3-3"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "vAri",
+    "maDu",
+    "mAlA",
+    "mati",
+    "nadI",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": []
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.13",
+    "7.3.102"
+   ]
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu"
+   ],
+   "sutras": [
+    "7.3.111",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.113",
+    "6.1.88"
+   ]
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ],
+   "alt_sutras": [
+    "7.3.111",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "Ne",
+   "cells": [
+    "4-1"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "Byas",
+   "cells": [
+    "4-3",
+    "5-3"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.3.103"
+   ]
+  },
+  {
+   "pratyaya": "Byas",
+   "cells": [
+    "4-3",
+    "5-3"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "vAri",
+    "maDu",
+    "mAlA",
+    "mati",
+    "nadI",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": []
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.12",
+    "6.1.101"
+   ]
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu"
+   ],
+   "sutras": [
+    "7.3.111",
+    "6.1.110"
+   ]
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.113",
+    "6.1.101"
+   ]
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ],
+   "alt_sutras": [
+    "7.3.111",
+    "6.1.110"
+   ]
+  },
+  {
+   "pratyaya": "Nasi",
+   "cells": [
+    "5-1"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.12"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu"
+   ],
+   "sutras": [
+    "7.3.111",
+    "6.1.110"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.113",
+    "6.1.101"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ],
+   "alt_sutras": [
+    "7.3.111",
+    "6.1.110"
+   ]
+  },
+  {
+   "pratyaya": "Nas",
+   "cells": [
+    "6-1"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "7.3.112",
+    "6.1.90",
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "os",
+   "cells": [
+    "6-2",
+    "7-2"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.3.104",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "os",
+   "cells": [
+    "6-2",
+    "7-2"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.105",
+    "6.1.78"
+   ]
+  },
+  {
+   "pratyaya": "os",
+   "cells": [
+    "6-2",
+    "7-2"
+   ],
+   "stems": [
+    "muni",
+    "mati",
+    "nadI",
+    "sADu",
+    "Denu",
+    "vaDU"
+   ],
+   "sutras": [
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "os",
+   "cells": [
+    "6-2",
+    "7-2"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "Am",
+   "cells": [
+    "6-3"
+   ],
+   "stems": [
+    "rAma",
+    "Pala",
+    "muni",
+    "sADu",
+    "mAlA",
+    "mati",
+    "Denu",
+    "nadI",
+    "vaDU",
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.54",
+    "6.4.3"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "6.1.87"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu"
+   ],
+   "sutras": [
+    "7.3.119",
+    "6.1.88"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.73"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.116",
+    "7.3.113",
+    "6.1.101"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.117",
+    "6.1.77"
+   ],
+   "alt_sutras": [
+    "7.3.119",
+    "6.1.88"
+   ]
+  },
+  {
+   "pratyaya": "Ni",
+   "cells": [
+    "7-1"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "7.3.116",
+    "6.1.77"
+   ]
+  },
+  {
+   "pratyaya": "sup",
+   "cells": [
+    "7-3"
+   ],
+   "stems": [
+    "rAma",
+    "Pala"
+   ],
+   "sutras": [
+    "7.3.103",
+    "8.3.59"
+   ]
+  },
+  {
+   "pratyaya": "sup",
+   "cells": [
+    "7-3"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "vAri",
+    "maDu",
+    "mati",
+    "Denu",
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "8.3.59"
+   ]
+  },
+  {
+   "pratyaya": "sup",
+   "cells": [
+    "7-3"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": []
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "rAma"
+   ],
+   "sutras": [
+    "6.1.69"
+   ]
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "Pala"
+   ],
+   "sutras": [
+    "7.1.24",
+    "6.1.69"
+   ]
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "muni",
+    "sADu",
+    "mati",
+    "Denu"
+   ],
+   "sutras": [
+    "7.3.108",
+    "6.1.69"
+   ]
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "vAri",
+    "maDu"
+   ],
+   "sutras": [
+    "7.1.23"
+   ],
+   "alt_sutras": [
+    "7.3.108"
+   ]
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "mAlA"
+   ],
+   "sutras": [
+    "7.3.106"
+   ]
+  },
+  {
+   "pratyaya": "sambuddhi",
+   "cells": [
+    "8-1"
+   ],
+   "stems": [
+    "nadI",
+    "vaDU"
+   ],
+   "sutras": [
+    "7.3.107",
+    "6.1.69"
+   ]
+  }
+ ]
+}
