@@ -749,5 +749,158 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794628525.755479
+ },
+ {
+  "id": "lk-gate-rulings",
+  "agent": "cursor",
+  "scope": [
+   "5.1.130",
+   "tools/lk_cases.py",
+   "tools/build_vivaksha_schema.py",
+   "tools/sutra_class.py",
+   "tools/status.py",
+   "data/inputs/vivaksha_schema.json",
+   "tests/fixtures/lk_cases/**",
+   "sig/lk_case_verdicts/**",
+   "tests/regression/test_lk_cases.py",
+   "docs/SOURCE_CONFLICTS.md",
+   "docs/CONFIDENT_SUTRAS.md",
+   "sig/sutra_class.json",
+   "sig/firing_coverage.json",
+   "audit/LK_GATE_RULINGS_2026-11-14.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676164.501523
+ },
+ {
+  "id": "lk-gate-harness",
+  "agent": "cursor",
+  "scope": [
+   "tools/exercise_audit.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676164.61264
+ },
+ {
+  "id": "lk-gap-8462",
+  "agent": "cursor",
+  "scope": [
+   "8.4.62",
+   "core/phases/tripadi.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676164.809222
+ },
+ {
+  "id": "lk-gate-make",
+  "agent": "cursor",
+  "scope": [
+   "Makefile"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676164.708055
+ },
+ {
+  "id": "lk-gap-8460-63",
+  "agent": "cursor",
+  "scope": [
+   "8.4.60",
+   "8.4.63"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676164.908494
+ },
+ {
+  "id": "lk-gap-8455",
+  "agent": "cursor",
+  "scope": [
+   "8.4.55"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676165.006458
+ },
+ {
+  "id": "lk-gap-natva",
+  "agent": "cursor",
+  "scope": [
+   "8.4.2",
+   "8.4.14",
+   "8.4.15",
+   "8.4.16",
+   "engine/phases/pada_merger.py",
+   "engine/natva.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794676165.109386
+ },
+ {
+  "id": "it-agama-iw",
+  "agent": "cursor",
+  "scope": [
+   "engine/agama.py",
+   "engine/it_samjna.py",
+   "sutras/adhyaya_1/pada_3/sutra_1_3_3.py",
+   "sutras/adhyaya_1/pada_3/sutra_1_3_9.py",
+   "sutras/adhyaya_7/pada_2/sutra_7_2_35.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md",
+   "core/i18n_hi.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794687505.392881
+ },
+ {
+  "id": "it-agama-iw",
+  "agent": "cursor",
+  "scope": [
+   "engine/agama.py",
+   "engine/it_samjna.py",
+   "engine/dispatcher.py",
+   "sutras/adhyaya_1/pada_3/sutra_1_3_3.py",
+   "sutras/adhyaya_1/pada_3/sutra_1_3_9.py",
+   "sutras/adhyaya_7/pada_2/sutra_7_2_35.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md",
+   "core/i18n_hi.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [
+   "engine/dispatcher.py"
+  ],
+  "updated": 1794687505.3928819
+ },
+ {
+  "id": "lk-finish",
+  "agent": "claude",
+  "scope": [
+   "commit",
+   "LK",
+   "gate",
+   "work;",
+   "subdhatu",
+   "guard",
+   "6.1.64/6.1.65"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794688996.493637
  }
 ]
