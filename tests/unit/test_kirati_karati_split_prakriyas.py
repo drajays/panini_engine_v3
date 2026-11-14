@@ -31,7 +31,7 @@ def test_P009_kirati_via_7_1_100_not_7_3_84_guna():
     assert ids.index("3.4.78") < ids.index("3.1.77")
     assert ids.index("3.1.77") < ids.index("1.3.8") < ids.index("7.1.100")
     assert ids.index("7.1.100") < ids.index("7.3.84") < ids.index("1.1.51")
-    assert ids.index("1.1.51") < ids.index("1.3.3")
+    assert ids.index("1.1.51") < len(ids) - 1 - ids[::-1].index("1.3.3")  # the last 1.3.3 (the lakāra upadeśa now opens the trace with its own)
 
     assert _applied(s, "7.1.100")
     assert not _applied(s, "7.3.84")  # declines: 7.1.100 already marked the aṅga done

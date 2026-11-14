@@ -49,7 +49,7 @@ CASES = [
     ('8.3.14', True, ('subanta', 'kzantrf', 'pulliṅga', 3, 1), 'kzantrA', 'VIDHI'),   # 8.3.14 positive: <<रो रि>> [[8.3.14]] इति रेफस्य लोपः
     ('8.3.14', False, ('subanta', 'sva', 'pulliṅga', 1, 3), 'svAH', 'VIDHI'),   # 8.3.14 negative: not used by the attested derivation
     ('8.3.14', False, ('subanta', 'pUrva', 'pulliṅga', 1, 3), 'pUrvAH', 'VIDHI'),   # 8.3.14 negative: not used by the attested derivation
-    ('8.3.28', True, ('subanta', 'prAYc', 'pulliṅga', 7, 3), 'prANkzu', 'VIBHASHA'),   # 8.3.28 positive: <<ङ्णोः कुक्टुक् शरि>> [[8.3.28]] इति सू
+    ('8.3.28', True, ('subanta', 'prAN', 'pulliṅga', 7, 3), 'prANkzu', 'VIBHASHA'),   # 8.3.28 positive: <<ङ्णोः कुक्टुक् शरि>> [[8.3.28]] इति सू
     ('8.3.28', True, ('subanta', 'kruYc', 'pulliṅga', 7, 3), 'kruNkzu', 'VIBHASHA'),   # 8.3.28 positive: <<ङ्णोः कुक्टुक् शरि>> [[8.3.28]] इति सू
     ('8.3.28', False, ('subanta', 'sva', 'pulliṅga', 1, 3), 'svAH', 'VIBHASHA'),   # 8.3.28 negative: not used by the attested derivation
     ('8.3.28', False, ('subanta', 'pUrva', 'pulliṅga', 1, 3), 'pUrvAH', 'VIBHASHA'),   # 8.3.28 negative: not used by the attested derivation
