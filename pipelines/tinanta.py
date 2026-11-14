@@ -4397,6 +4397,8 @@ def derive(
         raise ValueError(f"purusha must be 1/2/3, got {purusha!r}")
     if vacana not in (1, 2, 3):
         raise ValueError(f"vacana must be 1/2/3, got {vacana!r}")
+    if lakara not in _DERIVE_LAKARAS:     # an unknown name (liN, luN, laN: tin_upadesha keys, not derive names) used to fall through to laT
+        raise ValueError(f"lakara must be one of {sorted(_DERIVE_LAKARAS)}, got {lakara!r}")
 
     from engine.core_loop import derive_autonomous_tinanta
 
@@ -4412,6 +4414,9 @@ def derive(
         nic_recipe=nic_recipe,
         vivaksha=vivaksha,
     )
+
+
+_DERIVE_LAKARAS = frozenset({"laT", "liT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "luG", "lRG"})     # the names _dispatch_tinanta_spine handles
 
 
 def derive_all_readings(*args, **kwargs) -> list:

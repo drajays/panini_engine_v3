@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from phonology    import mk
 
 
@@ -66,7 +67,11 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "7.3.108",
-    sutra_type     = SutraType.VIDHI,
+    sutra_type     = SutraType.VIBHASHA,
+    # vyavasthita-vibhāṣā: only after a luk'd sambuddhi (vāri / vāre, madhu / madho — Laghukaumudī 7.1.73: 'न लुमतेत्यस्यानित्यत्वात् पक्षे
+    # संबुद्धिनिमित्तो गुणः'; Sudhā: 1.1.63 anitya, so 1.1.62 pratyayalakṣaṇa lets the lupta su condition the guṇa). A live sambuddhi (hare) is mandatory.
+    vibhasha_default = True,
+    vibhasha_scope   = lambda state: len(state.terms) >= 2 and term_is_sup_luk_ghost(state.terms[-1]),
     text_slp1      = 'hrasvasya guRaH',
     text_dev       = 'ह्रस्वस्य गुणः',
     samagra_slp1   = "hrasvasya aNgasya sambudDO supi guRaH",
