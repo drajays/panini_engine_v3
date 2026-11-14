@@ -35,6 +35,8 @@ def cond(state: State) -> bool:
         return False
     if t0.varnas[0].slp1 != "z":
         return False
+    if "subdhatu" in t0.tags:        # vārttika सुब्धातुष्ठिवुष्वष्कतीनां प्रतिषेधः: षोडीयति, षण्डीयति keep ṣ (Kāśikā 6.1.64)
+        return False
     if t0.meta.get("corrected_v2_P001_C_6_1_64_done"):
         return False
     # vārttika सुब्धातुष्ठिवुष्वष्कतीनां प्रतिषेधः: ष्ठिव्, ष्वष्क् keep ṣ.

@@ -22,7 +22,7 @@ CASES = [   # (dhātu, upapada, linga, vivakṣā, form that must be one of the 
     ("yaja~", ("agniztoma", "karaRa"), "pulliṅga", BH, "agnizwomayAjI"),                           # 3.2.85
     ("dfSi~r", ("pAra", "karman"), "pulliṅga", BH, "pAradfSvA"),                                    # 3.2.94
     ("yuDa~", ("saha", "karman"), "pulliṅga", BH, "sahayuDvA"),                                     # 3.2.96
-    ("dfSi~r", ("pAra", "karman"), "pulliṅga", BH, "pAradfStavAn"),                                 # niṣṭhā stays beside the special kṛt
+    ("dfSi~r", ("pAra", "karman"), "pulliṅga", BH, "pAradfzwavAn"),                                 # niṣṭhā stays beside the special kṛt: dṛś + ktavatu → dṛṣṭavān (8.2.36 ś→ṣ, 8.4.41 ṣṭutva); the old pin dṛśtavān predates 1.1.26 tagging ktavatu~ as niṣṭhā
 ]
 
 

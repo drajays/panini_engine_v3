@@ -36,6 +36,8 @@ def cond(state: State) -> bool:
         return False
     if t0.varnas[0].slp1 != "R":
         return False
+    if "subdhatu" in t0.tags:        # vārttika सुब्धातुभ्यो नत्वप्रतिषेधः: णकारीयति keeps ṇ (Kāśikā 6.1.65 "सुब्धातोरयमपि नेष्यते")
+        return False
     if t0.meta.get("no_naH_6_1_65_done"):
         return False
     return True

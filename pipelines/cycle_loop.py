@@ -53,16 +53,21 @@ def derive_nama_dhatu(stem_slp1: str, origin_tags: set[str], vibhakti: int, vaca
     from pipelines.subanta import build_initial_state, run_subanta_preflight_through_1_4_7
 
     s = build_initial_state(stem_slp1, vibhakti, vacana, next((t for t in ("strīliṅga", "napuṃsakaliṅga") if t in origin_tags), "pulliṅga"), derived_pratipadika=True)
-    s.terms[0].tags |= set(origin_tags)
+    s.terms[0].tags |= set(origin_tags) | {"subdhatu"}      # the prātipadika Term becomes the dhātu (3.1.32): 6.1.64 / 6.1.65 read this tag
     s = apply_rule("4.1.2", run_subanta_preflight_through_1_4_7(s))
     from engine.tape_init.sanadi import with_vivaksha
 
-    return [_merge_one_dhatu(_run(with_vivaksha(s, **vivaksha), stem_slp1))]
+    d = _merge_one_dhatu(_run(with_vivaksha(s, **vivaksha), stem_slp1))
+    d.tags.add("subdhatu")        # a dhātu made from a subanta: the vārttikas on 6.1.64 / 6.1.65 (सुब्धातोः … षोडीयति, णकारीयति) keep its ṣ / ṇ
+    return [d]
 
 
 def derive_sanadi(terms: list[Term], **vivaksha: str) -> list[Term]:
     s = build_krdanta_state([t.clone() for t in terms], **vivaksha)
-    return [_merge_one_dhatu(_run(s, "".join(v.slp1 for t in terms for v in t.varnas)))]
+    d = _merge_one_dhatu(_run(s, "".join(v.slp1 for t in terms for v in t.varnas)))
+    if any("subdhatu" in t.tags for t in terms):
+        d.tags.add("subdhatu")
+    return [d]
 
 
 def derive_tinanta(terms: list[Term], lakara: str, purusha: int, vacana: int, *, pada: str = "parasmai", prayoga: str = "kartari") -> State:
