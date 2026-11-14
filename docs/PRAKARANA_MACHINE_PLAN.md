@@ -108,3 +108,28 @@ apply at one stage, the earlier operates) · C-vipratiṣedha (Neelesh Class 30;
   `python3 agent/transcripts.py build`, then commit and push `ashtadhyayi-ai/`.
 * Uncommitted in this repo (other session, untouched): 23 modified files (6.4.8/11/13, 7.1.70, 8.2.9/10, matup/subanta pipelines — AMENDMENT 22 phase 1).
 * Known OCR limit: long paragraph slides come out noisy; look at the frame for any card that rests on one.
+
+## 9. Stem census — every way a dhātu / prātipadika arises (added 2026-11-14)
+Checked against the Kāśikā (DB) and the repo. Status = what `pipelines/chain.py` + `cycle_loop.py` reach today (V4_CYCLE.md); "recipe" = a one-off pipeline, not the loop; "?" = not probed.
+
+**Prātipadika.** 1.2.45 arthavat (rāma, nipāta, upasarga, anukaraṇa, a quoted word) — lexicon only, no anukaraṇa/nipāta entry kind in the loop (?) · 1.2.46 kṛdanta (loop: `krt`) · taddhitānta (loop: `taddhita`) · samāsa (loop: `samasa`, slices 1-2) · strī-anta (loop: `strI`; ṭāp/ṅīp/ūṅ/ti/… by 4.1.x, coverage partial) · uṇādi 3.3.1 (`unadi_patha.json` 7498 lines exists, **no engine consumer**) · nipātana stems (3.3.x, 6.3.109 pṛṣodarādi) · ekaśeṣa 1.2.64 (not a new stem type: the survivor is the same stem; it is a *vṛtti*, so it belongs with samāsa as a sibling vṛtti with jahatsvārthā/ajahat distinction) · **vṛtti-derived stems with the sup kept** (nāmadhātu on a subanta 3.1.8-11, taddhita on a samartha pada 4.1.82, samāsa on padas) — the loop's `Stem` has no "subanta base" state.
+
+**Dhātu.** 1.3.1 bhūvādi (dhatupatha.py) · **sautra dhātus** (3.1.82: stambh, stumbh, skambh, skumbh — Kāśikā "आद्याश्चत्वारो धातवः सौत्राः"; not in the Dhātupāṭha data, so ? derivable) · sanādyanta 3.1.32, the twelve:
+san (3.1.5-7) recipe, laṭ only · yaṅ 3.1.22 recipe (loluv/popuv/yAyAvar), laṭ only · ṇic 3.1.26 **loop** (hetumat) · kyac 3.1.8-10 **loop** (hard-coded icCA; upamāna 3.1.10 and others not selectable) · kāmyac 3.1.9 recipe? · kyaṅ 3.1.11-12 (śyenāyate; bhṛśādi + cvi-artha) ? · kyaṣ 3.1.13-15 recipe (lohitāyati) · kvip 3.1.11? as nāmadhātu ? · yak 3.1.27 kaṇḍvādi ? · āya / īyaṅ / ṇiṅ 3.1.28-31 (vibhāṣā in ārdhadhātuka-vivakṣā: gopāyati, ṛtīyate) partial (3.1.28/31 in 2af80b0b) · ādeśa-dhātus 2.4.35-57 (ad→ghas, brū→vac, aj→vī, as→bhū …) ? · upasarga+dhātu as a unit (1.4.59, gati) ? · dhātu-vat by atideśa (only where a sūtra says so; do not model as a general rule).
+
+### Corrections to the pasted write-up (check before reusing any of it)
+1. "kaṇḍvādi take yak and are both nominal stem and root": Kāśikā 3.1.27 says kaṇḍvādis are of two kinds (dhātu / prātipadika) and yak goes only on the dhātus (dhātvadhikāra). So kaṇḍūya- is *not* a nāmadhātu.
+2. "Karmavyatihāra / upamāna roots 3.1.10-15" is a wrong label. 3.1.10 = upamānāt karmaṇaḥ ācāre kyac; 3.1.11 = kartuḥ kyaṅ + salopa (śyenāyate); 3.1.12 = bhṛśādi + kyaṅ with cvi-artha; 3.1.13-15 = kyaṣ. Karmavyatihāra is 1.3.14 / 3.4.x, not here.
+3. "cvi gives dhātvatideśa": cvi (5.4.50) forms an avyaya and śuklī-kṛ is a gati compound (1.4.61); no new dhātu. "Dhātvatideśa" is not a general mechanism.
+4. "Nipātas / quoted words are prātipadika under 1.2.45": fine for nipāta; for anukaraṇa the text skips the real rule (1.1.68 svaṃ rūpaṃ śabdasya…, iti-karaṇa) that makes the quoted form a stem.
+5. Strī-pratyayas are not in 1.2.46; the stem ending in one is a prātipadika by liṅgaviśiṣṭa-grahaṇa. Count "4 ways" is the tradition's, not an Aṣṭādhyāyī list.
+6. Chain example is sound (kṛ+ṇic+san+tṛc+ṅīp+tva+su); it is the target regression test for the loop (P3), once yaṅ/san/kyaṣ are loop edges.
+
+### Gaps this adds to the plan (each = one slice, full apply_rule trace, gold list from DB/Kāśikā, no recipe)
+- **G1 sanādi as loop edges**: san, yaṅ, kāmyac, kyaṅ, kyaṣ, kvip, yak (kaṇḍvādi), āya/īyaṅ/ṇiṅ — each selected by vivakṣā keys that `vivaksha_schema.json` already names (samAnakartfka, icCA, nityatA, karaRa, hetumat); then every lakāra, not laṭ only. Replace the hard-coded kyac in tinanta.py:2630.
+- **G2 uṇādi consumer**: read `unadi_patha.json`, derive through 3.3.1 only the forms the Kāśikā cites (gold list), mark the rest unproven.
+- **G3 sautra dhātus + ādeśa-dhātus** as lexicon entries with Kāśikā citation.
+- **G4 nipātana / pṛṣodarādi** stems (6.3.109 exists) and gaṇa-pāṭha-listed irregulars.
+- **G5 anukaraṇa + nipāta + upasarga entries** (1.1.68) so any word can enter the machine.
+- **G6 subanta-as-base** (sup kept) for nāmadhātu / taddhita / samāsa.
+- **G7 completeness gate**: for each type above a gold list of (derivation path, form, licensing sūtra); a type with no gold list is "unclaimed", never "done".
