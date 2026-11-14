@@ -73,3 +73,8 @@ Claims verified as stated: nuṭ/iṭ/vuk/suṭ listings and the bare-letter spl
 
 ### R5. Recommendation: start now vs hand off
 Not "start now". The change is mostly mechanical for nuṭ but (1) two design points in this draft are wrong (order; 1.1.46 type/apply_rule), (2) 7.2.35's iṭ is read by ~20 files and 6.4.x/7.x are being edited by other agents, (3) the sig re-baseline touches shared files. **Hand to the coordinator as one claimed job**, nuṭ cluster first with option (a), after the owner rules on R1 (default: Bhāṣya/Kaumudī for 3.2.141) and R2 (a vs b).
+
+## Owner rulings (2026-11-14)
+1. **3.2.141 / vuk-type u:** default = Bhāṣya (Kaumudī "अनुबन्ध इति भाष्यम्"): the u is an anubandha (it-marker), so the vibhāṣā readings both hold. The Kāśikā / Nyāsa / Padamañjarī reading (u uccāraṇārtha → only hrasva) is recorded as an explicit alternative, not the default.
+2. **1.1.46 ādyantau ṭakitau** stays a **paribhāṣā** read by each āgama sūtra (the sthāna of the āgama), never an acting vidhi sūtra and never called via apply_rule from inside another act.
+Consequence: the nuṭ cluster (7.1.54/55 + readers 6.4.3/4/6/7) can be claimed as one coordinated job; order = name it-letters → place by 1.1.46 reading → 1.3.9 lopa, extending `state.meta["it_lopa_log"]`.
