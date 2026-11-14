@@ -7,11 +7,43 @@ from tools.exercise_audit import run
 OK = {'APPLIED'}
 
 CASES = [
-    ('3.4.109', True, ('tinanta', '02.0068', 'laG', 'kartari', 3, 3), 'adaridruH', 'VIDHI'),   # 3.4.109 positive: 
-    ('3.4.109', True, ('tinanta', '02.0067', 'laG', 'kartari', 3, 3), 'ajAgaruH', 'VIDHI'),   # 3.4.109 positive: 
-    ('3.4.109', True, ('tinanta', '03.0005', 'laG', 'kartari', 3, 3), 'apiparuH', 'VIDHI'),   # 3.4.109 positive: 
-    ('3.4.109', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIDHI'),   # 3.4.109 negative: not used by the attested derivation
-    ('3.4.109', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIDHI'),   # 3.4.109 negative: not used by the attested derivation
+    ('3.1.28', True, ('tinanta', '01.0462', 'laT', 'kartari', 3, 1), 'DUpAyati', 'VIDHI'),   # 3.1.28 positive: <<गुपूधूपविच्छिपणिपनिभ्य आयः>> [[3.1.28]
+    ('3.1.28', True, ('tinanta', '01.0508', 'laT', 'kartari', 3, 1), 'panAyati', 'VIDHI'),   # 3.1.28 positive: <<गुपूधूपविच्छिपणिपनिभ्य आयः>> [[3.1.28]
+    ('3.1.28', True, ('tinanta', '01.0507', 'laT', 'kartari', 3, 1), 'paRAyati', 'VIDHI'),   # 3.1.28 positive: <<गुपूधूपविच्छिपणिपनिभ्य आयः>> [[3.1.28]
+    ('3.1.28', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIDHI'),   # 3.1.28 negative: not used by the attested derivation
+    ('3.1.28', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIDHI'),   # 3.1.28 negative: not used by the attested derivation
+    ('3.1.37', True, ('tinanta', '02.0011', 'liT', 'kartari', 3, 1), 'AsAmbaBUva', 'VIDHI'),   # 3.1.37 positive: 
+    ('3.1.37', True, ('tinanta', '01.0553', 'liT', 'kartari', 3, 1), 'dayAmbaBUva', 'VIDHI'),   # 3.1.37 positive: 
+    ('3.1.37', True, ('tinanta', '01.0546', 'liT', 'kartari', 3, 1), 'ayAmbaBUva', 'VIDHI'),   # 3.1.37 positive: 
+    ('3.1.37', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIDHI'),   # 3.1.37 negative: not used by the attested derivation
+    ('3.1.37', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIDHI'),   # 3.1.37 negative: not used by the attested derivation
+    ('3.1.38', True, ('tinanta', '02.0067', 'liT', 'kartari', 3, 1), 'jAgarAmbaBUva', 'VIBHASHA'),   # 3.1.38 positive: 
+    ('3.1.38', True, ('tinanta', '01.0792', 'liT', 'kartari', 3, 1), 'ozAmbaBUva', 'VIBHASHA'),   # 3.1.38 positive: 
+    ('3.1.38', True, ('tinanta', '02.0059', 'liT', 'kartari', 3, 1), 'vidAmbaBUva', 'VIBHASHA'),   # 3.1.38 positive: 
+    ('3.1.38', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 3.1.38 negative: not used by the attested derivation
+    ('3.1.38', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 3.1.38 negative: not used by the attested derivation
+    ('3.1.39', True, ('tinanta', '03.0003', 'liT', 'kartari', 3, 1), 'jihrayAmbaBUva', 'VIBHASHA'),   # 3.1.39 positive: 
+    ('3.1.39', True, ('tinanta', '03.0001', 'liT', 'kartari', 3, 1), 'juhavAmbaBUva', 'VIBHASHA'),   # 3.1.39 positive: 
+    ('3.1.39', True, ('tinanta', '03.0006', 'liT', 'kartari', 3, 1), 'biBarAmAsa', 'VIBHASHA'),   # 3.1.39 positive: 
+    ('3.1.39', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 3.1.39 negative: not used by the attested derivation
+    ('3.1.39', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 3.1.39 negative: not used by the attested derivation
+    ('3.1.60', True, ('tinanta', '04.0065', 'luG', 'kartari', 3, 1), 'apAdi', 'VIDHI'),   # 3.1.60 positive: 
+    ('3.1.60', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIDHI'),   # 3.1.60 negative: not used by the attested derivation
+    ('3.1.60', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIDHI'),   # 3.1.60 negative: not used by the attested derivation
+    ('3.1.70', True, ('tinanta', '01.1033', 'laT', 'kartari', 3, 1, 'atmane'), 'lazyate', 'VIBHASHA'),   # 3.1.70 positive: 
+    ('3.1.70', True, ('tinanta', '06.0102', 'laT', 'kartari', 2, 3), 'truwyaTa', 'VIBHASHA'),   # 3.1.70 positive: 
+    ('3.1.70', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 3.1.70 negative: not used by the attested derivation
+    ('3.1.70', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 3.1.70 negative: not used by the attested derivation
+    ('3.1.82', True, ('tinanta', '09.0008', 'laT', 'kartari', 3, 1), 'stuBnoti', 'VIBHASHA'),   # 3.1.82 positive: 
+    ('3.1.82', True, ('tinanta', '09.0006', 'laT', 'kartari', 3, 1, 'atmane'), 'skunute', 'VIBHASHA'),   # 3.1.82 positive: 
+    ('3.1.82', True, ('tinanta', '09.0009', 'laT', 'kartari', 2, 3), 'skaBnuTa', 'VIBHASHA'),   # 3.1.82 positive: 
+    ('3.1.82', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 3.1.82 negative: not used by the attested derivation
+    ('3.1.82', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 3.1.82 negative: not used by the attested derivation
+    ('3.4.111', True, ('tinanta', '02.0052', 'laG', 'kartari', 3, 3), 'aruH', 'VIBHASHA'),   # 3.4.111 positive: <<लङः शाकटायनस्यैव>> [[3.4.111]] इति झि-
+    ('3.4.111', True, ('tinanta', '02.0044', 'laG', 'kartari', 3, 3), 'ayuH', 'VIBHASHA'),   # 3.4.111 positive: <<लङः शाकटायनस्यैव>> [[3.4.111]] इति झि-
+    ('3.4.111', True, ('tinanta', '02.0045', 'laG', 'kartari', 3, 3), 'avuH', 'VIBHASHA'),   # 3.4.111 positive: <<लङः शाकटायनस्यैव>> [[3.4.111]] इति झि-
+    ('3.4.111', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 3.4.111 negative: not used by the attested derivation
+    ('3.4.111', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 3.4.111 negative: not used by the attested derivation
 ]
 
 @pytest.mark.parametrize('sid,positive,spec,expected,typ', CASES, ids=lambda c: None)

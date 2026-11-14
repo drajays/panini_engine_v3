@@ -7,17 +7,22 @@ from tools.exercise_audit import run
 OK = {'APPLIED'}
 
 CASES = [
+    ('6.1.89', True, ('subanta', 'viSvavAh', 'pulliṅga', 3, 1), 'viSvOhA', 'VIDHI'),   # 6.1.89 positive: पकारोत्तरस्य अकारस्य इण्-धातोः ऐकारेण सह
+    ('6.1.89', False, ('subanta', 'sva', 'pulliṅga', 1, 3), 'svAH', 'VIDHI'),   # 6.1.89 negative: not used by the attested derivation
+    ('6.1.89', False, ('subanta', 'pUrva', 'pulliṅga', 1, 3), 'pUrvAH', 'VIDHI'),   # 6.1.89 negative: not used by the attested derivation
+    ('6.4.62', True, ('tinanta', '03.0005', 'lRT', 'karmani', 3, 1), 'pArizyate', 'VIBHASHA'),   # 6.4.62 positive: 
+    ('6.4.62', True, ('tinanta', '09.0023', 'lRT', 'karmani', 3, 1), 'vArizyate', 'VIBHASHA'),   # 6.4.62 positive: 
+    ('6.4.62', True, ('tinanta', '05.0013', 'lRT', 'karmani', 3, 1), 'pArizyate', 'VIBHASHA'),   # 6.4.62 positive: 
+    ('6.4.62', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 6.4.62 negative: not used by the attested derivation
+    ('6.4.62', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 6.4.62 negative: not used by the attested derivation
     ('6.4.63', True, ('tinanta', '04.0029', 'liT', 'kartari', 3, 1), 'didIye', 'VIDHI'),   # 6.4.63 positive: अत्र <<सार्वधातुकार्धधातुकयोः>> [[7.3.84
-    ('6.4.63', False, ('tinanta', '03.0005', 'lRT', 'karmani', 3, 1), 'pArizyate', 'VIDHI'),   # 6.4.63 negative: not used by the attested derivation
-    ('6.4.63', False, ('tinanta', '09.0023', 'lRT', 'karmani', 3, 1), 'vArizyate', 'VIDHI'),   # 6.4.63 negative: not used by the attested derivation
+    ('6.4.63', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIDHI'),   # 6.4.63 negative: not used by the attested derivation
+    ('6.4.63', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIDHI'),   # 6.4.63 negative: not used by the attested derivation
     ('6.4.107', True, ('tinanta', '08.0003', 'laT', 'kartari', 1, 2, 'atmane'), 'kzaRvahe', 'VIBHASHA'),   # 6.4.107 positive: 
     ('6.4.107', True, ('tinanta', '08.0009', 'laT', 'kartari', 1, 2), 'manvahe', 'VIBHASHA'),   # 6.4.107 positive: 
     ('6.4.107', True, ('tinanta', '08.0001', 'laT', 'kartari', 1, 2, 'atmane'), 'tanvahe', 'VIBHASHA'),   # 6.4.107 positive: 
-    ('6.4.107', False, ('tinanta', '03.0005', 'lRT', 'karmani', 3, 1), 'pArizyate', 'VIBHASHA'),   # 6.4.107 negative: not used by the attested derivation
-    ('6.4.107', False, ('tinanta', '09.0023', 'lRT', 'karmani', 3, 1), 'vArizyate', 'VIBHASHA'),   # 6.4.107 negative: not used by the attested derivation
-    ('6.4.127', True, ('subanta', 'arvan', 'pulliṅga', 1, 2), 'arvantO', 'VIDHI'),   # 6.4.127 positive: 
-    ('6.4.127', True, ('subanta', 'arvan', 'pulliṅga', 1, 3), 'arvantaH', 'VIDHI'),   # 6.4.127 positive: 
-    ('6.4.127', True, ('subanta', 'arvan', 'pulliṅga', 2, 1), 'arvantam', 'VIDHI'),   # 6.4.127 positive: 
+    ('6.4.107', False, ('tinanta', '07.0023', 'liT', 'kartari', 2, 1), 'vivijiTa', 'VIBHASHA'),   # 6.4.107 negative: not used by the attested derivation
+    ('6.4.107', False, ('tinanta', '06.0009', 'liT', 'kartari', 2, 1), 'vivijize', 'VIBHASHA'),   # 6.4.107 negative: not used by the attested derivation
 ]
 
 @pytest.mark.parametrize('sid,positive,spec,expected,typ', CASES, ids=lambda c: None)
