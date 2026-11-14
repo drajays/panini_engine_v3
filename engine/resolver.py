@@ -62,6 +62,7 @@ ORDER_BEFORE: tuple[tuple[str, str], ...] = (
     ("6.1.33", "6.1.45"),        # संप्रसारणं तदाश्रयं च कार्यं बलवत् (Paribhāṣā; Kaumudī 6.1.31): ह्वे before dvitva takes samprasāraṇa, not ātva (juhāva)
     ("7.2.35", "7.4.49"),        # iṭ before sya (seṭ as: asiṣyati): 7.4.49 सः स्यार्धधातुके needs the s of the root next to sya, which the iṭ makes impossible
     ("2.4.82", "6.4.148"),       # the sup of an avyaya is luk'd (1.1.40: gatvā) before yasyeti ca could read its i: loc. gatvā, not *gatvi*
+    ("6.4.3", "7.3.102"),        # nāmi dīrgha is the exception to supi ca for the sup nām: Kaumudī 6.4.3 "सुपि चेति दीर्घो यद्यपि परस्तथापीह न प्रवर्तते, संनिपातपरिभाषाविरोधात्; नामीत्यनेन त्वारम्भसामर्थ्यात् परिभाषा बाध्यते": rAmARAm by 6.4.3, not 7.3.102
     ("6.4.136", "6.4.134"),      # vibhāṣā ṅiśyoḥ is the exception to the an-lopa: tried first, its declined branch bars 6.4.134 (rājani, sāmani)
 )
 

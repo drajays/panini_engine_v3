@@ -28,3 +28,9 @@ None to the engine. Every miss is an architectural gap (fused sūtra, ṭāp Ter
 2. 7.3.112's āṭ as its own Term → 12 cells (and 6.1.90 for the sup).
 3. 6.1.102 for masculine śas then 6.1.103 as s→n → 3 cells.
 4. S2 ṭāp merge → 4 cells.
+
+## rAmARAm 6.4.3 vs 7.3.102 (2026-11-14)
+Engine had 7.3.102 (para, 1.4.2) lengthen rāma before nuṭ-āma, 6.4.3 blocked; Bodas's ram.pdf uses 6.4.3. Authority sides with the PDF, so this was a **real mechanism error** (form unchanged).
+- Kaumudī 6.4.3: "सुपि चेति दीर्घो यद्यपि परस्तथापीह न प्रवर्तते। संनिपातपरिभाषाविरोधात्। नामीत्यनेन त्वारम्भसामर्थ्यात् परिभाषा बाध्यते।" (7.3.102 is not applied before nām; 6.4.3's own ārambha overrides the saṃnipāta-paribhāṣā.)
+- Kāśikā 6.4.3: "नामि … अङ्गस्य दीर्घो भवति। अग्नीनाम्, वायूनाम्" with "आगतनुट्कग्रहणम्… कृते च नुटि दीर्घप्रतिपत्त्यर्थम्"; Bhāṣya 6.4.3 raises the nuṭ-vs-dīrgha order (nuṭ first, para). 7.3.102 is cited only for yañ-ādi sups like bhyām (Kāśikā 7.3.102).
+Fix: resolver `ORDER_BEFORE ("6.4.3", "7.3.102")` with the Kaumudī quote; both bare-id allowlists extended; test `tests/unit/test_6_4_3_nami_before_7_3_102.py`; the rAma/Pala 6-3 xfails removed (now pass). mAlA / nadI / vaDU 6-3 stay xfail: already long, 6.4.3 vacuous (PDF lists it anyway). Not checked: nadīnām 6.4.5 is Vedic only (Kāśikā 6.4.5: tisṛ/catasṛ, chandasi; Kaumudī: dhātṝṇām vibhāṣā).
