@@ -159,63 +159,39 @@
   ]
  },
  "7.2.98": {
-  "grade": "FAIL",
+  "grade": "NO_POSITIVE",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form tvam is right but 7.2.98 did not fire (trace status absent): another path made it",
-    "spec": [
-     "subanta",
-     "yuzmad",
-     "pulliṅga",
-     1,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
-    "result": "fail",
-    "why": "form tvAm is right but 7.2.98 did not fire (trace status absent): another path made it",
-    "spec": [
-     "subanta",
-     "yuzmad",
-     "pulliṅga",
-     2,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
-    "result": "fail",
-    "why": "form mayA is right but 7.2.98 did not fire (trace status absent): another path made it",
-    "spec": [
-     "subanta",
-     "asmad",
-     "pulliṅga",
-     3,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
-    "result": "fail",
-    "why": "form tvayi is right but 7.2.98 did not fire (trace status absent): another path made it",
-    "spec": [
-     "subanta",
-     "yuzmad",
-     "pulliṅga",
-     7,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
-    "result": "fail",
-    "why": "form mayi is right but 7.2.98 did not fire (trace status absent): another path made it",
-    "spec": [
-     "subanta",
-     "asmad",
-     "pulliṅga",
-     7,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "unrunnable"
+   },
+   {
+    "result": "unrunnable"
    },
    {
     "result": "unrunnable"
@@ -759,15 +735,9 @@
     "result": "unrunnable"
    },
    {
-    "result": "fail",
-    "why": "readings ['daDnA', 'dadDnA'] ≠ expected dadhnA",
-    "spec": [
-     "subanta",
-     "daDi",
-     "napuMsaka",
-     3,
-     1
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
     "result": "fail",
@@ -778,23 +748,50 @@
      "napuMsaka",
      3,
      1
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
-    "why": "readings ['grAmaRinA'] ≠ expected grAmaRiNA",
+    "why": "readings ['grAmaRaye'] ≠ expected grAmaRye",
     "spec": [
      "subanta",
      "grAmaRi",
      "napuMsaka",
-     3,
+     4,
      1
-    ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "form Sucaye is right but 7.1.74 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "Suci",
+     "napuMsaka",
+     4,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "fail",
+    "why": "declined reading Sucine is not produced at all (readings ['Sucaye'])",
+    "sub": "mismatch"
    },
    {
     "result": "pass",
     "kind": "produced",
     "why": ""
+   },
+   {
+    "result": "unrunnable"
    }
   ]
  },
@@ -1009,35 +1006,83 @@
      [
       [
        "artha",
-       "BAva"
+       "karman"
       ],
       [
        "krt",
        "kftya"
+      ],
+      [
+       "arthaViSeSa",
+       "Bakzya"
       ]
      ]
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
-    "why": "readings ['BojanIyaH', 'BojjyaH', 'BojjyyaH', 'BojyaH', 'BokktavvyaH', 'BoktavyaH'] ≠ expected BogyaH",
+    "why": "form BojyA is right but 7.3.69 did not fire (trace status absent): another path made it",
     "spec": [
      "krdanta",
      "07.0017",
      "Ryat",
-     "pulliṅga",
+     "strīliṅga",
      1,
      1,
      [
       [
+       "artha",
+       "karman"
+      ],
+      [
        "krt",
        "kftya"
+      ],
+      [
+       "arthaViSeSa",
+       "Bakzya"
       ]
      ]
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
-    "result": "unrunnable"
+    "result": "fail",
+    "why": "form Bojyam is right but 7.3.69 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "07.0017",
+     "Ryat",
+     "napuṃsaka",
+     1,
+     1,
+     [
+      [
+       "artha",
+       "karman"
+      ],
+      [
+       "krt",
+       "kftya"
+      ],
+      [
+       "arthaViSeSa",
+       "Bakzya"
+      ]
+     ]
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "produced reading BogyaH is not produced at all (readings ['BojanIyaH', 'BojjyaH', 'BojjyyaH', 'BojyaH', 'BokktavvyaH', 'BoktavyaH'])",
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "kind": "excluded",
+    "why": ""
    }
   ]
  },

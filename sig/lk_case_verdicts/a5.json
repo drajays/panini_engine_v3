@@ -37,7 +37,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['go'] ≠ expected gotvam",
     "spec": [
      "chain",
      "go",
@@ -47,7 +47,7 @@
    },
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['gOH'] ≠ expected gotA",
     "spec": [
      "chain",
      "go",
@@ -63,7 +63,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['Sukklamm', 'Sukkllamm', 'Suklam'] ≠ expected SOklyam",
     "spec": [
      "chain",
      "Sukla",
@@ -79,7 +79,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['brAhmaRam', 'brAhmaRamm', 'brAhmmaRam', 'brAhmmaRamm'] ≠ expected brAhmaRyam",
     "spec": [
      "chain",
      "brAhmaRa",
@@ -95,7 +95,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['saKa'] ≠ expected saKyam",
     "spec": [
      "chain",
      "saKi",
@@ -111,7 +111,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['purohitam', 'purohitamm'] ≠ expected pOrohityam",
     "spec": [
      "chain",
      "purohita",
@@ -127,7 +127,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "engine error: ValueError: vivakṣā taddhitArtha='BAva' is not in data/inputs/vivaksha_schema.json",
+    "why": "readings ['Suci'] ≠ expected SOcam",
     "spec": [
      "chain",
      "Suci",

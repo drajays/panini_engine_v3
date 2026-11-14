@@ -940,12 +940,12 @@
   ]
  },
  "8.4.14": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form praRamati is right but 8.4.14 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1136",
@@ -954,11 +954,13 @@
      3,
      1,
      "{\"upasargas\": [\"pra\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "form pariRamati is right but 8.4.14 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1136",
@@ -967,7 +969,9 @@
      3,
      1,
      "{\"upasargas\": [\"pari\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -977,12 +981,12 @@
   ]
  },
  "8.4.15": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form prahiRoti is right but 8.4.15 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "05.0012",
@@ -991,11 +995,13 @@
      3,
      1,
      "{\"upasargas\": [\"pra\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "form pramIRAti is right but 8.4.15 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "09.0004",
@@ -1004,11 +1010,13 @@
      3,
      1,
      "{\"upasargas\": [\"pra\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "form prahiRutaH is right but 8.4.15 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "05.0012",
@@ -1017,7 +1025,9 @@
      3,
      2,
      "{\"upasargas\": [\"pra\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -1031,8 +1041,8 @@
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form pravapARi is right but 8.4.16 did not fire (trace status absent): another path made it",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1158",
@@ -1041,7 +1051,9 @@
      1,
      1,
      "{\"upasargas\": [\"pra\"]}"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "fail",
@@ -1054,7 +1066,8 @@
      1,
      1,
      "{\"upasargas\": [\"pari\"]}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "pass",
@@ -1119,31 +1132,36 @@
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['tadlayaH'] ≠ expected tallayaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "tad",
      "layaH"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "fail",
-    "why": "readings ['BavAnlunAti'] ≠ expected BavAMllunAti",
+    "why": "readings ['BavAllunAti'] ≠ expected BavAMllunAti",
     "spec": [
      "vakya",
      "BavAn",
      "lunAti"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
-    "result": "fail",
-    "why": "readings ['agnicidlunAti'] ≠ expected agnicillunAti",
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "agnicit",
      "lunAti"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -1180,20 +1198,19 @@
   ]
  },
  "8.4.62": {
-  "grade": "FAIL",
-  "type": "VIDHI",
+  "grade": "confident",
+  "type": "VIBHASHA",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['vAghasati'] ≠ expected vAgGasati",
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "vAk",
-     "hasati"
-    ]
-   },
-   {
-    "result": "unrunnable"
+     "hariH"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -1201,28 +1218,64 @@
     "why": ""
    },
    {
-    "result": "fail",
-    "why": "readings ['agnicidhasati'] ≠ expected agniciddhasati",
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "vakya",
+     "vAk",
+     "hasati"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "agnicit",
      "hasati"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "vakya",
+     "trizwup",
+     "hasati"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },
  "8.4.63": {
-  "grade": "FAIL",
-  "type": "VIDHI",
+  "grade": "working",
+  "type": "VIBHASHA",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['vAkSete'] ≠ expected vAkCete",
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "vAk",
      "Sete"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -1230,13 +1283,15 @@
     "why": ""
    },
    {
-    "result": "fail",
-    "why": "readings ['agnicijSete'] ≠ expected agnicicCete",
+    "result": "pass",
+    "why": "",
     "spec": [
      "vakya",
      "agnicit",
      "Sete"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "unrunnable"

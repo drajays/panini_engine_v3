@@ -2,7 +2,9 @@
 
 Generated 2026-11-14 by `python3 -m tools.sutra_class`. **410 of 3983** are confident.
 
-*Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + named in tests ≥5×. *(S)* = structural/definitional class: invoked + cited + tested + real cond (class proof pending, plan §1).
+Firing ledger `sig/firing_coverage.json`: 2026-11-12T01:07:07+00:00 · LK verdicts `sig/lk_case_verdicts/`: 2026-11-14T15:03:08+00:00 — **the ledger is older than the verdicts: run `make coverage`**
+
+*Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + tested: LK case gate `confident` where the gate grades the sūtra, else named in tests ≥5×; an LK `FAIL` caps it at working. *(S)* = structural/definitional class: invoked + cited + tested + real cond, no LK `FAIL` (class proof pending, plan §1).
 
 | status | count |
 |---|---|

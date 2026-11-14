@@ -395,7 +395,7 @@
   ]
  },
  "4.1.63": {
-  "grade": "FAIL",
+  "grade": "confident",
   "type": "VIDHI",
   "cases": [
    {
@@ -407,18 +407,13 @@
      "lex:jAti",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "form kzatriyA is right but 4.1.63 did not fire (trace status absent): another path made it",
-    "spec": [
-     "chain",
-     "kzatriya",
-     "lex:jAti",
-     "strI:|sup:1,1"
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    },
    {
     "result": "pass",
@@ -429,8 +424,8 @@
      "lex:jAti",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -441,8 +436,8 @@
      "lex:jAti",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -694,18 +689,13 @@
   ]
  },
  "4.1.172": {
-  "grade": "FAIL",
+  "grade": "NO_POSITIVE",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form kOravyaH is right but 4.1.172 did not fire (trace status absent): another path made it",
-    "spec": [
-     "chain",
-     "kuru",
-     "",
-     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },
@@ -866,18 +856,13 @@
   ]
  },
  "4.3.82": {
-  "grade": "FAIL",
+  "grade": "NO_POSITIVE",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "form aSmamayam is right but 4.3.82 did not fire (trace status absent): another path made it",
-    "spec": [
-     "chain",
-     "aSman",
-     "",
-     "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
-    ]
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },
