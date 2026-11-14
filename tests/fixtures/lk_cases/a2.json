@@ -638,7 +638,7 @@
    "text": "aṅga + Jas (tadrāja luk in bahuvacana)",
    "expected_iast": "aṅgāḥ",
    "expected": "aNgAH",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "aNga",
@@ -646,7 +646,9 @@
     1,
     3
    ],
-   "source": "Kāśikā 2.4.62 (aṅgāḥ)"
+   "source": "Kāśikā 2.4.62 तद्राजस्येति किम्? औपगवाः",
+   "kind": "produced",
+   "note": "triage 2026-11-14: from the bare stem aṅga there is no tadrāja to drop; the positive needs the aṅga + aṇ (4.1.170) + Jas chain spec"
   },
   {
    "text": "aṅga + su (ekavacana, luk blocked)",

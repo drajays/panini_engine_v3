@@ -365,14 +365,13 @@
    "spec": null,
    "source": null,
    "owner": true,
-   "note": "disputed: dadhīca is not a napuṃsaka ik-anta; 7.1.74 concerns ik-anta napuṃsaka (grāmaṇi). Owner case rejected.",
-   "disputed": "disputed: dadhīca is not a napuṃsaka ik-anta; 7.1.74 concerns ik-anta napuṃsaka (grāmaṇi). Owner case rejected."
+   "note": "brain R-012: dadhīca is not an ik-final neuter; 7.1.74 cannot apply. Kept as the owner's record, not runnable."
   },
   {
-   "text": "dadhi + ṭā (standard napuṃsaka)",
+   "text": "dadhi + ṭā (not bhāṣitapuṃska: 7.1.75 anaṅ)",
    "expected_iast": "dadhnā",
-   "expected": "dadhnA",
-   "positive": true,
+   "expected": "daDnA",
+   "positive": false,
    "spec": [
     "subanta",
     "daDi",
@@ -380,12 +379,12 @@
     3,
     1
    ],
-   "source": "Kāśikā 7.1.75 (not 7.1.74): dadhnā; kept as a boundary case",
+   "source": "brain R-012; 7.1.75 anaṅ",
    "owner": true,
-   "source_unverified_in_db_text": true
+   "kind": "produced"
   },
   {
-   "text": "extra: grAmaRyA",
+   "text": "grāmaṇi (n.) + ṭā, puṃvat",
    "expected_iast": null,
    "expected": "grAmaRyA",
    "positive": true,
@@ -400,10 +399,40 @@
    "owner": false
   },
   {
-   "text": "extra: grAmaRiNA",
+   "text": "grāmaṇi (n.) + ṅe, puṃvat",
    "expected_iast": null,
-   "expected": "grAmaRiNA",
+   "expected": "grAmaRye",
    "positive": true,
+   "spec": [
+    "subanta",
+    "grAmaRi",
+    "napuMsaka",
+    4,
+    1
+   ],
+   "source": "Kāśikā 7.1.74 ग्रामण्ये ब्राह्मणकुलाय",
+   "owner": false
+  },
+  {
+   "text": "śuci (n.) + ṅe, puṃvat",
+   "expected_iast": null,
+   "expected": "Sucaye",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "Suci",
+    "napuMsaka",
+    4,
+    1
+   ],
+   "source": "Kāśikā 7.1.74 शुचये ब्राह्मणकुलाय",
+   "owner": false
+  },
+  {
+   "text": "grāmaṇi (n.) + ṭā, option declined (7.1.73 num)",
+   "expected_iast": null,
+   "expected": "grAmaRinA",
+   "positive": false,
    "spec": [
     "subanta",
     "grAmaRi",
@@ -413,10 +442,26 @@
    ],
    "source": "Kāśikā 7.1.74 ग्रामणिना ब्राह्मणकुलेन",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "kind": "declined"
   },
   {
-   "text": "extra: vAriRA",
+   "text": "śuci (n.) + ṅe, option declined (7.1.73 num)",
+   "expected_iast": null,
+   "expected": "Sucine",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "Suci",
+    "napuMsaka",
+    4,
+    1
+   ],
+   "source": "Kāśikā 7.1.74 शुचिने ब्राह्मणकुलाय",
+   "owner": false,
+   "kind": "declined"
+  },
+  {
+   "text": "vāri + ṭā (not bhāṣitapuṃska)",
    "expected_iast": null,
    "expected": "vAriRA",
    "positive": false,
@@ -428,7 +473,18 @@
     1
    ],
    "source": "7.1.74 needs bhāṣitapuṃska; vāri is not (Kāśikā: vāriṇā by 7.1.73)",
-   "owner": false
+   "owner": false,
+   "kind": "produced"
+  },
+  {
+   "text": "pīlu (n., the fruit) + ṅe: pravṛttinimitta differs",
+   "expected_iast": null,
+   "expected": "pIlune",
+   "positive": false,
+   "spec": null,
+   "source": "SK 7.1.74 पीलुने । अत्र न पुंवत्",
+   "owner": false,
+   "note": "brain R-012: needs a context key for the pravṛttinimitta; not runnable yet (Art. 18 gap)"
   }
  ],
  "7.1.95": [
@@ -739,7 +795,7 @@
    "text": "tvad + su (tvam)",
    "expected_iast": "tvam",
    "expected": "tvam",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "yuzmad",
@@ -747,15 +803,17 @@
     1,
     1
    ],
-   "source": "Kāśikā 7.2.97/98 area; tvam (owner case): 7.2.97 tvam is the actual rule",
+   "source": "Kāśikā 7.2.98 प्रत्यय उत्तरपदे च परत … त्वदीयः … त्वत्पुत्रः",
    "owner": true,
-   "source_unverified_in_db_text": true
+   "source_unverified_in_db_text": true,
+   "kind": "produced",
+   "note": "triage 2026-11-14: a sup form is 7.2.97 / 7.2.94's; 7.2.98 is for a pratyaya or uttarapada"
   },
   {
    "text": "extra: tvAm",
    "expected_iast": null,
    "expected": "tvAm",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "yuzmad",
@@ -763,15 +821,17 @@
     2,
     1
    ],
-   "source": "Kāśikā 7.2.98 (tva/ma ādeśa before ekavacana): tvām",
+   "source": "Kāśikā 7.2.98 प्रत्यय उत्तरपदे च परत … त्वदीयः … त्वत्पुत्रः",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "source_unverified_in_db_text": true,
+   "kind": "produced",
+   "note": "triage 2026-11-14: a sup form is 7.2.97 / 7.2.94's; 7.2.98 is for a pratyaya or uttarapada"
   },
   {
    "text": "extra: mayA",
    "expected_iast": null,
    "expected": "mayA",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "asmad",
@@ -779,15 +839,17 @@
     3,
     1
    ],
-   "source": "Kāśikā 7.2.98: mayā",
+   "source": "Kāśikā 7.2.98 प्रत्यय उत्तरपदे च परत … त्वदीयः … त्वत्पुत्रः",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "source_unverified_in_db_text": true,
+   "kind": "produced",
+   "note": "triage 2026-11-14: a sup form is 7.2.97 / 7.2.94's; 7.2.98 is for a pratyaya or uttarapada"
   },
   {
    "text": "extra: tvayi",
    "expected_iast": null,
    "expected": "tvayi",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "yuzmad",
@@ -795,15 +857,17 @@
     7,
     1
    ],
-   "source": "Kāśikā 7.2.98: tvayi",
+   "source": "Kāśikā 7.2.98 प्रत्यय उत्तरपदे च परत … त्वदीयः … त्वत्पुत्रः",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "source_unverified_in_db_text": true,
+   "kind": "produced",
+   "note": "triage 2026-11-14: a sup form is 7.2.97 / 7.2.94's; 7.2.98 is for a pratyaya or uttarapada"
   },
   {
    "text": "extra: mayi",
    "expected_iast": null,
    "expected": "mayi",
-   "positive": true,
+   "positive": false,
    "spec": [
     "subanta",
     "asmad",
@@ -811,9 +875,11 @@
     7,
     1
    ],
-   "source": "Kāśikā 7.2.98: mayi",
+   "source": "Kāśikā 7.2.98 प्रत्यय उत्तरपदे च परत … त्वदीयः … त्वत्पुत्रः",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "source_unverified_in_db_text": true,
+   "kind": "produced",
+   "note": "triage 2026-11-14: a sup form is 7.2.97 / 7.2.94's; 7.2.98 is for a pratyaya or uttarapada"
   },
   {
    "text": "mad + su (aham)",
@@ -824,6 +890,24 @@
    "source": null,
    "owner": true,
    "note": "unmapped owner case"
+  },
+  {
+   "text": "yuṣmad + cha (tasyedam): tvadīyaḥ",
+   "expected_iast": "tvadīyaḥ",
+   "expected": "tvadIyaH",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 7.2.98 तवायं त्वदीयः",
+   "owner": false
+  },
+  {
+   "text": "asmad + putra (uttarapada): matputraḥ",
+   "expected_iast": "matputraḥ",
+   "expected": "matputraH",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 7.2.98 मत्पुत्रः",
+   "owner": false
   }
  ],
  "7.2.101": [
@@ -1141,7 +1225,7 @@
  "7.3.69": [
   {
    "text": "bhuj + ṇyat + su (bhakṣye, kutva blocked)",
-   "expected_iast": "bhojyam",
+   "expected_iast": "bhojyaḥ",
    "expected": "BojyaH",
    "positive": true,
    "spec": [
@@ -1153,24 +1237,87 @@
     1,
     [
      [
+      "artha",
+      "karman"
+     ],
+     [
       "krt",
       "kftya"
      ],
      [
-      "artha",
-      "karman"
+      "arthaViSeSa",
+      "Bakzya"
      ]
     ]
    ],
-   "source": "Kāśikā 7.3.69 भोज्य ओदनः (nipātana, bhakṣye)",
-   "owner": true,
-   "source_unverified_in_db_text": true
+   "source": "Kāśikā 7.3.69 भोज्य ओदनः",
+   "owner": true
   },
   {
-   "text": "bhuj + ṇyat + su (abhakṣye, kutva applies)",
-   "expected_iast": "bhogyam",
-   "expected": "BogyaH",
+   "text": "bhuj + ṇyat + ṭāp + su (bhakṣye)",
+   "expected_iast": null,
+   "expected": "BojyA",
    "positive": true,
+   "spec": [
+    "krdanta",
+    "07.0017",
+    "Ryat",
+    "strīliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "krt",
+      "kftya"
+     ],
+     [
+      "arthaViSeSa",
+      "Bakzya"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 7.3.69 भोज्या यवागूः",
+   "owner": false
+  },
+  {
+   "text": "bhuj + ṇyat + su, napuṃsaka (bhakṣye)",
+   "expected_iast": null,
+   "expected": "Bojyam",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "07.0017",
+    "Ryat",
+    "napuṃsaka",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "krt",
+      "kftya"
+     ],
+     [
+      "arthaViSeSa",
+      "Bakzya"
+     ]
+    ]
+   ],
+   "source": "sūtra 7.3.69 भोज्यं भक्ष्ये",
+   "owner": false
+  },
+  {
+   "text": "bhuj + ṇyat + su (abhakṣye, kutva applies, 7.3.69 does not)",
+   "expected_iast": "bhogyaḥ",
+   "expected": "BogyaH",
+   "positive": false,
    "spec": [
     "krdanta",
     "07.0017",
@@ -1180,27 +1327,49 @@
     1,
     [
      [
+      "artha",
+      "karman"
+     ],
+     [
+      "krt",
+      "kftya"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 7.3.69 भक्ष्य इति किम्? भोग्यः कम्बलः",
+   "owner": true,
+   "kind": "produced"
+  },
+  {
+   "text": "bhuj + ṇyat + su (bhakṣye, kutva must not apply)",
+   "expected_iast": "bhogyaḥ",
+   "expected": "BogyaH",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "07.0017",
+    "Ryat",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
       "krt",
       "kftya"
      ],
      [
-      "artha",
-      "karman"
+      "arthaViSeSa",
+      "Bakzya"
      ]
     ]
    ],
-   "source": "Kāśikā 7.3.69 भोग्यः कम्बलः (abhakṣye)",
-   "owner": true
-  },
-  {
-   "text": "bhuj + ṇyat + su (bhakṣye, kutva erroneously applied)",
-   "expected_iast": "bhogyam",
-   "expected": "BogyaH",
-   "positive": false,
-   "spec": null,
-   "source": null,
+   "source": "brain R-013; Kāśikā 7.3.69 भोज्यं निपात्यते भक्ष्येऽभिधेये",
    "owner": true,
-   "note": "owner negative is the same form as the abhakṣya positive: rejected as contradictory (disputed)"
+   "kind": "excluded"
   }
  ],
  "7.3.73": [

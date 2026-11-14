@@ -1642,6 +1642,33 @@
   {
    "text": "vāk + hariḥ (optional pūrvasavarṇa)",
    "expected_iast": "vāgghariḥ",
+   "expected": "vAgGariH",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "vAk",
+    "hariH"
+   ],
+   "source": "SK 8.4.62 वाग्घरिः",
+   "owner": true
+  },
+  {
+   "text": "vāk + hariḥ (without pūrvasavarṇa)",
+   "expected_iast": "vāghariḥ",
+   "expected": "vAghariH",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "vAk",
+    "hariH"
+   ],
+   "source": "SK 8.4.62 वाग्हरिः; brain R-014",
+   "owner": true,
+   "kind": "declined"
+  },
+  {
+   "text": "vāk + hasati (optional pūrvasavarṇa)",
+   "expected_iast": null,
    "expected": "vAgGasati",
    "positive": true,
    "spec": [
@@ -1650,20 +1677,10 @@
     "hasati"
    ],
    "source": "Kāśikā 8.4.62 वाग्घसति",
-   "owner": true
+   "owner": false
   },
   {
-   "text": "vāk + hariḥ (without pūrvasavarṇa)",
-   "expected_iast": "vāghariḥ",
-   "expected": "vAgGasati",
-   "positive": false,
-   "spec": null,
-   "source": null,
-   "owner": true,
-   "note": "owner 'vāghariḥ' (without) is not what Kāśikā says: वाग् हसति (kept unsplit); disputed"
-  },
-  {
-   "text": "extra: vAghasati",
+   "text": "vāk + hasati (without pūrvasavarṇa)",
    "expected_iast": null,
    "expected": "vAghasati",
    "positive": false,
@@ -1674,13 +1691,12 @@
    ],
    "source": "Kāśikā 8.4.62 वाग् हसति",
    "owner": false,
-   "kind": "declined",
-   "note": " vibhāṣā: the declined reading — form must arise with the sūtra NOT applied (lk_cases has no 'declined' kind yet: graded as a negative)"
+   "kind": "declined"
   },
   {
-   "text": "extra: agniciddhasati",
+   "text": "agnicit + hasati",
    "expected_iast": null,
-   "expected": "agniciddhasati",
+   "expected": "agnicidDasati",
    "positive": true,
    "spec": [
     "vakya",
@@ -1688,8 +1704,34 @@
     "hasati"
    ],
    "source": "Kāśikā 8.4.62 अग्निचिद्धसति",
+   "owner": false
+  },
+  {
+   "text": "triṣṭup + hasati",
+   "expected_iast": null,
+   "expected": "trizwubBasati",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "trizwup",
+    "hasati"
+   ],
+   "source": "Kāśikā 8.4.62 त्रिष्टुब्भसति",
+   "owner": false
+  },
+  {
+   "text": "prāṅ + hasati (no jhay before h)",
+   "expected_iast": null,
+   "expected": "prAN hasati",
+   "positive": false,
+   "spec": [
+    "vakya",
+    "prAN",
+    "hasati"
+   ],
+   "source": "Kāśikā 8.4.62 झय इति किम्? प्राङ् हसति",
    "owner": false,
-   "source_unverified_in_db_text": true
+   "kind": "produced"
   }
  ],
  "8.4.63": [

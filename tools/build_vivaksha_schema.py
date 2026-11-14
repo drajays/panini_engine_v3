@@ -54,6 +54,8 @@ VOCABULARY = {
         "avakraya": ["avakrayaH"], "paRya": ["paRyam"], "Silpa": ["Silpam"], "praharaRa": ["praharaRam"], "mati": ["matiH"], "SIla": ["SIlam"],
         "vftta": ["vfttam"], "hita": ["hitam"], "dIyate": ["dIyate"], "niyukta": ["niyuktaH"], "aDyAyin": ["aDyAyini"], "vyavaharati": ["vyavaharati"],
         "vasati": ["vasati"],
+        # 5.1.119 – 136: tasya bhāvaḥ (tva, tal, imanic, ṣyañ …) and, from 5.1.124, karmaṇi ca
+        "BAva": ["BAvaH"], "karman": ["karmaRi"],
         # 4.4.76 – 109 (yat)
         "vahati": ["vahati"], "viDyati": ["viDyati"], "labDA": ["labDA"], "gata": ["gataH"], "dfSya": ["dfSyamasmin"], "Abarhi": ["Abarhi"],
         "saMyukta": ["saMyukte"], "tArya": ["tArya"], "tulya": ["tulya"], "prApya": ["prApya"], "vaDya": ["vaDya"], "AnAmya": ["AnAmya"],
@@ -106,6 +108,8 @@ VOCABULARY = {
         "samAsAnta": ["samAsAntAH"]},
     "arthaViSeSa": {"aviSeza": ["aviSeze"], "garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "asaMjYAyAm", "saMjYA", "saMjYAyAM", "saMjYayoH"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
                       "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
+                      # 7.3.69 BojyaM Bakzye: the kṛtya bhojya is said of what is eaten (brain R-013)
+                      "Bakzya": ["Bakzye"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],
@@ -176,7 +180,7 @@ KEY_META: dict[str, tuple] = {
     "hetutAcCIlyAnulomya": (_I, ["krdanta"], [], "हेतुताच्छील्यानुलोम्यानि", "cause, habit, compliance"),
     "linga": (_C, ["krdanta", "subanta"], [], "लिङ्गम्", "the gender of the word"),
     "taddhitArtha": (_I, ["taddhita"], [], "तद्धितार्थः", "the sense a taddhita pratyaya is taught in"),
-    "arthaViSeSa": (_I, ["taddhita"], [], "अर्थविशेषः", "a particular sense inside a taddhita frame"),
+    "arthaViSeSa": (_I, ["taddhita", "krdanta"], [], "अर्थविशेषः", "a particular sense inside a taddhita or kṛt frame"),
     "abhiDeya": (_C, ["taddhita"], [], "अभिधेयम्", "what the word names (human, not-for-sale)"),
     "jAtiBeda": (_C, ["subanta"], [], "मनुष्यजातिः", "the stem names a human tribe"),
     "svaBeda": (_C, ["subanta"], [], "स्वशब्दस्य ज्ञातिधनार्थत्वम्", "sva as kinsman or wealth"),

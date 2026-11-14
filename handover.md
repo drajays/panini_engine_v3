@@ -1,5 +1,15 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-11-14 — cursor: LK case gate rulings implemented
+Record: `audit/LK_GATE_RULINGS_2026-11-14.md` (rulings Q1–Q4, triage, open gaps); RUN_LOG §C 2026-11-14 20:40.
+
+- **Gate.** 13 confident / 33 working / 122 FAIL / 4 NO_POSITIVE / 76 unrunnable. `make lk` prints the summary;
+  rerun with `python3 -m tools.lk_cases run <ids>`.
+- **Counting.** `make confident` now uses LK grades. `make coverage` runs the ledger with `LK=1`; run it after any LK rerun.
+- **Open for the coordinator.** The loṭ route in `pipelines/tinanta.py` skips 8.4 ṇatva (परियाणि), and the san route needs
+  the jiGfkzati rules.
+- **Open for the owner.** The 8.4.60 fixture writes anusvāra where the Kāśikā has an anunāsika.
+
 ## SESSION 2026-11-13 — cursor: अभ्यासशाला (/practice = sanskritabhyas.in's features, engine-keyed)
 **Short handover for agents: `docs/HANDOVER_ABHYASA.md`** (files, rules, engine gaps, git state, next).
 Owner made sanskritabhyas.in/hi the main reference for the अभ्यास tab. Plan, parity checklist, answer-key rule, engine

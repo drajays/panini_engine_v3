@@ -535,14 +535,16 @@
    "text": "kṣatriya + ṭāp (yopadhā blocks ṅīṣ)",
    "expected_iast": "kṣatriyā",
    "expected": "kzatriyA",
-   "positive": true,
+   "positive": false,
    "spec": [
     "chain",
     "kzatriya",
     "lex:jAti",
     "strI:|sup:1,1"
    ],
-   "source": "bhashya 4.1.63 (exact word)"
+   "source": "Kāśikā 4.1.63 अयोपधादिति किम्? क्षत्रिया",
+   "kind": "produced",
+   "note": "triage 2026-11-14: kṣatriya is yopadha — the pratyudāharaṇa; ṭāp arises, 4.1.63 does not apply"
   },
   {
    "text": "kukkuṭa (Kāśikā)",
@@ -867,14 +869,16 @@
    "text": "kuru + ṇya + su",
    "expected_iast": "kauravyaḥ",
    "expected": "kOravyaH",
-   "positive": true,
+   "positive": false,
    "spec": [
     "chain",
     "kuru",
     "",
     "taddhita:taddhitArtha=apatya;apatyaBeda=gotra|sup:1,1,pulliṅga"
    ],
-   "source": "kaumudi 4.1.172 (exact word)"
+   "source": "Kāśikā 4.1.172 जनपदशब्दात् क्षत्रियादित्येव",
+   "kind": "produced",
+   "note": "triage 2026-11-14: in the gotra sense kauravya is 4.1.151's; 4.1.172 needs the janapada-kṣatriya sense (no vivakṣā value yet: the positive is a gap)"
   }
  ],
  "4.1.175": [
@@ -1030,15 +1034,17 @@
    "text": "aśman + mayaṭ + su (mayaṭ ca)",
    "expected_iast": "aśmamayam",
    "expected": "aSmamayam",
-   "positive": true,
+   "positive": false,
    "spec": [
     "chain",
     "aSman",
     "",
     "taddhita:taddhitArtha=vikAra|sup:1,1,napuṃsaka"
    ],
-   "source": null,
-   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
+   "source": "Kāśikā 4.3.82 हेतुभ्यो मनुष्येभ्यश्च मयट् … तत आगत इत्येतस्मिन् विषये",
+   "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)",
+   "kind": "produced",
+   "note": "triage 2026-11-14: aśmamaya is a vikāra (4.3.143), not 'tata āgataḥ'"
   }
  ],
  "4.4.41": [

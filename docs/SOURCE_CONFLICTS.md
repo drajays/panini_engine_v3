@@ -224,3 +224,35 @@ carries do not make the tiṅ kṅit for 1.1.5 — they serve 3.4.99 ff.; 3.4.10
 
 **Ruling (Ajay):** yes, as 7.2.10: blocks the iṭ of 7.2.35 for an ekāc श्रिञ्/uk-final dhātu before a kit *pratyaya* (not an
 āgama: 6.4.88 vuk); in liṭ the niyama 7.2.13 decides (Kāśikā क्रादय एव लिट्यनिटः — बभूविव, लुलुविव).
+
+## SC-008 — 7.1.74 LK cases: dadhīca rejected, dadhi → dadhnā is a negative (7.1.75) — RESOLVED 2026-11-14 (brain R-012)
+
+**Ruling (Ajay):** 7.1.74 needs a bhāṣitapuṃska ik-final neuter (Kāśikā भाषितपुंस्कमिगन्तं नपुंसकं … पुंवद् भवति). Positives are
+the Kāśikā's ग्रामण्या, ग्रामण्ये, शुचये; the num-branch ग्रामणिना / शुचिने is the declined reading; दध्ना (7.1.75), वारिणा and SK
+पीलुने (प्रवृत्तिनिमित्तभेदात्) are not puṃvat. Fixture: `tests/fixtures/lk_cases/a7.json`.
+
+## SC-009 — 7.3.69 भोज्यं भक्ष्ये: the bhakṣya sense is a vivakṣā value — RESOLVED 2026-11-14 (brain R-013)
+
+**Ruling (Ajay):** Kāśikā भोज्यं निपात्यते भक्ष्येऽभिधेये … भक्ष्य इति किम्? भोग्यः कम्बलः. The owner negative (no भोग्य in the
+bhakṣya sense) and the abhakṣya भोग्यः agree once the spec states the sense: `arthaViSeSa=Bakzya` (the sūtra's own भक्ष्ये) is
+added to the vivakṣā schema. भोग्यः without it is a 'produced' negative, with it an 'excluded' negative.
+
+## SC-010 — 8.4.62 झयो होऽन्यतरस्याम्: both readings are correct — RESOLVED 2026-11-14 (brain R-014)
+
+**Ruling (Ajay):** no conflict: Kāśikā वाग्घसति, वाग् हसति; SK वाग्घरिः । वाग्हरिः. The unsubstituted form is the declined reading
+of the option (kind 'declined'), never a contradiction of the positive; the same holds for every anyatarasyām/vā sūtra in the gate.
+
+## SC-011 — 8.3.111 सात्पदाद्योः stamped by Vidyut in स्कुन्दते (a no-op step) — RESOLVED 2026-11-14 (brain R-015)
+
+**Observation (Vidyut trace, स्कुन्दते):** … 8.3.24 `स्कुंद् + अ + ते` → **8.3.111** `स्कुंद् + अ + ते` (tape unchanged) → 8.4.58 `स्कुन्द् + अ + ते` → 8.4.68.
+The form is the same as ours; only the trace differs: Vidyut records 8.3.111 where our engine records nothing.
+
+**Our analysis (Kāśikā on 8.3.111, DB `kashika`):** the sūtra bars the ṣatva of 8.3.59 for the s of *sāt* and for a pada-initial
+*ādeśa* s ("प्रत्ययसकारत्वात् प्राप्तिः, पदादेश्चादेशसकारत्वात्"). The s of स्कुन्द् is the root's own s: 8.3.59 has no *prāpti*, so
+there is nothing to bar. The engine's `sutra_8_3_111.py` fires only on an s tagged `origin:6.1.64` (स्नाति, सुवति), which is right.
+Vidyut's step changes no varṇa; we read it as a trace stamp (a guard run before 8.4.58), not a vidhi, which is not evidence that
+the sūtra acts here. No explanation of a ṣatva block in स्कुन्दते is adopted (an earlier pasted account of it was rejected: 8.3.65's list
+has no स्कुन्द्; the n/anusvāra steps are 7.1.58, 8.3.24, 8.4.58).
+
+**Status quo kept:** the engine does not fire 8.3.111 in स्कुन्दते; verdict `ours` for the set difference, form identical.
+**Ruling (Ajay):** no. Do not match Vidyut's trace for no-op niṣedhas; the engine stays as it is. "Minimum-rule floor" means a sūtra Vidyut names participates when its condition genuinely holds, not trace parity. When Vidyut is the only source for a sūtra and its condition does not hold, the verdict is **T10:no-op** (a Vidyut artefact, not an engine failure).

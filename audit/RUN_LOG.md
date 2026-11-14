@@ -245,6 +245,28 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-11-14 20:40  [cursor]  LK case gate: rulings Q1–Q4 implemented; 8.4 ṇatva/sandhi rules made real
+
+Rulings and full record: **audit/LK_GATE_RULINGS_2026-11-14.md**.
+
+- **Rulings.** Brain rulings R-012/013/014 cover 7.1.74, 7.3.69 and 8.4.62, mirrored as SC-008/009/010. The trace is required
+  (`not_fired` is a FAIL sub-kind). The LK grade replaces the mention proxy in `tools/sutra_class.py` and an LK FAIL demotes;
+  the ledger stays the only source of invoked/moved.
+- **Schema.** `vivaksha_schema`: taddhitArtha BAva/karman and arthaViSeSa Bakzya, built through the builder; 5.1.130 samagra
+  karmaci → karmaRi.
+- **Harness.** `tools/lk_cases.py`: sub-kinds, `summary`; `_mutate` no longer reads the lru cache; a `produced` negative
+  must be produced. `tests/regression/test_lk_cases.py`: verdict/fixture consistency always, grade ratchet with LK=1;
+  `make coverage` runs with LK=1, plus `make lk`.
+- **Engine.**
+  - 8.4.60, 8.4.62 and 8.4.63 are real (8.4.62 and 8.4.63 optional) and are in the tripādī spine.
+  - 8.4.55 now covers a c-varga stop made by ścutva.
+  - 8.4.14, 8.4.15 and 8.4.16 are real; 8.4.2 stops at the upasarga | dhātu seam (varṇa tag `upasarga_v`, `engine/natva.py`).
+- **Fixtures.** Changed per R-012/013/014. The not_fired triage recast 4.1.63, 4.1.172, 4.3.82, 2.4.62 and 7.2.98 cases as
+  Kāśikā-cited `produced` negatives.
+- **Gate.** 13 confident / 33 working / 122 FAIL / 4 NO_POSITIVE / 76 unrunnable (was 11/30/131/0/76); 0 engine errors.
+- **Next, coordinator:** the loṭ route in `pipelines/tinanta.py` skips 8.4 ṇatva (परियाणि); the san route for jiGfkzati.
+- **Next, owner:** the 8.4.60 fixture writes anusvāra where the Kāśikā has an anunāsika (भवाँल्लुनाति).
+
 ### 2026-11-14 10:10  [cursor]  It-saṃjñā made visible everywhere; engine plan for it-prakaraṇa on every āgama / ādeśa
 
 Owner: 1.3.2–1.3.9 must name and delete it-letters every time a pratyaya / āgama / ādeśa enters, with a register later
