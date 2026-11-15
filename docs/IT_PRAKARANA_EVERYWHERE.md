@@ -129,3 +129,9 @@ Owner screenshot: 7.1.58 कुथ् → कुन्त्थ् as bare न�
 
 Owner: 6.4.71 कुन्थ्अव → अकुन्थ्अव as bare अ. Now ``utter_at`` / ``utter_at(..., dirgha=True)`` for 6.4.71/72;
 1.3.3 ट् → टित्, 1.3.9 deletes; leftover अ/आ keeps ``aT_agama_v``.
+
+
+## Shipped 2026-11-15e (cursor) — lakāra 1.3.2
+
+laṅ/loṭ recipes called only 1.3.3+1.3.9 after attach, so अँ of लँङ् never became इत् and 3.4.78
+saw ``la~``. Now 1.3.2 runs too: लँङ् — अँ → अदित्, ङ् → ङित्; only ल् remains before तिङ्.

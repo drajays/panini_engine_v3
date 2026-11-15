@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15e — lakāra 1.3.2 on laṅ/loṭ (claim `it-lakara-132`, COORDINATOR)
+
+**What:** `_derive_laG` / loṭ / karmani twins skipped 1.3.2; ledger showed only ङ्→ङित्. Now 1.3.2 names अँ→अदित्; only ल् before 3.4.78. Tests 10 passed.
+
+
+
 ### [cursor] 2026-11-15d — अट्/आट् through 1.3.x (claim `it-agama-at`)
 
 **What:** 6.4.71/72 utter aw/Aw; visible 1.3.3/1.3.9. Tests: test_it_prakarana_agama + aBavatAm = 9 passed.

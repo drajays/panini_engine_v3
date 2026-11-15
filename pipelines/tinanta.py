@@ -1338,7 +1338,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: 3.2.111 laṅ attachment ───────────────────────────────────────
     # 3.2.111 act attaches laG placeholder AND tags dhātu with aT_agama_context.
     state = apply_rule("3.2.111", state)
-    # Trace: 1.3.3 (halantyam G → it, pre-stripped) + 1.3.9 (G lopa, vacuous)
+    # लँङ्: 1.3.2 names अँ (anunāsika), 1.3.3 names ङ्; 1.3.9 leaves only ल् before 3.4.78
+    state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
@@ -2240,6 +2241,8 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         meta={"upadesha_slp1": "loT"},
     )
     state.terms.append(loT_term)
+    # लोँट्: 1.3.2 names अँ, 1.3.3 names ट्; 1.3.9 leaves ल्
+    state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
@@ -3276,6 +3279,7 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
 
     # 3.2.111 laṅ attachment (tags dhātu with aT_agama_context)
     state = apply_rule("3.2.111", state)
+    state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
@@ -4000,6 +4004,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
         meta={"upadesha_slp1": "loT"},
     )
     state.terms.append(loT_term)
+    state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 

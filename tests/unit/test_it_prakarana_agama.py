@@ -88,3 +88,17 @@ def test_at_agama_on_kut_lang():
     row9 = nxt[ids.index("1.3.9")]
     assert "अट् (आगमः)" in row9["why_now_dev"] and "टित्" in row9["why_now_dev"]
     assert any(r.get("agama") == "aw" and r.get("name") == "wit" for r in st.meta.get("it_lopa_log", ()))
+
+
+def test_lakara_lang_gets_1_3_2_and_leaves_only_l():
+    from pipelines.tinanta import derive
+    st = derive("skudi~", "laG", "kartari", 3, 1, pada="atmanepada")
+    row9 = next(
+        s for s in st.trace
+        if s.get("sutra_id") == "1.3.9" and s.get("status") == "APPLIED"
+        and "लँङ्" in (s.get("why_now_dev") or "")
+    )
+    assert "अँ → अदित्" in row9["why_now_dev"] and "ङित्" in row9["why_now_dev"]
+    assert any(r.get("upadesha") == "laG" and r.get("sutra") == "1.3.2" for r in st.meta.get("it_lopa_log", ()))
+    row78 = next(s for s in st.trace if s.get("sutra_id") == "3.4.78" and s.get("status") == "APPLIED")
+    assert row78["form_before"].endswith("l") and "~" not in row78["form_before"]
