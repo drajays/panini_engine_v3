@@ -330,7 +330,7 @@ const Prakriya = (() => {
       <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}${askBtn(s.sutra_id, i)}${isStruct(s) ? "" : `<button type="button" class="pk-hide no-print" data-sid="${esc(s.sutra_id)}" title="Hide this sūtra in every prakriyā (still included in Copy to LLM)">🙈</button>`} ${typeChip(s)}
         <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span>
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
-        <span class="pk-form pk-fx dev" data-i="${i}" title="क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
+        <span class="pk-form pk-fx dev${ctx.padaAt >= 0 && i >= ctx.padaAt ? " pk-padaed" : ""}" data-i="${i}" title="${ctx.padaAt >= 0 && i >= ctx.padaAt ? "पदम् (सुप्तिङन्तं पदम् १.४.१४) — whole word, stem + ending · " : ""}क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
         ${tinGridHtml(s, ctx.viv)}${supGridHtml(s)}
         <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${deep ? "" : sutraCard(s, false)}${sch}</div></li>`;
@@ -393,6 +393,7 @@ const Prakriya = (() => {
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
     const sel = (id, opts, v) => `<select id="${id}">${opts.map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${l}</option>`).join("")}</select>`;
     const ctx = {pb: [], pa: [], open: new Set(), t, viv: d.vivaksa || d.vivakṣā || null};
+    ctx.padaAt = t.findIndex(s => applied(s) && ["1.4.14", "1.4.15", "1.4.16", "1.4.17"].includes(s.sutra_id));   // from here on the whole form is a pada
     let last = null;                                              // parts of the tape before each step, after each applied step
     t.forEach((s, i) => { const p = parseParts(s.parts);
       ctx.pb[i] = last && joined(last) === String(s.form_before || "").replace(/\s/g, "") ? last : null;
