@@ -488,6 +488,136 @@
    "added": true
   }
  ],
+ "4.1.54": [
+  {
+   "text": "candramuKa + strī (vā: ṅīṣ) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "candramuKI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "candra+muKa",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.54=1|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.54 चन्द्रमुखी, चन्द्रमुखा"
+  },
+  {
+   "text": "candramuKa + strī (vā declined: ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "candramuKA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "candra+muKa",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.54=0|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.54 चन्द्रमुखी, चन्द्रमुखा",
+   "kind": "declined"
+  },
+  {
+   "text": "bahuyava + strī (ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "bahuyavA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "bahuyava",
+    "",
+    "strI:|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.54 स्वाङ्गादिति किम्? बहुयवा",
+   "kind": "produced",
+   "note": "pratyudāharaṇa: yava is not a svāṅga, so ṭāp not ṅīṣ"
+  },
+  {
+   "text": "sugulPa + strī (ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "sugulPA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "sugulPa",
+    "lex:svANga,upasarjana",
+    "strI:|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.54 असंयोगोपधादिति किम्? सुगुल्फा",
+   "kind": "produced",
+   "note": "pratyudāharaṇa: saṃyogopadha (lP), so ṭāp"
+  },
+  {
+   "text": "supArSva + strī (ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "supArSvA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "supArSva",
+    "lex:svANga,upasarjana",
+    "strI:|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.54 सुपार्श्वा",
+   "kind": "produced",
+   "note": "pratyudāharaṇa: pārśva is saṃyogopadha (rś), so ṭāp"
+  }
+ ],
+ "4.1.55": [
+  {
+   "text": "tuNganAsika + strī (vā: ṅīṣ) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "tuNganAsikI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "tuNga+nAsika",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.55=1|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.55 तुङ्गनासिकी, तुङ्गनासिका"
+  },
+  {
+   "text": "tuNganAsika + strī (vā declined: ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "tuNganAsikA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "tuNga+nAsika",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.55=0|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.55 तुङ्गनासिकी, तुङ्गनासिका",
+   "kind": "declined"
+  },
+  {
+   "text": "tilodara + strī (vā: ṅīṣ) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "tilodarI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "tila+udara",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.55=1|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.55 तिलोदरी, तिलोदरा"
+  },
+  {
+   "text": "tilodara + strī (vā declined: ṭāp) (Kāśikā)",
+   "expected_iast": null,
+   "expected": "tilodarA",
+   "positive": false,
+   "spec": [
+    "chain",
+    "tila+udara",
+    "lex:svANga,upasarjana",
+    "strI:@4.1.55=0|sup:1,1"
+   ],
+   "source": "Kāśikā 4.1.55 तिलोदरी, तिलोदरा",
+   "kind": "declined"
+  }
+ ],
  "4.1.58": [
   {
    "text": "śūrpanakha + ṭāp (saṃjñāyām ṅīṣ blocked)",
@@ -774,6 +904,35 @@
    "source": "bhashya 4.1.87 (exact word)"
   }
  ],
+ "4.1.88": [
+  {
+   "text": "paYcakapAla + saMskfta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "paYcakapAlaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paYcakapAla",
+    "lex:dvigu",
+    "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.1.88 पञ्चसु कपालेषु संस्कृतः पञ्चकपालः"
+  },
+  {
+   "text": "dvidevadatta + apatya (Kāśikā anapatye: the luk does not apply)",
+   "expected_iast": null,
+   "expected": "dvEdevadattiH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "dvidevadatta",
+    "lex:dvigu",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.1.88 अनपत्य इति किम्? द्वैदेवदत्तिः। त्रैदेवदत्तिः",
+   "kind": "produced"
+  }
+ ],
  "4.1.93": [
   {
    "text": "garga + yañ + su (eko gotre)",
@@ -984,6 +1143,21 @@
    "source": "kaumudi 4.2.61 (exact word)"
   }
  ],
+ "4.2.67": [
+  {
+   "text": "udumbara + asti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "OdumbaraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "udumbara",
+    "",
+    "taddhita:taddhitArtha=asti;arthaViSeSa=deSa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.2.67 उदुम्बरा अस्मिन् देशे सन्ति औदुम्बरः"
+  }
+ ],
  "4.2.68": [
   {
    "text": "kuśāmba + aṇ + ṅīp (tena nirvṛttam)",
@@ -997,6 +1171,36 @@
     "taddhita:taddhitArtha=nirvfta|strI:|sup:1,1"
    ],
    "source": "kaumudi 4.2.68 (exact word)"
+  }
+ ],
+ "4.2.70": [
+  {
+   "text": "vidiSA + adUraBava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vEdiSam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vidiSA",
+    "",
+    "taddhita:taddhitArtha=adUraBava|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.2.70 विदिशाया अदूरभवं नगरं वैदिशम्"
+  }
+ ],
+ "4.2.71": [
+  {
+   "text": "araqu + asti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "Araqavam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "araqu",
+    "",
+    "taddhita:taddhitArtha=asti|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.2.71 अरडु — आरडवम्"
   }
  ],
  "4.2.81": [
@@ -1014,6 +1218,21 @@
    "source": "kashika 4.2.81 (exact word)"
   }
  ],
+ "4.2.82": [
+  {
+   "text": "varaRa + adUraBava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "varaRAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "varaRa",
+    "",
+    "taddhita:taddhitArtha=adUraBava|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 4.2.82 वरणानामदूरभवं नगरं वरणाः"
+  }
+ ],
  "4.2.107": [
   {
    "text": "pūrvaśālā + ña + su (dikpūrvapadād asaṃjñāyāṃ ñaḥ)",
@@ -1027,6 +1246,51 @@
     "taddhita:taddhitArtha=Bava|sup:1,1,pulliṅga"
    ],
    "source": "kaumudi 4.2.107 (exact word)"
+  }
+ ],
+ "4.3.39": [
+  {
+   "text": "sruGna + prAyaBava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=prAyaBava|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.39 स्रुघ्ने प्रायेण बाहुल्येन भवति स्रौघ्नः"
+  }
+ ],
+ "4.3.53": [
+  {
+   "text": "sruGna + Bava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=Bava|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.53 स्रुघ्ने भवः स्रौघ्नः"
+  }
+ ],
+ "4.3.74": [
+  {
+   "text": "sruGna + Agata (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=Agata|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.74 स्रुघ्नादागतः स्रौघ्नः"
   }
  ],
  "4.3.82": [
@@ -1047,6 +1311,439 @@
    "note": "triage 2026-11-14: aśmamaya is a vikāra (4.3.143), not 'tata āgataḥ'"
   }
  ],
+ "4.3.83": [
+  {
+   "text": "himavat + praBavati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "hEmavatI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "himavat",
+    "",
+    "taddhita:taddhitArtha=praBavati|strI:|sup:1,1"
+   ],
+   "source": "Kāśikā 4.3.83 हिमवतः प्रभवति हैमवती गङ्गा"
+  }
+ ],
+ "4.3.85": [
+  {
+   "text": "sruGna + gacCatiPaTiDUta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=gacCatiPaTiDUta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.85 स्रुघ्नं गच्छति स्रौघ्नः पन्था दूतो वा"
+  }
+ ],
+ "4.3.86": [
+  {
+   "text": "sruGna + abhinizkrAmati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=abhinizkrAmati|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.3.86 स्रुघ्नमभिनिष्क्रामति कान्यकुब्जद्वारं स्रौघ्नम्"
+  }
+ ],
+ "4.3.87": [
+  {
+   "text": "suBadrA + granTa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "sOBadraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "suBadrA",
+    "",
+    "taddhita:taddhitArtha=granTa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.87 सुभद्रामधिकृत्य कृतो ग्रन्थः सौभद्रः"
+  }
+ ],
+ "4.3.89": [
+  {
+   "text": "sruGna + nivAsa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "srOGnaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sruGna",
+    "lex:hAdeSa",
+    "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.89 स्रुघ्नो निवासोऽस्य स्रौघ्नः"
+  }
+ ],
+ "4.3.120": [
+  {
+   "text": "upagu + idam (Kāśikā)",
+   "expected_iast": null,
+   "expected": "Opagavam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "upagu",
+    "",
+    "taddhita:taddhitArtha=idam|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.3.120 उपगोरिदमौपगवम्"
+  }
+ ],
+ "4.3.134": [
+  {
+   "text": "aSman + vikAra (Kāśikā)",
+   "expected_iast": null,
+   "expected": "ASmanaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aSman",
+    "",
+    "taddhita:taddhitArtha=vikAra|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.134 अश्मनो विकार आश्मनः"
+  }
+ ],
+ "4.3.135": [
+  {
+   "text": "kapota + avayava (Kāśikā)",
+   "expected_iast": null,
+   "expected": "kApotaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kapota",
+    "",
+    "taddhita:taddhitArtha=avayava|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.3.135 कपोतस्य विकारोऽवयवो वा कापोतः"
+  }
+ ],
+ "4.4.2": [
+  {
+   "text": "akza + dIvyati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "AkzikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "akza",
+    "",
+    "taddhita:taddhitArtha=dIvyati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.2 अक्षैर्दीव्यति आक्षिकः"
+  },
+  {
+   "text": "SalAkA + dIvyati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SAlAkikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SalAkA",
+    "",
+    "taddhita:taddhitArtha=dIvyati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.2 शालाकिकः"
+  }
+ ],
+ "4.4.3": [
+  {
+   "text": "daDi + tenasaMskfta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dADikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daDi",
+    "",
+    "taddhita:taddhitArtha=tenasaMskfta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.3 दध्ना संस्कृतं दाधिकम्"
+  }
+ ],
+ "4.4.5": [
+  {
+   "text": "kARqaplava + tarati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "kARqaplavikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kARqaplava",
+    "",
+    "taddhita:taddhitArtha=tarati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.5 काण्डप्लवेन तरति काण्डप्लविकः"
+  }
+ ],
+ "4.4.8": [
+  {
+   "text": "daDi + carati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dADikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daDi",
+    "",
+    "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.8 दध्ना चरति दाधिकः"
+  }
+ ],
+ "4.4.12": [
+  {
+   "text": "vetana + jIvati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vEtanikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vetana",
+    "",
+    "taddhita:taddhitArtha=jIvati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.12 वेतनेन जीवति वैतनिकः"
+  }
+ ],
+ "4.4.15": [
+  {
+   "text": "utsaNga + harati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "OtsaNgikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "utsaNga",
+    "",
+    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.15 उत्सङ्गेन हरति औत्सङ्गिकः"
+  }
+ ],
+ "4.4.19": [
+  {
+   "text": "akzadyUta + tenanirvfta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "AkzadyUtikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "akzadyUta",
+    "",
+    "taddhita:taddhitArtha=tenanirvfta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.19 अक्षद्यूतेन निर्वृत्तम् आक्षद्यूतिकं वैरम्"
+  }
+ ],
+ "4.4.22": [
+  {
+   "text": "daDi + saMsfzwa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dADikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daDi",
+    "",
+    "taddhita:taddhitArtha=saMsfzwa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.22 दध्ना संसृष्टं दाधिकम्"
+  }
+ ],
+ "4.4.26": [
+  {
+   "text": "daDi + upasikta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dADikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daDi",
+    "",
+    "taddhita:taddhitArtha=upasikta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.26 दध्ना उपसिक्तं दाधिकम्"
+  }
+ ],
+ "4.4.27": [
+  {
+   "text": "ojas + vartate (Kāśikā)",
+   "expected_iast": null,
+   "expected": "OjasikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "ojas",
+    "",
+    "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.27 ओजसा वर्तत औजसिकः शूरः"
+  }
+ ],
+ "4.4.28": [
+  {
+   "text": "pratIpa + vartate (Kāśikā)",
+   "expected_iast": null,
+   "expected": "prAtIpikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pratIpa",
+    "",
+    "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.28 प्रतीपं वर्तते प्रातीपिकः"
+  }
+ ],
+ "4.4.29": [
+  {
+   "text": "parimuKa + vartate (Kāśikā)",
+   "expected_iast": null,
+   "expected": "pArimuKikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "parimuKa",
+    "",
+    "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.29 परिमुखं वर्तते पारिमुखिकः"
+  }
+ ],
+ "4.4.30": [
+  {
+   "text": "dviguRa + prayacCati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dvEguRikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "dviguRa",
+    "",
+    "taddhita:taddhitArtha=prayacCati;arthaViSeSa=garhya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.30 द्विगुणं प्रयच्छति द्वैगुणिकः"
+  }
+ ],
+ "4.4.32": [
+  {
+   "text": "badara + uYCati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "bAdarikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "badara",
+    "",
+    "taddhita:taddhitArtha=uYCati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.32 बदराण्युञ्छति बादरिकः"
+  }
+ ],
+ "4.4.33": [
+  {
+   "text": "samAja + rakzati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "sAmAjikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "samAja",
+    "",
+    "taddhita:taddhitArtha=rakzati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.33 समाजं रक्षति सामाजिकः"
+  }
+ ],
+ "4.4.34": [
+  {
+   "text": "Sabda + karoti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SAbdikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sabda",
+    "",
+    "taddhita:taddhitArtha=karoti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.34 शब्दं करोति शाब्दिको वैयाकरणः"
+  }
+ ],
+ "4.4.35": [
+  {
+   "text": "pakzin + hanti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "pAkzikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pakzin",
+    "",
+    "taddhita:taddhitArtha=hanti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.35 पक्षिणो हन्ति पाक्षिकः"
+  }
+ ],
+ "4.4.36": [
+  {
+   "text": "paripanTa + tizWati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "pAripanTikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paripanTa",
+    "",
+    "taddhita:taddhitArtha=tizWati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.36 परिपन्थं तिष्ठति पारिपन्थिकश्चौरः"
+  }
+ ],
+ "4.4.37": [
+  {
+   "text": "daRqamATa + DAvati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "dARqamATikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "daRqamATa",
+    "",
+    "taddhita:taddhitArtha=DAvati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.37 दण्डमाथं धावति दाण्डमाथिकः"
+  }
+ ],
+ "4.4.39": [
+  {
+   "text": "pUrvapada + gfhRAti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "pOrvapadikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pUrvapada",
+    "",
+    "taddhita:taddhitArtha=gfhRAti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.39 पूर्वपदं गृह्णाति पौर्वपदिकः"
+  }
+ ],
  "4.4.41": [
   {
    "text": "dharma + ṭhak + su (dharmaṃ carati)",
@@ -1060,6 +1757,439 @@
     "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
    ],
    "source": "kaumudi 4.4.41 (exact word)"
+  }
+ ],
+ "4.4.43": [
+  {
+   "text": "samavAya + samavEti (Kāśikā)",
+   "expected_iast": null,
+   "expected": "sAmavAyikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "samavAya",
+    "",
+    "taddhita:taddhitArtha=samavEti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.43 समवायान् समवैति सामवायिकः"
+  }
+ ],
+ "4.4.46": [
+  {
+   "text": "lalAwa + paSyati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "lAlAwikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "lalAwa",
+    "",
+    "taddhita:taddhitArtha=paSyati;arthaViSeSa=saMjYA|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.46 ललाटं पश्यति लालाटिकः सेवकः"
+  }
+ ],
+ "4.4.47": [
+  {
+   "text": "SulkaSAlA + Darmya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SOlkaSAlikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SulkaSAlA",
+    "",
+    "taddhita:taddhitArtha=Darmya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.47 शुल्कशालाया धर्म्यं शौल्कशालिकम्"
+  }
+ ],
+ "4.4.50": [
+  {
+   "text": "SulkaSAlA + avakraya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SOlkaSAlikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SulkaSAlA",
+    "",
+    "taddhita:taddhitArtha=avakraya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.50 शुल्कशालाया अवक्रयः शौल्कशालिकः"
+  }
+ ],
+ "4.4.51": [
+  {
+   "text": "apUpa + paRya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "ApUpikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "apUpa",
+    "",
+    "taddhita:taddhitArtha=paRya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.51 अपूपाः पण्यमस्य आपूपिकः"
+  }
+ ],
+ "4.4.55": [
+  {
+   "text": "mfdaNga + Silpa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "mArdaNgikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mfdaNga",
+    "",
+    "taddhita:taddhitArtha=Silpa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.55 मृदङ्गवादनं शिल्पमस्य मार्दङ्गिकः"
+  }
+ ],
+ "4.4.57": [
+  {
+   "text": "asi + praharaRa (Kāśikā)",
+   "expected_iast": null,
+   "expected": "AsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "asi",
+    "",
+    "taddhita:taddhitArtha=praharaRa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.57 असिः प्रहरणमस्य आसिकः"
+  }
+ ],
+ "4.4.60": [
+  {
+   "text": "asti + mati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "AstikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "asti",
+    "",
+    "taddhita:taddhitArtha=mati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.60 अस्ति मतिरस्य आस्तिकः"
+  }
+ ],
+ "4.4.61": [
+  {
+   "text": "apUpa + SIla (Kāśikā)",
+   "expected_iast": null,
+   "expected": "ApUpikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "apUpa",
+    "",
+    "taddhita:taddhitArtha=SIla|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.61 अपूपभक्षणं शीलमस्य आपूपिकः"
+  }
+ ],
+ "4.4.63": [
+  {
+   "text": "ekAnya + vftta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "EkAnyikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "ekAnya",
+    "",
+    "taddhita:taddhitArtha=vftta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.63 एकमन्यदध्ययने कर्म वृत्तमस्य ऐकान्यिकः"
+  }
+ ],
+ "4.4.65": [
+  {
+   "text": "apUpa + hita (Kāśikā)",
+   "expected_iast": null,
+   "expected": "ApUpikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "apUpa",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.65 अपूपभक्षणं हितमस्मै आपूपिकः"
+  }
+ ],
+ "4.4.66": [
+  {
+   "text": "agraBojana + dIyate (Kāśikā)",
+   "expected_iast": null,
+   "expected": "AgraBojanikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "agraBojana",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.66 अग्रे भोजनमस्मै नियुक्तं दीयत आग्रभोजनिकः"
+  }
+ ],
+ "4.4.69": [
+  {
+   "text": "SulkaSAlA + niyukta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SOlkaSAlikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SulkaSAlA",
+    "",
+    "taddhita:taddhitArtha=niyukta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.69 शुल्कशालायां नियुक्तः शौल्कशालिकः"
+  }
+ ],
+ "4.4.71": [
+  {
+   "text": "SmaSAna + aDyAyin (Kāśikā)",
+   "expected_iast": null,
+   "expected": "SmASAnikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SmaSAna",
+    "",
+    "taddhita:taddhitArtha=aDyAyin|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.71 श्मशानेऽधीते श्माशानिकः"
+  }
+ ],
+ "4.4.72": [
+  {
+   "text": "vaMSakaWina + vyavaharati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vAMSakaWinikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vaMSakaWina",
+    "",
+    "taddhita:taddhitArtha=vyavaharati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.72 वंशकठिने व्यवहरति वांशकठिनिकः"
+  }
+ ],
+ "4.4.73": [
+  {
+   "text": "nikawa + vasati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "nEkawikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "nikawa",
+    "",
+    "taddhita:taddhitArtha=vasati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.73 निकटे वसति नैकटिको भिक्षुः"
+  }
+ ],
+ "4.4.76": [
+  {
+   "text": "raTa + vahati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "raTyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "raTa",
+    "",
+    "taddhita:taddhitArtha=vahati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.76 रथं वहति रथ्यः"
+  }
+ ],
+ "4.4.83": [
+  {
+   "text": "pAda + viDyati (Kāśikā)",
+   "expected_iast": null,
+   "expected": "padyAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pAda",
+    "",
+    "taddhita:taddhitArtha=viDyati|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.83 पादौ विध्यन्ति पद्याः शर्कराः"
+  }
+ ],
+ "4.4.84": [
+  {
+   "text": "Dana + labDA (Kāśikā)",
+   "expected_iast": null,
+   "expected": "DanyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Dana",
+    "",
+    "taddhita:taddhitArtha=labDA|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.84 धन्यः। गण्यः"
+  }
+ ],
+ "4.4.86": [
+  {
+   "text": "vaSa + gata (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vaSyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vaSa",
+    "",
+    "taddhita:taddhitArtha=gata|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.86 वशं गतो वश्यः"
+  }
+ ],
+ "4.4.87": [
+  {
+   "text": "pada + dfSya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "padyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pada",
+    "",
+    "taddhita:taddhitArtha=dfSya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.87 पदं दृश्यमस्मिन् पद्यः कर्दमः"
+  }
+ ],
+ "4.4.88": [
+  {
+   "text": "mUla + Abarhi (Kāśikā)",
+   "expected_iast": null,
+   "expected": "mUlyAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mUla",
+    "",
+    "taddhita:taddhitArtha=Abarhi|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.88 मूलमेषामाबर्हि मूल्या माषाः"
+  }
+ ],
+ "4.4.91": [
+  {
+   "text": "nO + tArya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "nAvyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "nO",
+    "",
+    "taddhita:taddhitArtha=tArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.91 नावा तार्यं नाव्यमुदकम्"
+  },
+  {
+   "text": "vayas + tulya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "vayasyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vayas",
+    "",
+    "taddhita:taddhitArtha=tulya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.91 वयसा तुल्यो वयस्यः सखा"
+  }
+ ],
+ "4.4.92": [
+  {
+   "text": "Darma + anapeta (Kāśikā)",
+   "expected_iast": null,
+   "expected": "Darmyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Darma",
+    "",
+    "taddhita:taddhitArtha=anapeta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 4.4.92 धर्मादनपेतं धर्म्यम्"
+  }
+ ],
+ "4.4.93": [
+  {
+   "text": "Candas + nirmita (Kāśikā)",
+   "expected_iast": null,
+   "expected": "ChandasyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Candas",
+    "",
+    "taddhita:taddhitArtha=nirmita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.93 छन्दसा निर्मितश्छन्दस्यः"
+  }
+ ],
+ "4.4.95": [
+  {
+   "text": "hfdaya + priya (Kāśikā)",
+   "expected_iast": null,
+   "expected": "hfdyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "hfdaya",
+    "",
+    "taddhita:taddhitArtha=priya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.95 हृदयस्य प्रियो हृद्यो देशः"
+  }
+ ],
+ "4.4.107": [
+  {
+   "text": "samAnatIrTa + vAsI (Kāśikā)",
+   "expected_iast": null,
+   "expected": "satIrTyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "samAnatIrTa",
+    "",
+    "taddhita:taddhitArtha=vAsI|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.107 समाने तीर्थे वासीति सतीर्थ्यः"
+  }
+ ],
+ "4.4.108": [
+  {
+   "text": "samAnodara + Sayita (Kāśikā)",
+   "expected_iast": null,
+   "expected": "samAnodaryaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "samAnodara",
+    "",
+    "taddhita:taddhitArtha=Sayita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 4.4.108 समानोदरे समानोदर्यो भ्राता"
   }
  ]
 }

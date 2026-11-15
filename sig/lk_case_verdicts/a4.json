@@ -188,8 +188,8 @@
      "lex:guRavacana",
      "strI:@4.1.44=1|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -205,8 +205,8 @@
      "lex:guRavacana",
      "strI:@4.1.44=1|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -217,8 +217,8 @@
      "lex:guRavacana",
      "strI:@4.1.44=1|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -240,8 +240,8 @@
      "",
      "strI:@4.1.45=1|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -879,6 +879,1260 @@
      "",
      "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
     ]
+   }
+  ]
+ },
+ "4.1.54": {
+  "grade": "working",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "candra+muKa",
+     "lex:svANga,upasarjana",
+     "strI:@4.1.54=1|sup:1,1"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.55": {
+  "grade": "working",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "tuNga+nAsika",
+     "lex:svANga,upasarjana",
+     "strI:@4.1.55=1|sup:1,1"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "tila+udara",
+     "lex:svANga,upasarjana",
+     "strI:@4.1.55=1|sup:1,1"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "declined",
+    "why": ""
+   }
+  ]
+ },
+ "4.1.88": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['pAYYcakapAlaH', 'pAYcakapAlaH'] ≠ expected paYcakapAlaH",
+    "spec": [
+     "chain",
+     "paYcakapAla",
+     "lex:dvigu",
+     "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "4.2.67": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "udumbara",
+     "",
+     "taddhita:taddhitArtha=asti;arthaViSeSa=deSa|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.2.70": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vidiSA",
+     "",
+     "taddhita:taddhitArtha=adUraBava|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.2.71": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form Araqavam is right but 4.2.71 did not fire (trace status absent): another path made it",
+    "spec": [
+     "chain",
+     "araqu",
+     "",
+     "taddhita:taddhitArtha=asti|sup:1,1,napuṃsaka"
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "4.2.82": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['vAraRAH'] ≠ expected varaRAH",
+    "spec": [
+     "chain",
+     "varaRa",
+     "",
+     "taddhita:taddhitArtha=adUraBava|sup:1,3,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.3.39": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=prAyaBava|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.53": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=Bava|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.74": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=Agata|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.83": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "himavat",
+     "",
+     "taddhita:taddhitArtha=praBavati|strI:|sup:1,1"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.85": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=gacCatiPaTiDUta|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.86": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=abhinizkrAmati|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.87": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "suBadrA",
+     "",
+     "taddhita:taddhitArtha=granTa|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.89": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "sruGna",
+     "lex:hAdeSa",
+     "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
+    ],
+    "mutation": "redundant",
+    "replaced_by": [
+     "4.2.69",
+     "4.2.92",
+     "4.3.39",
+     "4.3.74",
+     "4.3.83",
+     "4.3.85",
+     "4.3.86",
+     "4.3.87"
+    ]
+   }
+  ]
+ },
+ "4.3.120": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "upagu",
+     "",
+     "taddhita:taddhitArtha=idam|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.134": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "aSman",
+     "",
+     "taddhita:taddhitArtha=vikAra|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.3.135": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kapotaH'] ≠ expected kApotaH",
+    "spec": [
+     "chain",
+     "kapota",
+     "",
+     "taddhita:taddhitArtha=avayava|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.2": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "akza",
+     "",
+     "taddhita:taddhitArtha=dIvyati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "SalAkA",
+     "",
+     "taddhita:taddhitArtha=dIvyati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.3": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "daDi",
+     "",
+     "taddhita:taddhitArtha=tenasaMskfta|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.5": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "kARqaplava",
+     "",
+     "taddhita:taddhitArtha=tarati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.8": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "daDi",
+     "",
+     "taddhita:taddhitArtha=carati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.12": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vetana",
+     "",
+     "taddhita:taddhitArtha=jIvati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.15": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "utsaNga",
+     "",
+     "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.19": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "akzadyUta",
+     "",
+     "taddhita:taddhitArtha=tenanirvfta|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.22": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "daDi",
+     "",
+     "taddhita:taddhitArtha=saMsfzwa|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.26": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['daDi'] ≠ expected dADikam",
+    "spec": [
+     "chain",
+     "daDi",
+     "",
+     "taddhita:taddhitArtha=upasikta|sup:1,1,napuṃsaka"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.27": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "ojas",
+     "",
+     "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.28": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "pratIpa",
+     "",
+     "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.29": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "parimuKa",
+     "",
+     "taddhita:taddhitArtha=vartate|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.30": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "dviguRa",
+     "",
+     "taddhita:taddhitArtha=prayacCati;arthaViSeSa=garhya|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.32": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "badara",
+     "",
+     "taddhita:taddhitArtha=uYCati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.33": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "samAja",
+     "",
+     "taddhita:taddhitArtha=rakzati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.34": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "Sabda",
+     "",
+     "taddhita:taddhitArtha=karoti|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.35": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "pakzin",
+     "",
+     "taddhita:taddhitArtha=hanti|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.36": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "paripanTa",
+     "",
+     "taddhita:taddhitArtha=tizWati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.37": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "daRqamATa",
+     "",
+     "taddhita:taddhitArtha=DAvati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.39": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "pUrvapada",
+     "",
+     "taddhita:taddhitArtha=gfhRAti|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.43": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['samavAyaH'] ≠ expected sAmavAyikaH",
+    "spec": [
+     "chain",
+     "samavAya",
+     "",
+     "taddhita:taddhitArtha=samavEti|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.46": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "lalAwa",
+     "",
+     "taddhita:taddhitArtha=paSyati;arthaViSeSa=saMjYA|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.47": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "SulkaSAlA",
+     "",
+     "taddhita:taddhitArtha=Darmya|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.50": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "SulkaSAlA",
+     "",
+     "taddhita:taddhitArtha=avakraya|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.51": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "apUpa",
+     "",
+     "taddhita:taddhitArtha=paRya|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.55": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "mfdaNga",
+     "",
+     "taddhita:taddhitArtha=Silpa|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.57": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "asi",
+     "",
+     "taddhita:taddhitArtha=praharaRa|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.60": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "asti",
+     "",
+     "taddhita:taddhitArtha=mati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.61": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "apUpa",
+     "",
+     "taddhita:taddhitArtha=SIla|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.63": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "ekAnya",
+     "",
+     "taddhita:taddhitArtha=vftta|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.65": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['apUpaH'] ≠ expected ApUpikaH",
+    "spec": [
+     "chain",
+     "apUpa",
+     "",
+     "taddhita:taddhitArtha=hita|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.66": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "agraBojana",
+     "",
+     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.69": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "SulkaSAlA",
+     "",
+     "taddhita:taddhitArtha=niyukta|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.71": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['SmaSAnaH'] ≠ expected SmASAnikaH",
+    "spec": [
+     "chain",
+     "SmaSAna",
+     "",
+     "taddhita:taddhitArtha=aDyAyin|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.72": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vaMSakaWina",
+     "",
+     "taddhita:taddhitArtha=vyavaharati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.73": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "nikawa",
+     "",
+     "taddhita:taddhitArtha=vasati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.76": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "raTa",
+     "",
+     "taddhita:taddhitArtha=vahati|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.83": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "pAda",
+     "",
+     "taddhita:taddhitArtha=viDyati|sup:1,3,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.84": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "Dana",
+     "",
+     "taddhita:taddhitArtha=labDA|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.86": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "vaSa",
+     "",
+     "taddhita:taddhitArtha=gata|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.87": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "pada",
+     "",
+     "taddhita:taddhitArtha=dfSya|sup:1,1,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.88": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "mUla",
+     "",
+     "taddhita:taddhitArtha=Abarhi|sup:1,3,pulliṅga"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.91": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['nO'] ≠ expected nAvyam",
+    "spec": [
+     "chain",
+     "nO",
+     "",
+     "taddhita:taddhitArtha=tArya|sup:1,1,napuṃsaka"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vayaH'] ≠ expected vayasyaH",
+    "spec": [
+     "chain",
+     "vayas",
+     "",
+     "taddhita:taddhitArtha=tulya|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.92": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "chain",
+     "Darma",
+     "",
+     "taddhita:taddhitArtha=anapeta|sup:1,1,napuṃsaka"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "4.4.93": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['CandaH'] ≠ expected ChandasyaH",
+    "spec": [
+     "chain",
+     "Candas",
+     "",
+     "taddhita:taddhitArtha=nirmita|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.95": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['hfdayaH'] ≠ expected hfdyaH",
+    "spec": [
+     "chain",
+     "hfdaya",
+     "",
+     "taddhita:taddhitArtha=priya|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.107": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['samAnatIrTaH', 'samAnatIrtTaH'] ≠ expected satIrTyaH",
+    "spec": [
+     "chain",
+     "samAnatIrTa",
+     "",
+     "taddhita:taddhitArtha=vAsI|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "4.4.108": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['samAnodaraH'] ≠ expected samAnodaryaH",
+    "spec": [
+     "chain",
+     "samAnodara",
+     "",
+     "taddhita:taddhitArtha=Sayita|sup:1,1,pulliṅga"
+    ],
+    "sub": "mismatch"
    }
   ]
  }

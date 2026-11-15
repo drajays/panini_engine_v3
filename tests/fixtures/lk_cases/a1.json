@@ -1,4 +1,243 @@
 {
+ "1.1.5": [
+  {
+   "text": "ci + kta",
+   "expected_iast": null,
+   "expected": "citaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "05.0005",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.1.5 चितः"
+  },
+  {
+   "text": "stu + kta",
+   "expected_iast": null,
+   "expected": "stutaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "02.0038",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.1.5 स्तुतः"
+  },
+  {
+   "text": "ci + laT tas (ṅit)",
+   "expected_iast": null,
+   "expected": "cinutaH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "laT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.1.5 चिनुतः"
+  },
+  {
+   "text": "ci + laT jhi (ṅit)",
+   "expected_iast": null,
+   "expected": "cinvanti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "laT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 1.1.5 चिन्वन्ति"
+  }
+ ],
+ "1.1.28": [
+  {
+   "text": "uttarapUrvA + Ne",
+   "expected_iast": null,
+   "expected": "uttarapUrvasyE",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "uttarapUrvA",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.28 उत्तरपूर्वस्यै"
+  },
+  {
+   "text": "uttarapUrvA + Ne (vibhāṣā)",
+   "expected_iast": null,
+   "expected": "uttarapUrvAyE",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "uttarapUrvA",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.28 उत्तरपूर्वायै"
+  }
+ ],
+ "1.1.29": [
+  {
+   "text": "priyaviSva + Ne (bahuvrīhi: not sarvanāma)",
+   "expected_iast": null,
+   "expected": "priyaviSvAya",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "priyaviSva",
+    "pulliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.29 प्रियविश्वाय",
+   "kind": "produced"
+  },
+  {
+   "text": "priyoBaya + Ne",
+   "expected_iast": null,
+   "expected": "priyoBayAya",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "priyoBaya",
+    "pulliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.29 प्रियोभयाय",
+   "kind": "produced"
+  }
+ ],
+ "1.1.30": [
+  {
+   "text": "mAsapUrva + Ne (tṛtīyāsamāsa)",
+   "expected_iast": null,
+   "expected": "mAsapUrvAya",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "mAsapUrva",
+    "pulliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.30 मासपूर्वाय",
+   "kind": "produced"
+  },
+  {
+   "text": "saMvatsarapUrva + Ne",
+   "expected_iast": null,
+   "expected": "saMvatsarapUrvAya",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "saMvatsarapUrva",
+    "pulliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.1.30 संवत्सरपूर्वाय",
+   "kind": "produced"
+  }
+ ],
+ "1.1.31": [
+  {
+   "text": "pUrvApara + Am (dvandva)",
+   "expected_iast": null,
+   "expected": "pUrvAparARAm",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "pUrvApara",
+    "pulliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.1.31 पूर्वापराणाम्",
+   "kind": "produced"
+  },
+  {
+   "text": "katarakatama + Am (dvandva)",
+   "expected_iast": null,
+   "expected": "katarakatamAnAm",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "katarakatama",
+    "pulliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.1.31 कतरकतमानाम्",
+   "kind": "produced"
+  }
+ ],
+ "1.1.32": [
+  {
+   "text": "katarakatama + jas (dvandva, vibhāṣā)",
+   "expected_iast": null,
+   "expected": "katarakatame",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "katarakatama",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "Kāśikā 1.1.32 कतरकतमे"
+  },
+  {
+   "text": "katarakatama + jas",
+   "expected_iast": null,
+   "expected": "katarakatamAH",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "katarakatama",
+    "pulliṅga",
+    1,
+    3
+   ],
+   "source": "Kāśikā 1.1.32 कतरकतमाः",
+   "kind": "produced"
+  }
+ ],
  "1.1.34": [
   {
    "text": "pūrva + Jas (vyavasthā, non-saṃjñā, sarvanāman)",
@@ -35,6 +274,76 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: vyavasthā/saṃjñā vivakṣā for pūrva etc. is not an input of subanta derive(); the rule is tag-driven (docs/OPEN_FAILURES.md 1.1.34)"
+  }
+ ],
+ "1.1.47": [
+  {
+   "text": "ruD + laT (śnam after the last vowel)",
+   "expected_iast": null,
+   "expected": "ruRadDi",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "07.0001",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.1.47 विरुणद्धि"
+  },
+  {
+   "text": "payas + jas (num)",
+   "expected_iast": null,
+   "expected": "payAMsi",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "payas",
+    "napuṃsaka",
+    1,
+    3
+   ],
+   "source": "Kāśikā 1.1.47 पयांसि"
+  }
+ ],
+ "1.1.56": [
+  {
+   "text": "sthānivadādeśo 'nalvidhau: dhātvādeśa behaves as dhātu",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.1.56 अस्तेर्भूः, ब्रुवो वचिः",
+   "note": "unrunnable: pure atideśa; no surface form given by Kāśikā for this sūtra alone"
+  }
+ ],
+ "1.1.57": [
+  {
+   "text": "han + luG (a-lopa sthānivat before vṛddhi)",
+   "expected_iast": null,
+   "expected": "avaDIt",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0002",
+    "luG",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.1.57 अवधीत्"
+  }
+ ],
+ "1.1.58": [
+  {
+   "text": "sthānivad na: pada-anta / dvirvacana / yaṇ",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.1.58 कौ स्तः, यौ स्तः, दद्ध्यत्र",
+   "note": "unrunnable: vākya-level (sandhi across words) examples; no single-word spec"
   }
  ],
  "1.1.59": [
@@ -96,6 +405,17 @@
    "note": "owner's carkratuḥ is the wrong form (no sthānivat); an engine negative needs a context where 1.1.59 must not act: none sourced"
   }
  ],
+ "1.2.1": [
+  {
+   "text": "gāṅkuṭādibhyo 'ñṇin ṅit",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.2.1 अध्यगीष्ट",
+   "note": "unrunnable: upasarga adhi + iṅ (gāṅ) luṅ ātmane: no spec for iṅ/gāṅ"
+  }
+ ],
  "1.2.2": [
   {
    "text": "ud + vij + tṛc (iṭ behaves as ṅit, guṇa blocked)",
@@ -154,6 +474,674 @@
    "note": "unrunnable: ūrṇu iṭ ṅidvat vibhāṣā: ūrṇu + tṛc needs a kṛdanta entry with upasarga pra"
   }
  ],
+ "1.2.4": [
+  {
+   "text": "kf + laT tas (apit sārvadhātuka ṅidvat)",
+   "expected_iast": null,
+   "expected": "kurutaH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.2.4 कुरुतः"
+  },
+  {
+   "text": "kf + laT jhi",
+   "expected_iast": null,
+   "expected": "kurvanti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 1.2.4 कुर्वन्ति"
+  },
+  {
+   "text": "ci + laT tas",
+   "expected_iast": null,
+   "expected": "cinutaH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "05.0005",
+    "laT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.2.4 चिनुतः"
+  },
+  {
+   "text": "kf + laT tip (pit: not ṅidvat)",
+   "expected_iast": null,
+   "expected": "karoti",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.2.4 करोति",
+   "kind": "produced"
+  },
+  {
+   "text": "kf + laT sip (pit)",
+   "expected_iast": null,
+   "expected": "karozi",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "Kāśikā 1.2.4 करोषि",
+   "kind": "produced"
+  }
+ ],
+ "1.2.5": [
+  {
+   "text": "Bid + liT atus",
+   "expected_iast": null,
+   "expected": "biBidatuH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "07.0002",
+    "liT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.2.5 बिभिदतुः"
+  },
+  {
+   "text": "Bid + liT us",
+   "expected_iast": null,
+   "expected": "biBiduH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "07.0002",
+    "liT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 1.2.5 बिभिदुः"
+  },
+  {
+   "text": "Bid + liT thal (pit: not kit)",
+   "expected_iast": null,
+   "expected": "biBeditha",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "07.0002",
+    "liT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "Kāśikā 1.2.5 बिभेदिथ",
+   "kind": "produced"
+  }
+ ],
+ "1.2.6": [
+  {
+   "text": "BU + liT",
+   "expected_iast": null,
+   "expected": "baBUva",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.0001",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.2.6 बभूव"
+  },
+  {
+   "text": "BU + liT thal",
+   "expected_iast": null,
+   "expected": "baBUviTa",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.0001",
+    "liT",
+    "kartari",
+    2,
+    1
+   ],
+   "source": "Kāśikā 1.2.6 बभूविथ"
+  }
+ ],
+ "1.2.7": [
+  {
+   "text": "mfq + ktvA",
+   "expected_iast": null,
+   "expected": "mfqitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "06.0053",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.7 मृडित्वा"
+  },
+  {
+   "text": "kuz + ktvA",
+   "expected_iast": null,
+   "expected": "kuzitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0054",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.7 कुषित्वा"
+  },
+  {
+   "text": "kliS + ktvA",
+   "expected_iast": null,
+   "expected": "klizitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "04.0057",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.7 क्लिशित्वा"
+  },
+  {
+   "text": "vad + ktvA",
+   "expected_iast": null,
+   "expected": "uditvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1164",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.7 उदित्वा"
+  }
+ ],
+ "1.2.8": [
+  {
+   "text": "rud + ktvA",
+   "expected_iast": null,
+   "expected": "ruditvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "02.0062",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.8 रुदित्वा"
+  },
+  {
+   "text": "vid + ktvA",
+   "expected_iast": null,
+   "expected": "viditvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "02.0059",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.8 विदित्वा"
+  },
+  {
+   "text": "muz + ktvA",
+   "expected_iast": null,
+   "expected": "muzitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0066",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.8 मुषित्वा"
+  },
+  {
+   "text": "grah + ktvA",
+   "expected_iast": null,
+   "expected": "gfhItvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0071",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.8 गृहीत्वा"
+  }
+ ],
+ "1.2.9": [
+  {
+   "text": "ci + san",
+   "expected_iast": null,
+   "expected": "cicIzati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "05.0005",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 1.2.9 चिचीषति"
+  },
+  {
+   "text": "stu + san",
+   "expected_iast": null,
+   "expected": "tuzwUzati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "02.0038",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 1.2.9 तुष्टूषति"
+  },
+  {
+   "text": "kf + san",
+   "expected_iast": null,
+   "expected": "cikIrzati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 1.2.9 चिकीर्षति"
+  },
+  {
+   "text": "pA + san (not ikaḥ)",
+   "expected_iast": null,
+   "expected": "pipAsati",
+   "positive": false,
+   "spec": [
+    "sanadi",
+    "01.1074",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 1.2.9 पिपासति",
+   "kind": "produced"
+  }
+ ],
+ "1.2.10": [
+  {
+   "text": "Bid + san",
+   "expected_iast": null,
+   "expected": "bibitsati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "07.0002",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 1.2.10 बिभित्सति"
+  },
+  {
+   "text": "yaj + san (not ikaḥ)",
+   "expected_iast": null,
+   "expected": "yiyakzate",
+   "positive": false,
+   "spec": [
+    "sanadi",
+    "01.1157",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "atmane"
+   ],
+   "source": "Kāśikā 1.2.10 यियक्षते",
+   "kind": "produced"
+  }
+ ],
+ "1.2.11": [
+  {
+   "text": "Bid + AsIrliG ātmane",
+   "expected_iast": null,
+   "expected": "BitsIzwa",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "07.0002",
+    "AsIrliG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\"}"
+   ],
+   "source": "Kāśikā 1.2.11 भित्सीष्ट"
+  },
+  {
+   "text": "Bid + luG ātmane (sic)",
+   "expected_iast": null,
+   "expected": "abitta",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "07.0002",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\"}"
+   ],
+   "source": "Kāśikā 1.2.11 अभित्त"
+  },
+  {
+   "text": "yaj + AsIrliG ātmane (not ikaḥ)",
+   "expected_iast": null,
+   "expected": "yakzIzwa",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1157",
+    "AsIrliG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\"}"
+   ],
+   "source": "Kāśikā 1.2.11 यक्षीष्ट",
+   "kind": "produced"
+  }
+ ],
+ "1.2.12": [
+  {
+   "text": "kf + AsIrliG ātmane",
+   "expected_iast": null,
+   "expected": "kfzIzwa",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "AsIrliG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\"}"
+   ],
+   "source": "Kāśikā 1.2.12 कृषीष्ट"
+  },
+  {
+   "text": "kf + luG ātmane (sic)",
+   "expected_iast": null,
+   "expected": "akfta",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "08.0010",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\"}"
+   ],
+   "source": "Kāśikā 1.2.12 अकृत"
+  }
+ ],
+ "1.2.13": [
+  {
+   "text": "sam + gam + luG ātmane (kit)",
+   "expected_iast": null,
+   "expected": "samagata",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1137",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\", \"upasargas\": [\"sam\"]}"
+   ],
+   "source": "Kāśikā 1.2.13 समगत"
+  },
+  {
+   "text": "sam + gam + luG ātmane (akit)",
+   "expected_iast": null,
+   "expected": "samagaMsta",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1137",
+    "luG",
+    "kartari",
+    3,
+    1,
+    "{\"pada\": \"atmane\", \"upasargas\": [\"sam\"]}"
+   ],
+   "source": "Kāśikā 1.2.13 समगंस्त"
+  }
+ ],
+ "1.2.18": [
+  {
+   "text": "div + ktvA (seṭ: not kit)",
+   "expected_iast": null,
+   "expected": "devitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "04.0001",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.18 देवित्वा"
+  },
+  {
+   "text": "vft + ktvA (seṭ)",
+   "expected_iast": null,
+   "expected": "vartitvA",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.0862",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.18 वर्तित्वा"
+  },
+  {
+   "text": "kf + ktvA (aniṭ: kit)",
+   "expected_iast": null,
+   "expected": "kftvA",
+   "positive": false,
+   "spec": [
+    "krdanta",
+    "08.0010",
+    "ktvA",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "kala",
+      "pUrvakAla"
+     ],
+     [
+      "samAnakartfka",
+      "samAnakartfka"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 1.2.18 कृत्वा",
+   "kind": "produced"
+  }
+ ],
  "1.2.26": [
   {
    "text": "likh + ktvā (ral-anta, i-upadhā, halādi, kit optional)",
@@ -190,6 +1178,39 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: ktvā kit-vibhāṣā: tools.exercise_audit krdanta spec for ktvā is not accepted by derive_krdanta (IndexError); needs the (dhatu, ktvA, …) spec shape"
+  }
+ ],
+ "1.2.40": [
+  {
+   "text": "anudāttasya ca yatra udāttalopaḥ: svarita→anudāttatara",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.2.40 देवा मरुतः पृश्निमातरोऽपः",
+   "note": "unrunnable: Vedic accent only; engine has no svara tape for lexical Vedic text"
+  }
+ ],
+ "1.2.51": [
+  {
+   "text": "lupi yuktavad vyaktivacane",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.2.51 Kāśikā 1.2.51",
+   "note": "unrunnable: needs a taddhita-luk sense (lup of pratyaya) with a named place; no spec form"
+  }
+ ],
+ "1.2.53": [
+  {
+   "text": "tadaśiṣyaṃ saṃjñāpramāṇatvāt",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.2.53 पञ्चाला वरणाः",
+   "note": "unrunnable: pure remark on saṃjñā words; no derivation"
   }
  ],
  "1.2.62": [
@@ -259,6 +1280,96 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: pitā mātrā ekaśeṣa: no entry point for ekaśeṣa"
+  }
+ ],
+ "1.2.72": [
+  {
+   "text": "tyadādīni sarvair nityam: sa ca devadattaś ca tau",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 1.2.72 स च देवदत्तश्च तौ",
+   "note": "unrunnable: dvandva-ekaśeṣa over vākya of two words; no single-word spec"
+  }
+ ],
+ "1.3.12": [
+  {
+   "text": "As + laT",
+   "expected_iast": null,
+   "expected": "Aste",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0011",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.12 आस्ते"
+  },
+  {
+   "text": "SIN + laT",
+   "expected_iast": null,
+   "expected": "Sete",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0026",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.12 शेते"
+  },
+  {
+   "text": "zUN + laT",
+   "expected_iast": null,
+   "expected": "sUte",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0025",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.12 सूते"
+  }
+ ],
+ "1.3.13": [
+  {
+   "text": "kf + laT karmani",
+   "expected_iast": null,
+   "expected": "kriyate",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.13 क्रियते कटः"
+  },
+  {
+   "text": "glE + laT bhāve",
+   "expected_iast": null,
+   "expected": "glAyate",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1051",
+    "laT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.13 ग्लायते भवता"
   }
  ],
  "1.3.14": [
@@ -578,6 +1689,40 @@
    "note": "expected derived by engine; no DB attestation: do not count as a sourced positive"
   }
  ],
+ "1.3.19": [
+  {
+   "text": "vi + ji + laT",
+   "expected_iast": null,
+   "expected": "vijayate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0642",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"vi\"]}"
+   ],
+   "source": "Kāśikā 1.3.19 विजयते"
+  },
+  {
+   "text": "parA + ji + laT",
+   "expected_iast": null,
+   "expected": "parAjayate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0642",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"parA\"]}"
+   ],
+   "source": "Kāśikā 1.3.19 पराजयते"
+  }
+ ],
  "1.3.22": [
   {
    "text": "sam + sthā + laṭ (ātmanepada)",
@@ -702,6 +1847,58 @@
    "note": "engine-derived expected; sourced only by the sūtra's closed upasarga list"
   }
  ],
+ "1.3.28": [
+  {
+   "text": "A + yam + laT",
+   "expected_iast": null,
+   "expected": "Ayacchate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1139",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"A\"]}"
+   ],
+   "source": "Kāśikā 1.3.28 आयच्छते"
+  },
+  {
+   "text": "A + han + laT",
+   "expected_iast": null,
+   "expected": "Ahate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "02.0002",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"A\"]}"
+   ],
+   "source": "Kāśikā 1.3.28 आहते"
+  }
+ ],
+ "1.3.29": [
+  {
+   "text": "sam + svf + laT",
+   "expected_iast": null,
+   "expected": "saMsvarate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1081",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"sam\"]}"
+   ],
+   "source": "Kāśikā 1.3.29 संस्वरते"
+  }
+ ],
  "1.3.32": [
   {
    "text": "ut + kṛ + laṭ (gandhana/avakṣepaṇa etc., ātmanepada)",
@@ -815,6 +2012,77 @@
     "{\"vivaksha\": {\"vadArTa\": \"BAsana\"}}"
    ],
    "source": "Kāśikā 1.3.47 (vadate cārvī lokāyate)"
+  }
+ ],
+ "1.3.48": [
+  {
+   "text": "sam + pra + vad + laT",
+   "expected_iast": null,
+   "expected": "saMpravadante",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"sam\", \"pra\"]}"
+   ],
+   "source": "Kāśikā 1.3.48 संप्रवदन्ते ब्राह्मणाः"
+  }
+ ],
+ "1.3.49": [
+  {
+   "text": "anu + vad + laT",
+   "expected_iast": null,
+   "expected": "anuvadate",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"anu\"]}"
+   ],
+   "source": "Kāśikā 1.3.49 अनुवदते कठः कलापस्य"
+  }
+ ],
+ "1.3.50": [
+  {
+   "text": "vi + pra + vad + laT (vibhāṣā)",
+   "expected_iast": null,
+   "expected": "vipravadante",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"pra\"]}"
+   ],
+   "source": "Kāśikā 1.3.50 विप्रवदन्ते सांवत्सराः"
+  },
+  {
+   "text": "vi + pra + vad + laT (parasmaipada)",
+   "expected_iast": null,
+   "expected": "vipravadanti",
+   "positive": false,
+   "spec": [
+    "tinanta2",
+    "01.1164",
+    "laT",
+    "kartari",
+    3,
+    3,
+    "{\"upasargas\": [\"vi\", \"pra\"]}"
+   ],
+   "source": "Kāśikā 1.3.50 विप्रवदन्ति सांवत्सराः",
+   "kind": "produced"
   }
  ],
  "1.3.53": [
@@ -1191,6 +2459,57 @@
    "source": "Kāśikā 1.3.66 (bhuñjate)"
   }
  ],
+ "1.3.68": [
+  {
+   "text": "BI + Nic + laT",
+   "expected_iast": null,
+   "expected": "BIzayate",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "03.0002",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "nic_recipe",
+    "atmane"
+   ],
+   "source": "Kāśikā 1.3.68 जटिलो भीषयते"
+  }
+ ],
+ "1.3.72": [
+  {
+   "text": "kf + laT (kriyāphala)",
+   "expected_iast": null,
+   "expected": "kurute",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.72 कुरुते"
+  },
+  {
+   "text": "pac + laT (kriyāphala)",
+   "expected_iast": null,
+   "expected": "pacate",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.72 पचते"
+  }
+ ],
  "1.3.74": [
   {
    "text": "kṛ + ṇic + laṭ (kartrabhiprāya, ātmanepada)",
@@ -1209,6 +2528,39 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: nic_recipe kṛ gives kfayate (should be kārayate): the ṇic recipe is wrong for kṛ"
+  }
+ ],
+ "1.3.78": [
+  {
+   "text": "yA + laT",
+   "expected_iast": null,
+   "expected": "yAti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0044",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.78 याति"
+  },
+  {
+   "text": "pac + laT",
+   "expected_iast": null,
+   "expected": "pacati",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.78 पचति",
+   "kind": "produced"
   }
  ],
  "1.3.79": [
@@ -1557,6 +2909,183 @@
    "note": "unrunnable: lRT of vṛt gives vartizyate/vartizyati: parasmaipada must be aniṭ vartsyati (7.2.59); engine adds iṭ"
   }
  ],
+ "1.4.4": [
+  {
+   "text": "SrI + sambuddhi",
+   "expected_iast": null,
+   "expected": "SrIH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "SrI",
+    "strīliṅga",
+    8,
+    1
+   ],
+   "source": "Kāśikā 1.4.4 हे श्रीः"
+  },
+  {
+   "text": "BrU + sambuddhi",
+   "expected_iast": null,
+   "expected": "BrUH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "BrU",
+    "strīliṅga",
+    8,
+    1
+   ],
+   "source": "Kāśikā 1.4.4 हे भ्रूः"
+  },
+  {
+   "text": "strI + sambuddhi (not a-strī)",
+   "expected_iast": null,
+   "expected": "stri",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    8,
+    1
+   ],
+   "source": "Kāśikā 1.4.4 हे स्त्रि",
+   "kind": "produced"
+  }
+ ],
+ "1.4.5": [
+  {
+   "text": "SrI + Am",
+   "expected_iast": null,
+   "expected": "SriyAm",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "SrI",
+    "strīliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.4.5 श्रियाम्"
+  },
+  {
+   "text": "SrI + Am",
+   "expected_iast": null,
+   "expected": "SrINAm",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "SrI",
+    "strīliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.4.5 श्रीणाम्"
+  },
+  {
+   "text": "BrU + Am",
+   "expected_iast": null,
+   "expected": "BruvAm",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "BrU",
+    "strīliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.4.5 भ्रुवाम्"
+  },
+  {
+   "text": "strI + Am (astrī: no option)",
+   "expected_iast": null,
+   "expected": "strINAm",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    6,
+    3
+   ],
+   "source": "Kāśikā 1.4.5 स्त्रीणाम्",
+   "kind": "produced"
+  }
+ ],
+ "1.4.6": [
+  {
+   "text": "kfti + Ne",
+   "expected_iast": null,
+   "expected": "kftyE",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "kfti",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.6 कृत्यै"
+  },
+  {
+   "text": "kfti + Ne",
+   "expected_iast": null,
+   "expected": "kftaye",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "kfti",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.6 कृतये"
+  },
+  {
+   "text": "Denu + Ne",
+   "expected_iast": null,
+   "expected": "DenvE",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "Denu",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.6 धेन्वै"
+  },
+  {
+   "text": "SrI + Ne",
+   "expected_iast": null,
+   "expected": "Sriye",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "SrI",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.6 श्रिये"
+  },
+  {
+   "text": "strI + Ne (astrī)",
+   "expected_iast": null,
+   "expected": "striyE",
+   "positive": false,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    4,
+    1
+   ],
+   "source": "Kāśikā 1.4.6 स्त्रियै",
+   "kind": "produced"
+  }
+ ],
  "1.4.8": [
   {
    "text": "bhūpati + ṅe (samāsa, ghi applies)",
@@ -1646,6 +3175,51 @@
    "note": "unrunnable: bahuṣu bahuvacanam: the number is an input of derive(); the sūtra only names it"
   }
  ],
+ "1.4.22": [
+  {
+   "text": "brAhmaRa + au (dvitva)",
+   "expected_iast": null,
+   "expected": "brAhmaRO",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "brAhmaRa",
+    "pulliṅga",
+    1,
+    2
+   ],
+   "source": "Kāśikā 1.4.22 ब्राह्मणौ पठतः"
+  },
+  {
+   "text": "brAhmaRa + su (ekatva)",
+   "expected_iast": null,
+   "expected": "brAhmaRaH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "brAhmaRa",
+    "pulliṅga",
+    1,
+    1
+   ],
+   "source": "Kāśikā 1.4.22 ब्राह्मणः पठति"
+  },
+  {
+   "text": "paW + laT tas",
+   "expected_iast": null,
+   "expected": "paWataH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.0381",
+    "laT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.4.22 ब्राह्मणौ पठतः"
+  }
+ ],
  "1.4.105": [
   {
    "text": "pac + laṭ (yuṣmad upapada, madhyama puruṣa)",
@@ -1684,6 +3258,53 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: asmad upapada uttama: no upapada entry for pac + asmad"
+  }
+ ],
+ "1.4.108": [
+  {
+   "text": "pac + laT tip",
+   "expected_iast": null,
+   "expected": "pacati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.4.108 पचति"
+  },
+  {
+   "text": "pac + laT tas",
+   "expected_iast": null,
+   "expected": "pacataH",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 1.4.108 पचतः"
+  },
+  {
+   "text": "pac + laT jhi",
+   "expected_iast": null,
+   "expected": "pacanti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 1.4.108 पचन्ति"
   }
  ]
 }

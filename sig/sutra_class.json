@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T02:09:07+00:00",
+ "generated_at": "2026-11-15T10:31:11+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -12,7 +12,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 57,
+   "mentions": 61,
    "lk_grade": null,
    "status": "confident_structural"
   },
@@ -69,7 +69,7 @@
    "moved": false,
    "cited": true,
    "mentions": 12,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -391,7 +391,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -405,7 +405,7 @@
    "moved": false,
    "cited": true,
    "mentions": 5,
-   "lk_grade": null,
+   "lk_grade": "NO_POSITIVE",
    "status": "gate_only"
   },
   {
@@ -419,7 +419,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "NO_POSITIVE",
    "status": "gate_only"
   },
   {
@@ -433,7 +433,7 @@
    "moved": false,
    "cited": true,
    "mentions": 7,
-   "lk_grade": null,
+   "lk_grade": "NO_POSITIVE",
    "status": "gate_only"
   },
   {
@@ -447,7 +447,7 @@
    "moved": false,
    "cited": true,
    "mentions": 14,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -657,7 +657,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -797,7 +797,7 @@
    "moved": false,
    "cited": true,
    "mentions": 19,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1105,7 +1105,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "confident",
    "status": "gate_only"
   },
   {
@@ -1119,7 +1119,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1133,7 +1133,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1147,7 +1147,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1161,7 +1161,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1175,7 +1175,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1189,7 +1189,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1203,7 +1203,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1217,7 +1217,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -1231,7 +1231,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -1301,7 +1301,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2112,7 +2112,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 46,
+   "mentions": 47,
    "lk_grade": null,
    "status": "confident_structural"
   },
@@ -2239,7 +2239,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -2253,7 +2253,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -2337,7 +2337,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2463,7 +2463,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2477,7 +2477,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2743,7 +2743,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2757,7 +2757,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -2771,7 +2771,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3023,7 +3023,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3079,7 +3079,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3163,7 +3163,7 @@
    "moved": false,
    "cited": true,
    "mentions": 18,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3429,7 +3429,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -3443,7 +3443,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3457,7 +3457,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -3681,7 +3681,7 @@
    "moved": false,
    "cited": true,
    "mentions": 8,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -4885,7 +4885,7 @@
    "moved": false,
    "cited": true,
    "mentions": 10,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -4997,7 +4997,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -5095,7 +5095,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -5417,7 +5417,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -5431,7 +5431,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -5627,7 +5627,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -6173,7 +6173,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -6187,7 +6187,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -6257,7 +6257,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -6957,7 +6957,7 @@
    "moved": false,
    "cited": true,
    "mentions": 10,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -7153,7 +7153,7 @@
    "moved": false,
    "cited": true,
    "mentions": 7,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -7727,7 +7727,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -8371,7 +8371,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -8721,7 +8721,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -9533,7 +9533,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -16799,7 +16799,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -16813,7 +16813,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -16827,7 +16827,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -17051,7 +17051,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -18247,7 +18247,7 @@
   {
    "id": "4.1.54",
    "pada": "4.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
@@ -18255,13 +18255,13 @@
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
    "id": "4.1.55",
    "pada": "4.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
@@ -18269,7 +18269,7 @@
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -18282,7 +18282,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 4,
+   "mentions": 5,
    "lk_grade": null,
    "status": "confident_structural"
   },
@@ -18731,7 +18731,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -20929,7 +20929,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -20971,7 +20971,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -20985,7 +20985,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -21139,7 +21139,7 @@
    "moved": false,
    "cited": true,
    "mentions": 7,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -22567,7 +22567,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -22763,7 +22763,7 @@
    "moved": false,
    "cited": true,
    "mentions": 13,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23057,7 +23057,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23183,7 +23183,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23211,7 +23211,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23225,7 +23225,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23239,7 +23239,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23267,7 +23267,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23701,7 +23701,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23897,7 +23897,7 @@
    "moved": false,
    "cited": true,
    "mentions": 6,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -23911,7 +23911,7 @@
    "moved": false,
    "cited": false,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -24401,7 +24401,7 @@
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24415,7 +24415,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24443,7 +24443,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24485,7 +24485,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24541,7 +24541,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24583,7 +24583,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24639,7 +24639,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24681,7 +24681,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24737,7 +24737,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -24751,7 +24751,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24765,7 +24765,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24779,7 +24779,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24793,7 +24793,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24821,7 +24821,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24835,7 +24835,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24849,7 +24849,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24863,7 +24863,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24877,7 +24877,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24891,7 +24891,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24919,7 +24919,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -24975,7 +24975,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25017,7 +25017,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25031,7 +25031,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25073,7 +25073,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25087,7 +25087,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25143,7 +25143,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25171,7 +25171,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25213,7 +25213,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25227,7 +25227,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25255,7 +25255,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25283,7 +25283,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25297,7 +25297,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25339,7 +25339,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25367,7 +25367,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25381,7 +25381,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25395,7 +25395,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25437,7 +25437,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25535,7 +25535,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25549,7 +25549,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25577,7 +25577,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25591,7 +25591,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25605,7 +25605,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25647,7 +25647,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25661,7 +25661,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -25675,7 +25675,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25703,7 +25703,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25871,7 +25871,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -25885,7 +25885,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -26459,7 +26459,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -26557,7 +26557,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -26613,7 +26613,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -26907,7 +26907,7 @@
    "moved": false,
    "cited": true,
    "mentions": 5,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -26921,7 +26921,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -26977,7 +26977,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -26991,7 +26991,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27019,7 +27019,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27047,7 +27047,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27089,7 +27089,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27117,7 +27117,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27173,7 +27173,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27187,7 +27187,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27271,7 +27271,7 @@
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27397,7 +27397,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27411,7 +27411,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27425,7 +27425,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27467,7 +27467,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27495,7 +27495,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27509,7 +27509,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27691,7 +27691,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27705,7 +27705,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27719,7 +27719,7 @@
    "moved": false,
    "cited": false,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27733,7 +27733,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27775,7 +27775,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27803,7 +27803,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -27845,7 +27845,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27901,7 +27901,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -27915,7 +27915,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -31275,7 +31275,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -31289,7 +31289,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -31317,7 +31317,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -31331,7 +31331,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -31443,7 +31443,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -31457,7 +31457,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -34103,7 +34103,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34117,7 +34117,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34145,7 +34145,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34243,7 +34243,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34369,7 +34369,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34383,7 +34383,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34607,7 +34607,7 @@
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -34621,7 +34621,7 @@
    "moved": false,
    "cited": false,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -35236,7 +35236,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 51,
+   "mentions": 56,
    "lk_grade": null,
    "status": "confident"
   },
@@ -35349,7 +35349,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -35475,7 +35475,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -35909,7 +35909,7 @@
    "moved": false,
    "cited": true,
    "mentions": 10,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -35937,7 +35937,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -40095,7 +40095,7 @@
    "moved": false,
    "cited": true,
    "mentions": 5,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -40193,7 +40193,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -43133,7 +43133,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44295,7 +44295,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44309,7 +44309,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44351,7 +44351,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44365,7 +44365,7 @@
    "moved": false,
    "cited": true,
    "mentions": 8,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44379,7 +44379,7 @@
    "moved": false,
    "cited": true,
    "mentions": 5,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -44547,7 +44547,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -45274,9 +45274,9 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
+   "mentions": 5,
    "lk_grade": null,
-   "status": "working"
+   "status": "confident"
   },
   {
    "id": "7.1.59",
@@ -45723,7 +45723,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -45737,7 +45737,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -45751,7 +45751,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -46465,7 +46465,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46493,7 +46493,7 @@
    "moved": false,
    "cited": false,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46507,7 +46507,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46521,7 +46521,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46535,7 +46535,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46577,7 +46577,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46703,7 +46703,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46759,7 +46759,7 @@
    "moved": false,
    "cited": false,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "confident",
    "status": "gate_only"
   },
   {
@@ -46773,7 +46773,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -46787,7 +46787,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46829,7 +46829,7 @@
    "moved": false,
    "cited": false,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46885,7 +46885,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -46899,7 +46899,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -47417,7 +47417,7 @@
    "moved": false,
    "cited": true,
    "mentions": 3,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -48803,7 +48803,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "confident",
    "status": "gate_only"
   },
   {
@@ -48845,7 +48845,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -49209,7 +49209,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -49405,7 +49405,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -49531,7 +49531,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -49909,7 +49909,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -49923,7 +49923,7 @@
    "moved": false,
    "cited": false,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -50086,13 +50086,13 @@
    "type": "VIDHI",
    "exempt": false,
    "placeholder": false,
-   "stub_gloss": true,
+   "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
-   "mentions": 0,
+   "cited": true,
+   "mentions": 9,
    "lk_grade": null,
-   "status": "working"
+   "status": "confident"
   },
   {
    "id": "7.4.62",
@@ -50357,7 +50357,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -50595,7 +50595,7 @@
    "moved": false,
    "cited": false,
    "mentions": 9,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -51925,7 +51925,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -51967,7 +51967,7 @@
    "moved": false,
    "cited": true,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -52163,7 +52163,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -52541,7 +52541,7 @@
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -52723,7 +52723,7 @@
    "moved": false,
    "cited": true,
    "mentions": 4,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -53395,7 +53395,7 @@
    "moved": false,
    "cited": true,
    "mentions": 2,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -53633,7 +53633,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "working",
    "status": "gate_only"
   },
   {
@@ -53647,7 +53647,7 @@
    "moved": false,
    "cited": false,
    "mentions": 1,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -53955,7 +53955,7 @@
    "moved": false,
    "cited": true,
    "mentions": 0,
-   "lk_grade": null,
+   "lk_grade": "FAIL",
    "status": "gate_only"
   },
   {
@@ -55760,7 +55760,7 @@
    "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 10,
+   "mentions": 11,
    "lk_grade": null,
    "status": "pending_structural"
   }

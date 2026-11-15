@@ -1,4 +1,79 @@
 {
+ "2.1.2": [
+  {
+   "text": "svara: kuNqenAwan",
+   "expected_iast": null,
+   "expected": "kuNqenAwan",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 2.1.2 कुण्डे॑नाटन्",
+   "note": "unrunnable: svarita/accent-level (Vedic ām̐ntrita); no svara tape in engine"
+  }
+ ],
+ "2.1.6": [
+  {
+   "text": "upa + kumBa",
+   "expected_iast": null,
+   "expected": "upakumBa",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"upa\", 1, 1], [\"kumBa\", 6, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.6 उपकुम्भम्"
+  },
+  {
+   "text": "aDi + strI",
+   "expected_iast": null,
+   "expected": "aDistrI",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"aDi\", 1, 1], [\"strI\", 7, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.6 अधिस्त्रि"
+  },
+  {
+   "text": "ati + hima",
+   "expected_iast": null,
+   "expected": "atihima",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"ati\", 1, 1], [\"hima\", 1, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.6 अतिहिमम्"
+  }
+ ],
+ "2.1.13": [
+  {
+   "text": "A + pAwaliputra",
+   "expected_iast": null,
+   "expected": "ApAwaliputra",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"A\", 1, 1], [\"pAwaliputra\", 5, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.13 आपाटलिपुत्रं वृष्टो देवः"
+  },
+  {
+   "text": "A + kumAra",
+   "expected_iast": null,
+   "expected": "AkumAra",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"A\", 1, 1], [\"kumAra\", 5, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.13 आकुमारं यशः पाणिनेः"
+  }
+ ],
  "2.1.14": [
   {
    "text": "abhi + agni (ābhimukhya avyayībhāva)",
@@ -139,6 +214,82 @@
    "note": "samāsa stem stage: the harness compares the stem the loop leaves before sup/sandhi"
   }
  ],
+ "2.1.36": [
+  {
+   "text": "yUpa + dAru",
+   "expected_iast": null,
+   "expected": "yUpadAru",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"yUpa\", 4, 1], [\"dAru\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.36 यूपदारु"
+  },
+  {
+   "text": "kuRqala + hiraRya",
+   "expected_iast": null,
+   "expected": "kuRqalahiraRya",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"kuRqala\", 4, 1], [\"hiraRya\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.36 कुण्डलहिरण्यम्"
+  },
+  {
+   "text": "go + hita",
+   "expected_iast": null,
+   "expected": "gohita",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"go\", 4, 1], [\"hita\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.36 गोहितम्"
+  },
+  {
+   "text": "go + suKa",
+   "expected_iast": null,
+   "expected": "gosuKa",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"go\", 4, 1], [\"suKa\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.36 गोसुखम्"
+  }
+ ],
+ "2.1.37": [
+  {
+   "text": "vfka + Baya",
+   "expected_iast": null,
+   "expected": "vfkaBaya",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"vfka\", 5, 3], [\"Baya\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.37 वृकभयम्"
+  },
+  {
+   "text": "cOra + Baya",
+   "expected_iast": null,
+   "expected": "cOraBaya",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"cOra\", 5, 3], [\"Baya\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.37 चौरभयम्"
+  }
+ ],
  "2.1.40": [
   {
    "text": "akṣa + ṅi + śauṇḍa + su (saptamī-tatpuruṣa)",
@@ -189,6 +340,32 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: negative/wrong-form case without a runnable context (owner text only)"
+  }
+ ],
+ "2.1.51": [
+  {
+   "text": "paYcan + gavaDana (uttarapada)",
+   "expected_iast": null,
+   "expected": "paYcagavaDana",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"paYcan\", 1, 1], [\"gavaDana\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.51 पञ्चगवधनः"
+  },
+  {
+   "text": "paYcan + kumArI (samāhāra)",
+   "expected_iast": null,
+   "expected": "paYcakumAri",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"paYcan\", 1, 1], [\"kumArI\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.1.51 पञ्चकुमारि"
   }
  ],
  "2.1.52": [
@@ -333,6 +510,142 @@
    ],
    "source": "Kāśikā 2.2.8 (owner example rājapuruṣaḥ; expected = the compound stem before sandhi/sup: members concatenated)",
    "note": "samāsa stem stage: the harness compares the stem the loop leaves before sup/sandhi"
+  }
+ ],
+ "2.2.14": [
+  {
+   "text": "gavAM doha: karmaṇi ṣaṣṭhī asamāsa",
+   "expected_iast": null,
+   "expected": "gavAM dohaH",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 2.2.14 आश्चर्यो गवां दोहोऽगोपालकेन",
+   "note": "unrunnable: a pratiṣedha of samāsa on a vākya; no compound is formed"
+  }
+ ],
+ "2.2.18": [
+  {
+   "text": "ku + puruza",
+   "expected_iast": null,
+   "expected": "kupuruza",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"ku\", 1, 1], [\"puruza\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.18 कुपुरुषः"
+  },
+  {
+   "text": "dus + puruza",
+   "expected_iast": null,
+   "expected": "duzpuruza",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"dus\", 1, 1], [\"puruza\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.18 दुष्पुरुषः"
+  },
+  {
+   "text": "ati + puruza",
+   "expected_iast": null,
+   "expected": "atipuruza",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"ati\", 1, 1], [\"puruza\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.18 अतिपुरुषः"
+  },
+  {
+   "text": "pra + AcArya",
+   "expected_iast": null,
+   "expected": "prAcArya",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"pra\", 1, 1], [\"AcArya\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.18 प्राचार्यः"
+  }
+ ],
+ "2.2.19": [
+  {
+   "text": "kumBa + kAra",
+   "expected_iast": null,
+   "expected": "kumBakAra",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"kumBa\", 2, 1], [\"kAra\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.19 कुम्भकारः"
+  },
+  {
+   "text": "nagara + kAra",
+   "expected_iast": null,
+   "expected": "nagarakAra",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"nagara\", 2, 1], [\"kAra\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.19 नगरकारः"
+  }
+ ],
+ "2.2.20": [
+  {
+   "text": "amaiva: svAdumkAram",
+   "expected_iast": null,
+   "expected": null,
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 2.2.20 स्वादुंकारं भुङ्क्ते",
+   "note": "unrunnable: needs ṇamul upapada samāsa over an avyaya upapada; no spec for this route"
+  }
+ ],
+ "2.2.24": [
+  {
+   "text": "prApta + udaka",
+   "expected_iast": null,
+   "expected": "prAptodaka",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"prApta\", 1, 1], [\"udaka\", 2, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.24 प्राप्तोदको ग्रामः"
+  },
+  {
+   "text": "UQa + raTa",
+   "expected_iast": null,
+   "expected": "UQaraTa",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"UQa\", 1, 1], [\"raTa\", 3, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.24 ऊढरथोऽनड्वान्"
+  },
+  {
+   "text": "citra + gu",
+   "expected_iast": null,
+   "expected": "citragu",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"citra\", 1, 1], [\"gu\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.2.24 चित्रगुर्देवदत्तः"
   }
  ],
  "2.2.31": [
@@ -483,6 +796,36 @@
    "note": "unrunnable: no machine entry for this construction in tools.exercise_audit (subanta/tinanta/krdanta/vakya/tinanta2/samasa)"
   }
  ],
+ "2.3.36": [
+  {
+   "text": "kaWa + saptamī",
+   "expected_iast": null,
+   "expected": "kawe",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "kawa",
+    "pulliṅga",
+    7,
+    1
+   ],
+   "source": "Kāśikā 2.3.36 कटे आस्ते"
+  },
+  {
+   "text": "sTAlI + saptamī",
+   "expected_iast": null,
+   "expected": "sTAlyAm",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "sTAlI",
+    "strīliṅga",
+    7,
+    1
+   ],
+   "source": "Kāśikā 2.3.36 स्थाल्यां पचति"
+  }
+ ],
  "2.3.47": [
   {
    "text": "rāma + su (sambodhana → prathamā)",
@@ -492,6 +835,50 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: no machine entry for this construction in tools.exercise_audit (subanta/tinanta/krdanta/vakya/tinanta2/samasa)"
+  }
+ ],
+ "2.3.50": [
+  {
+   "text": "rAjan + ṣaṣṭhī",
+   "expected_iast": null,
+   "expected": "rAjYaH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "rAjan",
+    "pulliṅga",
+    6,
+    1
+   ],
+   "source": "Kāśikā 2.3.50 राज्ञः पुरुषः"
+  },
+  {
+   "text": "paSu + ṣaṣṭhī",
+   "expected_iast": null,
+   "expected": "paSoH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "paSu",
+    "pulliṅga",
+    6,
+    1
+   ],
+   "source": "Kāśikā 2.3.50 पशोः पादः"
+  },
+  {
+   "text": "pitf + ṣaṣṭhī",
+   "expected_iast": null,
+   "expected": "pituH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "pitf",
+    "pulliṅga",
+    6,
+    1
+   ],
+   "source": "Kāśikā 2.3.50 पितुः पुत्रः"
   }
  ],
  "2.4.1": [
@@ -543,6 +930,32 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: no machine entry for this construction in tools.exercise_audit (subanta/tinanta/krdanta/vakya/tinanta2/samasa)"
+  }
+ ],
+ "2.4.18": [
+  {
+   "text": "aDi + strI (avyayībhāva napuṃsaka)",
+   "expected_iast": null,
+   "expected": "aDistri",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"aDi\", 1, 1], [\"strI\", 7, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.4.18 अधिस्त्रि"
+  },
+  {
+   "text": "upa + kumArI",
+   "expected_iast": null,
+   "expected": "upakumAri",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"upa\", 1, 1], [\"kumArI\", 7, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 2.4.18 उपकुमारि"
   }
  ],
  "2.4.26": [
@@ -658,6 +1071,48 @@
    "spec": null,
    "source": null,
    "note": "unrunnable: aṅga + su 'āṅgaḥ' is the taddhita-derived stem (aṇ); no entry for tadrāja ekavacana"
+  }
+ ],
+ "2.4.64": [
+  {
+   "text": "garga + gotra yañ lug (bahutva)",
+   "expected_iast": null,
+   "expected": "gargAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "garga",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 2.4.64 गर्गाः"
+  },
+  {
+   "text": "vatsa + gotra yañ lug (bahutva)",
+   "expected_iast": null,
+   "expected": "vatsAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vatsa",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 2.4.64 वत्साः"
+  },
+  {
+   "text": "garga + gotra yañ (ekatva: no luk)",
+   "expected_iast": null,
+   "expected": "gArgyaH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "garga",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 2.4.64 गार्ग्यः",
+   "kind": "produced"
   }
  ],
  "2.4.78": [

@@ -1,20 +1,20 @@
 # Sūtras the engine does confidently (generated — do not edit)
 
-Generated 2026-11-15 by `python3 -m tools.sutra_class`. **418 of 3983** are confident.
+Generated 2026-11-15 by `python3 -m tools.sutra_class`. **420 of 3983** are confident.
 
-Firing ledger `sig/firing_coverage.json`: 2026-11-15T02:08:47+00:00 · LK verdicts `sig/lk_case_verdicts/`: 2026-11-14T18:47:18+00:00
+Firing ledger `sig/firing_coverage.json`: 2026-11-15T02:08:47+00:00 · LK verdicts `sig/lk_case_verdicts/`: 2026-11-15T10:30:58+00:00 — **the ledger is older than the verdicts: run `make coverage`**
 
 *Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + tested: LK case gate `confident` where the gate grades the sūtra, else named in tests ≥5×; an LK `FAIL` caps it at working. *(S)* = structural/definitional class: invoked + cited + tested + real cond, no LK `FAIL` (class proof pending, plan §1).
 
 | status | count |
 |---|---|
-| confident | 175 |
+| confident | 177 |
 | confident_structural | 243 |
 | gate_only | 263 |
 | pending_structural | 151 |
 | placeholder | 483 |
 | unexercised | 1735 |
-| working | 933 |
+| working | 931 |
 
 | pāda | confident | of |
 |---|---|---|
@@ -42,10 +42,10 @@ Firing ledger `sig/firing_coverage.json`: 2026-11-15T02:08:47+00:00 · LK verdic
 | 6.2 | 4 | 199 |
 | 6.3 | 10 | 139 |
 | 6.4 | 35 | 175 |
-| 7.1 | 22 | 103 |
+| 7.1 | 23 | 103 |
 | 7.2 | 18 | 118 |
 | 7.3 | 13 | 120 |
-| 7.4 | 5 | 97 |
+| 7.4 | 6 | 97 |
 | 8.1 | 12 | 74 |
 | 8.2 | 14 | 108 |
 | 8.3 | 11 | 119 |
@@ -74,10 +74,10 @@ Firing ledger `sig/firing_coverage.json`: 2026-11-15T02:08:47+00:00 · LK verdic
 **6.2** — 64ˢ, 92ˢ, 111ˢ, 143ˢ  
 **6.3** — 1ˢ, 46, 47, 73, 81, 93, 94, 114ˢ, 128, 138  
 **6.4** — 1ˢ, 3, 4ˢ, 7, 11, 22ˢ, 24, 30ˢ, 37, 38, 46ˢ, 48, 51, 64, 71, 72, 74ˢ, 85ˢ, 101, 105, 110, 111, 120, 121, 126ˢ, 127, 129ˢ, 134, 136, 137ˢ, 138, 143, 144, 146, 148  
-**7.1** — 1, 2, 3, 9, 11ˢ, 12, 14, 15, 17, 18, 23, 24, 29ˢ, 35, 37, 52, 54, 60, 70, 78ˢ, 94, 100  
+**7.1** — 1, 2, 3, 9, 11ˢ, 12, 14, 15, 17, 18, 23, 24, 29ˢ, 35, 37, 52, 54, 58, 60, 70, 78ˢ, 94, 100  
 **7.2** — 4ˢ, 7, 8ˢ, 10ˢ, 11ˢ, 13ˢ, 35, 39ˢ, 59ˢ, 79, 91ˢ, 102, 103, 113, 115, 116, 117, 118  
 **7.3** — 3ˢ, 10ˢ, 50, 84, 86, 87ˢ, 88ˢ, 101, 102, 103, 105, 113, 114  
-**7.4** — 53, 58ˢ, 59, 60, 62  
+**7.4** — 53, 58ˢ, 59, 60, 61, 62  
 **8.1** — 1ˢ, 2ˢ, 16ˢ, 17ˢ, 18ˢ, 19ˢ, 22, 23, 24ˢ, 25ˢ, 28ˢ, 73ˢ  
 **8.2** — 1ˢ, 3ˢ, 7, 8ˢ, 23, 29, 30, 36, 42, 66, 77, 79ˢ, 82ˢ, 108ˢ  
 **8.3** — 2ˢ, 15, 16ˢ, 20, 22, 23, 34, 55ˢ, 57ˢ, 59, 60  

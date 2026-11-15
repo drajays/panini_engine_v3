@@ -1,4 +1,64 @@
 {
+ "3.1.4": [
+  {
+   "text": "dfzad + au (sup anudātta)",
+   "expected_iast": null,
+   "expected": "dfzadO",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "dfzad",
+    "strīliṅga",
+    1,
+    2
+   ],
+   "source": "Kāśikā 3.1.4 दृषदौ"
+  },
+  {
+   "text": "dfzad + Sas",
+   "expected_iast": null,
+   "expected": "dfzadaH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "dfzad",
+    "strīliṅga",
+    2,
+    3
+   ],
+   "source": "Kāśikā 3.1.4 दृषदः"
+  },
+  {
+   "text": "pac + laT tip (pit)",
+   "expected_iast": null,
+   "expected": "pacati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.4 पचति"
+  },
+  {
+   "text": "paW + laT tip (pit)",
+   "expected_iast": null,
+   "expected": "paWati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.0381",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.4 पठति"
+  }
+ ],
  "3.1.9": [
   {
    "text": "putra + kāmyac + laṭ (icchāyām)",
@@ -328,6 +388,54 @@
    "source": "Kāśikā 3.1.60 (त इति किम्? उदपत्साताम्)"
   }
  ],
+ "3.1.62": [
+  {
+   "text": "kf + luG ciN (karmakartari)",
+   "expected_iast": null,
+   "expected": "akAri",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "08.0010",
+    "luG",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.62 अकारि कटः स्वयमेव"
+  },
+  {
+   "text": "lU + luG ciN (karmakartari)",
+   "expected_iast": null,
+   "expected": "alAvi",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "09.0016",
+    "luG",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.62 अलावि केदारः स्वयमेव"
+  },
+  {
+   "text": "Bid + luG (hal-anta: not ciṇ)",
+   "expected_iast": null,
+   "expected": "aBedi",
+   "positive": false,
+   "spec": [
+    "tinanta",
+    "07.0002",
+    "luG",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.1.62 अभेदि काष्ठं स्वयमेव",
+   "kind": "produced"
+  }
+ ],
  "3.1.65": [
   {
    "text": "tap + luṅ + ta (anutāpa, ciṇ)",
@@ -569,6 +677,17 @@
    "spec": null,
    "source": "Kāśikā 3.2.75",
    "disputed": "Kāśikā 3.2.75 cites suśarmā / agregāvā / vijāvā (manin, kvanip, vanip, vic); grāvā is not cited there"
+  }
+ ],
+ "3.2.91": [
+  {
+   "text": "agnau cinoteḥ kvip: agnicit",
+   "expected_iast": null,
+   "expected": "agnicit",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 3.2.91 अग्निचित्, अग्निचितौ, अग्निचितः",
+   "note": "unrunnable: no upapada-kṛt entry selectable for ci + upapada agni (see a3 3.2.x notes)"
   }
  ],
  "3.2.99": [
@@ -897,6 +1016,17 @@
    "source": "owner-supplied vṛṣ + liṅ; Kāśikā 3.3.156 cites yāyāt / abhavet"
   }
  ],
+ "3.3.158": [
+  {
+   "text": "icchārtheṣu tumun: icchati Boktum",
+   "expected_iast": null,
+   "expected": "icCati Boktum",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 3.3.158 इच्छति भोक्तुम्",
+   "note": "unrunnable: no tumun / icchārtha-upapada spec in exercise_audit"
+  }
+ ],
  "3.3.167": [
   {
    "text": "bhuj + tumun (kāla/samaya/velā upapada)",
@@ -941,6 +1071,132 @@
    "note": "unrunnable: no siddhāprayoga/Namul entry"
   }
  ],
+ "3.4.67": [
+  {
+   "text": "kf + tfc (kartari)",
+   "expected_iast": null,
+   "expected": "kartA",
+   "positive": true,
+   "spec": [
+    "krdanta2",
+    "08.0010",
+    1,
+    1,
+    "pulliṅga",
+    "{\"artha\": \"kartf\"}"
+   ],
+   "source": "Kāśikā 3.4.67 कर्ता"
+  },
+  {
+   "text": "kf + Rvul (kartari)",
+   "expected_iast": null,
+   "expected": "kArakaH",
+   "positive": true,
+   "spec": [
+    "krdanta2",
+    "08.0010",
+    1,
+    1,
+    "pulliṅga",
+    "{\"artha\": \"kartf\"}"
+   ],
+   "source": "Kāśikā 3.4.67 कारकः"
+  }
+ ],
+ "3.4.68": [
+  {
+   "text": "BU + yat (bhavya)",
+   "expected_iast": null,
+   "expected": "BavyaH",
+   "positive": true,
+   "spec": [
+    "krdanta2",
+    "01.0001",
+    1,
+    1,
+    "pulliṅga",
+    "{\"krt\": \"kftya\", \"artha\": \"kartf\"}"
+   ],
+   "source": "Kāśikā 3.4.68 भव्यः"
+  },
+  {
+   "text": "gE + yat (geya)",
+   "expected_iast": null,
+   "expected": "geyaH",
+   "positive": true,
+   "spec": [
+    "krdanta2",
+    "01.1101",
+    1,
+    1,
+    "pulliṅga",
+    "{\"krt\": \"kftya\", \"artha\": \"kartf\"}"
+   ],
+   "source": "Kāśikā 3.4.68 गेयो माणवकः"
+  }
+ ],
+ "3.4.69": [
+  {
+   "text": "gam + laT karmani",
+   "expected_iast": null,
+   "expected": "gamyate",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1137",
+    "laT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.4.69 गम्यते ग्रामो देवदत्तेन"
+  },
+  {
+   "text": "gam + laT kartari",
+   "expected_iast": null,
+   "expected": "gacCati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1137",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.4.69 गच्छति ग्रामं देवदत्तः"
+  },
+  {
+   "text": "As + laT bhāve",
+   "expected_iast": null,
+   "expected": "Asyate",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0011",
+    "laT",
+    "karmani",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.4.69 आस्यते देवदत्तेन"
+  },
+  {
+   "text": "As + laT kartari",
+   "expected_iast": null,
+   "expected": "Aste",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0011",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 3.4.69 आस्ते देवदत्तः"
+  }
+ ],
  "3.4.70": [
   {
    "text": "kṛ + tavya + su (bhāve/karmaṇi)",
@@ -956,6 +1212,83 @@
     "{\"artha\": \"karman\", \"krt\": \"kftya\"}"
    ],
    "source": "Kāśikā 3.4.70 (कर्तव्यः कटो भवता)"
+  }
+ ],
+ "3.4.85": [
+  {
+   "text": "pac + loT (lan-vat)",
+   "expected_iast": null,
+   "expected": "pacatAm",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "loT",
+    "kartari",
+    3,
+    2
+   ],
+   "source": "Kāśikā 3.4.85 पचताम्"
+  },
+  {
+   "text": "pac + loT",
+   "expected_iast": null,
+   "expected": "pacatam",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "loT",
+    "kartari",
+    2,
+    2
+   ],
+   "source": "Kāśikā 3.4.85 पचतम्"
+  },
+  {
+   "text": "pac + loT",
+   "expected_iast": null,
+   "expected": "pacata",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "loT",
+    "kartari",
+    2,
+    3
+   ],
+   "source": "Kāśikā 3.4.85 पचत"
+  },
+  {
+   "text": "pac + loT",
+   "expected_iast": null,
+   "expected": "pacAva",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "loT",
+    "kartari",
+    1,
+    2
+   ],
+   "source": "Kāśikā 3.4.85 पचाव"
+  },
+  {
+   "text": "pac + loT",
+   "expected_iast": null,
+   "expected": "pacAma",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1151",
+    "loT",
+    "kartari",
+    1,
+    3
+   ],
+   "source": "Kāśikā 3.4.85 पचाम"
   }
  ],
  "3.4.111": [

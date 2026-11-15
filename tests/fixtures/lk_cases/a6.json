@@ -1,4 +1,490 @@
 {
+ "6.1.6": [
+  {
+   "text": "jakzati",
+   "expected_iast": null,
+   "expected": "jakzati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0066",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.6 जक्षति"
+  },
+  {
+   "text": "jAgrati",
+   "expected_iast": null,
+   "expected": "jAgrati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0067",
+    "laT",
+    "kartari",
+    3,
+    3
+   ],
+   "source": "Kāśikā 6.1.6 जाग्रति"
+  },
+  {
+   "text": "daridrati",
+   "expected_iast": null,
+   "expected": "daridrati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0068",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.6 दरिद्रति"
+  },
+  {
+   "text": "cakAsati",
+   "expected_iast": null,
+   "expected": "cakAsati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0069",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.6 चकासति"
+  },
+  {
+   "text": "SAsati",
+   "expected_iast": null,
+   "expected": "SAsati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "02.0070",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.6 शासति"
+  }
+ ],
+ "6.1.15": [
+  {
+   "text": "uktaH",
+   "expected_iast": null,
+   "expected": "uktaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "02.0058",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 उक्तः"
+  },
+  {
+   "text": "suptaH",
+   "expected_iast": null,
+   "expected": "suptaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "02.0063",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 सुप्तः"
+  },
+  {
+   "text": "izwaH",
+   "expected_iast": null,
+   "expected": "izwaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1157",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 इष्टः"
+  },
+  {
+   "text": "uptaH",
+   "expected_iast": null,
+   "expected": "uptaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1158",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 उप्तः"
+  },
+  {
+   "text": "UQaH",
+   "expected_iast": null,
+   "expected": "UQaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1159",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 ऊढः"
+  },
+  {
+   "text": "uditaH",
+   "expected_iast": null,
+   "expected": "uditaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1164",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 उदितः"
+  },
+  {
+   "text": "SUnaH",
+   "expected_iast": null,
+   "expected": "SUnaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "01.1165",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.15 शूनः"
+  }
+ ],
+ "6.1.16": [
+  {
+   "text": "gfhItaH",
+   "expected_iast": null,
+   "expected": "gfhItaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "09.0071",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.16 गृहीतः"
+  },
+  {
+   "text": "pfzwaH",
+   "expected_iast": null,
+   "expected": "pfzwaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "06.0149",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.16 पृष्टः"
+  },
+  {
+   "text": "Bfzwa",
+   "expected_iast": null,
+   "expected": "BfzwaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "06.0004",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.16 भृष्टः"
+  },
+  {
+   "text": "viddhaH",
+   "expected_iast": null,
+   "expected": "viddhaH",
+   "positive": true,
+   "spec": [
+    "krdanta",
+    "04.0078",
+    "kta",
+    "pulliṅga",
+    1,
+    1,
+    [
+     [
+      "artha",
+      "karman"
+     ],
+     [
+      "kala",
+      "BUta"
+     ]
+    ]
+   ],
+   "source": "Kāśikā 6.1.16 विद्धः"
+  },
+  {
+   "text": "gfhRAti",
+   "expected_iast": null,
+   "expected": "gfhRAti",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "09.0071",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.16 गृह्णाति"
+  },
+  {
+   "text": "pfcCati",
+   "expected_iast": null,
+   "expected": "pfcCati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "06.0149",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.16 पृच्छति"
+  },
+  {
+   "text": "Bfjjati",
+   "expected_iast": null,
+   "expected": "Bfjjati",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "06.0004",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.16 भृज्जति"
+  }
+ ],
+ "6.1.32": [
+  {
+   "text": "ajUhavat",
+   "expected_iast": null,
+   "expected": "ajUhavat",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1163",
+    "luG",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.32 अजूहवत्"
+  },
+  {
+   "text": "juhAvayizati",
+   "expected_iast": null,
+   "expected": "juhAvayizati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "01.1163",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "nic_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 6.1.32 जुहावयिषति"
+  }
+ ],
+ "6.1.33": [
+  {
+   "text": "juhAva",
+   "expected_iast": null,
+   "expected": "juhAva",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1163",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.33 जुहाव"
+  },
+  {
+   "text": "juhUzati",
+   "expected_iast": null,
+   "expected": "juhUzati",
+   "positive": true,
+   "spec": [
+    "sanadi",
+    "01.1163",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "san_recipe",
+    "parasmai"
+   ],
+   "source": "Kāśikā 6.1.33 जुहूषति"
+  }
+ ],
+ "6.1.85": [
+  {
+   "text": "juhAva",
+   "expected_iast": null,
+   "expected": "juhAva",
+   "positive": true,
+   "spec": [
+    "tinanta",
+    "01.1163",
+    "liT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 6.1.85 ह्वयतेर्जुहावेति संप्रसारणपूर्वत्वस्यादिवद्भावाद् आत औ णलः न भवति"
+  }
+ ],
  "6.1.89": [
   {
    "text": "upa + eti (vṛddhi)",
@@ -108,6 +594,40 @@
    "note": "unmapped owner case"
   }
  ],
+ "6.1.94": [
+  {
+   "text": "upozati",
+   "expected_iast": null,
+   "expected": "upozati",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0792",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"upa\"]}"
+   ],
+   "source": "Kāśikā 6.1.94 उपोषति"
+  },
+  {
+   "text": "prozati",
+   "expected_iast": null,
+   "expected": "prozati",
+   "positive": true,
+   "spec": [
+    "tinanta2",
+    "01.0792",
+    "laT",
+    "kartari",
+    3,
+    1,
+    "{\"upasargas\": [\"pra\"]}"
+   ],
+   "source": "Kāśikā 6.1.94 प्रोषति"
+  }
+ ],
  "6.1.113": [
   {
    "text": "śivas + arcyaḥ (ato ror aplutād aplute)",
@@ -161,6 +681,216 @@
    ],
    "source": "6.1.113 needs a following (aplute) a: karoti has k",
    "owner": false
+  }
+ ],
+ "6.1.122": [
+  {
+   "text": "go'gram (unrunnable)",
+   "expected_iast": null,
+   "expected": "go'gram",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 6.1.122 गोऽग्रम्, गो अग्रम्",
+   "note": "unrunnable: vakya join of go+agram: Kāśikā notes it for bhāṣā and chandas; no confirmed engine surface for the prakṛtibhāva reading"
+  }
+ ],
+ "6.1.125": [
+  {
+   "text": "agnI iti",
+   "expected_iast": null,
+   "expected": "agnI iti",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "agnI",
+    "iti"
+   ],
+   "source": "Kāśikā 6.1.125 अग्नी इति"
+  },
+  {
+   "text": "vAyU iti",
+   "expected_iast": null,
+   "expected": "vAyU iti",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "vAyU",
+    "iti"
+   ],
+   "source": "Kāśikā 6.1.125 वायू इति"
+  }
+ ],
+ "6.1.127": [
+  {
+   "text": "daDyatra",
+   "expected_iast": null,
+   "expected": "daDyatra",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "daDi",
+    "atra"
+   ],
+   "source": "Kāśikā 6.1.127 दध्यत्र"
+  },
+  {
+   "text": "maDvatra",
+   "expected_iast": null,
+   "expected": "maDvatra",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "maDu",
+    "atra"
+   ],
+   "source": "Kāśikā 6.1.127 मध्वत्र"
+  },
+  {
+   "text": "kumAryatra",
+   "expected_iast": null,
+   "expected": "kumAryatra",
+   "positive": true,
+   "spec": [
+    "vakya",
+    "kumAri",
+    "atra"
+   ],
+   "source": "Kāśikā 6.1.127 कुमार्यत्र"
+  }
+ ],
+ "6.2.184": [
+  {
+   "text": "nirudakam (unrunnable)",
+   "expected_iast": null,
+   "expected": "nirudakam",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 6.2.184 निरुदकम्",
+   "note": "unrunnable: svara (antodātta of nirudakādi); the engine has no accent output"
+  }
+ ],
+ "6.3.2": [
+  {
+   "text": "stokAnmukta",
+   "expected_iast": null,
+   "expected": "stokAnmukta",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"stoka\", 5, 1], [\"mukta\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.2 स्तोकान्मुक्तः"
+  },
+  {
+   "text": "antikAdAgata",
+   "expected_iast": null,
+   "expected": "antikAdAgata",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"antika\", 5, 1], [\"Agata\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.2 अन्तिकादागतः"
+  },
+  {
+   "text": "dUrAdAgata",
+   "expected_iast": null,
+   "expected": "dUrAdAgata",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"dUra\", 5, 1], [\"Agata\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.2 दूरादागतः"
+  },
+  {
+   "text": "kfcCrAnmukta",
+   "expected_iast": null,
+   "expected": "kfcCrAnmukta",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"kfcCra\", 5, 1], [\"mukta\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.2 कृच्छ्रान्मुक्तः"
+  }
+ ],
+ "6.3.9": [
+  {
+   "text": "araRyetilaka",
+   "expected_iast": null,
+   "expected": "araRyetilaka",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"araRya\", 7, 1], [\"tilaka\", 1, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.9 अरण्येतिलकाः"
+  },
+  {
+   "text": "vanekiMSuka",
+   "expected_iast": null,
+   "expected": "vanekiMSuka",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"vana\", 7, 1], [\"kiMSuka\", 1, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.9 वनेकिंशुकाः"
+  },
+  {
+   "text": "pUrvAhRezPotaka",
+   "expected_iast": null,
+   "expected": "pUrvAhRezPotaka",
+   "positive": true,
+   "spec": [
+    "samasa",
+    "[[\"pUrvAhRa\", 7, 1], [\"sPowaka\", 1, 3]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.9 पूर्वाह्णेस्फोटकाः"
+  },
+  {
+   "text": "nadIkukkuwikA (halad antAt kim: nadyAM kukkuwikA is nadIkukkuwikA with luk)",
+   "expected_iast": null,
+   "expected": "nadIkukkuwikA",
+   "positive": false,
+   "spec": [
+    "samasa",
+    "[[\"nadI\", 7, 1], [\"kukkuwikA\", 1, 1]]",
+    "{}"
+   ],
+   "source": "Kāśikā 6.3.9 नदीकुक्कुटिका",
+   "kind": "produced",
+   "note": "halad antAt kim: nadyAM kukkuwikA is nadIkukkuwikA with luk"
+  }
+ ],
+ "6.3.14": [
+  {
+   "text": "stamBeramaH (unrunnable)",
+   "expected_iast": null,
+   "expected": "stamBeramaH",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 6.3.14 स्तम्बेरमः",
+   "note": "unrunnable: needs a kṛt-with-upapada spec with a saptamī upapada; no confirmed krdanta2 role value for it"
+  }
+ ],
+ "6.3.42": [
+  {
+   "text": "pAcakavfndArikA (unrunnable)",
+   "expected_iast": null,
+   "expected": "pAcakavfndArikA",
+   "positive": true,
+   "spec": null,
+   "source": "Kāśikā 6.3.42 पाचकवृन्दारिका",
+   "note": "unrunnable: karmadhāraya with a bhāṣitapuṃska first member; no runnable samasa vivakṣā known"
   }
  ],
  "6.4.62": [
@@ -329,6 +1059,64 @@
    "owner": false
   }
  ],
+ "6.4.80": [
+  {
+   "text": "strIm",
+   "expected_iast": null,
+   "expected": "strIm",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    2,
+    1
+   ],
+   "source": "Kāśikā 6.4.80 स्त्रीं पश्य"
+  },
+  {
+   "text": "striyam",
+   "expected_iast": null,
+   "expected": "striyam",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    2,
+    1
+   ],
+   "source": "Kāśikā 6.4.80 स्त्रियं पश्य"
+  },
+  {
+   "text": "strIH",
+   "expected_iast": null,
+   "expected": "strIH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    2,
+    3
+   ],
+   "source": "Kāśikā 6.4.80 स्त्रीः पश्य"
+  },
+  {
+   "text": "striyaH",
+   "expected_iast": null,
+   "expected": "striyaH",
+   "positive": true,
+   "spec": [
+    "subanta",
+    "strI",
+    "strīliṅga",
+    2,
+    3
+   ],
+   "source": "Kāśikā 6.4.80 स्त्रियः पश्य"
+  }
+ ],
  "6.4.107": [
   {
    "text": "su + laṭ + vas (optional u-lopa before m/v)",
@@ -412,6 +1200,213 @@
    ],
    "source": "generic negative",
    "owner": false
+  }
+ ],
+ "6.4.163": [
+  {
+   "text": "srajizWaH",
+   "expected_iast": null,
+   "expected": "srajizWaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sragvin",
+    "",
+    "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.163 स्रजिष्ठः"
+  },
+  {
+   "text": "srajIyAn",
+   "expected_iast": null,
+   "expected": "srajIyAn",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sragvin",
+    "",
+    "taddhita:taddhitArtha=atiSAyana|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.163 स्रजीयान्"
+  }
+ ],
+ "6.4.164": [
+  {
+   "text": "sAMkUwinam",
+   "expected_iast": null,
+   "expected": "sAMkUwinam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMkUwin",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 6.4.164 सांकूटिनम्"
+  },
+  {
+   "text": "sAMrAviRam",
+   "expected_iast": null,
+   "expected": "sAMrAviRam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMrAvin",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 6.4.164 सांराविणम्"
+  },
+  {
+   "text": "sAMmArjinam",
+   "expected_iast": null,
+   "expected": "sAMmArjinam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMmArjin",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 6.4.164 सांमार्जिनम्"
+  },
+  {
+   "text": "srAgviRam",
+   "expected_iast": null,
+   "expected": "srAgviRam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sragvin",
+    "",
+    "taddhita:taddhitArtha=svArTa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 6.4.164 स्राग्विणम्"
+  }
+ ],
+ "6.4.167": [
+  {
+   "text": "sAmanaH",
+   "expected_iast": null,
+   "expected": "sAmanaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sAman",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.167 सामनः"
+  },
+  {
+   "text": "vEmanaH",
+   "expected_iast": null,
+   "expected": "vEmanaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "veman",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.167 वैमनः"
+  },
+  {
+   "text": "sOtvanaH",
+   "expected_iast": null,
+   "expected": "sOtvanaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sutvan",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.167 सौत्वनः"
+  },
+  {
+   "text": "jEtvanaH",
+   "expected_iast": null,
+   "expected": "jEtvanaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "jitvan",
+    "",
+    "taddhita:taddhitArtha=apatya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.167 जैत्वनः"
+  }
+ ],
+ "6.4.168": [
+  {
+   "text": "sAmanyaH",
+   "expected_iast": null,
+   "expected": "sAmanyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sAman",
+    "",
+    "taddhita:taddhitArtha=sADu|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.168 सामन्यः"
+  },
+  {
+   "text": "vemanyaH",
+   "expected_iast": null,
+   "expected": "vemanyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "veman",
+    "",
+    "taddhita:taddhitArtha=sADu|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.168 वेमन्यः"
+  },
+  {
+   "text": "rAjyam (abhāvakarmaṇoḥ kim: rājño bhāvaḥ karma vā rājyam (yak after rājan of purohitādi, 5.1.128))",
+   "expected_iast": null,
+   "expected": "rAjyam",
+   "positive": false,
+   "spec": [
+    "chain",
+    "rAjan",
+    "",
+    "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 6.4.168 राज्यं",
+   "kind": "produced",
+   "note": "abhāvakarmaṇoḥ kim: rājño bhāvaḥ karma vā rājyam (yak after rājan of purohitādi, 5.1.128)"
+  }
+ ],
+ "6.4.169": [
+  {
+   "text": "AtmanInaH",
+   "expected_iast": null,
+   "expected": "AtmanInaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Atman",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.169 आत्मनीनः"
+  },
+  {
+   "text": "aDvanInaH",
+   "expected_iast": null,
+   "expected": "aDvanInaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aDvan",
+    "",
+    "taddhita:taddhitArtha=alaMgAmI|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 6.4.169 अध्वनीनः"
   }
  ]
 }

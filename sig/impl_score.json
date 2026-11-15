@@ -19043,13 +19043,12 @@
 },
 "4.1.54": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -19058,13 +19057,12 @@
 },
 "4.1.55": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -19078,11 +19076,11 @@
 "parts": {
 "A": 2.0,
 "B": 1.5,
-"C": 1.0,
+"C": 2.0,
 "D": 1.5,
 "E": 1.0
 },
-"score": 7.0,
+"score": 8.0,
 "status": "confident_structural"
 },
 "4.1.57": {
@@ -23397,13 +23395,12 @@
 },
 "4.3.39": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -23636,13 +23633,12 @@
 },
 "4.3.53": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -23980,13 +23976,12 @@
 },
 "4.3.74": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -24158,13 +24153,12 @@
 },
 "4.3.85": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -24173,13 +24167,12 @@
 },
 "4.3.86": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -24216,13 +24209,12 @@
 },
 "4.3.89": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work",
-"an LK case fails (engine gap or case error)"
+"stub / gate-only: the rule does not yet do its own work"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.5,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -45332,12 +45324,12 @@
 "parts": {
 "A": 2.0,
 "B": 1.5,
-"C": 1.0,
+"C": 2.0,
 "D": 1.5,
 "E": 1.0
 },
-"score": 7.0,
-"status": "working"
+"score": 8.0,
+"status": "confident"
 },
 "7.1.59": {
 "notes": [
@@ -45361,7 +45353,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -45845,7 +45837,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -45854,12 +45846,13 @@
 },
 "7.1.91": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -45873,7 +45866,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -46116,7 +46109,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -46713,12 +46706,13 @@
 },
 "7.2.40": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46742,12 +46736,13 @@
 },
 "7.2.42": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46756,12 +46751,13 @@
 },
 "7.2.43": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46770,12 +46766,13 @@
 },
 "7.2.44": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46784,12 +46781,13 @@
 },
 "7.2.45": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46828,12 +46826,13 @@
 },
 "7.2.48": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -46978,12 +46977,13 @@
 },
 "7.2.57": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -47051,7 +47051,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 3.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -47065,7 +47065,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -47074,12 +47074,13 @@
 },
 "7.2.63": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -47118,12 +47119,13 @@
 },
 "7.2.66": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -47191,12 +47193,13 @@
 },
 "7.2.70": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -47210,7 +47213,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -47918,12 +47921,13 @@
 },
 "7.3.118": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -49157,7 +49161,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 3.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -49215,7 +49219,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -49360,12 +49364,13 @@
 },
 "7.4.12": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -49511,7 +49516,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -49938,7 +49943,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 2.0,
 "D": 1.5,
 "E": 1.0
 },
@@ -49947,12 +49952,13 @@
 },
 "7.4.49": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -50428,12 +50434,13 @@
 },
 "7.4.80": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -50688,12 +50695,13 @@
 },
 "7.4.97": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 2.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -52100,12 +52108,13 @@
 },
 "8.2.21": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -52143,12 +52152,13 @@
 },
 "8.2.24": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -52337,12 +52347,13 @@
 },
 "8.2.38": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -52770,12 +52781,13 @@
 },
 "8.2.65": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -52968,7 +52980,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -53739,7 +53751,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -54005,7 +54017,7 @@
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 2.0,
 "D": 2.5,
 "E": 1.0
 },
@@ -54014,12 +54026,13 @@
 },
 "8.3.36": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 1.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },
@@ -54370,12 +54383,13 @@
 },
 "8.3.58": {
 "notes": [
-"stub / gate-only: the rule does not yet do its own work"
+"stub / gate-only: the rule does not yet do its own work",
+"an LK case fails (engine gap or case error)"
 ],
 "parts": {
 "A": 1.0,
 "B": 0.5,
-"C": 0.0,
+"C": 0.5,
 "D": 2.5,
 "E": 1.0
 },

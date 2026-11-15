@@ -14,7 +14,8 @@
      3,
      1,
      "{\"upasargas\": [\"aDi\"]}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -50,7 +51,8 @@
      3,
      1,
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "pass",
@@ -74,7 +76,8 @@
      3,
      1,
      "{\"pada\": \"atmane\"}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "pass",
@@ -94,7 +97,8 @@
      "samasa",
      "[[\"aBi\", 1, 1], [\"agni\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -103,7 +107,8 @@
      "samasa",
      "[[\"prati\", 1, 1], [\"agni\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "not_fired"
    }
   ]
  },
@@ -118,7 +123,8 @@
      "samasa",
      "[[\"paYcan\", 1, 1], [\"nadI\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -127,7 +133,8 @@
      "samasa",
      "[[\"dvi\", 1, 1], [\"yamunA\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -143,8 +150,8 @@
      "[[\"kfzRa\", 2, 1], [\"Srita\", 1, 1]]",
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -154,8 +161,8 @@
      "[[\"grAma\", 2, 1], [\"gata\", 1, 1]]",
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -170,7 +177,8 @@
      "samasa",
      "[[\"SaNkulA\", 3, 1], [\"KaRqa\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -179,7 +187,8 @@
      "samasa",
      "[[\"DAnya\", 3, 1], [\"arTa\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -194,7 +203,8 @@
      "samasa",
      "[[\"hari\", 3, 1], [\"trAta\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -203,7 +213,8 @@
      "samasa",
      "[[\"naKa\", 3, 1], [\"Binna\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -218,7 +229,8 @@
      "samasa",
      "[[\"akza\", 7, 1], [\"SauRqa\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -233,7 +245,8 @@
      "samasa",
      "[[\"saptan\", 1, 1], [\"fzi\", 1, 3]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -242,7 +255,8 @@
      "samasa",
      "[[\"pUrva\", 1, 1], [\"izukAmaSamI\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -260,7 +274,8 @@
      "samasa",
      "[[\"paYcan\", 1, 1], [\"go\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -275,7 +290,8 @@
      "samasa",
      "[[\"Gana\", 1, 1], [\"SyAma\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -284,7 +300,8 @@
      "samasa",
      "[[\"Sastra\", 1, 1], [\"SyAmA\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -299,7 +316,8 @@
      "samasa",
      "[[\"nIla\", 1, 1], [\"utpala\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -314,7 +332,8 @@
      "samasa",
      "[[\"pUrva\", 1, 1], [\"kAya\", 6, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -323,7 +342,8 @@
      "samasa",
      "[[\"apara\", 1, 1], [\"kAya\", 6, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -338,7 +358,8 @@
      "samasa",
      "[[\"arDa\", 1, 1], [\"pippalI\", 6, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -353,7 +374,8 @@
      "samasa",
      "[[\"prApta\", 1, 1], [\"jIvikA\", 2, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -362,7 +384,8 @@
      "samasa",
      "[[\"Apanna\", 1, 1], [\"jIvikA\", 2, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -378,8 +401,8 @@
      "[[\"rAjan\", 6, 1], [\"puruza\", 1, 1]]",
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -394,7 +417,8 @@
      "samasa",
      "[[\"danta\", 6, 1], [\"rAjan\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -412,7 +436,8 @@
      "samasa",
      "[[\"hari\", 1, 1], [\"hara\", 1, 2]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -430,7 +455,8 @@
      "samasa",
      "[[\"ISa\", 1, 1], [\"kfzRa\", 1, 2]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -445,7 +471,8 @@
      "samasa",
      "[[\"kaRWa\", 7, 1], [\"kAla\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -460,7 +487,8 @@
      "samasa",
      "[[\"kfta\", 1, 1], [\"kftya\", 1, 1]]",
      "{}"
-    ]
+    ],
+    "sub": "mismatch"
    }
   ]
  },
@@ -596,6 +624,438 @@
    },
    {
     "result": "unrunnable"
+   }
+  ]
+ },
+ "2.1.2": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.1.6": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form upakumBa is right but 2.1.6 did not fire (trace status absent): another path made it",
+    "spec": [
+     "samasa",
+     "[[\"upa\", 1, 1], [\"kumBa\", 6, 1]]",
+     "{}"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form aDistrI is right but 2.1.6 did not fire (trace status absent): another path made it",
+    "spec": [
+     "samasa",
+     "[[\"aDi\", 1, 1], [\"strI\", 7, 3]]",
+     "{}"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form atihima is right but 2.1.6 did not fire (trace status absent): another path made it",
+    "spec": [
+     "samasa",
+     "[[\"ati\", 1, 1], [\"hima\", 1, 3]]",
+     "{}"
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "2.1.13": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['AspAwaliputrAt'] ≠ expected ApAwaliputra",
+    "spec": [
+     "samasa",
+     "[[\"A\", 1, 1], [\"pAwaliputra\", 5, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['AskumAreByas'] ≠ expected AkumAra",
+    "spec": [
+     "samasa",
+     "[[\"A\", 1, 1], [\"kumAra\", 5, 3]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.1.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['yUpEdArus'] ≠ expected yUpadAru",
+    "spec": [
+     "samasa",
+     "[[\"yUpa\", 4, 1], [\"dAru\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kuRqalEhiraRyas'] ≠ expected kuRqalahiraRya",
+    "spec": [
+     "samasa",
+     "[[\"kuRqala\", 4, 1], [\"hiraRya\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"go\", 4, 1], [\"hita\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"go\", 4, 1], [\"suKa\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "2.1.37": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"vfka\", 5, 3], [\"Baya\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"cOra\", 5, 3], [\"Baya\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "2.1.51": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['paYcangavaDanas'] ≠ expected paYcagavaDana",
+    "spec": [
+     "samasa",
+     "[[\"paYcan\", 1, 1], [\"gavaDana\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['paYcankumArIs'] ≠ expected paYcakumAri",
+    "spec": [
+     "samasa",
+     "[[\"paYcan\", 1, 1], [\"kumArI\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.2.14": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.2.18": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"ku\", 1, 1], [\"puruza\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "fail",
+    "why": "readings ['duspuruza'] ≠ expected duzpuruza",
+    "spec": [
+     "samasa",
+     "[[\"dus\", 1, 1], [\"puruza\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "samasa",
+     "[[\"ati\", 1, 1], [\"puruza\", 1, 1]]",
+     "{}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "fail",
+    "why": "readings ['praAcArya'] ≠ expected prAcArya",
+    "spec": [
+     "samasa",
+     "[[\"pra\", 1, 1], [\"AcArya\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.2.19": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['kumBamkAras'] ≠ expected kumBakAra",
+    "spec": [
+     "samasa",
+     "[[\"kumBa\", 2, 1], [\"kAra\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['nagaramkAras'] ≠ expected nagarakAra",
+    "spec": [
+     "samasa",
+     "[[\"nagara\", 2, 1], [\"kAra\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.2.20": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "2.2.24": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['prAptasudakam'] ≠ expected prAptodaka",
+    "spec": [
+     "samasa",
+     "[[\"prApta\", 1, 1], [\"udaka\", 2, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['UQasraTena'] ≠ expected UQaraTa",
+    "spec": [
+     "samasa",
+     "[[\"UQa\", 1, 1], [\"raTa\", 3, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['citrasgus'] ≠ expected citragu",
+    "spec": [
+     "samasa",
+     "[[\"citra\", 1, 1], [\"gu\", 1, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.3.36": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form kawe is right but 2.3.36 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "kawa",
+     "pulliṅga",
+     7,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form sTAlyAm is right but 2.3.36 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "sTAlI",
+     "strīliṅga",
+     7,
+     1
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "2.3.50": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form rAjYaH is right but 2.3.50 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "rAjan",
+     "pulliṅga",
+     6,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form paSoH is right but 2.3.50 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "paSu",
+     "pulliṅga",
+     6,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form pituH is right but 2.3.50 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "pitf",
+     "pulliṅga",
+     6,
+     1
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "2.4.18": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['aDistrI'] ≠ expected aDistri",
+    "spec": [
+     "samasa",
+     "[[\"aDi\", 1, 1], [\"strI\", 7, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['upakumArI'] ≠ expected upakumAri",
+    "spec": [
+     "samasa",
+     "[[\"upa\", 1, 1], [\"kumArI\", 7, 1]]",
+     "{}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "2.4.64": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['gArgayaH', 'gArggayaH'] ≠ expected gargAH",
+    "spec": [
+     "chain",
+     "garga",
+     "",
+     "taddhita:taddhitArtha=apatya|sup:1,3,pulliṅga"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vAtsayaH', 'vAtssayaH'] ≠ expected vatsAH",
+    "spec": [
+     "chain",
+     "vatsa",
+     "",
+     "taddhita:taddhitArtha=apatya|sup:1,3,pulliṅga"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "produced reading gArgyaH is not produced at all (readings ['gArggiH', 'gArgiH'])",
+    "sub": "mismatch"
    }
   ]
  }

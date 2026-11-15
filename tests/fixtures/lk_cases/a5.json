@@ -1,4 +1,1245 @@
 {
+ "5.1.5": [
+  {
+   "text": "vatsIyaH",
+   "expected_iast": null,
+   "expected": "vatsIyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vatsa",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.5 वत्सीयः"
+  },
+  {
+   "text": "paTavyam",
+   "expected_iast": null,
+   "expected": "paTavyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paTu",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.5 पटव्यम्"
+  },
+  {
+   "text": "gavyam",
+   "expected_iast": null,
+   "expected": "gavyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "go",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.5 गव्यम्"
+  },
+  {
+   "text": "havizyam",
+   "expected_iast": null,
+   "expected": "havizyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "havis",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.5 हविष्यम्"
+  },
+  {
+   "text": "apUpyam",
+   "expected_iast": null,
+   "expected": "apUpyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "apUpa",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.5 अपूप्यम्"
+  },
+  {
+   "text": "apUpIyam",
+   "expected_iast": null,
+   "expected": "apUpIyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "apUpa",
+    "",
+    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.5 अपूपीयम्"
+  }
+ ],
+ "5.1.12": [
+  {
+   "text": "aNgArIyARi",
+   "expected_iast": null,
+   "expected": "aNgArIyARi",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aNgAra",
+    "",
+    "taddhita:taddhitArtha=prakfti|sup:1,3,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.12 अङ्गारीयाणि"
+  },
+  {
+   "text": "SaNkavyam",
+   "expected_iast": null,
+   "expected": "SaNkavyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SaNku",
+    "",
+    "taddhita:taddhitArtha=prakfti|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.12 शङ्कव्यम्"
+  },
+  {
+   "text": "picavyaH",
+   "expected_iast": null,
+   "expected": "picavyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "picu",
+    "",
+    "taddhita:taddhitArtha=prakfti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.12 पिचव्यः"
+  }
+ ],
+ "5.1.16": [
+  {
+   "text": "prAsAdIyam",
+   "expected_iast": null,
+   "expected": "prAsAdIyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "prAsAda",
+    "",
+    "taddhita:taddhitArtha=syAt|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.16 प्रासादीयम्"
+  },
+  {
+   "text": "prAkArIyaH",
+   "expected_iast": null,
+   "expected": "prAkArIyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "prAkAra",
+    "",
+    "taddhita:taddhitArtha=syAt|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.16 प्राकारीयो"
+  }
+ ],
+ "5.1.37": [
+  {
+   "text": "sAptatikam",
+   "expected_iast": null,
+   "expected": "sAptatikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saptati",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 साप्ततिकम्"
+  },
+  {
+   "text": "ASItikam",
+   "expected_iast": null,
+   "expected": "ASItikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aSIti",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 आशीतिकम्"
+  },
+  {
+   "text": "nEzkikam",
+   "expected_iast": null,
+   "expected": "nEzkikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "nizka",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 नैष्किकम्"
+  },
+  {
+   "text": "pARikam",
+   "expected_iast": null,
+   "expected": "pARikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pARi",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 पाणिकम्"
+  },
+  {
+   "text": "mAzikam",
+   "expected_iast": null,
+   "expected": "mAzikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAza",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 माषिकम्"
+  },
+  {
+   "text": "Satyam",
+   "expected_iast": null,
+   "expected": "Satyam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 शत्यम्"
+  },
+  {
+   "text": "Satikam",
+   "expected_iast": null,
+   "expected": "Satikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=krIta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.37 शतिकम्"
+  }
+ ],
+ "5.1.38": [
+  {
+   "text": "SatyaH",
+   "expected_iast": null,
+   "expected": "SatyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=nimitta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.38 शत्यः"
+  },
+  {
+   "text": "SatikaH",
+   "expected_iast": null,
+   "expected": "SatikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=nimitta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.38 शतिकः"
+  },
+  {
+   "text": "sAhasraH",
+   "expected_iast": null,
+   "expected": "sAhasraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sahasra",
+    "",
+    "taddhita:taddhitArtha=nimitta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.38 साहस्रः"
+  }
+ ],
+ "5.1.42": [
+  {
+   "text": "sArvaBOmaH",
+   "expected_iast": null,
+   "expected": "sArvaBOmaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sarvaBUmi",
+    "",
+    "taddhita:taddhitArtha=Izvara|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.42 सार्वभौमः"
+  },
+  {
+   "text": "pArTivaH",
+   "expected_iast": null,
+   "expected": "pArTivaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pfTivI",
+    "",
+    "taddhita:taddhitArtha=Izvara|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.42 पार्थिवः"
+  }
+ ],
+ "5.1.43": [
+  {
+   "text": "sArvaBOmaH",
+   "expected_iast": null,
+   "expected": "sArvaBOmaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sarvaBUmi",
+    "",
+    "taddhita:taddhitArtha=vidita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.43 सार्वभौमः"
+  },
+  {
+   "text": "pArTivaH",
+   "expected_iast": null,
+   "expected": "pArTivaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pfTivI",
+    "",
+    "taddhita:taddhitArtha=vidita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.43 पार्थिवः"
+  }
+ ],
+ "5.1.45": [
+  {
+   "text": "prAsTikam",
+   "expected_iast": null,
+   "expected": "prAsTikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "prastha",
+    "",
+    "taddhita:taddhitArtha=vApa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.45 प्रास्थिकम्"
+  },
+  {
+   "text": "drORikam",
+   "expected_iast": null,
+   "expected": "drORikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "droRa",
+    "",
+    "taddhita:taddhitArtha=vApa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.45 द्रौणिकम्"
+  },
+  {
+   "text": "KArIkam",
+   "expected_iast": null,
+   "expected": "KArIkam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "KArI",
+    "",
+    "taddhita:taddhitArtha=vApa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.45 खारीकम्"
+  }
+ ],
+ "5.1.47": [
+  {
+   "text": "paYcakaH",
+   "expected_iast": null,
+   "expected": "paYcakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paYcan",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.47 पञ्चकः"
+  },
+  {
+   "text": "saptakaH",
+   "expected_iast": null,
+   "expected": "saptakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saptan",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.47 सप्तकः"
+  },
+  {
+   "text": "SatyaH",
+   "expected_iast": null,
+   "expected": "SatyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.47 शत्यः"
+  },
+  {
+   "text": "SatikaH",
+   "expected_iast": null,
+   "expected": "SatikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.47 शतिकः"
+  },
+  {
+   "text": "sAhasraH",
+   "expected_iast": null,
+   "expected": "sAhasraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sahasra",
+    "",
+    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.47 साहस्रः"
+  }
+ ],
+ "5.1.50": [
+  {
+   "text": "vAMSaBArikaH",
+   "expected_iast": null,
+   "expected": "vAMSaBArikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vaMSaBAra",
+    "",
+    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.50 वांशभारिकः"
+  },
+  {
+   "text": "kOwajaBArikaH",
+   "expected_iast": null,
+   "expected": "kOwajaBArikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kuwajaBAra",
+    "",
+    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.50 कौटजभारिकः"
+  },
+  {
+   "text": "bAlvajaBArikaH",
+   "expected_iast": null,
+   "expected": "bAlvajaBArikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "balvajaBAra",
+    "",
+    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.50 बाल्वजभारिकः"
+  }
+ ],
+ "5.1.52": [
+  {
+   "text": "prAsTikaH",
+   "expected_iast": null,
+   "expected": "prAsTikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "prastha",
+    "",
+    "taddhita:taddhitArtha=samBavati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.52 प्रास्थिकः"
+  },
+  {
+   "text": "kOqavikaH",
+   "expected_iast": null,
+   "expected": "kOqavikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kuqava",
+    "",
+    "taddhita:taddhitArtha=samBavati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.52 कौडविकः"
+  },
+  {
+   "text": "KArIkaH",
+   "expected_iast": null,
+   "expected": "KArIkaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "KArI",
+    "",
+    "taddhita:taddhitArtha=samBavati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.52 खारीकः"
+  }
+ ],
+ "5.1.56": [
+  {
+   "text": "paYcakaH",
+   "expected_iast": null,
+   "expected": "paYcakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "paYcan",
+    "",
+    "taddhita:taddhitArtha=aMSavasnaBfti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.56 पञ्चकः"
+  },
+  {
+   "text": "saptakaH",
+   "expected_iast": null,
+   "expected": "saptakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saptan",
+    "",
+    "taddhita:taddhitArtha=aMSavasnaBfti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.56 सप्तकः"
+  },
+  {
+   "text": "sAhasraH",
+   "expected_iast": null,
+   "expected": "sAhasraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sahasra",
+    "",
+    "taddhita:taddhitArtha=aMSavasnaBfti|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.56 साहस्रः"
+  }
+ ],
+ "5.1.57": [
+  {
+   "text": "prAsTikaH",
+   "expected_iast": null,
+   "expected": "prAsTikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "prastha",
+    "",
+    "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.57 प्रास्थिको"
+  },
+  {
+   "text": "drORikaH",
+   "expected_iast": null,
+   "expected": "drORikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "droRa",
+    "",
+    "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.57 द्रौणिकः"
+  },
+  {
+   "text": "kOqavikaH",
+   "expected_iast": null,
+   "expected": "kOqavikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kuqava",
+    "",
+    "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.57 कौडविकः"
+  },
+  {
+   "text": "zAzwikaH",
+   "expected_iast": null,
+   "expected": "zAzwikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "zazwi",
+    "",
+    "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.57 षाष्टिकः"
+  },
+  {
+   "text": "sAptatikaH",
+   "expected_iast": null,
+   "expected": "sAptatikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saptati",
+    "",
+    "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.57 साप्ततिकः"
+  }
+ ],
+ "5.1.63": [
+  {
+   "text": "SvEtacCatrikaH",
+   "expected_iast": null,
+   "expected": "SvEtacCatrikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "SvetacCatra",
+    "",
+    "taddhita:taddhitArtha=arhati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.63 श्वैतच्छत्रिकः"
+  },
+  {
+   "text": "vAstrayugmikaH",
+   "expected_iast": null,
+   "expected": "vAstrayugmikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vastrayugma",
+    "",
+    "taddhita:taddhitArtha=arhati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.63 वास्त्रयुग्मिकः"
+  },
+  {
+   "text": "SatyaH",
+   "expected_iast": null,
+   "expected": "SatyaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sata",
+    "",
+    "taddhita:taddhitArtha=arhati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.63 शत्यः"
+  },
+  {
+   "text": "sAhasraH",
+   "expected_iast": null,
+   "expected": "sAhasraH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sahasra",
+    "",
+    "taddhita:taddhitArtha=arhati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.63 साहस्रः"
+  }
+ ],
+ "5.1.72": [
+  {
+   "text": "pArAyaRikaH",
+   "expected_iast": null,
+   "expected": "pArAyaRikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "pArAyaRa",
+    "",
+    "taddhita:taddhitArtha=vartayati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.72 पारायणिकश्छात्रः"
+  },
+  {
+   "text": "tOrAyaRikaH",
+   "expected_iast": null,
+   "expected": "tOrAyaRikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "turAyaRa",
+    "",
+    "taddhita:taddhitArtha=vartayati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.72 तौरायणिको"
+  },
+  {
+   "text": "cAndrAyaRikaH",
+   "expected_iast": null,
+   "expected": "cAndrAyaRikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "candrAyaRa",
+    "",
+    "taddhita:taddhitArtha=vartayati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.72 चान्द्रायणिकस्तपस्वी"
+  }
+ ],
+ "5.1.73": [
+  {
+   "text": "sAMSayikaH",
+   "expected_iast": null,
+   "expected": "sAMSayikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMSaya",
+    "",
+    "taddhita:taddhitArtha=saMSayApanna|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.73 सांशयिकः"
+  }
+ ],
+ "5.1.74": [
+  {
+   "text": "yOjanikaH",
+   "expected_iast": null,
+   "expected": "yOjanikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "yojana",
+    "",
+    "taddhita:taddhitArtha=yojanagacCati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.74 यौजनिकः"
+  },
+  {
+   "text": "krOSaSatikaH",
+   "expected_iast": null,
+   "expected": "krOSaSatikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kroSaSata",
+    "",
+    "taddhita:taddhitArtha=yojanagacCati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.74 क्रौशशतिकः"
+  }
+ ],
+ "5.1.77": [
+  {
+   "text": "OttarapaTikam",
+   "expected_iast": null,
+   "expected": "OttarapaTikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "uttarapaTa",
+    "",
+    "taddhita:taddhitArtha=uttarapaTa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.77 औत्तरपथिकम्"
+  },
+  {
+   "text": "OttarapaTikaH",
+   "expected_iast": null,
+   "expected": "OttarapaTikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "uttarapaTa",
+    "",
+    "taddhita:taddhitArtha=gacCati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.77 औत्तरपथिकः"
+  }
+ ],
+ "5.1.79": [
+  {
+   "text": "Ahnikam",
+   "expected_iast": null,
+   "expected": "Ahnikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "ahan",
+    "",
+    "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.79 आह्निकम्"
+  },
+  {
+   "text": "ArDamAsikam",
+   "expected_iast": null,
+   "expected": "ArDamAsikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "arDamAsa",
+    "",
+    "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.79 आर्धमासिकम्"
+  },
+  {
+   "text": "sAMvatsarikam",
+   "expected_iast": null,
+   "expected": "sAMvatsarikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMvatsara",
+    "",
+    "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.79 सांवत्सरिकम्"
+  }
+ ],
+ "5.1.80": [
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlAdhIzwa|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.80 मासिकोऽध्यापकः"
+  },
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlaBfta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.80 मासिकः कर्मकरः"
+  },
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlaBUta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.80 मासिको व्याधिः"
+  },
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlaBAvI|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.80 मासिक उत्सवः"
+  }
+ ],
+ "5.1.93": [
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.93 मासिको व्याधिः"
+  },
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlalaBya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.93 मासिकः पटः"
+  },
+  {
+   "text": "mAsikam",
+   "expected_iast": null,
+   "expected": "mAsikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.93 मासिकं चान्द्रायणम्"
+  },
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlasukara|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.93 मासिकः प्रासादः"
+  },
+  {
+   "text": "sAMvatsarikaH",
+   "expected_iast": null,
+   "expected": "sAMvatsarikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMvatsara",
+    "",
+    "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.93 सांवत्सरिकः"
+  }
+ ],
+ "5.1.94": [
+  {
+   "text": "mAsikaH",
+   "expected_iast": null,
+   "expected": "mAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.94 मासिको ब्रह्मचारी"
+  },
+  {
+   "text": "ArDamAsikaH",
+   "expected_iast": null,
+   "expected": "ArDamAsikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "arDamAsa",
+    "",
+    "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.94 आर्धमासिकः"
+  },
+  {
+   "text": "sAMvatsarikaH",
+   "expected_iast": null,
+   "expected": "sAMvatsarikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMvatsara",
+    "",
+    "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.94 सांवत्सरिकः"
+  }
+ ],
+ "5.1.95": [
+  {
+   "text": "AgniztomikI",
+   "expected_iast": null,
+   "expected": "AgniztomikI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "agniztoma",
+    "",
+    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+   ],
+   "source": "Kāśikā 5.1.95 आग्निष्टोमिकी"
+  },
+  {
+   "text": "vAjapeyikI",
+   "expected_iast": null,
+   "expected": "vAjapeyikI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vAjapeya",
+    "",
+    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+   ],
+   "source": "Kāśikā 5.1.95 वाजपेयिकी"
+  },
+  {
+   "text": "rAjasUyikI",
+   "expected_iast": null,
+   "expected": "rAjasUyikI",
+   "positive": true,
+   "spec": [
+    "chain",
+    "rAjasUya",
+    "",
+    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+   ],
+   "source": "Kāśikā 5.1.95 राजसूयिकी"
+  }
+ ],
+ "5.1.96": [
+  {
+   "text": "mAsikam",
+   "expected_iast": null,
+   "expected": "mAsikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "mAsa",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 मासे भवं मासिकम्"
+  },
+  {
+   "text": "sAMvatsarikam",
+   "expected_iast": null,
+   "expected": "sAMvatsarikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "saMvatsara",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 सांवत्सरिकम्"
+  },
+  {
+   "text": "vAsantikam",
+   "expected_iast": null,
+   "expected": "vAsantikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vasanta",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 वासन्तिकम्"
+  },
+  {
+   "text": "vAsantam",
+   "expected_iast": null,
+   "expected": "vAsantam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vasanta",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 वासन्तम्"
+  },
+  {
+   "text": "hEmantikam",
+   "expected_iast": null,
+   "expected": "hEmantikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "hemanta",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 हैमन्तिकम्"
+  },
+  {
+   "text": "SAradam",
+   "expected_iast": null,
+   "expected": "SAradam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Sarad",
+    "",
+    "taddhita:taddhitArtha=kAlatatrakArya|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.96 शारदम्"
+  }
+ ],
+ "5.1.99": [
+  {
+   "text": "kArRaveSwakikam",
+   "expected_iast": null,
+   "expected": "kArRaveSwakikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "karRaveSwaka",
+    "",
+    "taddhita:taddhitArtha=sampAdin|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.99 कार्णवेष्टकिकं"
+  },
+  {
+   "text": "vAstrayugikam",
+   "expected_iast": null,
+   "expected": "vAstrayugikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vastrayuga",
+    "",
+    "taddhita:taddhitArtha=sampAdin|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.99 वास्त्रयुगिकं"
+  }
+ ],
+ "5.1.101": [
+  {
+   "text": "sAntApikaH",
+   "expected_iast": null,
+   "expected": "sAntApikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "santApa",
+    "",
+    "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.101 सान्तापिकः"
+  },
+  {
+   "text": "sAnnAhikaH",
+   "expected_iast": null,
+   "expected": "sAnnAhikaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sannAha",
+    "",
+    "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.1.101 सान्नाहिकः"
+  }
+ ],
+ "5.1.104": [
+  {
+   "text": "sAmayikam",
+   "expected_iast": null,
+   "expected": "sAmayikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "samaya",
+    "",
+    "taddhita:taddhitArtha=prApta|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.104 सामयिकं कार्यम्"
+  }
+ ],
+ "5.1.108": [
+  {
+   "text": "kAlikam",
+   "expected_iast": null,
+   "expected": "kAlikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "kAla",
+    "",
+    "taddhita:taddhitArtha=prakfzwa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.108 कालिकमृणम्"
+  }
+ ],
+ "5.1.109": [
+  {
+   "text": "EndramahikaM",
+   "expected_iast": null,
+   "expected": "Endramahikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "indramaha",
+    "",
+    "taddhita:taddhitArtha=prayojana|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.109 ऐन्द्रमहिकम्"
+  },
+  {
+   "text": "gANgAmahikam",
+   "expected_iast": null,
+   "expected": "gANgAmahikam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "gaNgAmaha",
+    "",
+    "taddhita:taddhitArtha=prayojana|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.1.109 गाङ्गामहिकम्"
+  }
+ ],
  "5.1.115": [
   {
    "text": "brāhmaṇa + vati (tena tulyaṃ kriyā ced vatiḥ)",
@@ -263,6 +1504,239 @@
    "source": "kashika 5.3.68 (exact word)"
   }
  ],
+ "5.3.73": [
+  {
+   "text": "aSvakaH",
+   "expected_iast": null,
+   "expected": "aSvakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aSva",
+    "",
+    "taddhita:taddhitArtha=ajYAta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.73 अश्वकः"
+  },
+  {
+   "text": "gardaBakaH",
+   "expected_iast": null,
+   "expected": "gardaBakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "gardaBa",
+    "",
+    "taddhita:taddhitArtha=ajYAta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.73 गर्दभकः"
+  },
+  {
+   "text": "uzwrakaH",
+   "expected_iast": null,
+   "expected": "uzwrakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "uzwra",
+    "",
+    "taddhita:taddhitArtha=ajYAta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.73 उष्ट्रकः"
+  }
+ ],
+ "5.3.74": [
+  {
+   "text": "aSvakaH",
+   "expected_iast": null,
+   "expected": "aSvakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "aSva",
+    "",
+    "taddhita:taddhitArtha=kutsita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.74 कुत्सितोऽश्वः अश्वकः"
+  },
+  {
+   "text": "uzwrakaH",
+   "expected_iast": null,
+   "expected": "uzwrakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "uzwra",
+    "",
+    "taddhita:taddhitArtha=kutsita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.74 उष्ट्रकः"
+  },
+  {
+   "text": "gardaBakaH",
+   "expected_iast": null,
+   "expected": "gardaBakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "gardaBa",
+    "",
+    "taddhita:taddhitArtha=kutsita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.74 गर्दभकः"
+  }
+ ],
+ "5.3.76": [
+  {
+   "text": "putrakaH",
+   "expected_iast": null,
+   "expected": "putrakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "putra",
+    "",
+    "taddhita:taddhitArtha=anukampA|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.76 पुत्रकः"
+  },
+  {
+   "text": "vatsakaH",
+   "expected_iast": null,
+   "expected": "vatsakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vatsa",
+    "",
+    "taddhita:taddhitArtha=anukampA|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.76 वत्सकः"
+  },
+  {
+   "text": "durbalakaH",
+   "expected_iast": null,
+   "expected": "durbalakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "durbala",
+    "",
+    "taddhita:taddhitArtha=anukampA|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.76 दुर्बलकः"
+  }
+ ],
+ "5.3.77": [
+  {
+   "text": "DAnakAH",
+   "expected_iast": null,
+   "expected": "DAnakAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "DAna",
+    "",
+    "taddhita:taddhitArtha=nIti|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.77 धानकाः"
+  },
+  {
+   "text": "tilakAH",
+   "expected_iast": null,
+   "expected": "tilakAH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "tila",
+    "",
+    "taddhita:taddhitArtha=nIti|sup:1,3,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.77 तिलकाः"
+  }
+ ],
+ "5.3.85": [
+  {
+   "text": "tElakam",
+   "expected_iast": null,
+   "expected": "tElakam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "tEla",
+    "",
+    "taddhita:taddhitArtha=alpa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.3.85 तैलकम्"
+  },
+  {
+   "text": "GftakaM",
+   "expected_iast": null,
+   "expected": "Gftakam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "Gfta",
+    "",
+    "taddhita:taddhitArtha=alpa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.3.85 घृतकम्"
+  },
+  {
+   "text": "sarvakam",
+   "expected_iast": null,
+   "expected": "sarvakam",
+   "positive": true,
+   "spec": [
+    "chain",
+    "sarva",
+    "",
+    "taddhita:taddhitArtha=alpa|sup:1,1,napuṃsaka"
+   ],
+   "source": "Kāśikā 5.3.85 सर्वकम्"
+  }
+ ],
+ "5.3.86": [
+  {
+   "text": "vfkzakaH",
+   "expected_iast": null,
+   "expected": "vfkzakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "vfkza",
+    "",
+    "taddhita:taddhitArtha=hrasva|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.86 वृक्षकः"
+  },
+  {
+   "text": "plakzakaH",
+   "expected_iast": null,
+   "expected": "plakzakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "plakza",
+    "",
+    "taddhita:taddhitArtha=hrasva|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.86 प्लक्षकः"
+  },
+  {
+   "text": "stamBakaH",
+   "expected_iast": null,
+   "expected": "stamBakaH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "stamBa",
+    "",
+    "taddhita:taddhitArtha=hrasva|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.3.86 स्तम्भकः"
+  }
+ ],
  "5.4.11": [
   {
    "text": "kim + tarap + ām (kimettiṅavyayaghād ām)",
@@ -409,6 +1883,79 @@
    ],
    "source": null,
    "disputed": "form not found in Kāśikā/Kaumudī/Bhāṣya/vārttika/Sudhā texts or the attested derivations of this sūtra (nor its 5 neighbours)"
+  }
+ ],
+ "5.4.156": [
+  {
+   "text": "bahuSreyAn",
+   "expected_iast": null,
+   "expected": "bahuSreyAn",
+   "positive": true,
+   "spec": [
+    "chain",
+    "bahuSreyas",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.4.156 बहुश्रेयान्"
+  }
+ ],
+ "5.4.157": [
+  {
+   "text": "suBrAtA",
+   "expected_iast": null,
+   "expected": "suBrAtA",
+   "positive": true,
+   "spec": [
+    "chain",
+    "suBrAtf",
+    "",
+    "taddhita:taddhitArtha=samAsAnta;arthaViSeSa=vandita|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.4.157 सुभ्राता"
+  },
+  {
+   "text": "mUrKaBrAtfkaH (vandite kim: kap applies when the bhrātṛ is not vandita)",
+   "expected_iast": null,
+   "expected": "mUrKaBrAtfkaH",
+   "positive": false,
+   "spec": [
+    "chain",
+    "mUrKaBrAtf",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.4.157 मूर्खभ्रातृकः",
+   "kind": "produced",
+   "note": "vandite kim: kap applies when the bhrātṛ is not vandita"
+  }
+ ],
+ "5.4.159": [
+  {
+   "text": "bahunAqiH",
+   "expected_iast": null,
+   "expected": "bahunAqiH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "bahunAqI",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,pulliṅga"
+   ],
+   "source": "Kāśikā 5.4.159 बहुनाडिः कायः"
+  },
+  {
+   "text": "bahutantrIH",
+   "expected_iast": null,
+   "expected": "bahutantrIH",
+   "positive": true,
+   "spec": [
+    "chain",
+    "bahutantrI",
+    "",
+    "taddhita:taddhitArtha=samAsAnta|sup:1,1,strīliṅga"
+   ],
+   "source": "Kāśikā 5.4.159 बहुतन्त्रीर्ग्रीवा"
   }
  ]
 }

@@ -14,7 +14,8 @@
      3,
      1,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -30,7 +31,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "fail",
@@ -43,7 +45,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "pass",
@@ -72,7 +75,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -85,7 +89,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -104,7 +109,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -117,7 +123,8 @@
      3,
      3,
      "{\"upasargas\": [\"vi\", \"ati\"], \"vivaksha\": {\"arthaViSeSa\": \"karmavyatihAra\"}}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "pass",
@@ -147,8 +154,8 @@
      1,
      "{\"upasargas\": [\"pari\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -162,8 +169,8 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -177,8 +184,8 @@
      1,
      "{\"upasargas\": [\"ava\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -216,8 +223,8 @@
      1,
      "{\"upasargas\": [\"sam\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -231,8 +238,8 @@
      1,
      "{\"upasargas\": [\"ava\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -246,8 +253,8 @@
      1,
      "{\"upasargas\": [\"pra\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -261,8 +268,8 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -324,8 +331,8 @@
      3,
      "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vadArTa\": \"vimati\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -339,8 +346,8 @@
      1,
      "{\"upasargas\": [\"upa\"], \"vivaksha\": {\"vadArTa\": \"upamantraRa\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -362,8 +369,8 @@
      1,
      "{\"vivaksha\": {\"vadArTa\": \"BAsana\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -425,8 +432,8 @@
      1,
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -448,8 +455,8 @@
      2,
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -463,8 +470,8 @@
      3,
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -498,8 +505,8 @@
      1,
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "unrunnable"
@@ -516,8 +523,8 @@
      1,
      "{}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -567,8 +574,8 @@
      1,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -590,8 +597,8 @@
      2,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -605,8 +612,8 @@
      3,
      "{\"vivaksha\": {\"BujArTa\": \"anavana\"}}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -638,8 +645,8 @@
      1,
      "{\"upasargas\": [\"anu\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -653,8 +660,8 @@
      1,
      "{\"upasargas\": [\"parA\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "unrunnable"
@@ -716,8 +723,8 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -731,8 +738,8 @@
      1,
      "{\"upasargas\": [\"A\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -746,8 +753,8 @@
      1,
      "{\"upasargas\": [\"pari\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -780,8 +787,8 @@
      1,
      "{\"upasargas\": [\"upa\"]}"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "unrunnable"
@@ -849,7 +856,8 @@
      3,
      2,
      "{}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -862,7 +870,8 @@
      3,
      2,
      "{}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -875,7 +884,8 @@
      3,
      2,
      "{}"
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "unrunnable"
@@ -895,7 +905,8 @@
      "pulliNga",
      4,
      1
-    ]
+    ],
+    "sub": "not_fired"
    },
    {
     "result": "fail",
@@ -906,7 +917,8 @@
      "pulliNga",
      4,
      1
-    ]
+    ],
+    "sub": "mismatch"
    },
    {
     "result": "unrunnable"
@@ -1066,6 +1078,1425 @@
    },
    {
     "result": "unrunnable"
+   }
+  ]
+ },
+ "1.1.5": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form citaH is right but 1.1.5 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "05.0005",
+     "kta",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "artha",
+       "BAva"
+      ],
+      [
+       "kala",
+       "BUta"
+      ]
+     ]
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form stutaH is right but 1.1.5 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "02.0038",
+     "kta",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "artha",
+       "BAva"
+      ],
+      [
+       "kala",
+       "BUta"
+      ]
+     ]
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form cinutaH is right but 1.1.5 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "05.0005",
+     "laT",
+     "kartari",
+     3,
+     2,
+     "parasmai"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form cinvanti is right but 1.1.5 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "05.0005",
+     "laT",
+     "kartari",
+     3,
+     3,
+     "parasmai"
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.1.28": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['uttarapUrvAyE', 'uttarapUrvvAyE', 'utttarapUrvAyE', 'utttarapUrvvAyE'] ≠ expected uttarapUrvasyE",
+    "spec": [
+     "subanta",
+     "uttarapUrvA",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "form uttarapUrvAyE is right but 1.1.28 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "uttarapUrvA",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.1.29": {
+  "grade": "NO_POSITIVE",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.1.30": {
+  "grade": "NO_POSITIVE",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.1.31": {
+  "grade": "NO_POSITIVE",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.1.32": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['katarakatamAH'] ≠ expected katarakatame",
+    "spec": [
+     "subanta",
+     "katarakatama",
+     "pulliṅga",
+     1,
+     3
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.1.47": {
+  "grade": "FAIL",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "07.0001",
+     "laT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "form payAMsi is right but 1.1.47 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "payas",
+     "napuṃsaka",
+     1,
+     3
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.1.56": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.1.57": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form avaDIt is right but 1.1.57 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "02.0002",
+     "luG",
+     "kartari",
+     3,
+     1
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.1.58": {
+  "grade": "UNRUNNABLE",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.2.1": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.2.4": {
+  "grade": "confident",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "08.0010",
+     "laT",
+     "kartari",
+     3,
+     2
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "08.0010",
+     "laT",
+     "kartari",
+     3,
+     3
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "05.0005",
+     "laT",
+     "kartari",
+     3,
+     2
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.2.5": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "07.0002",
+     "liT",
+     "kartari",
+     3,
+     2
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "07.0002",
+     "liT",
+     "kartari",
+     3,
+     3
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "fail",
+    "why": "produced reading biBeditha is not produced at all (readings ['biBediTa'])",
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.2.6": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form baBUva is right but 1.2.6 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.0001",
+     "liT",
+     "kartari",
+     3,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form baBUviTa is right but 1.2.6 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.0001",
+     "liT",
+     "kartari",
+     2,
+     1
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.2.7": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['marqittvA', 'marqittvvA', 'marqitvA', 'marqqittvA', 'marqqittvvA', 'marqqitvA'] ≠ expected mfqitvA",
+    "spec": [
+     "krdanta",
+     "06.0053",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kozittvA', 'kozittvvA', 'kozitvA'] ≠ expected kuzitvA",
+    "spec": [
+     "krdanta",
+     "09.0054",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kleSittvA', 'kleSittvvA', 'kleSitvA'] ≠ expected klizitvA",
+    "spec": [
+     "krdanta",
+     "04.0057",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['odittvA', 'odittvvA', 'oditvA'] ≠ expected uditvA",
+    "spec": [
+     "krdanta",
+     "01.1164",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.2.8": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['rodittvA', 'rodittvvA', 'roditvA'] ≠ expected ruditvA",
+    "spec": [
+     "krdanta",
+     "02.0062",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['vedittvA', 'vedittvvA', 'veditvA'] ≠ expected viditvA",
+    "spec": [
+     "krdanta",
+     "02.0059",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['mozittvA', 'mozittvvA', 'mozitvA'] ≠ expected muzitvA",
+    "spec": [
+     "krdanta",
+     "09.0066",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['garhIttvA', 'garhIttvvA', 'garhItvA'] ≠ expected gfhItvA",
+    "spec": [
+     "krdanta",
+     "09.0071",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.2.9": {
+  "grade": "FAIL",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['ciciizate'] ≠ expected cicIzati",
+    "spec": [
+     "sanadi",
+     "05.0005",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['tuztuizate'] ≠ expected tuzwUzati",
+    "spec": [
+     "sanadi",
+     "02.0038",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['kfkfizate'] ≠ expected cikIrzati",
+    "spec": [
+     "sanadi",
+     "08.0010",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "produced reading pipAsati is not produced at all (readings ['pApAizate'])",
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.2.10": {
+  "grade": "FAIL",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['BiBidizate'] ≠ expected bibitsati",
+    "spec": [
+     "sanadi",
+     "07.0002",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "san_recipe",
+     "parasmai"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "produced reading yiyakzate is not produced at all (readings ['yiyajizate'])",
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.2.11": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta2",
+     "07.0002",
+     "AsIrliG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\"}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "fail",
+    "why": "readings ['aBitta'] ≠ expected abitta",
+    "spec": [
+     "tinanta2",
+     "07.0002",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\"}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.2.12": {
+  "grade": "working",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta2",
+     "08.0010",
+     "AsIrliG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\"}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta2",
+     "08.0010",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\"}"
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   }
+  ]
+ },
+ "1.2.13": {
+  "grade": "FAIL",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['samagaMsta'] ≠ expected samagata",
+    "spec": [
+     "tinanta2",
+     "01.1137",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\", \"upasargas\": [\"sam\"]}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "form samagaMsta is right but 1.2.13 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta2",
+     "01.1137",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "{\"pada\": \"atmane\", \"upasargas\": [\"sam\"]}"
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.2.18": {
+  "grade": "FAIL",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form devitvA is right but 1.2.18 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "04.0001",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form vartitvA is right but 1.2.18 did not fire (trace status absent): another path made it",
+    "spec": [
+     "krdanta",
+     "01.0862",
+     "ktvA",
+     "pulliṅga",
+     1,
+     1,
+     [
+      [
+       "kala",
+       "pUrvakAla"
+      ],
+      [
+       "samAnakartfka",
+       "samAnakartfka"
+      ]
+     ]
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.2.40": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.2.51": {
+  "grade": "UNRUNNABLE",
+  "type": "ATIDESHA",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.2.53": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.2.72": {
+  "grade": "UNRUNNABLE",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "unrunnable"
+   }
+  ]
+ },
+ "1.3.12": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0011",
+     "laT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0026",
+     "laT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "02.0025",
+     "laT",
+     "kartari",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   }
+  ]
+ },
+ "1.3.13": {
+  "grade": "working",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "08.0010",
+     "laT",
+     "karmani",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "tinanta",
+     "01.1051",
+     "laT",
+     "karmani",
+     3,
+     1
+    ],
+    "mutation": "indeterminate",
+    "replaced_by": []
+   }
+  ]
+ },
+ "1.3.19": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['vijayati'] ≠ expected vijayate",
+    "spec": [
+     "tinanta2",
+     "01.0642",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"vi\"]}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['parAjayati'] ≠ expected parAjayate",
+    "spec": [
+     "tinanta2",
+     "01.0642",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"parA\"]}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.28": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['AyacCate'] ≠ expected Ayacchate",
+    "spec": [
+     "tinanta2",
+     "01.1139",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"A\"]}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['Ahante'] ≠ expected Ahate",
+    "spec": [
+     "tinanta2",
+     "02.0002",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"A\"]}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.29": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['saMsvarati'] ≠ expected saMsvarate",
+    "spec": [
+     "tinanta2",
+     "01.1081",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"sam\"]}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.48": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['sampravadaMti'] ≠ expected saMpravadante",
+    "spec": [
+     "tinanta2",
+     "01.1164",
+     "laT",
+     "kartari",
+     3,
+     3,
+     "{\"upasargas\": [\"sam\", \"pra\"]}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.49": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['anuvadati'] ≠ expected anuvadate",
+    "spec": [
+     "tinanta2",
+     "01.1164",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "{\"upasargas\": [\"anu\"]}"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.50": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['vipravadanti'] ≠ expected vipravadante",
+    "spec": [
+     "tinanta2",
+     "01.1164",
+     "laT",
+     "kartari",
+     3,
+     3,
+     "{\"upasargas\": [\"vi\", \"pra\"]}"
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.3.68": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "readings ['BIayate'] ≠ expected BIzayate",
+    "spec": [
+     "sanadi",
+     "03.0002",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "nic_recipe",
+     "atmane"
+    ],
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.3.72": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form kurute is right but 1.3.72 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "08.0010",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form pacate is right but 1.3.72 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "01.1151",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.3.78": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form yAti is right but 1.3.78 did not fire (trace status ['VACUOUS']): another path made it",
+    "spec": [
+     "tinanta",
+     "02.0044",
+     "laT",
+     "kartari",
+     3,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.4.4": {
+  "grade": "working",
+  "type": "NIYAMA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "subanta",
+     "SrI",
+     "strīliṅga",
+     8,
+     1
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "subanta",
+     "BrU",
+     "strīliṅga",
+     8,
+     1
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.4.5": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form SriyAm is right but 1.4.5 did not fire (trace status ['SKIPPED', 'BLOCKED']): another path made it",
+    "spec": [
+     "subanta",
+     "SrI",
+     "strīliṅga",
+     6,
+     3
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "readings ['SrIRAm', 'SrIRAmm', 'SriyAm', 'SriyAmm'] ≠ expected SrINAm",
+    "spec": [
+     "subanta",
+     "SrI",
+     "strīliṅga",
+     6,
+     3
+    ],
+    "sub": "mismatch"
+   },
+   {
+    "result": "fail",
+    "why": "form BruvAm is right but 1.4.5 did not fire (trace status ['SKIPPED', 'BLOCKED']): another path made it",
+    "spec": [
+     "subanta",
+     "BrU",
+     "strīliṅga",
+     6,
+     3
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "produced reading strINAm is not produced at all (readings ['strIRAm', 'strIRAmm', 'sttrIRAmm'])",
+    "sub": "mismatch"
+   }
+  ]
+ },
+ "1.4.6": {
+  "grade": "FAIL",
+  "type": "VIBHASHA",
+  "cases": [
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "subanta",
+     "kfti",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "fail",
+    "why": "form kftaye is right but 1.4.6 did not fire (trace status ['BLOCKED']): another path made it",
+    "spec": [
+     "subanta",
+     "kfti",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "pass",
+    "why": "",
+    "spec": [
+     "subanta",
+     "Denu",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
+   },
+   {
+    "result": "fail",
+    "why": "form Sriye is right but 1.4.6 did not fire (trace status ['BLOCKED']): another path made it",
+    "spec": [
+     "subanta",
+     "SrI",
+     "strīliṅga",
+     4,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
+   }
+  ]
+ },
+ "1.4.22": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form brAhmaRO is right but 1.4.22 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "brAhmaRa",
+     "pulliṅga",
+     1,
+     2
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form brAhmaRaH is right but 1.4.22 did not fire (trace status absent): another path made it",
+    "spec": [
+     "subanta",
+     "brAhmaRa",
+     "pulliṅga",
+     1,
+     1
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form paWataH is right but 1.4.22 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.0381",
+     "laT",
+     "kartari",
+     3,
+     2
+    ],
+    "sub": "not_fired"
+   }
+  ]
+ },
+ "1.4.108": {
+  "grade": "FAIL",
+  "type": "VIDHI",
+  "cases": [
+   {
+    "result": "fail",
+    "why": "form pacati is right but 1.4.108 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.1151",
+     "laT",
+     "kartari",
+     3,
+     1,
+     "parasmai"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form pacataH is right but 1.4.108 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.1151",
+     "laT",
+     "kartari",
+     3,
+     2,
+     "parasmai"
+    ],
+    "sub": "not_fired"
+   },
+   {
+    "result": "fail",
+    "why": "form pacanti is right but 1.4.108 did not fire (trace status absent): another path made it",
+    "spec": [
+     "tinanta",
+     "01.1151",
+     "laT",
+     "kartari",
+     3,
+     3,
+     "parasmai"
+    ],
+    "sub": "not_fired"
    }
   ]
  }
