@@ -20,6 +20,18 @@
   <span style="font-size:12px;font-family:var(--mono)">{% if prev_sid %}<a href="/sutra/{{ prev_sid }}">← {{ prev_sid }}</a>{% endif %} {% if next_sid %}<a href="/sutra/{{ next_sid }}">{{ next_sid }} →</a>{% endif %}</span>
 </div>
 
+{% if kau %}
+<div class="no-print" style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:13px">
+  {% for book, label in (("lsk", "लघुकौमुदी"), ("sk", "सिद्धान्तकौमुदी")) %}{% if kau.get(book) %}{% set k = kau[book] %}
+  <span title="the sūtra's place in the book's own order (as ashtadhyayi.com/sutraani/{{ book }}{{ k.n }})">
+    {% if k.prev %}<a href="/sutra/{{ k.prev }}" title="{{ k.prev }}">‹</a>{% endif %}
+    <b>{{ label }}-{{ k.n }}</b>{% if k.chapter %} <span class="muted">(प्रकरणम् {{ k.chapter }})</span>{% endif %}
+    {% if k.next %}<a href="/sutra/{{ k.next }}" title="{{ k.next }}">›</a>{% endif %}
+    <a href="/sutras?view={{ book }}#{{ rec.sutra_id }}" class="muted" style="font-size:11px">सूची</a></span>
+  {% endif %}{% endfor %}
+</div>
+{% endif %}
+
 <div class="panel">
   <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
     <h1 style="margin:0;font-family:var(--mono);font-size:28px;color:var(--accent);">{{ rec.sutra_id }}</h1>

@@ -636,6 +636,35 @@ def _sid_key(x: str):
         return (99,)
 
 
+_KAU_ORDER: dict | None = None
+
+
+def _kaumudi_order() -> dict:
+    """Book order of the Laghusiddhāntakaumudī (lsk) and Siddhāntakaumudī (sk) per sūtra: data/reference/kaumudi/order.json (tools/build_kaumudi_order)."""
+    global _KAU_ORDER
+    if _KAU_ORDER is None:
+        p = _ROOT / "data" / "reference" / "kaumudi" / "order.json"
+        _KAU_ORDER = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    return _KAU_ORDER
+
+
+def _kaumudi_nav(sid: str) -> dict:
+    """{"lsk": {"n", "prev", "next", "chapter"}, "sk": {...}} — the neighbours of `sid` in each book's own order (as ashtadhyayi.com/sutraani/lsk15)."""
+    order, out = _kaumudi_order(), {}
+    for book in ("lsk", "sk"):
+        n = (order.get(sid) or {}).get(book)
+        if not n:
+            continue
+        by_n = {v[book]: k for k, v in order.items() if book in v}
+        out[book] = {"n": n, "prev": by_n.get(n - 1), "next": by_n.get(n + 1), "chapter": order[sid].get(book + "c")}
+    return out
+
+
+@app.route("/api/kaumudi-order")
+def api_kaumudi_order():
+    return jsonify(_kaumudi_order())
+
+
 @app.route("/sutra/<sid>")
 def sutra_detail(sid):
     rec = SUTRA_REGISTRY.get(sid)
@@ -654,7 +683,7 @@ def sutra_detail(sid):
                   "blocks_sutra_ids": list(rec.blocks_sutra_ids or ())})
     return render_template(
         "sutra.html", nav_active="sutras", sid=sid, rec=r, implemented=rec is not None,
-        examples=j.get("ex", []), applied=_applied_index().get(sid, []),
+        examples=j.get("ex", []), applied=_applied_index().get(sid, []), kau=_kaumudi_nav(sid),
         prev_sid=order[i - 1] if i > 0 else None, next_sid=order[i + 1] if 0 <= i < len(order) - 1 else None,
     )
 

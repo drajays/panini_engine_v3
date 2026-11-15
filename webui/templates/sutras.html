@@ -21,6 +21,12 @@
     <div id="s-type-bar" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
     <span class="muted" id="s-count" style="font-size:12px;margin-left:8px;"></span>
   </div>
+  <div id="s-view-bar" style="display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:8px;">
+    <span class="muted" style="font-size:12px;">क्रमः · order:</span>
+    <button class="pl-cat-btn active" data-v="">अष्टाध्यायी</button>
+    <button class="pl-cat-btn" data-v="lsk" title="Laghusiddhāntakaumudī — the sūtras in the book's order (as ashtadhyayi.com/sutraani/lsk15)">लघुसिद्धान्तकौमुदी</button>
+    <button class="pl-cat-btn" data-v="sk" title="Siddhāntakaumudī — the sūtras in the book's order">सिद्धान्तकौमुदी</button>
+  </div>
 </div>
 
 <div id="s-body">
@@ -51,6 +57,8 @@ function escH(s) {
 }
 
 let _notes = {};
+let _kau = {};
+let _view = "";
 let _all = [];
 let _activeType = "";
 let _search = "";
@@ -70,6 +78,8 @@ async function init() {
     }
     return 0;
   });
+  try { _kau = await (await fetch("/api/kaumudi-order")).json(); } catch (e) { _kau = {}; }
+  const qv = new URLSearchParams(location.search).get("view"); if (qv === "lsk" || qv === "sk") setView(qv);
   try { _notes = await (await fetch("/api/notes-counts")).json(); } catch (e) { _notes = {}; }
   const types = [...new Set(_all.map(s => s.sutra_type))];
   buildTypeBar(types, _all.length);
@@ -98,8 +108,14 @@ function buildTypeBar(types, total) {
   });
 }
 
+function setView(v) {
+  _view = v;
+  document.querySelectorAll("#s-view-bar .pl-cat-btn").forEach(b => b.classList.toggle("active", b.dataset.v === v));
+}
+
 function filtered() {
-  return _all.filter(s => {
+  const rows = _all.filter(s => {
+    if (_view && !(_kau[s.sutra_id] && _kau[s.sutra_id][_view])) return false;
     if (_activeType && s.sutra_type !== _activeType) return false;
     if (_search) {
       const q = _search.toLowerCase();
@@ -109,6 +125,7 @@ function filtered() {
     }
     return true;
   });
+  return _view ? rows.sort((a, b) => _kau[a.sutra_id][_view] - _kau[b.sutra_id][_view]) : rows;
 }
 
 function render() {
@@ -121,14 +138,16 @@ function render() {
   }
   let html = `<table class="matrix" style="width:100%;border-collapse:collapse;">
     <thead><tr>
+      ${_view ? `<th style="text-align:right;padding:6px 8px;font-size:11px;color:var(--ink-faint);">${_view === "lsk" ? "ल.सि.कौ." : "सि.कौ."}</th>` : ""}
       <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">क्रमाङ्कः</th>
       <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">प्रकारः</th>
       <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">सूत्रम्</th>
       <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">विवरणम्</th>
     </tr></thead><tbody>`;
   items.forEach(s => {
-    html += `<tr style="border-top:1px solid var(--line-soft);cursor:pointer;"
+    html += `<tr id="${escH(s.sutra_id)}" style="border-top:1px solid var(--line-soft);cursor:pointer;"
                  onclick="location.href='/sutra/${encodeURIComponent(s.sutra_id)}'">
+      ${_view ? `<td style="padding:6px 8px;text-align:right;font-family:var(--mono);font-size:12px;">${_kau[s.sutra_id][_view]}${_kau[s.sutra_id][_view + "c"] ? `<small class="muted" title="prakaraṇa">·${_kau[s.sutra_id][_view + "c"]}</small>` : ""}</td>` : ""}
       <td style="padding:6px 8px;font-family:var(--mono);font-size:12px;white-space:nowrap;">
         <a href="/sutra/${encodeURIComponent(s.sutra_id)}" style="color:var(--accent);">${escH(s.sutra_id)}</a>${_notes[s.sutra_id] ? ` <span class="muted" title="${_notes[s.sutra_id].n} audit note(s), ${_notes[s.sutra_id].open} open" style="font-size:11px">✎${_notes[s.sutra_id].n}${_notes[s.sutra_id].open ? "·" + _notes[s.sutra_id].open + " open" : ""}</span>` : ""}
       </td>
@@ -142,6 +161,11 @@ function render() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("s-view-bar").addEventListener("click", e => {
+    const b = e.target.closest("button[data-v]"); if (!b) return;
+    setView(b.dataset.v); render();
+    history.replaceState(null, "", b.dataset.v ? "?view=" + b.dataset.v : location.pathname);
+  });
   init();
   document.getElementById("s-search").addEventListener("input", e => {
     _search = e.target.value.trim();
