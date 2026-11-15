@@ -25,6 +25,7 @@ const SutraNotes = (() => {
           ${n.history.length ? `<button type="button" data-act="hist" data-id="${esc(n.id)}">⟲ History</button>` : ""}
           <button type="button" data-act="del" data-id="${esc(n.id)}" class="sn-del">✕</button></span></header>
       <div class="sn-text">${esc(n.text)}</div>
+      ${n.trace ? `<details class="sn-trace"><summary>📜 Trace where it was seen (${n.trace.split("\n").filter(l => l.startsWith("#")).length} rows)</summary><pre>${n.trace.split("\n").map(l => l.includes("◀ NOTE HERE") ? `<mark>${esc(l)}</mark>` : esc(l)).join("\n")}</pre></details>` : ""}
       ${n.verdict ? `<div class="sn-verdict"><b>Verdict</b> — ${esc(n.verdict)}</div>` : ""}
       ${n.evidence ? `<div class="sn-evidence"><b>Evidence</b> — ${esc(n.evidence)}</div>` : ""}
       ${histOpen.has(n.id) ? `<div class="sn-hist">${n.history.map((h, i) => `<div><span class="muted">${esc((h.at || "").slice(0, 16).replace("T", " "))} · ${esc(h.status)}</span>

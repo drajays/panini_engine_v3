@@ -43,3 +43,11 @@ def test_note_kind(c):
     assert c.post("/api/notes/4.1.2", json={"text": "x"}).get_json()["kind"] == "note"
     assert c.put(f"/api/notes/4.1.2/{n['id']}", json={"kind": "solution"}).get_json()["kind"] == "solution"
     assert c.put(f"/api/notes/4.1.2/{n['id']}", json={"kind": "nonsense"}).status_code == 400
+
+
+def test_note_keeps_the_trace_it_was_seen_in(c):
+    tr = "Derivation: rAma\n#1 1.2.45 [APPLIED] rAma → rAma\n#37 4.1.2 [APPLIED] rAma → rAmasup   ◀ NOTE HERE"
+    n = c.post("/api/notes/4.1.2", json={"text": "why su?", "kind": "question", "trace": tr}).get_json()
+    assert n["trace"] == tr
+    assert c.get("/api/notes/4.1.2").get_json()["notes"][0]["trace"] == tr
+    assert c.post("/api/notes/4.1.2", json={"text": "x", "trace": "y" * 400_001}).status_code == 400

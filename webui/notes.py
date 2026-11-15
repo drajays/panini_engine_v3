@@ -32,6 +32,7 @@ EDITABLE = ("text", "author", "derivation", "status", "verdict", "evidence", "ki
 KINDS = ("note", "question", "doubt", "solution")        # what the writer meant: a question / doubt to answer, a plain note, or a proposed solution to check on merit
 MAX_TEXT = 200_000
 MAX_FIELD = 4_000
+MAX_TRACE = 400_000      # the vyutpatti prakriyā the note was written on: every step as the engine recorded it
 MAX_HISTORY = 20
 _SID = re.compile(r"^\d+\.\d+\.\d+$")
 _LOCK = threading.Lock()
@@ -88,6 +89,15 @@ def _clean(data: dict, *, partial: bool) -> dict:
     return out
 
 
+def _trace(data: dict) -> str:
+    v = data.get("trace", "")
+    if not isinstance(v, str):
+        abort(400, "trace must be a string")
+    if len(v) > MAX_TRACE:
+        abort(400, "trace too long")
+    return v.strip()
+
+
 def _find(doc: dict, nid: str) -> dict:
     for n in doc["notes"]:
         if n["id"] == nid:
@@ -108,7 +118,7 @@ def add_note(sid):
         note = {"id": uuid.uuid4().hex[:10], "created": _now(), "updated": _now(), "text": data["text"],
                 "author": data.get("author", ""), "derivation": data.get("derivation", ""),
                 "kind": data.get("kind", "note"), "status": data.get("status", "open"), "verdict": data.get("verdict", ""), "evidence": data.get("evidence", ""),
-                "history": []}
+                "trace": _trace(request.get_json(force=True) or {}), "history": []}
         doc["notes"].append(note)
         _save(sid, doc)
     return jsonify(note), 201

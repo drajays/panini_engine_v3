@@ -271,6 +271,19 @@ const Prakriya = (() => {
       ${t ? `<div class="pk-sutra-k"><b>${esc(t[0])}</b> — ${esc(t[2])}</div>` : ""}</div></details>`;
   };
 
+  /* the vyutpatti prakriyā a note was written on: every row of the full trace, the noted step marked — saved with the note so the question can be reproduced */
+  const traceText = (d, t, at) => {
+    const viv = d.vivaksa || d["vivakṣā"] || null, surface = d.surface ? `${d.surface.dev || ""} (${d.surface.slp1 || ""})` : "";
+    const L = [`Derivation: ${d.title || "—"} → ${surface}`, `Page: ${location.pathname}${location.search}`, `Rows: ${t.length} (full trace; #n = the row number, stable across depths)`];
+    if (viv) L.push(`Vivakṣā: ${Object.entries(viv).map(([k, v]) => `${k}=${v}`).join(" · ")}`);
+    L.push(`Marked ◀ = the step this note is about (#${at + 1}).`, "");
+    t.forEach((s, i) => {
+      const why = s.status === "BLOCKED" ? s.gate_reason : s.status === "SKIPPED" ? s.skip_reason : "";
+      L.push(`#${i + 1} ${s.sutra_id} [${s.status}] ${s.form_before} → ${s.form_after}${s.parts ? "  parts=" + (typeof s.parts === "string" ? s.parts : JSON.stringify(s.parts)) : ""}${why ? "  (" + String(why).slice(0, 160) + ")" : ""}${i === at ? "   ◀ NOTE HERE" : ""}`);
+    });
+    return L.join("\n");
+  };
+
   /* ✎ a question / doubt / note on this step: it is saved under the sūtra (webui/notes.py) and shows on /sutra/<id>, with the derivation and step it came from */
   let NOTE_N = null;
   const noteCounts = () => { if (!NOTE_N) { NOTE_N = {}; fetch("/api/notes-counts").then(r => r.json()).then(o => { NOTE_N = o; document.querySelectorAll(".pk-ask").forEach(b => { b.innerHTML = askLabel(b.dataset.sid); }); }).catch(() => {}); } return NOTE_N; };
@@ -395,7 +408,7 @@ const Prakriya = (() => {
         const where = `${d.title || ""} · step #${i + 1} (${s.form_before || ""} → ${s.form_after || ""}) · ${location.pathname}${location.search}#s-${i + 1}`;
         try {
           const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where})});
+            body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where, trace: traceText(d, t, i)})});
           if (!r.ok) throw new Error(await r.text());
           NOTE_N = null; noteCounts();
           f.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;

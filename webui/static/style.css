@@ -1488,3 +1488,6 @@ table.matrix td.cell-fixed::after {
 .pk-full .pk-list{max-width:none}.pk-full .pk-step{padding:.7rem .9rem}.pk-full .pk-form{font-size:1.5rem}.pk-full .pk-sid{font-size:1.2rem}
 body.pk-noscroll{overflow:hidden}
 @media print{.pk-full{position:static}.pk-step{box-shadow:none}}
+.sn-trace{margin:.35rem 0;font-size:12px}.sn-trace summary{cursor:pointer;color:#1e40af;font-weight:600}
+.sn-trace pre{max-height:22rem;overflow:auto;margin:.3rem 0 0;padding:.5rem .6rem;background:#0f172a;color:#e2e8f0;border-radius:6px;font-size:11.5px;line-height:1.5;white-space:pre-wrap}
+.sn-trace mark{background:#fde047;color:#111;padding:0 .2em;border-radius:3px}
