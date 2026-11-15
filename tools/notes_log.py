@@ -28,6 +28,8 @@ out += ["", "## Actions taken from notes (manual, append-only)", "",
         "- 2026-11-15 · UI: pada outline — from the first applied 1.4.14–1.4.17 step the whole form is marked पदम् (note 1.4.14).",
         "- 2026-11-15 · Ledger: S183 (8.2.66 ru~ without it-steps); S181 widened with stem-origin Lexicon (1.2.46). Repeats resolved: 2.3.46 and 1.4.22 → S179.",
         "- 2026-11-16 · Fix: ✎ on engine bookkeeping rows (__MERGE__ …) failed with 404 because notes accepted only sūtra numbers; notes.py now accepts __NAME__ ids (webui/notes.py _SID). 6.1.102 notes judged (ekādeśa belongs to both sides, Kāśikā 6.1.85 — no engine change); 8.2.66 repeat → S183.",
+        "- 2026-11-16 · UI: Vidyut column Copy to LLM / Copy panel; 4.1.2 sup table matches exact upadeśa (au ≠ auṭ); __MERGE__ shows one pada.",
+        "- 2026-11-16 · UI: 'Why didn't rule apply?' shows the Kāśikā on that sūtra (/api/kashika/<id>, display only). Ledger: S184 (ekādeśa side), S182 reworded (every short a). Repeats resolved: 1.3.4 → S179, 2.3.2 → S179, 6.1.84 / 6.1.88 → S184; 1.2.41 audit refuted (engine right).",
         "- 2026-11-15 · No change needed (engine correct): 2.1.1 and 1.2.46 not offered for rāma + au."]
 (ROOT / "docs/NOTES_LOG.md").write_text("\n".join(out) + "\n", encoding="utf-8")
 print(len(rows), "notes ->", "docs/NOTES_LOG.md")

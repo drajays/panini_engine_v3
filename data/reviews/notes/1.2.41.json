@@ -1,0 +1,119 @@
+{
+ "sutra": "1.2.41",
+ "notes": [
+  {
+   "id": "95510c6c39",
+   "created": "2026-11-16T00:42:09+0530",
+   "updated": "2026-11-16T00:53:14+0530",
+   "text": "i think this query is wrong just recheck anyway--1. Illegal Application of the Apṛkta Saṃjñā to a Vowel (Engine Defect)\nStep: #57\nSūtra involved: 1.2.41 अपृक्त एकाल् प्रत्ययः.\nIssue: The engine applies the apṛkta designation to the remaining 'au' of the suffix auṭ. However, 1.2.41 assigns apṛkta only to an affix consisting of a single consonant (hal), not a single vowel (ac). The Kāśikā explicitly states: \"अलिति प्रत्याहारग्रहणं हल्ग्रहणार्थम्... एकाच्प्रत्ययस्य मा भूत्\" (The use of 'al' here is to capture only 'hal' (consonants) so that it does not apply to a single 'ac' (vowel) affix). If 'au' were apṛkta, rules expecting a single consonant would misfire.\nClassification: Engine defect (Major). The engine's evaluator for 1.2.41 is structurally flawed, reading 'al' purely as \"any single letter\" instead of \"any single consonant\" as strictly interpreted by the tradition for this specific sūtra.\nThe engine (panini_engine_v3) is completely correct to apply 1.2.41 (अपृक्त एकाल् प्रत्ययः) to the vowel 'au' in step #57, and my previous critique claiming the apṛkta saṃjñā applies exclusively to consonants is formally retracted.\nInitial logic and parameters of the Kāśikā text you provided are validated. The commentary strictly defines the condition as एकाल् यः प्रत्ययस्तस्य (a suffix consisting of a single al, meaning any letter), explicitly using al rather than hal.\nConsequently, the engine's mechanical assignment of the apṛkta saṃjñā to a single vowel suffix operates exactly as mathematically intended by Pāṇini. The system's trace for step #57 is flawless, and the prior \"Defect #1\" is struck from the audit.",
+   "author": "me",
+   "derivation": "रामौ · step #57 (rAmaO → rAmaO) · /shabdarupa#s-57",
+   "kind": "question",
+   "status": "refuted",
+   "verdict": "Claude 2026-11-16 — The pasted audit retracts itself in its own second half, and the retraction is the correct one: 1.2.41 (apṛkta ekāl pratyayaḥ) gives apṛkta to a pratyaya of ONE varṇa (al), vowel or consonant — not hal only; the engine applying it to the au left after auṭ is right. Known lesson already in STATE.md (pasted audits on 1.2.41 were wrong). No change.",
+   "evidence": "Kāśikā 1.2.41; STATE.md LESSONS",
+   "trace": "Derivation: रामौ → रामौ (rAmO)\nPage: /shabdarupa\nRows: 198 (full trace; #n = the row number, stable across depths)\nMarked ◀ = the step this note is about (#57).\n\n#1 1.2.45 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#2 4.1.1 [AUDIT] rAma → rAma\n#3 1.1.1 [DEFINED] rAma → rAma\n#4 1.1.73 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#5 1.1.2 [DEFINED] rAma → rAma\n#6 1.1.3 [VACUOUS] rAma → rAma\n#7 1.1.7 [DEFINED] rAma → rAma\n#8 1.1.60 [DEFINED] rAma → rAma\n#9 1.1.61 [DEFINED] rAma → rAma\n#10 1.1.62 [VACUOUS] rAma → rAma\n#11 1.1.63 [VACUOUS] rAma → rAma\n#12 1.1.8 [DEFINED] rAma → rAma\n#13 1.1.9 [DEFINED] rAma → rAma\n#14 1.1.10 [VACUOUS] rAma → rAma\n#15 1.1.11 [SKIPPED] rAma → rAma  (COND-FALSE)\n#16 1.1.12 [VACUOUS] rAma → rAma\n#17 1.1.13 [VACUOUS] rAma → rAma\n#18 1.1.14 [SKIPPED] rAma → rAma  (COND-FALSE)\n#19 1.1.15 [SKIPPED] rAma → rAma  (COND-FALSE)\n#20 1.1.16 [SKIPPED] rAma → rAma  (COND-FALSE)\n#21 1.1.17 [VACUOUS] rAma → rAma\n#22 1.1.18 [SKIPPED] rAma → rAma  (COND-FALSE)\n#23 1.1.19 [SKIPPED] rAma → rAma  (COND-FALSE)\n#24 1.1.20 [SKIPPED] rAma → rAma  (COND-FALSE)\n#25 1.1.21 [VACUOUS] rAma → rAma\n#26 1.1.46 [VACUOUS] rAma → rAma\n#27 1.1.22 [SKIPPED] rAma → rAma  (COND-FALSE)\n#28 1.1.23 [SKIPPED] rAma → rAma  (COND-FALSE)\n#29 1.1.24 [SKIPPED] rAma → rAma  (COND-FALSE)\n#30 1.2.72 [SKIPPED] rAma → rAma  (COND-FALSE)\n#31 1.1.27 [SKIPPED] rAma → rAma  (COND-FALSE)\n#32 1.1.29 [SKIPPED] rAma → rAma  (COND-FALSE)\n#33 1.1.30 [SKIPPED] rAma → rAma  (COND-FALSE)\n#34 1.4.3 [SKIPPED] rAma → rAma  (COND-FALSE)\n#35 1.4.4 [SKIPPED] rAma → rAma  (COND-FALSE)\n#36 1.4.5 [SKIPPED] rAma → rAma  (COND-FALSE)\n#37 4.1.2 [APPLIED] rAma → rAmaOw  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"Ow\",\"sup\",\"Ow\"]]\n#38 1.3.3 [APPLIED] rAmaOw → rAmaOw  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"Ow\",\"sup\",\"Ow\"]]\n#39 1.3.9 [APPLIED] rAmaOw → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#40 1.3.10 [VACUOUS] rAmaO → rAmaO\n#41 3.1.1 [AUDIT] rAmaO → rAmaO\n#42 3.1.2 [AUDIT] rAmaO → rAmaO\n#43 6.4.1 [AUDIT] rAmaO → rAmaO\n#44 4.1.3 [AUDIT] rAmaO → rAmaO\n#45 6.4.129 [AUDIT] rAmaO → rAmaO\n#46 1.4.103 [BLOCKED] rAmaO → rAmaO  (purva: 1.1.43 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#47 1.4.13 [BLOCKED] rAmaO → rAmaO  (purva: 1.1.43 beat 1.4.13 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#48 1.4.14 [BLOCKED] rAmaO → rAmaO  (purva: 1.1.43 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#49 1.2.41 [BLOCKED] rAmaO → rAmaO  (purva: 1.1.43 beat 1.2.41 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#50 1.1.43 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#51 3.1.1 [AUDIT] rAmaO → rAmaO\n#52 3.1.2 [AUDIT] rAmaO → rAmaO\n#53 4.1.3 [AUDIT] rAmaO → rAmaO\n#54 1.4.103 [BLOCKED] rAmaO → rAmaO  (purva: 1.2.41 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#55 1.4.13 [BLOCKED] rAmaO → rAmaO  (purva: 1.2.41 beat 1.4.13 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#56 1.4.14 [BLOCKED] rAmaO → rAmaO  (purva: 1.2.41 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#57 1.2.41 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]   ◀ NOTE HERE\n#58 1.4.103 [BLOCKED] rAmaO → rAmaO  (purva: 1.4.13 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#59 1.4.14 [BLOCKED] rAmaO → rAmaO  (purva: 1.4.13 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#60 1.4.13 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#61 1.4.103 [BLOCKED] rAmaO → rAmaO  (purva: 1.4.14 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#62 1.4.14 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#63 1.4.110 [BLOCKED] rAmaO → rAmaO  (purva: 1.4.103 beat 1.4.110 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#64 1.4.103 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#65 1.4.110 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#66 1.4.102 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#67 1.1.40 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#68 2.4.82 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#69 7.1.84 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#70 7.1.85 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#71 7.1.86 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#72 7.1.87 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#73 7.1.88 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#74 7.4.48 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#75 7.2.84 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#76 7.1.21 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#77 7.1.22 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#78 7.1.93 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#79 6.4.13 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#80 6.4.8 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#81 1.1.34 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#82 1.4.7 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#83 7.2.107 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#84 7.2.106 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#85 2.4.34 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#86 7.2.108 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#87 7.2.111 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#88 7.2.110 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#89 7.2.103 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#90 7.2.102 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#91 7.1.89 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#92 7.1.98 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#93 7.1.99 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#94 7.2.99 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#95 7.2.100 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#96 7.1.82 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#97 7.1.78 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#98 7.2.101 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#99 7.1.70 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#100 6.4.14 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#101 6.3.46 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#102 7.1.94 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#103 7.3.110 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#104 1.1.51 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#105 6.4.11 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#106 7.1.2 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#107 4.1.4 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#108 1.4.6 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#109 7.1.81 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#110 7.1.80 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#111 7.3.44 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#112 7.3.106 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#113 7.3.107 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#114 7.1.15 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#115 7.1.16 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#116 7.1.12 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#117 7.2.112 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#118 7.1.14 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#119 7.3.116 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#120 7.3.113 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#121 7.3.114 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#122 7.1.13 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#123 7.1.11 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#124 7.1.9 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#125 7.1.17 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#126 7.1.18 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#127 7.1.24 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#128 7.1.25 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#129 7.1.28 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#130 7.2.94 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#131 7.2.90 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#132 7.1.19 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#133 7.1.20 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#134 7.1.23 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#135 1.1.42 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#136 1.4.17 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#137 1.4.16 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#138 1.4.18 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#139 7.1.53 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#140 7.1.54 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#141 7.1.55 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#142 7.1.52 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#143 7.2.113 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#144 7.2.85 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#145 7.2.109 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#146 7.1.72 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#147 7.1.79 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#148 7.1.73 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#149 7.1.75 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#150 6.4.10 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#151 6.4.4 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#152 6.4.3 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#153 6.4.7 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#154 7.3.103 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#155 7.3.104 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#156 7.3.112 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#157 7.3.117 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#158 7.3.102 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#159 6.4.130 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#160 6.4.137 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#161 6.4.136 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#162 6.4.134 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#163 6.4.146 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#164 6.4.148 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#165 7.3.108 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#166 7.3.109 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#167 7.3.111 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#168 7.3.105 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#169 7.3.118 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#170 7.3.119 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#171 7.3.120 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#172 7.1.92 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#173 7.1.90 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#174 7.2.115 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#175 6.1.93 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#176 6.4.80 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#177 6.4.133 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#178 6.4.79 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#179 6.4.84 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#180 6.4.85 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#181 6.4.82 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#182 6.4.83 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#183 6.4.77 [SKIPPED] rAmaO → rAmaO  (COND-FALSE)\n#184 6.1.104 [APPLIED] rAmaO → rAmaO  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"O\",\"sup\",\"Ow\"]]\n#185 6.1.102 [BLOCKED] rAmaO → rAmaO  (PRATISHEDHA-BLOCKED)\n#186 6.1.104 [VACUOUS] rAmaO → rAmaO\n#187 6.1.88 [APPLIED] rAmaO → rAmO  parts=[[\"rAmO\",\"prakriti\",\"rAma\"],[\"\",\"sup\",\"Ow\"]]\n#188 8.2.1 [AUDIT] rAmO → rAmO\n#189 __MERGE__ [APPLIED] rAmO → rAmO\n#190 8.2.82 [AUDIT] rAmO → rAmO\n#191 8.2.108 [AUDIT] rAmO → rAmO\n#192 8.3.2 [AUDIT] rAmO → rAmO\n#193 8.3.55 [AUDIT] rAmO → rAmO\n#194 8.3.57 [AUDIT] rAmO → rAmO\n#195 8.2.3 [VACUOUS] rAmO → rAmO\n#196 8.3.110 [VACUOUS] rAmO → rAmO\n#197 8.4.34 [VACUOUS] rAmO → rAmO\n#198 8.4.48 [VACUOUS] rAmO → rAmO",
+   "history": [
+    {
+     "at": "2026-11-16T00:47:00+0530",
+     "text": "i think this query is wrong just recheck anyway--1. Illegal Application of the Apṛkta Saṃjñā to a Vowel (Engine Defect)\nStep: #57\nSūtra involved: 1.2.41 अपृक्त एकाल् प्रत्ययः.\nIssue: The engine applies the apṛkta designation to the remaining 'au' of the suffix auṭ. However, 1.2.41 assigns apṛkta only to an affix consisting of a single consonant (hal), not a single vowel (ac). The Kāśikā explicitly states: \"अलिति प्रत्याहारग्रहणं हल्ग्रहणार्थम्... एकाच्प्रत्ययस्य मा भूत्\" (The use of 'al' here is to capture only 'hal' (consonants) so that it does not apply to a single 'ac' (vowel) affix). If 'au' were apṛkta, rules expecting a single consonant would misfire.\nClassification: Engine defect (Major). The engine's evaluator for 1.2.41 is structurally flawed, reading 'al' purely as \"any single letter\" instead of \"any single consonant\" as strictly interpreted by the tradition for this specific sūtra.\nThe engine (panini_engine_v3) is completely correct to apply 1.2.41 (अपृक्त एकाल् प्रत्ययः) to the vowel 'au' in step #57, and my previous critique claiming the apṛkta saṃjñā applies exclusively to consonants is formally retracted.\nInitial logic and parameters of the Kāśikā text you provided are validated. The commentary strictly defines the condition as एकाल् यः प्रत्ययस्तस्य (a suffix consisting of a single al, meaning any letter), explicitly using al rather than hal.\nConsequently, the engine's mechanical assignment of the apṛkta saṃjñā to a single vowel suffix operates exactly as mathematically intended by Pāṇini. The system's trace for step #57 is flawless, and the prior \"Defect #1\" is struck from the audit.",
+     "author": "me",
+     "derivation": "रामौ · step #57 (rAmaO → rAmaO) · /shabdarupa#s-57",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "question"
+    },
+    {
+     "at": "2026-11-16T00:42:09+0530",
+     "text": "1. Illegal Application of the Apṛkta Saṃjñā to a Vowel (Engine Defect)\nStep: #57\nSūtra involved: 1.2.41 अपृक्त एकाल् प्रत्ययः.\nIssue: The engine applies the apṛkta designation to the remaining 'au' of the suffix auṭ. However, 1.2.41 assigns apṛkta only to an affix consisting of a single consonant (hal), not a single vowel (ac). The Kāśikā explicitly states: \"अलिति प्रत्याहारग्रहणं हल्ग्रहणार्थम्... एकाच्प्रत्ययस्य मा भूत्\" (The use of 'al' here is to capture only 'hal' (consonants) so that it does not apply to a single 'ac' (vowel) affix). If 'au' were apṛkta, rules expecting a single consonant would misfire.\nClassification: Engine defect (Major). The engine's evaluator for 1.2.41 is structurally flawed, reading 'al' purely as \"any single letter\" instead of \"any single consonant\" as strictly interpreted by the tradition for this specific sūtra.",
+     "author": "me",
+     "derivation": "रामौ · step #57 (rAmaO → rAmaO) · /shabdarupa#s-57",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "question"
+    }
+   ],
+   "status_at": "2026-11-16T00:53:14+0530"
+  },
+  {
+   "id": "c450dd66db",
+   "created": "2026-11-16T00:42:26+0530",
+   "updated": "2026-11-16T00:53:14+0530",
+   "text": "यस्मिन् प्रत्यये केवलं एकः एव वर्णः अस्ति, अपृक्तः नाम्ना ज्ञायते ।\nव्याकरणशास्त्रे पाठितासु संज्ञासु अन्यतमा अस्ति 'अपृक्त' इति संज्ञा । यस्मिन् प्रत्यये एकः एव वर्णः विद्यते, तस्य अनेन सूत्रेण 'अपृक्त' इति संज्ञा भवति । यथा -\n१) प्रथमैकवचनस्य सुँ-प्रत्ययस्य इत्संज्ञालोपात् अनन्तरम् 'स्' इति एकाल् रूपम् अवशिष्यते । अस्य 'अपृक्तः' इति संज्ञा भवति ।\n२) लङ्लकारस्य स्थाने विहितस्य प्रथमपुरुषैकवचनस्य 'तिप्' प्रत्ययस्य पकारस्य इतसंज्ञालोपे कृते 'ति' इत्यत्र विद्यमानस्य इकारस्य इतश्च ३.४.१०० इत्यनेन लोपे कृते अवशिष्टे 'त्' इत्यस्मिन् अंशे एकः एव वर्णः विद्यते, अतः 'त्' इति अपृक्तः प्रत्ययः ।\n३) 'क्विप्' प्रत्यये इत्संज्ञकयोः ककारपकारयोः लोपं कृत्वा, ततः उच्चारणार्थं स्थापितस्य वकारोत्तरस्य इकारस्यापि लोपं कृत्वा अवशिष्टः 'व्' इति प्रत्ययः अपि अपृक्तसंज्ञकः भवति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Examples checked: s of su, t of laṅ ti (after 3.4.100), v of kvip are all single-varṇa pratyayas, hence apṛkta.",
+   "evidence": "Kāśikā (brain DB)",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T00:42:26+0530",
+     "text": "यस्मिन् प्रत्यये केवलं एकः एव वर्णः अस्ति, अपृक्तः नाम्ना ज्ञायते ।\nव्याकरणशास्त्रे पाठितासु संज्ञासु अन्यतमा अस्ति 'अपृक्त' इति संज्ञा । यस्मिन् प्रत्यये एकः एव वर्णः विद्यते, तस्य अनेन सूत्रेण 'अपृक्त' इति संज्ञा भवति । यथा -\n१) प्रथमैकवचनस्य सुँ-प्रत्ययस्य इत्संज्ञालोपात् अनन्तरम् 'स्' इति एकाल् रूपम् अवशिष्यते । अस्य 'अपृक्तः' इति संज्ञा भवति ।\n२) लङ्लकारस्य स्थाने विहितस्य प्रथमपुरुषैकवचनस्य 'तिप्' प्रत्ययस्य पकारस्य इतसंज्ञालोपे कृते 'ति' इत्यत्र विद्यमानस्य इकारस्य इतश्च ३.४.१०० इत्यनेन लोपे कृते अवशिष्टे 'त्' इत्यस्मिन् अंशे एकः एव वर्णः विद्यते, अतः 'त्' इति अपृक्तः प्रत्ययः ।\n३) 'क्विप्' प्रत्यये इत्संज्ञकयोः ककारपकारयोः लोपं कृत्वा, ततः उच्चारणार्थं स्थापितस्य वकारोत्तरस्य इकारस्यापि लोपं कृत्वा अवशिष्टः 'व्' इति प्रत्ययः अपि अपृक्तसंज्ञकः भवति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:53:14+0530"
+  },
+  {
+   "id": "f73477831b",
+   "created": "2026-11-16T00:42:49+0530",
+   "updated": "2026-11-16T00:53:14+0530",
+   "text": "प्रयोजनम्\nअपृक्तसंज्ञाम् आश्रित्य अष्टाध्याय्यां भिन्नानि कार्याणि उक्तानि सन्ति । यथा, हलन्तशब्दात् विहितस्य अपृक्त-सुँ-प्रत्ययस्य हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८ इत्यनेन लोपः भवति -\n\nमरुत् + सुँ [प्रथमैकवचनस्य सुँ-प्रत्ययः]\n→ मरुत् + स् [उपदेशेऽजनुनासिक इत् १.३.२ इति उँकारस्य इत्संहज्ञा । तस्य लोपः १.३.९ इति लोपः । अवशिष्टस्य 'स्' इत्यस्य 'अपृक्तः' इति संज्ञा भवति ।]\n→ मरुत् [हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८ इति अपृक्तसकारस्य लोपः]",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — 6.1.68 halṅyābbhyo dīrghāt sutisyapṛktaṃ hal: marut + s → marut. Correct.",
+   "evidence": "Kāśikā (brain DB) 6.1.68",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T00:42:49+0530",
+     "text": "प्रयोजनम्\nअपृक्तसंज्ञाम् आश्रित्य अष्टाध्याय्यां भिन्नानि कार्याणि उक्तानि सन्ति । यथा, हलन्तशब्दात् विहितस्य अपृक्त-सुँ-प्रत्ययस्य हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८ इत्यनेन लोपः भवति -\n\nमरुत् + सुँ [प्रथमैकवचनस्य सुँ-प्रत्ययः]\n→ मरुत् + स् [उपदेशेऽजनुनासिक इत् १.३.२ इति उँकारस्य इत्संहज्ञा । तस्य लोपः १.३.९ इति लोपः । अवशिष्टस्य 'स्' इत्यस्य 'अपृक्तः' इति संज्ञा भवति ।]\n→ मरुत् [हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८ इति अपृक्तसकारस्य लोपः]",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:53:14+0530"
+  },
+  {
+   "id": "717f0d06cf",
+   "created": "2026-11-16T00:43:08+0530",
+   "updated": "2026-11-16T00:53:14+0530",
+   "text": "प्रयोगः\nअष्टाध्याय्याम् 'अपृक्त'संज्ञायाः साक्षात् प्रयोगः आहत्य चतुर्षु सूत्रेषु कृतः अस्ति -\n१. वेरपृक्तस्य ६.१.६७\n२. हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८\n३. गुणोऽपृक्ते ७.३.९१\n४. अस्तिसिचोऽपृक्ते ७.३.९६\nअनुवृत्तिरूपेण तु अन्यत्रापि अस्य शब्दस्य प्रयोगः भवितुम् अर्हति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — The four direct uses (6.1.67, 6.1.68, 7.3.91 guṇo'pṛkte, 7.3.96 asticisor apṛkte) are right.",
+   "evidence": "Kāśikā (brain DB)",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T00:43:08+0530",
+     "text": "प्रयोगः\nअष्टाध्याय्याम् 'अपृक्त'संज्ञायाः साक्षात् प्रयोगः आहत्य चतुर्षु सूत्रेषु कृतः अस्ति -\n१. वेरपृक्तस्य ६.१.६७\n२. हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् ६.१.६८\n३. गुणोऽपृक्ते ७.३.९१\n४. अस्तिसिचोऽपृक्ते ७.३.९६\nअनुवृत्तिरूपेण तु अन्यत्रापि अस्य शब्दस्य प्रयोगः भवितुम् अर्हति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:53:14+0530"
+  }
+ ]
+}

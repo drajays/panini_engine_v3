@@ -341,12 +341,13 @@ const Prakriya = (() => {
     sid = sid.trim(); if (!sid) return "";
     const hits = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === sid);
     const link = `<a href="/sutra/${esc(sid)}">${esc(sid)}</a>`;
-    if (!hits.length) return `${link}: never offered in this derivation — its conditions were not even reached (or it is not implemented).`;
+    const kas = `<details class="pk-kas" data-sid="${esc(sid)}"><summary>📖 Kāśikā ${esc(sid)} — ${pref.gloss === "en" ? "what the tradition says (for students)" : "परम्परा क्या कहती है (छात्रों हेतु)"}</summary><div class="pk-kas-b muted dev">…</div></details>`;
+    if (!hits.length) return `${link}: never offered in this derivation — its conditions were not even reached (or it is not implemented).${kas}`;
     return hits.map(({s, i}) => {
       const st = STATUS[s.status] || [s.status, s.status], why = s.gate_reason || s.skip_reason || s.why_now_dev || s.why_dev || "";
       const verdict = s.status === "BLOCKED" ? "blocked" : s.status === "SKIPPED" ? "checked, did not apply" : /^APPLIED/.test(s.status) ? "applied" : (STATUS[s.status] || [0, s.status])[1];
       return `${link} <a href="#s-${i + 1}">step ${i + 1}</a>: <b>${esc(verdict)}</b> (${esc(st[0])})${why ? ` — <span class="dev">${esc(why)}</span>` : ""}`;
-    }).join("<br>");
+    }).join("<br>") + kas;
   }
 
   /* repeated checked/blocked/skipped rows of one sūtra → one line, click to expand; user-hidden sūtras are dropped from the screen only (llm/plain copy use rowsFor, unfiltered) */
@@ -548,6 +549,12 @@ ${et || "  (no trace)"}${cs}
         } catch (err) { m.textContent = "Save failed: " + String(err.message).slice(0, 120); }
       });
     });
+    q(".pk-inspect-out").addEventListener("toggle", async e => {      // lazy: the Kāśikā on this sūtra, shown for teaching (the engine never reads it)
+      const dt = e.target; if (!dt.classList || !dt.classList.contains("pk-kas") || !dt.open || dt.dataset.done) return; dt.dataset.done = "1";
+      const box = dt.querySelector(".pk-kas-b");
+      try { const r = await fetch("/api/kashika/" + encodeURIComponent(dt.dataset.sid)); const j = await r.json(); box.textContent = j.text || j.error || "—"; }
+      catch (err) { box.textContent = "unavailable"; }
+    }, true);
     q(".pk-sid-in").addEventListener("input", e => { q(".pk-inspect-out").innerHTML = inspect(t, e.target.value); });
     const fullToggle = on => { el.classList.toggle("pk-full", on); document.body.classList.toggle("pk-noscroll", on); q("#pk-full").textContent = on ? "✕ Close full page" : "⛶ Full page"; };
     q("#pk-full").onclick = () => fullToggle(!el.classList.contains("pk-full"));

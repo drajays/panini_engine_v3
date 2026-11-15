@@ -1498,3 +1498,4 @@ body.pk-noscroll{overflow:hidden}
 .pk-sup{border-collapse:collapse;margin:.3rem 0}.pk-sup th,.pk-sup td{border:1px solid var(--line,#ccc);padding:.15rem .6rem;text-align:center;font-size:13px}.pk-sup-on{background:#ffe9a8;font-weight:700}
 .pk-supwrap>summary{cursor:pointer;font-size:12.5px;margin:.3rem 0}
 .pk-padaed{outline:2px solid #2a8a3e;outline-offset:2px;border-radius:4px;padding:0 .25em}
+.pk-kas{margin:.4rem 0}.pk-kas>summary{cursor:pointer;font-size:12.5px}.pk-kas-b{white-space:pre-wrap;margin:.3rem 0;padding:.4rem .6rem;border-left:3px solid #7a5aa6;max-height:16rem;overflow:auto;font-size:13px}

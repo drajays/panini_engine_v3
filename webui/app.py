@@ -1373,6 +1373,25 @@ def _load_sutra_ref() -> dict:
     return _SUTRA_REF_CACHE
 
 
+@app.route("/api/kashika/<sid>")
+def api_kashika(sid: str):
+    """The Kāśikā on one sūtra, read from the brain DB for display only (the engine never reads it; Art. 6). Used by 'Why didn't rule apply?'."""
+    import re as _re, sqlite3 as _sq
+    if not _re.fullmatch(r"\d+\.\d+\.\d+", sid):
+        return jsonify({"error": "bad id"}), 404
+    db = Path.home() / "data-master/ashtadhyayi-ai/db/ashtadhyayi.db"
+    try:
+        con = _sq.connect(f"file:{db}?mode=ro", uri=True)
+        row = con.execute("select content from texts where sutra_id=? and source='kashika'", (sid,)).fetchone()
+        con.close()
+    except Exception as ex:
+        return jsonify({"error": f"brain DB unavailable: {type(ex).__name__}"}), 503
+    if not row:
+        return jsonify({"error": "no Kāśikā text"}), 404
+    txt = _re.sub(r"<<(.*?)>>|\[\[(.*?)\]\]", lambda m: m.group(1) or m.group(2), row[0])
+    return jsonify({"sutra_id": sid, "source": "Kāśikā (brain DB)", "text": txt[:4000]})
+
+
 @app.route("/api/sutra-ref/<sid>")
 def api_sutra_ref(sid: str):
     ref = _load_sutra_ref()
