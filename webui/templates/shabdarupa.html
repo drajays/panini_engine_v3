@@ -139,7 +139,25 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     }
   }
 
+  /* liṅga what-if: gender is lokāśraya (Mahābhāṣya liṅgam aśiṣyam) — the engine takes it as INPUT, so any stem can be tried in any liṅga and re-derived */
+  let lastCellI = -1;
+  const LINGAS = [["pulliṅga", "पुंल्लिङ्गम्"], ["strīliṅga", "स्त्रीलिङ्गम्"], ["napuṃsaka", "नपुंसकलिङ्गम्"]];
+  function lingaBar() {
+    let bar = $("lingabar");
+    if (!bar) { bar = document.createElement("div"); bar.id = "lingabar"; bar.className = "dr-note"; $("out").insertAdjacentElement("beforebegin", bar); }
+    const orig = rec.corpus ? rec.corpus.linga : rec.origLinga || rec.linga;
+    bar.innerHTML = `<label>लिङ्गम् · liṅga (what-if) <select class="vm-linga">${LINGAS.map(([k, v]) => `<option value="${k}"${k === rec.linga ? " selected" : ""}>${v} · ${k}</option>`).join("")}</select></label>
+      ${rec.linga !== orig ? `<span class="muted"> — changed from ${esc(orig)}; corpus and Vidyut columns are for the original liṅga, so red marks there are expected.</span>` : `<span class="muted"> — change it to see the new rūpa and prakriyā (e.g. a-stem strī → ṭāp, 4.1.4; napuṃsaka → rāmam / rāmāṇi).</span>`}`;
+  }
+  document.addEventListener("change", async e => {
+    const sel = e.target.closest(".vm-linga"); if (!sel) return;
+    if (!rec.origLinga) rec.origLinga = rec.corpus ? rec.corpus.linga : rec.linga;
+    rec.linga = sel.value;
+    await load();
+    if (lastCellI >= 0) { const bt = $("out").querySelector(`.dr-cell[data-i="${lastCellI}"]`); if (bt) bt.click(); }
+  });
   async function load() {
+    lingaBar();
     const my = ++token; vid = eng = null; $("deriv").innerHTML = "";
     const c = rec.corpus;
     const cap = c ? `<p class="dr-cap">${esc(c.w)} <span class="m">${esc(c.slp)} · ${esc(c.linga)} · ${esc(c.artha)} ${esc(c.en)}</span></p>
@@ -165,7 +183,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
 
   $("out").addEventListener("click", async e => {
     const b = e.target.closest(".dr-cell"); if (!b) return;
-    const i = +b.dataset.i, r = Math.floor(i / 3), k = i % 3;
+    const i = lastCellI = +b.dataset.i, r = Math.floor(i / 3), k = i % 3;
     $("deriv").innerHTML = `<div class="dr-card">…</div>`;
     const d = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: k + 1, base: rec.corpus ? rec.corpus.base : ""});
     const E = d.engine || {};
