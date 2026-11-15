@@ -1433,3 +1433,24 @@ table.matrix td.cell-fixed::after {
 .pk-tin-banner .pk-ped{margin-bottom:.2rem}
 @media print{.pk-ped{border-color:#999;color:#444;background:none}.pk-auth{background:none}}
 .pk-letters .pk-ped,.pk-legend .pk-ped{align-self:center;height:auto}
+/* sūtra audit notes (notes.js) */
+.sn-skeptic{font-size:12px;line-height:1.55;margin:0 0 .6rem;padding:.45rem .6rem;border-left:3px solid #7a5aa6;background:#faf7fd;border-radius:0 6px 6px 0}
+.sn-err{color:#a02020;font-size:12px;margin:.3rem 0}
+.sn-note{border:1px solid var(--line-soft,#ddd);border-radius:8px;padding:.5rem .7rem;margin:.5rem 0;background:var(--bg,#fff)}
+.sn-note header{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-size:12px}
+.sn-act{margin-left:auto;display:flex;gap:.3rem;align-items:center}
+.sn-act button,.sn-add button,.sn-edit button{font-size:12px;padding:.1rem .5rem;cursor:pointer}
+.sn-del{color:#a02020}
+.sn-text{white-space:pre-wrap;font-size:13px;line-height:1.6;margin:.4rem 0}
+.sn-verdict,.sn-evidence{font-size:12px;line-height:1.5;margin:.25rem 0;padding:.25rem .5rem;border-radius:4px;background:var(--bg-subtle,#f4f4f4)}
+.sn-badge{font-size:11px;padding:0 .5em;border-radius:999px;border:1px solid var(--line-soft,#ccc)}
+.sn-b-open{background:#fff6dd}.sn-b-partly{background:#fdebd8}.sn-b-confirmed{background:#e3f4e6}.sn-b-refuted{background:#f6e0e0}.sn-b-ledgered{background:#e6eefb}
+.sn-hist{margin-top:.4rem;font-size:12px;border-top:1px dashed var(--line-soft,#ccc);padding-top:.3rem}
+.sn-old{white-space:pre-wrap;color:var(--ink-dim,#666);margin:.15rem 0 .4rem;max-height:9rem;overflow:auto}
+.sn-add,.sn-edit form{margin-top:.6rem}.sn-add h3{font-size:13px;margin:0 0 .3rem}
+.sn-add textarea,.sn-edit textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px}
+.sn-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:.3rem 0}
+.sn-row label,.sn-edit label{font-size:12px;display:flex;gap:.3rem;align-items:center}
+.sn-edit label{display:block;margin:.3rem 0}
+.sn-act button,.sn-edit button[data-act=cancel]{background:var(--bg-subtle,#f4f4f4);color:var(--ink,#222);border:1px solid var(--line-soft,#ccc);border-radius:4px}
+.sn-act button.sn-del{color:#a02020;min-width:1.8rem}

@@ -103,4 +103,9 @@
     <a href="/shabdarupa?tab=matrix" style="color:var(--accent);">चतुर्विंशतिकोष्ठे</a> अपि व्युत्पत्तयः निरीक्षणीयाः।
   </p>
 </div>
+
+<div class="panel" style="margin-top:12px;"><h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">टिप्पण्यः · audit notes</h2>
+  <div id="sutra-notes"></div></div>
+<script src="/static/notes.js?v=1"></script>
+<script>SutraNotes.mount(document.getElementById("sutra-notes"), {{ sid|tojson }});</script>
 {% endblock %}

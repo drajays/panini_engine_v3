@@ -50,6 +50,7 @@ function escH(s) {
   return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
 }
 
+let _notes = {};
 let _all = [];
 let _activeType = "";
 let _search = "";
@@ -69,6 +70,7 @@ async function init() {
     }
     return 0;
   });
+  try { _notes = await (await fetch("/api/notes-counts")).json(); } catch (e) { _notes = {}; }
   const types = [...new Set(_all.map(s => s.sutra_type))];
   buildTypeBar(types, _all.length);
   render();
@@ -128,7 +130,7 @@ function render() {
     html += `<tr style="border-top:1px solid var(--line-soft);cursor:pointer;"
                  onclick="location.href='/sutra/${encodeURIComponent(s.sutra_id)}'">
       <td style="padding:6px 8px;font-family:var(--mono);font-size:12px;white-space:nowrap;">
-        <a href="/sutra/${encodeURIComponent(s.sutra_id)}" style="color:var(--accent);">${escH(s.sutra_id)}</a>
+        <a href="/sutra/${encodeURIComponent(s.sutra_id)}" style="color:var(--accent);">${escH(s.sutra_id)}</a>${_notes[s.sutra_id] ? ` <span class="muted" title="${_notes[s.sutra_id].n} audit note(s), ${_notes[s.sutra_id].open} open" style="font-size:11px">✎${_notes[s.sutra_id].n}${_notes[s.sutra_id].open ? "·" + _notes[s.sutra_id].open + " open" : ""}</span>` : ""}
       </td>
       <td style="padding:6px 8px;font-size:11px;color:var(--ink-dim);">${escH(typeDev(s.sutra_type))}${s.placeholder ? ' <span title="not yet implemented">○</span>' : ' <span title="implemented">●</span>'}</td>
       <td style="padding:6px 8px;" class="dev">${escH(s.text_dev || "")}</td>

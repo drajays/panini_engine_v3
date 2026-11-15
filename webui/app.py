@@ -146,6 +146,8 @@ def practice_page():
 
 from webui.abhyasa import bp as _abhyasa_bp  # noqa: E402 — /api/abhyasa/* (docs/ABHYASA_PLAN.md)
 app.register_blueprint(_abhyasa_bp)
+from webui.notes import bp as _notes_bp  # noqa: E402 — audit notes under each sūtra (/api/notes/*)
+app.register_blueprint(_notes_bp)
 
 
 _DOCS = _ROOT / "docs"
