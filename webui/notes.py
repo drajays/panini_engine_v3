@@ -34,7 +34,7 @@ MAX_TEXT = 200_000
 MAX_FIELD = 4_000
 MAX_TRACE = 400_000      # the vyutpatti prakriyā the note was written on: every step as the engine recorded it
 MAX_HISTORY = 20
-_SID = re.compile(r"^\d+\.\d+\.\d+$")
+_SID = re.compile(r"^(\d+\.\d+\.\d+|__[A-Z0-9_]+__)$")     # a sūtra, or an engine bookkeeping row such as __MERGE__ (no Aṣṭādhyāyī number)
 _LOCK = threading.Lock()
 
 

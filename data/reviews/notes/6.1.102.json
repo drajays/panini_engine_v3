@@ -1,0 +1,239 @@
+{
+ "sutra": "6.1.102",
+ "notes": [
+  {
+   "id": "57e25432af",
+   "created": "2026-11-15T23:54:53+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "Step: #183\nSūtra involved: 6.1.102 प्रथमयोः पूर्वसवर्णः\nIssue: Under 6.1.84 (एकः पूर्वपरयोः), an ekādeśa replaces both the preceding and following letters. The engine computes the correct surface string rAmAs. However, its internal parts array ([[\"rAm\", \"prakriti\", \"rAma\"], [\"As\", \"sup\", \"As\"]]) reveals it stripped the ending from the prakṛti and glued the entire ekādeśa 'ā' onto the suffix piece.\nClassification: Display/Engine structural artefact. This does not violate Pāṇinian logic textually, but it represents a slightly clunky programmatic way of handling a single substitute that straddles two morphological boundaries.",
+   "author": "me",
+   "derivation": "रामाः · step #183 (rAmaas → rAmAs) · /shabdarupa#s-183",
+   "kind": "question",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Surface rāmās is right; the parts array [rām|prakṛti][ās|sup] puts the ekādeśa on the suffix. That is a representation choice, not a śāstra error: Kāśikā 6.1.85 antādivacca says the ekādeśa counts as the end of the preceding AND the beginning of the following, so it belongs to both. Nothing to fix in the engine. Nice-to-have, not done: colour the ekādeśa letter as shared. Reopen only if a later rule reads the wrong side.",
+   "evidence": "Kāśikā 6.1.85; trace of rāma 1.3 step 183",
+   "trace": "Derivation: रामाः → रामाः (rAmAH)\nPage: /shabdarupa\nRows: 200 (full trace; #n = the row number, stable across depths)\nMarked ◀ = the step this note is about (#183).\n\n#1 1.2.45 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#2 4.1.1 [AUDIT] rAma → rAma\n#3 1.1.1 [DEFINED] rAma → rAma\n#4 1.1.73 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#5 1.1.2 [DEFINED] rAma → rAma\n#6 1.1.3 [VACUOUS] rAma → rAma\n#7 1.1.7 [DEFINED] rAma → rAma\n#8 1.1.60 [DEFINED] rAma → rAma\n#9 1.1.61 [DEFINED] rAma → rAma\n#10 1.1.62 [VACUOUS] rAma → rAma\n#11 1.1.63 [VACUOUS] rAma → rAma\n#12 1.1.8 [DEFINED] rAma → rAma\n#13 1.1.9 [DEFINED] rAma → rAma\n#14 1.1.10 [VACUOUS] rAma → rAma\n#15 1.1.11 [SKIPPED] rAma → rAma  (COND-FALSE)\n#16 1.1.12 [VACUOUS] rAma → rAma\n#17 1.1.13 [VACUOUS] rAma → rAma\n#18 1.1.14 [SKIPPED] rAma → rAma  (COND-FALSE)\n#19 1.1.15 [SKIPPED] rAma → rAma  (COND-FALSE)\n#20 1.1.16 [SKIPPED] rAma → rAma  (COND-FALSE)\n#21 1.1.17 [VACUOUS] rAma → rAma\n#22 1.1.18 [SKIPPED] rAma → rAma  (COND-FALSE)\n#23 1.1.19 [SKIPPED] rAma → rAma  (COND-FALSE)\n#24 1.1.20 [SKIPPED] rAma → rAma  (COND-FALSE)\n#25 1.1.21 [VACUOUS] rAma → rAma\n#26 1.1.46 [VACUOUS] rAma → rAma\n#27 1.1.22 [SKIPPED] rAma → rAma  (COND-FALSE)\n#28 1.1.23 [SKIPPED] rAma → rAma  (COND-FALSE)\n#29 1.1.24 [SKIPPED] rAma → rAma  (COND-FALSE)\n#30 1.2.72 [SKIPPED] rAma → rAma  (COND-FALSE)\n#31 1.1.27 [SKIPPED] rAma → rAma  (COND-FALSE)\n#32 1.1.29 [SKIPPED] rAma → rAma  (COND-FALSE)\n#33 1.1.30 [SKIPPED] rAma → rAma  (COND-FALSE)\n#34 1.4.3 [SKIPPED] rAma → rAma  (COND-FALSE)\n#35 1.4.4 [SKIPPED] rAma → rAma  (COND-FALSE)\n#36 1.4.5 [SKIPPED] rAma → rAma  (COND-FALSE)\n#37 4.1.2 [APPLIED] rAma → rAmajas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"jas\",\"sup\",\"jas\"]]\n#38 1.3.4 [APPLIED] rAmajas → rAmajas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"jas\",\"sup\",\"jas\"]]\n#39 1.3.7 [APPLIED] rAmajas → rAmajas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"jas\",\"sup\",\"jas\"]]\n#40 1.3.9 [APPLIED] rAmajas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#41 1.3.10 [VACUOUS] rAmaas → rAmaas\n#42 3.1.1 [AUDIT] rAmaas → rAmaas\n#43 3.1.2 [AUDIT] rAmaas → rAmaas\n#44 6.4.1 [AUDIT] rAmaas → rAmaas\n#45 4.1.3 [AUDIT] rAmaas → rAmaas\n#46 6.4.129 [AUDIT] rAmaas → rAmaas\n#47 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.1.43 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#48 1.4.13 [BLOCKED] rAmaas → rAmaas  (purva: 1.1.43 beat 1.4.13 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#49 1.4.14 [BLOCKED] rAmaas → rAmaas  (purva: 1.1.43 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#50 1.1.43 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#51 3.1.1 [AUDIT] rAmaas → rAmaas\n#52 3.1.2 [AUDIT] rAmaas → rAmaas\n#53 4.1.3 [AUDIT] rAmaas → rAmaas\n#54 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.13 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#55 1.4.14 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.13 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#56 1.4.13 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#57 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.14 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#58 1.4.14 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#59 1.4.110 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.103 beat 1.4.110 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#60 1.4.103 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#61 1.4.110 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"jas\"]]\n#62 1.4.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#63 1.1.40 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#64 2.4.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#65 7.1.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#66 7.1.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#67 7.1.86 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#68 7.1.87 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#69 7.1.88 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#70 7.4.48 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#71 7.2.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#72 7.1.21 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#73 7.1.22 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#74 7.1.93 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#75 6.4.13 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#76 6.4.8 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#77 1.1.34 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#78 1.4.7 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#79 1.2.41 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#80 7.2.107 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#81 7.2.106 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#82 2.4.34 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#83 7.2.108 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#84 7.2.111 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#85 7.2.110 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#86 7.2.103 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#87 7.2.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#88 7.1.89 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#89 7.1.98 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#90 7.1.99 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#91 7.2.99 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#92 7.2.100 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#93 7.1.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#94 7.1.78 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#95 7.2.101 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#96 7.1.70 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#97 6.4.14 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#98 6.3.46 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#99 7.1.94 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#100 7.3.110 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#101 1.1.51 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#102 6.4.11 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#103 7.1.2 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#104 4.1.4 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#105 1.4.6 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#106 7.1.81 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#107 7.1.80 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#108 7.3.44 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#109 7.3.106 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#110 7.3.107 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#111 7.1.15 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#112 7.1.16 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#113 7.1.12 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#114 7.2.112 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#115 7.1.14 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#116 7.3.116 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#117 7.3.113 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#118 7.3.114 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#119 7.1.13 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#120 7.1.11 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#121 7.1.9 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#122 7.1.17 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#123 7.1.18 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#124 7.1.24 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#125 7.1.25 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#126 7.1.28 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#127 7.2.94 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#128 7.2.90 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#129 7.1.19 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#130 7.1.20 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#131 7.1.23 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#132 1.1.42 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#133 1.4.17 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#134 1.4.16 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#135 1.4.18 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#136 7.1.53 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#137 7.1.54 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#138 7.1.55 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#139 7.1.52 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#140 7.2.113 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#141 7.2.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#142 7.2.109 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#143 7.1.72 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#144 7.1.79 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#145 7.1.73 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#146 7.1.75 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#147 6.4.10 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#148 6.4.4 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#149 6.4.3 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#150 6.4.7 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#151 7.3.103 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#152 7.3.104 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#153 7.3.112 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#154 7.3.117 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#155 7.3.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#156 6.4.130 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#157 6.4.137 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#158 6.4.136 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#159 6.4.134 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#160 6.4.146 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#161 6.4.148 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#162 7.3.108 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#163 7.3.109 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#164 7.3.111 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#165 7.3.105 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#166 7.3.118 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#167 7.3.119 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#168 7.3.120 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#169 7.1.92 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#170 7.1.90 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#171 7.2.115 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#172 6.1.93 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#173 6.4.80 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#174 6.4.133 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#175 6.4.79 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#176 6.4.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#177 6.4.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#178 6.4.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#179 6.4.83 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#180 6.4.77 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#181 6.1.97 [BLOCKED] rAmaas → rAmaas  (para: 6.1.102 beat 6.1.97 — पर (परिभाषेन्दुशेखर 38 · अष्टाध्यायी 1.4.2): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#182 6.1.101 [BLOCKED] rAmaas → rAmaas  (para: 6.1.102 beat 6.1.101 — पर (परिभाषेन्दुशेखर 38 · अष्टाध्यायी 1.4.2): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#183 6.1.102 [APPLIED] rAmaas → rAmAs  parts=[[\"rAm\",\"prakriti\",\"rAma\"],[\"As\",\"sup\",\"As\"]]   ◀ NOTE HERE\n#184 8.2.1 [AUDIT] rAmAs → rAmAs\n#185 __MERGE__ [APPLIED] rAmAs → rAmAs\n#186 8.2.82 [AUDIT] rAmAs → rAmAs\n#187 8.2.108 [AUDIT] rAmAs → rAmAs\n#188 8.3.2 [AUDIT] rAmAs → rAmAs\n#189 8.3.55 [AUDIT] rAmAs → rAmAs\n#190 8.3.57 [AUDIT] rAmAs → rAmAs\n#191 8.2.3 [VACUOUS] rAmAs → rAmAs\n#192 8.3.110 [VACUOUS] rAmAs → rAmAs\n#193 8.4.34 [VACUOUS] rAmAs → rAmAs\n#194 8.4.48 [VACUOUS] rAmAs → rAmAs\n#195 8.2.66 [APPLIED] rAmAs → rAmAr  parts=[[\"rAmAr\",\"pada\",\"\"]]\n#196 8.2.82 [AUDIT] rAmAr → rAmAr\n#197 8.3.2 [AUDIT] rAmAr → rAmAr\n#198 8.3.55 [AUDIT] rAmAr → rAmAr\n#199 8.3.57 [AUDIT] rAmAr → rAmAr\n#200 8.3.15 [APPLIED] rAmAr → rAmAH  parts=[[\"rAmAH\",\"pada\",\"\"]]",
+   "history": [
+    {
+     "at": "2026-11-15T23:54:53+0530",
+     "text": "Step: #183\nSūtra involved: 6.1.102 प्रथमयोः पूर्वसवर्णः\nIssue: Under 6.1.84 (एकः पूर्वपरयोः), an ekādeśa replaces both the preceding and following letters. The engine computes the correct surface string rAmAs. However, its internal parts array ([[\"rAm\", \"prakriti\", \"rAma\"], [\"As\", \"sup\", \"As\"]]) reveals it stripped the ending from the prakṛti and glued the entire ekādeśa 'ā' onto the suffix piece.\nClassification: Display/Engine structural artefact. This does not violate Pāṇinian logic textually, but it represents a slightly clunky programmatic way of handling a single substitute that straddles two morphological boundaries.",
+     "author": "me",
+     "derivation": "रामाः · step #183 (rAmaas → rAmAs) · /shabdarupa#s-183",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "question"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "543831ef77",
+   "created": "2026-11-15T23:55:04+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "अक्-वर्णात् प्रथमा-द्वितीया-विभक्त्योः अजादि प्रत्यये परे पूर्वपरयोः एकः पूर्वसवर्णदीर्घः भवति ।\nस्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप् ४.१.२ इति सूत्रेण प्रथमाविभक्तेः द्वितीयाविभक्तेः च प्रत्येकं त्रयः त्रयः प्रत्ययाः विधीयन्ते । एतेषु औट्, शस्, अम्, ओ, जस् - एते पञ्च प्रत्ययाः अजादयः सन्ति । एतेभ्यः पञ्चभ्यः प्रत्ययेभ्यः कश्चन प्रत्ययः अक्-वर्णान्त-शब्दात् विधीयते चेत् सुबन्तप्रक्रियायाम् अक्-वर्णस्य प्रत्ययादिवर्णेन सह पूर्वसवर्णदीर्घादेशः भवति ।\nअस्य सूत्रस्य प्रयोगः केवलम् अक्-वर्णान्तशब्दानाम् प्रथमा-द्वितीया-विभक्त्योः प्रक्रियायाम् एव भवति । सोदाहरणम् परिगणनम् एतादृशम् —\n१. अकारान्तशब्दाः —\nअकारान्तशब्देभ्यः जस्/शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nबाल + जस् [प्रथमाबहुवचनस्य प्रत्ययः]\n→ बाल + अस् [चुटू १.३.७ इत्यनेन जकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ बालास् [अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घे प्राप्ते, तं परत्वात् बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः भवति ।]\n→ बालारुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ बालाः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव शस्-प्रत्यये परे अपि पूर्वसवर्णदीर्घे कृते, ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा 'बालान्' इति रूपं सिद्ध्यति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — The five ajādi sup of prathamā/dvitīyā (au, jas, am, auṭ, śas) and the 'ak-varṇa final' scope are right (typo: 'ओ' for 'औ'). Teaching text, no engine change.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:55:04+0530",
+     "text": "अक्-वर्णात् प्रथमा-द्वितीया-विभक्त्योः अजादि प्रत्यये परे पूर्वपरयोः एकः पूर्वसवर्णदीर्घः भवति ।\nस्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप् ४.१.२ इति सूत्रेण प्रथमाविभक्तेः द्वितीयाविभक्तेः च प्रत्येकं त्रयः त्रयः प्रत्ययाः विधीयन्ते । एतेषु औट्, शस्, अम्, ओ, जस् - एते पञ्च प्रत्ययाः अजादयः सन्ति । एतेभ्यः पञ्चभ्यः प्रत्ययेभ्यः कश्चन प्रत्ययः अक्-वर्णान्त-शब्दात् विधीयते चेत् सुबन्तप्रक्रियायाम् अक्-वर्णस्य प्रत्ययादिवर्णेन सह पूर्वसवर्णदीर्घादेशः भवति ।\nअस्य सूत्रस्य प्रयोगः केवलम् अक्-वर्णान्तशब्दानाम् प्रथमा-द्वितीया-विभक्त्योः प्रक्रियायाम् एव भवति । सोदाहरणम् परिगणनम् एतादृशम् —\n१. अकारान्तशब्दाः —\nअकारान्तशब्देभ्यः जस्/शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nबाल + जस् [प्रथमाबहुवचनस्य प्रत्ययः]\n→ बाल + अस् [चुटू १.३.७ इत्यनेन जकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ बालास् [अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घे प्राप्ते, तं परत्वात् बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः भवति ।]\n→ बालारुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ बालाः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव शस्-प्रत्यये परे अपि पूर्वसवर्णदीर्घे कृते, ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा 'बालान्' इति रूपं सिद्ध्यति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "ddabab7d43",
+   "created": "2026-11-15T23:55:24+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "२. आकारान्तशब्दाः —\nआकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमाला + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ माला + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ मालास् [अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घे प्राप्ते, तं परत्वात् बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः भवति ।]\n→ मालारुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ मालाः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव, हाहा इति आकारान्तपुंलिङ्गशब्दस्य विषये अपि शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घे कृते, ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा हाहान् इति रूपं सिद्ध्यति ।\nआकारान्तशब्दानाम् विषये प्रथमैकवचनस्य जस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घे प्राप्ते, दीर्घाज्जसि च ६.१.१०५ इत्यनेन तस्य निषेधः भवति, अतः जस्-प्रत्ययस्य विषये प्रकृतसूत्रं न प्रवर्तते ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-16 — Logic and forms right (mālās → mālāḥ, hāhān by 6.1.103, 6.1.105 blocks jas). Typo: ś of śas is it by 1.3.8 (laśakv-ataddhite), not 1.3.7. Correct before reuse.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:55:24+0530",
+     "text": "२. आकारान्तशब्दाः —\nआकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमाला + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ माला + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ मालास् [अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घे प्राप्ते, तं परत्वात् बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः भवति ।]\n→ मालारुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ मालाः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव, हाहा इति आकारान्तपुंलिङ्गशब्दस्य विषये अपि शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घे कृते, ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा हाहान् इति रूपं सिद्ध्यति ।\nआकारान्तशब्दानाम् विषये प्रथमैकवचनस्य जस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घे प्राप्ते, दीर्घाज्जसि च ६.१.१०५ इत्यनेन तस्य निषेधः भवति, अतः जस्-प्रत्ययस्य विषये प्रकृतसूत्रं न प्रवर्तते ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "efac0e0570",
+   "created": "2026-11-15T23:55:38+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "३. इकारान्तशब्दाः / उकारान्तशब्दाः —\nइकारान्तशब्देभ्यः / उकारान्तशब्देभ्यः औ/औट्/शस्-प्रत्ययेषु परेषु प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमति + औ [प्रथमाद्विवचनस्य प्रत्ययः]\n→ मती [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n\nएवमेव मुनी, साधू, धेनू - एतानि औ/औट्-प्रत्ययान्तरूपाणि ; मतीः, धेनूः, मुनीन्, साधून् - एतानि शस्-प्रत्ययान्तरूपाणि सिद्ध्यन्ति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — matī, munī, sādhū, dhenū; matīḥ, dhenūḥ, munīn, sādhūn are right (6.1.102 beats 6.1.77).",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:55:38+0530",
+     "text": "३. इकारान्तशब्दाः / उकारान्तशब्दाः —\nइकारान्तशब्देभ्यः / उकारान्तशब्देभ्यः औ/औट्/शस्-प्रत्ययेषु परेषु प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमति + औ [प्रथमाद्विवचनस्य प्रत्ययः]\n→ मती [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n\nएवमेव मुनी, साधू, धेनू - एतानि औ/औट्-प्रत्ययान्तरूपाणि ; मतीः, धेनूः, मुनीन्, साधून् - एतानि शस्-प्रत्ययान्तरूपाणि सिद्ध्यन्ति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "55ae323571",
+   "created": "2026-11-15T23:55:53+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "४. ईकारान्तशब्दाः / ऊकारान्तशब्दाः —\nईकारान्तशब्देभ्यः / ऊकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nनदी + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ नदी + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ नदीस् [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n→ नदीरुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ नदीः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव वधू इति ऊकारान्तस्त्रीलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते वधूः इति रूपं सिद्ध्यति । हुहू इति ऊकारान्तपुंलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते, तथा च ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा हाहान् इति रूपं सिद्ध्यति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-16 — Forms right (nadīḥ, vadhūḥ). Typos: ś of śas is it by 1.3.8, not 1.3.7; huhū + śas is huhūn, the note writes hāhān.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:55:53+0530",
+     "text": "४. ईकारान्तशब्दाः / ऊकारान्तशब्दाः —\nईकारान्तशब्देभ्यः / ऊकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nनदी + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ नदी + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ नदीस् [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n→ नदीरुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ नदीः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव वधू इति ऊकारान्तस्त्रीलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते वधूः इति रूपं सिद्ध्यति । हुहू इति ऊकारान्तपुंलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते, तथा च ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा हाहान् इति रूपं सिद्ध्यति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "2276ffdea9",
+   "created": "2026-11-15T23:56:06+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "५. ऋकारान्तशब्दाः —\nऋकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमातृ + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ मातृ + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ मातॄस् [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n→ मातॄरुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ मातॄः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव पितृ इति ऋकारान्तपुंलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा पितॄन् इति रूपं सिद्ध्यति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-16 — Forms right (mātṝḥ, pitṝn). Error in the prose: the 6.1.102 ekādeśa after ṛ is long ṝ, not ī ('ईकारः'). Also ś is it by 1.3.8, not 1.3.7.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:56:06+0530",
+     "text": "५. ऋकारान्तशब्दाः —\nऋकारान्तशब्देभ्यः शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते रूपं सिद्ध्यति । यथा —\n\nमातृ + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ मातृ + अस् [लशक्वतद्धिते १.३.७ इत्यनेन शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ मातॄस् [इको यणचि ६.१.७७ इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः ईकारः भवति ।]\n→ मातॄरुँ [ससजुषोः रुँः ८.२.६६ इति रुँत्वम्]\n→ मातॄः [खरवसानयोर्विसर्जनीयः ८.३.१५ इति विसर्गः]\n\nएवमेव पितृ इति ऋकारान्तपुंलिङ्गशब्दस्य द्वितीयाबहुवचस्य रूपे अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यनेन पूर्वसवर्णदीर्घैकादेशे कृते ततः तस्माच्छसो नः पुंसि ६.१.१०३ इति नकारादेशं कृत्वा पितॄन् इति रूपं सिद्ध्यति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "fa87111bfb",
+   "created": "2026-11-15T23:56:23+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "प्रथमयोः पूर्वसवर्णः तथा च अतो गुणे एतयोर्मध्ये बाध्यबाधकभावः\nअतो गुणे ६.१.९७ इति सूत्रस्य अवकाशः वृद्धिरेचि ६.१.८८, अकः सवर्णे दीर्घः ६.१.१०१ तथा च प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति त्रिभिः सूत्रैः सम्पूर्णरूपेण विनश्यति । अतः अतो गुणे ६.१.९७ इति सूत्रम् प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रस्य अपवादरूपेण अवश्यं स्वीक्रियते । परन्तु पुरस्तादपवादाः अनन्तरान् विधीन् बाधन्ते नोत्तरान् इति परिभाषायाः सामर्थ्यात् अयम् अपवादः प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्येतम् उत्सर्गम् बाधितुं नैव शक्नोति । अतएव बाल + जस् इत्यत्र अतो गुणे ६.१.९७ तथा च प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्येतयोः युगपत् प्राप्तौ सत्याम् अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति उत्सर्गसूत्रमेव प्रवर्तते, येन पूर्वसवर्णदीर्घं कृत्वा इष्टरूपं सिद्ध्यति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Reasoning matches the standard resolution (purastād apavādā anantarān vidhīn bādhante, so 6.1.97 does not bar 6.1.102). The engine agrees: at rāma + as it shows 6.1.102 beating 6.1.97 and 6.1.101 by para (1.4.2). Not audited beyond that.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:56:23+0530",
+     "text": "प्रथमयोः पूर्वसवर्णः तथा च अतो गुणे एतयोर्मध्ये बाध्यबाधकभावः\nअतो गुणे ६.१.९७ इति सूत्रस्य अवकाशः वृद्धिरेचि ६.१.८८, अकः सवर्णे दीर्घः ६.१.१०१ तथा च प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति त्रिभिः सूत्रैः सम्पूर्णरूपेण विनश्यति । अतः अतो गुणे ६.१.९७ इति सूत्रम् प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रस्य अपवादरूपेण अवश्यं स्वीक्रियते । परन्तु पुरस्तादपवादाः अनन्तरान् विधीन् बाधन्ते नोत्तरान् इति परिभाषायाः सामर्थ्यात् अयम् अपवादः प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्येतम् उत्सर्गम् बाधितुं नैव शक्नोति । अतएव बाल + जस् इत्यत्र अतो गुणे ६.१.९७ तथा च प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्येतयोः युगपत् प्राप्तौ सत्याम् अपि प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति उत्सर्गसूत्रमेव प्रवर्तते, येन पूर्वसवर्णदीर्घं कृत्वा इष्टरूपं सिद्ध्यति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "c5ec303949",
+   "created": "2026-11-15T23:56:36+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "प्रथमयोः पूर्वसवर्णः तथा च अकः सवर्णे दीर्घः एतयोर्मध्ये बाध्यबाधकभावः\nइको यणचि [[६.१७७]] इत्यस्य अपवादरूपेण प्रवर्तमानयोः प्रथमयोः पूर्वसवर्णः ६.१.१०२ तथा च अकः सवर्णे दीर्घः ६.१.१०१ एतयोः सूत्रयोः मध्ये तुल्यबलत्वम्, अतश्च विप्रतिषेधः अस्ति । तदित्थम् —\n\n१. पपी + ङि इत्यत्र इको यणचि [[६.१७७]] इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घः भवति । अत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यस्य तु प्राप्तिरेव नास्ति ।\n२. मुनि + औ इत्यत्र इको यणचि [[६.१७७]] इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०१ इत्यनेन पूर्वसवर्णदीर्घः भवति । अत्र अकः सवर्णे दीर्घः ६.१.१०१ इत्यस्य तु प्राप्तिरेव नास्ति ।\n३. राम + जस् इत्यत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ तथा च अकः सवर्णे दीर्घः ६.१.१०१ इति द्वे अपि सूत्रे युगपत् प्रवर्तेते । अस्यां स्थितौ विप्रतिषेधे परं कार्यम् १.४.२ इत्यनेन परत्वात् प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यस्यैव प्रयोगः भवति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-16 — Right: 6.1.101 and 6.1.102 are equal-strength, so vipratiṣedha, para wins (1.4.2): 6.1.102 for rāma + jas, as the engine shows. Typo: item 2 cites 6.1.101 where 6.1.102 is meant; '६.१७७' should be 6.1.77.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:56:36+0530",
+     "text": "प्रथमयोः पूर्वसवर्णः तथा च अकः सवर्णे दीर्घः एतयोर्मध्ये बाध्यबाधकभावः\nइको यणचि [[६.१७७]] इत्यस्य अपवादरूपेण प्रवर्तमानयोः प्रथमयोः पूर्वसवर्णः ६.१.१०२ तथा च अकः सवर्णे दीर्घः ६.१.१०१ एतयोः सूत्रयोः मध्ये तुल्यबलत्वम्, अतश्च विप्रतिषेधः अस्ति । तदित्थम् —\n\n१. पपी + ङि इत्यत्र इको यणचि [[६.१७७]] इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा अकः सवर्णे दीर्घः ६.१.१०१ इत्यनेन सवर्णदीर्घः भवति । अत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यस्य तु प्राप्तिरेव नास्ति ।\n२. मुनि + औ इत्यत्र इको यणचि [[६.१७७]] इत्यनेन यणादेशे प्राप्ते तद्बाधित्वा प्रथमयोः पूर्वसवर्णः ६.१.१०१ इत्यनेन पूर्वसवर्णदीर्घः भवति । अत्र अकः सवर्णे दीर्घः ६.१.१०१ इत्यस्य तु प्राप्तिरेव नास्ति ।\n३. राम + जस् इत्यत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ तथा च अकः सवर्णे दीर्घः ६.१.१०१ इति द्वे अपि सूत्रे युगपत् प्रवर्तेते । अस्यां स्थितौ विप्रतिषेधे परं कार्यम् १.४.२ इत्यनेन परत्वात् प्रथमयोः पूर्वसवर्णः ६.१.१०२ इत्यस्यैव प्रयोगः भवति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  },
+  {
+   "id": "5920173f35",
+   "created": "2026-11-15T23:57:00+0530",
+   "updated": "2026-11-16T00:03:56+0530",
+   "text": "दलकृत्यम्\n\n१. प्रथमयोः इति किमर्थम् ? — अत्र प्रयुक्तः 'प्रथमयोः' इति शब्दः 'प्रथमायाः द्वितीयायाः च' अस्मिन् अर्थे प्रयुक्तः अस्ति । प्रथमाविभक्तेः द्वितीयाविभक्तेः च प्रत्ययानां विषये एव इदं सूत्रम् प्रवर्तते इति अत्र आशयः ।\n२. अकः इति किमर्थम् ? — शब्दस्य अन्ते 'अक्' वर्णः नास्ति चेत् प्रकृतसूत्रम् न प्रवर्तते । यथा, नौ + शस् इत्यत्र प्रकृतसूत्रस्य प्रयोगः न भवति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — 'prathamayoḥ' = prathamā and dvitīyā endings; 'akaḥ' excludes e.g. nau + śas (nāvaḥ by 6.1.78). Correct.",
+   "evidence": "Kāśikā (brain DB) + engine trace",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-15T23:57:00+0530",
+     "text": "दलकृत्यम्\n\n१. प्रथमयोः इति किमर्थम् ? — अत्र प्रयुक्तः 'प्रथमयोः' इति शब्दः 'प्रथमायाः द्वितीयायाः च' अस्मिन् अर्थे प्रयुक्तः अस्ति । प्रथमाविभक्तेः द्वितीयाविभक्तेः च प्रत्ययानां विषये एव इदं सूत्रम् प्रवर्तते इति अत्र आशयः ।\n२. अकः इति किमर्थम् ? — शब्दस्य अन्ते 'अक्' वर्णः नास्ति चेत् प्रकृतसूत्रम् न प्रवर्तते । यथा, नौ + शस् इत्यत्र प्रकृतसूत्रस्य प्रयोगः न भवति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T00:03:56+0530"
+  }
+ ]
+}
