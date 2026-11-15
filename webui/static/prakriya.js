@@ -218,7 +218,7 @@ const Prakriya = (() => {
   function supGridHtml(s) {
     if (s.sutra_id !== "4.1.2" || !/^APPLIED/.test(s.status)) return "";
     const p = parseParts(s.parts), last = p && p.length ? p[p.length - 1] : null, raw = last ? String(last[0] || "") : "";
-    const norm = x => String(x).replace(/[~]/g, "").replace(/^(O)w$/, "$1"), mark = norm(raw);
+    const norm = x => String(x).replace(/[~]/g, ""), mark = norm(raw);          // exact upadeśa: O (au, prathamā) and Ow (auṭ, dvitīyā) are different cells
     const hit = SUP21.flatMap(([, r]) => r).filter(([k]) => mark && norm(k) === mark).length;
     const en = pref.gloss === "en";
     return `<details class="pk-supwrap no-print"><summary>${en ? "the 21 sup of 4.1.2" : "४.१.२ के २१ सुप्-प्रत्यय"} — ${mark ? `${en ? "chosen" : "चुना"}: <b class="dev">${esc(fmt(raw, ""))}</b>${hit > 1 ? (en ? " (the same form stands in several cells)" : " (यह रूप कई कोष्ठकों में है)") : ""}` : "—"}</summary>
