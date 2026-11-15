@@ -192,7 +192,7 @@ SUTRA = SutraRecord(
     text_dev       = 'यचि भम्',
     samagra_slp1   = "asarvanAmasTAne su~-Adizu yaci Bam",
     samagra_dev    = "असर्वनामस्थाने सुँ-आदिषु यचि  भम्",
-    padaccheda_dev = "असर्वनामस्थाने सुँ-आदिषु यचि भम्",
+    padaccheda_dev = "यचि भम्",
     why_dev        = (
         "स्वादि-प्रत्यये असर्वनामस्थानके यकारादौ वा अजादौ आदौ च परे "
         "प्रकृतेः भ-संज्ञा; पद-संज्ञां (१.४.१७) बाधते।"

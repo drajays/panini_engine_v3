@@ -82,7 +82,7 @@ SUTRA = SutraRecord(
     text_dev       = "ह्रस्वनद्यापो नुट्",
     samagra_slp1   = "hrasva-nadI-ApaH aNgAt Ami nuw",
     samagra_dev    = "ह्रस्व-नदी-आपः अङ्गात् आमि नुट्",
-    padaccheda_dev = "ह्रस्व-नदी-आपाम् नुट्",
+    padaccheda_dev = "ह्रस्व-नदी-आपः नुट्",
     why_dev        = "ह्रस्वान्त-अङ्ग / नदी-आप्-अङ्गात् परस्य आम्-प्रत्ययस्य "
                      "पराद्यौ 'नुट्' आगमः।",
     anuvritti_from = ("6.4.1",),
