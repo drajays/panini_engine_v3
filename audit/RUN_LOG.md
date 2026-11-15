@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15g — prakriyā Copy / Copy to LLM (claim `it-pk-copy`)
+
+**What:** `prakriya.js` — Copy dumps visible ledger+steps; Copy to LLM wraps glass-box / blinded / every-step policy + critical-audit ask.
+
+
+
 ### [cursor] 2026-11-15f — लृँङ् 1.3.3 (claim `it-lrg-133`)
 
 **What:** 3.3.139 no longer pre-strips ङ्. Ledger: लृँङ् — ऋँ → ऋदित् (१.३.२), ङ् → ङित् (१.३.३). Tests 29 passed.

@@ -215,7 +215,9 @@ const Prakriya = (() => {
       <label>लिपिः ${sel("pk-script", [["dev", "देवनागरी"], ["varna", "देवनागरी — वर्ण-विभागः"], ["slp1", "SLP1"], ["iast", "IAST"]], pref.script)}</label>
       <label>व्याख्या ${sel("pk-gloss", [["hi", "हिन्दी"], ["en", "English"], ["sa", "संस्कृतम्"]], pref.gloss)}</label>
       <label>वर्णाः ${sel("pk-split", [["0", "संहितम् · merged (राम)"], ["1", "विभक्तम् · split (र् आ म् अ)"]], pref.split ? "1" : "0")}</label>
-      <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button></div>
+      <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
+      <button type="button" id="pk-copy" title="Copy the prakriyā as plain text">Copy</button>
+      <button type="button" id="pk-copy-llm" title="Copy with a review prompt for an LLM">Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
       <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
@@ -258,9 +260,102 @@ const Prakriya = (() => {
       a.href = URL.createObjectURL(new Blob([JSON.stringify(d, null, 1)], {type: "application/json"}));
       a.download = "prakriya.json"; a.click();
     };
+    const flash = (btn, ok) => { const o = btn.textContent; btn.textContent = ok ? "Copied ✓" : "Copy failed"; setTimeout(() => { btn.textContent = o; }, 1600); };
+    const clip = async (text, btn) => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+        else {
+          const ta = document.createElement("textarea"); ta.value = text; ta.style.cssText = "position:fixed;left:-9999px";
+          document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
+        }
+        flash(btn, true);
+      } catch (e) { flash(btn, false); }
+    };
+    q("#pk-copy").onclick = () => clip(plainPrakriya(d, t, ctx), q("#pk-copy"));
+    q("#pk-copy-llm").onclick = () => clip(llmPrakriyaPrompt(d, t, ctx), q("#pk-copy-llm"));
     const repaint = () => { if (!el.isConnected) window.removeEventListener("prakriya-change", repaint); else paint(); };
     window.addEventListener("prakriya-change", repaint);
     paint();
   }
-  return {mount, pref, fmt, rowsFor, inspect};
+
+  /* Plain-text dump of what the current depth shows (ledger + every listed step). */
+  function plainPrakriya(d, t, ctx) {
+    const depth = {beginner: "आरम्भिकः / Beginner", kaumudi: "कौमुदी / Kaumudī", shastriya: "शास्त्रीयः / Śāstrīya"}[pref.depth] || pref.depth;
+    const surface = d.surface ? `${d.surface.dev || ""} (${d.surface.slp1 || ""})` : "";
+    const lines = [
+      `Pāṇini Engine v3 — prakriyā`,
+      `Title: ${d.title || "—"}`,
+      `Surface: ${surface}`,
+      `Depth: ${depth} · Script: ${pref.script} · Gloss: ${pref.gloss}`,
+      "",
+    ];
+    const led = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
+    if (led.length) {
+      lines.push("इत्संज्ञा-कोशः");
+      lines.push("उपदेशः | इत्-वर्णाः → संज्ञा (सूत्रम्) | लोप-पदम्");
+      led.forEach(({i, r}) => lines.push(`  ${r.upadesha} | ${r.items.map(x => `${x.letter} → ${x.name} ${x.sutra}`).join(" · ")} | #${i + 1}`));
+      lines.push("");
+    }
+    lines.push(`Steps (${pref.depth}):`);
+    rowsFor(t).forEach(({s, i, group}) => {
+      if (group) {
+        const lopa = [...group].reverse().find(x => x.sutra_id === "1.3.9" && changes(x));
+        const named = [...new Set(group.filter(x => x.sutra_id !== "1.3.9").map(x => x.sutra_id))];
+        const tag = `${named.join(" · ") || "1.3.2–1.3.8"} → 1.3.9`;
+        lines.push(`#${i + 1} इत्संज्ञा-लोपः ${tag}`);
+        if (lopa) {
+          lines.push(`  ${lopa.form_before_dev || fmt(lopa.form_before)} → ${lopa.form_after_dev || fmt(lopa.form_after)}`);
+          lines.push(`  SLP1: ${lopa.form_before} → ${lopa.form_after}`);
+          const r = itParse(lopa);
+          if (r) lines.push(`  उपदेशः ${r.upadesha} · ${r.items.map(x => `${x.letter} → ${x.name} (${x.sutra})`).join(", ")}`);
+          lines.push(`  ${(lopa.why_now_dev || lopa.why_dev || "").trim()}`);
+        }
+        return;
+      }
+      const st = STATUS[s.status] || [s.status, s.status];
+      lines.push(`#${i + 1} ${s.sutra_id} [${st[0]} / ${st[1]}]${s.sutra_type ? ` · ${s.sutra_type}` : ""}`);
+      lines.push(`  ${s.form_before_dev || fmt(s.form_before)} → ${s.form_after_dev || fmt(s.form_after)}`);
+      lines.push(`  SLP1: ${s.form_before} → ${s.form_after}`);
+      if (s._sutra_text_dev) lines.push(`  pāṭha: ${s._sutra_text_dev}`);
+      if (s._padaccheda_dev) lines.push(`  padaccheda: ${s._padaccheda_dev}`);
+      if ((s._anuvritti_from || []).length) lines.push(`  anuvṛtti ← ${(s._anuvritti_from || []).join(", ")}`);
+      const g = gloss(s); if (g) lines.push(`  ${g}`);
+      if (s.why_now_dev && s.why_now_dev !== g) lines.push(`  why_now: ${s.why_now_dev}`);
+      if (s.gate_reason) lines.push(`  gate: ${s.gate_reason}`);
+      if (s.skip_reason) lines.push(`  skip: ${s.skip_reason}`);
+      if (s.parts) lines.push(`  parts: ${typeof s.parts === "string" ? s.parts : JSON.stringify(s.parts)}`);
+    });
+    if (pref.depth !== "shastriya") {
+      lines.push("");
+      lines.push(`(Full engine trace has ${t.length} rule checks; ${t.filter(applied).length} applied. Switch depth to Śāstrīya for every SKIPPED/BLOCKED/AUDIT row.)`);
+    }
+    return lines.join("\n");
+  }
+
+  function llmPrakriyaPrompt(d, t, ctx) {
+    const body = plainPrakriya(d, t, ctx);
+    return `Act as a Pāṇini Aṣṭādhyāyī expert and a strict auditor of a computational prakriyā engine.
+
+Engine policy you must enforce while reviewing (Panini Engine v3 — CONSTITUTION):
+1. Glass box: every step must be explainable in Pāṇinian terms — no black-box shortcuts, lookup tables, or surface-string fingerprints.
+2. Blinded / mechanical: cond() must not read (vibhakti, vacana), (lakāra, puruṣa, vacana), target gold form, or reference tables; rules fire from linguistic state only.
+3. Rule-based: one sūtra = one operation; morphology only via apply_rule; no Kaumudī-driven reordering of the Aṣṭādhyāyī kram.
+4. Fully mathematical / every-step: it-saṃjñā (1.3.2–1.3.8) and tasya lopaḥ (1.3.9) must appear for every upadeśa/āgama/ādeśa that carries it-letters; āgama uttered as taught then reduced by it-kārya; no silent pre-stripping of anubandhas.
+5. Fullest valid path: prefer the full śāstrīya sequence; no duplicate “corrected” pipelines.
+
+Task:
+- Critically analyse the prakriyā dump below against that policy and against the Aṣṭādhyāyī (with Kāśikā / standard udāharaṇa where relevant).
+- Say what is correctly followed.
+- List weaknesses, gaps, wrong order, missing it-kārya, illicit arms/meta, or non-Pāṇinian shortcuts — numbered, concrete, with sūtra ids and step numbers where possible.
+- End with a short severity summary (blocker / major / minor).
+
+Do not rewrite the engine; audit only.
+
+===== PRAKRIYĀ DUMP =====
+${body}
+===== END =====
+`;
+  }
+
+  return {mount, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
 })();

@@ -845,8 +845,19 @@
    "docs/IT_PRAKARANA_EVERYWHERE.md"
   ],
   "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701862.0708191
+ },
+ {
+  "id": "it-pk-copy",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=webui/static/prakriya.js"
+  ],
+  "out_of_scope": "",
   "status": "in-progress",
   "hotspots": [],
-  "updated": 1794701814.664352
+  "updated": 1794702124.3974028
  }
 ]
