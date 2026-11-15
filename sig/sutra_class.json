@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T10:31:11+00:00",
+ "generated_at": "2026-11-15T20:21:14+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -1535,12 +1535,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.2.36",
@@ -1549,12 +1549,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.2.37",
@@ -1678,7 +1678,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 19,
+   "mentions": 20,
    "lk_grade": null,
    "status": "confident_structural"
   },
@@ -1857,12 +1857,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.2.59",
@@ -2011,12 +2011,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.2.70",
@@ -2669,12 +2669,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.3.44",
@@ -4377,12 +4377,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
    "lk_grade": null,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.4.73",
@@ -7415,7 +7415,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": true,
    "mentions": 0,
@@ -17526,7 +17526,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 74,
+   "mentions": 82,
    "lk_grade": null,
    "status": "confident"
   },
@@ -18252,11 +18252,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 3,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "4.1.55",
@@ -18266,11 +18266,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 3,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "4.1.56",
@@ -18728,11 +18728,11 @@
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": true,
    "mentions": 1,
-   "lk_grade": "FAIL",
-   "status": "gate_only"
+   "lk_grade": "working",
+   "status": "working"
   },
   {
    "id": "4.1.89",
@@ -20211,12 +20211,12 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "FAIL",
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "4.2.17",
@@ -20982,11 +20982,11 @@
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": true,
    "mentions": 3,
-   "lk_grade": "FAIL",
-   "status": "gate_only"
+   "lk_grade": "working",
+   "status": "working"
   },
   {
    "id": "4.2.72",
@@ -21136,11 +21136,11 @@
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": true,
    "mentions": 7,
-   "lk_grade": "FAIL",
-   "status": "gate_only"
+   "lk_grade": "working",
+   "status": "working"
   },
   {
    "id": "4.2.83",
@@ -34435,7 +34435,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -35541,7 +35541,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -36703,7 +36703,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -37543,7 +37543,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -38551,7 +38551,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -38691,7 +38691,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -39139,7 +39139,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -39265,7 +39265,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -39629,7 +39629,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -39741,7 +39741,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -39811,7 +39811,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -40329,7 +40329,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -42555,7 +42555,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -42975,7 +42975,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -44389,7 +44389,7 @@
    "exempt": true,
    "placeholder": true,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -44544,11 +44544,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "7.1.7",
@@ -44823,7 +44823,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -45327,7 +45327,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -45411,7 +45411,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -47637,7 +47637,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -47861,7 +47861,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -47931,7 +47931,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48029,7 +48029,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48183,7 +48183,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48379,7 +48379,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48800,11 +48800,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "confident",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "7.3.90",
@@ -48842,11 +48842,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "7.3.93",
@@ -49261,7 +49261,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 1,
@@ -49429,7 +49429,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -49528,11 +49528,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "7.4.22",
@@ -49723,7 +49723,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -49906,11 +49906,11 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": false,
    "mentions": 0,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "7.4.49",
@@ -50115,7 +50115,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -52720,11 +52720,11 @@
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": false,
+   "moved": true,
    "cited": true,
    "mentions": 4,
    "lk_grade": "working",
-   "status": "gate_only"
+   "status": "working"
   },
   {
    "id": "8.2.79",

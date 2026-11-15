@@ -12,7 +12,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra, gana
 from engine.luk import live_taddhita, take_away
 from engine.state import State
-from engine.vivaksha import vivaksita
+from engine.taddhita_attach import frame_open
 
 
 def _site(state: State):
@@ -24,15 +24,31 @@ def _site(state: State):
     name = stem.meta.get("upadesha_slp1") or "".join(v.slp1 for v in stem.varnas)
     if not gana.in_gana("varaRAdiH", name):
         return None
-    return i if (vivaksita(state, "taddhitArtha", "adUraBava") or vivaksita(state, "taddhitArtha", "nivAsa")) else None
+    return i if frame_open(state, "cAturarTika") else None   # Kāśikā: cāturarthikasya pratyayasya — the frame 4.2.67 / 4.2.69 / 4.2.70 opened; the sūtra names no sense itself (AMENDMENT 25)
+
+
+def _legacy_site(state: State) -> bool:
+    # SHORTCUT S24: the old `prakriya_46` demo recipe (pipelines/godau.py) still pins this registry key; removed with the demo
+    if not any(e.get("id") == "4.1.76" for e in state.adhikara_stack):
+        return False
+    if not state.meta.get("prakriya_46_varaNAdi_luk_note") or not state.terms:
+        return False
+    if not any("prakriya_46_godau_demo" in t.tags for t in state.terms):
+        return False
+    return not state.samjna_registry.get("4.2.82_varaNAdi_luk_prakriya_46")
 
 
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _site(state) is not None or _legacy_site(state)
 
 
 def act(state: State) -> State:
-    return take_away(state, _site(state), "lup")
+    i = _site(state)
+    if i is not None:
+        return take_away(state, i, "lup")
+    if _legacy_site(state):
+        state.samjna_registry["4.2.82_varaNAdi_luk_prakriya_46"] = True
+    return state
 
 SUTRA = SutraRecord(
     sutra_id="4.2.82",

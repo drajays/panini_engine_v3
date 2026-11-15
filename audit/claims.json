@@ -1227,5 +1227,73 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794737697.825214
+ },
+ {
+  "id": "luk-4188-4282",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_4/pada_1/sutra_4_1_88.py",
+   "sutras/adhyaya_4/pada_2/sutra_4_2_82.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794744692.2355871
+ },
+ {
+  "id": "luk-4271",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_4/pada_2/sutra_4_2_71.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794744692.381691
+ },
+ {
+  "id": "step-ask",
+  "agent": "claude",
+  "scope": [
+   "webui/static/prakriya.js",
+   "webui/static/notes.js",
+   "webui/notes.py",
+   "webui/static/style.css",
+   "webui/templates/base.html",
+   "tests/unit/test_webui_notes.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794741272.070517
+ },
+ {
+  "id": "note-trace",
+  "agent": "claude",
+  "scope": [
+   "webui/notes.py",
+   "webui/static/prakriya.js",
+   "webui/static/notes.js",
+   "webui/static/style.css",
+   "webui/templates/base.html",
+   "webui/templates/sutra.html",
+   "tests/unit/test_webui_notes.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794742332.497118
+ },
+ {
+  "id": "fix-3-fails",
+  "agent": "claude",
+  "scope": [
+   "4.1.88",
+   "4.2.82"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794774090.733731
  }
 ]

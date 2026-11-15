@@ -42,12 +42,28 @@ def _site(state: State):
     return i if {"dvigu", "lex:dvigu"} & state.terms[i - 1].tags else None
 
 
+def _legacy_site(state: State) -> bool:
+    # SHORTCUT S24: the old `prakriya_42` demo recipe (pipelines/paYcendra.py) still pins this registry key; removed with the demo
+    if not any(e.get("id") == "4.1.76" for e in state.adhikara_stack):
+        return False
+    if not state.meta.get("prakriya_42_dvigu_anapatye_note") or not state.terms:
+        return False
+    if not any("prakriya_42_paYcendra_demo" in t.tags for t in state.terms):
+        return False
+    return not state.samjna_registry.get("4.1.88_dvigor_lug_anapatye_prakriya_42")
+
+
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _site(state) is not None or _legacy_site(state)
 
 
 def act(state: State) -> State:
-    return take_away(state, _site(state), "luk")
+    i = _site(state)
+    if i is not None:
+        return take_away(state, i, "luk")
+    if _legacy_site(state):
+        state.samjna_registry["4.1.88_dvigor_lug_anapatye_prakriya_42"] = True
+    return state
 
 SUTRA = SutraRecord(
     sutra_id="4.1.88",
