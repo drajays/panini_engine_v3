@@ -66,7 +66,7 @@ SUTRA = SutraRecord(
     samagra_dev="अनुदात्तङितः आत्मनेपदम्",
     padaccheda_dev="अनुदात्त-ङित् / आत्मनेपदम्",
     why_dev="अनुदात्तेत्-धातोः कर्तरि आत्मनेपदम्; १.३.७८-शेष-परस्मैपदं न भवति।",
-    anuvritti_from=("1.3.14",),
+    anuvritti_from=("1.3.2",),
     cond=cond,
     act=act,
 )

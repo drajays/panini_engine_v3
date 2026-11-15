@@ -911,6 +911,7 @@ def P00_parasmai_tin_adesha(s: State, tin_form: str) -> State:
     """Core parasmaipada tiṅ-spine: 3.4.77 (lasya) → 3.4.78 (tin_form ādeśa) → 1.4.99 (parasmaipade)."""
     s = P00_tin_adesha_base(s, tin_form)
     s = apply_rule("1.4.99", s)
+    s = apply_rule("1.4.100", s)     # taṅānāv ātmanepadam: the ātmanepada tiṅ (cond reads the upadeśa; VACUOUS on a parasmaipada tiṅ)
     return s
 
 

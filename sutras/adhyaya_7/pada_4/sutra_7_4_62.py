@@ -132,8 +132,8 @@ SUTRA = SutraRecord(
     samagra_slp1="aByAsasya kuhoH cuH ",
     samagra_dev="अभ्यासस्य कुहोः चुः ।",
     padaccheda_dev="कुहोः / चुः",
-    why_dev="अभ्यासे कु-वर्णस्य चु-आदेशः (ग→ज; P014: क→च) — जिघृक्षति।",
-    anuvritti_from=("7.4.1",),
+    why_dev="अभ्यासस्य कवर्ग-हकारयोः चवर्ग-आदेशः (क→च, ग→ज)।",
+    anuvritti_from=("7.4.58",),
     cond=cond,
     act=act,
 )

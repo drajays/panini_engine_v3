@@ -48,8 +48,8 @@ SUTRA = SutraRecord(
     samagra_slp1          = "aByAsasya AdiH Sar-pUrvAH KayaH hal SezaH",
     samagra_dev           = "अभ्यासस्य आदिः शर्-पूर्वाः खयः हल् शेषः",
     padaccheda_dev        = "शर्-पूर्वाः खयः",
-    why_dev               = "(सूत्रम् 7.4.61) शर्पूर्वाः खयः।",
-    anuvritti_from        = ('7.1.1',),
+    why_dev               = "अभ्यासस्य शर्पूर्वाः खयः शिष्यन्ते (शर् पूर्व वाले खय् रहते हैं; शेष का लोप) — चुस्कुन्दे में स्कुन्द् → कुन्द्।",
+    anuvritti_from        = ('7.4.58', '7.4.60'),
     cond                  = cond,
     act                   = act,
 )
