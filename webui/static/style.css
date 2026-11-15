@@ -1491,3 +1491,9 @@ body.pk-noscroll{overflow:hidden}
 .sn-trace{margin:.35rem 0;font-size:12px}.sn-trace summary{cursor:pointer;color:#1e40af;font-weight:600}
 .sn-trace pre{max-height:22rem;overflow:auto;margin:.3rem 0 0;padding:.5rem .6rem;background:#0f172a;color:#e2e8f0;border-radius:6px;font-size:11.5px;line-height:1.5;white-space:pre-wrap}
 .sn-trace mark{background:#fde047;color:#111;padding:0 .2em;border-radius:3px}
+.pk-hide{font-size:11px;margin-left:.2rem;padding:0 .3em;border:0;background:transparent;cursor:pointer;opacity:.35}.pk-hide:hover{opacity:1}
+.pk-hidden-bar{margin:.3rem 0;font-size:12px}.pk-unhide{font-size:11px;padding:0 .5em;border:1px solid var(--line,#bbb);border-radius:999px;background:transparent;cursor:pointer}
+.pk-rep{list-style:none;margin:.2rem 0}.pk-rep>details>summary{cursor:pointer;padding:.25rem .5rem;border:1px dashed var(--line,#bbb);border-radius:6px;background:var(--bg-subtle,#f7f7f7)}
+.pk-rep-list{margin:.3rem 0 .3rem 1rem;padding:0}
+.pk-sup{border-collapse:collapse;margin:.3rem 0}.pk-sup th,.pk-sup td{border:1px solid var(--line,#ccc);padding:.15rem .6rem;text-align:center;font-size:13px}.pk-sup-on{background:#ffe9a8;font-weight:700}
+.pk-supwrap>summary{cursor:pointer;font-size:12.5px;margin:.3rem 0}

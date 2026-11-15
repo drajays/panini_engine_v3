@@ -211,6 +211,20 @@ const Prakriya = (() => {
     if (p && p.length) { const last = p[p.length - 1]; if (last[2]) return last[2]; if (last[0]) return last[0]; }
     return (s.form_after || "").replace(/.*(?=[A-Z]?[a-zA-Z~]+$)/, "") || "";
   };
+  /* 4.1.2 — the 21 sup (7 vibhakti × 3 vacana). A menu for students: the chosen cell comes from the step's sup; 1.4.21/22 (vacana) and 2.3.x (vibhakti) do not yet pick it (ledger S179). */
+  const SUP21 = [["प्रथमा", [["su~", "सुँ"], ["O", "औ"], ["jas", "जस्"]]], ["द्वितीया", [["am", "अम्"], ["Ow", "औट्"], ["Sas", "शस्"]]],
+    ["तृतीया", [["wA", "टा"], ["ByAm", "भ्याम्"], ["Bis", "भिस्"]]], ["चतुर्थी", [["Ne", "ङे"], ["ByAm", "भ्याम्"], ["Byas", "भ्यस्"]]],
+    ["पञ्चमी", [["Nasi~", "ङसिँ"], ["ByAm", "भ्याम्"], ["Byas", "भ्यस्"]]], ["षष्ठी", [["Nas", "ङस्"], ["os", "ओस्"], ["Am", "आम्"]]], ["सप्तमी", [["Ni", "ङि"], ["os", "ओस्"], ["sup", "सुप्"]]]];
+  function supGridHtml(s) {
+    if (s.sutra_id !== "4.1.2" || !/^APPLIED/.test(s.status)) return "";
+    const p = parseParts(s.parts), last = p && p.length ? p[p.length - 1] : null, raw = last ? String(last[0] || "") : "";
+    const norm = x => String(x).replace(/[~]/g, "").replace(/^(O)w$/, "$1"), mark = norm(raw);
+    const hit = SUP21.flatMap(([, r]) => r).filter(([k]) => mark && norm(k) === mark).length;
+    const en = pref.gloss === "en";
+    return `<details class="pk-supwrap no-print"><summary>${en ? "the 21 sup of 4.1.2" : "४.१.२ के २१ सुप्-प्रत्यय"} — ${mark ? `${en ? "chosen" : "चुना"}: <b class="dev">${esc(fmt(raw, ""))}</b>${hit > 1 ? (en ? " (the same form stands in several cells)" : " (यह रूप कई कोष्ठकों में है)") : ""}` : "—"}</summary>
+      <table class="pk-sup"><tr><th></th><th>एकवचनम्</th><th>द्विवचनम्</th><th>बहुवचनम्</th></tr>${SUP21.map(([v, r]) => `<tr><th>${v}</th>${r.map(([k, dv]) => `<td class="dev${mark && norm(k) === mark ? " pk-sup-on" : ""}">${dv}</td>`).join("")}</tr>`).join("")}</table>
+      <div class="muted">${PED(en)} ${en ? "A menu for students. Today the caller's (vibhakti, vacana) picks the cell; 1.4.21/22 (vacana by number) and 1.4.103 (the names) should do it — ledger S179." : "शिक्षण हेतु तालिका। अभी (विभक्ति, वचन) कर्ता से आता है; १.४.२१/२२ तथा १.४.१०३ को यह करना चाहिए — S179।"}</div></details>`;
+  }
   function tinGridHtml(s, viv) {
     if (s.sutra_id !== "3.4.78" || !/^APPLIED/.test(s.status)) return "";
     const en = pref.gloss === "en";
@@ -313,12 +327,12 @@ const Prakriya = (() => {
         ${(s._lsk || []).length ? `<div class="muted">LSK pp. ${esc([...new Set(s._lsk.map(x => x.page))].slice(0, 6).join(", "))}${s._lsk.length > 6 ? "…" : ""}</div>` : ""}</div>` : "";
     return `<li class="pk-step pk-${(s.status || "").toLowerCase()} pk-t-${esc(s.sutra_type || "X")}" id="${id}">
       <a class="pk-no" href="#${id}" title="permalink to this step">${i + 1}</a>
-      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}${askBtn(s.sutra_id, i)} ${typeChip(s)}
+      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}${askBtn(s.sutra_id, i)}${isStruct(s) ? "" : `<button type="button" class="pk-hide no-print" data-sid="${esc(s.sutra_id)}" title="Hide this sūtra in every prakriyā (still included in Copy to LLM)">🙈</button>`} ${typeChip(s)}
         <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span>
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev" data-i="${i}" title="क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
-        ${tinGridHtml(s, ctx.viv)}
+        ${tinGridHtml(s, ctx.viv)}${supGridHtml(s)}
         <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${deep ? "" : sutraCard(s, false)}${sch}</div></li>`;
   }
 
@@ -333,6 +347,45 @@ const Prakriya = (() => {
       const verdict = s.status === "BLOCKED" ? "blocked" : s.status === "SKIPPED" ? "checked, did not apply" : /^APPLIED/.test(s.status) ? "applied" : (STATUS[s.status] || [0, s.status])[1];
       return `${link} <a href="#s-${i + 1}">step ${i + 1}</a>: <b>${esc(verdict)}</b> (${esc(st[0])})${why ? ` — <span class="dev">${esc(why)}</span>` : ""}`;
     }).join("<br>");
+  }
+
+  /* repeated checked/blocked/skipped rows of one sūtra → one line, click to expand; user-hidden sūtras are dropped from the screen only (llm/plain copy use rowsFor, unfiltered) */
+  function collapseRows(rows) {
+    const key = r => r.group || applied(r.s) || isStruct(r.s) ? null : r.s.sutra_id + "|" + r.s.status, n = {}, seen = {};
+    rows.forEach(r => { const k = key(r); if (k) n[k] = (n[k] || 0) + 1; });
+    return rows.flatMap(r => { const k = key(r); if (!k || n[k] < 2) return [r]; if (seen[k]) return []; seen[k] = 1; return [{rep: rows.filter(x => key(x) === k)}]; });
+  }
+
+  /* shared ✎ form for pages that show a step outside the engine panel (Vidyut / corpus columns): saves a note under the sūtra */
+  function noteForm(host, sid, where, trace, hint) {
+    host.innerHTML = `<form class="pk-askform no-print"><div class="pk-ask-h"><b>✎ ${esc(sid)}</b> <span class="muted">· ${esc(hint || where)}</span></div>
+      <select name="kind"><option value="question">प्रश्न · question</option><option value="doubt">संशय · doubt</option><option value="note">टिप्पणी · note</option><option value="solution">समाधान · proposed solution</option></select>
+      <textarea name="text" rows="3" required placeholder="Your question, doubt or note on this sūtra…"></textarea>
+      <button type="submit">Save under ${esc(sid)}</button> <button type="button" data-x="1">Cancel</button> <span class="pk-ask-msg muted"></span></form>`;
+    const f = host.firstChild; f.text.focus();
+    f.addEventListener("click", e => { if (e.target.dataset.x) host.innerHTML = ""; });
+    f.addEventListener("submit", async e => {
+      e.preventDefault();
+      try {
+        const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where + " · " + location.pathname, trace: trace || ""})});
+        if (!r.ok) throw new Error(await r.text());
+        NOTE_N = null; noteCounts();
+        host.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;
+      } catch (err) { f.querySelector(".pk-ask-msg").textContent = "Save failed: " + String(err.message).slice(0, 120); }
+    });
+  }
+  /* ✎ button for an outside step (Vidyut / corpus rows) */
+  const outBtn = sid => `<button type="button" class="pk-ask vm-note no-print" data-sid="${esc(sid)}" title="Note / question on this sūtra (saved under it)">✎</button>`;
+  /* one delegated click handler: opens the form under the clicked step; ctx() → {where, trace} */
+  function wireOutNotes(root, ctx) {
+    root.addEventListener("click", ev => {
+      const b = ev.target.closest(".vm-note"); if (!b) return;
+      const step = b.closest(".dr-step"), c = ctx(b.dataset.sid) || {};
+      let host = step ? step.nextElementSibling : null;
+      if (!host || !host.classList.contains("vm-host")) { host = document.createElement("div"); host.className = "vm-host"; (step || b.parentNode).after(host); }
+      noteForm(host, b.dataset.sid, c.where || "", c.trace || "", c.hint);
+    });
   }
 
   function mount(el, d) {
@@ -356,9 +409,10 @@ const Prakriya = (() => {
       <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
       <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
-      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><ol class="pk-list"></ol>
+      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
-        <div class="pk-inspect-out" aria-live="polite"></div></div>`;
+        <button type="button" class="pk-inspect-note" title="Note on this sūtra: why you think it was needed here, with the śāstra that supports it">✎ टिप्पणी · note</button>
+        <div class="pk-inspect-out" aria-live="polite"></div><div class="pk-inspect-form"></div></div>`;
     const q = s => el.querySelector(s);
     const finalParts = [...ctx.pa].reverse().find(Boolean) || [];
     const authNote = () => {
@@ -375,8 +429,13 @@ const Prakriya = (() => {
     const lettersChips = () => (d.letters || []).map((l, n) => `<button type="button" class="pk-letter${l.origin.length ? "" : " pk-given"} pk-r-${roleOf((finalParts[l.term] || [])[1])}" data-n="${n}"
       title="${l.origin.length ? "created by " + esc(l.origin.join(", ")) : "given (upadeśa)"}">${esc(fmt(l.slp1, ""))}</button>`).join("");
     const paint = () => {
-      const rows = rowsFor(t);
-      q(".pk-list").innerHTML = rows.map(r => row(r, ctx)).join("") || "<li class='muted'>—</li>";
+      const hid = new Set(pref.hidden || []), rows = collapseRows(rowsFor(t).filter(r => r.group || !hid.has(r.s.sutra_id)));
+      q(".pk-list").innerHTML = rows.map(r => {
+        if (!r.rep) return row(r, ctx);
+        const f = r.rep[0].s, st = STATUS[f.status] || [f.status, f.status];
+        return `<li class="pk-rep"><details><summary><a class="pk-sid" href="/sutra/${esc(f.sutra_id)}">${esc(f.sutra_id)}</a> <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span> ×${r.rep.length} <span class="muted">· steps ${r.rep.map(x => x.i + 1).join(", ")}</span></summary><ol class="pk-rep-list">${r.rep.map(x => row(x, ctx)).join("")}</ol></details></li>`;
+      }).join("") || "<li class='muted'>—</li>";
+      q(".pk-hidden-bar").innerHTML = hid.size ? `<span class="muted">🙈 hidden on screen (kept in Copy to LLM):</span> ${[...hid].map(x => `<button type="button" class="pk-unhide" data-sid="${esc(x)}" title="Show again">${esc(x)} ✕</button>`).join(" ")}` : "";
       q(".pk-legend").innerHTML = legend() + `<div class="pk-tkey"><b>${pref.gloss === "en" ? "Rule colours" : "सूत्र-रङ्गाः"}:</b> ${Object.entries(TYPE_PLAIN).map(([k, v]) => `<span class="pk-type pk-ty-${k}" title="${esc(v[2])}">${esc(pref.gloss === "en" ? v[1] : v[0])}</span>`).join(" ")}</div>`;
       q(".pk-auth").innerHTML = authNote();
       q(".pk-ledger-box").innerHTML = itLedger(t);
@@ -384,7 +443,6 @@ const Prakriya = (() => {
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
       q(".pk-result").innerHTML = `${esc(d.title || "")} ${d.surface ? `→ <b>${esc(fmt(d.surface.slp1, d.surface.dev))}</b>` : ""}`;
       q(".pk-letters").innerHTML = letters();
-      q(".pk-inspect").hidden = pref.depth === "beginner";
       if (location.hash.startsWith("#s-")) { const n = document.getElementById(location.hash.slice(1)); if (n) { n.classList.add("pk-hit"); n.scrollIntoView({block: "center"}); } }
     };
     [["pk-depth", "depth"], ["pk-script", "script"], ["pk-gloss", "gloss"]].forEach(([id, k]) =>
@@ -415,6 +473,11 @@ const Prakriya = (() => {
         } catch (err) { m.textContent = "Save failed: " + String(err.message).slice(0, 120); }
       });
     });
+    el.addEventListener("click", e => {                            // 🙈 hide / ✕ show a sūtra everywhere
+      const h = e.target.closest(".pk-hide, .pk-unhide"); if (!h) return;
+      const set = new Set(pref.hidden || []); h.classList.contains("pk-hide") ? set.add(h.dataset.sid) : set.delete(h.dataset.sid);
+      pref.hidden = [...set]; save(); window.dispatchEvent(new Event("prakriya-change"));
+    });
     q(".pk-list").addEventListener("click", e => {                 // one form: merged ↔ split
       const f = e.target.closest(".pk-fx"); if (!f) return;
       const i = +f.dataset.i; ctx.open.has(i) ? ctx.open.delete(i) : ctx.open.add(i);
@@ -426,6 +489,31 @@ const Prakriya = (() => {
       q(".pk-letter-info").innerHTML = l.origin.length ? `${esc(fmt(l.slp1, ""))} ← ${l.origin.map(o => {
         const i = t.findIndex(s => s.sutra_id === o && applied(s));
         return `<a href="/sutra/${esc(o)}">${esc(o)}</a>${i >= 0 ? ` (<a href="#s-${i + 1}">step ${i + 1}</a>)` : ""}`; }).join(", ")}` : `${esc(fmt(l.slp1, ""))} — part of the given upadeśa, not created by a rule.`;
+    });
+    q(".pk-inspect-note").addEventListener("click", () => {          // ✎ "this sūtra seems needed here" — note + śāstra support, saved under that sūtra
+      const box = q(".pk-inspect-form"), sid = q(".pk-sid-in").value.trim();
+      if (box.firstChild) { box.innerHTML = ""; return; }
+      if (!/^\d+\.\d+\.\d+$/.test(sid)) { q(".pk-inspect-out").textContent = "Type a sūtra number (e.g. 2.1.1) first."; return; }
+      box.innerHTML = `<form class="pk-askform no-print"><div class="pk-ask-h"><b>✎ ${esc(sid)}</b> <span class="muted">· whole derivation: ${esc(d.title || "")}</span></div>
+        <select name="kind"><option value="solution">समाधान · this sūtra is needed here</option><option value="question">प्रश्न · question</option><option value="doubt">संशय · doubt</option><option value="note">टिप्पणी · note</option></select>
+        <textarea name="text" rows="3" required placeholder="Why this sūtra should act here (which condition is met)…"></textarea>
+        <textarea name="support" rows="3" placeholder="Supporting material: Kāśikā / Bhāṣya / vārttika / pāṭha / teacher, with reference…"></textarea>
+        <button type="submit">Save under ${esc(sid)}</button> <button type="button" data-x="1">Cancel</button> <span class="pk-ask-msg muted"></span></form>`;
+      const f = box.firstChild; f.text.focus();
+      f.addEventListener("click", ev => { if (ev.target.dataset.x) box.innerHTML = ""; });
+      f.addEventListener("submit", async ev => {
+        ev.preventDefault(); const m = f.querySelector(".pk-ask-msg");
+        const hit = t.findIndex(x => x.sutra_id === sid), at = hit >= 0 ? hit : t.length - 1;
+        const text = f.text.value + (f.support.value.trim() ? "\n\nSupporting material:\n" + f.support.value.trim() : "");
+        const where = `${d.title || ""} · "why didn't ${sid} apply?" (${hit >= 0 ? "step #" + (hit + 1) : "never offered"}) · ${location.pathname}${location.search}`;
+        try {
+          const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({text, kind: f.kind.value, author: "me", derivation: where, trace: traceText(d, t, at)})});
+          if (!r.ok) throw new Error(await r.text());
+          NOTE_N = null; noteCounts();
+          box.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;
+        } catch (err) { m.textContent = "Save failed: " + String(err.message).slice(0, 120); }
+      });
     });
     q(".pk-sid-in").addEventListener("input", e => { q(".pk-inspect-out").innerHTML = inspect(t, e.target.value); });
     const fullToggle = on => { el.classList.toggle("pk-full", on); document.body.classList.toggle("pk-noscroll", on); q("#pk-full").textContent = on ? "✕ Close full page" : "⛶ Full page"; };
@@ -504,6 +592,7 @@ const Prakriya = (() => {
       d.letters.forEach((l, n) => lines.push(`  ${n + 1}. ${fmt(l.slp1, "")} ← ${(l.origin || []).join(", ") || "upadeśa (given)"}`));
       lines.push("");
     }
+    if ((pref.hidden || []).length) lines.push(`(Hidden on screen by the user, but listed below in full: ${pref.hidden.join(", ")})`);
     lines.push(`Steps (${pref.depth}) — structured:`);
     rowsFor(t).forEach(({s, i, group}) => {
       if (group) {
@@ -588,5 +677,5 @@ ${body}
 `;
   }
 
-  return {mount, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
+  return {mount, noteForm, outBtn, wireOutNotes, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
 })();
