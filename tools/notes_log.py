@@ -32,6 +32,7 @@ out += ["", "## Actions taken from notes (manual, append-only)", "",
         "- 2026-11-16 · UI: 'Why didn't rule apply?' shows the Kāśikā on that sūtra (/api/kashika/<id>, display only). Ledger: S184 (ekādeśa side), S182 reworded (every short a). Repeats resolved: 1.3.4 → S179, 2.3.2 → S179, 6.1.84 / 6.1.88 → S184; 1.2.41 audit refuted (engine right).",
         "- 2026-11-16 · FOUND from notes: S185 — 6.1.103 does the 6.1.102 ekādeśa inside itself (rāmān in one step). PENDING after the coverage run: make 6.1.103 s→n only, after 6.1.102. Also pending: 1.1.73 gloss, S179, S183, S182.",
         "- 2026-11-16 · Coverage rebuild ended (4h12m): 3 failures found, all from commit 5d488e27 (4.2.82 asked a vivakṣā sense its samagra does not name — now reads the cāturarthika frame; 4.2.82 / 4.1.88 lost the demo registry keys godau / paYcendra still pin — legacy branch restored, S24). Ledgers regenerated; ratchets green. Notes: 1.4.18 → S186 (AND/OR saṃjñā groups), 6.1.87 → S184.",
+        "- 2026-11-16 · Rajpopat 1.4.2 vs tradition: docs/RAJPOPAT_1_4_2.md + tools/rajpopat_1_4_2_experiment.py (0 disagreements on 39 contested DOI decisions in nominal paradigms); S187 (apavāda row mislabelled para).",
         "- 2026-11-15 · No change needed (engine correct): 2.1.1 and 1.2.46 not offered for rāma + au."]
 (ROOT / "docs/NOTES_LOG.md").write_text("\n".join(out) + "\n", encoding="utf-8")
 print(len(rows), "notes ->", "docs/NOTES_LOG.md")

@@ -208,6 +208,32 @@
     }
    ],
    "status_at": "2026-11-16T01:55:47+0530"
+  },
+  {
+   "id": "deda853329",
+   "created": "2026-11-16T02:18:56+0530",
+   "updated": "2026-11-16T02:18:56+0530",
+   "text": "Rajpopat (Cambridge PhD 2022) vs the tradition on 1.4.2 — summary (full: docs/RAJPOPAT_1_4_2.md)\n\nTradition: para = the rule LATER in the Aṣṭādhyāyī; vipratiṣedha = conflict of EQUALLY strong rules (Kāśikā: tulyabalavirodho vipratiṣedhaḥ; Mbh: dvau prasaṅgāv anyārthāv ekasmin yugapat prāpnutaḥ). Unequal pairs (nitya / antaraṅga / apavāda) are decided by Paribhāṣenduśekhara 38, not by 1.4.2.\nRajpopat: para = the RIGHT-hand operation. Same operand (SOI) → the more specific rule wins; different operands (DOI) → the right-hand one wins by 1.4.2. No nitya/antaraṅga/apavāda tools (he says Pāṇini taught none).\nExample both discuss: deva + bhis. Tradition (Mbh/Kāśikā 7.1.9): para would give *devebhis; 7.1.9 still applies after etva (bhautapūrvya), so it is nitya → devaiḥ. Rajpopat: 7.1.9 acts on the affix (right) → wins.\nEngine experiment (tools/rajpopat_1_4_2_experiment.py): 40 stems × 24 cells, 39 contested DOI decisions, 0 where the right-hand rule differs from our resolver, 0 changed forms. So the engine cannot show him wrong on nominal paradigms (equivalent there), nor the tradition wrong. A counterexample (a conflict where right-hand gives a wrong attested form) is what would separate them.",
+   "author": "claude",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Comparison written from the thesis (pp. 6–7, 22–26, 49–51, 199–204) and the Mahābhāṣya/Kāśikā on 1.4.2 and 7.1.9; experiment result stated above; defect S187 (apavāda row mislabelled para) found on the way.",
+   "evidence": "docs/RAJPOPAT_1_4_2.md; tools/rajpopat_1_4_2_experiment.py",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T02:18:56+0530",
+     "text": "Rajpopat (Cambridge PhD 2022) vs the tradition on 1.4.2 — summary (full: docs/RAJPOPAT_1_4_2.md)\n\nTradition: para = the rule LATER in the Aṣṭādhyāyī; vipratiṣedha = conflict of EQUALLY strong rules (Kāśikā: tulyabalavirodho vipratiṣedhaḥ; Mbh: dvau prasaṅgāv anyārthāv ekasmin yugapat prāpnutaḥ). Unequal pairs (nitya / antaraṅga / apavāda) are decided by Paribhāṣenduśekhara 38, not by 1.4.2.\nRajpopat: para = the RIGHT-hand operation. Same operand (SOI) → the more specific rule wins; different operands (DOI) → the right-hand one wins by 1.4.2. No nitya/antaraṅga/apavāda tools (he says Pāṇini taught none).\nExample both discuss: deva + bhis. Tradition (Mbh/Kāśikā 7.1.9): para would give *devebhis; 7.1.9 still applies after etva (bhautapūrvya), so it is nitya → devaiḥ. Rajpopat: 7.1.9 acts on the affix (right) → wins.\nEngine experiment (tools/rajpopat_1_4_2_experiment.py): 40 stems × 24 cells, 39 contested DOI decisions, 0 where the right-hand rule differs from our resolver, 0 changed forms. So the engine cannot show him wrong on nominal paradigms (equivalent there), nor the tradition wrong. A counterexample (a conflict where right-hand gives a wrong attested form) is what would separate them.",
+     "author": "claude",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T02:18:56+0530"
   }
  ]
 }
