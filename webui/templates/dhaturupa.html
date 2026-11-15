@@ -160,11 +160,13 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     const lab = LAKARA.find(x => x[0] === v)[2];
     $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
       <p class="dr-tally" style="margin:.2rem 0 .6rem">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a> ${Prakriya.outBtn(x)}`).join(", ")}</b>` : (Array.isArray(d.vidyut) && E.trace ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
-      <div class="dr-two"><div><h3>Vidyut</h3><div id="vsteps">${vidSteps()}</div></div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
+      <div class="dr-two"><div><h3>Vidyut <button type="button" class="pk-btn-copy vm-llm" title="Vidyut steps + our engine's steps + audit prompt">LLM-कृते · Copy to LLM</button> <button type="button" class="pk-btn-copy vm-plain" title="Vidyut steps + our engine's steps, no prompt">प्रतिलिपिः · Copy panel</button></h3><div id="vsteps">${vidSteps()}</div></div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
       <div id="esteps"></div></div></div></div>`;
     if (E.trace) Prakriya.mount($("esteps"), {trace: E.trace, title: E.dev || "", surface: E.slp1 ? {slp1: E.slp1, dev: E.dev} : null,
       vivaksa: E.vivaksa || {lakara: v, purusha: 3 - r, vacana: c + 1, pada: a.pada || "", prayoga: a.prayoga || "kartari"}});
     else $("esteps").textContent = E.na || E.error || "";
+    $("dcard").querySelector(".vm-llm").onclick = e => Prakriya.copyText(Prakriya.vidyutLlmText({title: `${cur.dev} · ${lab} · ${PU[r][1]} · ${VC[c][1]}`, V: lastTrace && lastTrace.vidyut, missing: d.missing, E}), e.currentTarget);
+    $("dcard").querySelector(".vm-plain").onclick = e => Prakriya.copyText(Prakriya.vidyutLlmText({title: `${cur.dev} · ${lab} · ${PU[r][1]} · ${VC[c][1]}`, V: lastTrace && lastTrace.vidyut, missing: d.missing, E}, true), e.currentTarget);
     Prakriya.wireOutNotes($("dcard"), sid => ({where: `${cur.dev} · ${lab} · ${PU[r][1]} · ${VC[c][1]} · ${(d.missing || []).includes(sid) ? "Vidyut-only" : "Vidyut"} sūtra ${sid}`,
       trace: "Our engine's trace:\n" + (E.trace || []).map((t, i) => `#${i + 1} ${t.sutra_id} [${t.status}] ${t.form_before} → ${t.form_after}`).join("\n")}));
     $("dcard").scrollIntoView({block:"nearest"});

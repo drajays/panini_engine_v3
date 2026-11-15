@@ -388,6 +388,37 @@ const Prakriya = (() => {
     });
   }
 
+  /* Copy to LLM for the Vidyut column: Vidyut's steps + the sūtras our engine did not run + our engine's trace, with the audit prompt */
+  function vidyutLlmText({title, V, missing, E, corpus}, plain) {
+    const vs = Array.isArray(V) ? V.map(pth => `${pth.text || ""}\n` + (pth.steps || []).map((st, n) => `  ${n + 1}. ${st.code}  ${(st.result || []).map(x => fmt(x, "")).join(" + ")}`).join("\n")).join("\n\n") : String((V && V.error) || "Vidyut unavailable");
+    const et = ((E && E.trace) || []).filter(x => applied(x)).map(x => `  #${(E.trace.indexOf(x)) + 1} ${x.sutra_id} [${x.status}] ${x.form_before} → ${x.form_after}`).join("\n");
+    const cs = corpus ? `\n\n===== CORPUS (hand-checked upstream) ${corpus.form}\n` + corpus.steps.map((x, n) => `  ${n + 1}. ${x.step}  ${(x.sutras || []).join(", ")}`).join("\n") : "";
+    const head = `Act as a Pāṇini Aṣṭādhyāyī expert and a strict, fair auditor of a computational prakriyā engine (Panini Engine v3).
+Below, Vidyut (an external engine, only a minimum-rule floor — never an authority) and our engine derive the same form. Compare them against the Aṣṭādhyāyī and the Kāśikā.
+- Vidyut steps may include no-op stamps (a sūtra named although no letter changes); say which Vidyut sūtras genuinely act and which are stamps.
+- For each sūtra Vidyut runs and our engine does not: is it an engine gap, a Vidyut artefact, or a display issue? Give the reason and the sūtra text.
+- Say where our engine is right and Vidyut is wrong. End with a severity summary (blocker / major / minor). Audit only; do not rewrite the engine.
+
+`;
+    return (plain ? "" : head) + `===== ${title}
+VIDYUT:
+${vs}
+
+Vidyut sūtras our engine did not execute: ${(missing || []).join(", ") || "none"}
+
+OUR ENGINE (applied steps only; #n = index in the full trace):
+${et || "  (no trace)"}${cs}
+`;
+  }
+  async function copyText(text, btn) {
+    const o = btn.textContent; let ok = true;
+    try {
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+      else { const ta = document.createElement("textarea"); ta.value = text; ta.style.cssText = "position:fixed;left:-9999px"; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+    } catch (e) { ok = false; }
+    btn.textContent = ok ? "Copied ✓" : "Copy failed"; setTimeout(() => { btn.textContent = o; }, 1600);
+  }
+
   function mount(el, d) {
     const t = d.trace || [], L = t[t.length - 1];
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
@@ -679,5 +710,5 @@ ${body}
 `;
   }
 
-  return {mount, noteForm, outBtn, wireOutNotes, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
+  return {mount, vidyutLlmText, copyText, noteForm, outBtn, wireOutNotes, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
 })();
