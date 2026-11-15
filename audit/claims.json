@@ -884,7 +884,7 @@
   "out_of_scope": "",
   "status": "released",
   "hotspots": [],
-  "updated": 1794713226.653567
+  "updated": 1794713313.939429
  },
  {
   "id": "it-tin-grid",
@@ -897,8 +897,21 @@
    "webui/templates/prakriya.html"
   ],
   "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794713313.93943
+ },
+ {
+  "id": "it-copy-full",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=webui/static/prakriya.js",
+   "webui/static/style.css",
+   "webui/templates/base.html"
+  ],
+  "out_of_scope": "",
   "status": "in-progress",
   "hotspots": [],
-  "updated": 1794713226.7653508
+  "updated": 1794713562.4839182
  }
 ]

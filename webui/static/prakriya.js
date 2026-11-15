@@ -288,8 +288,8 @@ const Prakriya = (() => {
       <label>व्याख्या ${sel("pk-gloss", [["hi", "हिन्दी"], ["en", "English"], ["sa", "संस्कृतम्"]], pref.gloss)}</label>
       <label>वर्णाः ${sel("pk-split", [["0", "संहितम् · merged (राम)"], ["1", "विभक्तम् · split (र् आ म् अ)"]], pref.split ? "1" : "0")}</label>
       <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
-      <button type="button" id="pk-copy" title="Copy the prakriyā as plain text">Copy</button>
-      <button type="button" id="pk-copy-llm" title="Copy with a review prompt for an LLM">Copy to LLM</button></div>
+      <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
+      <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
       <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
@@ -343,32 +343,56 @@ const Prakriya = (() => {
         flash(btn, true);
       } catch (e) { flash(btn, false); }
     };
-    q("#pk-copy").onclick = () => clip(plainPrakriya(d, t, ctx), q("#pk-copy"));
-    q("#pk-copy-llm").onclick = () => clip(llmPrakriyaPrompt(d, t, ctx), q("#pk-copy-llm"));
+    const panelDump = () => {
+      const bits = [".pk-result", ".pk-letters", ".pk-letter-info", ".pk-legend", ".pk-ledger-box", ".pk-count", ".pk-list"]
+        .map(sel => q(sel)).filter(n => n && n.innerText && n.innerText.trim())
+        .map(n => n.innerText.trim());
+      return bits.join("\n\n");
+    };
+    q("#pk-copy").onclick = () => clip(plainPrakriya(d, t, ctx, panelDump), q("#pk-copy"));
+    q("#pk-copy-llm").onclick = () => clip(llmPrakriyaPrompt(d, t, ctx, panelDump), q("#pk-copy-llm"));
     const repaint = () => { if (!el.isConnected) window.removeEventListener("prakriya-change", repaint); else paint(); };
     window.addEventListener("prakriya-change", repaint);
     paint();
   }
 
-  /* Plain-text dump of what the current depth shows (ledger + every listed step). */
-  function plainPrakriya(d, t, ctx) {
+  /* Full panel dump: vivakṣā header + visible panel text + structured steps (incl. 3.4.78 tin menu). */
+  function plainPrakriya(d, t, ctx, panelTextFn) {
     const depth = {beginner: "आरम्भिकः / Beginner", kaumudi: "कौमुदी / Kaumudī", shastriya: "शास्त्रीयः / Śāstrīya"}[pref.depth] || pref.depth;
     const surface = d.surface ? `${d.surface.dev || ""} (${d.surface.slp1 || ""})` : "";
+    const viv = ctx && ctx.viv;
     const lines = [
-      `Pāṇini Engine v3 — prakriyā`,
+      `Pāṇini Engine v3 — prakriyā (entire panel)`,
       `Title: ${d.title || "—"}`,
       `Surface: ${surface}`,
       `Depth: ${depth} · Script: ${pref.script} · Gloss: ${pref.gloss}`,
-      "",
     ];
+    if (viv) {
+      lines.push(`Vivakṣā: lakāra=${viv.lakara || "—"} · prayoga=${viv.prayoga || "—"} · pada=${viv.pada || "—"} · puruṣa=${viv.purusha || "—"} · vacana=${viv.vacana || "—"}`);
+    }
+    lines.push("");
+    if (typeof panelTextFn === "function") {
+      const panel = panelTextFn();
+      if (panel) {
+        lines.push("===== PANEL (as shown) =====");
+        lines.push(panel);
+        lines.push("===== END PANEL =====");
+        lines.push("");
+      }
+    }
     const led = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
     if (led.length) {
-      lines.push("इत्संज्ञा-कोशः");
+      lines.push("इत्संज्ञा-कोशः (structured)");
       lines.push("उपदेशः | इत्-वर्णाः → संज्ञा (सूत्रम्) | लोप-पदम्");
       led.forEach(({i, r}) => lines.push(`  ${r.upadesha} | ${r.items.map(x => `${x.letter} → ${x.name} ${x.sutra}`).join(" · ")} | #${i + 1}`));
       lines.push("");
     }
-    lines.push(`Steps (${pref.depth}):`);
+    if (d.letters && d.letters.length) {
+      lines.push("Letters / वर्ण-उत्पत्तिः");
+      d.letters.forEach((l, n) => lines.push(`  ${n + 1}. ${fmt(l.slp1, "")} ← ${(l.origin || []).join(", ") || "upadeśa (given)"}`));
+      lines.push("");
+    }
+    lines.push(`Steps (${pref.depth}) — structured:`);
     rowsFor(t).forEach(({s, i, group}) => {
       if (group) {
         const lopa = [...group].reverse().find(x => x.sutra_id === "1.3.9" && changes(x));
@@ -393,19 +417,34 @@ const Prakriya = (() => {
       if ((s._anuvritti_from || []).length) lines.push(`  anuvṛtti ← ${(s._anuvritti_from || []).join(", ")}`);
       const g = gloss(s); if (g) lines.push(`  ${g}`);
       if (s.why_now_dev && s.why_now_dev !== g) lines.push(`  why_now: ${s.why_now_dev}`);
+      if (s.why_dev && s.why_dev !== g && s.why_dev !== s.why_now_dev) lines.push(`  why: ${s.why_dev}`);
       if (s.gate_reason) lines.push(`  gate: ${s.gate_reason}`);
       if (s.skip_reason) lines.push(`  skip: ${s.skip_reason}`);
       if (s.parts) lines.push(`  parts: ${typeof s.parts === "string" ? s.parts : JSON.stringify(s.parts)}`);
+      if (s.sutra_id === "3.4.78" && /^APPLIED/.test(s.status)) {
+        const chosen = s._tin_chosen || chosenTin(s);
+        lines.push(`  3.4.78 tiṅ menu — chosen: ${chosen || "—"}`);
+        ["parasmai", "atmane"].forEach(pd => {
+          lines.push(`  [${TIN78.pada[pd][0]}]`);
+          [3, 2, 1].forEach((pui, ri) => {
+            const row = [1, 2, 3].map((vci, ci) => {
+              const [sl, dv] = TIN78[pd][ri * 3 + ci];
+              const hit = sl === chosen ? " ★" : "";
+              return `${dv}(${sl})${hit}`;
+            }).join(" | ");
+            lines.push(`    ${TIN78.pu[pui][0]}: ${row}`);
+          });
+        });
+      }
     });
-    if (pref.depth !== "shastriya") {
-      lines.push("");
-      lines.push(`(Full engine trace has ${t.length} rule checks; ${t.filter(applied).length} applied. Switch depth to Śāstrīya for every SKIPPED/BLOCKED/AUDIT row.)`);
-    }
+    lines.push("");
+    lines.push(`Engine totals: ${t.length} rule checks; ${t.filter(applied).length} applied.` +
+      (pref.depth !== "shastriya" ? " (Switch depth to Śāstrīya for SKIPPED/BLOCKED/AUDIT rows.)" : ""));
     return lines.join("\n");
   }
 
-  function llmPrakriyaPrompt(d, t, ctx) {
-    const body = plainPrakriya(d, t, ctx);
+  function llmPrakriyaPrompt(d, t, ctx, panelTextFn) {
+    const body = plainPrakriya(d, t, ctx, panelTextFn);
     return `Act as a Pāṇini Aṣṭādhyāyī expert and a strict auditor of a computational prakriyā engine.
 
 Engine policy you must enforce while reviewing (Panini Engine v3 — CONSTITUTION):

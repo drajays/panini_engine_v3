@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15j — Copy entire panel (claim `it-copy-full`)
+
+**What:** Visible **प्रतिलिपिः · Copy panel** / **LLM-कृते**; dumps panel innerText + structured ledger/steps/tin-grid; cache-bust `prakriya.js?v=20261115i`.
+
+
+
 ### [cursor] 2026-11-15i — 3.4.78 tiṅ grid + vivakṣā (claim `it-tin-grid`)
 
 **What:** prakriyā step 3.4.78 shows both 9-cell menus (परस्मै/आत्मने), marks the cell from dhātūrūpa vivakṣā (पद×पुरुष×वचन), explains Art. 2 commit.
