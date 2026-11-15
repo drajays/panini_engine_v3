@@ -9,34 +9,40 @@ Pāṭha: ashtadhyayi.com data.txt row i=41055 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 
-_GATE_KEY: str = "4_1_55_nAsikodarO_55"
+_VOWELS = frozenset("aAiIuUfFxXeEoO")
+
+
+def _svanga_upasarjana(t) -> bool:
+    """The lexical fact `lex:svANga` (S14: the Lexicon does not yet say which stems are parts of the body) and the saṃjñā upasarjana."""
+    return bool(t.varnas) and "lex:svANga" in t.tags and "upasarjana" in t.tags
+
+
+_WORDS = ("nAsika", "udara", "ozWa", "jaNGa", "danta", "karRa", "SfNga")      # the sūtra's own list; the conjunct and bahvac prohibitions do not apply (Kāśikā: vacanam)
+
+
+def _wanted(t) -> bool:
+    return _svanga_upasarjana(t) and "".join(x.slp1 for x in t.varnas).endswith(_WORDS)
+
+
+def _site(state: State):
+    return strI_site(state, _wanted)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.55", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.55"
-    return state
-
+    return append_stri(state, "NIz") if _site(state) is not None else state
 
 SUTRA = SutraRecord(
     sutra_id              = "4.1.55",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_default      = False,
+    vibhasha_scope        = lambda state: _site(state) is not None,
     r1_form_identity_exempt = True,
     text_slp1             = "nAsikodarOzWajaNGAdantakarRaSfNgAcca",
     text_dev              = "नासिकोदरौष्ठजङ्घादन्तकर्णशृङ्गाच्च",

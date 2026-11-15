@@ -256,3 +256,12 @@ has no स्कुन्द्; the n/anusvāra steps are 7.1.58, 8.3.24, 8.4.5
 
 **Status quo kept:** the engine does not fire 8.3.111 in स्कुन्दते; verdict `ours` for the set difference, form identical.
 **Ruling (Ajay):** no. Do not match Vidyut's trace for no-op niṣedhas; the engine stays as it is. "Minimum-rule floor" means a sūtra Vidyut names participates when its condition genuinely holds, not trace parity. When Vidyut is the only source for a sūtra and its condition does not hold, the verdict is **T10:no-op** (a Vidyut artefact, not an engine failure).
+
+## SC-012 — 8.4.2 and स्रौघ्नः: the ku that stands for ha blocks the ṇatva — RESOLVED 2026-11-15 (brain R-016)
+
+**Observation:** 4.3.39 / 4.3.53 / 4.3.74 / 4.3.85 / 4.3.86 / 4.3.89 (the Kāśikā's स्रौघ्नः) came out स्रौघ्णः: 8.4.2 lets the ṇatva of r pass over o (aṭ) and gh (ku).
+
+**Source (Mahābhāṣya 8.4.2, DB `bhashya`):** "कुव्यवाये हादेशेषु प्रतिषेधो वक्तव्यः … प्रयोजनं वृत्रघ्नः स्रुघ्नः प्राघानीति" — the vārttika bars the ṇatva when the intervening ku is an ādeśa of ha.
+
+**Resolution:** `sutra_8_4_2.py` stops its scan at a k/kh/g/gh/ṅ that carries the varṇa tag `hAdeSa`. `sutra_7_3_54.py` tags the gh it makes (derived words). A given stem (sruGna) states the fact as the lexical stem tag `lex:hAdeSa` (S14); `taddhita_loop` keeps that one tag and `pada_merger` puts it on the stem's ku varṇas. No word is named in a sūtra file.
+**Not covered:** the vārttika's second half (nuṃvyavāye ṇatve anusvārābhāve pratiṣedhaḥ).

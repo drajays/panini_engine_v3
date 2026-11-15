@@ -13,7 +13,7 @@ from engine.declension import n_vowels
 from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_BLOCKS = ("4.1.54", "4.1.55")      # ṅīṣ after a svāṅga (svāṅgāc copasarjanād …, nāsikodara …)
+_BLOCKS = ("4.1.54",)      # ṅīṣ after a svāṅga (svāṅgāc copasarjanād …). 4.1.55 is NOT blocked: the Kāśikā says it is stated when the bahvac and the saṃyogopadha prohibitions had already applied (bahvajlakṣaṇe saṃyogopadhalakṣaṇe ca pratiṣedhe prāpte vacanam)
 
 
 def _wanted(t) -> bool:

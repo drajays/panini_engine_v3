@@ -74,7 +74,9 @@ def act(state: State) -> State:
     if i is None:
         return state
     t = state.terms[i]
-    t.varnas[_body(t)[0]] = mk("G")
+    gh = mk("G")
+    gh.tags.add("hAdeSa")          # the ku that stands for ha: 8.4.2 vt 1 (kuvyavāye hādeśeṣu pratiṣedhaḥ) reads it
+    t.varnas[_body(t)[0]] = gh
     t.meta["7_3_54_gh_done"] = True
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY] = True

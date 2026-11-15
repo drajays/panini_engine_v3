@@ -194,7 +194,9 @@ def _derive_chain(spec: tuple):
     """("chain", stem_slp1, "lexical,tags", "stage|stage|sup:vib,vac[,linga]") — pipelines.chain stages (strI / taddhita / krt-free) ending in a sup;
     stage = name[:k=v;k=v] (the vivakṣā). The stem-stage loops' own traces are put in front of the final State's trace (the sup stage is a fresh State)."""
     from pipelines import chain
-    st = chain.Stem(spec[1], frozenset(t for t in spec[2].split(",") if t))
+    members = spec[1].split("+")        # "candra+muKa": a compound as its members (parts), so a strī pratyaya follows the last one (chain.strI) and 4.1.56 counts the svāṅga member's ac
+    st = chain.Stem("".join(members), frozenset(t for t in spec[2].split(",") if t),
+                    parts=tuple((m, frozenset()) for m in members) if len(members) > 1 else ())
     fired: list[dict] = []
     res = None
     for stage in spec[3].split("|"):

@@ -121,6 +121,8 @@ def _find_target(state: State):
                 if flat[m + 1][2].slp1 not in "aAiIuUfFxXeEoOyvmn":
                     continue
                 return (ti2, vi2)
+            if vm.slp1 in "kKgGN" and ("hAdeSa" in vm.tags or "lex:hAdeSa" in state.terms[ti2].tags):
+                break               # Mahābhāṣya 8.4.2 vt 1 kuvyavāye hādeśeṣu pratiṣedhaḥ (vṛtraghnaḥ, sruGnaḥ, prāghānī): a ku that is the ādeśa of ha does not let the ṇatva pass (SC-012)
             if vm.slp1 in _BLOCKERS:
                 break
     return None

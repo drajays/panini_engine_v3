@@ -159,11 +159,12 @@ def test_4_1_10_svasradi_take_no_nip_tap(stem, linga, gold):
 
 
 def test_4_1_56_krodadi_take_no_nish():
-    """na krodādibahvacaḥ (4.1.56): kalyāṇakrodā / sujaghanā keep ā — no ṅīṣ (4.1.54 / 4.1.55 are barred)."""
+    """na krodādibahvacaḥ (4.1.56): kalyāṇakrodā / sujaghanā keep ā — no ṅīṣ (4.1.54 is barred: Kāśikā 4.1.56 "स्वाङ्गादिति ङीष् प्राप्तः प्रतिषिध्यते").
+    4.1.55 is NOT barred: Kāśikā 4.1.55 "बह्वज्लक्षणे संयोगोपधलक्षणे च प्रतिषेधे प्राप्ते वचनम्" (stated when the bahvac and saṃyogopadha prohibitions had applied)."""
     for stem in ("kroqA", "sujaGanA"):                                           # krodādi · bahvac (four vowels)
         before, after = _fire("4.1.56", _sub(stem, 1, 1, "strīliṅga"))
-        assert {"4.1.54", "4.1.55"} <= after.blocked_sutras
-        _barred(after, "4.1.54", "4.1.55")
+        assert "4.1.54" in after.blocked_sutras and "4.1.55" not in after.blocked_sutras
+        _barred(after, "4.1.54")
     assert _reaches(_sub("kroqA", 1, 1, "strīliṅga"), "kroqA")
     _never("4.1.56", _sub("kanyA", 1, 1, "strīliṅga"))                          # two vowels, not in the gaṇa
 
