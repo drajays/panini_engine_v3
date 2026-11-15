@@ -49,7 +49,8 @@
     $("st").textContent = "";
     $("res").innerHTML = `<div id="main-v"></div>${r.whatif ? `<div class="pk-whatif"><p><b>What-if (display only)</b> — sūtras switched off: ${r.whatif.disabled.join(", ")}.
       The result below is deliberately malformed; the engine's real derivation is above.</p><div id="alt-v"></div></div>` : ""}`;
-    Prakriya.mount($("main-v"), {trace: r.trace, title: w, letters: r.letters, surface: {slp1: r.surface_slp1 || ((r.trace || []).slice(-1)[0] || {}).form_after || "", dev: r.surface_dev}});
+    Prakriya.mount($("main-v"), {trace: r.trace, title: w, letters: r.letters, surface: {slp1: r.surface_slp1 || ((r.trace || []).slice(-1)[0] || {}).form_after || "", dev: r.surface_dev},
+      vivaksa: kind === "tinanta" ? (r.vivaksa || {lakara: $("la").value, prayoga: $("pr").value, purusha: +$("pu").value, vacana: +$("vc2").value, pada: r.pada || ""}) : null});
     if (r.whatif) { if (r.whatif.error) $("alt-v").textContent = r.whatif.error;
       else Prakriya.mount($("alt-v"), {trace: r.whatif.trace, title: w + " (what-if)", letters: r.whatif.letters, surface: {slp1: r.whatif.surface_slp1, dev: r.whatif.surface_dev}}); }
   }

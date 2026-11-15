@@ -1410,3 +1410,15 @@ table.matrix td.cell-fixed::after {
 .pk-itx{font-size:14px}
 .pk-ledger{margin:.4rem 0;font-size:13px}.pk-ledger summary{cursor:pointer;color:var(--accent)}
 .pk-ledger-t{border-collapse:collapse;margin-top:.3rem}.pk-ledger-t td,.pk-ledger-t th{border:1px solid var(--line-soft);padding:.15rem .5rem;text-align:left}
+/* 3.4.78 tiṅ ādeśa menu — all 18, vivakṣā cell marked */
+.pk-tinwrap{margin:.4rem 0 .2rem;padding:.45rem .55rem;border:1px dashed var(--line);border-radius:6px;background:#faf8f4}
+.pk-tin-banner{font-size:13px;line-height:1.45;margin-bottom:.4rem}
+.pk-tin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.6rem}
+.pk-tin{border-collapse:collapse;width:100%;font-size:12px;font-family:var(--dev)}
+.pk-tin caption{text-align:left;font-weight:600;margin-bottom:.2rem;color:var(--ink-dim)}
+.pk-tin th,.pk-tin td{border:1px solid var(--line-soft);padding:.2rem .35rem;text-align:center;vertical-align:middle}
+.pk-tin th{background:var(--bg-subtle);font-weight:500;color:var(--ink-dim)}
+.pk-tin td small{display:block;font-family:var(--mono);font-size:10px;color:var(--ink-dim);opacity:.85}
+.pk-tin-hit{background:#e8f6ec;outline:2px solid var(--success);outline-offset:-2px;font-weight:700}
+.pk-tin-pick{display:block;font-size:10px;color:var(--success);font-family:var(--sans,inherit);font-weight:600}
+.pk-tin-note{font-size:11px;margin-top:.3rem}

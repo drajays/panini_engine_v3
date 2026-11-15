@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15i — 3.4.78 tiṅ grid + vivakṣā (claim `it-tin-grid`)
+
+**What:** prakriyā step 3.4.78 shows both 9-cell menus (परस्मै/आत्मने), marks the cell from dhātūrūpa vivakṣā (पद×पुरुष×वचन), explains Art. 2 commit.
+
+
+
 ### [cursor] 2026-11-15h — LLM audit अस्पर्धिष्येताम् (claim `it-audit-aspardh`)
 
 **What:** 3.4.114 UI chip → स्य; 7.2.81 why_dev kartari-correct; test locks surface + registry + लृँङ् ṅit.

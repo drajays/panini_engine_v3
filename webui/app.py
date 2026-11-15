@@ -242,6 +242,32 @@ def _pack(state) -> dict:
             "letters": _letters(state)}
 
 
+def _tag_tin78_chosen(trace: list) -> list:
+    """Display-only: mark which 3.4.78 ādeśa was committed (Art. 2 — not a cond input)."""
+    try:
+        from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18
+    except Exception:
+        return trace
+    allow = set(TIN_ADESHA_18)
+    for step in trace or []:
+        if step.get("sutra_id") != "3.4.78" or not str(step.get("status", "")).startswith("APPLIED"):
+            continue
+        parts = step.get("parts") or []
+        if isinstance(parts, str):
+            try:
+                import ast
+                parts = ast.literal_eval(parts)
+            except Exception:
+                parts = []
+        chosen = ""
+        if parts:
+            last = parts[-1]
+            chosen = (last[2] if len(last) > 2 else "") or (last[0] if last else "")
+        if chosen in allow:
+            step["_tin_chosen"] = chosen
+    return trace
+
+
 def _with_extras(out: dict, state, data: dict, rerun) -> dict:
     out["letters"] = _letters(state)
     dis = data.get("disable") or []
@@ -1035,6 +1061,12 @@ def api_tinanta():
     surface_slp1 = state.flat_slp1()
 
     enriched = _enrich_trace(state.trace)
+    _tag_tin78_chosen(enriched)
+    pada_out = data.get("pada") or state.meta.get("pada_asked") or state.meta.get("pada") or ""
+    if isinstance(pada_out, str) and pada_out.lower().startswith("atmane"):
+        pada_out = "atmane"
+    elif isinstance(pada_out, str) and pada_out.lower().startswith("parasmai"):
+        pada_out = "parasmai"
 
     tr = state.trace
     return jsonify(_with_extras({
@@ -1050,6 +1082,11 @@ def api_tinanta():
         "prayoga"        : prayoga,
         "purusha"        : purusha,
         "vacana"         : vacana,
+        "pada"           : pada_out,
+        "vivaksa"        : {
+            "lakara": lakara, "prayoga": prayoga,
+            "purusha": purusha, "vacana": vacana, "pada": pada_out,
+        },
         "surface_dev"    : surface_dev,
         "surface_slp1"   : surface_slp1,
         "trace"          : enriched,
@@ -1934,7 +1971,25 @@ def api_dhaturupa_cell():
         kw = {"pada": q["pada"]} if q.get("pada") and (q.get("prayoga") or "kartari") == "kartari" else {}
         try:
             st = tin_derive(row.get("id") or row["upadesha_slp1"], ours, q.get("prayoga") or "kartari", pu, vc, **kw)
-            eng = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
+            tr = _tag_tin78_chosen(_enrich_trace(st.trace))
+            pada_v = q.get("pada") or kw.get("pada") or st.meta.get("pada_asked") or ""
+            if isinstance(pada_v, str) and pada_v.lower().startswith("atmane"):
+                pada_v = "atmane"
+            elif isinstance(pada_v, str) and pada_v.lower().startswith("parasmai"):
+                pada_v = "parasmai"
+            eng = {
+                "slp1": st.flat_slp1(),
+                "dev": st.flat_dev(),
+                "trace": tr,
+                "vivaksa": {
+                    "lakara": q.get("lakara") or ours,
+                    "lakara_engine": ours,
+                    "prayoga": q.get("prayoga") or "kartari",
+                    "pada": pada_v,
+                    "purusha": pu,
+                    "vacana": vc,
+                },
+            }
         except Exception as ex:
             eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
     # The invariant: every sūtra Vidyut fires, our engine fires too (extras are fine). Compare against the closest branch.

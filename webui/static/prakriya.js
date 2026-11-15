@@ -165,6 +165,67 @@ const Prakriya = (() => {
     return s._is_structural ? "" : changes(s) ? `Sūtra ${s.sutra_id} (${k}) rewrites ${a} as ${b}.` : `Sūtra ${s.sutra_id} (${k}) applies; the form stays ${a}.`;
   }
 
+  /* 3.4.78 — eighteen tiṅ ādeśas (Pāṇini order). Vivakṣā (pada × puruṣa × vacana) picks one cell;
+     the sūtra itself only substitutes the committed ādeśa (CONSTITUTION Art. 2). */
+  const TIN78 = {
+    pu: {3: ["प्रथमः", "3rd"], 2: ["मध्यमः", "2nd"], 1: ["उत्तमः", "1st"]},
+    vc: {1: ["एकवचनम्", "sg"], 2: ["द्विवचनम्", "du"], 3: ["बहुवचनम्", "pl"]},
+    pada: {parasmai: ["परस्मैपदम्", "parasmaipada"], atmane: ["आत्मनेपदम्", "ātmanepada"]},
+    parasmai: [["tip", "तिप्"], ["tas", "तस्"], ["Ji", "झि"], ["sip", "सिप्"], ["Tas", "थस्"], ["Ta", "थ"], ["mip", "मिप्"], ["vas", "वस्"], ["mas", "मस्"]],
+    atmane: [["ta", "त"], ["AtAm", "आताम्"], ["Ja", "झ"], ["TAs", "थास्"], ["ATAm", "आथाम्"], ["Dvam", "ध्वम्"], ["iw", "इट्"], ["vahi", "वहि"], ["mahiG", "महिङ्"]],
+  };
+  const tinCell = (pada, pu, vc) => {
+    const list = TIN78[pada === "atmane" || pada === "Atmanepada" ? "atmane" : "parasmai"];
+    const ri = {3: 0, 2: 1, 1: 2}[pu], ci = vc - 1;
+    return list[ri * 3 + ci];
+  };
+  const chosenTin = s => {
+    const p = parseParts(s.parts);
+    if (p && p.length) { const last = p[p.length - 1]; if (last[2]) return last[2]; if (last[0]) return last[0]; }
+    return (s.form_after || "").replace(/.*(?=[A-Z]?[a-zA-Z~]+$)/, "") || "";
+  };
+  function tinGridHtml(s, viv) {
+    if (s.sutra_id !== "3.4.78" || !/^APPLIED/.test(s.status)) return "";
+    const en = pref.gloss === "en";
+    const chosen = (s._tin_chosen || chosenTin(s) || "").trim();
+    let pada = (viv && (viv.pada || viv.pada_key) || "").replace(/^Atmane.*/i, "atmane").replace(/^Parasmai.*/i, "parasmai");
+    if (!pada && chosen) {
+      const inA = TIN78.atmane.some(([sl]) => sl === chosen);
+      const inP = TIN78.parasmai.some(([sl]) => sl === chosen);
+      pada = inA && !inP ? "atmane" : "parasmai";
+    }
+    if (!pada) pada = "parasmai";
+    const pu = viv && +viv.purusha || 0, vc = viv && +viv.vacana || 0;
+    const expect = (pu && vc) ? tinCell(pada, pu, vc) : null;
+    const mark = expect ? expect[0] : chosen;
+    const lak = (viv && (viv.lakara_dev || viv.lakara)) || "";
+    const puL = TIN78.pu[pu] ? TIN78.pu[pu][en ? 1 : 0] : (pu || "—");
+    const vcL = TIN78.vc[vc] ? TIN78.vc[vc][en ? 1 : 0] : (vc || "—");
+    const pdL = TIN78.pada[pada] ? TIN78.pada[pada][en ? 1 : 0] : pada;
+    const banner = en
+      ? `Vivakṣā (from dhātūrūpa): lakāra ${lak || "—"} · ${pdL} · ${puL} · ${vcL} → chosen <b class="dev">${esc(fmt(mark, expect ? expect[1] : ""))}</b>. 3.4.78 lists all 18; 1.4.99–1.4.103 name pada/puruṣa/vacana; the recipe commits this cell (Art. 2 — the sūtra does not read the coordinates).`
+      : `विवक्षा (धातु-रूपे चयनिता): लकार ${esc(lak || "—")} · ${esc(pdL)} · ${esc(puL)} · ${esc(vcL)} → चुनाः <b class="dev">${esc(expect ? expect[1] : fmt(mark, ""))}</b> (${esc(mark)})। ३.४.७८ अष्टादश तिङ्; १.४.९९–१.४.१०३ पद/पुरुष/वचन-संज्ञाः; रेसिपिः एतद्-कोष्ठं निश्चिनोति (संविधान २ — सूत्रं निर्देशान् न पठति)।`;
+    const half = (key, title) => {
+      const cells = TIN78[key];
+      let h = `<table class="pk-tin"><caption>${esc(title)}</caption><tr><th></th><th>${esc(TIN78.vc[1][en ? 1 : 0])}</th><th>${esc(TIN78.vc[2][en ? 1 : 0])}</th><th>${esc(TIN78.vc[3][en ? 1 : 0])}</th></tr>`;
+      [3, 2, 1].forEach((pui, ri) => {
+        h += `<tr><th>${esc(TIN78.pu[pui][en ? 1 : 0])}</th>`;
+        [1, 2, 3].forEach((vci, ci) => {
+          const [sl, dv] = cells[ri * 3 + ci];
+          const hit = sl === mark || (key === pada && pui === pu && vci === vc);
+          h += `<td class="${hit ? "pk-tin-hit" : ""}" title="${esc(sl)}">${esc(dv)}<small>${esc(sl)}</small>${hit ? `<span class="pk-tin-pick">${en ? "chosen" : "चुनाः"}</span>` : ""}</td>`;
+        });
+        h += `</tr>`;
+      });
+      return h + `</table>`;
+    };
+    return `<div class="pk-tinwrap"><div class="pk-tin-banner">${banner}</div>
+      <div class="pk-tin-grid">${half("parasmai", TIN78.pada.parasmai[en ? 1 : 0])}${half("atmane", TIN78.pada.atmane[en ? 1 : 0])}</div>
+      <div class="pk-tin-note muted">${en
+        ? "Later lakāra-specific rewrites (loṭ 3.4.85–93, liṅ, …) may still change this ādeśa; the grid is the 3.4.78 menu."
+        : "लोठ् ३.४.८५–९३ आदि लकार-विशेष आदेशाः पश्चात् भिन्दन्ति; अत्र ३.४.७८-सूची एव।"}</div></div>`;
+  }
+
   function row({s, i, group}, ctx) {
     const st = STATUS[s.status] || [s.status, s.status], id = "s-" + (i + 1), deep = pref.depth === "shastriya";
     const star = lk().has(s.sutra_id) && pref.depth !== "beginner" ? `<span class="pk-lk" title="Laghukaumudī sūtra">★</span>` : "";
@@ -192,6 +253,7 @@ const Prakriya = (() => {
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev" data-i="${i}" title="क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
+        ${tinGridHtml(s, ctx.viv)}
         <div class="pk-gloss">${esc(gloss(s))}</div>${sch}</div></li>`;
   }
 
@@ -212,7 +274,7 @@ const Prakriya = (() => {
     const t = d.trace || [], L = t[t.length - 1];
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
     const sel = (id, opts, v) => `<select id="${id}">${opts.map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${l}</option>`).join("")}</select>`;
-    const ctx = {pb: [], pa: [], open: new Set(), t};
+    const ctx = {pb: [], pa: [], open: new Set(), t, viv: d.vivaksa || d.vivakṣā || null};
     let last = null;                                              // parts of the tape before each step, after each applied step
     t.forEach((s, i) => { const p = parseParts(s.parts);
       ctx.pb[i] = last && joined(last) === String(s.form_before || "").replace(/\s/g, "") ? last : null;

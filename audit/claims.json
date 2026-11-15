@@ -873,5 +873,32 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794704935.455316
+ },
+ {
+  "id": "it-tin-grid",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=webui/static/prakriya.js",
+   "webui/app.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794713226.653567
+ },
+ {
+  "id": "it-tin-grid",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=webui/static/prakriya.js",
+   "webui/static/style.css",
+   "webui/templates/dhaturupa.html",
+   "webui/app.py",
+   "webui/templates/prakriya.html"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1794713226.7653508
  }
 ]
