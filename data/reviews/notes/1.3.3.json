@@ -52,14 +52,24 @@
   {
    "id": "4e3168bb92",
    "created": "2026-11-15T13:49:34+0530",
-   "updated": "2026-11-15T21:55:30+0530",
-   "text": "उपदेशस्य अन्तिमव्यञ्जनस्य हलन्त्यम् १.३.२ इत्यनेन इत्संज्ञा भवति । कानिचन उदाहरणानि एतानि -\n\n१. 'तुमुन्' प्रत्यये विद्यमानः अन्तिमः नकारः इत्संज्ञकः भवति ।\n२. 'डुपचष्' अस्मिन् धातौ विद्यमानः षकारः इत्संज्ञकः भवति ।\n३. 'भू' इत्यस्य अन्ते व्यञ्जनम् नैव विद्यते । अतः अस्य धातोः विषये हलन्त्यम् १.३.३ सूत्रस्य प्रसक्तिः नास्ति ।",
+   "updated": "2026-11-16T00:57:39+0530",
+   "text": "उपदेशस्य अन्तिमव्यञ्जनस्य हलन्त्यम् १.३.3 इत्यनेन इत्संज्ञा भवति । कानिचन उदाहरणानि एतानि -\n\n१. 'तुमुन्' प्रत्यये विद्यमानः अन्तिमः नकारः इत्संज्ञकः भवति ।\n२. 'डुपचष्' अस्मिन् धातौ विद्यमानः षकारः इत्संज्ञकः भवति ।\n३. 'भू' इत्यस्य अन्ते व्यञ्जनम् नैव विद्यते । अतः अस्य धातोः विषये हलन्त्यम् १.३.३ सूत्रस्य प्रसक्तिः नास्ति ।",
    "author": "",
    "derivation": "",
    "status": "partly",
    "verdict": "Claude 2026-11-15 — Examples right (tumun final n, ḍupacaṣ final ṣ, bhū has none). Typo: the sūtra is cited as 1.3.2; it is 1.3.3 (halantyam).",
    "evidence": "Kāśikā 1.3.3",
    "history": [
+    {
+     "at": "2026-11-15T21:55:30+0530",
+     "text": "उपदेशस्य अन्तिमव्यञ्जनस्य हलन्त्यम् १.३.२ इत्यनेन इत्संज्ञा भवति । कानिचन उदाहरणानि एतानि -\n\n१. 'तुमुन्' प्रत्यये विद्यमानः अन्तिमः नकारः इत्संज्ञकः भवति ।\n२. 'डुपचष्' अस्मिन् धातौ विद्यमानः षकारः इत्संज्ञकः भवति ।\n३. 'भू' इत्यस्य अन्ते व्यञ्जनम् नैव विद्यते । अतः अस्य धातोः विषये हलन्त्यम् १.३.३ सूत्रस्य प्रसक्तिः नास्ति ।",
+     "author": "",
+     "derivation": "",
+     "status": "partly",
+     "verdict": "Claude 2026-11-15 — Examples right (tumun final n, ḍupacaṣ final ṣ, bhū has none). Typo: the sūtra is cited as 1.3.2; it is 1.3.3 (halantyam).",
+     "evidence": "Kāśikā 1.3.3",
+     "kind": ""
+    },
     {
      "at": "2026-11-15T13:49:34+0530",
      "text": "उपदेशस्य अन्तिमव्यञ्जनस्य हलन्त्यम् १.३.२ इत्यनेन इत्संज्ञा भवति । कानिचन उदाहरणानि एतानि -\n\n१. 'तुमुन्' प्रत्यये विद्यमानः अन्तिमः नकारः इत्संज्ञकः भवति ।\n२. 'डुपचष्' अस्मिन् धातौ विद्यमानः षकारः इत्संज्ञकः भवति ।\n३. 'भू' इत्यस्य अन्ते व्यञ्जनम् नैव विद्यते । अतः अस्य धातोः विषये हलन्त्यम् १.३.३ सूत्रस्य प्रसक्तिः नास्ति ।",
@@ -71,7 +81,8 @@
      "kind": ""
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "kind": "note"
   },
   {
    "id": "a839199098",
@@ -192,29 +203,6 @@
     }
    ],
    "status_at": "2026-11-15T21:55:30+0530"
-  },
-  {
-   "id": "16048ebd4f",
-   "created": "2026-11-15T14:01:19+0530",
-   "updated": "2026-11-15T21:55:30+0530",
-   "text": "The provided Sanskrit text (a highly technical grammatical commentary, characteristic of texts like Nagesha Bhatta's Paribhashendushekhara) highlights four specific epistemological and procedural conflicts in Paninian grammar. The primary theme of these conflicts is अन्योन्याश्रय (Anyonyashraya - mutual dependence or circularity) and how the mind resolves rule-ordering.\n\nHere are the specific conflicts highlighted in the passage:\n\n1. Circularity in Defining 'Hal' and 'It' (हलन्त्यम् १.३.३)\n\n⚬ The Conflict: The passage opens by addressing a foundational paradox raised in Patanjali's Mahabhashya. To understand the pratyahara (abbreviation) 'hal' (which means all consonants), you must know what an 'it' (marker) letter is. However, to know what an 'it' letter is, you must apply the sutra halantyam (final consonants get 'it' status). You cannot know A without B, and you cannot know B without A.\n⚬ The Resolution: The text explains that the Mahabhashya resolves this by using an Ekasesha compound. The word hal is repeated and interpreted doubly: one refers to the physical sutra \"hal\", and the other refers to the actual consonants, breaking the circularity by tying the definition to the physical arrangement of the Shiva Sutras.\n\n2. Circularity Between the General Rule and its Exception (१.३.३ vs १.३.४)\n\n⚬ The Conflict: A second layer of circularity is raised. Sutra 1.3.3 (halantyam) says final consonants are dropped. Sutra 1.3.4 (na vibhaktau tusmāh) is the exception: final consonants in a vibhakti (case affix) are NOT dropped. The conflict: To understand 1.3.3, you must know its exception 1.3.4. But to understand 1.3.4, you must know what a vibhakti is (abbreviated as sup and ting). You cannot form the abbreviations sup and ting without first establishing the 'it' status of their final letters via 1.3.3.\n⚬ The Resolution: The author argues there is no circularity. You do not need to know the absence (exception) to understand the presence (the general rule). By simply knowing that the specific letters 't-class, s, and m' are protected by 1.3.4, the mind can safely apply 1.3.3 to other letters (like 'p'), allowing the sup abbreviation to be formed without needing to comprehend the entire philosophy of vibhakti first.\n\n3. The Functional Conflict: General Rule (उत्सर्ग) vs. Exception (अपवाद)\n\n⚬ The Conflict: The text discusses a classic jurisprudential conflict: when should an exception apply? If the general rule applies everywhere first, the exception becomes utterly useless (the author uses the analogy: \"like telling someone who has already eaten, 'Do not eat!'\"). Alternatively, if they apply simultaneously, it creates an unresolved optionality (Vikalpa), where both rules fight for dominance.\n⚬ The Resolution: The text cites the maxims pūrvam hyapavādā abhiniviśante (Exceptions settle in the mind first) and prakalpya cāpavādaviṣayam... (Having carved out the exception...). The conflict is resolved cognitively: a grammarian's mind first identifies and isolates the exact domain of the exception, sets those specific cases aside, and only then applies the general rule to whatever remains.\n\n4. Interpretational Conflict Against Kaiyata\n\n⚬ The Conflict: In the final paragraph, the author explicitly picks a fight with an older, highly respected commentator, Kaiyata (author of the Pradipa on the Mahabhashya). Kaiyata interpreted the aforementioned \"carving out the exception\" rule to explain a specific vowel-mutation sutra (na samprasarane 6.1.37).\n⚬ The Resolution: The author bluntly rejects Kaiyata's view (\"tanna\" - that is incorrect), stating it directly contradicts Patanjali's own Mahabhashya. The author insists that Kaiyata applied a general logical maxim to a place where Patanjali had already provided a specific structural reason, thereby misapplying the philosophical tool.",
-   "author": "",
-   "derivation": "",
-   "status": "open",
-   "verdict": "Claude 2026-11-15 — Reads as an LLM summary ('The provided Sanskrit text…'). Its anyonyāśraya claim for hal matches the Kāśikā, but the other three 'conflicts' are not verified. NOT accepted as evidence until checked against the Bhāṣya / Paribhāṣenduśekhara.",
-   "evidence": "",
-   "history": [
-    {
-     "at": "2026-11-15T14:01:19+0530",
-     "text": "The provided Sanskrit text (a highly technical grammatical commentary, characteristic of texts like Nagesha Bhatta's Paribhashendushekhara) highlights four specific epistemological and procedural conflicts in Paninian grammar. The primary theme of these conflicts is अन्योन्याश्रय (Anyonyashraya - mutual dependence or circularity) and how the mind resolves rule-ordering.\n\nHere are the specific conflicts highlighted in the passage:\n\n1. Circularity in Defining 'Hal' and 'It' (हलन्त्यम् १.३.३)\n\n⚬ The Conflict: The passage opens by addressing a foundational paradox raised in Patanjali's Mahabhashya. To understand the pratyahara (abbreviation) 'hal' (which means all consonants), you must know what an 'it' (marker) letter is. However, to know what an 'it' letter is, you must apply the sutra halantyam (final consonants get 'it' status). You cannot know A without B, and you cannot know B without A.\n⚬ The Resolution: The text explains that the Mahabhashya resolves this by using an Ekasesha compound. The word hal is repeated and interpreted doubly: one refers to the physical sutra \"hal\", and the other refers to the actual consonants, breaking the circularity by tying the definition to the physical arrangement of the Shiva Sutras.\n\n2. Circularity Between the General Rule and its Exception (१.३.३ vs १.३.४)\n\n⚬ The Conflict: A second layer of circularity is raised. Sutra 1.3.3 (halantyam) says final consonants are dropped. Sutra 1.3.4 (na vibhaktau tusmāh) is the exception: final consonants in a vibhakti (case affix) are NOT dropped. The conflict: To understand 1.3.3, you must know its exception 1.3.4. But to understand 1.3.4, you must know what a vibhakti is (abbreviated as sup and ting). You cannot form the abbreviations sup and ting without first establishing the 'it' status of their final letters via 1.3.3.\n⚬ The Resolution: The author argues there is no circularity. You do not need to know the absence (exception) to understand the presence (the general rule). By simply knowing that the specific letters 't-class, s, and m' are protected by 1.3.4, the mind can safely apply 1.3.3 to other letters (like 'p'), allowing the sup abbreviation to be formed without needing to comprehend the entire philosophy of vibhakti first.\n\n3. The Functional Conflict: General Rule (उत्सर्ग) vs. Exception (अपवाद)\n\n⚬ The Conflict: The text discusses a classic jurisprudential conflict: when should an exception apply? If the general rule applies everywhere first, the exception becomes utterly useless (the author uses the analogy: \"like telling someone who has already eaten, 'Do not eat!'\"). Alternatively, if they apply simultaneously, it creates an unresolved optionality (Vikalpa), where both rules fight for dominance.\n⚬ The Resolution: The text cites the maxims pūrvam hyapavādā abhiniviśante (Exceptions settle in the mind first) and prakalpya cāpavādaviṣayam... (Having carved out the exception...). The conflict is resolved cognitively: a grammarian's mind first identifies and isolates the exact domain of the exception, sets those specific cases aside, and only then applies the general rule to whatever remains.\n\n4. Interpretational Conflict Against Kaiyata\n\n⚬ The Conflict: In the final paragraph, the author explicitly picks a fight with an older, highly respected commentator, Kaiyata (author of the Pradipa on the Mahabhashya). Kaiyata interpreted the aforementioned \"carving out the exception\" rule to explain a specific vowel-mutation sutra (na samprasarane 6.1.37).\n⚬ The Resolution: The author bluntly rejects Kaiyata's view (\"tanna\" - that is incorrect), stating it directly contradicts Patanjali's own Mahabhashya. The author insists that Kaiyata applied a general logical maxim to a place where Patanjali had already provided a specific structural reason, thereby misapplying the philosophical tool.",
-     "author": "",
-     "derivation": "",
-     "status": "open",
-     "verdict": "",
-     "evidence": "",
-     "kind": ""
-    }
-   ]
   }
  ]
 }

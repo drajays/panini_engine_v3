@@ -1,0 +1,135 @@
+{
+ "sutra": "6.1.103",
+ "notes": [
+  {
+   "id": "02a2be5e71",
+   "created": "2026-11-16T01:11:15+0530",
+   "updated": "2026-11-16T01:18:15+0530",
+   "text": "पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घे कृते तस्मात् अनन्तरम् विद्यमानस्य शस्-प्रत्ययस्य सकारस्य नकारादेशः भवति ।\nअक्-वर्णान्त-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वपरयोः पूर्वसवर्णदीर्घैकादेशे कृते, तस्मात् (पूर्वसवर्णदीर्घात्) परस्य शस्-प्रत्ययस्य सकारस्य प्रकृतसूत्रेण नकारादेशः विधीयते । यथा, राम-शब्दस्य शस्-प्रत्यये परे 'रामान्' इति रूपम् एतादृशम् सिद्ध्यति —\n\nराम + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ राम + अस् [लशक्वतद्धिते १.३.७ इति शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ रामास् [प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः]\n→ रामान् [तस्माच्छसो नः पुंसि ६.१.१०३ इति सकारस्य नकारादेशः । ]\n\nअनेनैव प्रकारेण हाहान्, मुनीन्, हूहून्, साधून्, पितॄन् - एतानि सर्वाणि रूपाणि सिद्ध्यन्ति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Forms and the 6.1.102 → 6.1.103 order are right (rāmān, hāhān, munīn, hūhūn, sādhūn, pitṝn). Typo: ś of śas is it by 1.3.8, not 1.3.7.",
+   "evidence": "Kāśikā (brain DB) 6.1.103",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T01:11:15+0530",
+     "text": "पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घे कृते तस्मात् अनन्तरम् विद्यमानस्य शस्-प्रत्ययस्य सकारस्य नकारादेशः भवति ।\nअक्-वर्णान्त-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वपरयोः पूर्वसवर्णदीर्घैकादेशे कृते, तस्मात् (पूर्वसवर्णदीर्घात्) परस्य शस्-प्रत्ययस्य सकारस्य प्रकृतसूत्रेण नकारादेशः विधीयते । यथा, राम-शब्दस्य शस्-प्रत्यये परे 'रामान्' इति रूपम् एतादृशम् सिद्ध्यति —\n\nराम + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ राम + अस् [लशक्वतद्धिते १.३.७ इति शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ रामास् [प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः]\n→ रामान् [तस्माच्छसो नः पुंसि ६.१.१०३ इति सकारस्य नकारादेशः । ]\n\nअनेनैव प्रकारेण हाहान्, मुनीन्, हूहून्, साधून्, पितॄन् - एतानि सर्वाणि रूपाणि सिद्ध्यन्ति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T01:18:15+0530"
+  },
+  {
+   "id": "2b7c0e57f3",
+   "created": "2026-11-16T01:11:36+0530",
+   "updated": "2026-11-16T01:18:15+0530",
+   "text": "दलकृत्यम्\n१. तस्मात् इति किमर्थम् ? अस्मिन् सूत्रे विद्यमानः 'तस्मात्' इति शब्दः 'पूर्वसवर्णदीर्घः' इति शब्देन सह अन्वेति । अतः तस्मात् = पूर्वसवर्णदीर्घात् । अतः यत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घैकादेशः न सिद्ध्यति, तत्र प्रकृतसूत्रेण नत्वम् अपि न सम्भवति । यथा, 'विश्वपा + शस्' इत्यत्र आतो धातोः ६.४.१४० इत्यनेन आकारलोपे कृते 'विश्वपस्' इति प्राप्ते अत्र यद्यपि पुंलिङ्गशब्दः शस्-प्रत्ययः च विद्यते, तथापि नत्वम् न भवति ।\n२. पुंसि इति किमर्थम् ? स्त्रीलिङ्गशब्दानां विषये अस्य सूत्रस्य प्रसक्तिः नास्ति । अतः 'मतीः' इत्यत्र सवर्णदीर्घे कृते अपि नत्वम् न भवति ।",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — 'tasmāt' = after the pūrvasavarṇadīrgha: viśvapā + śas has ā-lopa (6.4.140) instead, so no naḥ (viśvapaḥ); 'puṃsi' excludes matīḥ. Correct.",
+   "evidence": "Kāśikā (brain DB) 6.1.103",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T01:11:36+0530",
+     "text": "दलकृत्यम्\n१. तस्मात् इति किमर्थम् ? अस्मिन् सूत्रे विद्यमानः 'तस्मात्' इति शब्दः 'पूर्वसवर्णदीर्घः' इति शब्देन सह अन्वेति । अतः तस्मात् = पूर्वसवर्णदीर्घात् । अतः यत्र प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घैकादेशः न सिद्ध्यति, तत्र प्रकृतसूत्रेण नत्वम् अपि न सम्भवति । यथा, 'विश्वपा + शस्' इत्यत्र आतो धातोः ६.४.१४० इत्यनेन आकारलोपे कृते 'विश्वपस्' इति प्राप्ते अत्र यद्यपि पुंलिङ्गशब्दः शस्-प्रत्ययः च विद्यते, तथापि नत्वम् न भवति ।\n२. पुंसि इति किमर्थम् ? स्त्रीलिङ्गशब्दानां विषये अस्य सूत्रस्य प्रसक्तिः नास्ति । अतः 'मतीः' इत्यत्र सवर्णदीर्घे कृते अपि नत्वम् न भवति ।",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T01:18:15+0530"
+  },
+  {
+   "id": "8df77fe91a",
+   "created": "2026-11-16T01:11:56+0530",
+   "updated": "2026-11-16T01:18:15+0530",
+   "text": "सूत्रार्थे 'सकारः' इति शब्दस्य ग्रहणम्\nशस्-प्रत्ययस्य इत्संज्ञालोपे कृते अकारसकारौ इति केवलं द्वौ एव वर्णौ अवशिष्येते । एतेषु अकारः प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण निर्दिष्टे पूर्वसवर्णे भागं गृह्णाति । अस्मात् पूर्वसवर्णदीर्घात् अनन्तरम् केवलम् सकारः एव वर्तते, न कोऽपि अन्यः वर्णः । अतः 'तस्मात्' इति शब्देन 'पूर्वसवर्णदीर्घात् परस्य सकारस्य' एव ग्रहणं सम्भवति । अतएव यद्यपि अस्मिन् सूत्रे केवलम् 'शसः नकारः भवति' इति उच्यते तथापि सर्वेषु व्याख्यानेषु अत्र 'शसः सकारस्य नकारः भवति' इत्येव अर्थविधानम् क्रियते ।\nप्रकृतसूत्रेण प्राप्तस्य नकारस्य णत्वं न भवति\nशस्-प्रत्ययान्तशब्दस्य सुबन्तत्वात् सुप्तिङन्तं पदम् १.४.१४ इत्यनेन पदसंज्ञा भवति, अतः प्रकृतसूत्रेण प्राप्तः नकारः नित्यम् पदान्ते एव विद्यते । अस्य नकारस्य अट्कुप्वाङ्नुम्व्यवायेऽपि ८.४.२ इत्यनेन णत्वे प्राप्ते पदान्तस्य ८.४.३७ इत्यनेन तत् निषिध्यते । अतः अस्य नकारस्य णत्वं न भवति । यथा, रामान्, वृक्षान्, पितॄन् एतादृशेषु शब्देषु नकारस्य णत्वं न भवति ।\nEnglish (One line meaning)  When the rule 'प्रथमयोः पूर्वसवर्णः' is used to create a पूर्वसवर्णदीर्घ for a पुंलिङ्ग word in presence of the शस्-प्रत्यय, then the सकार of the शस्-प्रत्यय is converted to नकार.",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Only the s of śas remains after it-lopa, so the substitute is for that s; and the n is not ṇ because the word is a pada (1.4.14) and 8.4.37 padāntasya blocks 8.4.2 (rāmān, vṛkṣān, pitṝn). Correct.",
+   "evidence": "Kāśikā (brain DB) 6.1.103",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T01:11:56+0530",
+     "text": "सूत्रार्थे 'सकारः' इति शब्दस्य ग्रहणम्\nशस्-प्रत्ययस्य इत्संज्ञालोपे कृते अकारसकारौ इति केवलं द्वौ एव वर्णौ अवशिष्येते । एतेषु अकारः प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण निर्दिष्टे पूर्वसवर्णे भागं गृह्णाति । अस्मात् पूर्वसवर्णदीर्घात् अनन्तरम् केवलम् सकारः एव वर्तते, न कोऽपि अन्यः वर्णः । अतः 'तस्मात्' इति शब्देन 'पूर्वसवर्णदीर्घात् परस्य सकारस्य' एव ग्रहणं सम्भवति । अतएव यद्यपि अस्मिन् सूत्रे केवलम् 'शसः नकारः भवति' इति उच्यते तथापि सर्वेषु व्याख्यानेषु अत्र 'शसः सकारस्य नकारः भवति' इत्येव अर्थविधानम् क्रियते ।\nप्रकृतसूत्रेण प्राप्तस्य नकारस्य णत्वं न भवति\nशस्-प्रत्ययान्तशब्दस्य सुबन्तत्वात् सुप्तिङन्तं पदम् १.४.१४ इत्यनेन पदसंज्ञा भवति, अतः प्रकृतसूत्रेण प्राप्तः नकारः नित्यम् पदान्ते एव विद्यते । अस्य नकारस्य अट्कुप्वाङ्नुम्व्यवायेऽपि ८.४.२ इत्यनेन णत्वे प्राप्ते पदान्तस्य ८.४.३७ इत्यनेन तत् निषिध्यते । अतः अस्य नकारस्य णत्वं न भवति । यथा, रामान्, वृक्षान्, पितॄन् एतादृशेषु शब्देषु नकारस्य णत्वं न भवति ।\nEnglish (One line meaning)  When the rule 'प्रथमयोः पूर्वसवर्णः' is used to create a पूर्वसवर्णदीर्घ for a पुंलिङ्ग word in presence of the शस्-प्रत्यय, then the सकार of the शस्-प्रत्यय is converted to नकार.",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T01:18:15+0530"
+  },
+  {
+   "id": "11ce3aea64",
+   "created": "2026-11-16T01:12:25+0530",
+   "updated": "2026-11-16T01:18:15+0530",
+   "text": "तस्मात् पूर्वसवर्णदीर्घादुत्तरस्य शसोऽवयवस्य सकारस्य पुंसि नकारादेशो भवति। वृक्षान्। अग्नीन्। वायून्। कर्तन्। हर्तन्। षण्ढकान्। पण्डकान्। स्थूरान्। अररकान् पश्य। सर्व एते पुँल्लिङ्गविशिष्टं स्वार्थं प्रतिपादयन्ति। इह तु चञ्चेव चञ्चा, लुम्मनुष्ये ५.३.९८ इति कनो लुपि कृते लुपि युक्त वद् व्यक्ति वचने१.२.५१ इति पुंसोऽपि स्त्रीलिङ्गता, तेन नत्वं न भवति — चञ्चाःपश्य, वध्रिकाः पश्येति। तस्मादिति किम् ? एतांश्चरतो गाः पश्य। शस इति किम् ? वृक्षाः। प्लक्षाः। पुंसीति किम् ? धेनूः। बह्वीः। कुमारीः॥",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Matches the Kāśikā on 6.1.103 (vṛkṣān, agnīn, vāyūn; the cañcā case via 1.2.51; 'tasmāt / śasaḥ / puṃsi iti kim').",
+   "evidence": "Kāśikā (brain DB) 6.1.103",
+   "trace": "",
+   "history": [
+    {
+     "at": "2026-11-16T01:12:25+0530",
+     "text": "तस्मात् पूर्वसवर्णदीर्घादुत्तरस्य शसोऽवयवस्य सकारस्य पुंसि नकारादेशो भवति। वृक्षान्। अग्नीन्। वायून्। कर्तन्। हर्तन्। षण्ढकान्। पण्डकान्। स्थूरान्। अररकान् पश्य। सर्व एते पुँल्लिङ्गविशिष्टं स्वार्थं प्रतिपादयन्ति। इह तु चञ्चेव चञ्चा, लुम्मनुष्ये ५.३.९८ इति कनो लुपि कृते लुपि युक्त वद् व्यक्ति वचने१.२.५१ इति पुंसोऽपि स्त्रीलिङ्गता, तेन नत्वं न भवति — चञ्चाःपश्य, वध्रिकाः पश्येति। तस्मादिति किम् ? एतांश्चरतो गाः पश्य। शस इति किम् ? वृक्षाः। प्लक्षाः। पुंसीति किम् ? धेनूः। बह्वीः। कुमारीः॥",
+     "author": "",
+     "derivation": "",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "note"
+    }
+   ],
+   "status_at": "2026-11-16T01:18:15+0530"
+  },
+  {
+   "id": "58a4d02d57",
+   "created": "2026-11-16T01:15:57+0530",
+   "updated": "2026-11-16T01:18:15+0530",
+   "text": "how puling was known to engine-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घे कृते तस्मात् अनन्तरम् विद्यमानस्य शस्-प्रत्ययस्य सकारस्य नकारादेशः भवति ।\nअक्-वर्णान्त-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वपरयोः पूर्वसवर्णदीर्घैकादेशे कृते, तस्मात् (पूर्वसवर्णदीर्घात्) परस्य शस्-प्रत्ययस्य सकारस्य प्रकृतसूत्रेण नकारादेशः विधीयते । यथा, राम-शब्दस्य शस्-प्रत्यये परे 'रामान्' इति रूपम् एतादृशम् सिद्ध्यति —\n\nराम + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ राम + अस् [लशक्वतद्धिते १.३.७ इति शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ रामास् [प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः]\n→ रामान् [तस्माच्छसो नः पुंसि ६.१.१०३ इति सकारस्य नकारादेशः । ]\n\nअनेनैव प्रकारेण हाहान्, मुनीन्, हूहून्, साधून्, पितॄन् - एतानि सर्वाणि रूपाणि सिद्ध्यन्ति ।\n\nमुख्य तथ्य और संदर्भ:\n* पतंजलि का कथन (महाभाष्य): महर्षि पतंजलि ने अपने प्रसिद्ध ग्रंथ महाभाष्य में यह स्पष्ट रूप से कहा है:लिङ्गमशिष्यं लोकाश्रयत्वाल्लिङ्गस्य (liṅgam aśiṣyam lokāśrayatvāt) इसका अर्थ है कि \"लिंग (पुल्लिंग, स्त्रीलिंग, नपुंसकल。『') के विषय में कोई नियम नहीं बनाया जाना चाहिए, क्योंकि लिंग का निर्धारण लोक-व्यवहार (जन-साधारण की भाषा और परंपरा) पर निर्भर करता है।\"\n* \n* अष्टाध्यायी की कार्यप्रणाली: पाणिनि की अष्टाध्यायी (जिसमें लगभग 4,000 सूत्र हैं) एक अत्यंत वैज्ञानिक और एल्गोरिदम जैसी जनरेटिव व्याकरण प्रणाली है। जब किसी प्रातिपदिक (मूल शब्द/स्टेम) से रूप-सिद्धि या प्रत्यय-विधान की प्रक्रिया शुरू होती है, तो व्याकरण यह मानकर चलता है कि उस शब्द का लिंग पहले से ही समाज/भाषा-प्रयोग (लोकाश्रय) में तय है। अष्टाध्यायी में शब्दों के मौलिक लिंग निर्धारित करने वाले व्यापक नियम नहीं दिए गए हैं।\n* \n* लिङ्गाङ्गानुशासनम् (Linganushasanam): हालाँकि पाणिनि के नाम से एक अनुशिष्य/सहायक ग्रंथ लिङ्गानुशासनम् जुड़ा हुआ है, जिसमें शब्दों के लिंगों का संकलन और नियम दिए गए हैं, लेकिन यह अष्टाध्यायी के मूल कम्प्यूटेशनल ताने-बाने (प्रक्रिया) का हिस्सा नहीं है, बल्कि एक परिशिष्ट (appendix) की तरह कार्य करता है।\n* \n\n\n\nmake sure we r thinking this prakriya as pulinga and give option to change gender and so what will happen (this will help students)",
+   "author": "me",
+   "derivation": "रामान् · step #183 (rAmaas → rAmAn) · /shabdarupa#s-183",
+   "kind": "question",
+   "status": "confirmed",
+   "verdict": "Claude 2026-11-16 — Answer: the engine knows puṃliṅga from the aṅga's liṅga tag (the caller's `linga` argument or the stem's Lexicon entry; sutra_6_1_103.py reads the tag, never the shape of the word). That is the right policy: Mahābhāṣya says liṅgam aśiṣyam lokāśrayatvāt liṅgasya (found in the brain DB on 2.1.36, 4.1.3 and others) — gender is not taught by Pāṇini, so it must be input/Lexicon data, like S26 / S14 / S181. No change; only the Lexicon input for gender per stem is the open work.",
+   "evidence": "Mahābhāṣya (brain DB 4.1.3); sutra_6_1_103.py:57; ledger S26, S181",
+   "trace": "Derivation: रामान् → रामान् (rAmAn)\nPage: /shabdarupa\nRows: 196 (full trace; #n = the row number, stable across depths)\nMarked ◀ = the step this note is about (#183).\n\n#1 1.2.45 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#2 4.1.1 [AUDIT] rAma → rAma\n#3 1.1.1 [DEFINED] rAma → rAma\n#4 1.1.73 [APPLIED] rAma → rAma  parts=[[\"rAma\",\"prakriti\",\"rAma\"]]\n#5 1.1.2 [DEFINED] rAma → rAma\n#6 1.1.3 [VACUOUS] rAma → rAma\n#7 1.1.7 [DEFINED] rAma → rAma\n#8 1.1.60 [DEFINED] rAma → rAma\n#9 1.1.61 [DEFINED] rAma → rAma\n#10 1.1.62 [VACUOUS] rAma → rAma\n#11 1.1.63 [VACUOUS] rAma → rAma\n#12 1.1.8 [DEFINED] rAma → rAma\n#13 1.1.9 [DEFINED] rAma → rAma\n#14 1.1.10 [VACUOUS] rAma → rAma\n#15 1.1.11 [SKIPPED] rAma → rAma  (COND-FALSE)\n#16 1.1.12 [VACUOUS] rAma → rAma\n#17 1.1.13 [VACUOUS] rAma → rAma\n#18 1.1.14 [SKIPPED] rAma → rAma  (COND-FALSE)\n#19 1.1.15 [SKIPPED] rAma → rAma  (COND-FALSE)\n#20 1.1.16 [SKIPPED] rAma → rAma  (COND-FALSE)\n#21 1.1.17 [VACUOUS] rAma → rAma\n#22 1.1.18 [SKIPPED] rAma → rAma  (COND-FALSE)\n#23 1.1.19 [SKIPPED] rAma → rAma  (COND-FALSE)\n#24 1.1.20 [SKIPPED] rAma → rAma  (COND-FALSE)\n#25 1.1.21 [VACUOUS] rAma → rAma\n#26 1.1.46 [VACUOUS] rAma → rAma\n#27 1.1.22 [SKIPPED] rAma → rAma  (COND-FALSE)\n#28 1.1.23 [SKIPPED] rAma → rAma  (COND-FALSE)\n#29 1.1.24 [SKIPPED] rAma → rAma  (COND-FALSE)\n#30 1.2.72 [SKIPPED] rAma → rAma  (COND-FALSE)\n#31 1.1.27 [SKIPPED] rAma → rAma  (COND-FALSE)\n#32 1.1.29 [SKIPPED] rAma → rAma  (COND-FALSE)\n#33 1.1.30 [SKIPPED] rAma → rAma  (COND-FALSE)\n#34 1.4.3 [SKIPPED] rAma → rAma  (COND-FALSE)\n#35 1.4.4 [SKIPPED] rAma → rAma  (COND-FALSE)\n#36 1.4.5 [SKIPPED] rAma → rAma  (COND-FALSE)\n#37 4.1.2 [APPLIED] rAma → rAmaSas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"Sas\",\"sup\",\"Sas\"]]\n#38 1.3.4 [APPLIED] rAmaSas → rAmaSas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"Sas\",\"sup\",\"Sas\"]]\n#39 1.3.8 [APPLIED] rAmaSas → rAmaSas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"Sas\",\"sup\",\"Sas\"]]\n#40 1.3.9 [APPLIED] rAmaSas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#41 1.3.10 [VACUOUS] rAmaas → rAmaas\n#42 3.1.1 [AUDIT] rAmaas → rAmaas\n#43 3.1.2 [AUDIT] rAmaas → rAmaas\n#44 6.4.1 [AUDIT] rAmaas → rAmaas\n#45 4.1.3 [AUDIT] rAmaas → rAmaas\n#46 6.4.129 [AUDIT] rAmaas → rAmaas\n#47 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.13 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#48 1.4.14 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.13 beat 1.4.14 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#49 1.4.13 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#50 3.1.1 [AUDIT] rAmaas → rAmaas\n#51 3.1.2 [AUDIT] rAmaas → rAmaas\n#52 4.1.3 [AUDIT] rAmaas → rAmaas\n#53 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.14 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#54 1.4.18 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.14 beat 1.4.18 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#55 1.4.14 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#56 1.4.103 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.18 beat 1.4.103 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#57 1.4.110 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.18 beat 1.4.110 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#58 1.4.18 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#59 1.4.110 [BLOCKED] rAmaas → rAmaas  (purva: 1.4.103 beat 1.4.110 — पूर्व (परिभाषेन्दुशेखर 38): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#60 1.4.103 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#61 1.4.110 [APPLIED] rAmaas → rAmaas  parts=[[\"rAma\",\"prakriti\",\"rAma\"],[\"as\",\"sup\",\"Sas\"]]\n#62 1.4.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#63 1.1.43 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#64 1.1.40 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#65 2.4.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#66 7.1.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#67 7.1.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#68 7.1.86 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#69 7.1.87 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#70 7.1.88 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#71 7.4.48 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#72 7.2.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#73 7.1.21 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#74 7.1.22 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#75 7.1.93 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#76 6.4.13 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#77 6.4.8 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#78 1.1.34 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#79 1.4.7 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#80 1.2.41 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#81 7.2.107 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#82 7.2.106 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#83 2.4.34 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#84 7.2.108 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#85 7.2.111 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#86 7.2.110 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#87 7.2.103 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#88 7.2.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#89 7.1.89 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#90 7.1.98 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#91 7.1.99 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#92 7.2.99 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#93 7.2.100 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#94 7.1.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#95 7.1.78 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#96 7.2.101 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#97 7.1.70 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#98 6.4.14 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#99 6.3.46 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#100 7.1.94 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#101 7.3.110 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#102 1.1.51 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#103 6.4.11 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#104 7.1.2 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#105 4.1.4 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#106 1.4.6 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#107 7.1.81 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#108 7.1.80 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#109 7.3.44 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#110 7.3.106 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#111 7.3.107 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#112 7.1.15 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#113 7.1.16 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#114 7.1.12 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#115 7.2.112 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#116 7.1.14 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#117 7.3.116 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#118 7.3.113 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#119 7.3.114 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#120 7.1.13 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#121 7.1.11 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#122 7.1.9 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#123 7.1.17 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#124 7.1.18 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#125 7.1.24 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#126 7.1.25 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#127 7.1.28 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#128 7.2.94 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#129 7.2.90 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#130 7.1.19 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#131 7.1.20 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#132 7.1.23 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#133 1.1.42 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#134 1.4.17 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#135 1.4.16 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#136 7.1.53 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#137 7.1.54 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#138 7.1.55 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#139 7.1.52 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#140 7.2.113 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#141 7.2.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#142 7.2.109 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#143 7.1.72 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#144 7.1.79 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#145 7.1.73 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#146 7.1.75 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#147 6.4.10 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#148 6.4.4 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#149 6.4.3 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#150 6.4.7 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#151 7.3.103 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#152 7.3.104 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#153 7.3.112 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#154 7.3.117 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#155 7.3.102 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#156 6.4.130 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#157 6.4.137 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#158 6.4.136 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#159 6.4.134 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#160 6.4.146 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#161 6.4.148 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#162 7.3.108 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#163 7.3.109 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#164 7.3.111 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#165 7.3.105 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#166 7.3.118 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#167 7.3.119 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#168 7.3.120 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#169 7.1.92 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#170 7.1.90 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#171 7.2.115 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#172 6.1.93 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#173 6.4.80 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#174 6.4.133 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#175 6.4.79 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#176 6.4.84 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#177 6.4.85 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#178 6.4.82 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#179 6.4.83 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#180 6.4.77 [SKIPPED] rAmaas → rAmaas  (COND-FALSE)\n#181 6.1.97 [BLOCKED] rAmaas → rAmaas  (para: 6.1.103 beat 6.1.97 — पर (परिभाषेन्दुशेखर 38 · अष्टाध्यायी 1.4.2): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#182 6.1.101 [BLOCKED] rAmaas → rAmaas  (para: 6.1.103 beat 6.1.101 — पर (परिभाषेन्दुशेखर 38 · अष्टाध्यायी 1.4.2): पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः)\n#183 6.1.103 [APPLIED] rAmaas → rAmAn  parts=[[\"rAm\",\"prakriti\",\"rAma\"],[\"An\",\"sup\",\"An\"]]   ◀ NOTE HERE\n#184 8.2.1 [AUDIT] rAmAn → rAmAn\n#185 __MERGE__ [APPLIED] rAmAn → rAmAn\n#186 8.2.82 [AUDIT] rAmAn → rAmAn\n#187 8.2.108 [AUDIT] rAmAn → rAmAn\n#188 8.3.2 [AUDIT] rAmAn → rAmAn\n#189 8.3.55 [AUDIT] rAmAn → rAmAn\n#190 8.3.57 [AUDIT] rAmAn → rAmAn\n#191 8.2.3 [VACUOUS] rAmAn → rAmAn\n#192 8.3.110 [VACUOUS] rAmAn → rAmAn\n#193 8.4.34 [VACUOUS] rAmAn → rAmAn\n#194 8.4.37 [APPLIED] rAmAn → rAmAn  parts=[[\"rAmAn\",\"pada\",\"\"]]\n#195 8.4.48 [VACUOUS] rAmAn → rAmAn\n#196 8.4.47 [BLOCKED] rAmAn → rAmAn  (VIBHASHA-DECLINED)",
+   "history": [
+    {
+     "at": "2026-11-16T01:15:57+0530",
+     "text": "how puling was known to engine-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वसवर्णदीर्घे कृते तस्मात् अनन्तरम् विद्यमानस्य शस्-प्रत्ययस्य सकारस्य नकारादेशः भवति ।\nअक्-वर्णान्त-पुंलिङ्गशब्दात् शस्-प्रत्यये परे प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति सूत्रेण पूर्वपरयोः पूर्वसवर्णदीर्घैकादेशे कृते, तस्मात् (पूर्वसवर्णदीर्घात्) परस्य शस्-प्रत्ययस्य सकारस्य प्रकृतसूत्रेण नकारादेशः विधीयते । यथा, राम-शब्दस्य शस्-प्रत्यये परे 'रामान्' इति रूपम् एतादृशम् सिद्ध्यति —\n\nराम + शस् [द्वितीयाबहुवचनस्य प्रत्ययः]\n→ राम + अस् [लशक्वतद्धिते १.३.७ इति शकारस्य इत्संज्ञा । तस्य लोपः १.३.९ इति लोपः]\n→ रामास् [प्रथमयोः पूर्वसवर्णः ६.१.१०२ इति पूर्वसवर्णदीर्घः आकारः]\n→ रामान् [तस्माच्छसो नः पुंसि ६.१.१०३ इति सकारस्य नकारादेशः । ]\n\nअनेनैव प्रकारेण हाहान्, मुनीन्, हूहून्, साधून्, पितॄन् - एतानि सर्वाणि रूपाणि सिद्ध्यन्ति ।\n\nमुख्य तथ्य और संदर्भ:\n* पतंजलि का कथन (महाभाष्य): महर्षि पतंजलि ने अपने प्रसिद्ध ग्रंथ महाभाष्य में यह स्पष्ट रूप से कहा है:लिङ्गमशिष्यं लोकाश्रयत्वाल्लिङ्गस्य (liṅgam aśiṣyam lokāśrayatvāt) इसका अर्थ है कि \"लिंग (पुल्लिंग, स्त्रीलिंग, नपुंसकल。『') के विषय में कोई नियम नहीं बनाया जाना चाहिए, क्योंकि लिंग का निर्धारण लोक-व्यवहार (जन-साधारण की भाषा और परंपरा) पर निर्भर करता है।\"\n* \n* अष्टाध्यायी की कार्यप्रणाली: पाणिनि की अष्टाध्यायी (जिसमें लगभग 4,000 सूत्र हैं) एक अत्यंत वैज्ञानिक और एल्गोरिदम जैसी जनरेटिव व्याकरण प्रणाली है। जब किसी प्रातिपदिक (मूल शब्द/स्टेम) से रूप-सिद्धि या प्रत्यय-विधान की प्रक्रिया शुरू होती है, तो व्याकरण यह मानकर चलता है कि उस शब्द का लिंग पहले से ही समाज/भाषा-प्रयोग (लोकाश्रय) में तय है। अष्टाध्यायी में शब्दों के मौलिक लिंग निर्धारित करने वाले व्यापक नियम नहीं दिए गए हैं।\n* \n* लिङ्गाङ्गानुशासनम् (Linganushasanam): हालाँकि पाणिनि के नाम से एक अनुशिष्य/सहायक ग्रंथ लिङ्गानुशासनम् जुड़ा हुआ है, जिसमें शब्दों के लिंगों का संकलन और नियम दिए गए हैं, लेकिन यह अष्टाध्यायी के मूल कम्प्यूटेशनल ताने-बाने (प्रक्रिया) का हिस्सा नहीं है, बल्कि एक परिशिष्ट (appendix) की तरह कार्य करता है।\n* \n\n\n\nmake sure we r thinking this prakriya as pulinga and give option to change gender and so what will happen (this will help students)",
+     "author": "me",
+     "derivation": "रामान् · step #183 (rAmaas → rAmAn) · /shabdarupa#s-183",
+     "status": "open",
+     "verdict": "",
+     "evidence": "",
+     "kind": "question"
+    }
+   ],
+   "status_at": "2026-11-16T01:18:15+0530"
+  }
+ ]
+}
