@@ -90,6 +90,7 @@
 
 | timestamp | agent | task | files | status |
 |---|---|---|---|---|
+| 2026-11-15 (session) | cursor | Shabda/Dhātu filter panels (chips + negate, ashtadhyayi-style) | webui/templates/{dhaturupa,shabdarupa}.html, webui/static/{patha_filters.js,parallel.css,shabda_index.json}, webui/app.py, tools/{dump_shabda_index,patha_filter_tags}.py, audit/RUN_LOG.md | released |
 | 2026-10-01 18:15 | cursor | P1 1.3.2/1.3.9 सुँ anunāsika-u: traces must show ँ; 1.3.9 must elide pratyaya u | engine/it_phonetic.py, tests/unit/test_it_prakarana.py, tests/unit/test_sutra_1_3_2_irit.py, tests/regression/test_autonomy_baseline.py, audit/RUN_LOG.md | released |
 
 Older rows: all `released`.
@@ -243,7 +244,13 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ---
 
-## C. Action history (newest at top)
+## C. Action history
+### 2026-11-15 — cursor — Shabda/Dhātu ashtadhyayi-style filter panels (released)
+- Replaced dropdown filters on `/dhaturupa` and `/shabdarupa` with chip rows + per-category **Negate this filter** (modelled on ashtadhyayi.com dhatufilters / shabdafilters).
+- New `webui/static/patha_filters.js` + CSS in `parallel.css`; tag helpers in `tools/patha_filter_tags.py`.
+- Enriched `/api/dhaturupa/roots` with filter tags; regenerated `shabda_index.json` with antyavarṇa/liṅga/grantha/viśeṣa tags.
+- Tests: `tests/unit/test_webui_routes.py` 72 passed. Manual: भ्वादिः→1158, negate→1073; अकारान्तः filters on śabda.
+ (newest at top)
 
 ### 2026-11-14 20:40  [cursor]  LK case gate: rulings Q1–Q4 implemented; 8.4 ṇatva/sandhi rules made real
 

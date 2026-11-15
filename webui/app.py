@@ -1900,23 +1900,79 @@ def _dr_vidyut(op: str, row: dict, q: dict, **extra):
     return _DR_CACHE[key]
 
 
+_DR_ASH_BY_CODE: dict | None = None
+
+
+def _dr_ash_index() -> dict:
+    """ashtadhyayi.com dhatu__data.txt keyed by baseindex (01.0001) — filter tags only."""
+    global _DR_ASH_BY_CODE
+    if _DR_ASH_BY_CODE is None:
+        path = _ROOT / "data" / "reference" / "ashtadhyayi_com" / "dhatu__data.txt"
+        by: dict = {}
+        if path.exists():
+            for r in json.loads(path.read_text(encoding="utf-8")).get("data", []):
+                code = r.get("baseindex") or ""
+                if code:
+                    by[code] = r
+        _DR_ASH_BY_CODE = by
+    return _DR_ASH_BY_CODE
+
+
 @app.route("/dhaturupa")
 def dhaturupa_page():
     if (t := _tab("dhaturupa")) is not None:
         return t
+    from tools.patha_filter_tags import DHATU_FILTER_SPEC, normalize_spec
     return render_template("dhaturupa.html", nav_active="dhaturupa", lakara=_DR_LAKARA, sanadi=_DR_SANADI,
-                           upasarga=_DR_UPASARGA, purusha=_DR_PURUSHA, vacana=_DR_VACANA)
+                           upasarga=_DR_UPASARGA, purusha=_DR_PURUSHA, vacana=_DR_VACANA,
+                           filter_spec=normalize_spec(DHATU_FILTER_SPEC))
 
 
 @app.route("/api/dhaturupa/roots")
 def api_dhaturupa_roots():
     from pipelines.dhatupatha import _payload, _envelope
-    return jsonify([{"code": e["dhatupatha_id"], "dev": e.get("mula_dhatu_dev", ""), "upa": e["upadesha_slp1"],
-                     "gana": e.get("gana"), "gana_dev": e.get("gana_label_dev", ""), "artha": e.get("artha_dev", ""),
-                     "en": e.get("artha_en", ""), "pada": e.get("pada_label_dev", ""),
-                     "it": e.get("it_class_label_dev", ""), "karma": e.get("karmatva_label_dev", ""),
-                     "fl": [k for k in ("anit", "set", "vet") if (e.get("flags") or {}).get(k)]}
-                    for e in _envelope(_payload())["entries"] if e.get("dhatupatha_id")])
+    from tools.patha_filter_tags import dhatu_tags
+    ash = _dr_ash_index()
+    _PADA = {"परस्मैपदी": "P", "आत्मनेपदी": "A", "उभयपदी": "U"}
+    _IT = {"सेट्": "S", "अनिट्": "A", "वेट्": "V"}
+    _KAR = {"सकर्मकः": "S", "अकर्मकः": "A", "द्विकर्मकः": "D"}
+    out = []
+    for e in _envelope(_payload())["entries"]:
+        code = e.get("dhatupatha_id")
+        if not code:
+            continue
+        a = ash.get(code) or {}
+        pada_c = a.get("pada") or _PADA.get(e.get("pada_label_dev", ""), "")
+        set_c = a.get("settva") or _IT.get(e.get("it_class_label_dev", ""), "")
+        kar_c = a.get("karma") or _KAR.get(e.get("karmatva_label_dev", ""), "")
+        tags = dhatu_tags(
+            upadesha_slp1=e.get("upadesha_slp1") or "",
+            gana=e.get("gana") or a.get("gana"),
+            pada=pada_c, settva=set_c, karma=kar_c,
+            antarganas=a.get("antarganas") or "",
+            raw_tags=a.get("tags") or "",
+            flags=e.get("flags") or {},
+            it_markers=e.get("it_markers") or [],
+        )
+        if a.get("sk") == "1" or (a.get("sk_sutra") and a.get("sk") not in ("", "गणसूत्रम्", "सौत्रः")):
+            if "sk" not in tags:
+                tags.append("sk")
+        if a.get("lsk_sutra"):
+            if "lsk" not in tags:
+                tags.append("lsk")
+        if not a.get("sk") and "nonsk" not in tags and "sk" not in tags:
+            tags.append("nonsk")
+        out.append({
+            "code": code, "dev": e.get("mula_dhatu_dev", ""), "upa": e["upadesha_slp1"],
+            "gana": e.get("gana"), "gana_dev": e.get("gana_label_dev", ""),
+            "artha": e.get("artha_dev", ""), "en": e.get("artha_en", ""),
+            "pada": e.get("pada_label_dev", ""), "it": e.get("it_class_label_dev", ""),
+            "karma": e.get("karmatva_label_dev", ""),
+            "fl": [k for k in ("anit", "set", "vet") if (e.get("flags") or {}).get(k)],
+            "pc": pada_c, "sc": set_c, "kc": kar_c,
+            "t": tags,
+        })
+    return jsonify(out)
 
 
 @app.route("/api/dhaturupa/vidyut", methods=["POST"])
@@ -2045,8 +2101,9 @@ def _sr_vidyut(op: str, q: dict, **extra):
 def shabdarupa_page():
     if (t := _tab("shabdarupa")) is not None:
         return t
+    from tools.patha_filter_tags import SHABDA_FILTER_SPEC, normalize_spec
     return render_template("shabdarupa.html", nav_active="shabdarupa", vibhakti=_SR_VIBHAKTI, vacana=_SR_VACANA,
-                           linga=list(_SR_LINGA))
+                           linga=list(_SR_LINGA), filter_spec=normalize_spec(SHABDA_FILTER_SPEC))
 
 
 @app.route("/api/shabdarupa/stem/<int:i>")

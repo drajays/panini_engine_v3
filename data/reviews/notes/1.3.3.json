@@ -1,0 +1,113 @@
+{
+ "sutra": "1.3.3",
+ "notes": [
+  {
+   "id": "cf3be130d4",
+   "created": "2026-11-15T13:44:42+0530",
+   "updated": "2026-11-15T13:44:42+0530",
+   "text": "अनुवृत्तिसहितम् प्रत्येकं सूत्रम् एतादृशं भवति -\n\n\nक्रमाङ्क:\n\nअनुवृत्तिसहितम् सूत्रम्\n\n1|3|2\n\n उपदेशे अनुनासिक: अच् इत्\n\n1|3|3\n\nउपदेशे अन्त्यम् हल् इत्\n\n1|3|4\n\nउपदेशे विभक्तौ तुस्मा: न इत:\n\n1|3|5\n\nउपदेशे [धातो:] आदि: ञिटुडव: इत:\n\n1|3|6\n\nउपदेशे प्रत्ययस्य आदि: ष: इत्\n\n1|3|7\n\nउपदेशे प्रत्ययस्य आदय: चुटू इत:\n\n1|3|8\n\nउपदेशे अतद्धित-प्रत्ययस्य आदय: लशकु इत:",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "95677f68ea",
+   "created": "2026-11-15T13:48:20+0530",
+   "updated": "2026-11-15T13:48:20+0530",
+   "text": "every it karya create it sangya and it has some prayojan \n\nWhy This Happens (Role of It-Letters)\n\nEven though It-sangyak letters disappear from the spoken or written word, they are not useless. They act as grammatical tags that trigger specific changes before vanishing:\n• Marking Operations: A final प् (called पित्) tells the grammar system that the affix is weak (अनुदात्त) and should not cause Guna or Vriddhi vowel strengthening.\n• Determining Placement: A final म् (called मित्) instructs the system to insert the augment right after the final vowel of the stem (मिदचोऽन्त्यात्परः).\n• Controlling Sound Changes: A final च् or ण् (णित्) signals that the root vowel should undergo Vriddhi strengthening, which changes पठ् to पाठ्.",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "4e3168bb92",
+   "created": "2026-11-15T13:49:34+0530",
+   "updated": "2026-11-15T13:49:34+0530",
+   "text": "उपदेशस्य अन्तिमव्यञ्जनस्य हलन्त्यम् १.३.२ इत्यनेन इत्संज्ञा भवति । कानिचन उदाहरणानि एतानि -\n\n१. 'तुमुन्' प्रत्यये विद्यमानः अन्तिमः नकारः इत्संज्ञकः भवति ।\n२. 'डुपचष्' अस्मिन् धातौ विद्यमानः षकारः इत्संज्ञकः भवति ।\n३. 'भू' इत्यस्य अन्ते व्यञ्जनम् नैव विद्यते । अतः अस्य धातोः विषये हलन्त्यम् १.३.३ सूत्रस्य प्रसक्तिः नास्ति ।",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "a839199098",
+   "created": "2026-11-15T13:49:37+0530",
+   "updated": "2026-11-15T13:49:37+0530",
+   "text": "इत्संज्ञकवर्णस्य आधारेण उपदेशस्य निर्देशः\nइत्संज्ञकम् वर्णम् आश्रित्य उपदेशस्य विशिष्टरूपेण निर्देशः भवितुम् अर्हति । यथा —\n\n१. यस्मिन् उपदेशे लकारः इत्संज्ञकः अस्ति, सः लित् उपदेशः नाम्ना ज्ञायते । यथा, त्रल्, तसिल् एतौ लितौ प्रत्ययौ स्तः । 'लित्' इति शब्दस्य प्रयोगः लिति ६.१.१९३ इति सूत्रे कृतः दृश्यते ।\n२. यस्मिन् उपदेशे मकारः इत्संज्ञकः अस्ति, सः मित् उपदेशः नाम्ना ज्ञायते । यथा श्नम्, नुम्, मुम् एते मितः उपदेशाः सन्ति । मिदचोऽन्त्यात्परः १.१.४७ अस्मिन् सूत्रे 'मित्'विशिष्टम् कार्यम् निर्दिष्टं दृश्यते ।\n३. यस्मिन् उपदेशे ककारः इत्संज्ञकः अस्ति, सः कित् उपदेशः नाम्ना ज्ञायते । यथा, ठक्, क्त्वा, क्त्ववतुँ - एते कितः प्रत्ययाः । किति च ७.२.११८, अदो जग्धिर्ल्यप्ति किति २.४.३६, वचिस्वपियजादीनां किति ६.१.१५ एतादृशेषु सूत्रेषु 'कित्'प्रत्ययविशिष्टम् कार्यम् निर्दिष्टं दृश्यते ।\n\nअनेनैव प्रकारेण खित्, गित्, घित्, चित्,ञित्,टित्,णित्, तित्, नित्, पित्, रित्, लित्, सित् इत्येतेषाम् शब्दानाम् अपि निर्देशः भिन्नेषु सूत्रेषु कृतः दृश्यते ।\nउपदेशे विद्यमानस्यैव अन्तिम-हल्-वर्णस्य अनेन सूत्रेण इत्संज्ञा भवति, अन्येषु शब्देषु विद्यमानस्य अन्तिमव्यञ्जनस्य न - इति स्मर्तव्यम् । यथा, 'गम्' इत्यत्र मकारः यद्यपि अन्ते विद्यते, तथापि 'गम्' इति उपदेशः न (गमॢँ इति उपदेशः अस्ति) । अतः अत्र विद्यमानस्य मकारस्य इत्संज्ञा न भवति ।",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "79a12cad3d",
+   "created": "2026-11-15T13:50:13+0530",
+   "updated": "2026-11-15T13:50:13+0530",
+   "text": "उपदेशेषु विद्यमानानाम् इत्संज्ञकवर्णानाम् प्रक्रियायाः प्रारम्भे एव तस्य लोपः १.३.९ इत्यनेन नित्यम् लोपः भवति । इत्संज्ञकवर्णानां लोपे कृते यः अंशः अवशिष्यते, सः उपदेशस्य 'दृश्यरूपम्' इति नाम्ना ज्ञायते । यथा, 'तिप्' इति उपदेशे विद्यमानस्य इत्संज्ञक-पकारस्य लोपे कृते 'ति' इति यद् अवशिष्यते, तत् तिप्-प्रत्ययस्य दृश्यरूपम् ।",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "4b1d19a20a",
+   "created": "2026-11-15T13:50:31+0530",
+   "updated": "2026-11-15T13:50:31+0530",
+   "text": "इत्संज्ञायाः प्रयोजनम्\nअष्टाध्याय्याम् उपदेशेषु इत्संज्ञकवर्णानां संयोजनस्य अनेकानि प्रयोजनानि सन्ति । बहूनि कार्याणि इत्संज्ञकवर्णान् आश्रित्य एव प्रवर्तन्ते । The इत्-letters are like markers that decide whether a certain action will or will not happen in the prakriya. यथा, यस्मिन् तद्धितप्रत्यये ञकारः इत्संज्ञकः अस्ति, तस्मिन् प्रत्यये परे अङ्गस्य आदिवर्णस्य वृद्धिः भवति । यथा, 'दशरथस्य अपत्यम्' इत्यत्र दशरथशब्दात् इञ्-प्रत्यये कृते प्रक्रिया एतादृशी भवति -\n\nदशरथस्य अपत्यम्\n= दशरथ + इञ् ['दशरथस्य' इति षष्ठीसमर्थात् तस्यापत्यम् ४.१.९२ इत्यस्मिन् अर्थे अत इञ् ४.१.९५ इति सूत्रेण इञ्-प्रत्ययः । ततः तद्धितान्तस्य कृत्तद्धितसमासाश्च १.२.४६ इति प्रातिपदिकसंज्ञा भवति, ततश्च सुपो धातुप्रातिपदिकयोः २.४.७१ इति दशरथशब्दात् विहितस्य षष्ठ्येकवचनप्रत्ययस्य लोपः अपि विधीयते ।]\n→ दशरथ + इञ् [ञकारस्य हलन्त्यम् १.३.३ इति इत्संज्ञा । ततः तस्य लोपः १.३.९ इति ञकारस्य लोपः । ]\n→ दाशरथ + इ [ञित्-प्रत्ययः यस्मात् शब्दात् विधीयते, तस्य आदिस्वरस्य तद्धितेष्वचामादेः ७.२.११७ इति वृद्धिः भवति । अतः अत्र दशरथशब्दस्य दकारोत्तस्य अकारस्य वृद्धिः आकारः विधीयते ।]\n→ दाशरथ् + इ [यस्येति च ६.४.१४८ इति अन्तिम-अकारस्य लोपः]\n→ दाशरथि",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "3628b4566f",
+   "created": "2026-11-15T13:55:57+0530",
+   "updated": "2026-11-15T13:55:57+0530",
+   "text": "In उपदेश , the final consonant of roots etc. is इत्।\nAll the final consonants of roots, affixes, &c., are indicatory. As in the pratyahara sutras अ इ उ ण्; here ण् is इत् ॥ ऋ लृ क्; here क् is इत् ॥ ए ओड्; here ङ् is इत् ॥ ऐ औच्; here च् is इत् ॥ It is only in upadesa, that a final consonant is इत्. Not therefore, in अग्निचित् or सोमसुत्, which are complete words.",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "41e0457d58",
+   "created": "2026-11-15T13:57:33+0530",
+   "updated": "2026-11-15T13:57:33+0530",
+   "text": "शास्त्रीय शंका और समाधान (तन्त्र प्रयोग)\n\n• हस्य ल् हलिति द्वितीयमत्र हल्ग्रहणं तन्त्रेणोपात्तं द्रष्टव्यम्: माहेश्वर सूत्र के चौदहवें सूत्र 'हल्' में अंतिम व्यंजन 'ल्' की इत् संज्ञा सिद्ध करने के लिए, इस सूत्र (हलन्त्यम्) में 'हल्' पद का दो बार (आवृत्ति/तन्त्र से) ग्रहण समझना चाहिए।\n• इतरेतराश्रय दोष का निवारण: यदि 'हल्' प्रत्याहार पहले से सिद्ध न हो, तो 'हलन्त्यम्' सूत्र का अर्थ नहीं हो सकता; और जब तक 'हलन्त्यम्' सूत्र से 'हल्' सूत्र के अंतिम 'ल्' की इत् संज्ञा नहीं होती, तब तक 'हल्' प्रत्याहार नहीं बन सकता। इस प्रकार परस्पर एक-दूसरे पर निर्भर रहने के कारण इतरेतराश्रय दोष (आपसी आश्रय का दोष) उत्पन्न होता है। दो बार 'हल्' का ग्रहण मान लेने से (एक 'हल्' से प्रत्याहार सूत्र 'हल्' का बोध और दूसरे से अंतिम व्यंजन का बोध होने से) यह दोष समाप्त हो जाता है।",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  },
+  {
+   "id": "16048ebd4f",
+   "created": "2026-11-15T14:01:19+0530",
+   "updated": "2026-11-15T14:01:19+0530",
+   "text": "The provided Sanskrit text (a highly technical grammatical commentary, characteristic of texts like Nagesha Bhatta's Paribhashendushekhara) highlights four specific epistemological and procedural conflicts in Paninian grammar. The primary theme of these conflicts is अन्योन्याश्रय (Anyonyashraya - mutual dependence or circularity) and how the mind resolves rule-ordering.\n\nHere are the specific conflicts highlighted in the passage:\n\n1. Circularity in Defining 'Hal' and 'It' (हलन्त्यम् १.३.३)\n\n⚬ The Conflict: The passage opens by addressing a foundational paradox raised in Patanjali's Mahabhashya. To understand the pratyahara (abbreviation) 'hal' (which means all consonants), you must know what an 'it' (marker) letter is. However, to know what an 'it' letter is, you must apply the sutra halantyam (final consonants get 'it' status). You cannot know A without B, and you cannot know B without A.\n⚬ The Resolution: The text explains that the Mahabhashya resolves this by using an Ekasesha compound. The word hal is repeated and interpreted doubly: one refers to the physical sutra \"hal\", and the other refers to the actual consonants, breaking the circularity by tying the definition to the physical arrangement of the Shiva Sutras.\n\n2. Circularity Between the General Rule and its Exception (१.३.३ vs १.३.४)\n\n⚬ The Conflict: A second layer of circularity is raised. Sutra 1.3.3 (halantyam) says final consonants are dropped. Sutra 1.3.4 (na vibhaktau tusmāh) is the exception: final consonants in a vibhakti (case affix) are NOT dropped. The conflict: To understand 1.3.3, you must know its exception 1.3.4. But to understand 1.3.4, you must know what a vibhakti is (abbreviated as sup and ting). You cannot form the abbreviations sup and ting without first establishing the 'it' status of their final letters via 1.3.3.\n⚬ The Resolution: The author argues there is no circularity. You do not need to know the absence (exception) to understand the presence (the general rule). By simply knowing that the specific letters 't-class, s, and m' are protected by 1.3.4, the mind can safely apply 1.3.3 to other letters (like 'p'), allowing the sup abbreviation to be formed without needing to comprehend the entire philosophy of vibhakti first.\n\n3. The Functional Conflict: General Rule (उत्सर्ग) vs. Exception (अपवाद)\n\n⚬ The Conflict: The text discusses a classic jurisprudential conflict: when should an exception apply? If the general rule applies everywhere first, the exception becomes utterly useless (the author uses the analogy: \"like telling someone who has already eaten, 'Do not eat!'\"). Alternatively, if they apply simultaneously, it creates an unresolved optionality (Vikalpa), where both rules fight for dominance.\n⚬ The Resolution: The text cites the maxims pūrvam hyapavādā abhiniviśante (Exceptions settle in the mind first) and prakalpya cāpavādaviṣayam... (Having carved out the exception...). The conflict is resolved cognitively: a grammarian's mind first identifies and isolates the exact domain of the exception, sets those specific cases aside, and only then applies the general rule to whatever remains.\n\n4. Interpretational Conflict Against Kaiyata\n\n⚬ The Conflict: In the final paragraph, the author explicitly picks a fight with an older, highly respected commentator, Kaiyata (author of the Pradipa on the Mahabhashya). Kaiyata interpreted the aforementioned \"carving out the exception\" rule to explain a specific vowel-mutation sutra (na samprasarane 6.1.37).\n⚬ The Resolution: The author bluntly rejects Kaiyata's view (\"tanna\" - that is incorrect), stating it directly contradicts Patanjali's own Mahabhashya. The author insists that Kaiyata applied a general logical maxim to a place where Patanjali had already provided a specific structural reason, thereby misapplying the philosophical tool.",
+   "author": "",
+   "derivation": "",
+   "status": "open",
+   "verdict": "",
+   "evidence": "",
+   "history": []
+  }
+ ]
+}

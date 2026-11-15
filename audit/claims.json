@@ -639,7 +639,7 @@
   "out_of_scope": "",
   "status": "released",
   "hotspots": [],
-  "updated": 1794198779.326731
+  "updated": 1794739320.2012029
  },
  {
   "id": "ui-learner-p1-p2",
@@ -661,9 +661,9 @@
    "tests/test_api_smoke.py"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [],
-  "updated": 1794198779.382158
+  "updated": 1794739320.201206
  },
  {
   "id": "abhyasa-shala",
@@ -902,5 +902,330 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794688996.493637
+ },
+ {
+  "id": "it-agama-yat-a68",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_7/pada_3/sutra_7_3_113.py",
+   "sutras/adhyaya_7/pada_3/sutra_7_3_114.py",
+   "sutras/adhyaya_8/pada_4/sutra_8_4_68.py",
+   "pipelines/subanta.py",
+   "tests/unit/test_sutra_7_3_113_yadap_ne.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701207.346057
+ },
+ {
+  "id": "it-agama-num",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_7/pada_1/sutra_7_1_58.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701219.972022
+ },
+ {
+  "id": "it-agama-num",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_7/pada_1/sutra_7_1_58.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_59.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_60.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_69.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701219.972023
+ },
+ {
+  "id": "it-agama-num",
+  "agent": "cursor",
+  "scope": [
+   "engine/agama.py",
+   "sutras/adhyaya_1/pada_3/sutra_1_3_9.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_58.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_59.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_60.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_69.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701219.972024
+ },
+ {
+  "id": "it-agama-at",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_6/pada_4/sutra_6_4_71.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_72.py",
+   "engine/agama.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701258.1696708
+ },
+ {
+  "id": "it-ledger-ui",
+  "agent": "cursor",
+  "scope": [
+   "webui/static/prakriya.js",
+   "webui/display.py",
+   "webui/app.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794701523.4649441
+ },
+ {
+  "id": "it-lakara-132",
+  "agent": "cursor",
+  "scope": [
+   "pipelines/tinanta.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [
+   "pipelines/tinanta.py"
+  ],
+  "updated": 1794701569.931038
+ },
+ {
+  "id": "lk-nopos",
+  "agent": "claude",
+  "scope": [
+   "tests/fixtures/lk_cases/a7.json",
+   "tests/fixtures/lk_cases/a4.json",
+   "tests/fixtures/lk_cases/a2.json",
+   "sig/lk_case_verdicts"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794711564.365495
+ },
+ {
+  "id": "lk-fx-a4",
+  "agent": "claude",
+  "scope": [
+   "tests/fixtures/lk_cases/a4.json",
+   "sig/lk_case_verdicts/a4.json"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794719508.229328
+ },
+ {
+  "id": "lk-fx-a123",
+  "agent": "claude",
+  "scope": [
+   "tests/fixtures/lk_cases/a1.json",
+   "tests/fixtures/lk_cases/a2.json",
+   "tests/fixtures/lk_cases/a3.json",
+   "sig/lk_case_verdicts/a1.json",
+   "sig/lk_case_verdicts/a2.json",
+   "sig/lk_case_verdicts/a3.json"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794738735.2002041
+ },
+ {
+  "id": "lk-fx-a5678",
+  "agent": "claude",
+  "scope": [
+   "tests/fixtures/lk_cases/a5.json",
+   "tests/fixtures/lk_cases/a6.json",
+   "tests/fixtures/lk_cases/a7.json",
+   "tests/fixtures/lk_cases/a8.json",
+   "sig/lk_case_verdicts/a5.json",
+   "sig/lk_case_verdicts/a6.json",
+   "sig/lk_case_verdicts/a7.json",
+   "sig/lk_case_verdicts/a8.json"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794738735.2643661
+ },
+ {
+  "id": "lk-fx-a4",
+  "agent": "claude",
+  "scope": [
+   "tests/fixtures/lk_cases/a4.json",
+   "sig/lk_case_verdicts/a4.json"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794719508.2293289
+ },
+ {
+  "id": "cuskunde-fix",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_1/pada_3/sutra_1_3_12.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_60.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_61.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_62.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_58.py",
+   "core/canonical_pipelines.py",
+   "docs/SHORTCUT_LEDGER.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794715354.400864
+ },
+ {
+  "id": "ui-pedagogy",
+  "agent": "claude",
+  "scope": [
+   "webui/static/prakriya.js",
+   "webui/static/parallel.css"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794715948.211018
+ },
+ {
+  "id": "abhyasa-7461",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_7/pada_4/sutra_7_4_61.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794717978.581574
+ },
+ {
+  "id": "anga-1413-order",
+  "agent": "claude",
+  "scope": [
+   "pipelines/tinanta.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [
+   "pipelines/tinanta.py"
+  ],
+  "updated": 1794719136.509016
+ },
+ {
+  "id": "padaccheda-fix",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_8/pada_4/sutra_8_4_2.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_54.py",
+   "sutras/adhyaya_1/pada_4/sutra_1_4_18.py",
+   "docs/SHORTCUT_LEDGER.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794723421.8119931
+ },
+ {
+  "id": "sutra-notes",
+  "agent": "claude",
+  "scope": [
+   "webui/notes.py",
+   "webui/app.py",
+   "webui/templates/sutra.html",
+   "webui/templates/sutras.html",
+   "webui/static/notes.js",
+   "webui/static/style.css",
+   "data/reviews/notes",
+   "tests/unit/test_webui_notes.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794724641.562343
+ },
+ {
+  "id": "kaumudi-order",
+  "agent": "claude",
+  "scope": [
+   "tools/build_kaumudi_order.py",
+   "data/reference/kaumudi",
+   "webui/app.py",
+   "webui/templates/sutras.html",
+   "webui/templates/sutra.html",
+   "tests/unit/test_kaumudi_order.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794725554.0836349
+ },
+ {
+  "id": "impl-score",
+  "agent": "claude",
+  "scope": [
+   "tools/impl_score.py",
+   "sig/impl_score.json",
+   "webui/app.py",
+   "webui/templates/sutra.html",
+   "webui/templates/sutras.html",
+   "tests/unit/test_impl_score.py",
+   "Makefile"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794728097.664949
+ },
+ {
+  "id": "ngis-4154-55",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_4/pada_1/sutra_4_1_54.py",
+   "sutras/adhyaya_4/pada_1/sutra_4_1_55.py",
+   "tests/fixtures/lk_cases/a4.json"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794737697.778817
+ },
+ {
+  "id": "natva-hadesa",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_8/pada_4/sutra_8_4_2.py",
+   "sutras/adhyaya_7/pada_3/sutra_7_3_54.py",
+   "pipelines/taddhita_loop.py",
+   "docs/SOURCE_CONFLICTS.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794737697.825214
  }
 ]

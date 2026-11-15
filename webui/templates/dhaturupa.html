@@ -3,6 +3,7 @@
 
 {% block head_extra %}
 <link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">
+<script src="{{ url_for('static', filename='patha_filters.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -10,6 +11,8 @@
 <p class="dr-lead">One place for everything tiṅanta: browse and filter the Dhātupāṭha, pick a root, and see all eleven lakāras in any prayoga,
 with or without a sanādi pratyaya and an upasarga. Each cell shows <b>Vidyut</b>'s form first; beneath it, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
 Click a cell for both derivations step by step.</p>
+
+<div id="filters"></div>
 
 <div class="dr-card">
   <div class="dr-ctl" style="margin-top:0">
@@ -54,6 +57,9 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
   const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
   const QS = new URLSearchParams(location.search), PAGE = 12;
   let ROOTS = [], hits = [], page = 0, cur = null, token = 0, vid = null, eng = {}, lastTrace = null;
+  const FILTER_SPEC = {{ filter_spec | tojson }};
+  const PF = new PathaFilters($("filters"), FILTER_SPEC, {title: "Select filters for Dhatupatha", kind: "dhatu", onChange: () => refilter()});
+  if (QS.get("filters")) PF.fromQuery(QS.get("filters"));
 
   fetch("/api/dhaturupa/roots").then(r => r.json()).then(r => {
     ROOTS = r; refilter();
@@ -68,8 +74,9 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     const raw = $("q").value.trim().toLowerCase(), t2 = raw && $("sch").value !== "slp1" ? slp(raw).toLowerCase() : raw;
     const g = $("fg").value, p = $("fp").value, it = $("fi").value, k = $("fk").value;
     hits = ROOTS.filter(d => (!g || String(d.gana) === g) && (!p || (d.pada || "").includes(p)) && (!it || d.fl.includes(it))
-      && (!k || (d.karma || "").includes(k)) && (!raw || hay(d).includes(raw) || hay(d).includes(t2)));
-    page = 0; paintList();
+      && (!k || (d.karma || "").includes(k)) && (!raw || hay(d).includes(raw) || hay(d).includes(t2))
+      && PF.matches(d.t || [], {gana: d.gana, pada: d.pc, idaagam: d.sc, karma: d.kc}));
+    page = 0; paintList(); PF.setStatus(hits.length);
   }
   function paintList() {
     const n = hits.length, from = page * PAGE;
@@ -155,7 +162,9 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
       <p class="dr-tally" style="margin:.2rem 0 .6rem">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(esc).join(", ")}</b>` : (Array.isArray(d.vidyut) && E.trace ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
       <div class="dr-two"><div><h3>Vidyut</h3><div id="vsteps">${vidSteps()}</div></div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
       <div id="esteps"></div></div></div></div>`;
-    if (E.trace) Prakriya.mount($("esteps"), {trace: E.trace, title: E.dev || "", surface: E.slp1 ? {slp1: E.slp1, dev: E.dev} : null}); else $("esteps").textContent = E.na || E.error || "";
+    if (E.trace) Prakriya.mount($("esteps"), {trace: E.trace, title: E.dev || "", surface: E.slp1 ? {slp1: E.slp1, dev: E.dev} : null,
+      vivaksa: E.vivaksa || {lakara: v, purusha: 3 - r, vacana: c + 1, pada: a.pada || "", prayoga: a.prayoga || "kartari"}});
+    else $("esteps").textContent = E.na || E.error || "";
     $("dcard").scrollIntoView({block:"nearest"});
   }
   let lastMiss = new Set();

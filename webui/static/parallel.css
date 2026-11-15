@@ -30,3 +30,65 @@
 .dr-step .r { color:var(--ink-dim); }
 .dr-step.miss { background:#fde8e6; }
 .dr-note { font-size:.8rem; color:var(--ink-dim); margin-top:1.2rem; }
+
+/* ── Patha filter panel (ashtadhyayi.com chip + negate style) ─────────────── */
+.pf-panel { border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--bg-panel); margin-bottom:.75rem; }
+.pf-head {
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem 1rem;
+  padding:.65rem 1rem; background:var(--bg-subtle); border-bottom:1px solid var(--line);
+}
+.pf-title { font-weight:600; font-size:.95rem; color:var(--ink); }
+.pf-status { flex:1; font-size:.82rem; color:var(--ink-dim); min-width:12rem; }
+.pf-status b { color:var(--ink); font-variant-numeric:tabular-nums; }
+.pf-muted { color:var(--ink-faint); }
+.pf-clear {
+  font-size:.78rem; padding:.2rem .55rem; border:1px solid var(--line); border-radius:4px;
+  background:var(--bg-panel); color:var(--ink-dim); cursor:pointer;
+}
+.pf-clear:hover { color:var(--ink); border-color:var(--ink-dim); }
+.pf-body { padding:.15rem 0; }
+.pf-row {
+  display:grid; grid-template-columns:minmax(7.5rem,10rem) 1fr;
+  gap:.15rem .75rem; padding:.55rem 1rem .45rem;
+  border-bottom:1px solid var(--line-soft); align-items:start;
+}
+.pf-row:last-child { border-bottom:0; }
+.pf-row.pf-negated { background:linear-gradient(90deg, #f8ece8 0%, transparent 40%); }
+.pf-cat { display:flex; align-items:baseline; gap:.35rem; padding-top:.2rem; }
+.pf-lab {
+  font-family:var(--dev); font-weight:700; font-size:.92rem;
+  color:var(--accent); letter-spacing:.01em;
+}
+.pf-chev { color:var(--ink-faint); font-size:.75rem; }
+.pf-chips { display:flex; flex-wrap:wrap; gap:.28rem; }
+.pf-chip {
+  font-family:var(--dev); font-size:.78rem; line-height:1.25;
+  padding:.22rem .48rem; border:1px solid var(--line); border-radius:3px;
+  background:#f7f5ef; color:var(--ink); cursor:pointer;
+  box-shadow:0 1px 0 rgba(27,26,23,.06);
+  transition:background .12s, border-color .12s, color .12s;
+}
+.pf-chip:hover { border-color:var(--accent-dim); background:#fff; }
+.pf-chip.on {
+  background:var(--accent); color:#fff; border-color:var(--accent);
+  box-shadow:none;
+}
+.pf-chip.on.neg, .pf-negated .pf-chip.on {
+  background:#a02020; border-color:#a02020; color:#fff;
+}
+.pf-adv {
+  grid-column:2; display:flex; align-items:center; gap:.45rem;
+  margin-top:.15rem; margin-bottom:.1rem;
+}
+.pf-adv-lab { font-size:.72rem; color:#2a5ea8; font-family:var(--body); }
+.pf-negate {
+  font-size:.72rem; padding:.15rem .4rem; border:1px solid var(--line);
+  border-radius:3px; background:#eeebe3; color:var(--ink); cursor:pointer;
+}
+.pf-negate:hover { border-color:var(--danger); color:var(--danger); }
+.pf-negate.on { background:var(--danger); color:#fff; border-color:var(--danger); }
+.dr-searchbar { display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:.75rem; align-items:flex-end; }
+@media (max-width:720px) {
+  .pf-row { grid-template-columns:1fr; }
+  .pf-adv { grid-column:1; }
+}
