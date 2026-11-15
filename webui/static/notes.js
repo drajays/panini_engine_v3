@@ -19,7 +19,7 @@ const SutraNotes = (() => {
 
     const noteView = n => `<article class="sn-note sn-${esc(n.status)}" id="note-${esc(n.id)}">
       <header><span class="sn-kind sn-k-${esc(n.kind || "note")}">${esc(KD[n.kind || "note"])}</span> <span class="sn-badge sn-b-${esc(n.status)}" title="${esc(ST[n.status] ? ST[n.status][1] : "")}">${esc((ST[n.status] || [n.status])[0])}</span>
-        <span class="muted">${esc(n.author || "—")}${n.derivation ? ` · <span class="dev">${esc(n.derivation)}</span>` : ""} · ${esc((n.updated || "").slice(0, 16).replace("T", " "))}${n.history.length ? ` · ${n.history.length} edit${n.history.length > 1 ? "s" : ""}` : ""}</span>
+        <span class="muted">${esc(n.author || "—")}${n.derivation ? ` · <span class="dev">${esc(n.derivation)}</span>` : ""} · written ${esc((n.created || "").slice(0, 16).replace("T", " "))}${n.status_at && n.status !== "open" ? ` · ${esc(n.status)} ${esc(n.status_at.slice(0, 16).replace("T", " "))}` : ""}${n.history.length ? ` · ${n.history.length} edit${n.history.length > 1 ? "s" : ""}` : ""}</span>
         <span class="sn-act no-print"><select data-act="status" data-id="${esc(n.id)}" title="status">${stOpts(n.status)}</select>
           <button type="button" data-act="edit" data-id="${esc(n.id)}">✎ Edit</button>
           ${n.history.length ? `<button type="button" data-act="hist" data-id="${esc(n.id)}">⟲ History</button>` : ""}

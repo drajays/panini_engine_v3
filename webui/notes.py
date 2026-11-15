@@ -135,6 +135,8 @@ def edit_note(sid, nid):
             note["history"] = ([{"at": note["updated"], **{k: note.get(k, "") for k in EDITABLE}}] + note["history"])[:MAX_HISTORY]
             note.update(changed)
             note["updated"] = _now()
+            if "status" in changed:
+                note["status_at"] = note["updated"]      # when the status last changed (the resolve stamp)
             _save(sid, doc)
     return jsonify(note)
 
