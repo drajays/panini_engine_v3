@@ -395,7 +395,8 @@ const Prakriya = (() => {
     const ctx = {pb: [], pa: [], open: new Set(), t, viv: d.vivaksa || d.vivakṣā || null};
     ctx.padaAt = t.findIndex(s => applied(s) && ["1.4.14", "1.4.15", "1.4.16", "1.4.17"].includes(s.sutra_id));   // from here on the whole form is a pada
     let last = null;                                              // parts of the tape before each step, after each applied step
-    t.forEach((s, i) => { const p = parseParts(s.parts);
+    t.forEach((s, i) => { let p = parseParts(s.parts);
+      if ((!p || !p.length) && s.sutra_id === "__MERGE__") p = [[String(s.form_after || ""), "pada", ""]];   // after the merge it is ONE word, not stem | ending
       ctx.pb[i] = last && joined(last) === String(s.form_before || "").replace(/\s/g, "") ? last : null;
       if (p && p.length) { ctx.pa[i] = p; last = p; } });
     const roles = [...new Set(ctx.pa.filter(Boolean).flat().map(p => roleOf(p[1])))];
