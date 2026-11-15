@@ -12,6 +12,7 @@ Pāṭha: ashtadhyayi.com data.txt row i=71060 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.agama import utter_num
 from engine.state import State
 from phonology    import mk, HAL
 
@@ -37,7 +38,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     t = _site(state)
-    t.varnas.insert(len(t.varnas) - 1, mk("n", "num_agama"))       # before the last letter: mas-n-j, na-n-ś
+    utter_num(state, t, len(t.varnas) - 1)       # before the last letter: mas-n-j, na-n-ś
     t.meta["7_1_60_num_done"] = True
     return state
 

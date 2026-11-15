@@ -85,3 +85,12 @@ def close_judged(state) -> None:
         for v in t.varnas:
             if seg_tag(v) and not (v.tags & IT_LOPA_TAGS):
                 v.tags.add(SEG_DONE)
+
+
+def utter_num(state, term, at: int):
+    """नुम् as taught (उच्चारणार्थ उ not uttered); leftover न् keeps ``num_agama`` so 6.4.24 still sees it."""
+    vs = utter_into(state, term, at, "num")
+    for v in vs:
+        if v.slp1 == "n":
+            v.tags.add("num_agama")
+    return vs

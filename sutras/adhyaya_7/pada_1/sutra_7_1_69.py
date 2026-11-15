@@ -11,6 +11,7 @@ Pāṭha: ashtadhyayi.com data.txt row i=71069 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.agama import utter_num
 from engine.state import State
 from phonology    import mk
 
@@ -35,7 +36,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     t = _site(state)
     j = max(k for k, v in enumerate(t.varnas) if v.slp1 in _AC)
-    t.varnas.insert(j + 1, mk("n", "num_agama"))
+    utter_num(state, t, j + 1)
     t.meta["7_1_69_num_done"] = True
     return state
 

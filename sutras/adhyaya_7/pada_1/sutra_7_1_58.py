@@ -2,8 +2,9 @@
 7.1.58  इदितो नुम् धातोः  —  VIDHI
 
 *Idit* dhātus (roots bearing the indicatory vowel *i* in upadeśa, marked ``"idit"``
-in tags after *it*-lopa) receive the nasal augment *num* (``n``) inserted after the
-last vowel of the dhātu (placement per **1.1.47**).
+in tags after *it*-lopa) receive **नुम्** uttered as taught (``engine.agama.utter_num``) after the
+last vowel (**1.1.47** मिदचोऽन्त्यात्परः). उ is uccāraṇārtha (not uttered); म् is named by 1.3.3
+and deleted by 1.3.9, leaving न् tagged ``num_agama``.
 
 Engine: fires on any dhātu ``Term`` whose ``tags`` include ``"idit"`` and which
 has not yet been augmented.  No arm flag — the grammatical property alone drives
@@ -14,6 +15,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.agama import utter_num
 from phonology import mk
 from phonology.pratyahara import is_dirgha, is_hrasva
 
@@ -51,7 +53,7 @@ def act(state: State) -> State:
     if j is None:
         return state
     # the mark outlives the sanādi merge: 6.4.24 अनिदिताम् must still see it
-    dh.varnas.insert(j + 1, mk("n", "num_agama"))
+    utter_num(state, dh, j + 1)
     dh.meta["7_1_58_num_done"] = True
     return state
 
@@ -64,7 +66,7 @@ SUTRA = SutraRecord(
     samagra_slp1="iditaH DAtoH num",
     samagra_dev="इदितः धातोः नुम्",
     padaccheda_dev="इदितः / नुम् / धातोः",
-    why_dev="इदित्-धातोः नुम्-आगमः (डेमो: वन्दे)।",
+    why_dev="इदित्-धातोः नुम्-आगमः — नुम् उपदिश्यते, मकारः इत् (१.३.३) लुप्यते (१.३.९), मिदचोऽन्त्यात्परः (१.१.४७)।",
     anuvritti_from=("6.4.1",),
     cond=cond,
     act=act,

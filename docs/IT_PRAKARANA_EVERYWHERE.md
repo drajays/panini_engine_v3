@@ -116,3 +116,10 @@ Owner screenshot रमायै: engine jumped 7.3.113 → 6.1.88 with bare य
    ``execute_tripadi_phase``).
 
 Still bare-letter (next): नुट् 7.1.54/55, तुक्, नुम्, मुक्, सुट्, युक्, ईट्, … (see §What is wrong).
+
+
+## Shipped 2026-11-15c (cursor) — नुम् family
+
+Owner screenshot: 7.1.58 कुथ् → कुन्त्थ् as bare न्. Now ``utter_num`` (उच्चारणार्थ उ dropped) → 1.3.3 म् → मित् →
+1.3.9 deletes; leftover न् keeps ``num_agama``. Same for 7.1.59 / 7.1.60 / 7.1.69. 1.3.9 summary names the taught
+āgama (नुम्), not the uttered residue.

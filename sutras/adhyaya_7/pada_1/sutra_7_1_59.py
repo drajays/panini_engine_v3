@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.agama import utter_num
 from phonology import mk
 from phonology.pratyahara import is_dirgha, is_hrasva
 
@@ -64,9 +65,7 @@ def act(state: State) -> State:
             break
     if j is None:
         return state
-    _n = mk("n")
-    _n.tags.add("num_agama")            # an āgama's n, not the root's upadhā-nasal (6.4.24 leaves it)
-    dh.varnas.insert(j + 1, _n)
+    utter_num(state, dh, j + 1)         # नुम् as taught; leftover न् keeps num_agama (6.4.24)
     dh.meta["7_1_59_num_done"] = True
     return state
 

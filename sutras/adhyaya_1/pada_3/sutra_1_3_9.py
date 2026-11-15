@@ -185,8 +185,9 @@ def act(state: State) -> State:
             up = seg_upadesha(sg)
             recs = record_agama_it_lopa(t, up, rem, len(segs[sg]))
             new_log.extend(dict(r, term_index=ti) for r in recs)
-            summary.append(slp1_to_devanagari([v for _k, v in sorted(
-                [(k, t.varnas[k]) for k in segs[sg]], key=lambda kv: kv[0])]) + " (आगमः) — " + ", ".join(
+            # name the āgama as taught (नुम् / याट्), not the uttered residue (उच्चारणार्थ letters may be absent)
+            from phonology.varna import parse_slp1_upadesha_sequence
+            summary.append(slp1_to_devanagari(parse_slp1_upadesha_sequence(up)) + " (आगमः) — " + ", ".join(
                 f"{r['letters_dev']} → {r['name_dev'] or 'इत्'} ({_dev_digits(r['sutra'] or '')})" for r in recs))
         t.varnas = new_varnas
         for v in new_varnas:                                 # an āgama whose it-letters are gone is not judged again

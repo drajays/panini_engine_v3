@@ -246,6 +246,15 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15c — नुम् through 1.3.x (claim `it-agama-num`)
+
+**What:** 7.1.58/59/60/69 use ``engine.agama.utter_num``; 1.3.3/1.3.9 visible (म् → मित्). Summary shows taught नुम्.
+Tests: test_it_prakarana_agama 6 passed.
+
+**Next:** नुट् 7.1.54/55; remaining bare-letter list.
+
+
+
 ### [cursor] 2026-11-15b — याट्/स्याट् through 1.3.x + 8.4.68 on subanta (claim `it-agama-yat-a68`)
 
 **What:** 7.3.113/114 utter yAw/syAw; 8.4.68 saṃvṛta mark + applied at end of subanta tripāḍī. रमायै trace now
