@@ -15,34 +15,22 @@ Pāṭha: ashtadhyayi.com data.txt row i=42071 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
 
-SAMJNA_KEY = "4.2.71_or_aR_applicable"
+
+def _site(state: State):
+    """Kāśikā 4.2.71: after an uvarṇānta prātipadika the pratyaya of the four senses (4.2.67 – 70: tad asmin asti, tena nirvṛttam, tasya nivāsaḥ, adūrabhavaḥ)
+    is añ, the apavāda of aṇ (araḍu — āraḍavam, kakṣatu — kākṣatavam). `o` of the sūtra = the u-varṇa (u, ū)."""
+    return taddhita_site(state, "cAturarTika", final=lambda f: f.endswith(("u", "U")))
 
 
 def cond(state: State) -> bool:
-    if not adhikara_in_effect("4.2.71", state, "4.1.82"):
-        return False
-    if state.samjna_registry.get(SAMJNA_KEY) is not None:
-        return False
-    # *O*rantād eva *ora*-*aR*; आकारादौ (शाला) *prayoga* न — COND-FALSE, no vacuous
-    # registry row (display as SKIPPED in *trace* when recipe schedules audit).
-    if state.terms and state.terms[0].varnas and state.terms[0].kind == "prakriti":
-        if state.terms[0].varnas[-1].slp1 != "o":
-            return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    applicable = False
-    if state.terms and state.terms[0].kind == "prakriti":
-        t0 = state.terms[0]
-        if t0.varnas and t0.varnas[-1].slp1 == "o":
-            applicable = True
-    state.samjna_registry[SAMJNA_KEY] = applicable
-    return state
-
+    return attach_taddhita(state, "aY") if _site(state) is not None else state
 
 SUTRA = SutraRecord(
     sutra_id        = "4.2.71",
@@ -57,9 +45,9 @@ SUTRA = SutraRecord(
     samagra_dev     = "'तदस्मिन्नस्तीति देशे तन्नाम्नि', 'तेन निर्वृत्तम्', 'तस्य निवासः', 'अदूरभवश्च' इति ओः अञ्",
     padaccheda_dev  = "ओः (षष्ठी-एकवचनम्) / अञ् (प्रथमा-एकवचनम्)",
     why_dev         = (
-        "ओकारान्ताद् अण्-प्रत्ययः शेषार्थे; आकारान्ते (शाला) अत्र न प्रवृत्तिः — "
-        "संज्ञा-निर्णयः मात्रम्।"
+        "उवर्णान्ताद् अञ् प्रत्ययः (अरडु — आरडवम्): अणोऽपवादः, तदस्मिन्नस्ति आदिषु चतुर्ष्वर्थेषु।"
     ),
+    apavada_of      = ("4.1.83",),
     anuvritti_from  = ("4.1.82", "4.1.83", "4.2.92"),
     cond            = cond,
     act             = act,

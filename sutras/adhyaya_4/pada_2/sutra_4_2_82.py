@@ -9,38 +9,30 @@
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra, gana
+from engine.luk import live_taddhita, take_away
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 
-def _taddhita_adhikara_open(state: State) -> bool:
-    return any(e.get("id") == "4.1.76" for e in state.adhikara_stack)
-
-
-def _site(state: State) -> bool:
-    if not _taddhita_adhikara_open(state):
-        return False
-    if not state.meta.get("prakriya_46_varaNAdi_luk_note"):
-        return False
-    if not state.terms:
-        return False
-    if not any("prakriya_46_godau_demo" in t.tags for t in state.terms):
-        return False
-    if state.samjna_registry.get("4.2.82_varaNAdi_luk_prakriya_46"):
-        return False
-    return True
+def _site(state: State):
+    """Kāśikā 4.2.82: after a varaṇādi stem the taddhita of the nivāsa / adūrabhava senses is taken away by lup (varaṇānām adūrabhavaṃ nagaraṃ varaṇāḥ)."""
+    i = live_taddhita(state)
+    if i is None or i < 1:
+        return None
+    stem = state.terms[i - 1]
+    name = stem.meta.get("upadesha_slp1") or "".join(v.slp1 for v in stem.varnas)
+    if not gana.in_gana("varaRAdiH", name):
+        return None
+    return i if (vivaksita(state, "taddhitArtha", "adUraBava") or vivaksita(state, "taddhitArtha", "nivAsa")) else None
 
 
 def cond(state: State) -> bool:
-    return _site(state)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    if not _site(state):
-        return state
-    state.samjna_registry["4.2.82_varaNAdi_luk_prakriya_46"] = True
-    return state
-
+    return take_away(state, _site(state), "lup")
 
 SUTRA = SutraRecord(
     sutra_id="4.2.82",
