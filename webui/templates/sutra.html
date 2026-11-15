@@ -116,6 +116,21 @@
   </p>
 </div>
 
+{% if impl %}
+{% set P = impl.parts %}
+<div class="panel" style="margin-top:12px;"><h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">कार्यान्वयन-अङ्काः · implementation mark</h2>
+  <p style="margin:0 0 6px"><b style="font-size:26px">{{ impl.score }}</b><span class="muted"> / 10</span>
+    <span class="muted" style="font-size:12px"> — 10 = a real rule, fires and moves the tape, proven by LK cases, no open shortcut, no arm flag. Computed by tools/impl_score.py from recorded evidence.</span></p>
+  <table class="matrix" style="font-size:12px;border-collapse:collapse">
+    <tr><td>A · real rule</td><td>{{ P.A }} / 2</td><td class="muted">{{ 'placeholder or stub: it does not yet do its own work' if P.A < 2 else 'ok' }}</td></tr>
+    <tr><td>B · fires in the suite</td><td>{{ P.B }} / 1.5</td><td class="muted">{{ 'never fires, or fires without changing the tape' if P.B < 1.5 else 'ok' }}</td></tr>
+    <tr><td>C · proven by cases</td><td>{{ P.C }} / 3</td><td class="muted">{{ 'add LK cases (Kāśikā examples, ≥3 positive + ≥2 negative)' if P.C < 3 else 'ok' }}</td></tr>
+    <tr><td>D · engine policy</td><td>{{ P.D }} / 2.5</td><td class="muted">{{ 'open shortcut / arm flag — see below' if P.D < 2.5 else 'glass box, rule-based: no open shortcut' }}</td></tr>
+    <tr><td>E · source fidelity</td><td>{{ P.E }} / 1</td><td class="muted">{{ 'text / padaccheda not registered' if P.E < 1 else 'ok' }}</td></tr></table>
+  {% if impl.notes %}<ul style="font-size:12px;margin:.5rem 0 0 1rem">{% for n in impl.notes %}<li>{{ n }}</li>{% endfor %}</ul>{% endif %}
+  <p class="muted" style="font-size:12px;margin:.5rem 0 0">Add what should be clarified or corrected as a note below; the mark shows where it is most needed.</p></div>
+{% endif %}
+
 <div class="panel" style="margin-top:12px;"><h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">टिप्पण्यः · audit notes</h2>
   <div id="sutra-notes"></div></div>
 <script src="/static/notes.js?v=1"></script>

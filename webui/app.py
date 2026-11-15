@@ -660,6 +660,23 @@ def _kaumudi_nav(sid: str) -> dict:
     return out
 
 
+_IMPL: dict | None = None
+
+
+def _impl_scores() -> dict:
+    """Per-sūtra implementation mark out of 10 and its parts (sig/impl_score.json, tools/impl_score.py)."""
+    global _IMPL
+    if _IMPL is None:
+        p = _ROOT / "sig" / "impl_score.json"
+        _IMPL = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    return _IMPL
+
+
+@app.route("/api/impl-score")
+def api_impl_score():
+    return jsonify({k: {"s": v["score"], "st": v["status"]} for k, v in _impl_scores().items()})
+
+
 @app.route("/api/kaumudi-order")
 def api_kaumudi_order():
     return jsonify(_kaumudi_order())
@@ -683,7 +700,7 @@ def sutra_detail(sid):
                   "blocks_sutra_ids": list(rec.blocks_sutra_ids or ())})
     return render_template(
         "sutra.html", nav_active="sutras", sid=sid, rec=r, implemented=rec is not None,
-        examples=j.get("ex", []), applied=_applied_index().get(sid, []), kau=_kaumudi_nav(sid),
+        examples=j.get("ex", []), applied=_applied_index().get(sid, []), kau=_kaumudi_nav(sid), impl=_impl_scores().get(sid),
         prev_sid=order[i - 1] if i > 0 else None, next_sid=order[i + 1] if 0 <= i < len(order) - 1 else None,
     )
 
