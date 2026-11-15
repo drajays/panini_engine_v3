@@ -784,9 +784,9 @@
    "docs/IT_PRAKARANA_EVERYWHERE.md"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [],
-  "updated": 1794700000.0
+  "updated": 1794701804.9443982
  },
  {
   "id": "it-agama-num",
@@ -817,9 +817,9 @@
    "docs/IT_PRAKARANA_EVERYWHERE.md"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [],
-  "updated": 1794702000.0
+  "updated": 1794701804.86561
  },
  {
   "id": "it-lakara-132",
@@ -830,10 +830,23 @@
    "docs/IT_PRAKARANA_EVERYWHERE.md"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [
    "pipelines/tinanta.py"
   ],
-  "updated": 1794703000.0
+  "updated": 1794701804.797018
+ },
+ {
+  "id": "it-lrg-133",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=sutras/adhyaya_3/pada_3/sutra_3_3_139.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1794701814.664352
  }
 ]

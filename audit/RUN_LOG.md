@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15f — लृँङ् 1.3.3 (claim `it-lrg-133`)
+
+**What:** 3.3.139 no longer pre-strips ङ्. Ledger: लृँङ् — ऋँ → ऋदित् (१.३.२), ङ् → ङित् (१.३.३). Tests 29 passed.
+
+
+
 ### [cursor] 2026-11-15e — lakāra 1.3.2 on laṅ/loṭ (claim `it-lakara-132`, COORDINATOR)
 
 **What:** `_derive_laG` / loṭ / karmani twins skipped 1.3.2; ledger showed only ङ्→ङित्. Now 1.3.2 names अँ→अदित्; only ल् before 3.4.78. Tests 10 passed.

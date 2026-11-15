@@ -102,3 +102,19 @@ def test_lakara_lang_gets_1_3_2_and_leaves_only_l():
     assert any(r.get("upadesha") == "laG" and r.get("sutra") == "1.3.2" for r in st.meta.get("it_lopa_log", ()))
     row78 = next(s for s in st.trace if s.get("sutra_id") == "3.4.78" and s.get("status") == "APPLIED")
     assert row78["form_before"].endswith("l") and "~" not in row78["form_before"]
+
+
+def test_lakara_lrg_gets_1_3_2_and_1_3_3():
+    """लृँङ्: 1.3.2 names ऋँ, 1.3.3 names ङ्; do not pre-strip ङ् in 3.3.139."""
+    from pipelines.tinanta import derive
+    st = derive("sparD", "lRG", "kartari", 3, 1, pada="atmanepada")
+    row9 = next(
+        s for s in st.trace
+        if s.get("sutra_id") == "1.3.9" and s.get("status") == "APPLIED"
+        and "लृँ" in (s.get("why_now_dev") or "")
+    )
+    assert "ऋँ → ऋदित्" in row9["why_now_dev"]
+    assert "ङ् → ङित्" in row9["why_now_dev"]
+    assert any(r.get("upadesha") == "lRG" and r.get("sutra") == "1.3.3" for r in st.meta.get("it_lopa_log", ()))
+    row78 = next(s for s in st.trace if s.get("sutra_id") == "3.4.78" and s.get("status") == "APPLIED")
+    assert row78["form_before"].endswith("l") and "N" not in row78["form_before"] and "~" not in row78["form_before"]

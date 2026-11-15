@@ -52,14 +52,14 @@ def _attach_lRG(state: State) -> State:
     for term in state.terms:
         if "dhatu" in term.tags:
             term.tags.add(AT_AGAMA_CONTEXT_TAG)
+    # Keep full लृँङ् (lf~N): 1.3.2 names ऋँ, 1.3.3 names ङ्, 1.3.9 leaves ल्.
+    # Do not pre-strip ङ् — that hid हलन्त्यम् from the ledger.
     lit = Term(
         kind="pratyaya",
         varnas=list(lakara_varnas("lfN")),
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "lRG"},
     )
-    if lit.varnas and lit.varnas[-1].slp1 == "N":
-        del lit.varnas[-1]
     state.terms.append(lit)
     return state
 

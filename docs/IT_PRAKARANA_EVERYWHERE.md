@@ -135,3 +135,9 @@ Owner: 6.4.71 कुन्थ्अव → अकुन्थ्अव as bare �
 
 laṅ/loṭ recipes called only 1.3.3+1.3.9 after attach, so अँ of लँङ् never became इत् and 3.4.78
 saw ``la~``. Now 1.3.2 runs too: लँङ् — अँ → अदित्, ङ् → ङित्; only ल् remains before तिङ्.
+
+
+## Shipped 2026-11-15f (cursor) — लृँङ् keeps ङ् for 1.3.3
+
+``3.3.139`` deleted final ``N`` after ``lakara_varnas("lfN")``, so 1.3.3 never named ङ् and the
+ledger showed only ऋँ → ऋदित्. Full लृँङ् stays; 1.3.2 + 1.3.3 + 1.3.9 leave ल्.
