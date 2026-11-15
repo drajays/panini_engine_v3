@@ -123,3 +123,9 @@ Still bare-letter (next): नुट् 7.1.54/55, तुक्, नुम्, �
 Owner screenshot: 7.1.58 कुथ् → कुन्त्थ् as bare न्. Now ``utter_num`` (उच्चारणार्थ उ dropped) → 1.3.3 म् → मित् →
 1.3.9 deletes; leftover न् keeps ``num_agama``. Same for 7.1.59 / 7.1.60 / 7.1.69. 1.3.9 summary names the taught
 āgama (नुम्), not the uttered residue.
+
+
+## Shipped 2026-11-15d (cursor) — अट् / आट्
+
+Owner: 6.4.71 कुन्थ्अव → अकुन्थ्अव as bare अ. Now ``utter_at`` / ``utter_at(..., dirgha=True)`` for 6.4.71/72;
+1.3.3 ट् → टित्, 1.3.9 deletes; leftover अ/आ keeps ``aT_agama_v``.

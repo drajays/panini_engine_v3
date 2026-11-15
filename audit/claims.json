@@ -802,8 +802,23 @@
    "docs/IT_PRAKARANA_EVERYWHERE.md"
   ],
   "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794700807.331124
+ },
+ {
+  "id": "it-agama-at",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_6/pada_4/sutra_6_4_71.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_72.py",
+   "engine/agama.py",
+   "tests/unit/test_it_prakarana_agama.py",
+   "docs/IT_PRAKARANA_EVERYWHERE.md"
+  ],
+  "out_of_scope": "",
   "status": "in-progress",
   "hotspots": [],
-  "updated": 1794701000.0
+  "updated": 1794702000.0
  }
 ]

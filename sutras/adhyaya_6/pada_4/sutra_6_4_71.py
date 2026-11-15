@@ -1,8 +1,8 @@
 """
 6.4.71  लुङ्लङ्लृङ्क्ष्वडुदात्तः  —  VIDHI (narrow: aṭ augment)
 
-Engine: in luṅ/laṅ/lṛṅ contexts, prepend 'a' to the dhātu term as aṭ-āgama
-(ṭ-it handled by 1.3.3/1.3.9 elsewhere). No pipeline-side forcing flag.
+Engine: in luṅ/laṅ/lṛṅ contexts, utter **अट्** as taught (``engine.agama.utter_at``) as the ādyavayava of the
+aṅga (ṭit, 1.1.46). 1.3.3 names ट् and 1.3.9 deletes it, leaving अ tagged ``aT_agama_v``.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 64071 · लुङ्लङ्लृङ्क्ष्वडुदात्तः
@@ -18,6 +18,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.agama import utter_at
 from engine.state import State
 from phonology import mk
 
@@ -56,9 +57,7 @@ def act(state: State) -> State:
     # the aṭ precedes the whole aṅga — an abhyāsa too (अचूचुरत्)
     i = state.terms.index(dh)
     first = state.terms[i - 1] if i and "abhyasa" in state.terms[i - 1].tags else dh
-    _a = mk("a")
-    _a.tags.add("aT_agama_v")
-    first.varnas.insert(0, _a)
+    utter_at(state, first, 0)
     dh.meta["aT_agama_6_4_71_done"] = True
     dh.tags.discard(AT_AGAMA_CONTEXT_TAG)
     return state
@@ -73,8 +72,8 @@ SUTRA = SutraRecord(
     samagra_dev    = "लुङ्-लङ्-लृङ्क्षु अङ्गस्य अट् उदात्तः",
     padaccheda_dev = "लुङ्-लङ्-लृङ्-क्षु / अट् / उदात्तः",
     why_dev        = (
-        "लुङ्/लङ्/लृङ्-लकारे धातोः पूर्वं अट्-आगमः; "
-        "P014: लिटि अनुप्रयोग-कृ-यण्-मूर्तौ ``kr`` पूर्वम् ``a`` (आगम-समान-कार्यम्)।"
+        "लुङ्/लङ्/लृङ्-लकारे अट्-आगमः — अट् उपदिश्यते, टकारः इत् (१.३.३) लुप्यते (१.३.९), "
+        "टित्त्वाद् आद्यवयवः (१.१.४६)।"
     ),
     anuvritti_from = (),
     cond           = cond,

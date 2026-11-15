@@ -74,3 +74,17 @@ def test_num_agama_on_kut_lang():
     row9 = nxt[i9]
     assert "नुम् (आगमः)" in row9["why_now_dev"] and "मित्" in row9["why_now_dev"]
     assert any(r.get("agama") == "num" and r.get("name") == "mit" for r in st.meta.get("it_lopa_log", ()))
+
+
+def test_at_agama_on_kut_lang():
+    from pipelines.tinanta import derive
+    st = derive("kuTi~", "laG", "kartari", 3, 1)
+    first = next(s for s in st.trace if s.get("sutra_id") == "6.4.71" and s.get("status") == "APPLIED")
+    assert "aw" in first["form_after"] or "w" in first["form_after"]
+    nxt = [s for s in st.trace[st.trace.index(first) + 1:] if s.get("status") == "APPLIED"]
+    ids = [s["sutra_id"] for s in nxt[:8]]
+    assert "1.3.3" in ids and "1.3.9" in ids
+    assert ids.index("1.3.3") < ids.index("1.3.9")
+    row9 = nxt[ids.index("1.3.9")]
+    assert "अट् (आगमः)" in row9["why_now_dev"] and "टित्" in row9["why_now_dev"]
+    assert any(r.get("agama") == "aw" and r.get("name") == "wit" for r in st.meta.get("it_lopa_log", ()))

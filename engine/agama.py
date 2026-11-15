@@ -94,3 +94,13 @@ def utter_num(state, term, at: int):
         if v.slp1 == "n":
             v.tags.add("num_agama")
     return vs
+
+
+def utter_at(state, term, at: int = 0, *, dirgha: bool = False):
+    """अट् / आट् as taught (ṭit → ādyavayava). Leftover अ/आ keeps ``aT_agama_v`` for readers that skip the āgama."""
+    vs = utter_into(state, term, at, "Aw" if dirgha else "aw")
+    keep = "A" if dirgha else "a"
+    for v in vs:
+        if v.slp1 == keep:
+            v.tags.add("aT_agama_v")
+    return vs

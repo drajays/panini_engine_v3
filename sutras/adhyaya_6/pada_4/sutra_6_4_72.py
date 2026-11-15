@@ -11,6 +11,7 @@ Prepends *āṭ* (tape **A**) to *ad* in *lṛṅ* when ``state.meta['lRG_ad_spi
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.agama import utter_at
 from engine.state import State
 from phonology import mk
 
@@ -60,9 +61,7 @@ def act(state: State) -> State:
     if dh is None or not _site(state):
         return state
     from sutras.adhyaya_3.pada_2.sutra_3_2_111 import AT_AGAMA_CONTEXT_TAG
-    aa = mk("A")
-    aa.tags.add("aT_agama_v")            # like 6.4.71's aṭ: the āgama is not the dhātu's own varṇa
-    dh.varnas.insert(0, aa)
+    utter_at(state, dh, 0, dirgha=True)  # आट् as taught; leftover आ keeps aT_agama_v
     dh.tags.add("aTa_agama")
     dh.tags.discard(AT_AGAMA_CONTEXT_TAG)
     dh.meta["Aq_agama_6_4_72_done"] = True
