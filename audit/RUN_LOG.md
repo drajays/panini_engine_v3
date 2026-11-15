@@ -246,6 +246,12 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ## C. Action history (newest at top)
 
 
+### [cursor] 2026-11-15h — LLM audit अस्पर्धिष्येताम् (claim `it-audit-aspardh`)
+
+**What:** 3.4.114 UI chip → स्य; 7.2.81 why_dev kartari-correct; test locks surface + registry + लृँङ् ṅit.
+
+
+
 ### [cursor] 2026-11-15g — prakriyā Copy / Copy to LLM (claim `it-pk-copy`)
 
 **What:** `prakriya.js` — Copy dumps visible ledger+steps; Copy to LLM wraps glass-box / blinded / every-step policy + critical-audit ask.

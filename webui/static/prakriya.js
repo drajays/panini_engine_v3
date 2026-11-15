@@ -38,7 +38,7 @@ const Prakriya = (() => {
   const roleOf = r => ROLE[r] ? r : "other";
   const SAMJNA = {"1.2.45": ["प्रातिपदिकम्", "stem"], "1.2.46": ["प्रातिपदिकम्", "stem"], "3.1.32": ["धातुः", "all"],
     "1.4.13": ["अङ्गम्", "pre"], "1.4.14": ["पदम्", "all"], "1.4.17": ["पदम्", "pre"], "1.4.18": ["भम्", "pre"],
-    "3.4.113": ["सार्वधातुकम्", "last"], "3.4.114": ["आर्धधातुकम्", "last"], "3.4.115": ["आर्धधातुकम्", "last"], "3.4.116": ["आर्धधातुकम्", "last"], "1.1.73": ["वृद्धम्", "all"],
+    "3.4.113": ["सार्वधातुकम्", "last"], "3.4.114": ["आर्धधातुकम्", "sesa"], "3.4.115": ["आर्धधातुकम्", "sesa"], "3.4.116": ["आर्धधातुकम्", "sesa"], "1.1.73": ["वृद्धम्", "all"],
     "1.4.110": ["अवसानम्", "all"], "1.4.59": ["उपसर्गः", "first"], "1.4.99": ["परस्मैपदम्", "last"], "1.4.100": ["आत्मनेपदम्", "last"],
     "1.4.101": ["पुरुषः", "last"], "1.4.103": ["वचनम्", "last"], "1.4.104": ["विभक्तिः", "last"], "3.1.1": ["प्रत्ययः", "last"],
     "1.1.20": ["घु", "all"], "1.1.27": ["सर्वनाम", "stem"], "1.4.7": ["घि", "stem"], "1.4.3": ["नदी", "stem"], "1.1.42": ["सर्वनामस्थानम्", "last"]};
@@ -127,8 +127,18 @@ const Prakriya = (() => {
     if (!m) return `<span class="pk-sj">संज्ञा-सूत्रम्</span>`;
     const [name, where] = m;
     if (!parts || !parts.length) return `<span class="pk-sj">संज्ञा: ${esc(name)}</span>`;
+    // sesa (3.4.114): आर्धधातुकं शेषः — vikaraṇa/kṛt, never the tiṅ that 3.4.113 already named सार्वधातुक
     const idx = where === "last" ? [parts.length - 1] : where === "first" ? [0] : where === "pre" ? parts.slice(0, -1).map((_, k) => k)
-      : where === "stem" ? [0] : parts.map((_, k) => k);
+      : where === "stem" ? [0]
+      : where === "sesa" ? (() => {
+          const v = parts.map((p, k) => [p, k]).filter(([p]) => roleOf(p[1]) === "vikarana").map(([, k]) => k);
+          if (v.length) return v;
+          const krt = parts.map((p, k) => [p, k]).filter(([p]) => ["krt", "taddhita"].includes(roleOf(p[1]))).map(([, k]) => k);
+          if (krt.length) return krt;
+          const nonTin = parts.map((p, k) => [p, k]).filter(([p]) => !["tin", "pratyaya"].includes(roleOf(p[1])) || (p[2] || "").match(/^(sya|sic|aG|tAsi)/)).map(([, k]) => k);
+          return nonTin.length ? nonTin : [Math.max(0, parts.length - 2)];
+        })()
+      : parts.map((_, k) => k);
     const target = fmt(idx.map(k => parts[k]).filter(Boolean).map(p => p[0]).join(""), "");
     return `<span class="pk-sj" title="${esc(name)} — ${esc(target)}">संज्ञा: <b>${esc(name)}</b> ⇐ <span class="pk-sj-t">${esc(target)}</span></span>`;
   }

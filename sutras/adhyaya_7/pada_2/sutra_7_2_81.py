@@ -1,13 +1,21 @@
 """
 7.2.81  आतो ङितः  —  VIDHI
 
-*Padaccheda:* *ātaḥ* / *ṅitaḥ*.
+Sources consulted:
+- ashtadhyayi.com data.txt row i=72081 · आतो ङितः
+- Kāśikā: "एधेते। एधेथे। अदन्ताद् अङ्गाद् उत्तराभ्याम् आताम्-आथाम्-आदेशाभ्याम् आकारस्य इय् आदेशो भवति।"
+  (कर्तरि एध् + शप् + आते → एधेते — not karmaṇi-only)
+- Cross-validation: regression sparD lṛṅ dual ātmane अस्पर्धिष्येताम् (1.2.4 → ङित् आताम् → इय्)
 
-*Śāstra:* in karmaṇi / bhāve, the initial *ā* of ātmanepada dual *tiṅ* (*āte*, *āthe* after
-**3.4.79**) becomes *iy* when a *ṅit* *vikaraṇa* (*yaḳ*→*ya*) precedes.
+*Padaccheda:* *ātaḥ* / *ṅitaḥ*. Anuvṛtti brings *aṅgasya*, *ataḥ*, *sārvadhātuke*.
 
-*Engine:* ``bhava_karma_usage`` on *dhātu*; *tiṅ* *ādeśa* with initial ``A``; no ``_arm`` (Art. 13).
-Pāṭha: ashtadhyayi.com data.txt row i=72081 (Art. 14).
+*Śāstra:* when the aṅga is a-final, the initial *ā* of a *ṅit* sārvadhātuka (*ātām* / *āthām*,
+or *āte* / *āthe* after **3.4.79**) becomes *iy*. *Ṅit* may come from **1.2.4** (apit
+sārvadhātuka) in *kartari*, or from a *ṅit* vikaraṇa path in *bhāve*/*karmaṇi* — the sūtra
+itself is not restricted to karmaṇi/bhāve.
+
+*Engine:* tiṅ ādeśa with initial ``A``; requires ``kngiti`` (1.2.4) **or** ``bhava_karma_usage``;
+skips if the tiṅ is already ārdhadhātuka. No ``_arm`` (Art. 13).
 """
 from __future__ import annotations
 
@@ -70,8 +78,9 @@ SUTRA = SutraRecord(
     samagra_dev="अङ्गस्य आतः ङितः सार्वधातुके इयः अतः",
     padaccheda_dev="आतः ङितः",
     why_dev=(
-        "कर्मणि/भावे ङित-विकरण-पूर्वम् आत्मनेपद-द्विवचनस्य आकारस्य 'इय्'-आदेशः — "
-        "आते → इय्ते, आथे → इय्थे।"
+        "अदन्ताङ्गात् परस्य ङित्-सार्वधातुकस्य आकारस्य इय्-आदेशः "
+        "(आताम्/आथाम्; आते/आथे) — कर्तरि अपि (१.२.४ कङित्); "
+        "एधेते, अस्पर्धिष्येताम्।"
     ),
     anuvritti_from=("7.1.1",),
     cond=cond,

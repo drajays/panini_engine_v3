@@ -118,3 +118,20 @@ def test_lakara_lrg_gets_1_3_2_and_1_3_3():
     assert any(r.get("upadesha") == "lRG" and r.get("sutra") == "1.3.3" for r in st.meta.get("it_lopa_log", ()))
     row78 = next(s for s in st.trace if s.get("sutra_id") == "3.4.78" and s.get("status") == "APPLIED")
     assert row78["form_before"].endswith("l") and "N" not in row78["form_before"] and "~" not in row78["form_before"]
+
+
+def test_aspardhizyetam_audit_3_4_114_targets_sya_not_atam():
+    """LLM audit: 3.4.114 names स्य ārdhadhātuka; आताम् stays सार्वधातुक (3.4.113)."""
+    from pipelines.tinanta import derive
+    st = derive("sparD", "lRG", "kartari", 3, 2, pada="atmanepada")
+    assert st.trace[-1]["form_after"] == "asparDizyetAm"
+    assert st.samjna_registry.get("3.4.114_ardhadhatuka_sya_lRG")
+    assert st.samjna_registry.get("3.4.113_tagged_AtAm")
+    row9 = next(
+        s for s in st.trace
+        if s.get("sutra_id") == "1.3.9" and "लृँङ्" in (s.get("why_now_dev") or "")
+    )
+    assert "ङ् → ङित्" in row9["why_now_dev"] and "ऋँ → ऋदित्" in row9["why_now_dev"]
+    w81 = next(s for s in st.trace if s.get("sutra_id") == "7.2.81" and str(s.get("status","")).startswith("APPLIED"))
+    assert "कर्मणि/भावे" not in (w81.get("why_now_dev") or w81.get("why_dev") or "")
+    assert "ङित्" in (w81.get("why_now_dev") or w81.get("why_dev") or "")

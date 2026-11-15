@@ -161,7 +161,10 @@ SUTRA = SutraRecord(
     samagra_slp1   = "tiN-Sit-SezaH DAtoH paraH pratyayaH ArDaDAtukaH",
     samagra_dev    = "तिङ्-शित्-शेषः धातोः परः प्रत्ययः आर्धधातुकः",
     padaccheda_dev = "आर्धधातुकं शेषः",
-    why_dev        = "शेषः प्रत्यय आर्धधातुक-संज्ञकः (तृच् इत्यादौ)।",
+    why_dev        = (
+        "तिङ्शित्-शेषः प्रत्यय आर्धधातुकः — स्य/तासि/सिच्/कृत् इत्यादि "
+        "(न तु तिङ्, यः ३.४.११३ से सार्वधातुकः)।"
+    ),
     anuvritti_from = ("3.4.113",),
     cond           = cond,
     act            = act,

@@ -141,3 +141,10 @@ saw ``la~``. Now 1.3.2 runs too: लँङ् — अँ → अदित्, �
 
 ``3.3.139`` deleted final ``N`` after ``lakara_varnas("lfN")``, so 1.3.3 never named ङ् and the
 ledger showed only ऋँ → ऋदित्. Full लृँङ् stays; 1.3.2 + 1.3.3 + 1.3.9 leave ल्.
+
+
+## Shipped 2026-11-15h (cursor) — LLM audit अस्पर्धिष्येताम्
+
+1. UI ``3.4.114`` chip: ``sesa`` → स्य (not last=आताम्). Engine already tagged ``sya_lRG``.
+2. ``7.2.81`` why_dev: कर्तरि via 1.2.4 ङित्; drop कर्मणि/भावे-only gloss.
+3. लृँङ् 1.3.3 already shipped 15f; re-asserted in audit test.

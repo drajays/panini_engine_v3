@@ -856,8 +856,22 @@
    "SCOPE=webui/static/prakriya.js"
   ],
   "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794702164.06174
+ },
+ {
+  "id": "it-audit-aspardh",
+  "agent": "cursor",
+  "scope": [
+   "SCOPE=sutras/adhyaya_3/pada_4/sutra_3_4_114.py",
+   "sutras/adhyaya_7/pada_2/sutra_7_2_81.py",
+   "webui/static/prakriya.js",
+   "tests/unit/test_it_prakarana_agama.py"
+  ],
+  "out_of_scope": "",
   "status": "in-progress",
   "hotspots": [],
-  "updated": 1794702124.3974028
+  "updated": 1794702192.557132
  }
 ]
