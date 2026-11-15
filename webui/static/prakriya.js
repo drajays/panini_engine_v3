@@ -15,6 +15,10 @@ const Prakriya = (() => {
   const STATUS = {APPLIED: ["प्रयुक्तम्", "applied"], APPLIED_VACUOUS: ["शून्यप्रयुक्तम्", "applied, no change"], AUDIT: ["निरीक्षितम्", "checked"],
     BLOCKED: ["निवारितम्", "blocked"], SKIPPED: ["अतिक्रान्तम्", "not applicable"], DEFINED: ["परिभाषितम्", "defined"], VACUOUS: ["शून्यम्", "no effect"],
     DECLINED: ["विकल्पेन न", "optional, declined"]};
+  /* UI-only teaching aids are marked ◆ everywhere (screen, Copy panel, Copy to LLM). Rows of the engine trace (sūtra id + status) are never marked. */
+  const PED = (en, note) => `<span class="pk-ped" title="${esc(note || (en ? "Teaching aid added by this page — not a sūtra step of the Aṣṭādhyāyī" : "शिक्षण-सहायक — इस पृष्ठ द्वारा जोड़ा गया; अष्टाध्यायी-क्रम का अंग नहीं"))}">◆ ${en ? "teaching aid" : "शिक्षण-सहायक"}</span>`;
+  const isStruct = s => !!s._is_structural || String(s.sutra_id || "").startsWith("__");
+  const pedGloss = s => !isStruct(s) && (pref.gloss === "en" ? true : pref.gloss === "hi" && !!s._hint_hi);   // en: generated template; hi: hint text — neither is the engine's own why
   const devOf = slp => String(slp || "").split("~").map((c, k, a) => (c ? Transliterate.fromSLP1(c, "devanagari") : "") + (k < a.length - 1 ? "ँ" : "")).join("");  // anunāsika ~ → ँ
   const fmt = (slp, dev) => pref.script === "slp1" ? slp : pref.script === "iast" ? Transliterate.fromSLP1(slp, "iast")
     : pref.script === "varna" ? Transliterate.slp1ToVarnas(slp) : (dev || devOf(slp));   // varna: vyañjana with halanta, svara apart
@@ -38,7 +42,7 @@ const Prakriya = (() => {
   const roleOf = r => ROLE[r] ? r : "other";
   const SAMJNA = {"1.2.45": ["प्रातिपदिकम्", "stem"], "1.2.46": ["प्रातिपदिकम्", "stem"], "3.1.32": ["धातुः", "all"],
     "1.4.13": ["अङ्गम्", "pre"], "1.4.14": ["पदम्", "all"], "1.4.17": ["पदम्", "pre"], "1.4.18": ["भम्", "pre"],
-    "3.4.113": ["सार्वधातुकम्", "last"], "3.4.114": ["आर्धधातुकम्", "last"], "3.4.115": ["आर्धधातुकम्", "last"], "3.4.116": ["आर्धधातुकम्", "last"], "1.1.73": ["वृद्धम्", "all"],
+    "3.4.113": ["सार्वधातुकम्", "last"], "3.4.114": ["आर्धधातुकम्", "sesa"], "3.4.115": ["आर्धधातुकम्", "sesa"], "3.4.116": ["आर्धधातुकम्", "sesa"], "1.1.73": ["वृद्धम्", "all"],
     "1.4.110": ["अवसानम्", "all"], "1.4.59": ["उपसर्गः", "first"], "1.4.99": ["परस्मैपदम्", "last"], "1.4.100": ["आत्मनेपदम्", "last"],
     "1.4.101": ["पुरुषः", "last"], "1.4.103": ["वचनम्", "last"], "1.4.104": ["विभक्तिः", "last"], "3.1.1": ["प्रत्ययः", "last"],
     "1.1.20": ["घु", "all"], "1.1.27": ["सर्वनाम", "stem"], "1.4.7": ["घि", "stem"], "1.4.3": ["नदी", "stem"], "1.1.42": ["सर्वनामस्थानम्", "last"]};
@@ -116,7 +120,7 @@ const Prakriya = (() => {
   function itLedger(t) {
     const rows = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
     if (!rows.length) return "";
-    return `<details class="pk-ledger"${pref.depth === "beginner" ? "" : " open"}><summary>इत्संज्ञा-कोशः — ${rows.length} ${pref.gloss === "en" ? "upadeśas with it-letters in this derivation" : "उपदेशाः"}</summary>
+    return `<details class="pk-ledger"${pref.depth === "beginner" ? "" : " open"}><summary>${PED(pref.gloss === "en", "Summary table built by this page from the 1.3.2–1.3.9 steps; the links are step numbers of the full trace")} इत्संज्ञा-कोशः — ${rows.length} ${pref.gloss === "en" ? "upadeśas with it-letters in this derivation" : "उपदेशाः"}</summary>
       <table class="pk-ledger-t"><tr><th>उपदेशः</th><th>इत्-वर्णाः → संज्ञा (सूत्रम्)</th><th>लोपः</th></tr>${rows.map(({i, r}) =>
         `<tr><td class="dev"><b>${esc(r.upadesha)}</b></td><td>${r.items.map(x => `${esc(x.letter)} → <b>${esc(x.name)}</b> <small>${esc(x.sutra)}</small>`).join(" · ")}</td><td><a href="#s-${i + 1}">${i + 1}</a></td></tr>`).join("")}</table></details>`;
   }
@@ -127,10 +131,20 @@ const Prakriya = (() => {
     if (!m) return `<span class="pk-sj">संज्ञा-सूत्रम्</span>`;
     const [name, where] = m;
     if (!parts || !parts.length) return `<span class="pk-sj">संज्ञा: ${esc(name)}</span>`;
+    // sesa (3.4.114): आर्धधातुकं शेषः — vikaraṇa/kṛt, never the tiṅ that 3.4.113 already named सार्वधातुक
     const idx = where === "last" ? [parts.length - 1] : where === "first" ? [0] : where === "pre" ? parts.slice(0, -1).map((_, k) => k)
-      : where === "stem" ? [0] : parts.map((_, k) => k);
+      : where === "stem" ? [0]
+      : where === "sesa" ? (() => {
+          const v = parts.map((p, k) => [p, k]).filter(([p]) => roleOf(p[1]) === "vikarana").map(([, k]) => k);
+          if (v.length) return v;
+          const krt = parts.map((p, k) => [p, k]).filter(([p]) => ["krt", "taddhita"].includes(roleOf(p[1]))).map(([, k]) => k);
+          if (krt.length) return krt;
+          const nonTin = parts.map((p, k) => [p, k]).filter(([p]) => !["tin", "pratyaya"].includes(roleOf(p[1])) || (p[2] || "").match(/^(sya|sic|aG|tAsi)/)).map(([, k]) => k);
+          return nonTin.length ? nonTin : [Math.max(0, parts.length - 2)];
+        })()
+      : parts.map((_, k) => k);
     const target = fmt(idx.map(k => parts[k]).filter(Boolean).map(p => p[0]).join(""), "");
-    return `<span class="pk-sj" title="${esc(name)} — ${esc(target)}">संज्ञा: <b>${esc(name)}</b> ⇐ <span class="pk-sj-t">${esc(target)}</span></span>`;
+    return `<span class="pk-sj" title="${esc(name)} — ${esc(target)} (◆ शिक्षण-सहायक: which part the saṃjñā falls on is shown by this page)">संज्ञा: <b>${esc(name)}</b> ⇐ <span class="pk-sj-t">${esc(target)}</span> <span class="pk-pedmark">◆</span></span>`;
   }
 
   /* → [{s, i, group?}] rows for the chosen depth; i is the index in the full trace (stable permalink). */
@@ -155,18 +169,80 @@ const Prakriya = (() => {
     return s._is_structural ? "" : changes(s) ? `Sūtra ${s.sutra_id} (${k}) rewrites ${a} as ${b}.` : `Sūtra ${s.sutra_id} (${k}) applies; the form stays ${a}.`;
   }
 
+  /* 3.4.78 — eighteen tiṅ ādeśas (Pāṇini order). Vivakṣā (pada × puruṣa × vacana) picks one cell;
+     the sūtra itself only substitutes the committed ādeśa (CONSTITUTION Art. 2). */
+  const TIN78 = {
+    pu: {3: ["प्रथमः", "3rd"], 2: ["मध्यमः", "2nd"], 1: ["उत्तमः", "1st"]},
+    vc: {1: ["एकवचनम्", "sg"], 2: ["द्विवचनम्", "du"], 3: ["बहुवचनम्", "pl"]},
+    pada: {parasmai: ["परस्मैपदम्", "parasmaipada"], atmane: ["आत्मनेपदम्", "ātmanepada"]},
+    parasmai: [["tip", "तिप्"], ["tas", "तस्"], ["Ji", "झि"], ["sip", "सिप्"], ["Tas", "थस्"], ["Ta", "थ"], ["mip", "मिप्"], ["vas", "वस्"], ["mas", "मस्"]],
+    atmane: [["ta", "त"], ["AtAm", "आताम्"], ["Ja", "झ"], ["TAs", "थास्"], ["ATAm", "आथाम्"], ["Dvam", "ध्वम्"], ["iw", "इट्"], ["vahi", "वहि"], ["mahiG", "महिङ्"]],
+  };
+  const tinCell = (pada, pu, vc) => {
+    const list = TIN78[pada === "atmane" || pada === "Atmanepada" ? "atmane" : "parasmai"];
+    const ri = {3: 0, 2: 1, 1: 2}[pu], ci = vc - 1;
+    return list[ri * 3 + ci];
+  };
+  const chosenTin = s => {
+    const p = parseParts(s.parts);
+    if (p && p.length) { const last = p[p.length - 1]; if (last[2]) return last[2]; if (last[0]) return last[0]; }
+    return (s.form_after || "").replace(/.*(?=[A-Z]?[a-zA-Z~]+$)/, "") || "";
+  };
+  function tinGridHtml(s, viv) {
+    if (s.sutra_id !== "3.4.78" || !/^APPLIED/.test(s.status)) return "";
+    const en = pref.gloss === "en";
+    const chosen = (s._tin_chosen || chosenTin(s) || "").trim();
+    let pada = (viv && (viv.pada || viv.pada_key) || "").replace(/^Atmane.*/i, "atmane").replace(/^Parasmai.*/i, "parasmai");
+    if (!pada && chosen) {
+      const inA = TIN78.atmane.some(([sl]) => sl === chosen);
+      const inP = TIN78.parasmai.some(([sl]) => sl === chosen);
+      pada = inA && !inP ? "atmane" : "parasmai";
+    }
+    if (!pada) pada = "parasmai";
+    const pu = viv && +viv.purusha || 0, vc = viv && +viv.vacana || 0;
+    const expect = (pu && vc) ? tinCell(pada, pu, vc) : null;
+    const mark = expect ? expect[0] : chosen;
+    const lak = (viv && (viv.lakara_dev || viv.lakara)) || "";
+    const puL = TIN78.pu[pu] ? TIN78.pu[pu][en ? 1 : 0] : (pu || "—");
+    const vcL = TIN78.vc[vc] ? TIN78.vc[vc][en ? 1 : 0] : (vc || "—");
+    const pdL = TIN78.pada[pada] ? TIN78.pada[pada][en ? 1 : 0] : pada;
+    const banner = en
+      ? `Vivakṣā (from dhātūrūpa): lakāra ${lak || "—"} · ${pdL} · ${puL} · ${vcL} → chosen <b class="dev">${esc(fmt(mark, expect ? expect[1] : ""))}</b>. 3.4.78 lists all 18; 1.4.99–1.4.103 name pada/puruṣa/vacana; the recipe commits this cell (Art. 2 — the sūtra does not read the coordinates).`
+      : `विवक्षा (धातु-रूपे चयनिता): लकार ${esc(lak || "—")} · ${esc(pdL)} · ${esc(puL)} · ${esc(vcL)} → चुनाः <b class="dev">${esc(expect ? expect[1] : fmt(mark, ""))}</b> (${esc(mark)})। ३.४.७८ अष्टादश तिङ्; १.४.९९–१.४.१०३ पद/पुरुष/वचन-संज्ञाः; रेसिपिः एतद्-कोष्ठं निश्चिनोति (संविधान २ — सूत्रं निर्देशान् न पठति)।`;
+    const half = (key, title) => {
+      const cells = TIN78[key];
+      let h = `<table class="pk-tin"><caption>${esc(title)}</caption><tr><th></th><th>${esc(TIN78.vc[1][en ? 1 : 0])}</th><th>${esc(TIN78.vc[2][en ? 1 : 0])}</th><th>${esc(TIN78.vc[3][en ? 1 : 0])}</th></tr>`;
+      [3, 2, 1].forEach((pui, ri) => {
+        h += `<tr><th>${esc(TIN78.pu[pui][en ? 1 : 0])}</th>`;
+        [1, 2, 3].forEach((vci, ci) => {
+          const [sl, dv] = cells[ri * 3 + ci];
+          const hit = sl === mark || (key === pada && pui === pu && vci === vc);
+          h += `<td class="${hit ? "pk-tin-hit" : ""}" title="${esc(sl)}">${esc(dv)}<small>${esc(sl)}</small>${hit ? `<span class="pk-tin-pick">${en ? "chosen" : "चुनाः"}</span>` : ""}</td>`;
+        });
+        h += `</tr>`;
+      });
+      return h + `</table>`;
+    };
+    return `<div class="pk-tinwrap"><div class="pk-tin-banner">${PED(en, en ? "The grid is a menu for students; sūtra 3.4.78 only substitutes the ādeśa the vivakṣā chose (1.4.100–108 name pada/puruṣa/vacana)" : "यह तालिका विद्यार्थियों हेतु है; ३.४.७८ केवल वक्ता-इच्छा से चुना आदेश रखता है")} ${banner}</div>
+      <div class="pk-tin-grid">${half("parasmai", TIN78.pada.parasmai[en ? 1 : 0])}${half("atmane", TIN78.pada.atmane[en ? 1 : 0])}</div>
+      <div class="pk-tin-note muted">${en
+        ? "Later lakāra-specific rewrites (loṭ 3.4.85–93, liṅ, …) may still change this ādeśa; the grid is the 3.4.78 menu."
+        : "लोठ् ३.४.८५–९३ आदि लकार-विशेष आदेशाः पश्चात् भिन्दन्ति; अत्र ३.४.७८-सूची एव।"}</div></div>`;
+  }
+
   function row({s, i, group}, ctx) {
     const st = STATUS[s.status] || [s.status, s.status], id = "s-" + (i + 1), deep = pref.depth === "shastriya";
     const star = lk().has(s.sutra_id) && pref.depth !== "beginner" ? `<span class="pk-lk" title="Laghukaumudī sūtra">★</span>` : "";
+    const struct = isStruct(s) ? `<span class="pk-struct" title="Engine bookkeeping (e.g. merging parts into one pada) — not an Aṣṭādhyāyī sūtra">⚙ ${pref.gloss === "en" ? "structural, not a sūtra" : "संरचनात्मक — सूत्र नहीं"}</span>` : "";
     if (group) {
       const lopa = [...group].reverse().find(x => x.sutra_id === "1.3.9" && changes(x));
       const li = lopa ? ctx.t.indexOf(lopa) : -1;
       const named = [...new Set(group.filter(x => x.sutra_id !== "1.3.9").map(x => x.sutra_id))];
-      return `<li class="pk-step pk-applied pk-itgrp" id="${id}"><a class="pk-no" href="#${id}">${i + 1}</a><div class="pk-main">
+      return `<li class="pk-step pk-applied pk-itgrp" id="${id}">${li >= 0 && li + 1 !== i + 1 ? `<span id="s-${li + 1}"></span>` : ""}<a class="pk-no" href="#${id}">${i + 1}</a><div class="pk-main">
       <div><b class="dev">इत्संज्ञा-लोपः</b> <span class="pk-tag">${named.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(" · ") || "1.3.2–1.3.8"} → <a href="/sutra/1.3.9">1.3.9</a></span>
         ${lopa ? `<span class="pk-form pk-fx dev" data-i="${li}" title="क्लिक् — संहितम् ↔ वर्णविभागः">${formHtml(lopa, ctx.pb[li], ctx.pa[li] || ctx.pb[li], pref.split !== ctx.open.has(li))}</span>` : ""}</div>
       ${lopa ? itChips(lopa) : ""}
-      <div class="pk-gloss">${esc(pref.gloss === "en" ? "it-letters of the upadeśa are named (1.3.2–1.3.8) and removed (1.3.9); the record (kit, ṅit, pit …) stays for later rules" : "उपदेशे इत्-वर्णानां संज्ञा (१.३.२–१.३.८), तस्य लोपः (१.३.९); इत्-अभिलेखः (कित्, ङित्, पित् …) परसूत्रेभ्यः स्थिरः")}</div></div></li>`;
+      <div class="pk-gloss">${PED(pref.gloss === "en", "Grouped display: Śāstrīya depth lists each of 1.3.2–1.3.9 as its own step")} ${esc(pref.gloss === "en" ? "it-letters of the upadeśa are named (1.3.2–1.3.8) and removed (1.3.9); the record (kit, ṅit, pit …) stays for later rules" : "उपदेशे इत्-वर्णानां संज्ञा (१.३.२–१.३.८), तस्य लोपः (१.३.९); इत्-अभिलेखः (कित्, ङित्, पित् …) परसूत्रेभ्यः स्थिरः")}</div></div></li>`;
     }
     const why = s.status === "BLOCKED" ? s.gate_reason : s.status === "SKIPPED" ? s.skip_reason : "";
     const sch = deep ? `
@@ -177,12 +253,13 @@ const Prakriya = (() => {
         ${(s._lsk || []).length ? `<div class="muted">LSK pp. ${esc([...new Set(s._lsk.map(x => x.page))].slice(0, 6).join(", "))}${s._lsk.length > 6 ? "…" : ""}</div>` : ""}</div>` : "";
     return `<li class="pk-step pk-${(s.status || "").toLowerCase()}" id="${id}">
       <a class="pk-no" href="#${id}" title="permalink to this step">${i + 1}</a>
-      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}
+      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}
         <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span>
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev" data-i="${i}" title="क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
-        <div class="pk-gloss">${esc(gloss(s))}</div>${sch}</div></li>`;
+        ${tinGridHtml(s, ctx.viv)}
+        <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${sch}</div></li>`;
   }
 
   /* "Why didn't rule X apply?" — what the trace says about one sūtra. */
@@ -202,32 +279,46 @@ const Prakriya = (() => {
     const t = d.trace || [], L = t[t.length - 1];
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
     const sel = (id, opts, v) => `<select id="${id}">${opts.map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${l}</option>`).join("")}</select>`;
-    const ctx = {pb: [], pa: [], open: new Set(), t};
+    const ctx = {pb: [], pa: [], open: new Set(), t, viv: d.vivaksa || d.vivakṣā || null};
     let last = null;                                              // parts of the tape before each step, after each applied step
     t.forEach((s, i) => { const p = parseParts(s.parts);
       ctx.pb[i] = last && joined(last) === String(s.form_before || "").replace(/\s/g, "") ? last : null;
       if (p && p.length) { ctx.pa[i] = p; last = p; } });
     const roles = [...new Set(ctx.pa.filter(Boolean).flat().map(p => roleOf(p[1])))];
-    const legend = () => roles.length ? `<span class="muted">भागाः:</span> ${roles.map(r => `<span class="pk-part pk-r-${r}">${esc(ROLE[r][pref.gloss === "en" ? 1 : 0])}</span>`).join(" ")}
+    const legend = () => roles.length ? `${PED(pref.gloss === "en")} <span class="muted">भागाः:</span> ${roles.map(r => `<span class="pk-part pk-r-${r}">${esc(ROLE[r][pref.gloss === "en" ? 1 : 0])}</span>`).join(" ")}
       <span class="muted"> · <span class="pk-v pk-del">स्थानी</span> → <span class="pk-v pk-ins">नूतनम्</span> · ${pref.gloss === "en" ? "click a form to split / merge its varṇas" : "रूपे क्लिक् — वर्णविभागः / संहितम्"}</span>` : "";
     el.innerHTML = `<div class="pk-bar no-print">
       <label>गहनता ${sel("pk-depth", [["beginner", "आरम्भिकः · Beginner"], ["kaumudi", "कौमुदी · Kaumudī"], ["shastriya", "शास्त्रीयः · Śāstrīya"]], pref.depth)}</label>
       <label>लिपिः ${sel("pk-script", [["dev", "देवनागरी"], ["varna", "देवनागरी — वर्ण-विभागः"], ["slp1", "SLP1"], ["iast", "IAST"]], pref.script)}</label>
       <label>व्याख्या ${sel("pk-gloss", [["hi", "हिन्दी"], ["en", "English"], ["sa", "संस्कृतम्"]], pref.gloss)}</label>
       <label>वर्णाः ${sel("pk-split", [["0", "संहितम् · merged (राम)"], ["1", "विभक्तम् · split (र् आ म् अ)"]], pref.split ? "1" : "0")}</label>
-      <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button></div>
+      <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
+      <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
+      <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
-      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><ol class="pk-list"></ol>
+      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
         <div class="pk-inspect-out" aria-live="polite"></div></div>`;
     const q = s => el.querySelector(s);
     const finalParts = [...ctx.pa].reverse().find(Boolean) || [];
-    const letters = () => (d.letters || []).map((l, n) => `<button type="button" class="pk-letter${l.origin.length ? "" : " pk-given"} pk-r-${roleOf((finalParts[l.term] || [])[1])}" data-n="${n}"
+    const authNote = () => {
+      const en = pref.gloss === "en", sh = pref.depth === "shastriya";
+      return `<b>${en ? "How to read this page" : "इस पृष्ठ को कैसे पढ़ें"}</b> — ${en
+        ? "Every numbered row is a step of the engine's own trace (a sūtra, its status, the form before and after). "
+        : "प्रत्येक क्रमाङ्कित पङ्क्ति इञ्जन-प्रक्रिया का वास्तविक चरण है (सूत्र, स्थिति, पूर्व-पश्चात् रूप)। "}${PED(en)} ${en
+        ? "marks what this page adds for teaching (colours, letter chips, saṃjñā targets, tiṅ menu, grouped it-rows, glosses in English/Hindi hints); it is not part of Pāṇini's sequence. ⚙ marks engine bookkeeping that is not a sūtra. "
+        : "का अर्थ: शिक्षण हेतु इस पृष्ठ का जोड़ा हुआ (रङ्ग, वर्ण-चिह्न, संज्ञा-लक्ष्य, तिङ्-सूची, समूहित इत्-पङ्क्ति, हिन्दी/English संकेत); यह पाणिनीय क्रम नहीं। ⚙ = इञ्जन की संरचना, सूत्र नहीं। "}${sh ? "" : (en
+        ? "This depth hides checked / skipped / blocked rows; step numbers stay those of the full trace (Śāstrīya depth shows all)."
+        : "इस गहनता में निरीक्षित/अतिक्रान्त/निवारित पङ्क्तियाँ छिपी हैं; क्रमाङ्क पूर्ण-क्रम के ही रहते हैं (शास्त्रीय में सब दिखता है)।")}`;
+    };
+    const letters = () => (d.letters || []).length ? PED(pref.gloss === "en") + " " + lettersChips() : "";
+    const lettersChips = () => (d.letters || []).map((l, n) => `<button type="button" class="pk-letter${l.origin.length ? "" : " pk-given"} pk-r-${roleOf((finalParts[l.term] || [])[1])}" data-n="${n}"
       title="${l.origin.length ? "created by " + esc(l.origin.join(", ")) : "given (upadeśa)"}">${esc(fmt(l.slp1, ""))}</button>`).join("");
     const paint = () => {
       const rows = rowsFor(t);
       q(".pk-list").innerHTML = rows.map(r => row(r, ctx)).join("") || "<li class='muted'>—</li>";
       q(".pk-legend").innerHTML = legend();
+      q(".pk-auth").innerHTML = authNote();
       q(".pk-ledger-box").innerHTML = itLedger(t);
       q(".pk-count").textContent = pref.depth === "beginner" ? `${rows.length} milestones (of ${t.length} rule checks). Choose Kaumudī or Śāstrīya for more.`
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
@@ -258,9 +349,150 @@ const Prakriya = (() => {
       a.href = URL.createObjectURL(new Blob([JSON.stringify(d, null, 1)], {type: "application/json"}));
       a.download = "prakriya.json"; a.click();
     };
+    const flash = (btn, ok) => { const o = btn.textContent; btn.textContent = ok ? "Copied ✓" : "Copy failed"; setTimeout(() => { btn.textContent = o; }, 1600); };
+    const clip = async (text, btn) => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+        else {
+          const ta = document.createElement("textarea"); ta.value = text; ta.style.cssText = "position:fixed;left:-9999px";
+          document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
+        }
+        flash(btn, true);
+      } catch (e) { flash(btn, false); }
+    };
+    const panelDump = () => {
+      const bits = [".pk-result", ".pk-letters", ".pk-letter-info", ".pk-legend", ".pk-ledger-box", ".pk-count", ".pk-list"]
+        .map(sel => q(sel)).filter(n => n && n.innerText && n.innerText.trim())
+        .map(n => n.innerText.trim());
+      return bits.join("\n\n");
+    };
+    q("#pk-copy").onclick = () => clip(plainPrakriya(d, t, ctx, panelDump), q("#pk-copy"));
+    q("#pk-copy-llm").onclick = () => clip(llmPrakriyaPrompt(d, t, ctx, panelDump), q("#pk-copy-llm"));
     const repaint = () => { if (!el.isConnected) window.removeEventListener("prakriya-change", repaint); else paint(); };
     window.addEventListener("prakriya-change", repaint);
     paint();
   }
-  return {mount, pref, fmt, rowsFor, inspect};
+
+  /* Full panel dump: vivakṣā header + visible panel text + structured steps (incl. 3.4.78 tin menu). */
+  function plainPrakriya(d, t, ctx, panelTextFn) {
+    const depth = {beginner: "आरम्भिकः / Beginner", kaumudi: "कौमुदी / Kaumudī", shastriya: "शास्त्रीयः / Śāstrīya"}[pref.depth] || pref.depth;
+    const surface = d.surface ? `${d.surface.dev || ""} (${d.surface.slp1 || ""})` : "";
+    const viv = ctx && ctx.viv;
+    const lines = [
+      `Pāṇini Engine v3 — prakriyā (entire panel)`,
+      `Legend: numbered steps = the engine's own trace rows (sūtra id + status). [PED] = a teaching aid added by the web page (not Pāṇini's sequence, not engine output). [STRUCTURAL] = engine bookkeeping, not a sūtra.`,
+      `Title: ${d.title || "—"}`,
+      `Surface: ${surface}`,
+      `Depth: ${depth} · Script: ${pref.script} · Gloss: ${pref.gloss}`,
+    ];
+    if (viv) {
+      lines.push(`Vivakṣā: lakāra=${viv.lakara || "—"} · prayoga=${viv.prayoga || "—"} · pada=${viv.pada || "—"} · puruṣa=${viv.purusha || "—"} · vacana=${viv.vacana || "—"}`);
+    }
+    lines.push("");
+    if (typeof panelTextFn === "function") {
+      const panel = panelTextFn();
+      if (panel) {
+        lines.push("===== PANEL (as shown) =====");
+        lines.push(panel);
+        lines.push("===== END PANEL =====");
+        lines.push("");
+      }
+    }
+    const led = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
+    if (led.length) {
+      lines.push("[PED] इत्संज्ञा-कोशः (summary table built by the page from the 1.3.2–1.3.9 steps; links = step numbers of the full trace)");
+      lines.push("उपदेशः | इत्-वर्णाः → संज्ञा (सूत्रम्) | लोप-पदम्");
+      led.forEach(({i, r}) => lines.push(`  ${r.upadesha} | ${r.items.map(x => `${x.letter} → ${x.name} ${x.sutra}`).join(" · ")} | #${i + 1}`));
+      lines.push("");
+    }
+    if (d.letters && d.letters.length) {
+      lines.push("[PED] Letters / वर्ण-उत्पत्तिः (page overlay built from the trace)");
+      d.letters.forEach((l, n) => lines.push(`  ${n + 1}. ${fmt(l.slp1, "")} ← ${(l.origin || []).join(", ") || "upadeśa (given)"}`));
+      lines.push("");
+    }
+    lines.push(`Steps (${pref.depth}) — structured:`);
+    rowsFor(t).forEach(({s, i, group}) => {
+      if (group) {
+        const lopa = [...group].reverse().find(x => x.sutra_id === "1.3.9" && changes(x));
+        const named = [...new Set(group.filter(x => x.sutra_id !== "1.3.9").map(x => x.sutra_id))];
+        const tag = `${named.join(" · ") || "1.3.2–1.3.8"} → 1.3.9`;
+        lines.push(`#${i + 1} इत्संज्ञा-लोपः ${tag}  [PED: grouped display of the 1.3.2–1.3.9 steps; Śāstrīya depth lists each]`);
+        if (lopa) {
+          lines.push(`  ${lopa.form_before_dev || fmt(lopa.form_before)} → ${lopa.form_after_dev || fmt(lopa.form_after)}`);
+          lines.push(`  SLP1: ${lopa.form_before} → ${lopa.form_after}`);
+          const r = itParse(lopa);
+          if (r) lines.push(`  उपदेशः ${r.upadesha} · ${r.items.map(x => `${x.letter} → ${x.name} (${x.sutra})`).join(", ")}`);
+          lines.push(`  ${(lopa.why_now_dev || lopa.why_dev || "").trim()}`);
+        }
+        return;
+      }
+      const st = STATUS[s.status] || [s.status, s.status];
+      lines.push(`#${i + 1} ${s.sutra_id} [${st[0]} / ${st[1]}]${s.sutra_type ? ` · ${s.sutra_type}` : ""}${isStruct(s) ? "  [STRUCTURAL — engine bookkeeping, not a sūtra]" : ""}`);
+      lines.push(`  ${s.form_before_dev || fmt(s.form_before)} → ${s.form_after_dev || fmt(s.form_after)}`);
+      lines.push(`  SLP1: ${s.form_before} → ${s.form_after}`);
+      if (s._sutra_text_dev) lines.push(`  pāṭha: ${s._sutra_text_dev}`);
+      if (s._padaccheda_dev) lines.push(`  padaccheda: ${s._padaccheda_dev}`);
+      if ((s._anuvritti_from || []).length) lines.push(`  anuvṛtti ← ${(s._anuvritti_from || []).join(", ")}`);
+      const g = gloss(s); if (g) lines.push(`  ${pedGloss(s) ? "[PED gloss] " : ""}${g}`);
+      if (s.why_now_dev && s.why_now_dev !== g) lines.push(`  why_now: ${s.why_now_dev}`);
+      if (s.why_dev && s.why_dev !== g && s.why_dev !== s.why_now_dev) lines.push(`  why: ${s.why_dev}`);
+      if (s.gate_reason) lines.push(`  gate: ${s.gate_reason}`);
+      if (s.skip_reason) lines.push(`  skip: ${s.skip_reason}`);
+      if (s.parts) lines.push(`  parts: ${typeof s.parts === "string" ? s.parts : JSON.stringify(s.parts)}`);
+      if (s.sutra_id === "3.4.78" && /^APPLIED/.test(s.status)) {
+        const chosen = s._tin_chosen || chosenTin(s);
+        lines.push(`  [PED] 3.4.78 tiṅ menu (a student's table; the sūtra only substitutes the chosen ādeśa) — chosen: ${chosen || "—"}`);
+        ["parasmai", "atmane"].forEach(pd => {
+          lines.push(`  [${TIN78.pada[pd][0]}]`);
+          [3, 2, 1].forEach((pui, ri) => {
+            const row = [1, 2, 3].map((vci, ci) => {
+              const [sl, dv] = TIN78[pd][ri * 3 + ci];
+              const hit = sl === chosen ? " ★" : "";
+              return `${dv}(${sl})${hit}`;
+            }).join(" | ");
+            lines.push(`    ${TIN78.pu[pui][0]}: ${row}`);
+          });
+        });
+      }
+    });
+    lines.push("");
+    lines.push(`Engine totals: ${t.length} rule checks; ${t.filter(applied).length} applied.` +
+      (pref.depth !== "shastriya" ? " (Switch depth to Śāstrīya for SKIPPED/BLOCKED/AUDIT rows.)" : ""));
+    return lines.join("\n");
+  }
+
+  function llmPrakriyaPrompt(d, t, ctx, panelTextFn) {
+    const body = plainPrakriya(d, t, ctx, panelTextFn);
+    return `Act as a Pāṇini Aṣṭādhyāyī expert and a strict, fair auditor of a computational prakriyā engine (Panini Engine v3).
+
+HOW TO READ THE DUMP (so you do not mistake the page for the engine):
+- ENGINE OUTPUT = the numbered steps "#n <sūtra id> [status]". These come from the engine's own trace; "#n" is the stable index into the FULL trace (all depths use the same numbers).
+- Lines tagged [PED] are TEACHING AIDS added by the web page for students (letter chips, colours, saṃjñā targets, the 3.4.78 tiṅ menu, the इत्संज्ञा-कोश summary table, English/Hindi glosses, grouped it-rows). They are NOT engine output and NOT Pāṇini's sequence. Never report a [PED] item as an engine defect, and do not treat it as evidence of what the engine did.
+- [STRUCTURAL] = engine bookkeeping (for example merging the parts into one pada before the Tripādī), explicitly not a sūtra.
+- Depth matters. Beginner/Kaumudī views hide checked, skipped, blocked and audit rows and group the it-saṃjñā steps 1.3.2–1.3.9 into one row; absence of such a row in those views is NOT a missing step. Judge omissions only against Śāstrīya depth, or say that the depth cannot show it.
+- The sūtra texts, padacchedas and anuvṛtti shown come from the engine's registry; check them against the Kāśikā/Aṣṭādhyāyī and report errors.
+
+Engine principles you may audit against (summary of AGENTS.md / CONSTITUTION.md; the numbering below is only for this prompt):
+1. Glass box: every change is made by a sūtra through apply_rule; a step the engine performs without a sūtra is a recorded gap, not code.
+2. cond() reads the linguistic state only (never the target form, a lookup table of vivakṣā, or reference data); a table that picks the tiṅ from (lakāra, puruṣa, vacana) is a known, ledgered shortcut.
+3. One sūtra = one operation; the Aṣṭādhyāyī's own order (para, apavāda, tripādī asiddhatva) decides conflicts, not the Kaumudī sequence.
+4. it-saṃjñā (1.3.2–1.3.8) and tasya lopaḥ (1.3.9) should be shown for every upadeśa, āgama and ādeśa that carries it-letters; an augment shown without them is a gap.
+5. Vidyut or other external engines are only a minimum-rule floor for comparison, never an authority; the Aṣṭādhyāyī and its Kāśikā decide.
+
+Task:
+- Critically analyse the dump below against the Aṣṭādhyāyī (with the Kāśikā and standard udāharaṇa) and the principles above.
+- Say what is correctly followed.
+- List weaknesses, gaps, wrong order, missing it-kārya, or non-Pāṇinian shortcuts: numbered, concrete, with sūtra ids and step numbers (#n). For each, say whether it is an engine defect, or only a display/depth artefact, or a [PED] page issue.
+- Quote the sūtra text when you claim a rule was misapplied; do not rely on memory of numbering alone.
+- End with a short severity summary (blocker / major / minor).
+
+Do not rewrite the engine; audit only.
+
+===== PRAKRIYĀ DUMP =====
+${body}
+===== END =====
+`;
+  }
+
+  return {mount, pref, fmt, rowsFor, inspect, plainPrakriya, llmPrakriyaPrompt};
 })();
