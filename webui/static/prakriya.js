@@ -117,12 +117,35 @@ const Prakriya = (() => {
     return `<div class="pk-itrec"><span class="pk-sj">उपदेशः <b>${esc(r.upadesha)}</b></span>${r.items.map(x =>
       `<span class="pk-itx"><span class="pk-v pk-del">${esc(x.letter)}</span> ${x.name ? `→ <b>${esc(x.name)}</b>` : ""} ${x.sutra ? `<small>(${esc(x.sutra)})</small>` : ""}</span>`).join("")}</div>`;
   }
+  /* Every upadeśa unit of the derivation, from the trace's own `parts` (current form · role · upadeśa), with what the trace shows of its it-kārya:
+       ledger  — a 1.3.9 step took it-letters off it;   grown — its form got longer at a step with no 1.3.x row for it (an augment / ādeśa put in without it-steps: ledger S174 …);
+       none    — no 1.3.9 step for it in this trace.  Built by comparing strings the engine already recorded; no grammar is computed here. */
+  function itUnits(t) {
+    const units = new Map(), order = [];
+    t.forEach((s, i) => { const ps = parseParts(s.parts); if (!ps) return;
+      ps.forEach(p => { const [f, role, u] = p; if (!u || ["pada", "other"].includes(roleOf(role)) || role === "abhyasa") return;
+        const k = role + "|" + u; let x = units.get(k);
+        if (!x) { x = {u, role, first: i, forms: [f], grown: []}; units.set(k, x); order.push(x); }
+        const prev = x.forms[x.forms.length - 1];
+        if (f !== prev) { if (f.length > prev.length && (f.endsWith(prev) || f.startsWith(prev) || f.includes(prev))) x.grown.push({i, sid: s.sutra_id, from: prev, to: f}); x.forms.push(f); } }); });
+    return order;
+  }
   function itLedger(t) {
     const rows = t.map((s, i) => ({s, i})).filter(({s}) => s.sutra_id === "1.3.9" && changes(s)).map(({s, i}) => ({i, r: itParse(s)})).filter(x => x.r);
-    if (!rows.length) return "";
-    return `<details class="pk-ledger"${pref.depth === "beginner" ? "" : " open"}><summary>${PED(pref.gloss === "en", "Summary table built by this page from the 1.3.2–1.3.9 steps; the links are step numbers of the full trace")} इत्संज्ञा-कोशः — ${rows.length} ${pref.gloss === "en" ? "upadeśas with it-letters in this derivation" : "उपदेशाः"}</summary>
-      <table class="pk-ledger-t"><tr><th>उपदेशः</th><th>इत्-वर्णाः → संज्ञा (सूत्रम्)</th><th>लोपः</th></tr>${rows.map(({i, r}) =>
-        `<tr><td class="dev"><b>${esc(r.upadesha)}</b></td><td>${r.items.map(x => `${esc(x.letter)} → <b>${esc(x.name)}</b> <small>${esc(x.sutra)}</small>`).join(" · ")}</td><td><a href="#s-${i + 1}">${i + 1}</a></td></tr>`).join("")}</table></details>`;
+    const units = itUnits(t), en = pref.gloss === "en";
+    const nz = x => String(x || "").replace(/[~M\s]/g, "");
+    const slpOf = dev => { try { return Transliterate.toSLP1(dev, "devanagari"); } catch (e) { return dev; } };
+    const same = (up, x) => devOf(x.u) === up || nz(slpOf(up)) === nz(x.u) || nz(slpOf(up)).startsWith(nz(x.u)) || nz(x.u).startsWith(nz(slpOf(up)));      // the ledger prints the upadeśa as the 1.3.9 step wrote it; the unit is the trace's own spelling
+    const kindOf = up => { const u = units.find(x => same(up, x)); return u ? ROLE[roleOf(u.role)][en ? 1 : 0] : "—"; };
+    const rest = units.filter(x => !rows.some(({r}) => same(r.upadesha, x)));
+    if (!rows.length && !rest.length) return "";
+    const grown = rest.filter(x => x.grown.length), plain = rest.filter(x => !x.grown.length);
+    const note = (en ? "from the trace's parts: each upadeśa unit, whether a 1.3.9 step took it-letters off it, and any growth of its form with no it-steps" : "ट्रेस के भागों से: प्रत्येक उपदेश-इकाई, १.३.९ से इत्-लोप हुआ या नहीं, और इत्-चरणों के बिना रूप-वृद्धि");
+    return `<details class="pk-ledger"${pref.depth === "beginner" ? "" : " open"}><summary>${PED(en, note)} इत्संज्ञा-कोशः — ${rows.length} ${en ? "upadeśas with it-steps" : "उपदेशाः (इत्-चरणैः)"}${grown.length ? ` · <span class="pk-warn">⚠ ${grown.length} ${en ? "augment/ādeśa without it-steps" : "आगम/आदेश इत्-चरणों के बिना"}</span>` : ""}${plain.length ? ` · ${plain.length} ${en ? "with no it-step shown" : "इत्-चरण-रहिताः"}` : ""}</summary>
+      <table class="pk-ledger-t"><tr><th>उपदेशः</th><th>${en ? "kind" : "प्रकारः"}</th><th>इत्-वर्णाः → संज्ञा (सूत्रम्)</th><th>लोपः</th></tr>${rows.map(({i, r}) =>
+        `<tr><td class="dev"><b>${esc(r.upadesha)}</b></td><td>${esc(kindOf(r.upadesha))}</td><td>${r.items.map(x => `${esc(x.letter)} → <b>${esc(x.name)}</b> <small>${esc(x.sutra)}</small>`).join(" · ")}</td><td><a href="#s-${i + 1}">${i + 1}</a></td></tr>`).join("")}
+      ${grown.map(x => `<tr class="pk-it-gap"><td class="dev"><b>${esc(devOf(x.u))}</b></td><td>${esc(ROLE[roleOf(x.role)][en ? 1 : 0])}</td><td>⚠ ${esc(x.grown.map(g => `${g.from} → ${g.to}`).join("; "))} — ${en ? "the engine put this in without running 1.3.2–1.3.9 on it (shortcut ledger S174)" : "इञ्जन ने इस पर १.३.२–१.३.९ चलाए बिना इसे जोड़ा (शॉर्टकट-बही S174)"}</td><td>${x.grown.map(g => `<a href="#s-${g.i + 1}">${g.i + 1}</a> <small>${esc(g.sid)}</small>`).join(" ")}</td></tr>`).join("")}
+      ${plain.map(x => `<tr class="pk-it-none"><td class="dev">${esc(devOf(x.u))}</td><td>${esc(ROLE[roleOf(x.role)][en ? 1 : 0])}</td><td class="muted">${en ? "no 1.3.9 step for it in this trace" : "इस ट्रेस में इसके लिए १.३.९ चरण नहीं"}</td><td></td></tr>`).join("")}</table></details>`;
   }
 
   /* a saṃjñā step: which part the name falls on */
@@ -230,6 +253,30 @@ const Prakriya = (() => {
         : "लोठ् ३.४.८५–९३ आदि लकार-विशेष आदेशाः पश्चात् भिन्दन्ति; अत्र ३.४.७८-सूची एव।"}</div></div>`;
   }
 
+  /* the kind of sūtra, in colour and plain words — every row carries it so a new student sees at once what sort of rule fired */
+  const TYPE_PLAIN = {VIDHI: ["विधिः", "Does something", "the rule makes a change or adds a part"], SAMJNA: ["संज्ञा", "Gives a name", "the rule defines a technical name"],
+    PARIBHASHA: ["परिभाषा", "Reading rule", "a rule about how other rules are read"], ADHIKARA: ["अधिकारः", "Heading", "a heading that governs the rules after it"],
+    NIYAMA: ["नियमः", "Restricts", "limits where another rule may act"], PRATISHEDHA: ["प्रतिषेधः", "Forbids", "stops another rule from acting"],
+    ATIDESHA: ["अतिदेशः", "Treats as", "says: treat this as if it were that"], VIBHASHA: ["विभाषा", "Optional", "the rule may or may not apply"],
+    ANUVADA: ["अनुवादः", "Restates", "repeats something already taught"], NIPATANA: ["निपातनम्", "Irregular", "fixes an irregular form by statement"]};
+  const typeChip = s => { const t = TYPE_PLAIN[s.sutra_type]; if (!t) return ""; return `<span class="pk-type pk-ty-${esc(s.sutra_type)}" title="${esc(t[2])}">${esc(pref.gloss === "en" ? t[1] : t[0])}</span>`; };
+  /* the sūtra itself, opened with one click on every row (Śāstrīya depth shows it open) */
+  const sutraCard = (s, deepOpen) => {
+    if (!s._sutra_text_dev && !s._padaccheda_dev && !(s._anuvritti_from || []).length) return "";
+    const t = TYPE_PLAIN[s.sutra_type];
+    return `<details class="pk-sutra"${deepOpen ? " open" : ""}><summary>📖 ${pref.gloss === "en" ? "The sūtra" : "सूत्रम्"}</summary><div class="pk-sutra-b">
+      ${s._sutra_text_dev ? `<div class="pk-sutra-t dev">${esc(s._sutra_text_dev)}</div>` : ""}
+      ${s._padaccheda_dev ? `<div class="pk-sutra-p dev"><b>${pref.gloss === "en" ? "split into words" : "पदच्छेदः"}:</b> ${esc(s._padaccheda_dev)}</div>` : ""}
+      ${(s._anuvritti_from || []).length ? `<div class="pk-sutra-a"><b>${pref.gloss === "en" ? "carried in from" : "अनुवृत्तिः"}:</b> ${s._anuvritti_from.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(", ")}</div>` : ""}
+      ${t ? `<div class="pk-sutra-k"><b>${esc(t[0])}</b> — ${esc(t[2])}</div>` : ""}</div></details>`;
+  };
+
+  /* ✎ a question / doubt / note on this step: it is saved under the sūtra (webui/notes.py) and shows on /sutra/<id>, with the derivation and step it came from */
+  let NOTE_N = null;
+  const noteCounts = () => { if (!NOTE_N) { NOTE_N = {}; fetch("/api/notes-counts").then(r => r.json()).then(o => { NOTE_N = o; document.querySelectorAll(".pk-ask").forEach(b => { b.innerHTML = askLabel(b.dataset.sid); }); }).catch(() => {}); } return NOTE_N; };
+  const askLabel = sid => { const c = (noteCounts()[sid] || {}).n; return `✎${c ? `<small>${c}</small>` : ""}`; };
+  const askBtn = (sid, i) => `<button type="button" class="pk-ask no-print" data-sid="${esc(sid)}" data-i="${i}" title="${pref.gloss === "en" ? "Ask a question or add a note on this sūtra (saved under it)" : "इस सूत्र पर प्रश्न / टिप्पणी जोड़ें (सूत्र-पृष्ठ पर सुरक्षित)"}">${askLabel(sid)}</button>`;
+
   function row({s, i, group}, ctx) {
     const st = STATUS[s.status] || [s.status, s.status], id = "s-" + (i + 1), deep = pref.depth === "shastriya";
     const star = lk().has(s.sutra_id) && pref.depth !== "beginner" ? `<span class="pk-lk" title="Laghukaumudī sūtra">★</span>` : "";
@@ -239,7 +286,7 @@ const Prakriya = (() => {
       const li = lopa ? ctx.t.indexOf(lopa) : -1;
       const named = [...new Set(group.filter(x => x.sutra_id !== "1.3.9").map(x => x.sutra_id))];
       return `<li class="pk-step pk-applied pk-itgrp" id="${id}">${li >= 0 && li + 1 !== i + 1 ? `<span id="s-${li + 1}"></span>` : ""}<a class="pk-no" href="#${id}">${i + 1}</a><div class="pk-main">
-      <div><b class="dev">इत्संज्ञा-लोपः</b> <span class="pk-tag">${named.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(" · ") || "1.3.2–1.3.8"} → <a href="/sutra/1.3.9">1.3.9</a></span>
+      <div><b class="dev">इत्संज्ञा-लोपः</b> <span class="pk-tag">${named.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(" · ") || "1.3.2–1.3.8"} → <a href="/sutra/1.3.9">1.3.9</a></span>${askBtn("1.3.9", li >= 0 ? li : i)}
         ${lopa ? `<span class="pk-form pk-fx dev" data-i="${li}" title="क्लिक् — संहितम् ↔ वर्णविभागः">${formHtml(lopa, ctx.pb[li], ctx.pa[li] || ctx.pb[li], pref.split !== ctx.open.has(li))}</span>` : ""}</div>
       ${lopa ? itChips(lopa) : ""}
       <div class="pk-gloss">${PED(pref.gloss === "en", "Grouped display: Śāstrīya depth lists each of 1.3.2–1.3.9 as its own step")} ${esc(pref.gloss === "en" ? "it-letters of the upadeśa are named (1.3.2–1.3.8) and removed (1.3.9); the record (kit, ṅit, pit …) stays for later rules" : "उपदेशे इत्-वर्णानां संज्ञा (१.३.२–१.३.८), तस्य लोपः (१.३.९); इत्-अभिलेखः (कित्, ङित्, पित् …) परसूत्रेभ्यः स्थिरः")}</div></div></li>`;
@@ -251,15 +298,15 @@ const Prakriya = (() => {
         ${(s._anuvritti_from || []).length ? `<div class="muted">अनुवृत्तिः ← ${s._anuvritti_from.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(", ")}</div>` : ""}
         ${why ? `<div class="pk-why">${esc(why)}</div>` : ""}
         ${(s._lsk || []).length ? `<div class="muted">LSK pp. ${esc([...new Set(s._lsk.map(x => x.page))].slice(0, 6).join(", "))}${s._lsk.length > 6 ? "…" : ""}</div>` : ""}</div>` : "";
-    return `<li class="pk-step pk-${(s.status || "").toLowerCase()}" id="${id}">
+    return `<li class="pk-step pk-${(s.status || "").toLowerCase()} pk-t-${esc(s.sutra_type || "X")}" id="${id}">
       <a class="pk-no" href="#${id}" title="permalink to this step">${i + 1}</a>
-      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}
+      <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}${askBtn(s.sutra_id, i)} ${typeChip(s)}
         <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span>
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev" data-i="${i}" title="क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
         ${tinGridHtml(s, ctx.viv)}
-        <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${sch}</div></li>`;
+        <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${deep ? "" : sutraCard(s, false)}${sch}</div></li>`;
   }
 
   /* "Why didn't rule X apply?" — what the trace says about one sūtra. */
@@ -292,7 +339,7 @@ const Prakriya = (() => {
       <label>लिपिः ${sel("pk-script", [["dev", "देवनागरी"], ["varna", "देवनागरी — वर्ण-विभागः"], ["slp1", "SLP1"], ["iast", "IAST"]], pref.script)}</label>
       <label>व्याख्या ${sel("pk-gloss", [["hi", "हिन्दी"], ["en", "English"], ["sa", "संस्कृतम्"]], pref.gloss)}</label>
       <label>वर्णाः ${sel("pk-split", [["0", "संहितम् · merged (राम)"], ["1", "विभक्तम् · split (र् आ म् अ)"]], pref.split ? "1" : "0")}</label>
-      <button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
+      <button type="button" id="pk-full" class="pk-btn-full" title="Full page — use the whole screen (Esc to close)">⛶ Full page</button><button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
       <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
       <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
@@ -317,7 +364,7 @@ const Prakriya = (() => {
     const paint = () => {
       const rows = rowsFor(t);
       q(".pk-list").innerHTML = rows.map(r => row(r, ctx)).join("") || "<li class='muted'>—</li>";
-      q(".pk-legend").innerHTML = legend();
+      q(".pk-legend").innerHTML = legend() + `<div class="pk-tkey"><b>${pref.gloss === "en" ? "Rule colours" : "सूत्र-रङ्गाः"}:</b> ${Object.entries(TYPE_PLAIN).map(([k, v]) => `<span class="pk-type pk-ty-${k}" title="${esc(v[2])}">${esc(pref.gloss === "en" ? v[1] : v[0])}</span>`).join(" ")}</div>`;
       q(".pk-auth").innerHTML = authNote();
       q(".pk-ledger-box").innerHTML = itLedger(t);
       q(".pk-count").textContent = pref.depth === "beginner" ? `${rows.length} milestones (of ${t.length} rule checks). Choose Kaumudī or Śāstrīya for more.`
@@ -330,6 +377,31 @@ const Prakriya = (() => {
     [["pk-depth", "depth"], ["pk-script", "script"], ["pk-gloss", "gloss"]].forEach(([id, k]) =>
       q("#" + id).addEventListener("change", e => { pref[k] = e.target.value; save(); window.dispatchEvent(new Event("prakriya-change")); }));
     q("#pk-split").addEventListener("change", e => { pref.split = e.target.value === "1"; ctx.open.clear(); save(); window.dispatchEvent(new Event("prakriya-change")); });
+    q(".pk-list").addEventListener("click", async e => {            // ✎ ask / note on this step
+      const b = e.target.closest(".pk-ask"); if (!b) return;
+      const host = b.closest("li"); let f = host.querySelector(".pk-askform");
+      if (f) { f.remove(); return; }
+      const sid = b.dataset.sid, i = +b.dataset.i, s = t[i] || {};
+      f = document.createElement("form"); f.className = "pk-askform no-print";
+      f.innerHTML = `<div class="pk-ask-h"><b>✎ ${esc(sid)}</b> <span class="muted">· step ${i + 1} · ${esc(String(s.form_before || ""))} → ${esc(String(s.form_after || ""))}</span></div>
+        <select name="kind"><option value="question">प्रश्न · question</option><option value="doubt">संशय · doubt</option><option value="note">टिप्पणी · note</option><option value="solution">समाधान · proposed solution</option></select>
+        <textarea name="text" rows="3" required placeholder="${pref.gloss === "en" ? "Your question, doubt or note on this sūtra in this derivation…" : "इस प्रक्रिया में इस सूत्र पर आपका प्रश्न / संशय / टिप्पणी…"}"></textarea>
+        <button type="submit">Save under ${esc(sid)}</button> <button type="button" data-x="1">Cancel</button> <span class="pk-ask-msg muted"></span>`;
+      host.querySelector(".pk-main").appendChild(f);
+      f.querySelector("textarea").focus();
+      f.addEventListener("click", ev => { if (ev.target.dataset.x) f.remove(); });
+      f.addEventListener("submit", async ev => {
+        ev.preventDefault(); const m = f.querySelector(".pk-ask-msg");
+        const where = `${d.title || ""} · step #${i + 1} (${s.form_before || ""} → ${s.form_after || ""}) · ${location.pathname}${location.search}#s-${i + 1}`;
+        try {
+          const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where})});
+          if (!r.ok) throw new Error(await r.text());
+          NOTE_N = null; noteCounts();
+          f.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;
+        } catch (err) { m.textContent = "Save failed: " + String(err.message).slice(0, 120); }
+      });
+    });
     q(".pk-list").addEventListener("click", e => {                 // one form: merged ↔ split
       const f = e.target.closest(".pk-fx"); if (!f) return;
       const i = +f.dataset.i; ctx.open.has(i) ? ctx.open.delete(i) : ctx.open.add(i);
@@ -343,6 +415,9 @@ const Prakriya = (() => {
         return `<a href="/sutra/${esc(o)}">${esc(o)}</a>${i >= 0 ? ` (<a href="#s-${i + 1}">step ${i + 1}</a>)` : ""}`; }).join(", ")}` : `${esc(fmt(l.slp1, ""))} — part of the given upadeśa, not created by a rule.`;
     });
     q(".pk-sid-in").addEventListener("input", e => { q(".pk-inspect-out").innerHTML = inspect(t, e.target.value); });
+    const fullToggle = on => { el.classList.toggle("pk-full", on); document.body.classList.toggle("pk-noscroll", on); q("#pk-full").textContent = on ? "✕ Close full page" : "⛶ Full page"; };
+    q("#pk-full").onclick = () => fullToggle(!el.classList.contains("pk-full"));
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && el.classList.contains("pk-full")) fullToggle(false); });
     q("#pk-print").onclick = () => window.print();
     q("#pk-json").onclick = () => {
       const a = document.createElement("a");
@@ -403,6 +478,12 @@ const Prakriya = (() => {
       lines.push("[PED] इत्संज्ञा-कोशः (summary table built by the page from the 1.3.2–1.3.9 steps; links = step numbers of the full trace)");
       lines.push("उपदेशः | इत्-वर्णाः → संज्ञा (सूत्रम्) | लोप-पदम्");
       led.forEach(({i, r}) => lines.push(`  ${r.upadesha} | ${r.items.map(x => `${x.letter} → ${x.name} ${x.sutra}`).join(" · ")} | #${i + 1}`));
+      lines.push("");
+    }
+    const _u = itUnits(t).filter(x => !led.some(({r}) => devOf(x.u) === r.upadesha));
+    if (_u.length) {
+      lines.push("[PED] upadeśa units with no 1.3.9 step in this trace (from the trace's parts; ⚠ = form grew with no it-steps: an augment / ādeśa the engine put in without 1.3.2–1.3.9, ledger S174)");
+      _u.forEach(x => lines.push(`  ${x.grown.length ? "⚠ " : ""}${devOf(x.u)} (${x.role})${x.grown.length ? " " + x.grown.map(g => `${g.from} → ${g.to} @#${g.i + 1} ${g.sid}`).join("; ") : ""}`));
       lines.push("");
     }
     if (d.letters && d.letters.length) {

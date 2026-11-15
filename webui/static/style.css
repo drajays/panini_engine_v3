@@ -1454,3 +1454,37 @@ table.matrix td.cell-fixed::after {
 .sn-edit label{display:block;margin:.3rem 0}
 .sn-act button,.sn-edit button[data-act=cancel]{background:var(--bg-subtle,#f4f4f4);color:var(--ink,#222);border:1px solid var(--line-soft,#ccc);border-radius:4px}
 .sn-act button.sn-del{color:#a02020;min-width:1.8rem}
+/* ✎ ask / note on a derivation step (prakriya.js) */
+.pk-ask{font-size:12px;margin-left:.4rem;padding:0 .4em;border:1px dotted var(--line,#bbb);border-radius:999px;background:transparent;color:var(--ink-dim,#666);cursor:pointer}
+.pk-ask:hover{background:var(--bg-subtle,#f4f4f4);color:var(--accent,#6b3a2a)}.pk-ask small{margin-left:.15em;font-size:10px}
+.pk-askform{margin:.4rem 0;padding:.5rem .6rem;border:1px solid #7a5aa6;border-radius:6px;background:#faf7fd}
+.pk-askform textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px;margin:.3rem 0}.pk-ask-h{font-size:12px;margin-bottom:.2rem}
+.pk-askform button{font-size:12px;padding:.1rem .6rem;cursor:pointer}
+.sn-kind{font-size:11px;padding:0 .5em;border-radius:4px;background:#efeaf7;color:#4a2f78}.sn-k-question,.sn-k-doubt{background:#fdebd8;color:#7a4a00}.sn-k-solution{background:#e3f4e6;color:#1b5e2e}
+.pk-warn{color:#a05a00;font-weight:600}.pk-it-gap td{background:#fff6e5}.pk-it-none td{color:var(--ink-dim,#666)}
+/* ── colourful, student-first prakriyā panel ─────────────────────────────────────────────────────────────── */
+.pk-type{display:inline-block;font-size:11px;font-weight:600;padding:.05rem .55rem;border-radius:999px;border:1px solid transparent;margin-left:.3rem;font-family:var(--sans,inherit)}
+.pk-ty-VIDHI{background:#dbeafe;color:#1e40af;border-color:#93c5fd}.pk-ty-SAMJNA{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd}
+.pk-ty-PARIBHASHA{background:#ccfbf1;color:#0f766e;border-color:#5eead4}.pk-ty-ADHIKARA{background:#e5e7eb;color:#374151;border-color:#9ca3af}
+.pk-ty-NIYAMA{background:#ffedd5;color:#9a3412;border-color:#fdba74}.pk-ty-PRATISHEDHA{background:#fee2e2;color:#991b1b;border-color:#fca5a5}
+.pk-ty-ATIDESHA{background:#dcfce7;color:#166534;border-color:#86efac}.pk-ty-VIBHASHA{background:#fce7f3;color:#9d174d;border-color:#f9a8d4}
+.pk-ty-ANUVADA{background:#f3f4f6;color:#4b5563;border-color:#d1d5db}.pk-ty-NIPATANA{background:#fef9c3;color:#854d0e;border-color:#fde047}
+.pk-step{border-left:6px solid #cbd5e1;border-radius:6px;margin:.35rem 0;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.06)}
+.pk-t-VIDHI{border-left-color:#3b82f6;background:linear-gradient(90deg,#eff6ff,#fff 40%)}.pk-t-SAMJNA{border-left-color:#8b5cf6;background:linear-gradient(90deg,#f5f3ff,#fff 40%)}
+.pk-t-PARIBHASHA{border-left-color:#14b8a6;background:linear-gradient(90deg,#f0fdfa,#fff 40%)}.pk-t-ADHIKARA{border-left-color:#9ca3af;background:linear-gradient(90deg,#f3f4f6,#fff 40%)}
+.pk-t-NIYAMA{border-left-color:#f97316;background:linear-gradient(90deg,#fff7ed,#fff 40%)}.pk-t-PRATISHEDHA{border-left-color:#ef4444;background:linear-gradient(90deg,#fef2f2,#fff 40%)}
+.pk-t-ATIDESHA{border-left-color:#22c55e;background:linear-gradient(90deg,#f0fdf4,#fff 40%)}.pk-t-VIBHASHA{border-left-color:#ec4899;background:linear-gradient(90deg,#fdf2f8,#fff 40%)}
+.pk-t-NIPATANA{border-left-color:#eab308;background:linear-gradient(90deg,#fefce8,#fff 40%)}
+.pk-no{font-weight:700;color:#475569;min-width:2.2rem}.pk-sid{font-size:1.05rem;font-weight:700}
+.pk-form{font-size:1.25rem}.pk-gloss{font-size:13.5px;line-height:1.6;margin:.3rem 0}
+.pk-applied .pk-tag{background:#dcfce7}.pk-blocked .pk-tag{background:#fee2e2}.pk-skipped .pk-tag,.pk-audit .pk-tag,.pk-vacuous .pk-tag{background:#f1f5f9}
+.pk-tkey{flex-basis:100%;margin-top:.3rem;font-size:12px}
+.pk-sutra{margin:.3rem 0;font-size:13px}.pk-sutra summary{cursor:pointer;color:#1e40af;font-weight:600}
+.pk-sutra-b{margin:.3rem 0 0 .2rem;padding:.5rem .7rem;border-radius:8px;background:#f8fafc;border:1px solid #e2e8f0}
+.pk-sutra-t{font-size:1.35rem;line-height:1.5;color:#7c2d12}.pk-sutra-p,.pk-sutra-a,.pk-sutra-k{margin-top:.25rem;color:#334155}
+.pk-btn-full{background:#1d4ed8;color:#fff;border:1px solid #1e3a8a}
+/* full page: the whole screen, wide step cards */
+.pk-full{position:fixed;inset:0;z-index:9999;overflow:auto;background:var(--bg,#fff);padding:1rem clamp(1rem,4vw,3rem) 3rem;box-sizing:border-box}
+.pk-full .pk-list{max-width:none}.pk-full .pk-step{padding:.7rem .9rem}.pk-full .pk-form{font-size:1.5rem}.pk-full .pk-sid{font-size:1.2rem}
+body.pk-noscroll{overflow:hidden}
+@media print{.pk-full{position:static}.pk-step{box-shadow:none}}

@@ -9,6 +9,8 @@ const SutraNotes = (() => {
     if (!r.ok) throw new Error((await r.text()).replace(/<[^>]+>/g, " ").trim().slice(0, 200) || r.statusText);
     return r.json();
   };
+  const KD = {question: "प्रश्न · question", doubt: "संशय · doubt", note: "टिप्पणी · note", solution: "समाधान · solution"};
+  const kdOpts = v => Object.entries(KD).map(([k, l]) => `<option value="${k}"${k === (v || "note") ? " selected" : ""}>${esc(l)}</option>`).join("");
   const stOpts = v => Object.entries(ST).map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${esc(l[0])}</option>`).join("");
 
   function mount(el, sid) {
@@ -16,7 +18,7 @@ const SutraNotes = (() => {
     const base = "/api/notes/" + encodeURIComponent(sid);
 
     const noteView = n => `<article class="sn-note sn-${esc(n.status)}" id="note-${esc(n.id)}">
-      <header><span class="sn-badge sn-b-${esc(n.status)}" title="${esc(ST[n.status] ? ST[n.status][1] : "")}">${esc((ST[n.status] || [n.status])[0])}</span>
+      <header><span class="sn-kind sn-k-${esc(n.kind || "note")}">${esc(KD[n.kind || "note"])}</span> <span class="sn-badge sn-b-${esc(n.status)}" title="${esc(ST[n.status] ? ST[n.status][1] : "")}">${esc((ST[n.status] || [n.status])[0])}</span>
         <span class="muted">${esc(n.author || "—")}${n.derivation ? ` · <span class="dev">${esc(n.derivation)}</span>` : ""} · ${esc((n.updated || "").slice(0, 16).replace("T", " "))}${n.history.length ? ` · ${n.history.length} edit${n.history.length > 1 ? "s" : ""}` : ""}</span>
         <span class="sn-act no-print"><select data-act="status" data-id="${esc(n.id)}" title="status">${stOpts(n.status)}</select>
           <button type="button" data-act="edit" data-id="${esc(n.id)}">✎ Edit</button>
@@ -33,6 +35,7 @@ const SutraNotes = (() => {
       <textarea name="text" rows="9" required>${esc(n.text)}</textarea>
       <div class="sn-row"><label>Author / source <input name="author" value="${esc(n.author)}" placeholder="me · LLM name"></label>
         <label>Derivation <input name="derivation" value="${esc(n.derivation)}" placeholder="e.g. rāmāṇām"></label>
+        <label>Kind <select name="kind">${kdOpts(n.kind)}</select></label>
         <label>Status <select name="status">${stOpts(n.status)}</select></label></div>
       <label>Verdict (one line, after checking) <input name="verdict" value="${esc(n.verdict)}" style="width:100%"></label>
       <label>Evidence (trace step numbers, Kāśikā quote, ledger row, commit) <textarea name="evidence" rows="3">${esc(n.evidence)}</textarea></label>
@@ -46,7 +49,8 @@ const SutraNotes = (() => {
         <div class="sn-list">${notes.length ? notes.map(n => editing === n.id ? editView(n) : noteView(n)).join("") : `<p class="muted">No notes yet for ${esc(sid)}.</p>`}</div>
         <form class="sn-add no-print"><h3>+ Add a note</h3><textarea name="text" rows="7" required placeholder="Paste the audit text here…"></textarea>
           <div class="sn-row"><label>Author / source <input name="author" placeholder="me · LLM name"></label>
-            <label>Derivation <input name="derivation" placeholder="e.g. rāmāṇām"></label><button type="submit">Add note</button></div></form>`;
+            <label>Derivation <input name="derivation" placeholder="e.g. rāmāṇām"></label>
+            <label>Kind <select name="kind">${kdOpts("note")}</select></label><button type="submit">Add note</button></div></form>`;
     };
     const reload = async () => { try { notes = (await api("GET", base)).notes; err = ""; } catch (e) { err = String(e.message); } draw(); };
     const run = async f => { try { err = ""; await f(); } catch (e) { err = String(e.message); } await reload(); };

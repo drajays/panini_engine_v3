@@ -28,7 +28,8 @@ bp = Blueprint("notes", __name__)
 
 DIR = Path(__file__).resolve().parent.parent / "data" / "reviews" / "notes"
 STATUSES = ("open", "partly", "confirmed", "refuted", "ledgered")
-EDITABLE = ("text", "author", "derivation", "status", "verdict", "evidence")
+EDITABLE = ("text", "author", "derivation", "status", "verdict", "evidence", "kind")
+KINDS = ("note", "question", "doubt", "solution")        # what the writer meant: a question / doubt to answer, a plain note, or a proposed solution to check on merit
 MAX_TEXT = 200_000
 MAX_FIELD = 4_000
 MAX_HISTORY = 20
@@ -78,6 +79,8 @@ def _clean(data: dict, *, partial: bool) -> dict:
         out[k] = v
     if "status" in out and out["status"] not in STATUSES:
         abort(400, f"status must be one of {STATUSES}")
+    if "kind" in out and out["kind"] not in KINDS:
+        abort(400, f"kind must be one of {KINDS}")
     if "text" in out and not out["text"]:
         abort(400, "text is empty")
     if not partial and not out.get("text"):
@@ -104,7 +107,7 @@ def add_note(sid):
         doc = _load(sid)
         note = {"id": uuid.uuid4().hex[:10], "created": _now(), "updated": _now(), "text": data["text"],
                 "author": data.get("author", ""), "derivation": data.get("derivation", ""),
-                "status": data.get("status", "open"), "verdict": data.get("verdict", ""), "evidence": data.get("evidence", ""),
+                "kind": data.get("kind", "note"), "status": data.get("status", "open"), "verdict": data.get("verdict", ""), "evidence": data.get("evidence", ""),
                 "history": []}
         doc["notes"].append(note)
         _save(sid, doc)

@@ -35,3 +35,11 @@ def test_notes_refuse_bad_input(c):
 def test_sutra_page_has_notes_section(c):
     h = c.get("/sutra/7.4.61").get_data(as_text=True)
     assert 'id="sutra-notes"' in h and "notes.js" in h
+
+
+def test_note_kind(c):
+    n = c.post("/api/notes/4.1.2", json={"text": "why su?", "kind": "question", "derivation": "rAma 1-1 · step 37"}).get_json()
+    assert n["kind"] == "question"
+    assert c.post("/api/notes/4.1.2", json={"text": "x"}).get_json()["kind"] == "note"
+    assert c.put(f"/api/notes/4.1.2/{n['id']}", json={"kind": "solution"}).get_json()["kind"] == "solution"
+    assert c.put(f"/api/notes/4.1.2/{n['id']}", json={"kind": "nonsense"}).status_code == 400
