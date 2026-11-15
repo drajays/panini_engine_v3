@@ -914,6 +914,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int, *, attac
         if lit_adesha not in ("Ral", "Tal"):
             state = apply_rule("1.2.5", state)
         state = _lit_samprasarana(state)      # 6.1.15: उच् / ईज् before a kit ending (ऊचतुः, ईजतुः, ऊहुः)
+        state = apply_rule("1.4.13", state)   # aṅga saṃjñā before the dvitva and the 7.4.x abhyāsa work (they sit under aṅgasya 6.4.1); ledger S178
         state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.46", state)   # न व्यो लिटि: व्येञ् keeps its e (विव्याय)
         for _sid in ("6.1.33", "1.1.45", "6.1.108", "6.4.2"):   # ह्वे before dvitva: samprasāraṇa, pūrvarūpa (juhāva); self-gating
