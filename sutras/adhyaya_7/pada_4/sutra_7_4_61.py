@@ -17,7 +17,7 @@ _KHAY = frozenset("kKcCwWtTpP")        # khay: the voiceless stops
 
 
 def _find(state: State):
-    """अभ्यास: a śar followed by a khay in the onset loses the śar, so the khay is what 7.4.60 keeps (paspaśa, tasthau; Kāśikā)."""
+    """अभ्यास: an onset of śar + khay: the khay stays, all other hals of the abhyāsa are elided (paspaśa, tasthau; Kāśikā 7.4.61)."""
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags or t.meta.get("7_4_61_done") or t.meta.get("7_4_60_haladi_done"):
             continue
@@ -35,7 +35,10 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     ti = _find(state)
     t = state.terms[ti]
-    del t.varnas[0]
+    # Kāśikā 7.4.61: abhyāsasya śarpūrvāḥ khayaḥ śiṣyante, anye halo lupyante — the khay after the śar stays and every OTHER hal of the abhyāsa goes
+    # (the apavāda of 7.4.60 ādiśeṣa, Nyāsa: anādiśeṣo 'yam ādiśeṣaṃ bādhate), so 7.4.60 finds nothing left to trim: ska → ku, spa → pa.
+    keep = t.varnas[1]
+    t.varnas = [keep] + [v for v in t.varnas[2:] if v.slp1 in _AC]
     t.meta["7_4_61_done"] = True
     return state
 
