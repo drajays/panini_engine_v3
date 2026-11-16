@@ -2,6 +2,7 @@
 {% block title %}शब्दरूपाणि — पाणिनि-यन्त्रम्{% endblock %}
 {% block head_extra %}<link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">
 <script src="{{ url_for('static', filename='patha_filters.js') }}"></script>
+<script src="{{ url_for('static', filename='search.js') }}"></script>
 <style>.dr-c{font-family:var(--dev);font-size:1rem}.dr-c.corp{font-weight:600}.dr-e.v{color:#5b4a8a}.dr-chip{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 .5rem;margin:.1rem .2rem 0 0;font-size:.78rem;color:var(--ink-dim)}</style>{% endblock %}
 
 {% block content %}
@@ -55,7 +56,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
   const slp = (t, sch) => { try { return Transliterate.toSLP1(t, sch); } catch (e) { return t; } };
-  let IX = [], hits = [], page = 0, rec = null, token = 0, vid = null, eng = null, ids = -1;
+  let rtok = 0, IX = [], hits = [], page = 0, rec = null, token = 0, vid = null, eng = null, ids = -1;
   const same = (forms, e) => e && !e.error && forms.some(f => f.slp1 === e.slp1 || f === e.dev);
   const QS = new URLSearchParams(location.search);
 
@@ -73,27 +74,31 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     if (i >= 0) pick(i); else if (w) { $("anyq").value = w; anyDecline(); } else pick(IX.findIndex(x => x.slp === "rAma" && x.l === "pulliṅga"));
   });
 
-  function refilter() {
-    const raw = $("q").value.trim().toLowerCase(), t2 = raw && $("sch").value !== "slp1" ? slp(raw, $("sch").value).toLowerCase() : raw;
-    hits = [];
-    IX.forEach((d, i) => {
-      if (raw && !([d.w, d.slp, d.a, d.ae].join(" ").toLowerCase().includes(raw) || d.slp.toLowerCase().includes(t2) || d.w.includes(raw))) return;
-      const lc = d.lc || ({pulliṅga:"P", strīliṅga:"S", napuṃsaka:"N"}[d.l] || d.l);
-      if (!PF.matches(d.t || [], {linga: lc})) return;
-      hits.push(i);
-    });
+  let why = {}, other = [];   // ranked text hits: stem index -> match kind; other-kind hits for the chip line
+  async function refilter() {
+    const q = $("q").value.trim(), my = ++rtok;
+    let order = null;
+    if (q) {
+      const [r, o] = await Promise.all([SSearch.ranked(q, "shabda"), SSearch.ranked(q, "dhatu,rupa", 6)]);
+      if (my !== rtok) return;
+      order = r; other = o;
+    } else other = [];
+    why = {};
+    const pass = d => PF.matches(d.t || [], {linga: d.lc || ({pulliṅga:"P", strīliṅga:"S", napuṃsaka:"N"}[d.l] || d.l)});
+    if (order) { hits = []; order.forEach(r => { why[r.id] = r.match; if (pass(IX[r.id])) hits.push(r.id); }); }
+    else hits = IX.reduce((a, d, i) => (pass(d) && a.push(i), a), []);
     page = 0; paintList();
     PF.setStatus(hits.length);
   }
   function paintList() {
     const n = hits.length, from = page * PAGE;
-    $("count").textContent = `${n.toLocaleString()} स्तेमाः`;
+    $("count").innerHTML = `${n.toLocaleString()} स्तेमाः` + (other.length ? ` · also: ` + other.map(o => `<a class="dr-chip" href="/dhaturupa?${o.type === "dhatu" ? "code=" + encodeURIComponent(o.id) : "dhatu=" + encodeURIComponent(o.id)}" title="${esc(o.info || o.gloss)}">${esc(o.dev)} · ${o.type === "dhatu" ? "dhātu" : "rūpa"} · ${esc(SSearch.tag(o.match))}</a>`).join("") : "");
     $("list").innerHTML = hits.slice(from, from + PAGE).map(i => { const d = IX[i];
-      return `<div data-i="${i}" class="${i === ids ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.w)}</b> <span style="color:var(--ink-dim)">${esc(d.slp)} · ${esc(d.l)} — ${esc(d.a)} ${esc(d.ae)}</span></div>`; }).join("") || "<div>—</div>";
+      return `<div data-i="${i}" class="${i === ids ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.w)}</b>${why[i] ? ` <span class="dr-chip">${esc(SSearch.tag(why[i]))}</span>` : ""} <span style="color:var(--ink-dim)">${esc(d.slp)} · ${esc(d.l)} — ${esc(d.a)} ${esc(d.ae)}</span></div>`; }).join("") || "<div>—</div>";
     $("pg").textContent = n ? `${from + 1}–${Math.min(n, from + PAGE)} / ${n}` : "—";
     $("prev").disabled = page === 0; $("next").disabled = from + PAGE >= n;
   }
-  ["q","sch"].forEach(i => $(i).addEventListener(i === "q" ? "input" : "change", refilter));
+  $("q").addEventListener("input", SSearch.debounce(refilter)); $("sch").addEventListener("change", refilter);   // the selector is only a hint now
   $("prev").onclick = () => { page--; paintList(); }; $("next").onclick = () => { page++; paintList(); };
   $("list").addEventListener("click", e => { const c = e.target.closest("[data-i]"); if (c) pick(+c.dataset.i); });
 

@@ -4,6 +4,7 @@
 {% block head_extra %}
 <link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">
 <script src="{{ url_for('static', filename='patha_filters.js') }}"></script>
+<script src="{{ url_for('static', filename='search.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -68,25 +69,31 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     if (d) pick(d, true);
   });
 
-  const hay = d => [d.dev, d.upa, d.artha, d.en, d.code].join(" ").toLowerCase();
-  function slp(t) { try { return Transliterate.toSLP1(t, $("sch").value); } catch (e) { return t; } }
-  function refilter() {
-    const raw = $("q").value.trim().toLowerCase(), t2 = raw && $("sch").value !== "slp1" ? slp(raw).toLowerCase() : raw;
+  let why = {}, rtok = 0;
+  async function refilter() {
+    const q = $("q").value.trim(), my = ++rtok;
     const g = $("fg").value, p = $("fp").value, it = $("fi").value, k = $("fk").value;
-    hits = ROOTS.filter(d => (!g || String(d.gana) === g) && (!p || (d.pada || "").includes(p)) && (!it || d.fl.includes(it))
-      && (!k || (d.karma || "").includes(k)) && (!raw || hay(d).includes(raw) || hay(d).includes(t2))
-      && PF.matches(d.t || [], {gana: d.gana, pada: d.pc, idaagam: d.sc, karma: d.kc}));
+    const ok = d => (!g || String(d.gana) === g) && (!p || (d.pada || "").includes(p)) && (!it || d.fl.includes(it))
+      && (!k || (d.karma || "").includes(k)) && PF.matches(d.t || [], {gana: d.gana, pada: d.pc, idaagam: d.sc, karma: d.kc});
+    why = {};
+    if (q) {   // ranked by the shared search (webui/search.py): dhātu by upadeśa/Devanāgarī/code/meaning; a verb form finds its dhātu too
+      const [r, f] = await Promise.all([SSearch.ranked(q, "dhatu"), SSearch.ranked(q, "rupa", 20)]);
+      if (my !== rtok) return;
+      const by = new Map(ROOTS.map(d => [d.code, d])), seen = new Set(); hits = [];
+      f.filter(x => x.match === "exact" || x.match === "normalised").forEach(x => { const d = ROOTS.find(y => y.upa === x.id); if (d && !seen.has(d.code)) { seen.add(d.code); why[d.code] = "rūpa: " + x.dev; ok(d) && hits.push(d); } });
+      r.forEach(x => { const d = by.get(x.id); if (d && !seen.has(d.code)) { seen.add(d.code); why[d.code] = x.match; ok(d) && hits.push(d); } });
+    } else hits = ROOTS.filter(ok);
     page = 0; paintList(); PF.setStatus(hits.length);
   }
   function paintList() {
     const n = hits.length, from = page * PAGE;
     $("count").textContent = `${n.toLocaleString()} धातवः`;
     $("list").innerHTML = hits.slice(from, from + PAGE).map(d =>
-      `<div data-c="${d.code}" class="${cur && cur.code === d.code ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.dev)}</b> <span style="color:var(--ink-dim)">${esc(d.upa)} · ${esc(d.code)} · ${esc(d.gana_dev)} · ${esc(d.pada)} · ${esc(d.it)} · ${esc(d.karma)} — ${esc(d.artha)} · ${esc(d.en)}</span></div>`).join("") || "<div>—</div>";
+      `<div data-c="${d.code}" class="${cur && cur.code === d.code ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.dev)}</b>${why[d.code] ? ` <span class="dr-chip">${esc(SSearch.tag(why[d.code]))}</span>` : ""} <span style="color:var(--ink-dim)">${esc(d.upa)} · ${esc(d.code)} · ${esc(d.gana_dev)} · ${esc(d.pada)} · ${esc(d.it)} · ${esc(d.karma)} — ${esc(d.artha)} · ${esc(d.en)}</span></div>`).join("") || "<div>—</div>";
     $("pg").textContent = n ? `${from + 1}–${Math.min(n, from + PAGE)} / ${n}` : "—";
     $("prev").disabled = page === 0; $("next").disabled = from + PAGE >= n;
   }
-  ["q","sch","fg","fp","fi","fk"].forEach(i => $(i).addEventListener(i === "q" ? "input" : "change", refilter));
+  $("q").addEventListener("input", SSearch.debounce(refilter)); ["sch","fg","fp","fi","fk"].forEach(i => $(i).addEventListener("change", refilter));
   $("prev").onclick = () => { page--; paintList(); };
   $("next").onclick = () => { page++; paintList(); };
   $("list").addEventListener("click", e => { const c = e.target.closest("[data-c]"); if (c) pick(ROOTS.find(x => x.code === c.dataset.c)); });

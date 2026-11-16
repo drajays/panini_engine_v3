@@ -148,6 +148,8 @@ from webui.abhyasa import bp as _abhyasa_bp  # noqa: E402 — /api/abhyasa/* (do
 app.register_blueprint(_abhyasa_bp)
 from webui.notes import bp as _notes_bp  # noqa: E402 — audit notes under each sūtra (/api/notes/*)
 app.register_blueprint(_notes_bp)
+from webui.search import bp as _search_bp  # noqa: E402 — the one search for stem/dhātu/rūpa boxes (/api/search)
+app.register_blueprint(_search_bp)
 
 
 _DOCS = _ROOT / "docs"
