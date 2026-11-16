@@ -39,8 +39,10 @@ def _eligible_s_sup(state: State) -> bool:
         return False
     if pr.varnas[0].slp1 != "s":
         return False
-    if (pr.meta.get("upadesha_slp1") or "").strip() == "sup":
-        return False                     # 7/3 सुप् is not in सुट् (सु औ जस् अम् औट्)
+    # the upadeśa decides, not the letter now on the tape: 7.1.12 puts sya (ṅas) on the tape, and ṅas is not in सुट्
+    # (सु औ जस् अम् औट्); likewise sup (7/3), smāt, smin, sām
+    if (pr.meta.get("upadesha_slp1_original") or pr.meta.get("upadesha_slp1") or "").strip() not in ("su", "su~", "s~"):
+        return False
     if TAG in pr.tags:
         return False
     return True

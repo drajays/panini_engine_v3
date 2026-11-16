@@ -26,6 +26,21 @@
     }
    ],
    "status_at": "2026-11-16T01:18:15+0530"
+  },
+  {
+   "id": "8638c12ffb",
+   "created": "2026-11-16T07:39:52+0530",
+   "updated": "2026-11-16T07:39:52+0530",
+   "text": "Internal String Allocation of Ekādeśa (Minor Structural Artefact)\nStep: #190\nSūtra involved: 6.1.101 अकः सवर्णे दीर्घः.\nIssue: The internal parts array [[\"rAmA\", \"prakriti\", \"rAma\"], [\"t\", \"sup\", \"At\"]] reveals that instead of treating the ekādeśa as a dual-replacement spanning both boundaries (6.1.84), the engine chopped the 'ā' off the suffix At and appended it to the stem.\n\nClassification: Display/Engine structural artefact.",
+   "author": "",
+   "derivation": "",
+   "kind": "note",
+   "status": "ledgered",
+   "verdict": "Claude 2026-11-16 — Repeat of a stamped note; resolved, see S184 (ekādeśa as one shared token over both sides; the parts array is a display of the split) and the 6.1.102 / 6.1.84 judgement. No new work.",
+   "evidence": "SHORTCUT_LEDGER S184",
+   "trace": "",
+   "history": [],
+   "status_at": "2026-11-16T08:13:16+0530"
   }
  ]
 }
