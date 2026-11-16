@@ -21,13 +21,11 @@ SHABDA = {"rAma": "pulliṅga", "Pala": "napuṃsaka", "nadI": "strīliṅga"}
 
 # (stem, cell) -> "class: why". Classes: gap (engine lacks the PDF's step) | order-equivalent (same form, engine licenses it by another sūtra)
 # | pdf-lists-vacuous (PDF names a sūtra that has nothing to do on this stem). Detail: docs/AI_U_SUBANTA_GOLD.md. strict xfail: a fix flips it.
-_G61103 = "gap: 6.1.103 fuses the 6.1.102 lengthening into its own act for masculine ik-final stems (no 6.1.102 step)"
 _G61090 = "gap: the sup's āṭ (7.3.112) sits inside the affix, so 6.1.90 (reads a separate aTa_agama Term) never sees it; 6.1.88 yields the same ai"
 _GS2 = "gap: ledger S2 — ṭāp stays a separate Term, so the ā-stem ṅit-sup route (7.3.105 / 7.3.113 / 7.3.116 + 6.1.101) is not walked"
 _V6403 = "pdf-lists-vacuous: the stem is already long, 6.4.3 has nothing to lengthen"
 _G7124 = "gap: 7.1.24 am→am is an identity ādeśa and is SKIPPED (7.1.23 never contends for an a-final neuter)"
 KNOWN: dict[tuple[str, str], str] = {
-    **{(s, "2-3"): _G61103 for s in ("rAma", "muni", "sADu")},
     **{(s, c): _G61090 for s in ("mati", "Denu", "nadI", "vaDU") for c in ("4-1", "5-1", "6-1")},
     ("mAlA", "3-1"): _GS2, ("mAlA", "5-1"): _GS2, ("mAlA", "6-1"): _GS2, ("mAlA", "7-1"): _GS2,
     **{(s, "6-3"): _V6403 for s in ("mAlA", "nadI", "vaDU")},

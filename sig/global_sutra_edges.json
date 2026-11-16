@@ -96655,6 +96655,42 @@
     {
       "derivations": [
         "SamBu_pullinga:SamBu:1-2",
+        "SamBu_pullinga:SamBu:2-2",
+        "SamBu_pullinga:SamBu:2-3",
+        "SamBu_pullinga:SamBu:8-2",
+        "SamBu_pulliṅga:SamBu:1-2",
+        "SamBu_pulliṅga:SamBu:2-2",
+        "SamBu_pulliṅga:SamBu:2-3",
+        "SamBu_pulliṅga:SamBu:8-2",
+        "agni_pulliṅga:agni:1-2",
+        "agni_pulliṅga:agni:2-2",
+        "agni_pulliṅga:agni:2-3",
+        "agni_pulliṅga:agni:8-2",
+        "guru_pulliṅga:guru:1-2",
+        "guru_pulliṅga:guru:2-2",
+        "guru_pulliṅga:guru:2-3",
+        "guru_pulliṅga:guru:8-2",
+        "hari_pullinga:hari:1-2",
+        "hari_pullinga:hari:2-2",
+        "hari_pullinga:hari:2-3",
+        "hari_pullinga:hari:8-2",
+        "hari_pulliṅga:hari:1-2",
+        "hari_pulliṅga:hari:2-2",
+        "hari_pulliṅga:hari:2-3",
+        "hari_pulliṅga:hari:8-2",
+        "nadI_strīliṅga:nadI:2-3",
+        "vAyu_pulliṅga:vAyu:1-2",
+        "vAyu_pulliṅga:vAyu:2-2",
+        "vAyu_pulliṅga:vAyu:2-3",
+        "vAyu_pulliṅga:vAyu:8-2"
+      ],
+      "source": "6.1.77",
+      "target": "6.1.102",
+      "weight": 29
+    },
+    {
+      "derivations": [
+        "SamBu_pullinga:SamBu:1-2",
         "SamBu_pullinga:SamBu:2-1",
         "SamBu_pullinga:SamBu:2-2",
         "SamBu_pullinga:SamBu:2-3",
@@ -97033,35 +97069,6 @@
       "source": "8.3.57",
       "target": "8.4.47",
       "weight": 24
-    },
-    {
-      "derivations": [
-        "SamBu_pullinga:SamBu:1-2",
-        "SamBu_pullinga:SamBu:2-2",
-        "SamBu_pullinga:SamBu:8-2",
-        "SamBu_pulliṅga:SamBu:1-2",
-        "SamBu_pulliṅga:SamBu:2-2",
-        "SamBu_pulliṅga:SamBu:8-2",
-        "agni_pulliṅga:agni:1-2",
-        "agni_pulliṅga:agni:2-2",
-        "agni_pulliṅga:agni:8-2",
-        "guru_pulliṅga:guru:1-2",
-        "guru_pulliṅga:guru:2-2",
-        "guru_pulliṅga:guru:8-2",
-        "hari_pullinga:hari:1-2",
-        "hari_pullinga:hari:2-2",
-        "hari_pullinga:hari:8-2",
-        "hari_pulliṅga:hari:1-2",
-        "hari_pulliṅga:hari:2-2",
-        "hari_pulliṅga:hari:8-2",
-        "nadI_strīliṅga:nadI:2-3",
-        "vAyu_pulliṅga:vAyu:1-2",
-        "vAyu_pulliṅga:vAyu:2-2",
-        "vAyu_pulliṅga:vAyu:8-2"
-      ],
-      "source": "6.1.77",
-      "target": "6.1.102",
-      "weight": 22
     },
     {
       "derivations": [
@@ -98288,6 +98295,27 @@
     },
     {
       "derivations": [
+        "anya_pullinga:anya:2-3",
+        "anya_pulliṅga:anya:2-3",
+        "latA_strīliṅga:latA:2-3",
+        "rADA_strilinga:rADA:2-3",
+        "rADA_strīliṅga:rADA:2-3",
+        "rAma_pulliṅga:rAma:1-3",
+        "rAma_pulliṅga:rAma:2-3",
+        "rAma_pulliṅga:rAma:8-3",
+        "rama_pullinga:rAma:1-3",
+        "rama_pullinga:rAma:2-3",
+        "rama_pullinga:rAma:8-3",
+        "sarva_pullinga:sarva:2-3",
+        "sarva_pulliṅga:sarva:2-3",
+        "tad_pullinga:tad:2-3"
+      ],
+      "source": "6.1.101",
+      "target": "6.1.102",
+      "weight": 14
+    },
+    {
+      "derivations": [
         "Pala_napuṃsaka:Pala:5-1",
         "jYAna_napuṃsaka:jYAna:5-1",
         "jnana_napumsaka:jYAna:5-1",
@@ -98305,6 +98333,27 @@
       ],
       "source": "6.1.101",
       "target": "8.2.1",
+      "weight": 14
+    },
+    {
+      "derivations": [
+        "SamBu_pullinga:SamBu:2-3",
+        "SamBu_pulliṅga:SamBu:2-3",
+        "agni_pulliṅga:agni:2-3",
+        "anya_pullinga:anya:2-3",
+        "anya_pulliṅga:anya:2-3",
+        "guru_pulliṅga:guru:2-3",
+        "hari_pullinga:hari:2-3",
+        "hari_pulliṅga:hari:2-3",
+        "rAma_pulliṅga:rAma:2-3",
+        "rama_pullinga:rAma:2-3",
+        "sarva_pullinga:sarva:2-3",
+        "sarva_pulliṅga:sarva:2-3",
+        "tad_pullinga:tad:2-3",
+        "vAyu_pulliṅga:vAyu:2-3"
+      ],
+      "source": "6.1.102",
+      "target": "6.1.103",
       "weight": 14
     },
     {
@@ -100051,34 +100100,6 @@
     },
     {
       "derivations": [
-        "latA_strīliṅga:latA:2-3",
-        "rADA_strilinga:rADA:2-3",
-        "rADA_strīliṅga:rADA:2-3",
-        "rAma_pulliṅga:rAma:1-3",
-        "rAma_pulliṅga:rAma:8-3",
-        "rama_pullinga:rAma:1-3",
-        "rama_pullinga:rAma:8-3"
-      ],
-      "source": "6.1.101",
-      "target": "6.1.102",
-      "weight": 7
-    },
-    {
-      "derivations": [
-        "anya_pullinga:anya:2-3",
-        "anya_pulliṅga:anya:2-3",
-        "rAma_pulliṅga:rAma:2-3",
-        "rama_pullinga:rAma:2-3",
-        "sarva_pullinga:sarva:2-3",
-        "sarva_pulliṅga:sarva:2-3",
-        "tad_pullinga:tad:2-3"
-      ],
-      "source": "6.1.101",
-      "target": "6.1.103",
-      "weight": 7
-    },
-    {
-      "derivations": [
         "SamBu_pullinga:SamBu:2-3",
         "SamBu_pulliṅga:SamBu:2-3",
         "agni_pulliṅga:agni:2-3",
@@ -100117,20 +100138,6 @@
       ],
       "source": "6.1.104",
       "target": "6.1.104",
-      "weight": 7
-    },
-    {
-      "derivations": [
-        "SamBu_pullinga:SamBu:2-3",
-        "SamBu_pulliṅga:SamBu:2-3",
-        "agni_pulliṅga:agni:2-3",
-        "guru_pulliṅga:guru:2-3",
-        "hari_pullinga:hari:2-3",
-        "hari_pulliṅga:hari:2-3",
-        "vAyu_pulliṅga:vAyu:2-3"
-      ],
-      "source": "6.1.77",
-      "target": "6.1.103",
       "weight": 7
     },
     {
@@ -101831,7 +101838,7 @@
       "derivations": [
         "tad_pullinga:tad:2-3"
       ],
-      "source": "6.1.103",
+      "source": "6.1.102",
       "target": "6.1.101",
       "weight": 1
     },
@@ -101904,7 +101911,7 @@
         "tad_pullinga:tad:2-3"
       ],
       "source": "6.4.77",
-      "target": "6.1.103",
+      "target": "6.1.102",
       "weight": 1
     },
     {

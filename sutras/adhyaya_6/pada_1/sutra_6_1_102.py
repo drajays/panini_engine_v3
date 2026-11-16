@@ -61,21 +61,13 @@ def _matches(state: State) -> bool:
             return False
         return anga.varnas[-1].slp1 == "a"
     if up == "Sas":
-        # द्वितीया बहुवचन is inside प्रथमयोः. For a नदी-type stem (ī/ū-final) the
-        # pūrvasavarṇa is the stem's own long vowel: नदी + अस् → नदीस् → नदीः.
-        # Long-vowel stems only: नदी · वधू · लता. Short i/u stems reach their
-        # शस् form through 6.1.103 (हरीन् · वायून्), which lengthens and
-        # substitutes न् in one step for the masculine.
+        # द्वितीया बहुवचन is inside प्रथमयोः: every ak-final aṅga (rāma, hari, guru, pitṛ, nadī, vadhū, mati …) gets the
+        # pūrvasavarṇa dīrgha here; for a puṃ stem 6.1.103 then changes only the s to n (tasmāt: after this dīrgha).
         if pratyaya.meta.get("Sas_purvasavarna_done"):
             return False
         if not anga.varnas or not pratyaya.varnas:
             return False
-        last = anga.varnas[-1].slp1
-        if last in {"I", "U", "A"}:
-            return True
-        # A short ik-final stem that is not masculine (strī मति / धेनु / मातृ) has no 6.1.103 to take it: it ends here with the
-        # pūrvasavarṇa long vowel (मतीः, धेनूः, मातॄः); the masculine's long vowel + न् is 6.1.103's own one-step form.
-        return last in {"i", "u", "f", "x"} and not ({"pulliṅga", "pum"} & anga.tags)
+        return anga.varnas[-1].slp1 in {"I", "U", "A", "a", "i", "u", "f", "x"}
     if up in {"O", "Ow"}:
         # प्रथमा/द्वितीया dual boundary: अक् + औ.  The utsarga claims every
         # अक्-final aṅga here — *hari + au → harī*, *vāyu + au → vāyū*, and
@@ -118,10 +110,15 @@ def act(state: State) -> State:
         return state
     if up == "Sas":
         # The stem's long vowel absorbs the affix's अ; only the स् survives. A short ik vowel becomes its long (मति → मतीस्).
+        # A short a (rāma + as) is replaced with the affix's initial: the ekādeśa ā is lodged on the suffix, as for jas (ledger S184).
         _long = {"i": "I", "u": "U", "f": "F", "x": "X"}
-        if anga.varnas[-1].slp1 in _long:
-            anga.varnas[-1] = mk(_long[anga.varnas[-1].slp1])
-        pratyaya.varnas = [mk("s")]
+        if anga.varnas[-1].slp1 == "a":
+            del anga.varnas[-1]
+            pratyaya.varnas = [mk("A"), mk("s")]
+        else:
+            if anga.varnas[-1].slp1 in _long:
+                anga.varnas[-1] = mk(_long[anga.varnas[-1].slp1])
+            pratyaya.varnas = [mk("s")]
         pratyaya.meta["Sas_purvasavarna_done"] = True
         state.meta["__why_now_dev__"] = (
             "प्रथमयोः (द्वितीया-बहुवचने) अक्+अच्-योः पूर्वसवर्ण-दीर्घः — "

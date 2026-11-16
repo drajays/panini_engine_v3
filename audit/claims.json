@@ -1295,5 +1295,17 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794774090.733731
+ },
+ {
+  "id": "s185-sas",
+  "agent": "claude",
+  "scope": [
+   "6.1.102",
+   "6.1.103"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794792561.194844
  }
 ]

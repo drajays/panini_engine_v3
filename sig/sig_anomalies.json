@@ -1,11 +1,19 @@
 {
   "anomalies": [],
-  "cascade_slow_cells": [],
+  "cascade_slow_cells": [
+    {
+      "cell_id": "Pala_napuṃsaka:Pala:6-3",
+      "median_ns": 7230493,
+      "severity": "CRITICAL",
+      "total_ns": 33517625,
+      "vs_median": 4.64
+    }
+  ],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 15096212,
-    "median_total_ns": 9270121,
-    "min_total_ns": 6156454
+    "max_total_ns": 33517625,
+    "median_total_ns": 7230493,
+    "min_total_ns": 4764330
   },
   "run_test_count": 505
 }

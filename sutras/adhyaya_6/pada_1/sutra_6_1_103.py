@@ -46,13 +46,16 @@ def _matches(state: State) -> bool:
         return False
     if pratyaya.meta.get("sas_substitution_done"):
         return False
+    # तस्मात्: only after 6.1.102 has made the pūrvasavarṇa dīrgha on this śas (the ekādeśa is 6.1.102's work, not this sūtra's)
+    if not pratyaya.meta.get("Sas_purvasavarna_done"):
+        return False
     # पुंसि — the sūtra's own restriction, read off the aṅga's liṅga tag
     # (structural, not a paradigm coordinate). Feminine and neuter stems keep
     # whatever 6.1.102 gave them: नदी + अस् → नदीस् → नदीः, and the old
     # unconditional As-substitution here overwrote exactly that.
     # तस्मात्: after the 6.1.102 pūrvasavarṇa dīrgha — an ak-final aṅga (राम, हरि, गुरु,
     # पितृ); a hal-final one (राजन्) keeps शस् as अस् (राज्ञः)
-    if not anga.varnas or anga.varnas[-1].slp1 not in "aiufx":
+    if not pratyaya.varnas or pratyaya.varnas[-1].slp1 != "s":
         return False
     return bool({"pulliṅga", "pum"} & anga.tags)
 
@@ -64,36 +67,12 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    anga = state.terms[-2]
     pratyaya = state.terms[-1]
-    if True:
-        if anga.varnas and anga.varnas[-1].slp1 == "a":
-            # a-stem: delete stem's final 'a' — absorbed by the lengthening.
-            del anga.varnas[-1]
-            pratyaya.varnas = [mk("A"), mk("n")]
-            new_upa = "An"
-        elif anga.varnas and anga.varnas[-1].slp1 == "i":
-            # i-stem: i + śas → īn (hari → harīn)
-            anga.varnas[-1] = mk("I")
-            pratyaya.varnas = [mk("n")]
-            new_upa = "n"
-        elif anga.varnas and anga.varnas[-1].slp1 == "u":
-            # u-stem: u + śas → ūn (śambhu → śambhūn) via pūrva-savarṇa dīrgha
-            anga.varnas[-1] = mk("U")
-            pratyaya.varnas = [mk("n")]
-            new_upa = "n"
-        elif anga.varnas and anga.varnas[-1].slp1 in "fx":
-            anga.varnas[-1] = mk(anga.varnas[-1].slp1.upper())   # पितॄन्
-            pratyaya.varnas = [mk("n")]
-            new_upa = "n"
-        else:
-            # Fallback: keep existing behaviour (no-op would violate R1),
-            # so treat like the a-stem An substitution without stem deletion.
-            pratyaya.varnas = [mk("A"), mk("n")]
-            new_upa = "An"
+    # only the s of the śas becomes n; 6.1.102 already made the dīrgha (a-stem: the suffix is A+s; other ak-stems: lengthened aṅga + s)
+    pratyaya.varnas[-1] = mk("n")
     pratyaya.meta["sas_substitution_done"] = True
     pratyaya.meta["upadesha_slp1_original"] = "Sas"
-    pratyaya.meta["upadesha_slp1"] = new_upa
+    pratyaya.meta["upadesha_slp1"] = "".join(v.slp1 for v in pratyaya.varnas)
     return state
 
 
