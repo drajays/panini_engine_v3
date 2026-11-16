@@ -64,6 +64,8 @@ def _is_sambuddhi_su(state: State):
         return False
     if not anga.varnas or not pratyaya.varnas:
         return False
+    if pratyaya.meta.get("upadesha_slp1") == "am" and len(pratyaya.varnas) == 2 and pratyaya.varnas[-1].slp1 == "m":
+        return pratyaya.varnas[0].slp1 in _HRASVA       # su → am (7.1.24) and 6.1.107 done: only the hal m goes (halmātrasya lopaḥ, Kāśikā)
     last = anga.varnas[-1]
     if last.slp1 not in (_HRASVA | _ENG):
         return False
@@ -81,6 +83,10 @@ def act(state: State) -> State:
     if not _is_sambuddhi_su(state):
         return state
     pratyaya = state.terms[-1]
+    if pratyaya.meta.get("upadesha_slp1") == "am":
+        pratyaya.varnas = pratyaya.varnas[:-1]          # keep the a of am
+        pratyaya.meta["sambuddhi_lopa_done"] = True
+        return state
     # Drop all varṇas of the sambuddhi-su pratyaya (both 's' and
     # anunāsika 'u' — the whole pratyaya becomes zero).  Tag so the
     # sūtra doesn't re-fire.

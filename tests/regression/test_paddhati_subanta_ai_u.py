@@ -30,7 +30,7 @@ KNOWN: dict[tuple[str, str], str] = {
     ("mAlA", "3-1"): _GS2, ("mAlA", "5-1"): _GS2, ("mAlA", "6-1"): _GS2, ("mAlA", "7-1"): _GS2,
     **{(s, "6-3"): _V6403 for s in ("mAlA", "nadI", "vaDU")},
 
-    ("Pala", "2-1"): _G7124, ("Pala", "8-1"): _G7124,
+    ("Pala", "2-1"): _G7124,   # ("Pala", "8-1") fixed 2026-11-16: 7.1.24 now also takes the sambuddhi su (Kāśikā 6.1.69), S188
 }
 
 

@@ -118,8 +118,12 @@ class Decision:
     losers: tuple[str, ...] = field(default_factory=tuple)
     skipped_unmodelled: tuple[str, ...] = field(default_factory=tuple)
     soi_proposal: Optional[str] = None
+    displaced_by: tuple[tuple[str, str], ...] = field(default_factory=tuple)   # (loser, the apavāda that named it): S187
 
     def gate_reason(self, loser: str) -> str:
+        by = dict(self.displaced_by).get(loser)
+        if by and self.layer != "apavada":      # a loser the winner did not beat on its own layer: say who displaced it, and why (PŚ 57)
+            return f"apavada: {by} beat {loser} — {paribhasha_layer('apavada').citation()}"
         return f"{self.layer}: {self.winner} beat {loser} — {self.reason_dev}"
 
 
@@ -298,10 +302,12 @@ def resolve_with_reason(
     # ("purastād apavādā anantarān vidhīn bādhante nottarān": a later rule at the same
     # junction — 6.1.102 beside 6.1.97 — is para and still contends).
     displaced: set[str] = set()
+    displaced_by: list[tuple[str, str]] = []
     for cid in candidate_ids:
         for other in (get_sutra(cid).apavada_of or ()):
             if other in candidate_ids:
                 displaced.add(other)
+                displaced_by.append((other, cid))
     if displaced:
         remaining = [c for c in candidate_ids if c not in displaced]
         if len(remaining) == 1:
@@ -400,6 +406,7 @@ def resolve_with_reason(
             return Decision(
                 inner, "antaranga", paribhasha_layer("antaranga").citation(),
                 tuple(sorted(bahiranga)) + pre_losers, skipped_unmodelled=skipped,
+                displaced_by=tuple(displaced_by),
             )
         winner = inner
     return Decision(
@@ -407,6 +414,7 @@ def resolve_with_reason(
         tuple(c for c in candidate_ids if c != winner) + pre_losers,
         skipped_unmodelled=skipped,
         soi_proposal=proposal if proposal and proposal != winner else None,
+        displaced_by=tuple(displaced_by),
     )
 
 

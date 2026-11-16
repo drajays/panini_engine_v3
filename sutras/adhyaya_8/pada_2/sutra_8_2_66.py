@@ -70,6 +70,8 @@ def _target_premerge(state: State):
             continue
         if not pratyaya.varnas:
             continue
+        if "sup" in pratyaya.tags and pratyaya.varnas[0].slp1 == "s":
+            continue    # SHORTCUT S189: manas + su (7/3) keeps its s (manassu, the 8.3.34 result) — the H|s seam inside one pada is not seen by 8.3.34/36 after the merge
         if pratyaya.varnas[0].slp1 not in HAL and "pada" not in pratyaya.tags:    # a vowel after a whole next pada is a seam: the s is still pada-final
             continue
         return (i, len(stem.varnas) - 1)

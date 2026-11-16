@@ -42,10 +42,7 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
-    # ato'm (sarvananāmasthāna only): sambodhana is NOT sarvananāmasthāna.
-    # After 6.1.69 removes 's', bare stem is the correct napuṃsaka vocative form.
-    if "sambuddhi" in pr.tags:
-        return False
+    # ato'm covers su of the sambuddhi too (Kāśikā 6.1.69: kuṇḍa + su → am → kuṇḍam → m-lopa, he kuṇḍa).
     if pr.meta.get("upadesha_slp1") not in _TARGETS:
         return False
     if pr.meta.get("ato_am_done"):
