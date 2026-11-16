@@ -110,6 +110,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     ids = i; paintList();
     const r = await (await fetch(`/api/shabdarupa/stem/${i}`)).json();
     rec = {stem: r.slp, linga: r.linga, nyap: r.nyap, w: r.w, corpus: r};
+    setCtx();
     $("tadcard").hidden = false; $("tadout").innerHTML = "";
     load();
   }
@@ -118,12 +119,15 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     const raw = $("anyq").value.trim(); if (!raw) return;
     const sl = slp(raw, $("sch").value);
     rec = {stem: sl, linga: $("anyl").value, nyap: !!$("anyn").value, w: raw, corpus: null};
+    setCtx();
     ids = -1; paintList(); $("tadcard").hidden = false; $("tadout").innerHTML = "";
     load();
   }
   $("anygo").onclick = anyDecline; $("anyq").addEventListener("keydown", e => { if (e.key === "Enter") anyDecline(); });
   $("anyq").addEventListener("input", () => { $("anypv").textContent = "SLP1: " + slp($("anyq").value.trim(), $("sch").value); });
 
+  /* recorded with every note (prakriya.js pkContext): what is on screen, so the liṅga is never guessed */
+  const setCtx = (extra = {}) => { window.PK_CTX = {kind: "shabda", stem_slp1: rec.stem, stem_dev: rec.w, linga: rec.linga, nyap: !!rec.nyap, stem_source: rec.corpus ? "corpus stem #" + ids : "typed (any stem)", ...extra}; };
   const args = () => ({stem: rec.stem, linga: rec.linga, nyap: rec.corpus ? rec.nyap : (rec.nyap || null)});
   const cellHtml = (corp, forms, e) => {
     let h = corp ? `<div class="dr-c corp">${esc(corp.join(" · ")) || "—"}</div>` : "";
@@ -196,6 +200,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     const d = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: k + 1, base: rec.corpus ? rec.corpus.base : ""});
     const E = d.engine || {};
     lastE = E; lastV = d.vidyut; lastMiss = new Set(d.missing || []);
+    setCtx({vibhakti: r + 1, vibhakti_name: VIB[r], vacana: k + 1, vacana_name: VC[k][1], surface_dev: E.dev || "", surface_slp1: E.slp1 || "", engine_vs_corpus: (d.corpus && E.slp1 ? (same([d.corpus.form], E) ? "equal" : "differs") : "no corpus form")});
     const cs = d.corpus ? `<div><h3>Corpus <span class="dr-note">(hand-checked upstream)</span></h3><h4>${esc(d.corpus.form)}</h4>${d.corpus.steps.map((s, n) => `<div class="dr-step"><b>${n + 1}</b><span class="r">${esc(s.step)}</span> <b style="margin-left:.4rem">${s.sutras.map(x => esc(x) + Prakriya.outBtn(x)).join(", ")}</b></div>`).join("")}</div>` : "";
     $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(rec.w)} · ${esc(VIB[r])} · ${esc(VC[k][1])}</p>
       <p class="dr-tally">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a> <button type="button" class="pk-ask vm-note" data-sid="${esc(x)}" title="Note on this sūtra: should the engine run it here? (saved under the sūtra)">✎</button>`).join(", ")}</b>` : (E.trace && Array.isArray(d.vidyut) ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>

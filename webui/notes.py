@@ -89,6 +89,19 @@ def _clean(data: dict, *, partial: bool) -> dict:
     return out
 
 
+def _context(data: dict) -> dict:
+    """What the page was showing when the note was written (stem / liṅga / vibhakti / vacana, or dhātu / lakāra / puruṣa …), recorded by the page, never typed."""
+    c = data.get("context") or {}
+    if not isinstance(c, dict) or len(c) > 40:
+        abort(400, "context must be an object of at most 40 keys")
+    out = {}
+    for k, v in c.items():
+        if not isinstance(k, str) or len(k) > 40 or not (v is None or isinstance(v, (str, int, float, bool))):
+            abort(400, "context values must be short scalars")
+        out[k] = v if not isinstance(v, str) else v[:200]
+    return out
+
+
 def _trace(data: dict) -> str:
     v = data.get("trace", "")
     if not isinstance(v, str):
@@ -118,7 +131,7 @@ def add_note(sid):
         note = {"id": uuid.uuid4().hex[:10], "created": _now(), "updated": _now(), "text": data["text"],
                 "author": data.get("author", ""), "derivation": data.get("derivation", ""),
                 "kind": data.get("kind", "note"), "status": data.get("status", "open"), "verdict": data.get("verdict", ""), "evidence": data.get("evidence", ""),
-                "trace": _trace(request.get_json(force=True) or {}), "history": []}
+                "trace": _trace(request.get_json(force=True) or {}), "context": _context(request.get_json(force=True) or {}), "history": []}
         doc["notes"].append(note)
         _save(sid, doc)
     return jsonify(note), 201

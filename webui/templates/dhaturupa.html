@@ -101,6 +101,7 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
 
   function pick(d, deep) {
     cur = d; paintList(); $("ctl").hidden = false;
+    window.PK_CTX = {kind: "dhatu", dhatu_dev: d.dev, dhatu_upadesha: d.upa, dhatu_code: d.code, gana: d.gana_dev, pada_of_root: d.pada, it: d.it, karma: d.karma, artha: d.artha};
     $("banner").innerHTML = `${esc(d.dev)} <span class="m">${esc(d.upa)} · ${esc(d.code)} · ${esc(d.gana_dev)} · ${esc(d.pada)} · ${esc(d.it)} · ${esc(d.karma)} · ${esc(d.artha)} · ${esc(d.en)} · <a href="/dhatu/${esc(d.code)}">↗</a></span>`;
     if (deep) { if (QS.get("prayoga")) $("pr").value = QS.get("prayoga"); if (QS.get("pada")) $("pd").value = QS.get("pada"); }
     load(deep ? QS.get("lakara") : null);
@@ -165,6 +166,7 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     lastMiss = new Set(d.missing || []);
     const E = d.engine || {};
     const lab = LAKARA.find(x => x[0] === v)[2];
+    window.PK_CTX = {kind: "dhatu", dhatu_dev: cur.dev, dhatu_upadesha: cur.upa, dhatu_code: cur.code, gana: cur.gana_dev, lakara: v, lakara_name: lab, purusha: 3 - r, purusha_name: PU[r][1], vacana: c + 1, vacana_name: VC[c][1], pada: a.pada || "", prayoga: a.prayoga || "kartari", sanadi: a.sanadi || "", upasarga: a.prefix || "", surface_dev: E.dev || "", surface_slp1: E.slp1 || ""};
     $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
       <p class="dr-tally" style="margin:.2rem 0 .6rem">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a> ${Prakriya.outBtn(x)}`).join(", ")}</b>` : (Array.isArray(d.vidyut) && E.trace ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
       <div class="dr-two"><div><h3>Vidyut <button type="button" class="pk-btn-copy vm-llm" title="Vidyut steps + our engine's steps + audit prompt">LLM-कृते · Copy to LLM</button> <button type="button" class="pk-btn-copy vm-plain" title="Vidyut steps + our engine's steps, no prompt">प्रतिलिपिः · Copy panel</button></h3><div id="vsteps">${vidSteps()}</div></div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>

@@ -51,3 +51,11 @@ def test_note_keeps_the_trace_it_was_seen_in(c):
     assert n["trace"] == tr
     assert c.get("/api/notes/4.1.2").get_json()["notes"][0]["trace"] == tr
     assert c.post("/api/notes/4.1.2", json={"text": "x", "trace": "y" * 400_001}).status_code == 400
+
+
+def test_note_keeps_the_page_context(c):
+    ctx = {"kind": "shabda", "stem_slp1": "Pala", "linga": "napuṃsaka", "vibhakti": 4, "vacana": 1}
+    n = c.post("/api/notes/1.4.17", json={"text": "t", "context": ctx}).get_json()
+    assert n["context"] == ctx and c.get("/api/notes/1.4.17").get_json()["notes"][0]["context"] == ctx
+    assert c.post("/api/notes/1.4.17", json={"text": "t"}).get_json()["context"] == {}
+    assert c.post("/api/notes/1.4.17", json={"text": "t", "context": {"a": {"b": 1}}}).status_code == 400

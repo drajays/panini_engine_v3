@@ -25,7 +25,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 1,
+    "vacana": 2,
+    "sup_upadesha": "O"
+   }
   },
   {
    "id": "afeb5fc4e4",
@@ -51,7 +66,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 1,
+    "vacana": 2,
+    "sup_upadesha": "O"
+   }
   },
   {
    "id": "7db006b3d9",
@@ -77,7 +107,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 1,
+    "vacana": 2,
+    "sup_upadesha": "O"
+   }
   },
   {
    "id": "29f52fb3f4",
@@ -103,7 +148,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 1,
+    "vacana": 2,
+    "sup_upadesha": "O"
+   }
   },
   {
    "id": "13908c3b6b",
@@ -129,7 +189,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-15T21:55:30+0530"
+   "status_at": "2026-11-15T21:55:30+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 1,
+    "vacana": 2,
+    "sup_upadesha": "O"
+   }
   }
  ]
 }

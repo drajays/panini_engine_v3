@@ -51,7 +51,19 @@
      "kind": "solution"
     }
    ],
-   "status_at": "2026-11-15T22:47:43+0530"
+   "status_at": "2026-11-15T22:47:43+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामः",
+    "surface_slp1": "rAmaH",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ]
+   }
   }
  ]
 }

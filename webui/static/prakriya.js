@@ -299,6 +299,8 @@ const Prakriya = (() => {
   };
 
   /* ✎ a question / doubt / note on this step: it is saved under the sūtra (webui/notes.py) and shows on /sutra/<id>, with the derivation and step it came from */
+  /* what the page is showing (set by the page as window.PK_CTX when a stem / cell / dhātu is chosen) goes with every note, so nobody has to say which liṅga or lakāra */
+  const pkContext = () => ({...(window.PK_CTX || {}), page: location.pathname, url: location.pathname + location.search});
   let NOTE_N = null;
   const noteCounts = () => { if (!NOTE_N) { NOTE_N = {}; fetch("/api/notes-counts").then(r => r.json()).then(o => { NOTE_N = o; document.querySelectorAll(".pk-ask").forEach(b => { b.innerHTML = askLabel(b.dataset.sid); }); }).catch(() => {}); } return NOTE_N; };
   const askLabel = sid => { const c = (noteCounts()[sid] || {}).n; return `✎${c ? `<small>${c}</small>` : ""}`; };
@@ -369,7 +371,7 @@ const Prakriya = (() => {
       e.preventDefault();
       try {
         const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where + " · " + location.pathname, trace: trace || ""})});
+          body: JSON.stringify({text: f.text.value, kind: f.kind.value, context: pkContext(), author: "me", derivation: where + " · " + location.pathname, trace: trace || ""})});
         if (!r.ok) throw new Error(await r.text());
         NOTE_N = null; noteCounts();
         host.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;
@@ -500,7 +502,7 @@ ${et || "  (no trace)"}${cs}
         const where = `${d.title || ""} · step #${i + 1} (${s.form_before || ""} → ${s.form_after || ""}) · ${location.pathname}${location.search}#s-${i + 1}`;
         try {
           const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({text: f.text.value, kind: f.kind.value, author: "me", derivation: where, trace: traceText(d, t, i)})});
+            body: JSON.stringify({text: f.text.value, kind: f.kind.value, context: pkContext(), author: "me", derivation: where, trace: traceText(d, t, i)})});
           if (!r.ok) throw new Error(await r.text());
           NOTE_N = null; noteCounts();
           f.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;
@@ -542,7 +544,7 @@ ${et || "  (no trace)"}${cs}
         const where = `${d.title || ""} · "why didn't ${sid} apply?" (${hit >= 0 ? "step #" + (hit + 1) : "never offered"}) · ${location.pathname}${location.search}`;
         try {
           const r = await fetch("/api/notes/" + encodeURIComponent(sid), {method: "POST", headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({text, kind: f.kind.value, author: "me", derivation: where, trace: traceText(d, t, at)})});
+            body: JSON.stringify({text, kind: f.kind.value, context: pkContext(), author: "me", derivation: where, trace: traceText(d, t, at)})});
           if (!r.ok) throw new Error(await r.text());
           NOTE_N = null; noteCounts();
           box.innerHTML = `<span class="muted">Saved under ${esc(sid)} — <a href="/sutra/${esc(sid)}#sutra-notes" target="_blank">open the sūtra page</a></span>`;

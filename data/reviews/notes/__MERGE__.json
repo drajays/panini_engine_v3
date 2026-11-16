@@ -25,7 +25,22 @@
      "kind": "question"
     }
    ],
-   "status_at": "2026-11-16T00:53:14+0530"
+   "status_at": "2026-11-16T00:53:14+0530",
+   "context": {
+    "inferred": true,
+    "surface_dev": "रामम्",
+    "surface_slp1": "rAmam",
+    "page": "/shabdarupa",
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "linga": "pulliṅga",
+    "linga_candidates": [
+     "pulliṅga"
+    ],
+    "vibhakti": 2,
+    "vacana": 1,
+    "sup_upadesha": "am"
+   }
   }
  ]
 }
