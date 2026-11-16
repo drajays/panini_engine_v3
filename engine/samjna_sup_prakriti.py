@@ -81,7 +81,7 @@ def is_siti_pada_context(pr: Term, anga: Term) -> bool:
         return "taddhita" in pr.tags and "pratyaya" in pr.tags and "it:sit" in pr.tags     # siti ca, no yaci narrowing: the s the loop's own it-lopa tagged
     if is_sarvanamasthana_sup(pr, anga):
         return False
-    raw = pr.meta.get("upadesha_slp1") or ""
+    raw = pr.meta.get("upadesha_slp1_original") or pr.meta.get("upadesha_slp1") or ""   # 7.1.9 rewrites Bis→Es / jas→as: the upadeśa decides siti, not the substitute
     # siti = the affix has an *it* s. The s of a 4.1.2 vibhakti is never it (1.3.4 na vibhaktau tusmāḥ: jas, śas, os, bhyas,
     # ṅas …): os is a bha-trigger (rājñoḥ), not a pada-trigger. (A non-vibhakti affix tagged sup, e.g. yus, still is sit.)
     if raw in _VIBHAKTI_4_1_2:
