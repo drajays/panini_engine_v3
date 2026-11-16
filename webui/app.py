@@ -150,6 +150,7 @@ from webui.notes import bp as _notes_bp  # noqa: E402 — audit notes under each
 app.register_blueprint(_notes_bp)
 from webui.search import bp as _search_bp  # noqa: E402 — the one search for stem/dhātu/rūpa boxes (/api/search)
 app.register_blueprint(_search_bp)
+import threading as _th; from webui.search import _index as _search_index; _th.Thread(target=_search_index, daemon=True).start()   # warm the search index at start so the first query is not 1-2 s
 
 
 _DOCS = _ROOT / "docs"
