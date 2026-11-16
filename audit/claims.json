@@ -1318,5 +1318,16 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794793718.5526578
+ },
+ {
+  "id": "n1173",
+  "agent": "claude",
+  "scope": [
+   "1.1.73"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1794795682.000881
  }
 ]
