@@ -34,6 +34,7 @@ out += ["", "## Actions taken from notes (manual, append-only)", "",
         "- 2026-11-16 · Coverage rebuild ended (4h12m): 3 failures found, all from commit 5d488e27 (4.2.82 asked a vivakṣā sense its samagra does not name — now reads the cāturarthika frame; 4.2.82 / 4.1.88 lost the demo registry keys godau / paYcendra still pin — legacy branch restored, S24). Ledgers regenerated; ratchets green. Notes: 1.4.18 → S186 (AND/OR saṃjñā groups), 6.1.87 → S184.",
         "- 2026-11-16 · Rajpopat 1.4.2 vs tradition: docs/RAJPOPAT_1_4_2.md + tools/rajpopat_1_4_2_experiment.py (0 disagreements on 39 contested DOI decisions in nominal paradigms); S187 (apavāda row mislabelled para).",
         "- 2026-11-16 · Fix: 1.4.16 fired for rāma + Es (note 1.4.16 f56e0369ba) because 7.1.9 overwrote the sup upadeśa Bis→Es; is_siti_pada_context now reads upadesha_slp1_original. 16273 tests green.",
+        "- 2026-11-16 · 1.1.56 note (ya as upadeśa): ya is not ⚠-flagged; it-table wording for units with no 1.3.9 step now says an ādeśa without an it-letter needs none (prakriya.js). 1.4.1 note (pada + bha stacked on rāma) → S186, no new work.",
         "- 2026-11-15 · No change needed (engine correct): 2.1.1 and 1.2.46 not offered for rāma + au."]
 (ROOT / "docs/NOTES_LOG.md").write_text("\n".join(out) + "\n", encoding="utf-8")
 print(len(rows), "notes ->", "docs/NOTES_LOG.md")

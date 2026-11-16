@@ -145,7 +145,7 @@ const Prakriya = (() => {
       <table class="pk-ledger-t"><tr><th>उपदेशः</th><th>${en ? "kind" : "प्रकारः"}</th><th>इत्-वर्णाः → संज्ञा (सूत्रम्)</th><th>लोपः</th></tr>${rows.map(({i, r}) =>
         `<tr><td class="dev"><b>${esc(r.upadesha)}</b></td><td>${esc(kindOf(r.upadesha))}</td><td>${r.items.map(x => `${esc(x.letter)} → <b>${esc(x.name)}</b> <small>${esc(x.sutra)}</small>`).join(" · ")}</td><td><a href="#s-${i + 1}">${i + 1}</a></td></tr>`).join("")}
       ${grown.map(x => `<tr class="pk-it-gap"><td class="dev"><b>${esc(devOf(x.u))}</b></td><td>${esc(ROLE[roleOf(x.role)][en ? 1 : 0])}</td><td>⚠ ${esc(x.grown.map(g => `${g.from} → ${g.to}`).join("; "))} — ${en ? "the engine put this in without running 1.3.2–1.3.9 on it (shortcut ledger S174)" : "इञ्जन ने इस पर १.३.२–१.३.९ चलाए बिना इसे जोड़ा (शॉर्टकट-बही S174)"}</td><td>${x.grown.map(g => `<a href="#s-${g.i + 1}">${g.i + 1}</a> <small>${esc(g.sid)}</small>`).join(" ")}</td></tr>`).join("")}
-      ${plain.map(x => `<tr class="pk-it-none"><td class="dev">${esc(devOf(x.u))}</td><td>${esc(ROLE[roleOf(x.role)][en ? 1 : 0])}</td><td class="muted">${en ? "no 1.3.9 step for it in this trace" : "इस ट्रेस में इसके लिए १.३.९ चरण नहीं"}</td><td></td></tr>`).join("")}</table></details>`;
+      ${plain.map(x => `<tr class="pk-it-none"><td class="dev">${esc(devOf(x.u))}</td><td>${esc(ROLE[roleOf(x.role)][en ? 1 : 0])}</td><td class="muted">${en ? "no 1.3.9 step in this trace (none is due for an ādeśa without an it-letter, e.g. ya)" : "इस ट्रेस में १.३.९ चरण नहीं (इत्-वर्णरहित आदेश, जैसे य, के लिए आवश्यक नहीं)"}</td><td></td></tr>`).join("")}</table></details>`;
   }
 
   /* a saṃjñā step: which part the name falls on */
