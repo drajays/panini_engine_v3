@@ -21,7 +21,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
   <div class="dr-tally" id="count" style="margin:.6rem 0 .2rem"></div>
   <div id="list" class="dr-list" style="max-width:none"></div>
   <div class="dr-ctl" style="margin-top:.4rem;align-items:center"><button id="prev" type="button">← पूर्व</button><span id="pg"></span><button id="next" type="button">अग्र →</button></div>
-  <div id="filters"></div>
+  <details id="fdet"><summary style="cursor:pointer;margin:.6rem 0 .2rem"><b>Filters</b> <span id="fsum" class="pf-muted">none active — click to open</span></summary><div id="filters"></div></details>
 </div>
 
 <div id="out"></div>
@@ -65,7 +65,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     kind: "shabda",
     onChange: () => refilter(),
   });
-  if (QS.get("filters")) PF.fromQuery(QS.get("filters"));
+  if (QS.get("filters")) { PF.fromQuery(QS.get("filters")); $("fdet").open = true; }
 
   fetch("/static/shabda_index.json").then(r => r.json()).then(r => {
     IX = r; refilter();
@@ -89,6 +89,8 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     else hits = IX.reduce((a, d, i) => (pass(d) && a.push(i), a), []);
     page = 0; paintList();
     PF.setStatus(hits.length);
+    const act = $("pf-status-filters") ? $("pf-status-filters").innerText : ""; $("fsum").textContent = /No filters/i.test(act) ? "none active — click to open" : act;
+    if (q && hits.length && ["exact", "translit", "normalised"].includes(why[hits[0]]) && hits[0] !== ids) pick(hits[0]);   // a typed word that equals a stem shows its paradigm at once
   }
   function paintList() {
     const n = hits.length, from = page * PAGE;
@@ -98,6 +100,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     $("pg").textContent = n ? `${from + 1}–${Math.min(n, from + PAGE)} / ${n}` : "—";
     $("prev").disabled = page === 0; $("next").disabled = from + PAGE >= n;
   }
+  $("q").addEventListener("keydown", e => { if (e.key === "Enter" && hits.length) { e.preventDefault(); pick(hits[0]); } });   // Enter = the top hit
   $("q").addEventListener("input", SSearch.debounce(refilter)); $("sch").addEventListener("change", refilter);   // the selector is only a hint now
   $("prev").onclick = () => { page--; paintList(); }; $("next").onclick = () => { page++; paintList(); };
   $("list").addEventListener("click", e => { const c = e.target.closest("[data-i]"); if (c) pick(+c.dataset.i); });
