@@ -50,8 +50,8 @@ def _eligible(state: State):
             continue
         # आ कडारादेका संज्ञा (1.4.1) + विप्रतिषेधे परं कार्यम् (1.4.2): before a
         # yac-initial pratyaya 1.4.18 भ is the one saṃjñā — pada never applies
-        if yaci_onset_loose(pr):
-            continue
+        if yaci_onset_loose(pr) and not ("sup" in pr.tags and pr.varnas[0].slp1 in ("z", "s")):
+            continue    # su (loc. pl.) is not yaci (as in 1.4.18): its stem is pada by this sūtra, rājasu
         yield i
 
 

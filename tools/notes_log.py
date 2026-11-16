@@ -36,6 +36,7 @@ out += ["", "## Actions taken from notes (manual, append-only)", "",
         "- 2026-11-16 · Fix: 1.4.16 fired for rāma + Es (note 1.4.16 f56e0369ba) because 7.1.9 overwrote the sup upadeśa Bis→Es; is_siti_pada_context now reads upadesha_slp1_original. 16273 tests green.",
         "- 2026-11-16 · 1.1.56 note (ya as upadeśa): ya is not ⚠-flagged; it-table wording for units with no 1.3.9 step now says an ādeśa without an it-letter needs none (prakriya.js). 1.4.1 note (pada + bha stacked on rāma) → S186, no new work.",
         "- 2026-11-16 · Fix: 1.1.43 tagged sya (ṅas) sarvanāmasthāna because it tested the first letter s (note 1.1.43 887d594788); now reads the original upadeśa (su / s~). Repeats: 1.4.1 → S186; 1.4.21/22, 2.3.36, 2.3.50 → S179; 6.1.101 / 6.1.87 → S184; 7.1.54 → S174. S183 spike: three coordinator-side blockers recorded.",
+        "- 2026-11-16 · Fix: 1.4.17 never fired for the 7/3 su (loose yaci counted s; 1.4.18 already excluded it) — rāmeṣu / rājasu stem now gets pada by 1.4.17 (note 1.4.17 9136692159); sig baseline refrozen (7-3 +1.4.17, 3-3 1.4.16→1.4.18, 4-1 −1.1.43). Vocative cases of note 6.1.69 tested (tests/unit/test_vocative_6_1_69.py); S188 (neuter a-stem vocative path). 2.3.47/48/49 → S179; 6.1.88 / 6.1.102 → S184.",
         "- 2026-11-15 · No change needed (engine correct): 2.1.1 and 1.2.46 not offered for rāma + au."]
 (ROOT / "docs/NOTES_LOG.md").write_text("\n".join(out) + "\n", encoding="utf-8")
 print(len(rows), "notes ->", "docs/NOTES_LOG.md")
