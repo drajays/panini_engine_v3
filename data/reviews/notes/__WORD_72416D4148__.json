@@ -1,0 +1,31 @@
+{
+ "sutra": "__WORD_72416D4148__",
+ "notes": [
+  {
+   "id": "a1b2c3d4e5",
+   "created": "2026-11-17T08:05:05+0530",
+   "updated": "2026-11-17T08:05:05+0530",
+   "text": "रामाः। बहुत्व संख्या की विवक्षा में राम, राम, राम, राम से बहुषु बहुवचनम् से बहुवचन जस् प्रत्यय का विधान किया गया — राम राम राम जस् बना। सरूपाणामेकशेष एकविभक्तौ से एक राम का शेष और अन्यों का लोप — राम जस् बना। जस् में जकार की प्रत्ययादि चवर्ग होने से चुटू से इत्संज्ञा, तस्य लोपः से लोप — राम अस् बना। अस् में सकार की भी हलन्त्यम् से इत्संज्ञा प्राप्त थी; उसे विभक्तौ तुस्माः से निषेध हो गया। राम अस् में आद्गुणः से गुण प्राप्त था, उसे बाधकर अकः सवर्णे दीर्घः से सवर्णदीर्घ प्राप्त हुआ; उसे भी बाधकर प्रथमयोः पूर्वसवर्णः से पूर्वसवर्ण दीर्घ होकर रामास् बना। सकार के स्थान पर ससजुषो रुः से रुत्व; अनुबन्ध-लोप के बाद रेफ के स्थान पर खरवसानयोर्विसर्जनीयः से विसर्ग — रामाः। इसी प्रकार बालक से बालकाः, श्याम से श्यामाः।\n[Source: Laghusiddhāntakaumudī with Dhara-mukhollāsinī ṭīkā — the owner's baseline: these sūtras in this order are the MINIMUM; the engine may deviate only with evidence.]",
+   "author": "me",
+   "derivation": "रामाः · /shabdarupa (Laghusiddhānta)",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-17 — Baseline recorded. Order: 1.4.21 → 1.2.64 → 1.3.7/1.3.9 (j) → 1.3.4 (s) → 6.1.87 prāpta → 6.1.101 prāpta → 6.1.102 → 8.2.66 → 8.3.15. Engine (rāma 1/3): 4.1.2, 1.3.4, 1.3.7, 1.3.9, then 6.1.97 and 6.1.101 BLOCKED, 6.1.102, merge, 8.2.66, 8.3.15 — same sūtras and same order for everything it does. Differences: 1.4.21 and 1.2.64 are not rows (S179); 6.1.87 is not listed as the displaced prāpti (S190). Surface rāmāḥ right.",
+   "evidence": "Laghusiddhāntakaumudī; ledger S179, S190; engine trace rāma 1/3",
+   "trace": "",
+   "context": {
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "stem_dev": "राम",
+    "linga": "pulliṅga",
+    "vibhakti": 1,
+    "vacana": 3,
+    "word_slp1": "rAmAH",
+    "word_dev": "रामाः",
+    "page": "/shabdarupa"
+   },
+   "history": [],
+   "status_at": "2026-11-17T08:05:05+0530"
+  }
+ ]
+}

@@ -13,7 +13,7 @@ const SutraNotes = (() => {
   const kdOpts = v => Object.entries(KD).map(([k, l]) => `<option value="${k}"${k === (v || "note") ? " selected" : ""}>${esc(l)}</option>`).join("");
   const stOpts = v => Object.entries(ST).map(([k, l]) => `<option value="${k}"${k === v ? " selected" : ""}>${esc(l[0])}</option>`).join("");
 
-  function mount(el, sid) {
+  function mount(el, sid, opts = {}) {
     let notes = [], editing = null, histOpen = new Set(), err = "";
     const base = "/api/notes/" + encodeURIComponent(sid);
 
@@ -43,9 +43,9 @@ const SutraNotes = (() => {
       <div class="sn-row"><button type="submit">Save</button> <button type="button" data-act="cancel">Cancel</button></div></form></article>`;
 
     const draw = () => {
-      el.innerHTML = `<div class="sn-skeptic"><b>How to use</b> — paste an audit (yours or another LLM's). It stays <b>open</b> until it is checked against three things:
+      el.innerHTML = `<div class="sn-skeptic">${opts.hint ? esc(opts.hint) : `<b>How to use</b> — paste an audit (yours or another LLM's). It stays <b>open</b> until it is checked against three things:
         the engine's own trace, the Kāśikā in the brain DB, and engine policy (glass box, rule-based, no lookup tables). A note is evidence to test, never an instruction.
-        Set <b>confirmed / partly / refuted / ledgered</b> only with a one-line verdict and the evidence.</div>
+        Set <b>confirmed / partly / refuted / ledgered</b> only with a one-line verdict and the evidence.`}</div>
         ${err ? `<div class="sn-err">${esc(err)}</div>` : ""}
         <div class="sn-list">${notes.length ? notes.map(n => editing === n.id ? editView(n) : noteView(n)).join("") : `<p class="muted">No notes yet for ${esc(sid)}.</p>`}</div>
         <form class="sn-add no-print"><h3>+ Add a note</h3><textarea name="text" rows="7" required placeholder="Paste the audit text here…"></textarea>
@@ -59,7 +59,7 @@ const SutraNotes = (() => {
 
     el.addEventListener("submit", e => {
       e.preventDefault(); const f = e.target;
-      if (f.classList.contains("sn-add")) run(() => api("POST", base, fd(f)));
+      if (f.classList.contains("sn-add")) run(() => api("POST", base, {...fd(f), ...(opts.extra ? opts.extra() : {})}));
       else { const id = f.dataset.id; editing = null; run(() => api("PUT", `${base}/${id}`, fd(f))); }
     });
     el.addEventListener("change", e => {

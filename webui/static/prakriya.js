@@ -306,6 +306,25 @@ const Prakriya = (() => {
   const askLabel = sid => { const c = (noteCounts()[sid] || {}).n; return `✎${c ? `<small>${c}</small>` : ""}`; };
   const askBtn = (sid, i) => `<button type="button" class="pk-ask no-print" data-sid="${esc(sid)}" data-i="${i}" title="${pref.gloss === "en" ? "Ask a question or add a note on this sūtra (saved under it)" : "इस सूत्र पर प्रश्न / टिप्पणी जोड़ें (सूत्र-पृष्ठ पर सुरक्षित)"}">${askLabel(sid)}</button>`;
 
+  /* ✎ notes on the WORD itself (e.g. रामाः: a short summary of the sūtras and their order, from a text such as the Laghusiddhāntakaumudī + Dhara-mukhollāsinī).
+     Stored like any note, under the id __WORD_<hex of the surface>__ (webui/notes.py), with the page context; the full notes UI (SutraNotes) is mounted on demand. Data only — the engine never reads it. */
+  const wordSid = d => d.surface && d.surface.slp1 ? "__WORD_" + [...new TextEncoder().encode(d.surface.slp1)].map(b => b.toString(16).padStart(2, "0")).join("").toUpperCase() + "__" : "";
+  function wordNotes(box, d) {
+    const sid = wordSid(d); box.hidden = !sid; if (!sid) return;
+    const sum = box.querySelector(".pk-wn-sum"), word = fmt(d.surface.slp1, d.surface.dev);
+    box.dataset.sid = sid; box.dataset.word = word;
+    fetch("/api/notes/" + sid).then(r => r.json()).then(j => { if (box.dataset.sid === sid) sum.textContent = `✎ शब्द-टिप्पणी · notes on ${word}${j.notes.length ? " (" + j.notes.length + ")" : ""}`; }).catch(() => {});
+    const open = () => {
+      if (!box.open || box.dataset.mounted === sid) return;
+      box.dataset.mounted = sid;
+      const old = box.querySelector(".pk-wn-host"), host = document.createElement("div"); host.className = "pk-wn-host"; old.replaceWith(host);
+      const go = () => SutraNotes.mount(host, sid, {hint: `Notes on the word ${word}: e.g. a short summary of its sūtras and their order (cite the text — Laghusiddhāntakaumudī / Dhara-mukhollāsinī, Kāśikā …). The engine may deviate from that order only with evidence.`,
+        extra: () => ({context: {...pkContext(), word_slp1: d.surface.slp1, word_dev: d.surface.dev || ""}, derivation: (d.title || word) + " · " + location.pathname, author: "me"})});
+      if (window.SutraNotes) go(); else { const sc = document.createElement("script"); sc.src = "/static/notes.js?v=4"; sc.onload = go; document.head.appendChild(sc); }
+    };
+    box.ontoggle = open; open();
+  }
+
   function row({s, i, group}, ctx) {
     const st = STATUS[s.status] || [s.status, s.status], id = "s-" + (i + 1), deep = pref.depth === "shastriya";
     const star = lk().has(s.sutra_id) && pref.depth !== "beginner" ? `<span class="pk-lk" title="Laghukaumudī sūtra">★</span>` : "";
@@ -444,7 +463,7 @@ ${et || "  (no trace)"}${cs}
       <button type="button" id="pk-full" class="pk-btn-full" title="Full page — use the whole screen (Esc to close)">⛶ Full page</button><button type="button" id="pk-print">Print</button><button type="button" id="pk-json">Export JSON</button>
       <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
       <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
-      <h2 class="pk-result dev"></h2><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
+      <h2 class="pk-result dev"></h2><details class="pk-wn no-print"><summary class="pk-wn-sum">✎ शब्द-टिप्पणी · notes on this word</summary><div class="pk-wn-host"></div></details><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
       <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
         <button type="button" class="pk-inspect-note" title="Note on this sūtra: why you think it was needed here, with the śāstra that supports it">✎ टिप्पणी · note</button>
@@ -479,6 +498,7 @@ ${et || "  (no trace)"}${cs}
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
       q(".pk-result").innerHTML = `${esc(d.title || "")} ${d.surface ? `→ <b>${esc(fmt(d.surface.slp1, d.surface.dev))}</b>` : ""}`;
       q(".pk-letters").innerHTML = letters();
+      wordNotes(q(".pk-wn"), d);
       if (location.hash.startsWith("#s-")) { const n = document.getElementById(location.hash.slice(1)); if (n) { n.classList.add("pk-hit"); n.scrollIntoView({block: "center"}); } }
     };
     [["pk-depth", "depth"], ["pk-script", "script"], ["pk-gloss", "gloss"]].forEach(([id, k]) =>
