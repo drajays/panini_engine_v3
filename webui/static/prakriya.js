@@ -273,6 +273,19 @@ const Prakriya = (() => {
     NIYAMA: ["नियमः", "Restricts", "limits where another rule may act"], PRATISHEDHA: ["प्रतिषेधः", "Forbids", "stops another rule from acting"],
     ATIDESHA: ["अतिदेशः", "Treats as", "says: treat this as if it were that"], VIBHASHA: ["विभाषा", "Optional", "the rule may or may not apply"],
     ANUVADA: ["अनुवादः", "Restates", "repeats something already taught"], NIPATANA: ["निपातनम्", "Irregular", "fixes an irregular form by statement"]};
+  const TYPE_HI = {VIDHI: "नियम कोई परिवर्तन करता है या अंग जोड़ता है", SAMJNA: "तकनीकी संज्ञा निर्धारित करता है", PARIBHASHA: "अन्य सूत्रों को पढ़ने की रीति बताता है",
+    ADHIKARA: "आगे के सूत्रों पर शासन करने वाला शीर्षक", NIYAMA: "अन्य सूत्र की प्रवृत्ति सीमित करता है", PRATISHEDHA: "अन्य सूत्र को रोकता है", ATIDESHA: "‘उसे वैसा मानो’ कहता है",
+    VIBHASHA: "सूत्र विकल्प से लगता है", ANUVADA: "पहले कही बात दोहराता है", NIPATANA: "अनियमित रूप को वचन से सिद्ध करता है"};
+  /* Śāstrīya depth: the sūtra in full beside its number, and one plain sentence on what it does in THIS step (UI-only teaching aid, marked ◆; the engine's own why stays below) */
+  const doesLine = s => {
+    if (isStruct(s)) return "";
+    const en = pref.gloss === "en", t = TYPE_PLAIN[s.sutra_type], a = fmt(s.form_before, s.form_before_dev), b = fmt(s.form_after, s.form_after_dev), ch = changes(s);
+    const st = (STATUS[s.status] || [s.status, s.status]), kind = t ? (en ? t[2][0].toUpperCase() + t[2].slice(1) : TYPE_HI[s.sutra_type]) : "";
+    const nm = !ch && s.sutra_type === "SAMJNA";
+    const here = nm ? (en ? `Here it gives its name to ${a}; the form itself stays.` : `यहाँ ${a} को यह संज्ञा मिलती है; रूप वही रहता है।`) : en ? (ch ? `Here it rewrites ${a} as ${b}.` : `Here the form stays ${a} (${st[1]}).`) : (ch ? `यहाँ ${a} → ${b}।` : `यहाँ रूप ${a} ही रहता है (${st[0]})।`);
+    return `<div class="pk-does">${PED(en)} <b>${en ? "What it does" : "क्या करता है"}</b> — ${esc(kind)}${kind ? ". " : ""}${esc(here)}</div>`;
+  };
+  const sutraLine = s => s._sutra_text_dev ? `<div class="pk-sutra-line"><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a> <span class="pk-sutra-t dev">${esc(s._sutra_text_dev)}</span></div>` : "";
   const typeChip = s => { const t = TYPE_PLAIN[s.sutra_type]; if (!t) return ""; return `<span class="pk-type pk-ty-${esc(s.sutra_type)}" title="${esc(t[2])}">${esc(pref.gloss === "en" ? t[1] : t[0])}</span>`; };
   /* the sūtra itself, opened with one click on every row (Śāstrīya depth shows it open) */
   const sutraCard = (s, deepOpen) => {
@@ -341,8 +354,8 @@ const Prakriya = (() => {
     }
     const why = s.status === "BLOCKED" ? s.gate_reason : s.status === "SKIPPED" ? s.skip_reason : "";
     const sch = deep ? `
-      <div class="pk-sch">${s._sutra_text_dev ? `<span class="dev">${esc(s._sutra_text_dev)}</span>` : ""}
-        ${s._padaccheda_dev ? `<span class="muted dev"> · ${esc(s._padaccheda_dev)}</span>` : ""}
+      <div class="pk-sch">${s._sutra_text_dev ? "" : ""}
+        ${s._padaccheda_dev ? `<span class="muted dev">${/^\s*(पदच्छेदः|split)/.test(s._padaccheda_dev) ? "" : (pref.gloss === "en" ? "split into words" : "पदच्छेदः") + ": "}${esc(s._padaccheda_dev)}</span>` : ""}
         ${(s._anuvritti_from || []).length ? `<div class="muted">अनुवृत्तिः ← ${s._anuvritti_from.map(x => `<a href="/sutra/${esc(x)}">${esc(x)}</a>`).join(", ")}</div>` : ""}
         ${why ? `<div class="pk-why">${esc(why)}</div>` : ""}
         ${(s._lsk || []).length ? `<div class="muted">LSK pp. ${esc([...new Set(s._lsk.map(x => x.page))].slice(0, 6).join(", "))}${s._lsk.length > 6 ? "…" : ""}</div>` : ""}</div>` : "";
@@ -353,7 +366,7 @@ const Prakriya = (() => {
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev${ctx.padaAt >= 0 && i >= ctx.padaAt ? " pk-padaed" : ""}" data-i="${i}" title="${ctx.padaAt >= 0 && i >= ctx.padaAt ? "पदम् (सुप्तिङन्तं पदम् १.४.१४) — whole word, stem + ending · " : ""}क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>
-        ${tinGridHtml(s, ctx.viv)}${supGridHtml(s)}
+        ${deep ? sutraLine(s) + doesLine(s) : ""}${tinGridHtml(s, ctx.viv)}${supGridHtml(s)}
         <div class="pk-gloss">${pedGloss(s) && gloss(s) ? PED(pref.gloss === "en") + " " : ""}${esc(gloss(s))}</div>${deep ? "" : sutraCard(s, false)}${sch}</div></li>`;
   }
 
