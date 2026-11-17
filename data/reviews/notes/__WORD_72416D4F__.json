@@ -1,0 +1,39 @@
+{
+ "sutra": "__WORD_72416D4F__",
+ "notes": [
+  {
+   "id": "94258a63c8",
+   "created": "2026-11-17T08:27:51+0530",
+   "updated": "2026-11-17T14:26:19+0530",
+   "text": "रामौ। द्वितीया के द्विवचन में ओट्‌ आया। टक.र को हलन्त्यम्‌ से इत्संज्ञा हुई\nऔर तस्य लोपः से लोप हुआ। राम राम औ बना। एकशेष हुआ। राम औ वना! प्रथमा\nके द्विवचन में जैसे वृद्धि होकर रामौ बना था, वैसे ही यहाँ पर भी रामौ सिद्ध करें।",
+   "author": "me",
+   "derivation": "रामौ · /shabdarupa",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-17 — Baseline recorded (rāmau 2/2: auṭ, ṭ by 1.3.3 and lopa 1.3.9, ekaśeṣa 1.2.64, then as in 1/2). Engine: 4.1.2, 1.3.3, 1.3.9, 6.1.104, 6.1.102 BLOCKED, 6.1.88 → rāmau: same order. Differences: 1.2.64 and 2.3.2 not rows (S179); 6.1.87 prāpti not listed (S190).",
+   "evidence": "Laghusiddhāntakaumudī; ledger S179, S190; engine trace rāma 2/2",
+   "trace": "",
+   "context": {
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "stem_dev": "राम",
+    "linga": "pulliṅga",
+    "nyap": false,
+    "stem_source": "corpus stem #6591",
+    "vibhakti": 2,
+    "vibhakti_name": "द्वितीया",
+    "vacana": 2,
+    "vacana_name": "द्विवचनम्",
+    "surface_dev": "रामौ",
+    "surface_slp1": "rAmO",
+    "engine_vs_corpus": "equal",
+    "page": "/shabdarupa",
+    "url": "/shabdarupa",
+    "word_slp1": "rAmO",
+    "word_dev": "रामौ"
+   },
+   "history": [],
+   "status_at": "2026-11-17T14:26:19+0530"
+  }
+ ]
+}

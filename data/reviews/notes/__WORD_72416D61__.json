@@ -1,0 +1,39 @@
+{
+ "sutra": "__WORD_72416D61__",
+ "notes": [
+  {
+   "id": "eec7741be1",
+   "created": "2026-11-17T08:24:56+0530",
+   "updated": "2026-11-17T14:26:19+0530",
+   "text": "हे राम। सम्बोधन के एकवचन में प्रथमा का एकवचन सु आया, अनुबन्धलोप\nकरके राम+स्‌ बना। राम की अङ्गसंज्ञा ओर स्‌ को सम्बुद्धिसंज्ञा करके स्‌ की एडःहुस्वात्‌\nसम्बुद्धेः से लोप हुआ आर हे का पूर्वप्रयोग हुआ हे राम।",
+   "author": "me",
+   "derivation": "राम · /shabdarupa",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-17 — Baseline recorded (hē rāma: su, anubandha-lopa, sambuddhi-saṃjñā, 6.1.69 lopa, hē before). Engine rāma 8/1: 4.1.2, 1.3.2 (u of su~), 1.3.9, then 6.1.69 → rāma: same sūtras, same order. Differences: sambodhana 2.3.47 / sambuddhi 2.3.49 are not rows (S179); anga-saṃjñā is implicit (1.4.13 applies); hē is not generated. Surface right.",
+   "evidence": "Laghusiddhāntakaumudī; ledger S179; engine trace rāma 8/1",
+   "trace": "",
+   "context": {
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "stem_dev": "राम",
+    "linga": "pulliṅga",
+    "nyap": false,
+    "stem_source": "corpus stem #6591",
+    "vibhakti": 8,
+    "vibhakti_name": "सम्बोधनम्",
+    "vacana": 1,
+    "vacana_name": "एकवचनम्",
+    "surface_dev": "राम",
+    "surface_slp1": "rAma",
+    "engine_vs_corpus": "differs",
+    "page": "/shabdarupa",
+    "url": "/shabdarupa",
+    "word_slp1": "rAma",
+    "word_dev": "राम"
+   },
+   "history": [],
+   "status_at": "2026-11-17T14:26:19+0530"
+  }
+ ]
+}
