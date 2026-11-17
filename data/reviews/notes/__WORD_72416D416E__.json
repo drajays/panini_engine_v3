@@ -1,0 +1,39 @@
+{
+ "sutra": "__WORD_72416D416E__",
+ "notes": [
+  {
+   "id": "2ccca98e2a",
+   "created": "2026-11-17T21:20:06+0530",
+   "updated": "2026-11-18T00:11:54+0530",
+   "text": "रामान्‌ के नकार को\nअट्कुप्वाङ्नुम्व्यवायेऽपि णत्व करना चाहता था किन्तु पदान्तस्य ने निषेध कर दिया।\nरामान्‌ ही रह गया। अर्थात्‌ णत्व नहीं हुआ। रामान्‌ सिद्ध हुआ। अब इसी प्रकार बालकान्‌,\nश्यामान्‌ आदि को भी सिद्धि करें।\nअट्कुप्वाङनुम्व्यवायेऽपि यह सूत्र यहाँ पर केसे घटित हुआ? उसे देखिये-\nरामान्‌ में प्रथम वर्ण रकार (रेफ) है और अन्तिम वर्ण है नकार। रेफ से परे नकार को णत्व\nहोता हे किन्तु इन दोनों के मध्य आ, म्‌, आ इतने वणो का व्यवधान है। क्या इतने वरणो\nक व्यवधान होने पर भी णत्व हो सकता है? सूत्र के अर्थ पर विचार करिये। यदि रेफ और\nनकार के बीच किसी वर्ण का व्यवधान हो तो अट्‌, कवर्ग, पवर्ग, आङ, नुम्‌ इतने वर्णों\nका व्यवधान हो सकता हे। यहाँ पर तीन वर्णों में से आ, आ ये दो वर्ण तो अट्‌ प्रत्याहारगे आते है : और मकार पवर्ग में आता है। अतः इनके व्यवधान के में णत्व के लिए कोई\nवाधा नहीं है। इसलिए णत्व को प्राप्ति हुई थी।",
+   "author": "me",
+   "derivation": "रामान् · /shabdarupa",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-18 — Baseline right: aṭkupvāṅnumvyavāye'pi 8.4.2 would make ṇ (ṛ-vowel r, then ā m ā between: aṭ and pavarga), padāntasya 8.4.37 stops it. Engine rāma 2/3: 4.1.2, 1.3.8 + 1.3.9, 6.1.102, 6.1.103 (s → n, S185), 8.4.37 → rāmān. Difference: 8.4.2's prāpti is never shown, the cond exempts pada-final n (S192). Surface right.",
+   "evidence": "Laghusiddhāntakaumudī; ledger S192, S185; engine trace rāma 2/3",
+   "trace": "",
+   "context": {
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "stem_dev": "राम",
+    "linga": "pulliṅga",
+    "nyap": false,
+    "stem_source": "corpus stem #6591",
+    "vibhakti": 2,
+    "vibhakti_name": "द्वितीया",
+    "vacana": 3,
+    "vacana_name": "बहुवचनम्",
+    "surface_dev": "रामान्",
+    "surface_slp1": "rAmAn",
+    "engine_vs_corpus": "equal",
+    "page": "/shabdarupa",
+    "url": "/shabdarupa",
+    "word_slp1": "rAmAn",
+    "word_dev": "रामान्"
+   },
+   "history": [],
+   "status_at": "2026-11-18T00:11:54+0530"
+  }
+ ]
+}

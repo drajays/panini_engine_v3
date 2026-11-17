@@ -1,0 +1,39 @@
+{
+ "sutra": "__WORD_72416D417961__",
+ "notes": [
+  {
+   "id": "f43e13767a",
+   "created": "2026-11-18T00:09:26+0530",
+   "updated": "2026-11-18T00:11:54+0530",
+   "text": "in last part 1.1.56 is must--read this-ङेर्यः से ङे-सम्बन्धी एकार के\nस्थान पर *य' आदेश हुआ- राम+य बना। स्थानिवदादेशोऽनल्विधौ से य क स्थानिवद्भाव\nहोने से सुप्‌ मान लिया गया। रामभ्य में यजादि सुप्‌ य को मान कर अदन्त अंग राम के\nअन्त्य वर्ण अकार क स्थान पर दीर्घ आदेश हुआ- रामाय बना!",
+   "author": "me",
+   "derivation": "रामाय · /shabdarupa",
+   "kind": "note",
+   "status": "partly",
+   "verdict": "Claude 2026-11-18 — Baseline: ṅer yaḥ 7.1.13 → 1.1.56 (ya counts as sup) → 7.3.102 dīrgha → rāmāya. Engine rāma 4/1: 4.1.2, 1.3.8 + 1.3.9 (ṅ), 7.1.13, 7.3.102 → rāmāya: same sūtras and order. Differences: 1.1.56 not a row (S191); 2.3.13 caturthī / 1.4.22 not rows (S179).",
+   "evidence": "Laghusiddhāntakaumudī; ledger S191, S179; engine trace rāma 4/1",
+   "trace": "",
+   "context": {
+    "kind": "shabda",
+    "stem_slp1": "rAma",
+    "stem_dev": "राम",
+    "linga": "pulliṅga",
+    "nyap": false,
+    "stem_source": "corpus stem #6591",
+    "vibhakti": 4,
+    "vibhakti_name": "चतुर्थी",
+    "vacana": 1,
+    "vacana_name": "एकवचनम्",
+    "surface_dev": "रामाय",
+    "surface_slp1": "rAmAya",
+    "engine_vs_corpus": "equal",
+    "page": "/shabdarupa",
+    "url": "/shabdarupa",
+    "word_slp1": "rAmAya",
+    "word_dev": "रामाय"
+   },
+   "history": [],
+   "status_at": "2026-11-18T00:11:54+0530"
+  }
+ ]
+}
