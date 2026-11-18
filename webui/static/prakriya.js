@@ -454,6 +454,43 @@ ${et || "  (no trace)"}${cs}
     btn.textContent = ok ? "Copied ✓" : "Copy failed"; setTimeout(() => { btn.textContent = o; }, 1600);
   }
 
+  /* Conflict flow (UI teaching aid, ◆): which sūtra was stopped by which, from the engine's own BLOCKED rows ("layer: A beat B"). Arrow = stopped sūtra → the winner. Hidden until opened. */
+  const LAYER = {apavada: ["अपवादः", "apavāda (exception)"], para: ["परम्", "para (later)"], purva: ["पूर्वम्", "pūrva (earlier)"], nitya: ["नित्यम्", "nitya (ever-applicable)"], antaranga: ["अन्तरङ्गम्", "antaraṅga (inner)"]};
+  function conflictFlow(t) {
+    const en = pref.gloss === "en", E = new Map(), txt = {};
+    t.forEach(s => { if (s._sutra_text_dev) txt[s.sutra_id] = s._sutra_text_dev; });
+    t.forEach(s => { const m = s.status === "BLOCKED" && /^(\w+): (\S+) beat (\S+)/.exec(s.gate_reason || ""); if (m) E.set(m[1] + m[2] + ">" + m[3], {k: m[1], w: m[2], l: m[3], r: s.gate_reason.split(" — ").slice(1).join(" — ")}); });
+    const applied_ = t.map((s, i) => ({s, i})).filter(({s}) => /^APPLIED/.test(s.status) && !isStruct(s) && s.sutra_id !== "__MERGE__");
+    if (!E.size && !applied_.length) return "";
+    const edges = [...E.values()], ids = [...new Set(edges.flatMap(e => [e.l, e.w]))], rank = Object.fromEntries(ids.map(i => [i, 0]));
+    for (let n = 0; n < ids.length; n++) edges.forEach(e => { if (rank[e.w] <= rank[e.l] && rank[e.l] < ids.length) rank[e.w] = rank[e.l] + 1; });
+    const graph = () => {
+    const rows = []; ids.forEach(i => (rows[rank[i]] = rows[rank[i]] || []).push(i));
+    const W = 190, H = 54, GX = 40, GY = 70, pos = {}, cols = Math.max(...rows.map(r => r ? r.length : 0));
+    rows.forEach((r, y) => (r || []).forEach((i, x) => pos[i] = {x: 10 + x * (W + GX) + (cols - r.length) * (W + GX) / 2, y: 10 + y * (H + GY)}));
+    const wd = 20 + cols * (W + GX) - GX, ht = 20 + rows.length * (H + GY) - GY;
+    const node = i => `<g><rect x="${pos[i].x}" y="${pos[i].y}" width="${W}" height="${H}" rx="6" class="cf-n"/><a href="/sutra/${esc(i)}"><text x="${pos[i].x + W / 2}" y="${pos[i].y + 22}" text-anchor="middle" class="cf-id">${esc(i)}</text></a><text x="${pos[i].x + W / 2}" y="${pos[i].y + 42}" text-anchor="middle" class="cf-t dev">${esc((txt[i] || "").slice(0, 22))}</text></g>`;
+    const edge = (e, n) => { const a = pos[e.l], b = pos[e.w], x1 = a.x + W / 2 + (n % 5 - 2) * 12, y1 = a.y + (b.y >= a.y ? H : 0), x2 = b.x + W / 2 + (n % 5 - 2) * 12, y2 = b.y + (b.y >= a.y ? 0 : H), my = (y1 + y2) / 2;
+      return `<path d="M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}" class="cf-e" marker-end="url(#cf-arr)"><title>${esc(e.r)}</title></path><text x="${(x1 + x2) / 2 + 6}" y="${my}" class="cf-l dev">${esc(LAYER[e.k] ? LAYER[e.k][en ? 1 : 0] : e.k)}</text>`; };
+      return `<div class="cf-wrap"><svg viewBox="0 0 ${wd} ${ht}" style="width:100%;height:auto" role="img"><defs><marker id="cf-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="cf-ah"/></marker></defs>${edges.map(edge).join("")}${ids.map(node).join("")}</svg></div><p class="muted dev"><b>${en ? "Authority (engine's own, śāstra only)" : "प्रमाणम् (इञ्जन-स्थित, शास्त्रीय)"}:</b> ${[...new Set(edges.map(e => e.k + " — " + e.r))].map(esc).join("<br>")}</p>`;
+    };
+    const fm = (a, b) => `<span class="dev">${esc(fmt(a, ""))} → <b>${esc(fmt(b, ""))}</b></span>`;
+    const rounds = []; let cur = null;
+    t.forEach((s, i) => { const m = s.status === "BLOCKED" && /^(\w+): (\S+) beat (\S+)/.exec(s.gate_reason || "");
+      if (m) { if (!cur) rounds.push(cur = {at: i, w: m[2], lose: []}); cur.lose.push({id: m[3], k: m[1], w: m[2], r: s.gate_reason.split(" — ").slice(1).join(" — ")}); }
+      else if (cur && /^APPLIED/.test(s.status)) { cur.win = {s, i}; cur = null; } });
+    const winners = new Set(rounds.map(r => r.win && r.win.i));
+    const ribbon = `<div class="cf-rib">${applied_.map(({s, i}) => `<a href="#s-${i + 1}" class="cf-chip${winners.has(i) ? " cf-won" : ""}" title="${esc(txt[s.sutra_id] || "")}"><b>${i + 1}</b> ${esc(s.sutra_id)}<br>${fm(s.form_before, s.form_after)}</a>`).join('<span class="cf-ar">›</span>')}</div>`;
+    const cards = rounds.map((r, n) => `<div class="cf-round"><div class="cf-rh">${en ? "Conflict" : "विरोधः"} ${n + 1} · ${en ? "step" : "चरण"} #${r.at + 1}${r.win ? "–" + (r.win.i + 1) : ""}</div>
+      <div class="cf-row"><span class="cf-cand cf-w">✔ <a href="/sutra/${esc(r.w)}">${esc(r.w)}</a> <span class="dev">${esc((txt[r.w] || "").slice(0, 30))}</span></span> <span class="muted">${en ? "wins; competing:" : "जयति; प्रतिस्पर्धिनः:"}</span>
+        ${r.lose.map(l => `<span class="cf-cand cf-l">✘ <a href="/sutra/${esc(l.id)}">${esc(l.id)}</a> <span class="dev">${esc((txt[l.id] || "").slice(0, 22))}</span> <i>${esc(LAYER[l.k] ? LAYER[l.k][en ? 1 : 0] : l.k)}</i></span>`).join(" ")}</div>
+      ${r.win ? `<div class="cf-row">${en ? "Winner applied" : "प्रयुक्तम्"}: <a href="#s-${r.win.i + 1}">#${r.win.i + 1}</a> ${fm(r.win.s.form_before, r.win.s.form_after)}</div>` : ""}
+      <div class="cf-row dev muted">${[...new Set(r.lose.map(l => l.r))].map(esc).join("<br>")}</div></div>`).join("");
+    return `<details class="pk-flow no-print"><summary>🔍 ${en ? "Glass box — rule application & conflict resolution" : "काचपेटिका — सूत्र-प्रयोगः विरोध-समाधानं च"} (${applied_.length} ${en ? "applied" : "प्रयुक्त"} · ${rounds.length} ${en ? "conflicts" : "विरोधाः"}) ${PED(en)}</summary>
+      <p class="muted">${en ? "Ribbon: every sūtra that fired, in order (green = won a conflict). Cards: who competed, who won, by which śāstra authority. Graph: arrow = stopped sūtra → winner. Only what the engine itself recorded is shown." : "पट्टी: प्रयुक्त सूत्र क्रमेण (हरित = विरोध जीता)। पत्रक: कौन प्रतिस्पर्धी, कौन विजयी, किस शास्त्र-प्रमाण से। चित्र: तीर = रुका सूत्र → विजयी। केवल इञ्जन-अभिलिखित।"}</p>
+      ${ribbon}${cards}${E.size ? graph() : ""}</details>`;
+  }
+
   function mount(el, d) {
     const t = d.trace || [], L = t[t.length - 1];
     if (!d.surface && L && L.form_after) d.surface = {slp1: L.form_after, dev: L.form_after_dev};
@@ -477,7 +514,7 @@ ${et || "  (no trace)"}${cs}
       <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
       <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><details class="pk-wn no-print"><summary class="pk-wn-sum">✎ शब्द-टिप्पणी · notes on this word</summary><div class="pk-wn-host"></div></details><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
-      <div class="pk-legend"></div><div class="pk-ledger-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
+      <div class="pk-legend"></div><div class="pk-ledger-box"></div><div class="pk-flow-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
         <button type="button" class="pk-inspect-note" title="Note on this sūtra: why you think it was needed here, with the śāstra that supports it">✎ टिप्पणी · note</button>
         <div class="pk-inspect-out" aria-live="polite"></div><div class="pk-inspect-form"></div></div>`;
@@ -507,6 +544,7 @@ ${et || "  (no trace)"}${cs}
       q(".pk-legend").innerHTML = legend() + `<div class="pk-tkey"><b>${pref.gloss === "en" ? "Rule colours" : "सूत्र-रङ्गाः"}:</b> ${Object.entries(TYPE_PLAIN).map(([k, v]) => `<span class="pk-type pk-ty-${k}" title="${esc(v[2])}">${esc(pref.gloss === "en" ? v[1] : v[0])}</span>`).join(" ")}</div>`;
       q(".pk-auth").innerHTML = authNote();
       q(".pk-ledger-box").innerHTML = itLedger(t);
+      const fo = q(".pk-flow-box").querySelector("details")?.open; q(".pk-flow-box").innerHTML = conflictFlow(t); if (fo) q(".pk-flow-box details").open = true;
       q(".pk-count").textContent = pref.depth === "beginner" ? `${rows.length} milestones (of ${t.length} rule checks). Choose Kaumudī or Śāstrīya for more.`
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
       q(".pk-result").innerHTML = `${esc(d.title || "")} ${d.surface ? `→ <b>${esc(fmt(d.surface.slp1, d.surface.dev))}</b>` : ""}`;
