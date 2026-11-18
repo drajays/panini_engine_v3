@@ -514,7 +514,7 @@ ${et || "  (no trace)"}${cs}
       <button type="button" id="pk-copy" class="pk-btn-copy" title="पैनल् में दिखी पूरी प्रक्रिया — Copy entire panel">प्रतिलिपिः · Copy panel</button>
       <button type="button" id="pk-copy-llm" class="pk-btn-copy" title="LLM-समीक्षा हेतु — Copy panel + audit prompt">LLM-कृते · Copy to LLM</button></div>
       <h2 class="pk-result dev"></h2><details class="pk-wn no-print"><summary class="pk-wn-sum">✎ शब्द-टिप्पणी · notes on this word</summary><div class="pk-wn-host"></div></details><div class="pk-letters"></div><div class="pk-letter-info muted" aria-live="polite"></div>
-      <div class="pk-legend"></div><div class="pk-ledger-box"></div><div class="pk-flow-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
+      <div class="pk-legend"></div><div class="pk-ledger-box"></div><div class="pk-flow-box"></div><div class="pk-journey-box"></div><p class="muted pk-count"></p><div class="pk-auth muted"></div><div class="pk-hidden-bar no-print"></div><ol class="pk-list"></ol>
       <div class="pk-inspect no-print"><label>कस्मात् सूत्रं न प्रयुक्तम्? · Why didn't rule apply? <input class="pk-sid-in" placeholder="e.g. 7.1.9" size="10"></label>
         <button type="button" class="pk-inspect-note" title="Note on this sūtra: why you think it was needed here, with the śāstra that supports it">✎ टिप्पणी · note</button>
         <div class="pk-inspect-out" aria-live="polite"></div><div class="pk-inspect-form"></div></div>`;
@@ -545,6 +545,7 @@ ${et || "  (no trace)"}${cs}
       q(".pk-auth").innerHTML = authNote();
       q(".pk-ledger-box").innerHTML = itLedger(t);
       const fo = q(".pk-flow-box").querySelector("details")?.open; q(".pk-flow-box").innerHTML = conflictFlow(t); if (fo) q(".pk-flow-box details").open = true;
+      if (window.PkJourney) { const jo = q(".pk-journey-box").querySelector("details")?.open; q(".pk-journey-box").innerHTML = PkJourney.render(t, d, fmt); PkJourney.wire(q(".pk-journey-box")); if (jo) q(".pk-journey-box details").open = true; }
       q(".pk-count").textContent = pref.depth === "beginner" ? `${rows.length} milestones (of ${t.length} rule checks). Choose Kaumudī or Śāstrīya for more.`
         : pref.depth === "kaumudi" ? `${rows.length} rows — every applied sūtra; ★ = in the Laghukaumudī list.` : `${t.length} rows: ${t.filter(applied).length} applied.`;
       q(".pk-result").innerHTML = `${esc(d.title || "")} ${d.surface ? `→ <b>${esc(fmt(d.surface.slp1, d.surface.dev))}</b>` : ""}`;

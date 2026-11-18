@@ -249,6 +249,7 @@ def _pack(state) -> dict:
 
 def _with_extras(out: dict, state, data: dict, rerun) -> dict:
     out["letters"] = _letters(state)
+    out["forks"] = [{k: v for k, v in f.items() if isinstance(v, (str, bool, int))} for f in (getattr(state, "vibhasha_forks", None) or []) if isinstance(f, dict)]
     dis = data.get("disable") or []
     if isinstance(dis, str):
         dis = dis.split(",")
@@ -2060,7 +2061,7 @@ def api_dhaturupa_cell():
         kw = {"pada": q["pada"]} if q.get("pada") and (q.get("prayoga") or "kartari") == "kartari" else {}
         try:
             st = tin_derive(row.get("id") or row["upadesha_slp1"], ours, q.get("prayoga") or "kartari", pu, vc, **kw)
-            eng = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
+            eng = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace), "forks": [{k: v for k, v in f.items() if isinstance(v, (str, bool, int))} for f in (st.vibhasha_forks or []) if isinstance(f, dict)]}
         except Exception as ex:
             eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
     # The invariant: every sūtra Vidyut fires, our engine fires too (extras are fine). Compare against the closest branch.
@@ -2180,7 +2181,7 @@ def api_shabdarupa_cell():
     v = _sr_vidyut("subcell", q, vibhakti=vb, vacana=vc)
     try:
         st = derive(q["stem"], vb, vc, linga=q.get("linga") or "pulliṅga")
-        eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
+        eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace), "forks": [{k: v for k, v in f.items() if isinstance(v, (str, bool, int))} for f in (st.vibhasha_forks or []) if isinstance(f, dict)]}
     except Exception as ex:
         eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
     corpus = None
