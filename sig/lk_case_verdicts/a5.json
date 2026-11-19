@@ -62,70 +62,74 @@
   ]
  },
  "5.1.123": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['Sukklamm', 'Sukkllamm', 'Suklam'] ≠ expected SOklyam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "Sukla",
-     "",
+     "lex:varRa",
      "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.124": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['brAhmaRam', 'brAhmaRamm', 'brAhmmaRam', 'brAhmmaRamm'] ≠ expected brAhmaRyam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "brAhmaRa",
      "",
      "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.126": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['saKa'] ≠ expected saKyam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "saKi",
      "",
      "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.128": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['purohitam', 'purohitamm'] ≠ expected pOrohityam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "purohita",
      "",
      "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -785,15 +789,16 @@
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['prAtDikam', 'prAtDikamm', 'prAthikam', 'prAttDikamm', 'prAtthikamm'] ≠ expected prAsTikam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "prastha",
+     "prasTa",
      "",
      "taddhita:taddhitArtha=vApa|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -831,7 +836,7 @@
      "chain",
      "paYcan",
      "",
-     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
     ],
     "sub": "mismatch"
    },
@@ -842,81 +847,87 @@
      "chain",
      "saptan",
      "",
-     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
     ],
     "sub": "mismatch"
    },
    {
-    "result": "fail",
-    "why": "readings ['SAtikaH'] ≠ expected SatyaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "Sata",
      "",
-     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['SAtikaH'] ≠ expected SatikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "Sata",
      "",
-     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['sAhasrikaH', 'sAhassrikaH'] ≠ expected sAhasraH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "sahasra",
      "",
-     "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.50": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['vaMSaBAraH'] ≠ expected vAMSaBArikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "vaMSaBAra",
      "",
-     "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['kuwajaBAraH'] ≠ expected kOwajaBArikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "kuwajaBAra",
      "",
-     "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['ballvajaBAraH', 'balvajaBAraH'] ≠ expected bAlvajaBArikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "balvajaBAra",
      "",
-     "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -925,15 +936,16 @@
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['prAtDikaH', 'prAthikaH', 'prAttDikaH', 'prAtthikaH'] ≠ expected prAsTikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "prastha",
+     "prasTa",
      "",
      "taddhita:taddhitArtha=samBavati|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -1001,19 +1013,20 @@
   ]
  },
  "5.1.57": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['prAtDikaH', 'prAthikaH', 'prAttDikaH', 'prAtthikaH'] ≠ expected prAsTikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "prastha",
+     "prasTa",
      "",
      "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -1120,7 +1133,7 @@
   ]
  },
  "5.1.72": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
@@ -1148,15 +1161,16 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['candrAyaRaH'] ≠ expected cAndrAyaRikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "candrAyaRa",
+     "cAndrAyaRa",
      "",
      "taddhita:taddhitArtha=vartayati|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -1179,7 +1193,7 @@
   ]
  },
  "5.1.74": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
@@ -1195,20 +1209,21 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['kroSaSataH'] ≠ expected krOSaSatikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "kroSaSata",
      "",
      "taddhita:taddhitArtha=yojanagacCati|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.77": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
@@ -1224,15 +1239,16 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['uttarapaTaH', 'utttarapaTaH'] ≠ expected OttarapaTikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "uttarapaTa",
      "",
-     "taddhita:taddhitArtha=gacCati|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=uttarapaTa|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -1242,225 +1258,242 @@
   "cases": [
    {
     "result": "fail",
-    "why": "readings ['ahaH'] ≠ expected Ahnikam",
+    "why": "readings ['Ahikam', 'Ahikamm'] ≠ expected Ahnikam",
     "spec": [
      "chain",
      "ahan",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
     ],
     "sub": "mismatch"
    },
    {
-    "result": "fail",
-    "why": "readings ['arDamAsam', 'arDamAsamm', 'ardDamAsam', 'ardDamAsamm'] ≠ expected ArDamAsikam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "arDamAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['saMvatsaram', 'saMvatsaramm', 'saMvatssaramm', 'samvatsaram', 'samvatsaramm', 'samvatssaramm'] ≠ expected sAMvatsarikam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "saMvatsara",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.80": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlAdhIzwa|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlaBfta|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlaBUta|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlaBAvI|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.93": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlalaBya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsam', 'mAsamm'] ≠ expected mAsikam",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlakArya|sup:1,1,napuṃsaka"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlasukara|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['saMvatsaraH', 'saMvatssaraH', 'samvatsaraH', 'samvatssaraH'] ≠ expected sAMvatsarikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "saMvatsara",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.94": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['mAsaH'] ≠ expected mAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "mAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['arDamAsaH', 'ardDamAsaH'] ≠ expected ArDamAsikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "arDamAsa",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['saMvatsaraH', 'saMvatssaraH', 'samvatsaraH', 'samvatssaraH'] ≠ expected sAMvatsarikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "saMvatsara",
-     "",
+     "lex:kAla",
      "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "5.1.95": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "engine error: TypeError: engine.tape_init.taddhita.build_taddhita_state() got multiple values for keyword argument 'linga'",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "agniztoma",
-     "",
-     "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+     "agnizwoma",
+     "lex:yajYAKya",
+     "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
     ],
-    "sub": "engine_error"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "engine error: TypeError: engine.tape_init.taddhita.build_taddhita_state() got multiple values for keyword argument 'linga'",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "vAjapeya",
-     "",
-     "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+     "lex:yajYAKya",
+     "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
     ],
-    "sub": "engine_error"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "engine error: TypeError: engine.tape_init.taddhita.build_taddhita_state() got multiple values for keyword argument 'linga'",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "rAjasUya",
-     "",
-     "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+     "lex:yajYAKya",
+     "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
     ],
-    "sub": "engine_error"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -1569,30 +1602,32 @@
   ]
  },
  "5.1.101": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['santApaH'] ≠ expected sAntApikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "santApa",
+     "saMtApa",
      "",
      "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['sannAhaH', 'sannnAhaH'] ≠ expected sAnnAhikaH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
-     "sannAha",
+     "saMnAha",
      "",
      "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },

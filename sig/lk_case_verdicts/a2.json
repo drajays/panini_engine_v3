@@ -810,7 +810,7 @@
   ]
  },
  "2.2.18": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
@@ -825,14 +825,15 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['duspuruza'] ≠ expected duzpuruza",
+    "result": "pass",
+    "why": "",
     "spec": [
      "samasa",
      "[[\"dus\", 1, 1], [\"puruza\", 1, 1]]",
      "{}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -846,14 +847,15 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['praAcArya'] ≠ expected prAcArya",
+    "result": "pass",
+    "why": "",
     "spec": [
      "samasa",
      "[[\"pra\", 1, 1], [\"AcArya\", 1, 1]]",
      "{}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },

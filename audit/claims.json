@@ -1373,5 +1373,64 @@
   "status": "released",
   "hotspots": [],
   "updated": 1794829435.659567
+ },
+ {
+  "id": "lk4",
+  "agent": "lk4",
+  "scope": [
+   "4.1.70"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1795065263.6798851
+ },
+ {
+  "id": "lk2",
+  "agent": "lk2",
+  "scope": [
+   "2.2.18"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1795064694.978514
+ },
+ {
+  "id": "lk1",
+  "agent": "lk1",
+  "scope": [
+   "1.3.19"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1795065192.0160909
+ },
+ {
+  "id": "lk6",
+  "agent": "lk6",
+  "scope": [
+   "6.4.107"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1795065474.699954
+ },
+ {
+  "id": "lk5",
+  "agent": "lk5",
+  "scope": [
+   "5.1.74",
+   "5.1.123",
+   "5.1.124",
+   "5.1.126",
+   "5.1.128"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1795068057.939069
  }
 ]

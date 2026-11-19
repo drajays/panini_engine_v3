@@ -205,12 +205,12 @@
   ]
  },
  "7.2.101": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIBHASHA",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['jarasO', 'jare'] ≠ expected jarasau",
+    "result": "pass",
+    "why": "",
     "spec": [
      "subanta",
      "jarA",
@@ -218,7 +218,8 @@
      1,
      2
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -2905,17 +2906,18 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "engine error: ValueError: lakara must be one of ['AsIrliG', 'lRG', 'lRT', 'laG', 'laT', 'liG', 'liT', 'loT', 'luG', 'luT'], got 'lRN'",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta",
      "01.1160",
-     "lRN",
+     "lRG",
      "kartari",
      3,
      1
     ],
-    "sub": "engine_error"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "fail",

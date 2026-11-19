@@ -539,14 +539,15 @@
   {
    "text": "dus + puruza",
    "expected_iast": null,
-   "expected": "duzpuruza",
+   "expected": "duspuruza",
    "positive": true,
    "spec": [
     "samasa",
     "[[\"dus\", 1, 1], [\"puruza\", 1, 1]]",
     "{}"
    ],
-   "source": "Kāśikā 2.2.18 दुष्पुरुषः"
+   "source": "Kāśikā 2.2.18 दुष्पुरुषः",
+   "note": "samāsa stem stage: members concatenated before sandhi (8.3.41 / 6.1.88 come later); Kāśikā gives the sandhi-level form; same convention as 2.1.14"
   },
   {
    "text": "ati + puruza",
@@ -563,14 +564,15 @@
   {
    "text": "pra + AcArya",
    "expected_iast": null,
-   "expected": "prAcArya",
+   "expected": "praAcArya",
    "positive": true,
    "spec": [
     "samasa",
     "[[\"pra\", 1, 1], [\"AcArya\", 1, 1]]",
     "{}"
    ],
-   "source": "Kāśikā 2.2.18 प्राचार्यः"
+   "source": "Kāśikā 2.2.18 प्राचार्यः",
+   "note": "samāsa stem stage: members concatenated before sandhi (8.3.41 / 6.1.88 come later); Kāśikā gives the sandhi-level form; same convention as 2.1.14"
   }
  ],
  "2.2.19": [

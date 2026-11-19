@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_1_124_guRavacana_124"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.1.124", state, "5.1.120"):
@@ -27,11 +27,30 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.1.124"
     return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    ok = vivaksita(state, "taddhitArtha", "BAva") or vivaksita(state, "taddhitArtha", "karman")
+    return taddhita_site(state, None, ok=ok, gana_name="brAhmaRAdiH")
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _site(state) is not None:
+        return attach_taddhita(state, "zyaY")
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(

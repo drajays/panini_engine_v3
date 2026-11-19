@@ -213,7 +213,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "readings ['sunuvaH'] ≠ expected sunvaH",
+    "why": "readings ['sunuvaH', 'suvaH'] ≠ expected sunvaH",
     "spec": [
      "tinanta",
      "05.0001",
@@ -266,21 +266,22 @@
   ]
  },
  "6.1.6": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['jakziti', 'jakzziti'] ≠ expected jakzati",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta",
      "02.0066",
      "laT",
      "kartari",
      3,
-     1
+     3
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -297,43 +298,46 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['dariddrAti', 'dariddrrAti', 'daridrAti'] ≠ expected daridrati",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta",
      "02.0068",
      "laT",
      "kartari",
      3,
-     1
+     3
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['cakAsti', 'cakAstti'] ≠ expected cakAsati",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta",
      "02.0069",
      "laT",
      "kartari",
      3,
-     1
+     3
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['SAsti', 'SAstti'] ≠ expected SAsati",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta",
      "02.0070",
      "laT",
      "kartari",
      3,
-     1
+     3
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -899,17 +903,17 @@
   "cases": [
    {
     "result": "fail",
-    "why": "readings ['araRyetilakAs'] ≠ expected araRyetilaka",
+    "why": "form araRyetilakAs is right but 6.3.9 did not fire (trace status absent): another path made it",
     "spec": [
      "samasa",
      "[[\"araRya\", 7, 1], [\"tilaka\", 1, 3]]",
      "{}"
     ],
-    "sub": "mismatch"
+    "sub": "not_fired"
    },
    {
     "result": "fail",
-    "why": "readings ['vanakiMSukAs'] ≠ expected vanekiMSuka",
+    "why": "readings ['vanakiMSukAs'] ≠ expected vanekiMSukAs",
     "spec": [
      "samasa",
      "[[\"vana\", 7, 1], [\"kiMSuka\", 1, 3]]",
@@ -919,18 +923,18 @@
    },
    {
     "result": "fail",
-    "why": "readings ['pUrvAhResPowakAs'] ≠ expected pUrvAhRezPotaka",
+    "why": "form pUrvAhResPowakAs is right but 6.3.9 did not fire (trace status absent): another path made it",
     "spec": [
      "samasa",
      "[[\"pUrvAhRa\", 7, 1], [\"sPowaka\", 1, 3]]",
      "{}"
     ],
-    "sub": "mismatch"
+    "sub": "not_fired"
    },
    {
-    "result": "fail",
-    "why": "produced reading nadIkukkuwikA is not produced at all (readings ['nadIkukkuwikAs'])",
-    "sub": "mismatch"
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },

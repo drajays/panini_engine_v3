@@ -806,17 +806,41 @@
   ]
  },
  "1.3.91": {
-  "grade": "UNRUNNABLE",
+  "grade": "FAIL",
   "type": "VIBHASHA",
   "cases": [
    {
-    "result": "unrunnable"
+    "result": "fail",
+    "why": "form adyutat is right but 1.3.91 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "01.0842",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "parasmai"
+    ],
+    "sub": "not_fired"
    },
    {
-    "result": "unrunnable"
+    "result": "fail",
+    "why": "form adyotizwa is right but 1.3.91 did not fire (trace status ['SKIPPED']): another path made it",
+    "spec": [
+     "tinanta",
+     "01.0842",
+     "luG",
+     "kartari",
+     3,
+     1,
+     "atmane"
+    ],
+    "sub": "not_fired"
    },
    {
-    "result": "unrunnable"
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },
@@ -1399,7 +1423,7 @@
   ]
  },
  "1.2.5": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "ATIDESHA",
   "cases": [
    {
@@ -1431,9 +1455,9 @@
     "replaced_by": []
    },
    {
-    "result": "fail",
-    "why": "produced reading biBeditha is not produced at all (readings ['biBediTa'])",
-    "sub": "mismatch"
+    "result": "pass",
+    "kind": "produced",
+    "why": ""
    }
   ]
  },
@@ -1748,7 +1772,7 @@
   ]
  },
  "1.2.11": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "ATIDESHA",
   "cases": [
    {
@@ -1767,8 +1791,8 @@
     "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['aBitta'] ≠ expected abitta",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "07.0002",
@@ -1778,7 +1802,8 @@
      1,
      "{\"pada\": \"atmane\"}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -2033,12 +2058,12 @@
   ]
  },
  "1.3.19": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['vijayati'] ≠ expected vijayate",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.0642",
@@ -2048,11 +2073,12 @@
      1,
      "{\"upasargas\": [\"vi\"]}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['parAjayati'] ≠ expected parAjayate",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.0642",
@@ -2062,7 +2088,8 @@
      1,
      "{\"upasargas\": [\"parA\"]}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
@@ -2071,8 +2098,8 @@
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['AyacCate'] ≠ expected Ayacchate",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1139",
@@ -2082,7 +2109,8 @@
      1,
      "{\"upasargas\": [\"A\"]}"
     ],
-    "sub": "mismatch"
+    "mutation": "indeterminate",
+    "replaced_by": []
    },
    {
     "result": "fail",
@@ -2126,7 +2154,7 @@
   "cases": [
    {
     "result": "fail",
-    "why": "readings ['sampravadaMti'] ≠ expected saMpravadante",
+    "why": "readings ['sampravadaMte'] ≠ expected saMpravadante",
     "spec": [
      "tinanta2",
      "01.1164",
@@ -2134,19 +2162,19 @@
      "kartari",
      3,
      3,
-     "{\"upasargas\": [\"sam\", \"pra\"]}"
+     "{\"upasargas\": [\"sam\", \"pra\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"samuccAraRa\": \"samuccAraRa\"}}"
     ],
     "sub": "mismatch"
    }
   ]
  },
  "1.3.49": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['anuvadati'] ≠ expected anuvadate",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1164",
@@ -2154,19 +2182,20 @@
      "kartari",
      3,
      1,
-     "{\"upasargas\": [\"anu\"]}"
+     "{\"upasargas\": [\"anu\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"karmakatva\": \"akarmaka\"}}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    }
   ]
  },
  "1.3.50": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIBHASHA",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['vipravadanti'] ≠ expected vipravadante",
+    "result": "pass",
+    "why": "",
     "spec": [
      "tinanta2",
      "01.1164",
@@ -2174,9 +2203,10 @@
      "kartari",
      3,
      3,
-     "{\"upasargas\": [\"vi\", \"pra\"]}"
+     "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"samuccAraRa\": \"samuccAraRa\", \"vipralApa\": \"vipralApa\"}}"
     ],
-    "sub": "mismatch"
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",

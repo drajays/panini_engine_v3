@@ -16,7 +16,7 @@ from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_stri
 def _wanted(t) -> bool:
     """a compound whose last member is ūru and whose first member is saṃhita, śapha, lakṣaṇa, vāma …: ūṅ (the comparison is not meant)."""
     f = "".join(v.slp1 for v in t.varnas)
-    return f.endswith("Uru") and f[:-3] in ("saMhita", "Sapa", "lakzaRa", "vAma", "sahita", "saha")
+    return f.endswith("Uru") and f[:-3] in ("saMhita", "SaPa", "lakzaRa", "vAma", "sahita", "saha")
 
 def _site(state: State):
     return strI_site(state, _wanted)

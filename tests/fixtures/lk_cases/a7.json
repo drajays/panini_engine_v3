@@ -2368,7 +2368,7 @@
   {
    "text": "jarā + au (optional jaras)",
    "expected_iast": "jarasau",
-   "expected": "jarasau",
+   "expected": "jarasO",
    "positive": true,
    "spec": [
     "subanta",
@@ -3724,7 +3724,7 @@
    "spec": [
     "tinanta",
     "01.1160",
-    "lRN",
+    "lRG",
     "kartari",
     3,
     1

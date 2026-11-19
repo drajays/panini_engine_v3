@@ -19,13 +19,11 @@ Pāṭha: ashtadhyayi.com data.txt row i=13019 (Art. 14).
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.pada_ctx import decide, pada_site
 from engine.state import State
 
 # Module-level frozenset of prefix tags that trigger this rule.
-_VI_PARA_PREFIXES: frozenset[str] = frozenset({
-    "vi_prefix",
-    "parA_prefix",
-})
+_UPASARGAS: frozenset[str] = frozenset({"vi", "parA"})   # read off the tape (engine/pada_ctx.py); the recipe resolver lets this override 1.3.78
 
 _DHATU_SLP1   = "ji"
 _REGISTRY_KEY = "1_3_19_vi_parA_ji"
@@ -35,21 +33,11 @@ _STAMP_KEY    = "Atmanepada_1_3_19"
 def cond(state: State) -> bool:
     if state.meta.get("pada") == "Atmanepada":
         return False
-    if state.meta.get(_STAMP_KEY):
-        return False
-    return any(
-        "dhatu" in t.tags
-        and (t.meta.get("upadesha_slp1") or "").strip() == _DHATU_SLP1
-        and not _VI_PARA_PREFIXES.isdisjoint(t.tags)
-        for t in state.terms
-    )
+    return pada_site(state, frozenset({_DHATU_SLP1}), _UPASARGAS, _STAMP_KEY)
 
 
 def act(state: State) -> State:
-    state.meta["pada"]     = "Atmanepada"
-    state.meta[_STAMP_KEY] = True
-    state.samjna_registry[_REGISTRY_KEY] = True
-    return state
+    return decide(state, "Atmanepada", _STAMP_KEY, _REGISTRY_KEY)
 
 
 SUTRA = SutraRecord(

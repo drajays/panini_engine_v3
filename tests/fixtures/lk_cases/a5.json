@@ -9,7 +9,7 @@
     "chain",
     "vatsa",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.5 वत्सीयः"
   },
@@ -22,7 +22,7 @@
     "chain",
     "paTu",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.5 पटव्यम्"
   },
@@ -35,7 +35,7 @@
     "chain",
     "go",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.5 गव्यम्"
   },
@@ -48,7 +48,7 @@
     "chain",
     "havis",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.5 हविष्यम्"
   },
@@ -61,7 +61,7 @@
     "chain",
     "apUpa",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.5 अपूप्यम्"
   },
@@ -74,7 +74,7 @@
     "chain",
     "apUpa",
     "",
-    "taddhita:taddhitArtha=hita|sup:1,1,napuṃsaka"
+    "taddhita:taddhitArtha=tasmEhita|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.5 अपूपीयम्"
   }
@@ -346,7 +346,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "prastha",
+    "prasTa",
     "",
     "taddhita:taddhitArtha=vApa|sup:1,1,napuṃsaka"
    ],
@@ -389,7 +389,7 @@
     "chain",
     "paYcan",
     "",
-    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.47 पञ्चकः"
   },
@@ -402,7 +402,7 @@
     "chain",
     "saptan",
     "",
-    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.47 सप्तकः"
   },
@@ -415,7 +415,7 @@
     "chain",
     "Sata",
     "",
-    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.47 शत्यः"
   },
@@ -428,7 +428,7 @@
     "chain",
     "Sata",
     "",
-    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.47 शतिकः"
   },
@@ -441,7 +441,7 @@
     "chain",
     "sahasra",
     "",
-    "taddhita:taddhitArtha=dIyate|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=vfdDyAdi|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.47 साहस्रः"
   }
@@ -456,7 +456,7 @@
     "chain",
     "vaMSaBAra",
     "",
-    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.50 वांशभारिकः"
   },
@@ -469,7 +469,7 @@
     "chain",
     "kuwajaBAra",
     "",
-    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.50 कौटजभारिकः"
   },
@@ -482,7 +482,7 @@
     "chain",
     "balvajaBAra",
     "",
-    "taddhita:taddhitArtha=harati|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=bhArahAra|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.50 बाल्वजभारिकः"
   }
@@ -495,7 +495,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "prastha",
+    "prasTa",
     "",
     "taddhita:taddhitArtha=samBavati|sup:1,1,pulliṅga"
    ],
@@ -577,7 +577,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "prastha",
+    "prasTa",
     "",
     "taddhita:taddhitArtha=tadasyaparimARam|sup:1,1,pulliṅga"
    ],
@@ -724,7 +724,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "candrAyaRa",
+    "cAndrAyaRa",
     "",
     "taddhita:taddhitArtha=vartayati|sup:1,1,pulliṅga"
    ],
@@ -797,7 +797,7 @@
     "chain",
     "uttarapaTa",
     "",
-    "taddhita:taddhitArtha=gacCati|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=uttarapaTa|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.77 औत्तरपथिकः"
   }
@@ -811,7 +811,7 @@
    "spec": [
     "chain",
     "ahan",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.79 आह्निकम्"
@@ -824,7 +824,7 @@
    "spec": [
     "chain",
     "arDamAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.79 आर्धमासिकम्"
@@ -837,7 +837,7 @@
    "spec": [
     "chain",
     "saMvatsara",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlanirvftta|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.79 सांवत्सरिकम्"
@@ -852,7 +852,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlAdhIzwa|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.80 मासिकोऽध्यापकः"
@@ -865,7 +865,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlaBfta|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.80 मासिकः कर्मकरः"
@@ -878,7 +878,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlaBUta|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.80 मासिको व्याधिः"
@@ -891,7 +891,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlaBAvI|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.80 मासिक उत्सवः"
@@ -906,7 +906,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.93 मासिको व्याधिः"
@@ -919,7 +919,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlalaBya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.93 मासिकः पटः"
@@ -932,7 +932,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlakArya|sup:1,1,napuṃsaka"
    ],
    "source": "Kāśikā 5.1.93 मासिकं चान्द्रायणम्"
@@ -945,7 +945,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlasukara|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.93 मासिकः प्रासादः"
@@ -958,7 +958,7 @@
    "spec": [
     "chain",
     "saMvatsara",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlaparijayya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.93 सांवत्सरिकः"
@@ -973,7 +973,7 @@
    "spec": [
     "chain",
     "mAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.94 मासिको ब्रह्मचारी"
@@ -986,7 +986,7 @@
    "spec": [
     "chain",
     "arDamAsa",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.94 आर्धमासिकः"
@@ -999,7 +999,7 @@
    "spec": [
     "chain",
     "saMvatsara",
-    "",
+    "lex:kAla",
     "taddhita:taddhitArtha=kAlabrahmacarya|sup:1,1,pulliṅga"
    ],
    "source": "Kāśikā 5.1.94 सांवत्सरिकः"
@@ -1007,15 +1007,15 @@
  ],
  "5.1.95": [
   {
-   "text": "AgniztomikI",
+   "text": "AgnizwomikI",
    "expected_iast": null,
-   "expected": "AgniztomikI",
+   "expected": "AgnizwomikI",
    "positive": true,
    "spec": [
     "chain",
-    "agniztoma",
-    "",
-    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+    "agnizwoma",
+    "lex:yajYAKya",
+    "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
    ],
    "source": "Kāśikā 5.1.95 आग्निष्टोमिकी"
   },
@@ -1027,8 +1027,8 @@
    "spec": [
     "chain",
     "vAjapeya",
-    "",
-    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+    "lex:yajYAKya",
+    "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
    ],
    "source": "Kāśikā 5.1.95 वाजपेयिकी"
   },
@@ -1040,8 +1040,8 @@
    "spec": [
     "chain",
     "rAjasUya",
-    "",
-    "taddhita:taddhitArtha=dakziRA|strI:linga=strI|sup:1,1,strīliṅga"
+    "lex:yajYAKya",
+    "taddhita:taddhitArtha=dakziRA|strI|sup:1,1,strīliṅga"
    ],
    "source": "Kāśikā 5.1.95 राजसूयिकी"
   }
@@ -1162,7 +1162,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "santApa",
+    "saMtApa",
     "",
     "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
    ],
@@ -1175,7 +1175,7 @@
    "positive": true,
    "spec": [
     "chain",
-    "sannAha",
+    "saMnAha",
     "",
     "taddhita:taddhitArtha=tasmaiPraBavati|sup:1,1,pulliṅga"
    ],
@@ -1307,7 +1307,7 @@
    "spec": [
     "chain",
     "Sukla",
-    "",
+    "lex:varRa",
     "taddhita:taddhitArtha=BAva|sup:1,1,napuṃsaka"
    ],
    "source": "kaumudi 5.1.123 (exact word)"

@@ -1269,13 +1269,15 @@
    "text": "vfkzaSSete",
    "expected_iast": null,
    "expected": "vfkzaSSete",
-   "positive": true,
+   "positive": false,
    "spec": [
     "vakya",
     "vfkzaH",
     "Sete"
    ],
-   "source": "Kāśikā 8.3.36 वृक्षश्शेते"
+   "source": "Kāśikā 8.3.36 वा शरि: vfkzaSSete / vfkzassAye arise when 8.3.36 is declined (visarga then s by 8.3.34); brain card C-412 (attested vfkzaSSete@8.3.36, vfkzaH Sete@8.3.36)",
+   "kind": "declined",
+   "note": "A: option-declined reading, recast per tools/lk_cases 'declined' kind (cf. 8.4.62)"
   },
   {
    "text": "plakzaHSete",
@@ -1293,25 +1295,29 @@
    "text": "plakzaSSete",
    "expected_iast": null,
    "expected": "plakzaSSete",
-   "positive": true,
+   "positive": false,
    "spec": [
     "vakya",
     "plakzaH",
     "Sete"
    ],
-   "source": "Kāśikā 8.3.36 प्लक्षश्शेते"
+   "source": "Kāśikā 8.3.36 वा शरि: vfkzaSSete / vfkzassAye arise when 8.3.36 is declined (visarga then s by 8.3.34); brain card C-412 (attested vfkzaSSete@8.3.36, vfkzaH Sete@8.3.36)",
+   "kind": "declined",
+   "note": "A: option-declined reading, recast per tools/lk_cases 'declined' kind (cf. 8.4.62)"
   },
   {
    "text": "vfkzassAye",
    "expected_iast": null,
    "expected": "vfkzassAye",
-   "positive": true,
+   "positive": false,
    "spec": [
     "vakya",
     "vfkzaH",
     "sAye"
    ],
-   "source": "Kāśikā 8.3.36 वृक्षस्साये"
+   "source": "Kāśikā 8.3.36 वा शरि: vfkzaSSete / vfkzassAye arise when 8.3.36 is declined (visarga then s by 8.3.34); brain card C-412 (attested vfkzaSSete@8.3.36, vfkzaH Sete@8.3.36)",
+   "kind": "declined",
+   "note": "A: option-declined reading, recast per tools/lk_cases 'declined' kind (cf. 8.4.62)"
   },
   {
    "text": "vfkzaHsAye",
@@ -1482,7 +1488,7 @@
    "spec": [
     "subanta",
     "sarpis",
-    "napuMsaka",
+    "napuṃsaka",
     1,
     3
    ],
@@ -1496,7 +1502,7 @@
    "spec": [
     "subanta",
     "yajus",
-    "napuMsaka",
+    "napuṃsaka",
     1,
     3
    ],
@@ -1510,7 +1516,7 @@
    "spec": [
     "subanta",
     "havis",
-    "napuMsaka",
+    "napuṃsaka",
     1,
     3
    ],
@@ -1524,7 +1530,7 @@
    "spec": [
     "subanta",
     "sarpis",
-    "napuMsaka",
+    "napuṃsaka",
     7,
     3
    ],
@@ -1538,7 +1544,7 @@
    "spec": [
     "subanta",
     "yajus",
-    "napuMsaka",
+    "napuṃsaka",
     7,
     3
    ],
@@ -1552,7 +1558,7 @@
    "spec": [
     "subanta",
     "sarpis",
-    "napuMsaka",
+    "napuṃsaka",
     7,
     3
    ],
@@ -1566,7 +1572,7 @@
    "spec": [
     "subanta",
     "havis",
-    "napuMsaka",
+    "napuṃsaka",
     7,
     3
    ],

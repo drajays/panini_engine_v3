@@ -1080,9 +1080,10 @@
     "chain",
     "BrAzwra",
     "",
-    "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=saMskfta|sup:1,3,pulliṅga"
    ],
-   "source": "kashika 4.2.16 (word BrAzwrA)"
+   "source": "kashika 4.2.16 (word BrAzwrA)",
+   "note": "spec vacana fixed 1,1->1,3: text/expected are Jas (plural); Kāśikā examples are plural (kuravaH / kAlaSAH)"
   }
  ],
  "4.2.36": [
@@ -1213,9 +1214,10 @@
     "chain",
     "paYcAla",
     "",
-    "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
+    "taddhita:taddhitArtha=nivAsa|sup:1,3,pulliṅga"
    ],
-   "source": "kashika 4.2.81 (exact word)"
+   "source": "kashika 4.2.81 (exact word)",
+   "note": "spec vacana fixed 1,1->1,3: text/expected are Jas (plural); Kāśikā examples are plural (kuravaH / kAlaSAH)"
   }
  ],
  "4.2.82": [

@@ -587,7 +587,7 @@
   {
    "text": "Bid + liT thal (pit: not kit)",
    "expected_iast": null,
-   "expected": "biBeditha",
+   "expected": "biBediTa",
    "positive": false,
    "spec": [
     "tinanta",
@@ -965,7 +965,7 @@
   {
    "text": "Bid + luG ātmane (sic)",
    "expected_iast": null,
-   "expected": "abitta",
+   "expected": "aBitta",
    "positive": true,
    "spec": [
     "tinanta2",
@@ -1851,7 +1851,7 @@
   {
    "text": "A + yam + laT",
    "expected_iast": null,
-   "expected": "Ayacchate",
+   "expected": "AyacCate",
    "positive": true,
    "spec": [
     "tinanta2",
@@ -2027,7 +2027,7 @@
     "kartari",
     3,
     3,
-    "{\"upasargas\": [\"sam\", \"pra\"]}"
+    "{\"upasargas\": [\"sam\", \"pra\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"samuccAraRa\": \"samuccAraRa\"}}"
    ],
    "source": "Kāśikā 1.3.48 संप्रवदन्ते ब्राह्मणाः"
   }
@@ -2045,7 +2045,7 @@
     "kartari",
     3,
     1,
-    "{\"upasargas\": [\"anu\"]}"
+    "{\"upasargas\": [\"anu\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"karmakatva\": \"akarmaka\"}}"
    ],
    "source": "Kāśikā 1.3.49 अनुवदते कठः कलापस्य"
   }
@@ -2063,7 +2063,7 @@
     "kartari",
     3,
     3,
-    "{\"upasargas\": [\"vi\", \"pra\"]}"
+    "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"samuccAraRa\": \"samuccAraRa\", \"vipralApa\": \"vipralApa\"}}"
    ],
    "source": "Kāśikā 1.3.50 विप्रवदन्ते सांवत्सराः"
   },
@@ -2079,7 +2079,7 @@
     "kartari",
     3,
     3,
-    "{\"upasargas\": [\"vi\", \"pra\"]}"
+    "{\"upasargas\": [\"vi\", \"pra\"], \"vivaksha\": {\"vyaktavAk\": \"vyaktavAc\", \"samuccAraRa\": \"samuccAraRa\", \"vipralApa\": \"vipralApa\"}}"
    ],
    "source": "Kāśikā 1.3.50 विप्रवदन्ति सांवत्सराः",
    "kind": "produced"
@@ -2835,31 +2835,50 @@
  ],
  "1.3.91": [
   {
-   "text": "dyut + luṅ (optional parasmaipada)",
-   "expected_iast": "adyutat",
-   "expected": null,
+   "text": "dyut + luG (optional parasmaipada)",
+   "expected_iast": null,
+   "expected": "adyutat",
    "positive": true,
-   "spec": null,
-   "source": null,
-   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
+   "spec": [
+    "tinanta",
+    "01.0842",
+    "luG",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.91 / SK 1.3.91 अद्युतत्, अद्योतिष्ट (द्युतादिभ्यो लुङि परस्मैपदं वा)"
   },
   {
-   "text": "dyut + luṅ (optional ātmanepada)",
-   "expected_iast": "adyotiṣṭa",
-   "expected": null,
+   "text": "dyut + luG (optional ātmanepada)",
+   "expected_iast": null,
+   "expected": "adyotizwa",
    "positive": true,
-   "spec": null,
-   "source": null,
-   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
+   "spec": [
+    "tinanta",
+    "01.0842",
+    "luG",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "Kāśikā 1.3.91 / SK 1.3.91 अद्युतत्, अद्योतिष्ट (द्युतादिभ्यो लुङि परस्मैपदं वा)"
   },
   {
-   "text": "dyut + laṭ (outside luṅ, parasmaipada blocked)",
-   "expected_iast": "dyotati",
-   "expected": null,
+   "text": "dyut + laT (outside luG, parasmaipada not made)",
+   "expected_iast": null,
+   "expected": "dyotati",
    "positive": false,
-   "spec": null,
-   "source": null,
-   "note": "unrunnable: luG of dyut gives only the parasmaipada readings; ātmanepada reading adyotiṣṭa is missing"
+   "spec": [
+    "tinanta",
+    "01.0842",
+    "laT",
+    "kartari",
+    3,
+    1
+   ],
+   "source": "SK 1.3.91 dyutAdiByo luNaH (only luG gets the option); laT of dyut is dyotate",
+   "kind": "produced"
   }
  ],
  "1.3.92": [

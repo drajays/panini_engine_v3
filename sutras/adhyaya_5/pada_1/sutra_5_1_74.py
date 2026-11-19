@@ -55,7 +55,7 @@ def act(state: State) -> State:
     v = _sense(state)
     if v is None:
         return _legacy_act(state)
-    return open_default_frame(state, "5.1.74", v, "5.1.18", "5.1.114", {"stems": ("yojana",)})      # ṭhañ (5.1.18) is the default to 5.1.114, ṭhak (5.1.19) to 5.1.63
+    return open_default_frame(state, "5.1.74", v, "5.1.18", "5.1.114", {"stems": ("yojana", "kroSaSata", "yojanaSata")})      # ṭhañ (5.1.18) is the default to 5.1.114, ṭhak (5.1.19) to 5.1.63
 
 
 SUTRA = SutraRecord(

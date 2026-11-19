@@ -11,9 +11,10 @@
     "laT",
     "kartari",
     3,
-    1
+    3
    ],
-   "source": "Kāśikā 6.1.6 जक्षति"
+   "source": "Kāśikā 6.1.6 जक्षति",
+   "note": "spec fixed 3sg->3pl: Kāśikā 6.1.6 jakṣati..śāsati are 3pl (jus→ati, 7.1.4 ajhi); 3sg is jakṣiti etc."
   },
   {
    "text": "jAgrati",
@@ -41,9 +42,10 @@
     "laT",
     "kartari",
     3,
-    1
+    3
    ],
-   "source": "Kāśikā 6.1.6 दरिद्रति"
+   "source": "Kāśikā 6.1.6 दरिद्रति",
+   "note": "spec fixed 3sg->3pl: Kāśikā 6.1.6 jakṣati..śāsati are 3pl (jus→ati, 7.1.4 ajhi); 3sg is jakṣiti etc."
   },
   {
    "text": "cakAsati",
@@ -56,9 +58,10 @@
     "laT",
     "kartari",
     3,
-    1
+    3
    ],
-   "source": "Kāśikā 6.1.6 चकासति"
+   "source": "Kāśikā 6.1.6 चकासति",
+   "note": "spec fixed 3sg->3pl: Kāśikā 6.1.6 jakṣati..śāsati are 3pl (jus→ati, 7.1.4 ajhi); 3sg is jakṣiti etc."
   },
   {
    "text": "SAsati",
@@ -71,9 +74,10 @@
     "laT",
     "kartari",
     3,
-    1
+    3
    ],
-   "source": "Kāśikā 6.1.6 शासति"
+   "source": "Kāśikā 6.1.6 शासति",
+   "note": "spec fixed 3sg->3pl: Kāśikā 6.1.6 jakṣati..śāsati are 3pl (jus→ati, 7.1.4 ajhi); 3sg is jakṣiti etc."
   }
  ],
  "6.1.15": [
@@ -823,43 +827,46 @@
   {
    "text": "araRyetilaka",
    "expected_iast": null,
-   "expected": "araRyetilaka",
+   "expected": "araRyetilakAs",
    "positive": true,
    "spec": [
     "samasa",
     "[[\"araRya\", 7, 1], [\"tilaka\", 1, 3]]",
     "{}"
    ],
-   "source": "Kāśikā 6.3.9 अरण्येतिलकाः"
+   "source": "Kāśikā 6.3.9 अरण्येतिलकाः",
+   "note": "expected = the samāsa State (spec stage) incl. nom. sup -s, pre-tripādī (Kāśikā 6.3.9 / brain: pUrvAhResPowakAH, vanekiMSukAH); not the bare stem or tripādī-final form"
   },
   {
    "text": "vanekiMSuka",
    "expected_iast": null,
-   "expected": "vanekiMSuka",
+   "expected": "vanekiMSukAs",
    "positive": true,
    "spec": [
     "samasa",
     "[[\"vana\", 7, 1], [\"kiMSuka\", 1, 3]]",
     "{}"
    ],
-   "source": "Kāśikā 6.3.9 वनेकिंशुकाः"
+   "source": "Kāśikā 6.3.9 वनेकिंशुकाः",
+   "note": "expected = the samāsa State (spec stage) incl. nom. sup -s, pre-tripādī (Kāśikā 6.3.9 / brain: pUrvAhResPowakAH, vanekiMSukAH); not the bare stem or tripādī-final form"
   },
   {
    "text": "pUrvAhRezPotaka",
    "expected_iast": null,
-   "expected": "pUrvAhRezPotaka",
+   "expected": "pUrvAhResPowakAs",
    "positive": true,
    "spec": [
     "samasa",
     "[[\"pUrvAhRa\", 7, 1], [\"sPowaka\", 1, 3]]",
     "{}"
    ],
-   "source": "Kāśikā 6.3.9 पूर्वाह्णेस्फोटकाः"
+   "source": "Kāśikā 6.3.9 पूर्वाह्णेस्फोटकाः",
+   "note": "expected = the samāsa State (spec stage) incl. nom. sup -s, pre-tripādī (Kāśikā 6.3.9 / brain: pUrvAhResPowakAH, vanekiMSukAH); not the bare stem or tripādī-final form"
   },
   {
    "text": "nadIkukkuwikA (halad antAt kim: nadyAM kukkuwikA is nadIkukkuwikA with luk)",
    "expected_iast": null,
-   "expected": "nadIkukkuwikA",
+   "expected": "nadIkukkuwikAs",
    "positive": false,
    "spec": [
     "samasa",
@@ -868,7 +875,7 @@
    ],
    "source": "Kāśikā 6.3.9 नदीकुक्कुटिका",
    "kind": "produced",
-   "note": "halad antAt kim: nadyAM kukkuwikA is nadIkukkuwikA with luk"
+   "note": "expected = the samāsa State (spec stage) incl. nom. sup -s, pre-tripādī (Kāśikā 6.3.9 / brain: pUrvAhResPowakAH, vanekiMSukAH); not the bare stem or tripādī-final form"
   }
  ],
  "6.3.14": [

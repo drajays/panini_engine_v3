@@ -510,7 +510,7 @@
   ]
  },
  "4.1.70": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
@@ -522,8 +522,8 @@
      "",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -534,18 +534,20 @@
      "",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
-    "result": "fail",
-    "why": "readings ['SaPoruH'] ≠ expected SaPorUH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "SaPaUru",
      "",
      "strI:|sup:1,1"
-    ]
+    ],
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -556,8 +558,8 @@
      "",
      "strI:|sup:1,1"
     ],
-    "mutation": "indeterminate",
-    "replaced_by": []
+    "mutation": "sensitive",
+    "replaced_by": null
    },
    {
     "result": "pass",
@@ -732,17 +734,28 @@
   ]
  },
  "4.2.16": {
-  "grade": "FAIL",
+  "grade": "working",
   "type": "VIDHI",
   "cases": [
    {
-    "result": "fail",
-    "why": "readings ['BrAzwraH', 'BrAzwwraH'] ≠ expected BrAzwrAH",
+    "result": "pass",
+    "why": "",
     "spec": [
      "chain",
      "BrAzwra",
      "",
-     "taddhita:taddhitArtha=saMskfta|sup:1,1,pulliṅga"
+     "taddhita:taddhitArtha=saMskfta|sup:1,3,pulliṅga"
+    ],
+    "mutation": "redundant",
+    "replaced_by": [
+     "4.3.39",
+     "4.3.74",
+     "4.3.83",
+     "4.3.85",
+     "4.3.86",
+     "4.3.87",
+     "4.3.89",
+     "4.3.120"
     ]
    }
   ]
@@ -829,13 +842,14 @@
   "cases": [
    {
     "result": "fail",
-    "why": "readings ['pAYYcAlaH', 'pAYcAlaH'] ≠ expected paYcAlAH",
+    "why": "readings ['pAYYcAlAH', 'pAYcAlAH'] ≠ expected paYcAlAH",
     "spec": [
      "chain",
      "paYcAla",
      "",
-     "taddhita:taddhitArtha=nivAsa|sup:1,1,pulliṅga"
-    ]
+     "taddhita:taddhitArtha=nivAsa|sup:1,3,pulliṅga"
+    ],
+    "sub": "mismatch"
    }
   ]
  },
