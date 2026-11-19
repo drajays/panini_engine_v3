@@ -1,0 +1,39 @@
+{
+  "sutra": "__WORD_72416D6148__",
+  "notes": [
+    {
+      "id": "f78692f991",
+      "created": "2026-11-18T09:52:41+0530",
+      "updated": "2026-11-18T23:58:00+0530",
+      "text": "शब्द can be derived from kridant , taddhnati or samas parkriya etc as per 1.2.45 and 1.2.46--so different tributaries mix with shabd prakriya depending on shand like ram also kridant , many shabd will be samas - so amke tributaries to main prakriya at begining whereever we have and also distributarues at the end where ever we have many outputs",
+      "author": "me",
+      "derivation": "रामः · /shabdarupa",
+      "kind": "note",
+      "status": "ledgered",
+      "verdict": "Claude 2026-11-18 — Right in design: a stem can itself come from kṛt / taddhita / samāsa (1.2.45–46) and the prakriyā should show those tributaries at the start. The यात्रा panel shows branches and forks at the end; the per-stem origin record for 9,007 stems needs classification, not a guess — tracked.",
+      "evidence": "SHORTCUT_LEDGER S181; docs/JOURNEY_PLAN.md",
+      "trace": "",
+      "context": {
+        "kind": "shabda",
+        "stem_slp1": "rAma",
+        "stem_dev": "राम",
+        "linga": "pulliṅga",
+        "nyap": false,
+        "stem_source": "corpus stem #6591",
+        "vibhakti": 1,
+        "vibhakti_name": "प्रथमा",
+        "vacana": 1,
+        "vacana_name": "एकवचनम्",
+        "surface_dev": "रामः",
+        "surface_slp1": "rAmaH",
+        "engine_vs_corpus": "equal",
+        "page": "/shabdarupa",
+        "url": "/shabdarupa",
+        "word_slp1": "rAmaH",
+        "word_dev": "रामः"
+      },
+      "history": [],
+      "status_at": "2026-11-18T23:58:00+0530"
+    }
+  ]
+}

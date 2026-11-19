@@ -362,7 +362,7 @@ const Prakriya = (() => {
     return `<li class="pk-step pk-${(s.status || "").toLowerCase()} pk-t-${esc(s.sutra_type || "X")}" id="${id}">
       <a class="pk-no" href="#${id}" title="permalink to this step">${i + 1}</a>
       <div class="pk-main"><div><a class="pk-sid" href="/sutra/${esc(s.sutra_id)}">${esc(s.sutra_id)}</a>${star}${struct}${askBtn(s.sutra_id, i)}${isStruct(s) ? "" : `<button type="button" class="pk-hide no-print" data-sid="${esc(s.sutra_id)}" title="Hide this sūtra in every prakriyā (still included in Copy to LLM)">🙈</button>`} ${typeChip(s)}
-        <span class="pk-tag">${esc(pref.gloss === "en" ? st[1] : st[0])}</span>
+        <span class="pk-tag">${esc(s.status === "VACUOUS" && /^(PARIBHASHA|NIYAMA|ADHIKARA)$/.test(s.sutra_type) ? (pref.gloss === "en" ? "guides the choice, no letter changes" : "निर्णयसहायकम्, वर्णपरिवर्तनं नास्ति") : pref.gloss === "en" ? st[1] : st[0])}</span>
         ${samjnaChip(s, ctx.pa[i] || ctx.pb[i])}
         <span class="pk-form pk-fx dev${ctx.padaAt >= 0 && i >= ctx.padaAt ? " pk-padaed" : ""}" data-i="${i}" title="${ctx.padaAt >= 0 && i >= ctx.padaAt ? "पदम् (सुप्तिङन्तं पदम् १.४.१४) — whole word, stem + ending · " : ""}क्लिक् — संहितम् ↔ वर्णविभागः (click: merged ↔ split)">${
           formHtml(s, ctx.pb[i], ctx.pa[i] || ctx.pb[i], pref.split !== ctx.open.has(i))}</span></div>

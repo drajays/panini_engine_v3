@@ -1,0 +1,39 @@
+{
+  "sutra": "__WORD_6B617461726148__",
+  "notes": [
+    {
+      "id": "a98d687e3b",
+      "created": "2026-11-18T23:40:54+0530",
+      "updated": "2026-11-18T23:58:00+0530",
+      "text": "consider this -डतर-डतमौ प्रत्ययौ, प्रत्ययग्रहणे तदन्तग्रहणमिति तदन्ता ग्राह्याः। सर्वादिगण\nमें पाँचवें ओर छठे हें- डतर और डतम। ये प्रत्यय हैं। प्रत्ययग्रहणे तदन्तग्रहणम्‌ यह एक\nपरिभाषा है। प्रत्यय के ग्रहण के प्रत्ययान्त का ग्रहण होता हे। अत: डतर ओर डतम\nसे डतर-डतम प्रत्ययान्त ही लिये जायेगे। किम्‌, यद्‌, तद्‌, एक इन चार शब्दों से\nडतर-डतम प्रत्ययान्त रूप देखे जाते हें। जैसे किम्‌-शब्द से कतर-कतम, यद्‌ शब्द से\nयतर-यतम ओर तद्‌ से ततर-ततम। इनके रूप भी सर्वशब्द के समान ही बनते हैं।",
+      "author": "me",
+      "derivation": "कतरः · /shabdarupa",
+      "kind": "note",
+      "status": "confirmed",
+      "verdict": "Claude 2026-11-18 — Right (pratyayagrahaṇe tadantagrahaṇam: ḍatara/ḍatama-ending stems are sarvanāma). Engine: katara derives with sarva-forms (katarasmāt, katarasmin, katare), so the paribhāṣā's result holds; the paribhāṣā itself is not a step row — same family as S186/S194.",
+      "evidence": "derive('katara'); SHORTCUT_LEDGER S186",
+      "trace": "",
+      "context": {
+        "kind": "shabda",
+        "stem_slp1": "katara",
+        "stem_dev": "कतर",
+        "linga": "pulliṅga",
+        "nyap": false,
+        "stem_source": "corpus stem #1597",
+        "vibhakti": 1,
+        "vibhakti_name": "प्रथमा",
+        "vacana": 1,
+        "vacana_name": "एकवचनम्",
+        "surface_dev": "कतरः",
+        "surface_slp1": "kataraH",
+        "engine_vs_corpus": "equal",
+        "page": "/shabdarupa",
+        "url": "/shabdarupa",
+        "word_slp1": "kataraH",
+        "word_dev": "कतरः"
+      },
+      "history": [],
+      "status_at": "2026-11-18T23:58:00+0530"
+    }
+  ]
+}

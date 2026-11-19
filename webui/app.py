@@ -247,9 +247,23 @@ def _pack(state) -> dict:
             "letters": _letters(state)}
 
 
+def _forks(state) -> list:
+    """Declined-vibhāṣā records: dict forks as recorded, plus State forks (exec_vibhasha) named by their own sūtra."""
+    out = []
+    for f in getattr(state, "vibhasha_forks", None) or []:
+        if isinstance(f, dict):
+            out.append({k: v for k, v in f.items() if isinstance(v, (str, bool, int))})
+        elif hasattr(f, "flat_slp1"):
+            sid = next((k[:-len("_skipped_vibhasha")] for k in f.meta if str(k).endswith("_skipped_vibhasha")), "")
+            out.append({"sutra_id": sid, "choice_made": False, "alternative": f.flat_slp1(), "state": True})
+    real = {x["alternative"] for x in out if x.get("state")}
+    # a dict record only keeps the form before a declined step; where a State fork already names that branch, it is the same one
+    return [x for x in out if x.get("state") or x.get("alternative") not in real]
+
+
 def _with_extras(out: dict, state, data: dict, rerun) -> dict:
     out["letters"] = _letters(state)
-    out["forks"] = [{k: v for k, v in f.items() if isinstance(v, (str, bool, int))} for f in (getattr(state, "vibhasha_forks", None) or []) if isinstance(f, dict)]
+    out["forks"] = _forks(state)
     dis = data.get("disable") or []
     if isinstance(dis, str):
         dis = dis.split(",")
@@ -2173,6 +2187,11 @@ def api_shabdarupa_engine():
     return jsonify({"cells": cells})
 
 
+# Defective number (S193): vivakṣā is input, so a cell the śāstra does not teach is refused here, not derived. Owner ruling 2026-11-18 (Kāśikā/Laghusiddhānta on sarvādi 3-4).
+_NO_VACANA = {"uBa": (1, 3), "uBaya": (2,)}
+_NO_VACANA_WHY = {"uBa": "उभ-शब्दो नित्यं द्विवचनान्तः — no singular/plural (S193)", "uBaya": "उभय-शब्दस्य द्विवचनं नास्ति — no dual (Kaiyaṭa; Haradatta differs, see SOURCE_CONFLICTS) (S193)"}
+
+
 @app.route("/api/shabdarupa/cell", methods=["POST"])
 def api_shabdarupa_cell():
     """Click-through: the corpus's hand-checked steps (where it has them), Vidyut's steps, our engine's trace."""
@@ -2180,8 +2199,12 @@ def api_shabdarupa_cell():
     vb, vc = int(q["vibhakti"]), int(q["vacana"])
     v = _sr_vidyut("subcell", q, vibhakti=vb, vacana=vc)
     try:
+        if vc in _NO_VACANA.get(q["stem"], ()):
+            raise LookupError(_NO_VACANA_WHY[q["stem"]])
         st = derive(q["stem"], vb, vc, linga=q.get("linga") or "pulliṅga")
-        eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace), "forks": [{k: v for k, v in f.items() if isinstance(v, (str, bool, int))} for f in (st.vibhasha_forks or []) if isinstance(f, dict)]}
+        eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace), "forks": _forks(st)}
+    except LookupError as ex:
+        eng = {"na": str(ex)}
     except Exception as ex:
         eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
     corpus = None
